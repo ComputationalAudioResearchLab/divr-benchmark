@@ -11,11 +11,12 @@ class Preprocess:
         self.database_path = database_path
         self.processors: Dict[str, BaseProcessor] = {"svd": SVD()}
 
-    def setup_preprocessed_data_path(self, preprocessed_data_path: Path):
+    def ensure_path(self, preprocessed_data_path: Path) -> Path:
         preprocessed_data_path.mkdir(parents=True, exist_ok=True)
+        return preprocessed_data_path
 
     async def all(self, preprocessed_data_path: Path):
-        self.setup_preprocessed_data_path(preprocessed_data_path)
+        self.ensure_path(preprocessed_data_path)
         datasets = [
             db.name
             for db in self.database_path.iterdir()
@@ -25,19 +26,19 @@ class Preprocess:
             *[
                 self.processors[db](
                     source_path=Path(f"{self.database_path}/{db}"),
-                    dest_path=Path(f"{preprocessed_data_path}/{db}"),
+                    dest_path=self.ensure_path(Path(f"{preprocessed_data_path}/{db}")),
                 )
                 for db in datasets
             ]
         )
 
     async def selected(self, preprocessed_data_path: Path, datasets):
-        self.setup_preprocessed_data_path(preprocessed_data_path)
+        self.ensure_path(preprocessed_data_path)
         await asyncio.gather(
             *[
                 self.processors[db](
                     source_path=Path(f"{self.database_path}/{db}"),
-                    dest_path=Path(f"{preprocessed_data_path}/{db}"),
+                    dest_path=self.ensure_path(Path(f"{preprocessed_data_path}/{db}")),
                 )
                 for db in datasets
             ]

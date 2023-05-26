@@ -16,6 +16,15 @@ class Diagnosis:
         else:
             return self.name
 
+    @staticmethod
+    def from_string(diagnosis: str) -> Diagnosis:
+        names = map(str.strip, diagnosis.split(">"))
+        current = None
+        for name in names:
+            current = Diagnosis(name=name, parent=current)
+        assert current is not None
+        return current
+
 
 class DiagnosisMap:
     curdir = Path(__file__).resolve().parent

@@ -1,62 +1,67 @@
 {
-  "organic": {
-    "neuro_muscular": {
-      "paralysis": {
-        "adductor_paralysis": {},
-        "vocal_fold_paralysis": {
-          "unilateral_vocal_fold_paralysis": {}
-        }
-      },
-      "paresis": {
-        "vocal_fold_paresis": {}
-      },
-      "spasmodic_dysphonia": {
-        "adductor_spasmodic_dysphonia": {},
-        "abductor_spasmodic_dysphonia": {},
-        "mixed": {}
-      },
-      "parkinsons_disease": {}
-    },
-    "cancer": {
-      "vocal_fold_cancer": {},
-      "laryngeal_cancer": {},
-      "larynx_cancer": {},
-      "carcinomas": {},
-      "laryngeal_mass_lesion": {},
-      "laryngectomy": {},
-      "vocal_tract_tumor": {},
-      "papilloma": {}
-    },
-    "structural": {
-      "vocal_fold_polyps": {},
-      "vocal_nodules": {},
-      "sulcus_vocalis": {},
-      "cysts": {},
-      "keratosis": {},
-      "polyp_degeneration": {},
-      "contact_granuloma": {},
-      "ketosis": {},
-      "laryngocele": {},
-      "laryngeal_web": {}
-    },
-    "inflammatory": {
-      "vocal_fold_edema": {},
-      "reinke_edema": {},
-      "laryngitis": {
-        "chronic_laryngitis": {},
-        "chronic_hyperplastic_laryngitis": {}
-      },
-      "gastic_reflux": {},
-      "gerd": {},
-      "lpr": {},
-      "degenerative_edemas": {},
-      "erythema": {}
-    },
-    "traumatic": {}
+  "normal": {
+    "healthy": {}
   },
-  "muscle_tension_dysphonia": {
-    "hyperfunction": {}
-  },
-  "psychogenic": {},
-  "others": {}
+  "pathological": {
+    "organic": {
+      "neuro_muscular": {
+        "paralysis": {
+          "adductor_paralysis": {},
+          "vocal_fold_paralysis": {
+            "unilateral_vocal_fold_paralysis": {}
+          }
+        },
+        "paresis": {
+          "vocal_fold_paresis": {}
+        },
+        "spasmodic_dysphonia": {
+          "adductor_spasmodic_dysphonia": {},
+          "abductor_spasmodic_dysphonia": {},
+          "mixed_spasmodic_dysphonia": {}
+        },
+        "parkinsons_disease": {}
+      },
+      "cancer": {
+        "vocal_fold_cancer": {},
+        "laryngeal_cancer": {},
+        "larynx_cancer": {},
+        "carcinomas": {},
+        "laryngeal_mass_lesion": {},
+        "laryngectomy": {},
+        "vocal_tract_tumor": {},
+        "papilloma": {}
+      },
+      "structural": {
+        "vocal_fold_polyps": {},
+        "vocal_nodules": {},
+        "sulcus_vocalis": {},
+        "cysts": {},
+        "keratosis": {},
+        "polyp_degeneration": {},
+        "contact_granuloma": {},
+        "ketosis": {},
+        "laryngocele": {},
+        "laryngeal_web": {}
+      },
+      "inflammatory": {
+        "vocal_fold_edema": {},
+        "reinke_edema": {},
+        "laryngitis": {
+          "chronic_laryngitis": {},
+          "chronic_hyperplastic_laryngitis": {}
+        },
+        "gastic_reflux": {},
+        "gerd": {},
+        "lpr": {},
+        "degenerative_edemas": {},
+        "erythema": {}
+      },
+      "traumatic": {}
+    },
+    "muscle_tension_dysphonia": {
+      "hyperfunction": {}
+    },
+    "psychogenic": {},
+    "others": {}
+  }
 }
