@@ -1,14 +1,18 @@
 {
-	"folders": [
-		{
-			"path": "."
-		},
-		{
-			"path": "../databases"
-		}
-	],
-	"settings": {
-		"editor.formatOnSave": true,
-		"python.defaultInterpreterPath": "python"
-	}
+  "folders": [
+    {
+      "path": "."
+    },
+    {
+      "path": "../databases"
+    }
+  ],
+  "settings": {
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "python.defaultInterpreterPath": "python",
+    "python.linting.flake8Enabled": true,
+    "python.linting.lintOnSave": true,
+    "python.formatting.provider": "none",
+    "editor.formatOnSave": true
+  }
 }
