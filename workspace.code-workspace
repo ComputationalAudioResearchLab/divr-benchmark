@@ -8,11 +8,14 @@
     }
   ],
   "settings": {
-    "editor.defaultFormatter": "ms-python.black-formatter",
     "python.defaultInterpreterPath": "python",
     "python.linting.flake8Enabled": true,
     "python.linting.lintOnSave": true,
     "python.formatting.provider": "none",
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
+    "python.analysis.typeCheckingMode": "basic",
+    "[python]": {
+      "editor.defaultFormatter": "ms-python.black-formatter"
+    }
   }
 }

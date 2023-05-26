@@ -3,6 +3,7 @@ from pathlib import Path
 from typing import List, TYPE_CHECKING
 from argparse import ArgumentParser, _SubParsersAction
 from .download import Download
+from .preprocess import Preprocess
 
 SubparserType = _SubParsersAction[ArgumentParser] if TYPE_CHECKING else None
 
@@ -37,11 +38,24 @@ class Main:
             help="Downloads only specified databases",
         )
 
-    async def preprocess(self, all: bool, datasets: List[str], **kwargs) -> None:
-        pass
+    async def preprocess(
+        self, preprocessed_data_path: Path, all: bool, datasets: List[str], **kwargs
+    ) -> None:
+        preprocesser = Preprocess(self.lib_path, self.database_path)
+        if all:
+            await preprocesser.all(preprocessed_data_path)
+        elif datasets is not None:
+            await preprocesser.selected(preprocessed_data_path, datasets)
+        else:
+            print("Must specify either --all or --datasets")
 
     def add_preprocess_parser(self, subparsers: SubparserType) -> None:
         preprocess_parser = subparsers.add_parser(self.preprocess.__name__)
+        preprocess_parser.add_argument(
+            "preprocessed_data_path",
+            type=Path,
+            help="Path where to store all the data",
+        )
         preprocess_parser.add_argument(
             "--all",
             action="store_true",
@@ -56,7 +70,10 @@ class Main:
 
 
 if __name__ == "__main__":
-    main = Main(database_path="data", lib_path="lib")
+    main = Main(
+        database_path="/home/databases",
+        lib_path="/home/workspace/lib",
+    )
     parser = ArgumentParser("VDML Benchmark")
     subparsers = parser.add_subparsers(dest="action", required=True)
     main.add_download_openaccess_parser(subparsers)
