@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../databases"
+		}
+	],
+	"settings": {
+		"editor.formatOnSave": true,
+		"python.defaultInterpreterPath": "python"
+	}
+}
