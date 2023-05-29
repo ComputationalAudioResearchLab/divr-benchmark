@@ -1,14 +1,13 @@
 import json
 from pathlib import Path
 from .base import BaseProcessor
-from .processed import ProcessedFile, ProcessedSession
+from .processed import ProcessedFile, ProcessedSession, ProcessedDataset
 
 
 class SVD(BaseProcessor):
-    async def __call__(self, source_path: Path, dest_path: Path) -> None:
+    async def __call__(self, source_path: Path) -> ProcessedDataset:
         db_key = "svd"
-        print(f"processing {db_key}")
-        data = []
+        sessions = []
 
         with open(f"{source_path}/data.json", "r") as inputfile:
             for speaker_id, val in json.loads(inputfile.read()).items():
@@ -20,13 +19,15 @@ class SVD(BaseProcessor):
                     pathologies = session["pathologies"]
                     files = session["files"]
                     diagnosis = pathologies if pathologies != "" else classification
-                    data += [
+                    sessions += [
                         ProcessedSession(
-                            db=db_key,
                             id=f"{speaker_id}.{session_id}",
                             age=age,
                             gender=gender,
-                            diagnosis=[x.strip() for x in diagnosis.split(",")],
+                            diagnosis=[
+                                self.diagnosis_map.get(x.strip().lower())
+                                for x in diagnosis.split(",")
+                            ],
                             files=[
                                 ProcessedFile(
                                     path=Path(
@@ -37,5 +38,4 @@ class SVD(BaseProcessor):
                             ],
                         )
                     ]
-        with open(f"{dest_path}/{db_key}.json", "w") as outfile:
-            json.dump(data, outfile, indent=2, default=vars)
+        return ProcessedDataset(db=db_key, sessions=sessions)

@@ -1,9 +1,11 @@
+import json
 import asyncio
 from pathlib import Path
 from typing import List, TYPE_CHECKING
 from argparse import ArgumentParser, _SubParsersAction
 from .download import Download
 from .preprocess import Preprocess
+from .diagnosis import DiagnosisMap
 
 SubparserType = _SubParsersAction[ArgumentParser] if TYPE_CHECKING else None
 
@@ -68,6 +70,32 @@ class Main:
             help="Explicitly specify which database folders to preprocess",
         )
 
+    async def setup_diagnosis_map(
+        self, input_tsv: Path, output_json: Path, **kwargs
+    ) -> None:
+        diagnosis_map = DiagnosisMap()
+        output_json.parent.mkdir(exist_ok=True, parents=True)
+        with open(output_json, "w") as output_json_file:
+            json.dump(
+                diagnosis_map.from_tsv(input_tsv),
+                output_json_file,
+                indent=2,
+                ensure_ascii=False,
+            )
+
+    def add_setup_diagnosis_map_parser(self, subparsers: SubparserType) -> None:
+        preprocess_parser = subparsers.add_parser(self.setup_diagnosis_map.__name__)
+        preprocess_parser.add_argument(
+            "input_tsv",
+            type=Path,
+            help="The tsv file to read from",
+        )
+        preprocess_parser.add_argument(
+            "output_json",
+            type=Path,
+            help="The json file to write the output to",
+        )
+
 
 if __name__ == "__main__":
     main = Main(
@@ -78,6 +106,7 @@ if __name__ == "__main__":
     subparsers = parser.add_subparsers(dest="action", required=True)
     main.add_download_openaccess_parser(subparsers)
     main.add_preprocess_parser(subparsers)
+    main.add_setup_diagnosis_map_parser(subparsers)
     args = parser.parse_args()
     func = getattr(main, args.action)
     asyncio.run(func(**vars(args)))

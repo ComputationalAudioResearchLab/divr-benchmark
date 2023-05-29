@@ -17,9 +17,8 @@ class ProcessedFile:
 
 @dataclass
 class ProcessedSession:
-    db: str
     id: str
-    age: int
+    age: int | None
     gender: str
     diagnosis: List[Diagnosis]
     files: List[ProcessedFile]
@@ -27,10 +26,22 @@ class ProcessedSession:
     @property
     def __dict__(self):
         return {
-            "db": self.db,
             "id": self.id,
             "age": self.age,
             "gender": self.gender,
             "diagnosis": self.diagnosis,
             "files": self.files,
+        }
+
+
+@dataclass
+class ProcessedDataset:
+    db: str
+    sessions: List[ProcessedSession]
+
+    @property
+    def __dict__(self):
+        return {
+            "db": self.db,
+            "sessions": self.sessions,
         }

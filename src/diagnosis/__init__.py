@@ -2,6 +2,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Optional, Dict
 import json
+import pandas as pd
 from pathlib import Path
 
 
@@ -41,5 +42,47 @@ class DiagnosisMap:
         with open(self.map_path, "r") as map_file:
             process_json_map(json.load(map_file))
 
-    def find(self, name: str) -> Diagnosis:
+    def get(self, name: str) -> Diagnosis:
         return self.diagnosis_map[name]
+
+    def from_tsv(self, input_tsv: Path) -> dict:
+        df = pd.read_csv(input_tsv, sep="\t")
+        df.columns = ["diagnosis", "classification"]
+        possible_classes = {
+            "others": {},
+            "unknown": {},
+            "normal": {},
+            "cancer": {},
+            "inflammatory": {},
+            "neuro_muscular": {},
+            "structural": {},
+            "traumatic": {},
+            "hyperfunction": {},
+        }
+        for _, row in df.iterrows():
+            diagnosis = row["diagnosis"].strip().lower()
+            classification = row["classification"]
+            try:
+                possible_classes[classification][diagnosis] = {}
+            except Exception:
+                print(diagnosis, classification)
+                raise KeyError()
+
+        return {
+            "normal": possible_classes["normal"],
+            "pathological": {
+                "organic": {
+                    "cancer": possible_classes["cancer"],
+                    "inflammatory": possible_classes["inflammatory"],
+                    "neuro_muscular": possible_classes["neuro_muscular"],
+                    "structural": possible_classes["structural"],
+                    "traumatic": possible_classes["traumatic"],
+                },
+                "others": possible_classes["others"],
+                "muscle_tension_dysphonia": {
+                    "hyperfunction": possible_classes["hyperfunction"]
+                },
+                "psychogenic": {},
+            },
+            "unknown": possible_classes["unknown"],
+        }
