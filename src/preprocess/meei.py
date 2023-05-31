@@ -5,6 +5,10 @@ from .processed import ProcessedFile, ProcessedSession, ProcessedDataset
 
 
 class MEEI(BaseProcessor):
+    def __init__(self, audio_extraction_path: Path) -> None:
+        super().__init__()
+        self.audio_extraction_path = audio_extraction_path
+
     async def __call__(self, source_path: Path) -> ProcessedDataset:
         db_key = "meei"
         sessions = []
@@ -61,7 +65,9 @@ class MEEI(BaseProcessor):
                     gender=row["SEX"],
                     diagnosis=diagnosis,
                     files=[
-                        ProcessedFile(path=path)
+                        await ProcessedFile.from_nsp(
+                            nsp_path=path, extraction_path=self.audio_extraction_path
+                        )
                         for path in Path(source_path).rglob(f"{speaker_id}*.NSP")
                     ],
                 )

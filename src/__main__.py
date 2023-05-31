@@ -11,9 +11,10 @@ SubparserType = _SubParsersAction[ArgumentParser] if TYPE_CHECKING else None
 
 
 class Main:
-    def __init__(self, database_path, lib_path) -> None:
+    def __init__(self, database_path, lib_path, audio_extraction_path) -> None:
         self.lib_path = Path(lib_path).resolve()
         self.database_path = Path(database_path).resolve()
+        self.audio_extraction_path = Path(audio_extraction_path).resolve()
 
     async def download_openaccess(
         self, all: bool, datasets: List[str], **kwargs
@@ -43,7 +44,9 @@ class Main:
     async def preprocess(
         self, preprocessed_data_path: Path, all: bool, datasets: List[str], **kwargs
     ) -> None:
-        preprocesser = Preprocess(self.lib_path, self.database_path)
+        preprocesser = Preprocess(
+            self.lib_path, self.database_path, self.audio_extraction_path
+        )
         if all:
             await preprocesser.all(preprocessed_data_path)
         elif datasets is not None:
@@ -101,6 +104,7 @@ if __name__ == "__main__":
     main = Main(
         database_path="/home/databases",
         lib_path="/home/workspace/lib",
+        audio_extraction_path="/home/workspace/data/extracted",
     )
     parser = ArgumentParser("VDML Benchmark")
     subparsers = parser.add_subparsers(dest="action", required=True)

@@ -14,15 +14,21 @@ from .meei import MEEI
 
 
 class Preprocess:
-    def __init__(self, lib_path: Path, database_path: Path) -> None:
+    def __init__(
+        self, lib_path: Path, database_path: Path, audio_extraction_path: Path
+    ) -> None:
         self.lib_path = lib_path
         self.database_path = database_path
+        meei_extraction_path = Path(f"{audio_extraction_path}/meei")
+        meei_extraction_path.mkdir(exist_ok=True, parents=True)
+        voiced_extraction_path = Path(f"{audio_extraction_path}/voiced")
+        voiced_extraction_path.mkdir(exist_ok=True, parents=True)
         self.processors: Dict[str, BaseProcessor] = {
             "AVFAD": AVFAD(),
-            "MEEI": MEEI(),
+            "MEEI": MEEI(audio_extraction_path=meei_extraction_path),
             "svd": SVD(),
             "torgo": Torgo(),
-            "voiced": Voiced(),
+            "voiced": Voiced(audio_extraction_path=voiced_extraction_path),
             "UASpeech": UASpeech(),
             "UncommonVoice": UncommonVoice(),
         }
