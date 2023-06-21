@@ -1,6 +1,6 @@
 [submodule "lib/svd-downloader"]
 	path = lib/svd-downloader
 	url = git@github.com:rijulg/svd-downloader.git
-[submodule "lib/mdvp-python"]
-	path = lib/mdvp-python
-	url = git@github.com:ComputationalAudioResearchLab/mdvp-python.git
+[submodule "lib/vdml-features"]
+	path = lib/vdml-features
+	url = git@github.com:ComputationalAudioResearchLab/vdml-features.git
