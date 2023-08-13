@@ -1,7 +1,7 @@
 import pandas as pd
 from pathlib import Path
 from .base import BaseProcessor
-from .processed import ProcessedFile, ProcessedSession, ProcessedDataset
+from .processed import ProcessedFile, ProcessedSession
 
 
 class Voiced(BaseProcessor):
@@ -9,7 +9,7 @@ class Voiced(BaseProcessor):
         super().__init__()
         self.audio_extraction_path = audio_extraction_path
 
-    async def __call__(self, source_path: Path) -> ProcessedDataset:
+    async def __call__(self, source_path: Path, output_path: Path) -> None:
         db_key = "voiced"
         sessions = []
         data_path = f"{source_path}/voice-icar-federico-ii-database-1.0.0"
@@ -29,11 +29,13 @@ class Voiced(BaseProcessor):
         for _, row in all_data.iterrows():
             speaker_id = row["ID"]
             diagnosis = row["Diagnosis"].lower().strip()
+            age = int(row["Age"])
+            gender = row["Gender"].strip()
             sessions += [
                 ProcessedSession(
                     id=speaker_id,
-                    age=row["Age"],
-                    gender=row["Gender"],
+                    age=age,
+                    gender=gender,
                     diagnosis=[self.diagnosis_map.get(diagnosis)],
                     files=[
                         await ProcessedFile.from_wfdb(
@@ -43,4 +45,4 @@ class Voiced(BaseProcessor):
                     ],
                 )
             ]
-        return ProcessedDataset(db=db_key, sessions=sessions)
+        await self.process(output_path=output_path, db=db_key, sessions=sessions)

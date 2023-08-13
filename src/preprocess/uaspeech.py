@@ -1,10 +1,10 @@
 from pathlib import Path
 from .base import BaseProcessor
-from .processed import ProcessedFile, ProcessedSession, ProcessedDataset
+from .processed import ProcessedFile, ProcessedSession
 
 
 class UASpeech(BaseProcessor):
-    async def __call__(self, source_path: Path) -> ProcessedDataset:
+    async def __call__(self, source_path: Path, output_path: Path) -> None:
         db_key = "uaspeech"
         sessions = []
         data_path = f"{source_path}/UASpeech/audio/original/"
@@ -22,8 +22,8 @@ class UASpeech(BaseProcessor):
             {"id": "CM10", "diagnosis": "normal", "gender": "M", "age": None},
             {"id": "CM12", "diagnosis": "normal", "gender": "M", "age": None},
             {"id": "CM13", "diagnosis": "normal", "gender": "M", "age": None},
-            {"id": "M01", "diagnosis": "Spastic", "gender": "M", "age": ">18"},
-            {"id": "M04", "diagnosis": "Spastic", "gender": "M", "age": ">18"},
+            {"id": "M01", "diagnosis": "Spastic", "gender": "M", "age": "18"},
+            {"id": "M04", "diagnosis": "Spastic", "gender": "M", "age": "18"},
             {"id": "M05", "diagnosis": "Spastic", "gender": "M", "age": "21"},
             {"id": "M06", "diagnosis": "Spastic", "gender": "M", "age": "18"},
             {"id": "M07", "diagnosis": "Spastic", "gender": "M", "age": "58"},
@@ -49,10 +49,12 @@ class UASpeech(BaseProcessor):
         for data in df:
             speaker_id = data["id"]
             diagnosis = data["diagnosis"].lower()
+            age = int(data["age"]) if data["age"] is not None else None
+            gender = data["gender"].strip()
             session = ProcessedSession(
                 id=speaker_id,
-                age=data["age"],
-                gender=data["gender"],
+                age=age,
+                gender=gender,
                 diagnosis=[self.diagnosis_map.get(diagnosis)],
                 files=[
                     ProcessedFile(path=path)
@@ -60,4 +62,4 @@ class UASpeech(BaseProcessor):
                 ],
             )
             sessions += [session]
-        return ProcessedDataset(db=db_key, sessions=sessions)
+        await self.process(output_path=output_path, db=db_key, sessions=sessions)

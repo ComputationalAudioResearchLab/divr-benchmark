@@ -12,8 +12,10 @@
         "ms-python.black-formatter",
         "ms-python.flake8",
         "ms-python.python",
-        "RandomFractalsInc.vscode-data-preview"
+        "RandomFractalsInc.vscode-data-preview",
+        "ms-vscode.cpptools-extension-pack"
       ]
     }
-  }
+  },
+  "onCreateCommand": "cd lib/vdml-features/lib/parselmouth/ && pip install ."
 }

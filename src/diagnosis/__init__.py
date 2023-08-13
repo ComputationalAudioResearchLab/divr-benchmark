@@ -17,6 +17,11 @@ class Diagnosis:
         else:
             return self.name
 
+    def root(self) -> str:
+        if self.parent is None:
+            return self.name
+        return self.parent.root()
+
     @staticmethod
     def from_string(diagnosis: str) -> Diagnosis:
         names = map(str.strip, diagnosis.split(">"))

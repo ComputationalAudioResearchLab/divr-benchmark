@@ -1,10 +1,10 @@
 from pathlib import Path
 from .base import BaseProcessor
-from .processed import ProcessedFile, ProcessedSession, ProcessedDataset
+from .processed import ProcessedFile, ProcessedSession
 
 
 class Torgo(BaseProcessor):
-    async def __call__(self, source_path: Path) -> ProcessedDataset:
+    async def __call__(self, source_path: Path, output_path: Path) -> None:
         db_key = "torgo"
         sessions = []
         data_path = f"{source_path}"
@@ -65,12 +65,14 @@ class Torgo(BaseProcessor):
             speaker_id = data["id"]
             diagnosis = data["diagnosis"].lower()
             speaker_path = Path(f"{data_path}/{speaker_id}")
+            age = int(data["age"]) if data["age"] is not None else None
+            gender = data["gender"].strip()
             for session in speaker_path.glob("Session*"):
                 sessions += [
                     ProcessedSession(
                         id=f"{speaker_id}.{session.name}",
-                        age=data["age"],
-                        gender=data["gender"],
+                        age=age,
+                        gender=gender,
                         diagnosis=[self.diagnosis_map.get(diagnosis)],
                         files=[
                             ProcessedFile(path=path)
@@ -78,4 +80,4 @@ class Torgo(BaseProcessor):
                         ],
                     )
                 ]
-        return ProcessedDataset(db=db_key, sessions=sessions)
+        await self.process(output_path=output_path, db=db_key, sessions=sessions)
