@@ -17,5 +17,5 @@
       ]
     }
   },
-  "onCreateCommand": "cd lib/vdml-features/lib/parselmouth/ && pip install ."
+  "onCreateCommand": "cd /home/workspace && pipenv install"
 }

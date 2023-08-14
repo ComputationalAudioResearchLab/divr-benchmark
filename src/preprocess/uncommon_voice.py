@@ -1,3 +1,4 @@
+import numpy as np
 import pandas as pd
 from pathlib import Path
 from .base import BaseProcessor
@@ -8,8 +9,8 @@ class UncommonVoice(BaseProcessor):
     async def __call__(self, source_path: Path, output_path: Path) -> None:
         db_key = "uncommon_voice"
         sessions = []
-        data_path = f"{source_path}/UncomonVoice_final"
-        df = pd.read_csv(f"{source_path}/data.csv")
+        data_path = f"{source_path}/UncommonVoice_final"
+        df = pd.read_csv(f"{source_path}/data.csv").replace({np.nan: None})
         df = df[["new_ID", "Voice Disorder", "Gender"]]
         for _, data in df.iterrows():
             speaker_id = data["new_ID"]
