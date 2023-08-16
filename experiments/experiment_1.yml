@@ -4,8 +4,28 @@ model_path: /home/workspace/models/experiment_1
 tensorboard_path: /home/workspace/tensorboard/experiment_1
 train_data:
   - /home/workspace/data/preprocessed/avfad_train.json
+  - /home/workspace/data/preprocessed/meei_train.json
+  - /home/workspace/data/preprocessed/svd_train.json
+  - /home/workspace/data/preprocessed/torgo_train.json
+  - /home/workspace/data/preprocessed/uaspeech_train.json
+  - /home/workspace/data/preprocessed/uncommon_voice_train.json
+  - /home/workspace/data/preprocessed/voiced_train.json
 val_data:
   - /home/workspace/data/preprocessed/avfad_val.json
+  - /home/workspace/data/preprocessed/meei_val.json
+  - /home/workspace/data/preprocessed/svd_val.json
+  - /home/workspace/data/preprocessed/torgo_val.json
+  - /home/workspace/data/preprocessed/uaspeech_val.json
+  - /home/workspace/data/preprocessed/uncommon_voice_val.json
+  - /home/workspace/data/preprocessed/voiced_val.json
+test_data:
+  - /home/workspace/data/preprocessed/avfad_test.json
+  - /home/workspace/data/preprocessed/meei_test.json
+  - /home/workspace/data/preprocessed/svd_test.json
+  - /home/workspace/data/preprocessed/torgo_test.json
+  - /home/workspace/data/preprocessed/uaspeech_test.json
+  - /home/workspace/data/preprocessed/uncommon_voice_test.json
+  - /home/workspace/data/preprocessed/voiced_test.json
 hyper_params:
   common:
     sampling_frequency: 16000

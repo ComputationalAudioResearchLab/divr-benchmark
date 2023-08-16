@@ -4,6 +4,10 @@ from .processed import ProcessedFile, ProcessedSession
 
 
 class Torgo(BaseProcessor):
+    ignore_files = [
+        "FC01/Session1/wav_arrayMic/0256.wav",  # 0 length audio
+    ]
+
     async def __call__(self, source_path: Path, output_path: Path) -> None:
         db_key = "torgo"
         sessions = []
@@ -77,7 +81,14 @@ class Torgo(BaseProcessor):
                         files=[
                             ProcessedFile(path=path)
                             for path in Path(f"{session}/wav_arrayMic").glob("*.wav")
+                            if self.include(path)
                         ],
                     )
                 ]
         await self.process(output_path=output_path, db=db_key, sessions=sessions)
+
+    def include(self, path: Path):
+        for exclusion in self.ignore_files:
+            if exclusion in str(path):
+                return False
+        return True
