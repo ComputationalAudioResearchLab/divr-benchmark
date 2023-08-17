@@ -1,10 +1,8 @@
-import json
 import asyncio
 from pathlib import Path
 from .svd import SVD
 from typing import Dict, List
 from .base import BaseProcessor
-from .processed import ProcessedDataset
 from .uncommon_voice import UncommonVoice
 from .uaspeech import UASpeech
 from .torgo import Torgo
@@ -55,16 +53,12 @@ class Preprocess:
         )
 
     async def process_datasets(self, datasets: List[str], output_path: Path):
-        processed_datasets: List[ProcessedDataset] = await asyncio.gather(
+        await asyncio.gather(
             *[
                 self.processors[db](
                     source_path=Path(f"{self.database_path}/{db}"),
+                    output_path=output_path,
                 )
                 for db in datasets
             ]
         )
-        for dataset in processed_datasets:
-            db_key = dataset.db
-            data = dataset.sessions
-            with open(f"{output_path}/{db_key}.json", "w") as outfile:
-                json.dump(data, outfile, indent=2, default=vars)

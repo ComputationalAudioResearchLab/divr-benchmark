@@ -6,6 +6,7 @@ from argparse import ArgumentParser, _SubParsersAction
 from .download import Download
 from .preprocess import Preprocess
 from .diagnosis import DiagnosisMap
+from .experiment import Experiment
 
 SubparserType = _SubParsersAction[ArgumentParser] if TYPE_CHECKING else None
 
@@ -99,6 +100,17 @@ class Main:
             help="The json file to write the output to",
         )
 
+    async def experiment(self, experiment_yaml: Path, **kwargs) -> None:
+        Experiment(experiment_yaml).run()
+
+    def add_experiment_parser(self, subparsers: SubparserType) -> None:
+        preprocess_parser = subparsers.add_parser(self.experiment.__name__)
+        preprocess_parser.add_argument(
+            "experiment_yaml",
+            type=Path,
+            help="The experiment file to run",
+        )
+
 
 if __name__ == "__main__":
     main = Main(
@@ -111,6 +123,7 @@ if __name__ == "__main__":
     main.add_download_openaccess_parser(subparsers)
     main.add_preprocess_parser(subparsers)
     main.add_setup_diagnosis_map_parser(subparsers)
+    main.add_experiment_parser(subparsers)
     args = parser.parse_args()
     func = getattr(main, args.action)
     asyncio.run(func(**vars(args)))

@@ -1,7 +1,7 @@
 import pandas as pd
 from pathlib import Path
 from .base import BaseProcessor
-from .processed import ProcessedFile, ProcessedSession, ProcessedDataset
+from .processed import ProcessedFile, ProcessedSession
 
 
 class MEEI(BaseProcessor):
@@ -9,7 +9,7 @@ class MEEI(BaseProcessor):
         super().__init__()
         self.audio_extraction_path = audio_extraction_path
 
-    async def __call__(self, source_path: Path) -> ProcessedDataset:
+    async def __call__(self, source_path: Path, output_path: Path) -> None:
         db_key = "meei"
         sessions = []
         excel_path = f"{source_path}/kaylab/data/disorderedvoicedb/EXCEL50/KAYCD_DB.XLS"
@@ -58,11 +58,15 @@ class MEEI(BaseProcessor):
                 x = x.lower().strip()
                 if len(x) > 0:
                     diagnosis += [self.diagnosis_map.get(x)]
+            if len(diagnosis) == 0:
+                diagnosis = [self.diagnosis_map.get("unknown")]
+            age = int(row["AGE"]) if row["AGE"] != "" else None
+            gender = row["SEX"].strip()
             sessions += [
                 ProcessedSession(
                     id=speaker_id,
-                    age=row["AGE"],
-                    gender=row["SEX"],
+                    age=age,
+                    gender=gender,
                     diagnosis=diagnosis,
                     files=[
                         await ProcessedFile.from_nsp(
@@ -72,4 +76,4 @@ class MEEI(BaseProcessor):
                     ],
                 )
             ]
-        return ProcessedDataset(db=db_key, sessions=sessions)
+        await self.process(output_path=output_path, db=db_key, sessions=sessions)

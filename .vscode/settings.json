@@ -1,5 +1,5 @@
 {
-  "python.testing.pytestArgs": ["."],
+  "python.testing.pytestArgs": [".", "--ignore=./lib/vdml-features/lib"],
   "python.testing.unittestEnabled": false,
   "python.testing.pytestEnabled": true
 }
