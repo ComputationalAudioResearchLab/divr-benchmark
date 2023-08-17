@@ -2,7 +2,9 @@ import librosa
 import numpy as np
 from pathlib import Path
 from typing import Tuple
-import vdml_features as vf
+
+# import vdml_features as vf
+import src.experiment.praat_features as vf
 from .config import HyperParams
 
 
@@ -11,6 +13,7 @@ def load_features(inputs: Tuple[Path, HyperParams]):
     sr = hyper_params.sampling_frequency
     audio = librosa.load(path=file_path, sr=sr)[0]
     end_time = librosa.get_duration(y=audio, sr=sr)
+    # print(file_path, audio.shape)
     jitter = get_jitter(audio=audio, sr=sr, end_time=end_time, params=hyper_params)
     mfcc = get_mfcc(audio=audio, sr=sr, params=hyper_params)
     shimmer = get_shimmer(audio=audio, sr=sr, end_time=end_time, params=hyper_params)

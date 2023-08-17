@@ -59,6 +59,7 @@ class UASpeech(BaseProcessor):
                 files=[
                     ProcessedFile(path=path)
                     for path in Path(f"{data_path}/{speaker_id}").glob("*.wav")
+                    if not path.name.startswith(".")
                 ],
             )
             sessions += [session]

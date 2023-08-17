@@ -5,6 +5,10 @@ from .processed import ProcessedFile, ProcessedSession
 
 
 class AVFAD(BaseProcessor):
+    ignore_files = [
+        "PLS007",  # 0 length audio
+    ]
+
     async def __call__(self, source_path: Path, output_path: Path) -> None:
         db_key = "avfad"
         sessions = []
@@ -31,7 +35,14 @@ class AVFAD(BaseProcessor):
                     files=[
                         ProcessedFile(path=path)
                         for path in Path(source_path).rglob(f"{speaker_id}*.wav")
+                        if self.include(path)
                     ],
                 )
             ]
         await self.process(output_path=output_path, db=db_key, sessions=sessions)
+
+    def include(self, path: Path):
+        for exclusion in self.ignore_files:
+            if exclusion in str(path):
+                return False
+        return True

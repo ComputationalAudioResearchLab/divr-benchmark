@@ -65,6 +65,7 @@ class ExperimentConfig:
     tensorboard_path: Path
     train_data: List[ProcessedSession]
     val_data: List[ProcessedSession]
+    test_data: List[ProcessedSession]
     hyper_params: HyperParams
 
 
@@ -85,6 +86,9 @@ class ConfigFactory:
                 list(map(self.load_processed_sessions, data["train_data"])), []
             ),
             val_data=sum(list(map(self.load_processed_sessions, data["val_data"])), []),
+            test_data=sum(
+                list(map(self.load_processed_sessions, data["test_data"])), []
+            ),
             hyper_params=self.load_hyper_params(data["hyper_params"]),
         )
 
