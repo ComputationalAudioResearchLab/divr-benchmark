@@ -17,5 +17,5 @@
       ]
     }
   },
-  "onCreateCommand": "cd /home/workspace && pipenv install"
+  "onCreateCommand": "cd /home/workspace && pipenv --site-packages install"
 }

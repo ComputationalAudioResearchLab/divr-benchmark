@@ -1,6 +1,6 @@
 from __future__ import annotations
 from dataclasses import dataclass
-from typing import Optional, Dict
+from typing import Optional, Dict, List
 import json
 import pandas as pd
 from pathlib import Path
@@ -11,16 +11,20 @@ class Diagnosis:
     name: str
     parent: Optional[Diagnosis] = None
 
-    def __str__(self) -> str:
+    def to_list(self) -> List[str]:
         if self.parent is not None:
-            return f"{self.parent} > {self.name}"
+            return self.parent.to_list() + [self.name]
         else:
-            return self.name
+            return [self.name]
+
+    def __str__(self) -> str:
+        return " > ".join(self.to_list())
 
     def root(self) -> str:
-        if self.parent is None:
-            return self.name
-        return self.parent.root()
+        return self.at_level(0)
+
+    def at_level(self, level: int) -> str:
+        return self.to_list()[level]
 
     @staticmethod
     def from_string(diagnosis: str) -> Diagnosis:
@@ -30,6 +34,16 @@ class Diagnosis:
             current = Diagnosis(name=name, parent=current)
         assert current is not None
         return current
+
+    @staticmethod
+    def from_json(json_data) -> Diagnosis:
+        parent = None
+        if json_data["parent"] is not None:
+            parent = Diagnosis.from_json(json_data["parent"])
+        return Diagnosis(
+            name=json_data["name"],
+            parent=parent,
+        )
 
 
 class DiagnosisMap:
@@ -46,6 +60,8 @@ class DiagnosisMap:
 
         with open(self.map_path, "r") as map_file:
             process_json_map(json.load(map_file))
+
+        self.diagnosis_keys = list(self.diagnosis_map.keys())
 
     def get(self, name: str) -> Diagnosis:
         return self.diagnosis_map[name]
@@ -91,3 +107,14 @@ class DiagnosisMap:
             },
             "unknown": possible_classes["unknown"],
         }
+
+    def to_int(self, name: str) -> int:
+        return self.diagnosis_keys.index(name)
+
+    def from_int(self, index: int) -> Diagnosis:
+        return self.get(self.diagnosis_keys[index])
+
+    def most_severe(self, diagnosis: List[Diagnosis], level: int) -> int:
+        diagnosis_at_level = [diag.at_level(level) for diag in diagnosis]
+        severest_diagnosis = diagnosis_at_level[0]
+        return self.to_int(severest_diagnosis)

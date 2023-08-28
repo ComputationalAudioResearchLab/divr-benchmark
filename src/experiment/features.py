@@ -1,65 +1,162 @@
 import librosa
 import numpy as np
 from pathlib import Path
-from typing import Tuple
+from typing import Any, Dict, Tuple
+from .collate import CollateFunc
 
 # import vdml_features as vf
 import src.experiment.praat_features as vf
-from .config import HyperParams
 
 
-def load_features(inputs: Tuple[Path, HyperParams]):
-    file_path, hyper_params = inputs
-    sr = hyper_params.sampling_frequency
-    audio = librosa.load(path=file_path, sr=sr)[0]
-    end_time = librosa.get_duration(y=audio, sr=sr)
-    # print(file_path, audio.shape)
-    jitter = get_jitter(audio=audio, sr=sr, end_time=end_time, params=hyper_params)
-    mfcc = get_mfcc(audio=audio, sr=sr, params=hyper_params)
-    shimmer = get_shimmer(audio=audio, sr=sr, end_time=end_time, params=hyper_params)
-    return (jitter, shimmer, mfcc)
+class Base:
+    pass
+
+    def __call__(self, *args: Any, **kwds: Any) -> np.ndarray:
+        raise NotImplementedError()
 
 
-def get_jitter(audio: np.ndarray, sr: int, end_time: float, params: HyperParams):
-    if params.jitter is not None:
-        return vf.jitter(
+class FeaturePraatJitter(Base):
+    def __init__(
+        self,
+        pitch_floor: float,
+        pitch_ceiling: float,
+        start_time: float,
+        shortest_period: float,
+        longest_period: float,
+        max_period_factor: float,
+        **kwargs,
+    ) -> None:
+        self.pitch_floor = pitch_floor
+        self.pitch_ceiling = pitch_ceiling
+        self.start_time = start_time
+        self.shortest_period = shortest_period
+        self.longest_period = longest_period
+        self.max_period_factor = max_period_factor
+
+    def __call__(
+        self, audio: np.ndarray, end_time: float, sampling_frequency: int
+    ) -> np.ndarray:
+        jitter = vf.jitter(
             audio=audio,
-            sampling_frequency=sr,
-            pitch_floor=params.jitter.pitch_floor,
-            pitch_ceiling=params.jitter.pitch_ceiling,
-            start_time=params.jitter.start_time,
+            sampling_frequency=sampling_frequency,
+            pitch_floor=self.pitch_floor,
+            pitch_ceiling=self.pitch_ceiling,
+            start_time=self.start_time,
             end_time=end_time,
-            shortest_period=params.jitter.shortest_period,
-            longest_period=params.jitter.longest_period,
-            max_period_factor=params.jitter.max_period_factor,
+            shortest_period=self.shortest_period,
+            longest_period=self.longest_period,
+            max_period_factor=self.max_period_factor,
+        )
+        return np.array(
+            [
+                jitter.local,
+                jitter.local_absolute,
+                jitter.rap,
+                jitter.ppq5,
+                jitter.ddp,
+            ]
         )
 
 
-def get_mfcc(audio: np.ndarray, sr: int, params: HyperParams):
-    if params.mfcc is not None:
+class FeaturePraatShimmer(Base):
+    def __init__(
+        self,
+        pitch_floor: float,
+        pitch_ceiling: float,
+        start_time: float,
+        shortest_period: float,
+        longest_period: float,
+        max_period_factor: float,
+        max_amplitude_factor: float,
+        **kwargs,
+    ) -> None:
+        self.pitch_floor = pitch_floor
+        self.pitch_ceiling = pitch_ceiling
+        self.start_time = start_time
+        self.shortest_period = shortest_period
+        self.longest_period = longest_period
+        self.max_period_factor = max_period_factor
+        self.max_amplitude_factor = max_amplitude_factor
+
+    def __call__(
+        self, audio: np.ndarray, end_time: float, sampling_frequency: int
+    ) -> np.ndarray:
+        shimmer = vf.shimmer(
+            audio=audio,
+            sampling_frequency=sampling_frequency,
+            pitch_floor=self.pitch_floor,
+            pitch_ceiling=self.pitch_ceiling,
+            start_time=self.start_time,
+            end_time=end_time,
+            shortest_period=self.shortest_period,
+            longest_period=self.longest_period,
+            max_period_factor=self.max_period_factor,
+            max_amplitude_factor=self.max_amplitude_factor,
+        )
+        return np.array(
+            [
+                shimmer.local,
+                shimmer.local_db,
+                shimmer.apq3,
+                shimmer.apq5,
+                shimmer.apq11,
+                shimmer.dda,
+            ]
+        )
+
+
+class FeaturePraatMeanMfcc(Base):
+    def __init__(
+        self,
+        number_of_coefficients: int,
+        window_length: float,
+        time_step: float,
+        first_filter_frequency: float,
+        max_filter_frequency: float,
+        distance_between_filters: float,
+        **kwargs,
+    ) -> None:
+        self.number_of_coefficients = number_of_coefficients
+        self.window_length = window_length
+        self.time_step = time_step
+        self.first_filter_frequency = first_filter_frequency
+        self.max_filter_frequency = max_filter_frequency
+        self.distance_between_filters = distance_between_filters
+
+    def __call__(
+        self, audio: np.ndarray, end_time: float, sampling_frequency: int
+    ) -> np.ndarray:
         return vf.mfcc(
             audio=audio,
-            sampling_frequency=sr,
-            number_of_coefficients=params.mfcc.number_of_coefficients,
-            window_length=params.mfcc.window_length,
-            time_step=params.mfcc.time_step,
-            first_filter_frequency=params.mfcc.first_filter_frequency,
-            max_filter_frequency=params.mfcc.max_filter_frequency,
-            distance_between_filters=params.mfcc.distance_between_filters,
-        )
+            sampling_frequency=sampling_frequency,
+            number_of_coefficients=self.number_of_coefficients,
+            window_length=self.window_length,
+            time_step=self.time_step,
+            first_filter_frequency=self.first_filter_frequency,
+            max_filter_frequency=self.max_filter_frequency,
+            distance_between_filters=self.distance_between_filters,
+        ).mean(axis=1)
 
 
-def get_shimmer(audio: np.ndarray, sr: int, end_time: float, params: HyperParams):
-    if params.shimmer is not None:
-        return vf.shimmer(
-            audio=audio,
-            sampling_frequency=sr,
-            pitch_floor=params.shimmer.pitch_floor,
-            pitch_ceiling=params.shimmer.pitch_ceiling,
-            start_time=params.shimmer.start_time,
-            end_time=end_time,
-            shortest_period=params.shimmer.shortest_period,
-            longest_period=params.shimmer.longest_period,
-            max_period_factor=params.shimmer.max_period_factor,
-            max_amplitude_factor=params.shimmer.max_amplitude_factor,
-        )
+features = {
+    "mean_mfcc": FeaturePraatMeanMfcc,
+    "jitter": FeaturePraatJitter,
+    "shimmer": FeaturePraatShimmer,
+}
+
+
+def load_features(inputs: Tuple[Path, Dict[str, Any], CollateFunc]) -> np.ndarray:
+    file_path, input_features, collate_fn = inputs
+    sr: int = input_features["sampling_frequency"]
+    audio = librosa.load(path=file_path, sr=sr)[0]
+    end_time = librosa.get_duration(y=audio, sr=sr)
+    output_features: Dict[str, np.ndarray] = {}
+    for key in features.keys():
+        if key in input_features:
+            output_features[key] = input_features[key](
+                audio=audio, sampling_frequency=sr, end_time=end_time
+            )
+    return collate_fn(output_features)
+
+
+FeatureMap = Dict[str, Base]
