@@ -35,6 +35,10 @@ class ProcessedFile:
         soundfile.write(extracted_path, audio, sample_rate)
         return ProcessedFile(path=extracted_path)
 
+    @staticmethod
+    def from_json(json_data):
+        return ProcessedFile(**json_data)
+
 
 @dataclass
 class ProcessedSession:
@@ -53,6 +57,16 @@ class ProcessedSession:
             "diagnosis": self.diagnosis,
             "files": self.files,
         }
+
+    @staticmethod
+    def from_json(json_data):
+        return ProcessedSession(
+            id=json_data["id"],
+            age=json_data["age"],
+            gender=json_data["gender"],
+            diagnosis=list(map(Diagnosis.from_json, json_data["diagnosis"])),
+            files=list(map(ProcessedFile.from_json, json_data["files"])),
+        )
 
 
 @dataclass
