@@ -13,6 +13,7 @@ class MultivalueYaml:
     variable_template = r"{{(.*)}}"
     range_template = r"range\((.*),(.*),(.*)\)"
     list_template = r"\[(.*)\]"
+    boolean_template = r"^((true)|(false)|,)*$"
 
     def parse(self, yaml_file: Path) -> List[Dict]:
         with open(yaml_file, "r") as yamlfile:
@@ -56,6 +57,14 @@ class MultivalueYaml:
                     return list(map(int, list_input.split(",")))
             else:
                 return list(map(str.strip, list_input.split(",")))
+        bool_matches = re.search(self.boolean_template, match)
+        if bool_matches is not None:
+            bools = []
+            if bool_matches[2] == "true":
+                bools += [True]
+            if bool_matches[3] == "false":
+                bools += [False]
+            return bools
 
     def generate_configs(self, data, multiples) -> List[Dict]:
         if len(multiples) == 0:

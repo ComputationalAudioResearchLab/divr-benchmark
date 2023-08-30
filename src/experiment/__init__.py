@@ -1,4 +1,7 @@
 import json
+import torch
+import random
+import numpy as np
 from typing import Dict
 from src.trainers import Base as Trainer
 from src.models import Base as Model
@@ -13,7 +16,7 @@ class Experiment:
         logger = Logger(log_path=config["log_path"], key=key)
         logger.info(f"key: {key}")
         logger.info(f"config: {json.dumps(config)}\n\n")
-        self.random_seed = config["random_seed"]
+        self.seed(config["random_seed"])
         model = self.load_model(config["model"], logger=logger, key=key)
         self.trainer = self.load_trainer(
             config=config["trainer"],
@@ -22,6 +25,12 @@ class Experiment:
             logger=logger,
             key=key,
         )
+
+    def seed(self, random_seed):
+        torch.manual_seed(random_seed)
+        torch.cuda.manual_seed_all(random_seed)
+        np.random.seed(random_seed)
+        random.seed(random_seed)
 
     def load_model(self, config, key: str, logger: Logger) -> Model:
         cls = config["type"]
