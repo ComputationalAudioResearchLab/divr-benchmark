@@ -1,24 +1,21 @@
+from abc import abstractmethod
 import numpy as np
-from typing import Dict, Callable
+from typing import Dict, List, Protocol
+
+InputFeatures = Dict[str, np.ndarray]
 
 
-def one(input: Dict[str, np.ndarray]) -> np.ndarray:
-    return input["mean_mfcc"]
+class CollateFunc(Protocol):
+    @abstractmethod
+    def __call__(self, input: InputFeatures, **kwargs) -> np.ndarray:
+        raise NotImplementedError()
 
 
-def two(input: Dict[str, np.ndarray]) -> np.ndarray:
-    return np.concatenate(
-        [
-            input["jitter"],
-            input["shimmer"],
-            input["mean_mfcc"],
-        ]
-    )
+class CollateFuncFactory:
+    @classmethod
+    def get_collate_func(cls, fn_name: str, **kwargs):
+        return getattr(cls, fn_name)
 
-
-CollateFunc = Callable[[Dict[str, np.ndarray]], np.ndarray]
-
-collate_funcs = {
-    "one": one,
-    "two": two,
-}
+    @classmethod
+    def cat(cls, input: InputFeatures, cat_order: List[str], **kwargs) -> np.ndarray:
+        return np.concatenate([input[key] for key in cat_order])

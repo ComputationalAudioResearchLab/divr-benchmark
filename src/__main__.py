@@ -3,10 +3,12 @@ import asyncio
 from pathlib import Path
 from typing import List, TYPE_CHECKING
 from argparse import ArgumentParser, _SubParsersAction
+from tqdm import tqdm
 from .download import Download
 from .preprocess import Preprocess
 from .diagnosis import DiagnosisMap
 from .experiment import Experiment
+from .experiment.MultivalueYaml import MultivalueYaml
 
 SubparserType = _SubParsersAction[ArgumentParser] if TYPE_CHECKING else None
 
@@ -101,7 +103,10 @@ class Main:
         )
 
     async def experiment(self, experiment_yaml: Path, **kwargs) -> None:
-        Experiment(experiment_yaml).run()
+        yaml_matrix = MultivalueYaml()
+        configs = yaml_matrix.parse(experiment_yaml)
+        for config in tqdm(configs, desc="running_experiment"):
+            Experiment(config).run()
 
     def add_experiment_parser(self, subparsers: SubparserType) -> None:
         preprocess_parser = subparsers.add_parser(self.experiment.__name__)

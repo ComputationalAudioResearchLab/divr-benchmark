@@ -1,35 +1,41 @@
-from pathlib import Path
-from yaml import load, FullLoader
+import json
+from typing import Dict
 from src.trainers import Base as Trainer
 from src.models import Base as Model
 from src.experiment.features import features, FeatureMap
 from src.experiment.data import Data
+from src.logger import Logger
 
 
 class Experiment:
-    def __init__(self, experiment_yaml: Path) -> None:
-        with open(experiment_yaml, "r") as yamlfile:
-            data = load(yamlfile, Loader=FullLoader)
-            self.key = data["key"]
-            self.random_seed = data["random_seed"]
-            model = self.load_model(data["model"])
-            self.trainer = self.load_trainer(
-                config=data["trainer"],
-                model=model,
-                data=Data(**data["data"]),
-            )
+    def __init__(self, config: Dict) -> None:
+        key = config["key"]
+        logger = Logger(log_path=config["log_path"], key=key)
+        logger.info(f"key: {key}")
+        logger.info(f"config: {json.dumps(config)}\n\n")
+        self.random_seed = config["random_seed"]
+        model = self.load_model(config["model"], logger=logger, key=key)
+        self.trainer = self.load_trainer(
+            config=config["trainer"],
+            model=model,
+            data=Data(**config["data"]),
+            logger=logger,
+            key=key,
+        )
 
-    def load_model(self, config) -> Model:
+    def load_model(self, config, key: str, logger: Logger) -> Model:
         cls = config["type"]
         module = __import__("src.models", fromlist=[cls])
         cls = getattr(module, cls)
-        return cls(**config)
+        return cls(**config, key=key, logger=logger)
 
-    def load_trainer(self, config, model: Model, data: Data) -> Trainer:
+    def load_trainer(
+        self, config, key: str, model: Model, data: Data, logger: Logger
+    ) -> Trainer:
         cls = config["type"]
         module = __import__("src.trainers", fromlist=[cls])
         cls = getattr(module, cls)
-        return cls(**config, model=model, data=data)
+        return cls(**config, key=key, model=model, data=data, logger=logger)
 
     def load_features(self, feature_params) -> FeatureMap:
         data = {}

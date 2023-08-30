@@ -3,10 +3,10 @@ from tqdm import tqdm
 from pathlib import Path
 import numpy as np
 from multiprocessing import Pool
-from typing import List, Tuple
+from typing import List, Tuple, Dict
 from .features import features, load_features, FeatureMap
 from src.preprocess.processed import ProcessedSession
-from .collate import collate_funcs
+from .collate import CollateFuncFactory
 from src.diagnosis import DiagnosisMap
 
 
@@ -20,7 +20,7 @@ class Data:
         cross_validate: bool,
         preprocessed_train_paths: List[Path],
         preprocessed_val_paths: List[Path],
-        collate_fn: str,
+        collate_fn: Dict,
         feature_params,
         **kwargs,
     ) -> None:
@@ -30,7 +30,8 @@ class Data:
         self.train_sessions = self.__load_processed_sessions(preprocessed_train_paths)
         self.val_sessions = self.__load_processed_sessions(preprocessed_val_paths)
         self.features = self.__load_features(feature_params)
-        self.collate_fn = collate_funcs[collate_fn]
+        self.collate_fn_args = collate_fn
+        self.collate_fn = CollateFuncFactory.get_collate_func(**collate_fn)
         self.batch_size = batch_size
         self.shuffle_train = shuffle_train
         self.diagnosis_map = DiagnosisMap()
@@ -88,7 +89,8 @@ class Data:
             files, labels = self.__balance_data(files, labels)
         with Pool(10) as pool:
             input_data = [
-                (file_path, self.features, self.collate_fn) for file_path in files
+                (file_path, self.features, self.collate_fn, self.collate_fn_args)
+                for file_path in files
             ]
             X = list(
                 tqdm(

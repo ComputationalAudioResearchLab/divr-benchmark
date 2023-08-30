@@ -1,3 +1,6 @@
 __pycache__
 data/extracted
 data/preprocessed
+models
+tensorboard
+logs

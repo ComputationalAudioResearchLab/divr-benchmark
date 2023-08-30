@@ -13,10 +13,13 @@ class SVM(Base):
 
     def run(self):
         self.data.load()
-        (accuracy, precision, recall, f1) = self.train()
-        print(accuracy, precision, recall, f1)
-        (accuracy, precision, recall, f1) = self.eval()
-        print(accuracy, precision, recall, f1)
+        with open(self.results_path, "w") as results_file:
+            results_file.write(f"Running for key={self.key}")
+            results_file.write("accuracy, precision, recall, f1\n")
+            (accuracy, precision, recall, f1) = self.train()
+            results_file.write(f"{accuracy}, {precision}, {recall}, {f1}\n")
+            (accuracy, precision, recall, f1) = self.eval()
+            results_file.write(f"{accuracy}, {precision}, {recall}, {f1}\n")
 
     def train(self):
         self.model.fit(self.data.train_X, self.data.train_Y)

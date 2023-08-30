@@ -145,8 +145,8 @@ features = {
 }
 
 
-def load_features(inputs: Tuple[Path, Dict[str, Any], CollateFunc]) -> np.ndarray:
-    file_path, input_features, collate_fn = inputs
+def load_features(inputs: Tuple[Path, Dict[str, Any], CollateFunc, Dict]) -> np.ndarray:
+    file_path, input_features, collate_fn, collate_fn_args = inputs
     sr: int = input_features["sampling_frequency"]
     audio = librosa.load(path=file_path, sr=sr)[0]
     end_time = librosa.get_duration(y=audio, sr=sr)
@@ -156,7 +156,7 @@ def load_features(inputs: Tuple[Path, Dict[str, Any], CollateFunc]) -> np.ndarra
             output_features[key] = input_features[key](
                 audio=audio, sampling_frequency=sr, end_time=end_time
             )
-    return collate_fn(output_features)
+    return collate_fn(input=output_features, **collate_fn_args)
 
 
 FeatureMap = Dict[str, Base]

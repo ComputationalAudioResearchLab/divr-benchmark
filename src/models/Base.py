@@ -1,12 +1,18 @@
 import torch
 from torch import nn
 from pathlib import Path
+from src.logger import Logger
 
 
 class Base:
-    def __init__(self, checkpoint_path: Path, **kwargs) -> None:
+    def __init__(
+        self, checkpoint_path: str, key: str, logger: Logger, **kwargs
+    ) -> None:
         super().__init__()
-        self.__checkpoint_path = checkpoint_path
+        self.__checkpoint_path = Path(f"{checkpoint_path}/{key}/")
+        self.__checkpoint_path.mkdir(parents=True, exist_ok=True)
+        self.logger = logger
+        self.key = key
 
     def save(self, epoch: int) -> None:
         raise NotImplementedError()
