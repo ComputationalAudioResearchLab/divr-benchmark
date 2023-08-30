@@ -10,19 +10,19 @@ from .features import load_features
 class Data:
     def __init__(self, config: ExperimentConfig) -> None:
         self.config = config
-        train_data = self.load_data(
-            key="train",
-            files=self.collect_files(config.train_data),
-        )
+        # train_data = self.load_data(
+        #     key="train",
+        #     files=self.collect_files(config.train_data),
+        # )
         val_data = self.load_data(
             key="val",
             files=self.collect_files(config.val_data),
         )
-        test_data = self.load_data(
-            key="test",
-            files=self.collect_files(config.test_data),
-        )
-        # print(val_data)
+        # test_data = self.load_data(
+        #     key="test",
+        #     files=self.collect_files(config.test_data),
+        # )
+        print(val_data)
 
     def collect_files(self, data: List[ProcessedSession]) -> List[Path]:
         files = []

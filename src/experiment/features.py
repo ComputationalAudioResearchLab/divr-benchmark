@@ -5,7 +5,9 @@ from typing import Tuple
 
 # import vdml_features as vf
 import src.experiment.praat_features as vf
-from .config import HyperParams
+
+# from .config import HyperParams
+from src.experiment.config import HyperParams
 
 
 def load_features(inputs: Tuple[Path, HyperParams]):
