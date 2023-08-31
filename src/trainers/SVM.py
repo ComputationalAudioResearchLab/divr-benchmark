@@ -20,6 +20,7 @@ class SVM(Base):
             results_file.write(f"{accuracy}, {precision}, {recall}, {f1}\n")
             (accuracy, precision, recall, f1) = self.eval()
             results_file.write(f"{accuracy}, {precision}, {recall}, {f1}\n")
+            self.model.save(0)
 
     def train(self):
         self.model.fit(self.data.train_X, self.data.train_Y)

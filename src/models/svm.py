@@ -1,3 +1,4 @@
+import pickle
 from .Base import Base
 from sklearn import svm, linear_model
 from typing import Literal
@@ -22,6 +23,14 @@ class SVM(Base):
     def predict(self, X_val):
         return self.model.predict(X_val)
 
+    def save(self, epoch: int) -> None:
+        with open(self.weight_file_name(epoch), "wb") as checkpoint_file:
+            pickle.dump(self.model, checkpoint_file)
+
+    def load(self, epoch: int = 0) -> None:
+        with open(self.weight_file_name(epoch), "rb") as checkpoint_file:
+            self.model = pickle.load(checkpoint_file)
+
 
 class SGDSVM(Base):
     def __init__(
@@ -39,3 +48,11 @@ class SGDSVM(Base):
 
     def predict(self, X_val):
         return self.model.predict(X_val)
+
+    def save(self, epoch: int) -> None:
+        with open(self.weight_file_name(epoch), "wb") as checkpoint_file:
+            pickle.dump(self.model, checkpoint_file)
+
+    def load(self, epoch: int = 0) -> None:
+        with open(self.weight_file_name(epoch), "rb") as checkpoint_file:
+            self.model = pickle.load(checkpoint_file)
