@@ -80,8 +80,8 @@ class ProcessedDataset:
     def generate_dataset(
         db: str,
         sessions: List[ProcessedSession],
-        split: Tuple[float, float] = (0.7, 0.1),
-        seed: int = 42,
+        split: Tuple[float, float],
+        seed: int,
     ):
         total_data = len(sessions)
         train_start = 0

@@ -18,9 +18,10 @@ class Base:
     ) -> None:
         self.epochs = epochs
         self.tensorboard_path = Path(f"{tensorboard_path}/{key}")
-        self.results_path = Path(f"{results_path}/{key}.log")
+        self.results_path = results_path
+        self.results_file = Path(f"{results_path}/{key}.log")
         self.tensorboard_path.mkdir(parents=True, exist_ok=True)
-        self.results_path.parent.mkdir(parents=True, exist_ok=True)
+        self.results_file.parent.mkdir(parents=True, exist_ok=True)
         self.model = model
         self.data = data
         self.logger = logger

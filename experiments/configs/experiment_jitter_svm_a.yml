@@ -1,0 +1,37 @@
+key: experiment_mfcc_svm
+random_seed: 42
+log_path: /home/workspace/experiments/output_svd_svm_jitter/output_a/logs
+data:
+  diagnosis_level: "{{[0,-1]}}"
+  balance_dataset: "{{true,false}}"
+  batch_size: 1
+  shuffle_train: true
+  cross_validate: false
+  collate_fn:
+    fn_name: cat
+    cat_order:
+      - jitter
+  preprocessed_train_paths:
+    - /home/workspace/data/preprocessed/svd_a_n_train.json
+  preprocessed_val_paths:
+    - /home/workspace/data/preprocessed/svd_a_n_val.json
+  feature_params:
+    common:
+      sampling_frequency: 16000
+    jitter:
+      pitch_floor: 75.0
+      pitch_ceiling: 500.0
+      start_time: 0.0
+      shortest_period: 0.0001
+      longest_period: 0.02
+      max_period_factor: 1.3
+model:
+  type: SVM
+  degree: 20
+  kernel: "{{[linear, poly, rbf, sigmoid]}}"
+  checkpoint_path: /home/workspace/experiments/output_svd_svm_jitter/output_a/checkpoints
+trainer:
+  type: SVM
+  epochs: 1
+  tensorboard_path: /home/workspace/experiments/output_svd_svm_jitter/output_a/tensorboard
+  results_path: /home/workspace/experiments/output_svd_svm_jitter/output_a/results

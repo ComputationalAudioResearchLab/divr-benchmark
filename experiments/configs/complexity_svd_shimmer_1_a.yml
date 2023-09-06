@@ -1,0 +1,30 @@
+key: complexity_svd_shimmer
+random_seed: 42
+log_path: /home/workspace/experiments/output_complexity/complexity_svd_shimmer/1_a
+output_path: /home/workspace/experiments/output_complexity/complexity_svd_shimmer/1_a
+data:
+  diagnosis_level: 0
+  balance_dataset: false
+  data_files:
+    - /home/workspace/data/preprocessed/svd_a_n_train.json
+    - /home/workspace/data/preprocessed/svd_a_n_val.json
+  allowed_labels:
+    - cyste
+    - healthy
+    - stimmlippenpolyp
+    - bulbärparalyse
+  collate_fn:
+    fn_name: cat
+    cat_order:
+      - shimmer_praat
+  feature_params:
+    common:
+      sampling_frequency: 16000
+    shimmer_praat:
+      pitch_floor: 75.0
+      pitch_ceiling: 500.0
+      start_time: 0.0
+      shortest_period: 0.0001
+      longest_period: 0.02
+      max_period_factor: 1.3
+      max_amplitude_factor: 1.6

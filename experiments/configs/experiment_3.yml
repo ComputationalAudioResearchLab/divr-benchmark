@@ -1,0 +1,60 @@
+key: experiment_1
+random_seed: 42
+data:
+  balance_dataset: true
+  batch_size: 1
+  shuffle_train: true
+  cross_validate: false
+  collate_fn: two
+  preprocessed_train_paths:
+    # - /home/workspace/data/preprocessed/avfad_train.json
+    # - /home/workspace/data/preprocessed/meei_train.json
+    # - /home/workspace/data/preprocessed/svd_train.json
+    - /home/workspace/data/preprocessed/torgo_train.json
+    # - /home/workspace/data/preprocessed/uaspeech_train.json
+    # - /home/workspace/data/preprocessed/uncommon_voice_train.json
+    # - /home/workspace/data/preprocessed/voiced_train.json
+  preprocessed_val_paths:
+    # - /home/workspace/data/preprocessed/avfad_val.json
+    # - /home/workspace/data/preprocessed/meei_val.json
+    # - /home/workspace/data/preprocessed/svd_val.json
+    - /home/workspace/data/preprocessed/torgo_val.json
+    # - /home/workspace/data/preprocessed/uaspeech_val.json
+    # - /home/workspace/data/preprocessed/uncommon_voice_val.json
+    # - /home/workspace/data/preprocessed/voiced_val.json
+  preprocessed_test_paths:
+    # - /home/workspace/data/preprocessed/avfad_test.json
+    # - /home/workspace/data/preprocessed/meei_test.json
+    # - /home/workspace/data/preprocessed/svd_test.json
+    # - /home/workspace/data/preprocessed/torgo_test.json
+    # - /home/workspace/data/preprocessed/uaspeech_test.json
+    # - /home/workspace/data/preprocessed/uncommon_voice_test.json
+    # - /home/workspace/data/preprocessed/voiced_test.json
+  feature_params:
+    common:
+      sampling_frequency: 16000
+      pitch_floor: 75.0
+      pitch_ceiling: 500.0
+      start_time: 0.0
+      shortest_period: 0.0001
+      longest_period: 0.02
+      max_period_factor: 1.3
+    mean_mfcc:
+      number_of_coefficients: 12
+      window_length: 0.015
+      time_step: 0.005
+      first_filter_frequency: 100.0
+      max_filter_frequency: 8000
+      distance_between_filters: 100.0
+    jitter:
+    shimmer:
+      max_amplitude_factor: 1.6
+model:
+  type: SVM
+  degree: 5
+  kernel: poly
+  checkpoint_path: /home/workspace/models/experiment_1
+trainer:
+  type: SVM
+  epochs: 1
+  tensorboard_path: /home/workspace/tensorboard/experiment_1

@@ -1,4 +1,5 @@
 __pycache__
 data/extracted
 data/preprocessed
-experiments/output
+experiments/output*
+output*

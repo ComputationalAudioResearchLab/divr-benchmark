@@ -1,0 +1,38 @@
+key: experiment_mfcc_svm
+random_seed: 42
+log_path: /home/workspace/experiments/output_svd_svm_mean_mfcc_librosa/output_a/logs
+data:
+  diagnosis_level: "{{[0,-1]}}"
+  balance_dataset: "{{true,false}}"
+  batch_size: 1
+  shuffle_train: true
+  cross_validate: false
+  collate_fn:
+    fn_name: cat
+    cat_order:
+      - mean_mfcc_librosa
+  preprocessed_train_paths:
+    - /home/workspace/data/preprocessed/svd_a_n_train.json
+  preprocessed_val_paths:
+    - /home/workspace/data/preprocessed/svd_a_n_val.json
+  feature_params:
+    common:
+      sampling_frequency: 16000
+    mean_mfcc_librosa:
+      number_of_coefficients: 13
+      n_fft: 1024
+      win_length: 1024
+      hop_length: 256
+      window: hann
+      fmin: 100.0
+      fmax: 8000
+model:
+  type: SVM
+  degree: 20
+  kernel: "{{[linear, poly, rbf, sigmoid]}}"
+  checkpoint_path: /home/workspace/experiments/output_svd_svm_mean_mfcc_librosa/output_a/checkpoints
+trainer:
+  type: SVM
+  epochs: 1
+  tensorboard_path: /home/workspace/experiments/output_svd_svm_mean_mfcc_librosa/output_a/tensorboard
+  results_path: /home/workspace/experiments/output_svd_svm_mean_mfcc_librosa/output_a/results

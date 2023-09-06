@@ -1,0 +1,43 @@
+key: experiment_mfcc_svm
+random_seed: 42
+log_path: /home/workspace/experiments/output_svd_mfcc_svm_reduced_diagnosis/output_1_i/logs
+data:
+  diagnosis_level: "{{[0,-1]}}"
+  balance_dataset: "{{true,false}}"
+  batch_size: 1
+  shuffle_train: true
+  cross_validate: false
+  collate_fn:
+    fn_name: cat
+    cat_order:
+      - mean_mfcc_praat
+  allowed_labels:
+    - cyste
+    - healthy
+    - stimmlippenpolyp
+    - bulbärparalyse
+  preprocessed_train_paths:
+    - /home/workspace/data/preprocessed/svd_i_n_train.json
+  preprocessed_val_paths:
+    - /home/workspace/data/preprocessed/svd_i_n_val.json
+  feature_params:
+    common:
+      sampling_frequency: 16000
+    mean_mfcc_praat:
+      number_of_coefficients: 13
+      window_length: 0.015
+      time_step: 0.005
+      first_filter_frequency: 100.0
+      max_filter_frequency: 8000
+      distance_between_filters: 100.0
+model:
+  type: SVM
+  C: 1.0
+  degree: 20
+  kernel: "{{[linear, poly, rbf, sigmoid]}}"
+  checkpoint_path: /home/workspace/experiments/output_svd_mfcc_svm_reduced_diagnosis/output_1_i/checkpoints
+trainer:
+  type: SVM
+  epochs: 1
+  tensorboard_path: /home/workspace/experiments/output_svd_mfcc_svm_reduced_diagnosis/output_1_i/tensorboard
+  results_path: /home/workspace/experiments/output_svd_mfcc_svm_reduced_diagnosis/output_1_i/results

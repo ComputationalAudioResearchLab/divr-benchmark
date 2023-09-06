@@ -1,6 +1,6 @@
 key: experiment_mfcc_svm
 random_seed: 42
-log_path: /home/workspace/experiments/output/logs
+log_path: /home/workspace/experiments/output_svd_svm_mean_mfcc_praat/output_a/logs
 data:
   diagnosis_level: "{{[0,-1]}}"
   balance_dataset: "{{true,false}}"
@@ -10,16 +10,16 @@ data:
   collate_fn:
     fn_name: cat
     cat_order:
-      - mean_mfcc
+      - mean_mfcc_praat
   preprocessed_train_paths:
-    - /home/workspace/data/preprocessed/svd_train.json
+    - /home/workspace/data/preprocessed/svd_a_n_train.json
   preprocessed_val_paths:
-    - /home/workspace/data/preprocessed/svd_val.json
+    - /home/workspace/data/preprocessed/svd_a_n_val.json
   feature_params:
     common:
       sampling_frequency: 16000
-    mean_mfcc:
-      number_of_coefficients: "{{range(12,20,1)}}"
+    mean_mfcc_praat:
+      number_of_coefficients: 13
       window_length: 0.015
       time_step: 0.005
       first_filter_frequency: 100.0
@@ -27,11 +27,11 @@ data:
       distance_between_filters: 100.0
 model:
   type: SVM
-  degree: "{{range(5,20,1)}}"
+  degree: 20
   kernel: "{{[linear, poly, rbf, sigmoid]}}"
-  checkpoint_path: /home/workspace/experiments/output/checkpoints
+  checkpoint_path: /home/workspace/experiments/output_svd_svm_mean_mfcc_praat/output_a/checkpoints
 trainer:
   type: SVM
   epochs: 1
-  tensorboard_path: /home/workspace/experiments/output/tensorboard
-  results_path: /home/workspace/experiments/output/results
+  tensorboard_path: /home/workspace/experiments/output_svd_svm_mean_mfcc_praat/output_a/tensorboard
+  results_path: /home/workspace/experiments/output_svd_svm_mean_mfcc_praat/output_a/results

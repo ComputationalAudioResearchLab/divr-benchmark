@@ -21,7 +21,9 @@ class BaseProcessor:
         split: Tuple[float, float] = (0.7, 0.1),
         seed: int = 42,
     ) -> ProcessedDataset:
-        dataset = ProcessedDataset.generate_dataset(db=db, sessions=sessions)
+        dataset = ProcessedDataset.generate_dataset(
+            db=db, sessions=sessions, split=split, seed=seed
+        )
         db_key = dataset.db
         await self.generate_diagnosis_set(
             sessions=sessions, file_path=f"{output_path}/{db_key}_diagnosis.json"

@@ -1,0 +1,29 @@
+key: complexity_svd_mean_mfcc
+random_seed: 42
+log_path: /home/workspace/experiments/output_complexity/complexity_svd_mean_mfcc/1
+output_path: /home/workspace/experiments/output_complexity/complexity_svd_mean_mfcc/1
+data:
+  diagnosis_level: 0
+  balance_dataset: false
+  data_files:
+    - /home/workspace/data/preprocessed/svd_train.json
+    - /home/workspace/data/preprocessed/svd_val.json
+  allowed_labels:
+    - cyste
+    - healthy
+    - stimmlippenpolyp
+    - bulbärparalyse
+  collate_fn:
+    fn_name: cat
+    cat_order:
+      - mean_mfcc_praat
+  feature_params:
+    common:
+      sampling_frequency: 16000
+    mean_mfcc_praat:
+      number_of_coefficients: 12
+      window_length: 0.015
+      time_step: 0.005
+      first_filter_frequency: 100.0
+      max_filter_frequency: 8000
+      distance_between_filters: 100.0

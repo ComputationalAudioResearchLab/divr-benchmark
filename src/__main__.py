@@ -8,6 +8,8 @@ from .download import Download
 from .preprocess import Preprocess
 from .diagnosis import DiagnosisMap
 from .experiment import Experiment
+from .analysis import Analysis
+from .complexity import Complexity
 from .experiment.MultivalueYaml import MultivalueYaml
 
 SubparserType = _SubParsersAction[ArgumentParser] if TYPE_CHECKING else None
@@ -116,6 +118,31 @@ class Main:
             help="The experiment file to run",
         )
 
+    async def complexity(self, complexity_yaml: Path, **kwargs) -> None:
+        yaml_matrix = MultivalueYaml()
+        configs = yaml_matrix.parse(complexity_yaml)
+        for config in tqdm(configs, desc="running_complexity"):
+            Complexity(config).run()
+
+    def add_complexity_parser(self, subparsers: SubparserType) -> None:
+        preprocess_parser = subparsers.add_parser(self.complexity.__name__)
+        preprocess_parser.add_argument(
+            "complexity_yaml",
+            type=Path,
+            help="The complexity file to run",
+        )
+
+    async def analysis(self, analysis_files_root: Path, **kwargs) -> None:
+        Analysis(analysis_files_root).run()
+
+    def add_analysis_parser(self, subparsers: SubparserType) -> None:
+        preprocess_parser = subparsers.add_parser(self.analysis.__name__)
+        preprocess_parser.add_argument(
+            "analysis_files_root",
+            type=Path,
+            help="The analysis files root dir",
+        )
+
 
 if __name__ == "__main__":
     main = Main(
@@ -129,6 +156,8 @@ if __name__ == "__main__":
     main.add_preprocess_parser(subparsers)
     main.add_setup_diagnosis_map_parser(subparsers)
     main.add_experiment_parser(subparsers)
+    main.add_analysis_parser(subparsers)
+    main.add_complexity_parser(subparsers)
     args = parser.parse_args()
     func = getattr(main, args.action)
     asyncio.run(func(**vars(args)))

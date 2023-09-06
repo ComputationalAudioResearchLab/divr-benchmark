@@ -4,9 +4,9 @@ from pathlib import Path
 import numpy as np
 from multiprocessing import Pool
 from typing import List, Tuple, Dict
-from .features import features, load_features, FeatureMap
+from src.experiment.features import features, load_features, FeatureMap
 from src.preprocess.processed import ProcessedSession
-from .collate import CollateFuncFactory
+from src.experiment.collate import CollateFuncFactory
 from src.diagnosis import DiagnosisMap
 
 
@@ -15,11 +15,7 @@ class Data:
         self,
         diagnosis_level: int,
         balance_dataset: bool,
-        batch_size: int,
-        shuffle_train: bool,
-        cross_validate: bool,
-        preprocessed_train_paths: List[Path],
-        preprocessed_val_paths: List[Path],
+        data_files: List[Path],
         collate_fn: Dict,
         feature_params,
         allowed_labels: List[str] | None = None,
@@ -28,18 +24,10 @@ class Data:
         self.diagnosis_map = DiagnosisMap()
         self.diagnosis_level = diagnosis_level
         self.balance_dataset = balance_dataset
-        self.cross_validate = cross_validate
-        self.train_sessions = self.__load_processed_sessions(
-            preprocessed_train_paths, allowed_labels
-        )
-        self.val_sessions = self.__load_processed_sessions(
-            preprocessed_val_paths, allowed_labels
-        )
+        self.sessions = self.__load_processed_sessions(data_files, allowed_labels)
         self.features = self.__load_features(feature_params)
         self.collate_fn_args = collate_fn
         self.collate_fn = CollateFuncFactory.get_collate_func(**collate_fn)
-        self.batch_size = batch_size
-        self.shuffle_train = shuffle_train
 
     def __load_processed_sessions(
         self, file_paths, allowed_labels: List[str] | None
@@ -83,14 +71,7 @@ class Data:
     def load(
         self,
     ) -> None:
-        self.train_X, self.train_Y = self.__load_data(
-            "train", sessions=self.train_sessions
-        )
-        self.train_X_len = self.train_X.shape[0] // self.batch_size
-        self.train_X_indices = np.arange(self.train_X_len)
-        self.val_X, self.val_Y = self.__load_data("val", sessions=self.val_sessions)
-        self.val_X_len = self.val_X.shape[0] // self.batch_size
-        self.val_X_indices = np.arange(self.val_X_len)
+        self.X, self.Y = self.__load_data("data", sessions=self.sessions)
 
     def __load_data(
         self,
@@ -137,28 +118,3 @@ class Data:
         labels = labels[keep_indices]
         files = files[keep_indices]
         return (files, labels)
-
-    def __len__(self):
-        return self.__data_len
-
-    def __getitem__(self, idx):
-        idx = self.__indices[idx]
-        start = idx * self.batch_size
-        end = start + self.batch_size
-        X = self.__X[start:end]
-        Y = self.__Y[start:end]
-        return (X, Y)
-
-    def train(self):
-        self.__data_len = self.train_X_len
-        self.__X = self.train_X
-        self.__Y = self.train_Y
-        self.__indices = self.train_X_indices
-        if self.shuffle_train:
-            np.random.shuffle(self.__indices)
-
-    def eval(self):
-        self.__data_len = self.val_X_len
-        self.__X = self.val_X
-        self.__Y = self.val_Y
-        self.__indices = self.val_X_indices
