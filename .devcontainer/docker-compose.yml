@@ -18,11 +18,12 @@ services:
       - ../:/home/workspace
       # Mount databases
       - ../../databases:/home/databases
+      - /mnt/research-data/PRJ-VDML:/home/storage
     deploy:
       resources:
         reservations:
           devices:
-            - capabilities: [ gpu ]
+            - capabilities: [gpu]
     # The following commands ensure that the container stays active
     entrypoint: bash
     stdin_open: true

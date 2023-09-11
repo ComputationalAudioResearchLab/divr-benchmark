@@ -25,6 +25,9 @@ wfdb = "==4.1.1"
 xlrd = "==2.0.1"
 vdml-features = {path = "./lib/vdml-features", editable=true}
 Resemblyzer = "==0.1.3"
+s3prl = {version = "*", extras = ["all"]}
+resampy = "*"
+scikit-learn-intelex = "*"
 
 [requires]
 python_version = "3.10"
