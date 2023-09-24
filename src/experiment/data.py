@@ -11,23 +11,6 @@ from src.diagnosis import DiagnosisMap
 
 
 class Data:
-<<<<<<< HEAD
-    def __init__(self, config: ExperimentConfig) -> None:
-        self.config = config
-        # train_data = self.load_data(
-        #     key="train",
-        #     files=self.collect_files(config.train_data),
-        # )
-        val_data = self.load_data(
-            key="val",
-            files=self.collect_files(config.val_data),
-        )
-        # test_data = self.load_data(
-        #     key="test",
-        #     files=self.collect_files(config.test_data),
-        # )
-        print(val_data)
-=======
     def __init__(
         self,
         diagnosis_level: int,
@@ -86,7 +69,6 @@ class Data:
         self.val_X, self.val_Y = self.__load_data("val", sessions=self.val_sessions)
         self.val_X_len = self.val_X.shape[0] // self.batch_size
         self.val_X_indices = np.arange(self.val_X_len)
->>>>>>> main
 
     def __load_data(
         self,
@@ -105,6 +87,7 @@ class Data:
         files = np.array(files)
         if self.balance_dataset:
             files, labels = self.__balance_data(files, labels)
+        # FIXME: get core numbers
         with Pool(10) as pool:
             input_data = [
                 (file_path, self.features, self.collate_fn, self.collate_fn_args)

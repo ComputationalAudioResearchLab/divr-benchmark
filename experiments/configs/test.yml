@@ -1,0 +1,47 @@
+key: experiment_mfcc_svm
+random_seed: 42
+log_path: /home/workspace/experiments/output/logs
+data:
+  diagnosis_level: "{{[0]}}"
+  balance_dataset: "{{false}}"
+  batch_size: 1
+  shuffle_train: true
+  cross_validate: false
+  #add featue as input here
+  collate_fn:
+    fn_name: cat
+    cat_order:
+      - mean_mfcc
+      - std_mfcc
+  preprocessed_train_paths:
+    - /home/workspace/data/preprocessed/svd_train.json
+  preprocessed_val_paths:
+    - /home/workspace/data/preprocessed/svd_val.json
+  feature_params:
+    common:
+      sampling_frequency: 16000
+    mean_mfcc:
+      number_of_coefficients: "{{[12]}}"
+      window_length: 0.015
+      time_step: 0.005
+      first_filter_frequency: 100.0
+      max_filter_frequency: 8000
+      distance_between_filters: 100.0
+    std_mfcc:
+      number_of_coefficients: "{{[12]}}"
+      window_length: 0.015
+      time_step: 0.005
+      first_filter_frequency: 100.0
+      max_filter_frequency: 8000
+      distance_between_filters: 100.0
+model:
+  type: SVM
+  C: "{{[1.0,2.0]}}"
+  degree: "{{[5,6]}}"
+  kernel: "{{[ poly]}}"
+  checkpoint_path: /home/workspace/experiments/output/checkpoints
+trainer:
+  type: SVM
+  epochs: 1
+  tensorboard_path: /home/workspace/experiments/output/tensorboard
+  results_path: /home/workspace/experiments/output/results

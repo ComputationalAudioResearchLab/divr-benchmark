@@ -17,5 +17,6 @@
       ]
     }
   },
+  "shutdownAction": "none",
   "onCreateCommand": "cd /home/workspace && pipenv --site-packages install"
 }

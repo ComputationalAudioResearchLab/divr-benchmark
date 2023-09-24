@@ -6,13 +6,6 @@ from .collate import CollateFunc
 
 # import vdml_features as vf
 import src.experiment.praat_features as vf
-<<<<<<< HEAD
-
-# from .config import HyperParams
-from src.experiment.config import HyperParams
-=======
->>>>>>> main
-
 
 class Base:
     pass
@@ -143,11 +136,44 @@ class FeaturePraatMeanMfcc(Base):
             distance_between_filters=self.distance_between_filters,
         ).mean(axis=1)
 
+class FeaturePraatStdMfcc(Base):
+    def __init__(
+        self,
+        number_of_coefficients: int,
+        window_length: float,
+        time_step: float,
+        first_filter_frequency: float,
+        max_filter_frequency: float,
+        distance_between_filters: float,
+        **kwargs,
+    ) -> None:
+        self.number_of_coefficients = number_of_coefficients
+        self.window_length = window_length
+        self.time_step = time_step
+        self.first_filter_frequency = first_filter_frequency
+        self.max_filter_frequency = max_filter_frequency
+        self.distance_between_filters = distance_between_filters
+
+    def __call__(
+        self, audio: np.ndarray, end_time: float, sampling_frequency: int
+    ) -> np.ndarray:
+        return vf.mfcc(
+            audio=audio,
+            sampling_frequency=sampling_frequency,
+            number_of_coefficients=self.number_of_coefficients,
+            window_length=self.window_length,
+            time_step=self.time_step,
+            first_filter_frequency=self.first_filter_frequency,
+            max_filter_frequency=self.max_filter_frequency,
+            distance_between_filters=self.distance_between_filters,
+        ).std(axis=1)
+
 
 features = {
     "mean_mfcc": FeaturePraatMeanMfcc,
     "jitter": FeaturePraatJitter,
     "shimmer": FeaturePraatShimmer,
+    "std_mfcc": FeaturePraatStdMfcc,
 }
 
 
