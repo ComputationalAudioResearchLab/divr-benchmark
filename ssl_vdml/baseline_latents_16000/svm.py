@@ -227,17 +227,17 @@ if __name__ == "__main__":
             Path("/home/storage/data/baseline_latents/16000/features/svd_i_n_val.json"),
         ],
     )
-    # classifier.run(
-    #     key="svd_u",
-    #     train_files=[
-    #         Path(
-    #             "/home/storage/data/baseline_latents/16000/features/svd_u_n_train.json"
-    #         ),
-    #     ],
-    #     val_files=[
-    #         Path("/home/storage/data/baseline_latents/16000/features/svd_u_n_val.json"),
-    #     ],
-    # )
+    classifier.run(
+        key="svd_u",
+        train_files=[
+            Path(
+                "/home/storage/data/baseline_latents/16000/features/svd_u_n_train.json"
+            ),
+        ],
+        val_files=[
+            Path("/home/storage/data/baseline_latents/16000/features/svd_u_n_val.json"),
+        ],
+    )
     # classifier.run(
     #     key="svd_aiu",
     #     train_files=[

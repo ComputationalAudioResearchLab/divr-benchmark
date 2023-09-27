@@ -1,0 +1,23 @@
+76.74 & 73.56 & 80.90: /home/storage/data/nn_latents_full/16000/nn/results/svd_aiu.wav2vec_large.1000_0.0001_10_512.log
+76.30 & 77.88 & 74.90: /home/storage/data/nn_latents_full/16000/nn/results/svd_aiu.modified_cpc.1000_0.001_2_1024.log
+75.87 & 78.20 & 73.90: /home/storage/data/baseline_latents/16000/nn/results/svd_aiu.mfcc_mu.1000_0.0001_2_1024.log
+
+71.11 & 77.14 & 67.27: /home/storage/data/cross_tester/svd_to_voiced/results/nn_latents.16000.nn.svd_a.hubert_base_robust_mgr.100_0.001_10_512.log
+70.00 & 66.07 & 76.47: /home/storage/data/cross_tester/svd_to_voiced/results/baseline_latents.24000.nn.svd_a.mel_mu_mel_std.100_0.001_10_512.log
+70.00 & 68.00 & 72.50: /home/storage/data/cross_tester/svd_to_voiced/results/nn_latents.24000.nn.svd_a.wav2vec_large.1000_0.001_1_1024.log
+70.00 & 73.68 & 67.31: /home/storage/data/cross_tester/svd_to_voiced/results/nn_latents.16000.svm.svd_aiu.modified_cpc.1.0_5_poly.log
+
+66.23 & 63.74 & 69.84: /home/storage/data/cross_tester/voiced_to_svd_a/results/nn_latents.24000.nn.voiced.xls_r_2b.100_0.001_5_512.log
+64.94 & 64.94 & 64.94: /home/storage/data/cross_tester/voiced_to_svd_a/results/baseline_latents.16000.nn.voiced.mel_mu_mel_std.100_0.0001_10_1024.log
+63.64 & 62.96 & 64.38: /home/storage/data/cross_tester/voiced_to_svd_a/results/nn_latents.24000.nn.voiced.hubert_base_robust_mgr.100_0.001_1_1024.log
+
+67.53 & 69.57 & 65.88: /home/storage/data/cross_tester/voiced_to_svd_i/results/nn_latents.24000.nn.voiced.distilhubert_base.1000_0.0001_10_512.log
+63.64 & 58.68 & 81.82: /home/storage/data/cross_tester/voiced_to_svd_i/results/nn_latents.24000.nn.voiced.hubert_base.1000_0.001_10_1024.log
+
+63.16 & 61.90 & 64.71: /home/storage/data/cross_tester/voiced_to_svd_u/results/baseline_latents.16000.nn.voiced.mel_mu_mel_std.1000_0.0001_2_1024.log
+61.18 & 60.76 & 61.64: /home/storage/data/cross_tester/voiced_to_svd_u/results/nn_latents.24000.nn.voiced.distilhubert_base.1000_0.0001_10_512.log
+59.21 & 64.58 & 56.73: /home/storage/data/cross_tester/voiced_to_svd_u/results/nn_latents.24000.nn.voiced.hubert_base.100_0.001_10_1024.log
+
+60.00 & 59.27 & 60.85: /home/storage/data/cross_tester/voiced_to_svd_aiu/results/nn_latents.16000.nn.voiced.wav2vec_large.100_0.001_5_512.log
+56.52 & 55.68 & 57.65: /home/storage/data/cross_tester/voiced_to_svd_aiu/results/baseline_latents.16000.nn.voiced.mel_mu_mel_std.1000_0.0001_2_1024.log
+55.22 & 53.14 & 65.38: /home/storage/data/cross_tester/voiced_to_svd_aiu/results/nn_latents.24000.nn.voiced.xls_r_2b.1000_0.001_10_512.log

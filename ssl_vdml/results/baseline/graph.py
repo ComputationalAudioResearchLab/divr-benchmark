@@ -27,10 +27,11 @@ class Grapher:
         full_df = full_df[full_df["dataset"] != "svd_aiu"]
         full_df = full_df[full_df["exp_type"] == "baseline_latents"]
         full_df = self.filter_model_confs(full_df)
+        print(len(full_df))
         fig, ax = plt.subplots(
             2, 1, figsize=(7, 7), constrained_layout=True, sharey="row"
         )
-        sns.boxenplot(
+        sns.violinplot(
             full_df,
             x="model_type",
             y="val_acc",
@@ -38,7 +39,7 @@ class Grapher:
         )
         ax[0].set_title("Validation Accuracy / Model Type")
 
-        sns.boxenplot(
+        sns.violinplot(
             full_df,
             x="model_name",
             y="val_acc",

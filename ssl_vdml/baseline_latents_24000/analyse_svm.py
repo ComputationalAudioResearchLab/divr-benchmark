@@ -115,5 +115,5 @@ if __name__ == "__main__":
     analyser = Analyser()
     analyser.run(
         output_file=f"{curdir}/results_svm.json",
-        data_file_root="/home/storage/data/nn_latents/16000/svm/results",
+        data_file_root="/home/storage/data/baseline_latents/16000/svm/results",
     )

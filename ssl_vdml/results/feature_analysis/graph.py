@@ -23,35 +23,53 @@ class Grapher:
         ]
         full_df = pd.concat((df, conf_df), axis=1)
         full_df = full_df[full_df["sample_rate"] == sample_rate]
-        full_df = full_df[full_df["dataset"] != "voiced"]
-        full_df = self.filter_model_confs(full_df)
-        acc_mask = df["val_acc"] > 0.5
-        print(f">0.5: {len(df[acc_mask])}, <=0.5: {len(df[~acc_mask])}")
-        print(f"(>0.5)/total =  {(len(df[acc_mask])/len(df)*100):2.2f}%")
-        fig, ax = plt.subplots(1, 1, figsize=(7, 4), constrained_layout=True)
-        self.my_plot(full_df, min_acc=0.5, ax=ax)
+        full_df = full_df[full_df["dataset"] == "svd_aiu"]
+        full_df = full_df[full_df["val_acc"] > 0.5]
+        # full_df = self.filter_model_confs(full_df)
+        # full_df = full_df[full_df["dataset"] == "svd_aiu"]
+        # full_df = full_df[full_df["exp_type"] == "nn_latents_full"]
+        # full_df = full_df[full_df["exp_type"] == "nn_latents"]
+        fig, ax = plt.subplots(1, 1, figsize=(13, 6), constrained_layout=True)
+        self.my_plot(full_df, None, ax)
+        # self.my_plot(full_df, dataset="svd_a", ax=ax[0])
+        # self.my_plot(full_df, dataset="svd_i", ax=ax[1])
+        # self.my_plot(full_df, dataset="svd_u", ax=ax[2])
+        # self.my_plot(full_df, dataset="svd_aiu", ax=ax[3])
         # self.my_plot(full_df, min_acc=0.65, ax=ax[1])
-        # self.my_plot(full_df, min_acc=0.70, ax=ax[1])
-        fig.suptitle("Validation Accuracy distribution for models with > 0.5 Accuracy")
-        plt.savefig("vowels.png")
+        # self.my_plot(full_df, min_acc=0.70, ax=ax[2])
+        fig.suptitle(
+            "Validation accuracy for different features on vowel set a,i,u with validation accuracy > 0.5"
+        )
+        plt.savefig("feature_analysis.png")
 
-    def my_plot(self, df, min_acc, ax):
-        my_df = df[df["val_acc"] > min_acc]
+    def my_plot(self, my_df, dataset, ax):
+        # my_df = df[df["dataset"] == dataset]
+        maxs = my_df.groupby("model_name")["val_acc"].max().to_dict()
+        means = my_df.groupby("model_name")["val_acc"].mean().to_dict()
+        stds = my_df.groupby("model_name")["val_acc"].std().to_dict()
+        best_keys = dict(
+            list(sorted(means.items(), key=lambda x: x[1], reverse=True))
+        ).keys()
+
+        for key in best_keys:
+            mean = means[key] * 100
+            std = stds[key] * 100
+            max = maxs[key] * 100
+            print(f"{key}: avg={mean:2.2f} +- {std:2.2f}, max={max:2.2f}")
         sns.violinplot(
             my_df,
-            x="dataset",
+            x="model_name",
             y="val_acc",
-            # hue="model_type",
-            # split=True,
             inner="quartile",
+            # hue="exp_type",
+            order=best_keys,
             ax=ax,
         )
-        counts = my_df.groupby("dataset").count()["val_acc"].to_dict()
-        print(counts)
         # ax.set_title(f"Val Acc > {min_acc:0.2f}")
         ax.set_xlabel(None)
         # ax.set_ylim(bottom=0.50, top=0.77)
-        ax.set_ylabel(None)
+        ax.tick_params(rotation=90)
+        ax.set_ylabel(dataset)
 
     def resolve_log_tags(self, log_file: str):
         log_file_parts = log_file.split("/")
@@ -87,7 +105,7 @@ class Grapher:
             return kernel == "rbf"
 
         def model_filter(model_type, model_conf):
-            return True
+            # return True
             if model_type == "nn":
                 return nn_filter(model_conf)
             else:
