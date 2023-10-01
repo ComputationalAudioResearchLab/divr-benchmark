@@ -11,24 +11,24 @@ from multiprocessing import Pool
 
 class FeatureGenerator:
     ssl_models = [
-        "apc_960hr",
-        "vq_apc_960hr",
-        "npc_960hr",
-        "modified_cpc",
-        "decoar_layers",
-        "decoar2",
-        "wav2vec_large",
-        "vq_wav2vec_gumbel",
-        "vq_wav2vec_kmeans",
-        "vq_wav2vec_kmeans_roberta",
-        "wav2vec2_large_lv60_cv_swbd_fsh",
-        "xlsr_53",
-        "xls_r_2b",
-        "hubert_base",
-        "distilhubert_base",
-        "hubert_base_robust_mgr",
-        "unispeech_sat_large",
-        "wavlm_large",
+        # "apc_960hr",
+        # "vq_apc_960hr",
+        # "npc_960hr",
+        # "modified_cpc",
+        # "decoar_layers",
+        # "decoar2",
+        # "wav2vec_large",
+        # "vq_wav2vec_gumbel",
+        # "vq_wav2vec_kmeans",
+        # "vq_wav2vec_kmeans_roberta",
+        # "wav2vec2_large_lv60_cv_swbd_fsh",
+        # "xlsr_53",
+        # "xls_r_2b",
+        # "hubert_base",
+        # "distilhubert_base",
+        # "hubert_base_robust_mgr",
+        # "unispeech_sat_large",
+        # "wavlm_large",
         "data2vec_base_960",
         # "vggish",
     ]
@@ -108,7 +108,7 @@ class FeatureGenerator:
 if __name__ == "__main__":
     FeatureGenerator(
         device=torch.device("cuda"),
-        output_folder=Path("/home/storage/data/nn_latents_full/16000/features"),
+        output_folder=Path("/home/workspace/data/nn_latents_full/16000/features"),
         sampling_rate=16000,
     ).run(
         data_files=[

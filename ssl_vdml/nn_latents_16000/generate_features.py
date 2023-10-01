@@ -21,15 +21,15 @@ class FeatureGenerator:
         # "vq_wav2vec_gumbel",
         # "vq_wav2vec_kmeans",
         # "vq_wav2vec_kmeans_roberta",
-        "wav2vec2_large_lv60_cv_swbd_fsh",
-        "xlsr_53",
+        # "wav2vec2_large_lv60_cv_swbd_fsh",
+        # "xlsr_53",
         # "xls_r_2b",
         # "hubert_base",
         # "distilhubert_base",
         # "hubert_base_robust_mgr",
         # "unispeech_sat_large",
         # "wavlm_large",
-        # "data2vec_base_960",
+        "data2vec_base_960",
         # "vggish",
     ]
 
@@ -94,7 +94,7 @@ class FeatureGenerator:
                     enumerate(file_map), total=len(file_map), position=1, leave=False
                 ):
                     all_hs, _ = model(audio[i][None], lengths[i][None])
-                    feature = all_hs[-1][0].clone().cpu()
+                    feature = all_hs[1][0].clone().cpu()
                     self.save_or_retry(feature, f"{output_file}.{feature_name}.pt")
 
     def save_or_retry(self, feature, file_path):
@@ -108,7 +108,7 @@ class FeatureGenerator:
 if __name__ == "__main__":
     FeatureGenerator(
         device=torch.device("cuda"),
-        output_folder=Path("/home/storage/data/nn_latents/16000/features"),
+        output_folder=Path("/home/workspace/data/nn_latents[1][0]/16000/features"),
         sampling_rate=16000,
     ).run(
         data_files=[

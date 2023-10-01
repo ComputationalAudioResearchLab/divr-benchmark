@@ -85,24 +85,24 @@ class Model(nn.Module):
 
 class Classifier:
     ssl_models = [
-        "apc_960hr",
-        "vq_apc_960hr",
-        "npc_960hr",
-        "modified_cpc",
-        "decoar_layers",
-        "decoar2",
-        "wav2vec_large",
-        "vq_wav2vec_gumbel",
-        "vq_wav2vec_kmeans",
-        "vq_wav2vec_kmeans_roberta",
-        "wav2vec2_large_lv60_cv_swbd_fsh",
-        "xlsr_53",
-        "xls_r_2b",
-        "hubert_base",
-        "distilhubert_base",
-        "hubert_base_robust_mgr",
-        "unispeech_sat_large",
-        "wavlm_large",
+        # "apc_960hr",
+        # "vq_apc_960hr",
+        # "npc_960hr",
+        # "modified_cpc",
+        # "decoar_layers",
+        # "decoar2",
+        # "wav2vec_large",
+        # "vq_wav2vec_gumbel",
+        # "vq_wav2vec_kmeans",
+        # "vq_wav2vec_kmeans_roberta",
+        # "wav2vec2_large_lv60_cv_swbd_fsh",
+        # "xlsr_53",
+        # "xls_r_2b",
+        # "hubert_base",
+        # "distilhubert_base",
+        # "hubert_base_robust_mgr",
+        # "unispeech_sat_large",
+        # "wavlm_large",
         "data2vec_base_960",
     ]
     model_configs = [
@@ -323,54 +323,56 @@ if __name__ == "__main__":
         device=torch.device("cuda"),
         diagnosis_level=0,
         balance_dataset=True,
-        output_folder=Path("/home/storage/data/nn_latents/16000/nn"),
+        output_folder=Path("/home/workspace/data/nn_latents[1][0]/16000/nn"),
     )
+    # /home/workspace/data/nn_latents_full/16000/nn
+    # /home/workspace/data/nn_latents[0][0]/16000/features/svd_a_n_test.json
     classifier.run(
         key="svd_a",
         train_files=[
-            Path("/home/storage/data/nn_latents/16000/features/svd_a_n_train.json"),
+            Path("/home/workspace/data/nn_latents[1][0]/16000/features/svd_a_n_train.json"),
         ],
         val_files=[
-            Path("/home/storage/data/nn_latents/16000/features/svd_a_n_val.json"),
+            Path("/home/workspace/data/nn_latents[1][0]/16000/features/svd_a_n_val.json"),
         ],
     )
     classifier.run(
         key="svd_i",
         train_files=[
-            Path("/home/storage/data/nn_latents/16000/features/svd_i_n_train.json"),
+            Path("/home/workspace/data/nn_latents[1][0]/16000/features/svd_i_n_train.json"),
         ],
         val_files=[
-            Path("/home/storage/data/nn_latents/16000/features/svd_i_n_val.json"),
+            Path("/home/workspace/data/nn_latents[1][0]/16000/features/svd_i_n_val.json"),
         ],
     )
     classifier.run(
         key="svd_u",
         train_files=[
-            Path("/home/storage/data/nn_latents/16000/features/svd_u_n_train.json"),
+            Path("/home/workspace/data/nn_latents[1][0]/16000/features/svd_u_n_train.json"),
         ],
         val_files=[
-            Path("/home/storage/data/nn_latents/16000/features/svd_u_n_val.json"),
+            Path("/home/workspace/data/nn_latents[1][0]/16000/features/svd_u_n_val.json"),
         ],
     )
     classifier.run(
         key="svd_aiu",
         train_files=[
-            Path("/home/storage/data/nn_latents/16000/features/svd_a_n_train.json"),
-            Path("/home/storage/data/nn_latents/16000/features/svd_i_n_train.json"),
-            Path("/home/storage/data/nn_latents/16000/features/svd_u_n_train.json"),
+            Path("/home/workspace/data/nn_latents[1][0]/16000/features/svd_a_n_train.json"),
+            Path("/home/workspace/data/nn_latents[1][0]/16000/features/svd_i_n_train.json"),
+            Path("/home/workspace/data/nn_latents[1][0]/16000/features/svd_u_n_train.json"),
         ],
         val_files=[
-            Path("/home/storage/data/nn_latents/16000/features/svd_a_n_val.json"),
-            Path("/home/storage/data/nn_latents/16000/features/svd_i_n_val.json"),
-            Path("/home/storage/data/nn_latents/16000/features/svd_u_n_val.json"),
+            Path("/home/workspace/data/nn_latents[1][0]/16000/features/svd_a_n_val.json"),
+            Path("/home/workspace/data/nn_latents[1][0]/16000/features/svd_i_n_val.json"),
+            Path("/home/workspace/data/nn_latents[1][0]/16000/features/svd_u_n_val.json"),
         ],
     )
     classifier.run(
         key="voiced",
         train_files=[
-            Path("/home/storage/data/nn_latents/16000/features/voiced_train.json"),
+            Path("/home/workspace/data/nn_latents[1][0]/16000/features/voiced_train.json"),
         ],
         val_files=[
-            Path("/home/storage/data/nn_latents/16000/features/voiced_val.json"),
+            Path("/home/workspace/data/nn_latents[1][0]/16000/features/voiced_val.json"),
         ],
     )

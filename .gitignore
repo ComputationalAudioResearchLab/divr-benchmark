@@ -3,3 +3,7 @@ data/extracted
 data/preprocessed
 experiments/output*
 output*
+data
+paper-verif/runs
+.gitignore
+ssl_vdml/evaluators/crunched_accuracies.csv

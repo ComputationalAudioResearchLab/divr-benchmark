@@ -14,6 +14,7 @@ class Cruncher:
         for log_file in tqdm(all_log_files, "Crunching logs"):
             log_data = self.read_log(log_file)
             train_acc, val_acc = self.extract_train_val_accuracy(log_data)
+            
             all_data += [(train_acc, val_acc, log_file)]
         df = pd.DataFrame(all_data, columns=["train_acc", "val_acc", "log_file"])
         df = df.sort_values(by=["val_acc", "train_acc"], ascending=False)
@@ -39,17 +40,19 @@ if __name__ == "__main__":
     Cruncher().run(
         output_path=f"{curdir}/crunched_accuracies.csv",
         collection_roots=[
-            "/home/storage/data/baseline_latents/16000/nn/results",
-            "/home/storage/data/baseline_latents/16000/svm/results",
-            "/home/storage/data/baseline_latents/24000/nn/results",
-            "/home/storage/data/baseline_latents/24000/svm/results",
-            "/home/storage/data/nn_latents/16000/nn/results",
-            "/home/storage/data/nn_latents/16000/svm/results",
-            "/home/storage/data/nn_latents/24000/nn/results",
-            "/home/storage/data/nn_latents/24000/svm/results",
-            "/home/storage/data/nn_latents_full/16000/nn/results",
-            "/home/storage/data/nn_latents_full/16000/svm/results",
-            "/home/storage/data/nn_latents_full/24000/nn/results",
-            "/home/storage/data/nn_latents_full/24000/svm/results",
+            "/home/workspace/data/nn_latents_full/16000/nn/results-all",
+            "/home/workspace/data/nn_latents[0][0]/16000/nn/results",
+            "/home/workspace/data/nn_latents[1][0]/16000/nn/results",
+            # "/home/storage/data/baseline_latents/16000/svm/results",
+            # "/home/storage/data/baseline_latents/24000/nn/results",
+            # "/home/storage/data/baseline_latents/24000/svm/results",
+            # "/home/storage/data/nn_latents/16000/nn/results",
+            # "/home/storage/data/nn_latents/16000/svm/results",
+            # "/home/storage/data/nn_latents/24000/nn/results",
+            # "/home/storage/data/nn_latents/24000/svm/results",
+            # "/home/storage/data/nn_latents_full/16000/nn/results",
+            # "/home/storage/data/nn_latents_full/16000/svm/results",
+            # "/home/storage/data/nn_latents_full/24000/nn/results",
+            # "/home/storage/data/nn_latents_full/24000/svm/results",
         ],
     )
