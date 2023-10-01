@@ -7,3 +7,7 @@ data
 paper-verif/runs
 .gitignore
 ssl_vdml/evaluators/crunched_accuracies.csv
+paper-verif/runs/experiment_1/events.out.tfevents.1694576694.64cfd3469164.2830.0
+paper-verif/runs/experiment_1/events.out.tfevents.1694576694.64cfd3469164.2830.0
+.gitignore
+ssl_vdml/evaluators/crunched_accuracies.csv
