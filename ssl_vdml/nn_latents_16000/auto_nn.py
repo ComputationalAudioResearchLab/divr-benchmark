@@ -319,23 +319,25 @@ class Classifier:
 
 
 if __name__ == "__main__":
-    classifier = Classifier(
-        device=torch.device("cuda"),
-        diagnosis_level=0,
-        balance_dataset=True,
-        output_folder=Path("/home/workspace/data/nn_latents[0][0]_a_n/16000/nn"),
-    )
-    # /home/workspace/data/nn_latents_full/16000/nn
-    # /home/workspace/data/nn_latents[0][0]/16000/features/svd_a_n_test.json
-    classifier.run(
-        key="svd_a",
-        train_files=[
-            Path("/home/workspace/data/nn_latents[0][0]_a_n/16000/features/svd_a_n_train.json"),
-        ],
-        val_files=[
-            Path("/home/workspace/data/nn_latents[0][0]_a_n/16000/features/svd_a_n_val.json"),
-        ],
-    )
+    for layer_index in range(8, 14):  # Looping through layer indices
+        base_path = f"/home/workspace/data/nn_latents[{layer_index}][0]_a_n/16000"
+        classifier = Classifier(
+            device=torch.device("cuda"),
+            diagnosis_level=0,
+            balance_dataset=True,
+            output_folder=Path(f"{base_path}/nn"),
+        )
+        classifier.run(
+            key="svd_a",
+            train_files=[
+                Path(f"{base_path}/features/svd_a_n_train.json"),
+                # ... [other training data files if needed]
+            ],
+            val_files=[
+                Path(f"{base_path}/features/svd_a_n_val.json"),
+                # ... [other validation data files if needed]
+            ],
+        )
     # classifier.run(
     #     key="svd_i",
     #     train_files=[
@@ -354,20 +356,20 @@ if __name__ == "__main__":
     #         Path("/home/workspace/data/nn_latents[0][0]_a_n/16000/features/svd_u_n_val.json"),
     #     ],
     # )
-    # classifier.run(
-    #     key="svd_aiu",
-    #     train_files=[
-    #         Path("/home/workspace/data/nn_latents[0][0]_a_n/16000/features/svd_a_n_train.json"),
-    #         # Path("/home/workspace/data/nn_latents[0][0]_a_n/16000/features/svd_i_n_train.json"),
-    #         # Path("/home/workspace/data/nn_latents[0][0]_a_n/16000/features/svd_u_n_train.json"),
-    #     ],
-    #     val_files=[
-    #         Path("/home/workspace/data/nn_latents[0][0]_a_n/16000/features/svd_a_n_val.json"),
-    #         # Path("/home/workspace/data/nn_latents[0][0]_a_n/16000/features/svd_i_n_val.json"),
-    #         # Path("/home/workspace/data/nn_latents[0][0]_a_n/16000
-    #         # /features/svd_u_n_val.json"),
-    #     ],
-    # )
+    classifier.run(
+        key="svd_aiu",
+        train_files=[
+            Path("/home/workspace/data/nn_latents[0][0]_a_n/16000/features/svd_a_n_train.json"),
+            # Path("/home/workspace/data/nn_latents[0][0]_a_n/16000/features/svd_i_n_train.json"),
+            # Path("/home/workspace/data/nn_latents[0][0]_a_n/16000/features/svd_u_n_train.json"),
+        ],
+        val_files=[
+            Path("/home/workspace/data/nn_latents[0][0]_a_n/16000/features/svd_a_n_val.json"),
+            # Path("/home/workspace/data/nn_latents[0][0]_a_n/16000/features/svd_i_n_val.json"),
+            # Path("/home/workspace/data/nn_latents[0][0]_a_n/16000
+            # /features/svd_u_n_val.json"),
+        ],
+    )
     # classifier.run(
     #     key="voiced",
     #     train_files=[

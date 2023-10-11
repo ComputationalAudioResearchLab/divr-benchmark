@@ -213,7 +213,7 @@ for epoch in range(10000):  # You can change the number of epochs
         optimizer.zero_grad()
         loss.backward()
         optimizer.step()
-    
+        
     # Log loss to TensorBoard
     writer.add_scalar('Training loss', loss.item(), epoch)
     # TODO: every 10 epoch validate model and add validation loss

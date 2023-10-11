@@ -34,13 +34,12 @@ class FeatureGenerator:
     ]
 
     def __init__(
-        self, device: torch.device, output_folder: Path, sampling_rate: int
+        self, device: torch.device, output_folder: Path, sampling_rate: int, layer_index: int
     ) -> None:
         self.device = device
         self.output_folder = output_folder
-        self.files_folder = Path(f"{output_folder}/files")
-        self.files_folder.mkdir(parents=True, exist_ok=True)
         self.sampling_rate = sampling_rate
+        self.layer_index = layer_index
 
     def load_audio(self, args):
         input_file, sampling_rate = args
@@ -94,11 +93,7 @@ class FeatureGenerator:
                     enumerate(file_map), total=len(file_map), position=1, leave=False
                 ):
                     all_hs, _ = model(audio[i][None], lengths[i][None])
-                    # print("Number of layers:", len(all_hs))
-                    feature = all_hs[13][0].clone().cpu()
-                    # Extract and concatenate the 1st and 2nd layers
-                    # TODO:
-                    # feature = torch.cat([all_hs[0], all_hs[1]], dim=2)[0].clone().cpu()
+                    feature = all_hs[self.layer_index][0].clone().cpu()
                     self.save_or_retry(feature, f"{output_file}.{feature_name}.pt")
 
     def save_or_retry(self, feature, file_path):
@@ -110,23 +105,26 @@ class FeatureGenerator:
 
 
 if __name__ == "__main__":
-    FeatureGenerator(
-        device=torch.device("cuda"),
-        output_folder=Path("/home/workspace/data/nn_latents[0][0]_a_n/16000/features"),
-        sampling_rate=16000,
-    ).run(
-        data_files=[
-            Path("/home/workspace/data/preprocessed/svd_a_n_train.json"),
-            # Path("/home/workspace/data/preprocessed/svd_i_n_train.json"),
-            # Path("/home/workspace/data/preprocessed/svd_u_n_train.json"),
-            Path("/home/workspace/data/preprocessed/svd_a_n_val.json"),
-            # Path("/home/workspace/data/preprocessed/svd_i_n_val.json"),
-            # Path("/home/workspace/data/preprocessed/svd_u_n_val.json"),
-            Path("/home/workspace/data/preprocessed/svd_a_n_test.json"),
-            # Path("/home/workspace/data/preprocessed/svd_i_n_test.json"),
-            # Path("/home/workspace/data/preprocessed/svd_u_n_test.json"),
-            # Path("/home/workspace/data/preprocessed/voiced_train.json"),
-            # Path("/home/workspace/data/preprocessed/voiced_val.json"),
-            # Path("/home/workspace/data/preprocessed/voiced_test.json"),
-        ],
-    )
+    for layer_index in range(8, 14):  # Looping through layer indices
+        output_folder = Path(f"/home/workspace/data/nn_latents[{layer_index}][0]_a_n/16000/features")
+        FeatureGenerator(
+            device=torch.device("cuda"),
+            output_folder=output_folder,
+            sampling_rate=16000,
+            layer_index=layer_index  # Using the current layer index
+        ).run(
+            data_files=[
+                Path(f"{output_folder}/svd_a_n_train.json"),
+                # Path("/home/workspace/data/preprocessed/svd_i_n_train.json"),
+                # Path("/home/workspace/data/preprocessed/svd_u_n_train.json"),
+                Path("/home/workspace/data/preprocessed/svd_a_n_val.json"),
+                # Path("/home/workspace/data/preprocessed/svd_i_n_val.json"),
+                # Path("/home/workspace/data/preprocessed/svd_u_n_val.json"),
+                Path("/home/workspace/data/preprocessed/svd_a_n_test.json"),
+                # Path("/home/workspace/data/preprocessed/svd_i_n_test.json"),
+                # Path("/home/workspace/data/preprocessed/svd_u_n_test.json"),
+                # Path("/home/workspace/data/preprocessed/voiced_train.json"),
+                # Path("/home/workspace/data/preprocessed/voiced_val.json"),
+                # Path("/home/workspace/data/preprocessed/voiced_test.json"),
+            ],
+        )
