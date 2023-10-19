@@ -28,8 +28,8 @@ class FeatureGenerator:
         # "distilhubert_base",
         # "hubert_base_robust_mgr",
         # "unispeech_sat_large",
-        # "wavlm_large",
-        "data2vec_base_960",
+        "wavlm_large",
+        # "data2vec_base_960",
         # "vggish",
     ]
 
@@ -95,7 +95,9 @@ class FeatureGenerator:
                 ):
                     all_hs, _ = model(audio[i][None], lengths[i][None])
                     # print("Number of layers:", len(all_hs))
-                    feature = all_hs[13][0].clone().cpu()
+                    
+                    feature = all_hs[6][0].clone().cpu()
+                    
                     # Extract and concatenate the 1st and 2nd layers
                     # TODO:
                     # feature = torch.cat([all_hs[0], all_hs[1]], dim=2)[0].clone().cpu()
@@ -112,7 +114,7 @@ class FeatureGenerator:
 if __name__ == "__main__":
     FeatureGenerator(
         device=torch.device("cuda"),
-        output_folder=Path("/home/workspace/data/nn_latents[0][0]_a_n/16000/features"),
+        output_folder=Path("/home/workspace/data/wavlm_large_nn_latents[0][0]_a_n/16000/features"),
         sampling_rate=16000,
     ).run(
         data_files=[

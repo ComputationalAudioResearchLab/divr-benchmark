@@ -102,8 +102,8 @@ class Classifier:
         # "distilhubert_base",
         # "hubert_base_robust_mgr",
         # "unispeech_sat_large",
-        # "wavlm_large",
-        "data2vec_base_960",
+        "wavlm_large",
+        # "data2vec_base_960",
     ]
     model_configs = [
         dict(zip(("epochs", "lr", "num_layers", "latent_dim"), config))
@@ -323,17 +323,17 @@ if __name__ == "__main__":
         device=torch.device("cuda"),
         diagnosis_level=0,
         balance_dataset=True,
-        output_folder=Path("/home/workspace/data/nn_latents[0][0]_a_n/16000/nn"),
+        output_folder=Path("/home/workspace/data/wavlm_large_nn_latents[0][0]_a_n/16000/nn"),
     )
     # /home/workspace/data/nn_latents_full/16000/nn
     # /home/workspace/data/nn_latents[0][0]/16000/features/svd_a_n_test.json
     classifier.run(
         key="svd_a",
         train_files=[
-            Path("/home/workspace/data/nn_latents[0][0]_a_n/16000/features/svd_a_n_train.json"),
+            Path("/home/workspace/data/wavlm_large_nn_latents[0][0]_a_n/16000/features/svd_a_n_train.json"),
         ],
         val_files=[
-            Path("/home/workspace/data/nn_latents[0][0]_a_n/16000/features/svd_a_n_val.json"),
+            Path("/home/workspace/data/wavlm_large_nn_latents[0][0]_a_n/16000/features/svd_a_n_val.json"),
         ],
     )
     # classifier.run(

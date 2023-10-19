@@ -28,8 +28,8 @@ class FeatureGenerator:
         # "distilhubert_base",
         # "hubert_base_robust_mgr",
         # "unispeech_sat_large",
-        # "wavlm_large",
-        "data2vec_base_960",
+        "wavlm_large",
+        # "data2vec_base_960",
         # "vggish",
     ]
 
@@ -113,16 +113,16 @@ if __name__ == "__main__":
     ).run(
         data_files=[
             Path("/home/workspace/data/preprocessed/svd_a_n_train.json"),
-            Path("/home/workspace/data/preprocessed/svd_i_n_train.json"),
-            Path("/home/workspace/data/preprocessed/svd_u_n_train.json"),
+            # Path("/home/workspace/data/preprocessed/svd_i_n_train.json"),
+            # Path("/home/workspace/data/preprocessed/svd_u_n_train.json"),
             Path("/home/workspace/data/preprocessed/svd_a_n_val.json"),
-            Path("/home/workspace/data/preprocessed/svd_i_n_val.json"),
-            Path("/home/workspace/data/preprocessed/svd_u_n_val.json"),
+            # Path("/home/workspace/data/preprocessed/svd_i_n_val.json"),
+            # Path("/home/workspace/data/preprocessed/svd_u_n_val.json"),
             Path("/home/workspace/data/preprocessed/svd_a_n_test.json"),
-            Path("/home/workspace/data/preprocessed/svd_i_n_test.json"),
-            Path("/home/workspace/data/preprocessed/svd_u_n_test.json"),
-            Path("/home/workspace/data/preprocessed/voiced_train.json"),
-            Path("/home/workspace/data/preprocessed/voiced_val.json"),
-            Path("/home/workspace/data/preprocessed/voiced_test.json"),
+            # Path("/home/workspace/data/preprocessed/svd_i_n_test.json"),
+            # Path("/home/workspace/data/preprocessed/svd_u_n_test.json"),
+            # Path("/home/workspace/data/preprocessed/voiced_train.json"),
+            # Path("/home/workspace/data/preprocessed/voiced_val.json"),
+            # Path("/home/workspace/data/preprocessed/voiced_test.json"),
         ],
     )

@@ -337,53 +337,53 @@ if __name__ == "__main__":
             Path("/home/workspace/data/nn_latents_full/16000/features/svd_a_n_val.json"),
         ],
     )
-    classifier.run(
-        key="svd_i",
-        train_files=[
-            Path(
-                "/home/workspace/data/nn_latents_full/16000/features/svd_i_n_train.json"
-            ),
-        ],
-        val_files=[
-            Path("/home/workspace/data/nn_latents_full/16000/features/svd_i_n_val.json"),
-        ],
-    )
-    classifier.run(
-        key="svd_u",
-        train_files=[
-            Path(
-                "/home/workspace/data/nn_latents_full/16000/features/svd_u_n_train.json"
-            ),
-        ],
-        val_files=[
-            Path("/home/workspace/data/nn_latents_full/16000/features/svd_u_n_val.json"),
-        ],
-    )
-    classifier.run(
-        key="svd_aiu",
-        train_files=[
-            Path(
-                "/home/workspace/data/nn_latents_full/16000/features/svd_a_n_train.json"
-            ),
-            Path(
-                "/home/workspace/data/nn_latents_full/16000/features/svd_i_n_train.json"
-            ),
-            Path(
-                "/home/workspace/data/nn_latents_full/16000/features/svd_u_n_train.json"
-            ),
-        ],
-        val_files=[
-            Path("/home/workspace/data/nn_latents_full/16000/features/svd_a_n_val.json"),
-            Path("/home/workspace/data/nn_latents_full/16000/features/svd_i_n_val.json"),
-            Path("/home/workspace/data/nn_latents_full/16000/features/svd_u_n_val.json"),
-        ],
-    )
-    classifier.run(
-        key="voiced",
-        train_files=[
-            Path("/home/workspace/data/nn_latents_full/16000/features/voiced_train.json"),
-        ],
-        val_files=[
-            Path("/home/workspace/data/nn_latents_full/16000/features/voiced_val.json"),
-        ],
-    )
+    # classifier.run(
+    #     key="svd_i",
+    #     train_files=[
+    #         Path(
+    #             "/home/workspace/data/nn_latents_full/16000/features/svd_i_n_train.json"
+    #         ),
+    #     ],
+    #     val_files=[
+    #         Path("/home/workspace/data/nn_latents_full/16000/features/svd_i_n_val.json"),
+    #     ],
+    # )
+    # classifier.run(
+    #     key="svd_u",
+    #     train_files=[
+    #         Path(
+    #             "/home/workspace/data/nn_latents_full/16000/features/svd_u_n_train.json"
+    #         ),
+    #     ],
+    #     val_files=[
+    #         Path("/home/workspace/data/nn_latents_full/16000/features/svd_u_n_val.json"),
+    #     ],
+    # )
+    # classifier.run(
+    #     key="svd_aiu",
+    #     train_files=[
+    #         Path(
+    #             "/home/workspace/data/nn_latents_full/16000/features/svd_a_n_train.json"
+    #         ),
+    #         Path(
+    #             "/home/workspace/data/nn_latents_full/16000/features/svd_i_n_train.json"
+    #         ),
+    #         Path(
+    #             "/home/workspace/data/nn_latents_full/16000/features/svd_u_n_train.json"
+    #         ),
+    #     ],
+    #     val_files=[
+    #         Path("/home/workspace/data/nn_latents_full/16000/features/svd_a_n_val.json"),
+    #         Path("/home/workspace/data/nn_latents_full/16000/features/svd_i_n_val.json"),
+    #         Path("/home/workspace/data/nn_latents_full/16000/features/svd_u_n_val.json"),
+    #     ],
+    # )
+    # classifier.run(
+    #     key="voiced",
+    #     train_files=[
+    #         Path("/home/workspace/data/nn_latents_full/16000/features/voiced_train.json"),
+    #     ],
+    #     val_files=[
+    #         Path("/home/workspace/data/nn_latents_full/16000/features/voiced_val.json"),
+    #     ],
+    # )
