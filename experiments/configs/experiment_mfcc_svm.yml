@@ -27,6 +27,7 @@ data:
       distance_between_filters: 100.0
 model:
   type: SVM
+  C: "{{[1.0]}}"
   degree: "{{range(5,20,1)}}"
   kernel: "{{[linear, poly, rbf, sigmoid]}}"
   checkpoint_path: /home/workspace/experiments/output/checkpoints

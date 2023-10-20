@@ -38,7 +38,7 @@ model:
   type: SVM
   C: "{{[1.0,2.0]}}"
   degree: "{{[5,6]}}"
-  kernel: "{{[ poly]}}"
+  kernel: "{{[linear, poly, rbf, sigmoid]}}"
   checkpoint_path: /home/workspace/experiments/output/checkpoints
 trainer:
   type: SVM

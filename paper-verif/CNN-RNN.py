@@ -16,7 +16,7 @@ from torch.utils.data import DataLoader, TensorDataset
 from torch.utils.tensorboard import SummaryWriter
 
 # Initialize TensorBoard writer and time counter
-writer = SummaryWriter('runs/experiment_1')
+writer = SummaryWriter('runs/experiment_10')
 start_time = time.time()
 
 
