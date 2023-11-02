@@ -110,12 +110,9 @@ for item in data:
 df = pd.DataFrame(flattened_data)
 
 # Prepare features and labels
-# TODO: store the length and double check
-# MFCC diff too much bet unhealthy and healthy
-# TODO: FIXME only have 1 label
+
 path_length=[]
 healthy_length=[]
-# ... (previous code remains unchanged)
 
 # Create a DataFrame to check the class distribution
 df_counts = df['diagnosis'].value_counts().reset_index()
@@ -131,7 +128,6 @@ df_healthy = df[df['diagnosis'] == 'healthy']
 df_pathological = df[df['diagnosis'] == 'pathological'].sample(min_count, random_state=42)  # Randomly sample 'min_count' rows
 df_balanced = pd.concat([df_healthy, df_pathological], axis=0)
 
-# ... (rest of the code remains unchanged)
 
 # Prepare features and labels
 paths = df_balanced['file_path'].tolist()

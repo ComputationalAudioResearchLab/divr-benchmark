@@ -102,8 +102,12 @@ class Classifier:
         # "distilhubert_base",
         # "hubert_base_robust_mgr",
         # "unispeech_sat_large",
-        "wavlm_large",
+        # "wavlm_large",
         # "data2vec_base_960",
+        # "wavlm_data2vec_combined",
+        # "wavlm_hubert_combined", 
+        # "wavlm_decoar2_combined",
+        "wavlm_wav2vec_combined",
     ]
     model_configs = [
         dict(zip(("epochs", "lr", "num_layers", "latent_dim"), config))

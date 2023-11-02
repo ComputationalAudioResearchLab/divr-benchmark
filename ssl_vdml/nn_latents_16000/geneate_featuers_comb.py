@@ -28,8 +28,8 @@ class FeatureGenerator:
         # "distilhubert_base",
         # "hubert_base_robust_mgr",
         # "unispeech_sat_large",
-        "wavlm_large",
-        "data2vec_base_960",
+        # "wavlm_large",
+        # "data2vec_base_960",
         # "vggish",
     ]
 
@@ -86,22 +86,57 @@ class FeatureGenerator:
         audio = torch.FloatTensor(audio).to(self.device)
         lengths = torch.LongTensor(lengths).to(self.device)
 
-        for feature_name in tqdm(self.ssl_models, "generating features", position=0):
-            model = S3PRLUpstream(name=feature_name).to(self.device)
-            model.eval()
-            with torch.no_grad():
-                for i, (_, output_file) in tqdm(
-                    enumerate(file_map), total=len(file_map), position=1, leave=False
-                ):
-                    all_hs, _ = model(audio[i][None], lengths[i][None])
-                    # print("Number of layers:", len(all_hs))
-                    
-                    # feature = all_hs[6][0].clone().cpu()
-                    
-                    # Extract and concatenate the 1st and 2nd layers
-                    # TODO:
-                    feature = torch.cat([all_hs[10], all_hs[5]], dim=2)[0].clone().cpu()
-                    self.save_or_retry(feature, f"{output_file}.{feature_name}.pt")
+        # Comb top-perf diff model:
+        # Load both models directly
+        # "decoar2",
+        # "wav2vec_large",
+        wavlm_model = S3PRLUpstream(name="wavlm_large").to(self.device)
+        data2vec_model = S3PRLUpstream(name="data2vec_base_960").to(self.device)
+        hubert_model = S3PRLUpstream(name="hubert_base").to(self.device)
+        decoar2_model = S3PRLUpstream(name="decoar2").to(self.device)
+        wav2vec_model = S3PRLUpstream(name="wav2vec_large").to(self.device)
+
+        wavlm_model.eval()
+        data2vec_model.eval()
+        hubert_model.eval()
+        decoar2_model.eval()
+        wav2vec_model.eval()
+
+        with torch.no_grad():
+            for i, (_, output_file) in tqdm(
+                enumerate(file_map), total=len(file_map), position=1, leave=False
+            ):
+                # Extract features from wavlm
+                wavlm_hs, _ = wavlm_model(audio[i][None], lengths[i][None])
+                wavlm_feature = wavlm_hs[10][0]
+
+                # # Extract features from data2vec
+                # data2vec_hs, _ = data2vec_model(audio[i][None], lengths[i][None])
+                # data2vec_feature = data2vec_hs[0][0]
+                
+                # # Extract features from wavlm
+                # hubert_hs, _ = hubert_model(audio[i][None], lengths[i][None])
+                # hubert_feature = hubert_hs[3][0]
+
+                # # Extract features from data2vec
+                # decoar2_hs, _ = decoar2_model(audio[i][None], lengths[i][None])
+                # decoar2_feature = decoar2_hs[5][0]
+                
+                # Extract features from data2vec
+                wav2vec_hs, _ = wav2vec_model(audio[i][None], lengths[i][None])
+                wav2vec_feature = wav2vec_hs[3][0]
+                
+                print(wavlm_feature.size())
+                print(wav2vec_feature.size())
+                # opt1: flaten it: wavlm_feature.flaten()
+                # Concatenate the features along the feature dimension
+                combined_feature = torch.cat([wavlm_feature.flatten(), wav2vec_feature.flatten()], dim=-1)
+                
+                # Save the concatenated feature
+                combined_feature_name = "wavlm_wav2vec_combined"
+                self.save_or_retry(combined_feature, f"{output_file}.{combined_feature_name}.pt")
+
+
 
     def save_or_retry(self, feature, file_path):
         try:

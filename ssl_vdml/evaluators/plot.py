@@ -5,7 +5,7 @@ import numpy as np
 import seaborn as sns
 
 # Read the CSV file
-data2vec_df = pd.read_csv('/home/workspace/ssl_vdml/evaluators/csv_results/hubert_crunched_accuracies.csv')
+data2vec_df = pd.read_csv('/home/workspace/ssl_vdml/evaluators/csv_results/wavlm_large_crunched_accuracies.csv')
 
 # Extract layer information from the log_file column
 def extract_layer_v2(log_file):
@@ -39,7 +39,7 @@ for idx, rect in enumerate(bar2_sorted):
 ax.set_xlabel('Layer')
 ax.set_ylabel('Accuracy')
 # TODO:
-ax.set_title('Sorted Train and Validation Accuracies for hubert Model (Best to Worst)')
+ax.set_title('Sorted Train and Validation Accuracies for wavlm_large Model (Best to Worst)')
 ax.set_xticks(index_sorted + bar_width / 2)
 ax.set_xticklabels(sorted_data2vec_grouped['layer'])
 ax.legend()
@@ -61,7 +61,7 @@ val_acc_data2vec['layer'] = pd.Categorical(val_acc_data2vec['layer'], categories
 plt.figure(figsize=(14, 7))
 sns.violinplot(x="layer", y="Accuracy", data=val_acc_data2vec, inner="quartile", order=sort_order)
 # TODO
-plt.title('Violin Plot of Validation Accuracies for hubert Model')
+plt.title('Violin Plot of Validation Accuracies for wavlm_large Model')
 plt.xlabel('Layer')
 plt.ylabel('Validation Accuracy')
 plt.tight_layout()
