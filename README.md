@@ -1,4 +1,4 @@
-# Voice Disorder Machine Learning - Benchmark
+# DiVR (Disordered Voice Recognition) - Benchmark
 
 This repository contains the work that establishes a benchmark to test voice disorder recognition systems.
 

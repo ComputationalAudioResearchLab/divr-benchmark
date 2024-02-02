@@ -1,5 +1,5 @@
 {
-  "name": "vdml-benchmark",
+  "name": "divr-benchmark",
   "dockerComposeFile": "docker-compose.yml",
   "service": "dev",
   "workspaceFolder": "/home/workspace",
