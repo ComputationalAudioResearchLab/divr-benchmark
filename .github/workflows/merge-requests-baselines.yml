@@ -1,0 +1,38 @@
+concurrency:
+  group: ${{ github.ref }}
+  cancel-in-progress: true
+
+name: Merge Request Checks - Baselines
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "baselines/**"
+  workflow_dispatch:
+permissions:
+  actions: write
+  contents: read
+  checks: write
+  pull-requests: write
+
+jobs:
+  release:
+    name: 🔬 Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: "3.10"
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pipenv
+          pipenv install --ignore-pipfile --dev
+        working-directory: baselines
+      - name: Lint files
+        run: pipenv run black divr_feature_toolkit --check
+        working-directory: baselines
