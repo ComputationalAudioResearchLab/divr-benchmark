@@ -1,6 +1,3 @@
-[submodule "lib/svd-downloader"]
-	path = lib/svd-downloader
-	url = git@github.com:rijulg/svd-downloader.git
 [submodule "lib/divr-feature-toolkit"]
 	path = lib/divr-feature-toolkit
 	url = git@github.com:ComputationalAudioResearchLab/divr-feature-toolkit.git

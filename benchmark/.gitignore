@@ -1,5 +1,6 @@
 __pycache__
+.pytest_cache
 data/extracted
-data/preprocessed
+data/prepared
 experiments/output
 output*

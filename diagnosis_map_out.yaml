@@ -1,0 +1,1174 @@
+- input: healthy
+  labels:
+    not a diagnosis: 7
+  votes:
+    clinician 1: not a diagnosis
+    clinician 2: not a diagnosis
+    clinician 3: not a diagnosis
+    clinician 4: not a diagnosis
+    clinician 5: not a diagnosis
+    clinician 6: not a diagnosis
+    clinician 7: not a diagnosis
+- input: hyperkinetic dysphonia
+  labels:
+    muscle tension: 4
+    not a diagnosis: 2
+    organic > neuro-muscular: 1
+  votes:
+    clinician 1: organic > neuro-muscular
+    clinician 2: not a diagnosis
+    clinician 3: muscle tension
+    clinician 4: muscle tension
+    clinician 5: muscle tension
+    clinician 6: not a diagnosis
+    clinician 7: muscle tension
+- input: hyperkinetic dysphonia  (rigid vocal fold)
+  labels:
+    muscle tension: 4
+    not a diagnosis: 2
+    organic > structural: 1
+  votes:
+    clinician 1: organic > structural
+    clinician 2: not a diagnosis
+    clinician 3: muscle tension
+    clinician 4: muscle tension
+    clinician 5: muscle tension
+    clinician 6: not a diagnosis
+    clinician 7: muscle tension
+- input: hyperkinetic dysphonia (adduction deficit)
+  labels:
+    muscle tension: 4
+    not a diagnosis: 2
+    organic > neuro-muscular: 1
+  votes:
+    clinician 1: organic > neuro-muscular
+    clinician 2: not a diagnosis
+    clinician 3: muscle tension
+    clinician 4: muscle tension
+    clinician 5: muscle tension
+    clinician 6: not a diagnosis
+    clinician 7: muscle tension
+- input: hyperkinetic dysphonia (cordite)
+  labels:
+    muscle tension: 1
+    not a diagnosis: 6
+  votes:
+    clinician 1: not a diagnosis
+    clinician 2: not a diagnosis
+    clinician 3: muscle tension
+    clinician 4: not a diagnosis
+    clinician 5: not a diagnosis
+    clinician 6: not a diagnosis
+    clinician 7: not a diagnosis
+- input: hyperkinetic dysphonia (nodule)
+  labels:
+    muscle tension: 3
+    not a diagnosis: 3
+    organic > structural: 1
+  votes:
+    clinician 1: muscle tension
+    clinician 2: not a diagnosis
+    clinician 3: muscle tension
+    clinician 4: not a diagnosis
+    clinician 5: not a diagnosis
+    clinician 6: organic > structural
+    clinician 7: muscle tension
+- input: hyperkinetic dysphonia (polyps)
+  labels:
+    muscle tension: 3
+    not a diagnosis: 2
+    organic > structural: 2
+  votes:
+    clinician 1: muscle tension
+    clinician 2: not a diagnosis
+    clinician 3: muscle tension
+    clinician 4: organic > structural
+    clinician 5: not a diagnosis
+    clinician 6: organic > structural
+    clinician 7: muscle tension
+- input: hyperkinetic dysphonia (prolapse)
+  labels:
+    muscle tension: 1
+    not a diagnosis: 6
+  votes:
+    clinician 1: not a diagnosis
+    clinician 2: not a diagnosis
+    clinician 3: muscle tension
+    clinician 4: not a diagnosis
+    clinician 5: not a diagnosis
+    clinician 6: not a diagnosis
+    clinician 7: not a diagnosis
+- input: hyperkinetic dysphonia (reinke's edema)
+  labels:
+    muscle tension: 2
+    not a diagnosis: 2
+    organic > inflammatory: 1
+    organic > structural: 2
+  votes:
+    clinician 1: organic > inflammatory
+    clinician 2: not a diagnosis
+    clinician 3: muscle tension
+    clinician 4: organic > structural
+    clinician 5: not a diagnosis
+    clinician 6: organic > structural
+    clinician 7: muscle tension
+- input: hyperkinetic dysphonia (vocal fold nodules)
+  labels:
+    muscle tension: 3
+    not a diagnosis: 2
+    organic > structural: 2
+  votes:
+    clinician 1: muscle tension
+    clinician 2: not a diagnosis
+    clinician 3: muscle tension
+    clinician 4: organic > structural
+    clinician 5: not a diagnosis
+    clinician 6: organic > structural
+    clinician 7: muscle tension
+- input: hyperkinetic dysphonia (vocal fold paralysis)
+  labels:
+    muscle tension: 2
+    not a diagnosis: 2
+    organic: 1
+    organic > neuro-muscular: 1
+    organic > structural: 1
+  votes:
+    clinician 1: organic > structural
+    clinician 2: not a diagnosis
+    clinician 3: muscle tension
+    clinician 4: organic > neuro-muscular
+    clinician 5: not a diagnosis
+    clinician 6: organic
+    clinician 7: muscle tension
+- input: hyperkinetic dysphonia (vocal fold prolapse)
+  labels:
+    muscle tension: 1
+    not a diagnosis: 5
+    organic > structural: 1
+  votes:
+    clinician 1: organic > structural
+    clinician 2: not a diagnosis
+    clinician 3: muscle tension
+    clinician 4: not a diagnosis
+    clinician 5: not a diagnosis
+    clinician 6: not a diagnosis
+    clinician 7: not a diagnosis
+- input: hypokinetic dysphonia
+  labels:
+    muscle tension: 1
+    not a diagnosis: 3
+    organic > neuro-muscular: 3
+  votes:
+    clinician 1: organic > neuro-muscular
+    clinician 2: not a diagnosis
+    clinician 3: organic > neuro-muscular
+    clinician 4: not a diagnosis
+    clinician 5: not a diagnosis
+    clinician 6: organic > neuro-muscular
+    clinician 7: muscle tension
+- input: hypokinetic dysphonia (adduction deficit)
+  labels:
+    muscle tension: 1
+    not a diagnosis: 2
+    organic > neuro-muscular: 4
+  votes:
+    clinician 1: organic > neuro-muscular
+    clinician 2: not a diagnosis
+    clinician 3: organic > neuro-muscular
+    clinician 4: organic > neuro-muscular
+    clinician 5: not a diagnosis
+    clinician 6: organic > neuro-muscular
+    clinician 7: muscle tension
+- input: hypokinetic dysphonia (bilateral vocal fold)
+  labels:
+    not a diagnosis: 4
+    organic > neuro-muscular: 2
+    organic > structural: 1
+  votes:
+    clinician 1: organic > structural
+    clinician 2: not a diagnosis
+    clinician 3: organic > neuro-muscular
+    clinician 4: not a diagnosis
+    clinician 5: not a diagnosis
+    clinician 6: organic > neuro-muscular
+    clinician 7: not a diagnosis
+- input: hypokinetic dysphonia (conversion dysphonia)
+  labels:
+    functional: 5
+    not a diagnosis: 2
+  votes:
+    clinician 1: functional
+    clinician 2: not a diagnosis
+    clinician 3: functional
+    clinician 4: functional
+    clinician 5: functional
+    clinician 6: functional
+    clinician 7: not a diagnosis
+- input: hypokinetic dysphonia (dysphonia by chordal groove)
+  labels:
+    muscle tension: 1
+    not a diagnosis: 4
+    organic > neuro-muscular: 1
+    organic > structural: 1
+  votes:
+    clinician 1: organic > structural
+    clinician 2: not a diagnosis
+    clinician 3: organic > neuro-muscular
+    clinician 4: not a diagnosis
+    clinician 5: not a diagnosis
+    clinician 6: not a diagnosis
+    clinician 7: muscle tension
+- input: hypokinetic dysphonia (extraglottic air leak)
+  labels:
+    muscle tension: 1
+    not a diagnosis: 2
+    organic > neuro-muscular: 2
+    organic > structural: 2
+  votes:
+    clinician 1: organic > neuro-muscular
+    clinician 2: not a diagnosis
+    clinician 3: organic > neuro-muscular
+    clinician 4: organic > structural
+    clinician 5: organic > structural
+    clinician 6: not a diagnosis
+    clinician 7: muscle tension
+- input: hypokinetic dysphonia (glottic insufficiency)
+  labels:
+    muscle tension: 1
+    not a diagnosis: 2
+    organic > neuro-muscular: 2
+    organic > structural: 2
+  votes:
+    clinician 1: organic > neuro-muscular
+    clinician 2: not a diagnosis
+    clinician 3: organic > neuro-muscular
+    clinician 4: organic > structural
+    clinician 5: organic > structural
+    clinician 6: not a diagnosis
+    clinician 7: muscle tension
+- input: hypokinetic dysphonia (laryngitis)
+  labels:
+    not a diagnosis: 4
+    organic > inflammatory: 2
+    organic > structural: 1
+  votes:
+    clinician 1: organic > inflammatory
+    clinician 2: not a diagnosis
+    clinician 3: organic > inflammatory
+    clinician 4: not a diagnosis
+    clinician 5: not a diagnosis
+    clinician 6: organic > structural
+    clinician 7: not a diagnosis
+- input: hypokinetic dysphonia (presbiphonia)
+  labels:
+    muscle tension: 1
+    not a diagnosis: 1
+    organic > structural: 5
+  votes:
+    clinician 1: organic > structural
+    clinician 2: not a diagnosis
+    clinician 3: organic > structural
+    clinician 4: organic > structural
+    clinician 5: organic > structural
+    clinician 6: organic > structural
+    clinician 7: muscle tension
+- input: hypokinetic dysphonia (spasmodic dysphonia)
+  labels:
+    not a diagnosis: 2
+    organic > neuro-muscular: 5
+  votes:
+    clinician 1: organic > neuro-muscular
+    clinician 2: not a diagnosis
+    clinician 3: organic > neuro-muscular
+    clinician 4: organic > neuro-muscular
+    clinician 5: organic > neuro-muscular
+    clinician 6: organic > neuro-muscular
+    clinician 7: not a diagnosis
+- input: hypokinetic dysphonia (vocal fold paralysis)
+  labels:
+    not a diagnosis: 2
+    organic: 1
+    organic > neuro-muscular: 4
+  votes:
+    clinician 1: organic > neuro-muscular
+    clinician 2: not a diagnosis
+    clinician 3: organic > neuro-muscular
+    clinician 4: organic > neuro-muscular
+    clinician 5: organic > neuro-muscular
+    clinician 6: organic
+    clinician 7: not a diagnosis
+- input: reflux laryngiti
+  labels:
+    not a diagnosis: 1
+    organic > inflammatory: 6
+  votes:
+    clinician 1: organic > inflammatory
+    clinician 2: organic > inflammatory
+    clinician 3: organic > inflammatory
+    clinician 4: organic > inflammatory
+    clinician 5: organic > inflammatory
+    clinician 6: organic > inflammatory
+    clinician 7: not a diagnosis
+- input: amyotrophic lateral sclerosis (amyotrophe lateralsklerose)
+  labels:
+    organic > neuro-muscular: 7
+  votes:
+    clinician 1: organic > neuro-muscular
+    clinician 2: organic > neuro-muscular
+    clinician 3: organic > neuro-muscular
+    clinician 4: organic > neuro-muscular
+    clinician 5: organic > neuro-muscular
+    clinician 6: organic > neuro-muscular
+    clinician 7: organic > neuro-muscular
+- input: aryluxation (aryluxation)
+  labels:
+    not a diagnosis: 3
+    organic > structural: 2
+    organic > trauma: 2
+  votes:
+    clinician 1: organic > trauma
+    clinician 2: not a diagnosis
+    clinician 3: organic > trauma
+    clinician 4: not a diagnosis
+    clinician 5: not a diagnosis
+    clinician 6: organic > structural
+    clinician 7: organic > structural
+- input: balbuties (balbuties)
+  labels:
+    not a diagnosis: 7
+  votes:
+    clinician 1: not a diagnosis
+    clinician 2: not a diagnosis
+    clinician 3: not a diagnosis
+    clinician 4: not a diagnosis
+    clinician 5: not a diagnosis
+    clinician 6: not a diagnosis
+    clinician 7: not a diagnosis
+- input: bulbar paralysis (bulb\u00e4rparalyse)
+  labels:
+    organic: 1
+    organic > neuro-muscular: 6
+  votes:
+    clinician 1: organic > neuro-muscular
+    clinician 2: organic > neuro-muscular
+    clinician 3: organic > neuro-muscular
+    clinician 4: organic > neuro-muscular
+    clinician 5: organic > neuro-muscular
+    clinician 6: organic
+    clinician 7: organic > neuro-muscular
+- input: carcinoma in situ (carcinoma in situ)
+  labels:
+    organic > structural: 7
+  votes:
+    clinician 1: organic > structural
+    clinician 2: organic > structural
+    clinician 3: organic > structural
+    clinician 4: organic > structural
+    clinician 5: organic > structural
+    clinician 6: organic > structural
+    clinician 7: organic > structural
+- input: central laryngeal movement disorder (zentral-laryngale bewegungsst\u00f6run)
+  labels:
+    organic > neuro-muscular: 7
+  votes:
+    clinician 1: organic > neuro-muscular
+    clinician 2: organic > neuro-muscular
+    clinician 3: organic > neuro-muscular
+    clinician 4: organic > neuro-muscular
+    clinician 5: organic > neuro-muscular
+    clinician 6: organic > neuro-muscular
+    clinician 7: organic > neuro-muscular
+- input: chondroma (chondrom)
+  labels:
+    NA: 1
+    not a diagnosis: 1
+    organic > structural: 5
+  votes:
+    clinician 1: organic > structural
+    clinician 2: not a diagnosis
+    clinician 3: organic > structural
+    clinician 4: organic > structural
+    clinician 5: organic > structural
+    clinician 6: NA
+    clinician 7: organic > structural
+- input: chordectomy (chordektomie)
+  labels:
+    not a diagnosis: 4
+    organic: 1
+    organic > structural: 2
+  votes:
+    clinician 1: not a diagnosis
+    clinician 2: organic > structural
+    clinician 3: organic > structural
+    clinician 4: not a diagnosis
+    clinician 5: not a diagnosis
+    clinician 6: organic
+    clinician 7: not a diagnosis
+- input: contact pachyderma (kontaktpachydermie)
+  labels:
+    not a diagnosis: 4
+    organic > inflammatory: 1
+    organic > structural: 2
+  votes:
+    clinician 1: organic > structural
+    clinician 2: not a diagnosis
+    clinician 3: organic > inflammatory
+    clinician 4: not a diagnosis
+    clinician 5: not a diagnosis
+    clinician 6: not a diagnosis
+    clinician 7: organic > structural
+- input: cyst (cyste)
+  labels:
+    organic > structural: 7
+  votes:
+    clinician 1: organic > structural
+    clinician 2: organic > structural
+    clinician 3: organic > structural
+    clinician 4: organic > structural
+    clinician 5: organic > structural
+    clinician 6: organic > structural
+    clinician 7: organic > structural
+- input: diplophony (diplophonie)
+  labels:
+    not a diagnosis: 7
+  votes:
+    clinician 1: not a diagnosis
+    clinician 2: not a diagnosis
+    clinician 3: not a diagnosis
+    clinician 4: not a diagnosis
+    clinician 5: not a diagnosis
+    clinician 6: not a diagnosis
+    clinician 7: not a diagnosis
+- input: dish syndrome (dish-syndrom)
+  labels:
+    NA: 1
+    not a diagnosis: 4
+    organic > inflammatory: 1
+    organic > structural: 1
+  votes:
+    clinician 1: organic > structural
+    clinician 2: not a diagnosis
+    clinician 3: organic > inflammatory
+    clinician 4: not a diagnosis
+    clinician 5: not a diagnosis
+    clinician 6: NA
+    clinician 7: not a diagnosis
+- input: down's disease (morbus down)
+  labels:
+    not a diagnosis: 6
+    organic > neuro-muscular: 1
+  votes:
+    clinician 1: not a diagnosis
+    clinician 2: not a diagnosis
+    clinician 3: organic > neuro-muscular
+    clinician 4: not a diagnosis
+    clinician 5: not a diagnosis
+    clinician 6: not a diagnosis
+    clinician 7: not a diagnosis
+- input: dysarthrophonia (dysarthrophonie)
+  labels:
+    NA: 1
+    not a diagnosis: 5
+    organic > neuro-muscular: 1
+  votes:
+    clinician 1: organic > neuro-muscular
+    clinician 2: not a diagnosis
+    clinician 3: not a diagnosis
+    clinician 4: not a diagnosis
+    clinician 5: not a diagnosis
+    clinician 6: NA
+    clinician 7: not a diagnosis
+- input: dysody (dysodie)
+  labels:
+    NA: 1
+    not a diagnosis: 6
+  votes:
+    clinician 1: not a diagnosis
+    clinician 2: not a diagnosis
+    clinician 3: not a diagnosis
+    clinician 4: not a diagnosis
+    clinician 5: not a diagnosis
+    clinician 6: NA
+    clinician 7: not a diagnosis
+- input: dysphonia (dysphonie)
+  labels:
+    NA: 1
+    muscle tension: 1
+    not a diagnosis: 5
+  votes:
+    clinician 1: muscle tension
+    clinician 2: not a diagnosis
+    clinician 3: not a diagnosis
+    clinician 4: not a diagnosis
+    clinician 5: not a diagnosis
+    clinician 6: NA
+    clinician 7: not a diagnosis
+- input: dysplastic dysphonia (dysplastische dysphonie)
+  labels:
+    NA: 1
+    not a diagnosis: 5
+    organic > structural: 1
+  votes:
+    clinician 1: organic > structural
+    clinician 2: not a diagnosis
+    clinician 3: not a diagnosis
+    clinician 4: not a diagnosis
+    clinician 5: not a diagnosis
+    clinician 6: NA
+    clinician 7: not a diagnosis
+- input: dysplastic larynx (dysplastischer kehlkopf)
+  labels:
+    NA: 1
+    not a diagnosis: 3
+    organic > structural: 3
+  votes:
+    clinician 1: organic > structural
+    clinician 2: not a diagnosis
+    clinician 3: not a diagnosis
+    clinician 4: organic > structural
+    clinician 5: organic > structural
+    clinician 6: NA
+    clinician 7: not a diagnosis
+- input: epiglottic carcinoma (epiglottiskarzinom)
+  labels:
+    NA: 1
+    not a diagnosis: 1
+    organic > structural: 5
+  votes:
+    clinician 1: organic > structural
+    clinician 2: organic > structural
+    clinician 3: not a diagnosis
+    clinician 4: organic > structural
+    clinician 5: organic > structural
+    clinician 6: NA
+    clinician 7: organic > structural
+- input: fibroma (fibrom)
+  labels:
+    not a diagnosis: 1
+    organic > structural: 6
+  votes:
+    clinician 1: organic > structural
+    clinician 2: not a diagnosis
+    clinician 3: organic > structural
+    clinician 4: organic > structural
+    clinician 5: organic > structural
+    clinician 6: organic > structural
+    clinician 7: organic > structural
+- input: frontolateral partial resection (frontolaterale teilresektion)
+  labels:
+    not a diagnosis: 6
+    organic > structural: 1
+  votes:
+    clinician 1: not a diagnosis
+    clinician 2: organic > structural
+    clinician 3: not a diagnosis
+    clinician 4: not a diagnosis
+    clinician 5: not a diagnosis
+    clinician 6: not a diagnosis
+    clinician 7: not a diagnosis
+- input: functional dysphonia (funktionelle dysphonie)
+  labels:
+    functional: 7
+  votes:
+    clinician 1: functional
+    clinician 2: functional
+    clinician 3: functional
+    clinician 4: functional
+    clinician 5: functional
+    clinician 6: functional
+    clinician 7: functional
+- input: gerd / gastrix reflux (gerd)
+  labels:
+    not a diagnosis: 5
+    organic > inflammatory: 2
+  votes:
+    clinician 1: organic > inflammatory
+    clinician 2: organic > inflammatory
+    clinician 3: not a diagnosis
+    clinician 4: not a diagnosis
+    clinician 5: not a diagnosis
+    clinician 6: not a diagnosis
+    clinician 7: not a diagnosis
+- input: granuloma (granulom)
+  labels:
+    organic > inflammatory: 3
+    organic > structural: 4
+  votes:
+    clinician 1: organic > structural
+    clinician 2: organic > inflammatory
+    clinician 3: organic > structural
+    clinician 4: organic > inflammatory
+    clinician 5: organic > inflammatory
+    clinician 6: organic > structural
+    clinician 7: organic > structural
+- input: healthy (healthy)
+  labels:
+    not a diagnosis: 7
+  votes:
+    clinician 1: not a diagnosis
+    clinician 2: not a diagnosis
+    clinician 3: not a diagnosis
+    clinician 4: not a diagnosis
+    clinician 5: not a diagnosis
+    clinician 6: not a diagnosis
+    clinician 7: not a diagnosis
+- input: hyperasthenia (hyperasthenie)
+  labels:
+    not a diagnosis: 7
+  votes:
+    clinician 1: not a diagnosis
+    clinician 2: not a diagnosis
+    clinician 3: not a diagnosis
+    clinician 4: not a diagnosis
+    clinician 5: not a diagnosis
+    clinician 6: not a diagnosis
+    clinician 7: not a diagnosis
+- input: hyperfunctional dysphonia (hyperfunktionelle dysphonie)
+  labels:
+    muscle tension: 5
+    not a diagnosis: 2
+  votes:
+    clinician 1: muscle tension
+    clinician 2: not a diagnosis
+    clinician 3: muscle tension
+    clinician 4: muscle tension
+    clinician 5: muscle tension
+    clinician 6: not a diagnosis
+    clinician 7: muscle tension
+- input: hypofunctional dysphonia (hypofunktionelle dysphonie)
+  labels:
+    functional: 1
+    muscle tension: 1
+    not a diagnosis: 3
+    organic > neuro-muscular: 1
+    organic > structural: 1
+  votes:
+    clinician 1: organic > structural
+    clinician 2: not a diagnosis
+    clinician 3: organic > neuro-muscular
+    clinician 4: not a diagnosis
+    clinician 5: not a diagnosis
+    clinician 6: functional
+    clinician 7: muscle tension
+- input: hypopharyngeal tumor (hypopharynxtumor)
+  labels:
+    organic > structural: 7
+  votes:
+    clinician 1: organic > structural
+    clinician 2: organic > structural
+    clinician 3: organic > structural
+    clinician 4: organic > structural
+    clinician 5: organic > structural
+    clinician 6: organic > structural
+    clinician 7: organic > structural
+- input: hypotonic dysphonia (hypotone dysphonie)
+  labels:
+    not a diagnosis: 4
+    organic > neuro-muscular: 3
+  votes:
+    clinician 1: organic > neuro-muscular
+    clinician 2: not a diagnosis
+    clinician 3: organic > neuro-muscular
+    clinician 4: not a diagnosis
+    clinician 5: not a diagnosis
+    clinician 6: not a diagnosis
+    clinician 7: organic > neuro-muscular
+- input: internal weakness (internusschw\u00e4che)
+  labels:
+    not a diagnosis: 7
+  votes:
+    clinician 1: not a diagnosis
+    clinician 2: not a diagnosis
+    clinician 3: not a diagnosis
+    clinician 4: not a diagnosis
+    clinician 5: not a diagnosis
+    clinician 6: not a diagnosis
+    clinician 7: not a diagnosis
+- input: intubation trauma (intubationsschaden)
+  labels:
+    not a diagnosis: 2
+    organic > trauma: 5
+  votes:
+    clinician 1: organic > trauma
+    clinician 2: organic > trauma
+    clinician 3: organic > trauma
+    clinician 4: organic > trauma
+    clinician 5: organic > trauma
+    clinician 6: not a diagnosis
+    clinician 7: not a diagnosis
+- input: intubation granuloma (intubationsgranulom)
+  labels:
+    organic > inflammatory: 2
+    organic > structural: 2
+    organic > trauma: 3
+  votes:
+    clinician 1: organic > trauma
+    clinician 2: organic > trauma
+    clinician 3: organic > trauma
+    clinician 4: organic > inflammatory
+    clinician 5: organic > inflammatory
+    clinician 6: organic > structural
+    clinician 7: organic > structural
+- input: juvenile dysphonia (juvenile dysphonie)
+  labels:
+    functional: 3
+    not a diagnosis: 4
+  votes:
+    clinician 1: not a diagnosis
+    clinician 2: not a diagnosis
+    clinician 3: not a diagnosis
+    clinician 4: functional
+    clinician 5: functional
+    clinician 6: functional
+    clinician 7: not a diagnosis
+- input: laryngeal tumor (kehlkopftumor)
+  labels:
+    organic > structural: 7
+  votes:
+    clinician 1: organic > structural
+    clinician 2: organic > structural
+    clinician 3: organic > structural
+    clinician 4: organic > structural
+    clinician 5: organic > structural
+    clinician 6: organic > structural
+    clinician 7: organic > structural
+- input: laryngitis (laryngitis)
+  labels:
+    not a diagnosis: 1
+    organic > inflammatory: 5
+    organic > structural: 1
+  votes:
+    clinician 1: organic > inflammatory
+    clinician 2: organic > inflammatory
+    clinician 3: organic > inflammatory
+    clinician 4: organic > inflammatory
+    clinician 5: organic > inflammatory
+    clinician 6: organic > structural
+    clinician 7: not a diagnosis
+- input: laryngocele (laryngozele)
+  labels:
+    organic > structural: 7
+  votes:
+    clinician 1: organic > structural
+    clinician 2: organic > structural
+    clinician 3: organic > structural
+    clinician 4: organic > structural
+    clinician 5: organic > structural
+    clinician 6: organic > structural
+    clinician 7: organic > structural
+- input: leukoplakia (leukoplakie)
+  labels:
+    organic > structural: 7
+  votes:
+    clinician 1: organic > structural
+    clinician 2: organic > structural
+    clinician 3: organic > structural
+    clinician 4: organic > structural
+    clinician 5: organic > structural
+    clinician 6: organic > structural
+    clinician 7: organic > structural
+- input: medial cervical cyst (mediale halscyste)
+  labels:
+    not a diagnosis: 6
+    organic > structural: 1
+  votes:
+    clinician 1: organic > structural
+    clinician 2: not a diagnosis
+    clinician 3: not a diagnosis
+    clinician 4: not a diagnosis
+    clinician 5: not a diagnosis
+    clinician 6: not a diagnosis
+    clinician 7: not a diagnosis
+- input: mesopharyngeal tumor (mesopharynxtumor)
+  labels:
+    not a diagnosis: 5
+    organic > structural: 2
+  votes:
+    clinician 1: organic > structural
+    clinician 2: not a diagnosis
+    clinician 3: organic > structural
+    clinician 4: not a diagnosis
+    clinician 5: not a diagnosis
+    clinician 6: not a diagnosis
+    clinician 7: not a diagnosis
+- input: monochorditis (monochorditis)
+  labels:
+    not a diagnosis: 2
+    organic > inflammatory: 4
+    organic > structural: 1
+  votes:
+    clinician 1: not a diagnosis
+    clinician 2: organic > inflammatory
+    clinician 3: organic > inflammatory
+    clinician 4: organic > inflammatory
+    clinician 5: organic > inflammatory
+    clinician 6: organic > structural
+    clinician 7: not a diagnosis
+- input: mutation (mutatio)
+  labels:
+    not a diagnosis: 6
+    organic > structural: 1
+  votes:
+    clinician 1: organic > structural
+    clinician 2: not a diagnosis
+    clinician 3: not a diagnosis
+    clinician 4: not a diagnosis
+    clinician 5: not a diagnosis
+    clinician 6: not a diagnosis
+    clinician 7: not a diagnosis
+- input: mutation fistula voice (mutationsfistelstimme)
+  labels:
+    not a diagnosis: 6
+    organic > structural: 1
+  votes:
+    clinician 1: not a diagnosis
+    clinician 2: not a diagnosis
+    clinician 3: organic > structural
+    clinician 4: not a diagnosis
+    clinician 5: not a diagnosis
+    clinician 6: not a diagnosis
+    clinician 7: not a diagnosis
+- input: myasthenia (phonasthenie)
+  labels:
+    NA: 7
+  votes:
+    clinician 1: NA
+    clinician 2: NA
+    clinician 3: NA
+    clinician 4: NA
+    clinician 5: NA
+    clinician 6: NA
+    clinician 7: NA
+- input: superior laryngeal nerve lesion (n. laryngeus superior l\u00e4sion)
+  labels:
+    not a diagnosis: 1
+    organic > neuro-muscular: 6
+  votes:
+    clinician 1: organic > neuro-muscular
+    clinician 2: organic > neuro-muscular
+    clinician 3: organic > neuro-muscular
+    clinician 4: organic > neuro-muscular
+    clinician 5: organic > neuro-muscular
+    clinician 6: not a diagnosis
+    clinician 7: organic > neuro-muscular
+- input: superior laryngeal nerve neuralgia (n. laryngeus superior neuralgie)
+  labels:
+    not a diagnosis: 1
+    organic > neuro-muscular: 6
+  votes:
+    clinician 1: organic > neuro-muscular
+    clinician 2: organic > neuro-muscular
+    clinician 3: organic > neuro-muscular
+    clinician 4: organic > neuro-muscular
+    clinician 5: organic > neuro-muscular
+    clinician 6: not a diagnosis
+    clinician 7: organic > neuro-muscular
+- input: non-fluency syndrome (non-fluency-syndrom)
+  labels:
+    not a diagnosis: 7
+  votes:
+    clinician 1: not a diagnosis
+    clinician 2: not a diagnosis
+    clinician 3: not a diagnosis
+    clinician 4: not a diagnosis
+    clinician 5: not a diagnosis
+    clinician 6: not a diagnosis
+    clinician 7: not a diagnosis
+- input: orofacial dyspraxia (orofaciale dyspraxie)
+  labels:
+    functional: 1
+    not a diagnosis: 4
+    organic > neuro-muscular: 2
+  votes:
+    clinician 1: organic > neuro-muscular
+    clinician 2: not a diagnosis
+    clinician 3: organic > neuro-muscular
+    clinician 4: not a diagnosis
+    clinician 5: not a diagnosis
+    clinician 6: functional
+    clinician 7: not a diagnosis
+- input: papilloma (papillom)
+  labels:
+    organic > structural: 7
+  votes:
+    clinician 1: organic > structural
+    clinician 2: organic > structural
+    clinician 3: organic > structural
+    clinician 4: organic > structural
+    clinician 5: organic > structural
+    clinician 6: organic > structural
+    clinician 7: organic > structural
+- input: parkinsons (morbus parkinson)
+  labels:
+    organic > neuro-muscular: 7
+  votes:
+    clinician 1: organic > neuro-muscular
+    clinician 2: organic > neuro-muscular
+    clinician 3: organic > neuro-muscular
+    clinician 4: organic > neuro-muscular
+    clinician 5: organic > neuro-muscular
+    clinician 6: organic > neuro-muscular
+    clinician 7: organic > neuro-muscular
+- input: phonation nodules (phonationskn\u00f6tchen)
+  labels:
+    muscle tension: 1
+    not a diagnosis: 3
+    organic > structural: 3
+  votes:
+    clinician 1: muscle tension
+    clinician 2: not a diagnosis
+    clinician 3: organic > structural
+    clinician 4: organic > structural
+    clinician 5: organic > structural
+    clinician 6: not a diagnosis
+    clinician 7: not a diagnosis
+- input: pocket fold hyperplasia (taschenfaltenhyperplasie)
+  labels:
+    not a diagnosis: 6
+    organic > structural: 1
+  votes:
+    clinician 1: organic > structural
+    clinician 2: not a diagnosis
+    clinician 3: not a diagnosis
+    clinician 4: not a diagnosis
+    clinician 5: not a diagnosis
+    clinician 6: not a diagnosis
+    clinician 7: not a diagnosis
+- input: pocket fold voice (taschenfaltenstimme)
+  labels:
+    not a diagnosis: 7
+  votes:
+    clinician 1: not a diagnosis
+    clinician 2: not a diagnosis
+    clinician 3: not a diagnosis
+    clinician 4: not a diagnosis
+    clinician 5: not a diagnosis
+    clinician 6: not a diagnosis
+    clinician 7: not a diagnosis
+- input: psychogenic aphonia (psychogene aphonie)
+  labels:
+    functional: 7
+  votes:
+    clinician 1: functional
+    clinician 2: functional
+    clinician 3: functional
+    clinician 4: functional
+    clinician 5: functional
+    clinician 6: functional
+    clinician 7: functional
+- input: psychogenic dysphonia (psychogene dysphonie)
+  labels:
+    functional: 7
+  votes:
+    clinician 1: functional
+    clinician 2: functional
+    clinician 3: functional
+    clinician 4: functional
+    clinician 5: functional
+    clinician 6: functional
+    clinician 7: functional
+- input: psychogenic microphony (psychogene mikrophonie)
+  labels:
+    functional: 5
+    not a diagnosis: 2
+  votes:
+    clinician 1: functional
+    clinician 2: functional
+    clinician 3: functional
+    clinician 4: functional
+    clinician 5: functional
+    clinician 6: not a diagnosis
+    clinician 7: not a diagnosis
+- input: recurrent paralysis (rekurrensparese)
+  labels:
+    not a diagnosis: 1
+    organic > neuro-muscular: 6
+  votes:
+    clinician 1: organic > neuro-muscular
+    clinician 2: organic > neuro-muscular
+    clinician 3: organic > neuro-muscular
+    clinician 4: organic > neuro-muscular
+    clinician 5: organic > neuro-muscular
+    clinician 6: organic > neuro-muscular
+    clinician 7: not a diagnosis
+- input: reinke edema (reinke \u00f6dem)
+  labels:
+    organic > inflammatory: 1
+    organic > structural: 6
+  votes:
+    clinician 1: organic > inflammatory
+    clinician 2: organic > structural
+    clinician 3: organic > structural
+    clinician 4: organic > structural
+    clinician 5: organic > structural
+    clinician 6: organic > structural
+    clinician 7: organic > structural
+- input: rhinophony aperta (rhinophonie aperta)
+  labels:
+    not a diagnosis: 7
+  votes:
+    clinician 1: not a diagnosis
+    clinician 2: not a diagnosis
+    clinician 3: not a diagnosis
+    clinician 4: not a diagnosis
+    clinician 5: not a diagnosis
+    clinician 6: not a diagnosis
+    clinician 7: not a diagnosis
+- input: rhinophony clausa (rhinophonie clausa)
+  labels:
+    not a diagnosis: 7
+  votes:
+    clinician 1: not a diagnosis
+    clinician 2: not a diagnosis
+    clinician 3: not a diagnosis
+    clinician 4: not a diagnosis
+    clinician 5: not a diagnosis
+    clinician 6: not a diagnosis
+    clinician 7: not a diagnosis
+- input: rhinophony mixta (rhinophonie mixta)
+  labels:
+    not a diagnosis: 7
+  votes:
+    clinician 1: not a diagnosis
+    clinician 2: not a diagnosis
+    clinician 3: not a diagnosis
+    clinician 4: not a diagnosis
+    clinician 5: not a diagnosis
+    clinician 6: not a diagnosis
+    clinician 7: not a diagnosis
+- input: polter's syndrome (poltersyndrom)
+  labels:
+    NA: 7
+  votes:
+    clinician 1: NA
+    clinician 2: NA
+    clinician 3: NA
+    clinician 4: NA
+    clinician 5: NA
+    clinician 6: NA
+    clinician 7: NA
+- input: sigmatism (sigmatismus)
+  labels:
+    not a diagnosis: 7
+  votes:
+    clinician 1: not a diagnosis
+    clinician 2: not a diagnosis
+    clinician 3: not a diagnosis
+    clinician 4: not a diagnosis
+    clinician 5: not a diagnosis
+    clinician 6: not a diagnosis
+    clinician 7: not a diagnosis
+- input: singer's voice (s\u00e4ngerstimme)
+  labels:
+    not a diagnosis: 7
+  votes:
+    clinician 1: not a diagnosis
+    clinician 2: not a diagnosis
+    clinician 3: not a diagnosis
+    clinician 4: not a diagnosis
+    clinician 5: not a diagnosis
+    clinician 6: not a diagnosis
+    clinician 7: not a diagnosis
+- input: singing voice (gesangsstimme)
+  labels:
+    not a diagnosis: 7
+  votes:
+    clinician 1: not a diagnosis
+    clinician 2: not a diagnosis
+    clinician 3: not a diagnosis
+    clinician 4: not a diagnosis
+    clinician 5: not a diagnosis
+    clinician 6: not a diagnosis
+    clinician 7: not a diagnosis
+- input: spasmodic dysphonia (spasmodische dysphonie)
+  labels:
+    organic > neuro-muscular: 7
+  votes:
+    clinician 1: organic > neuro-muscular
+    clinician 2: organic > neuro-muscular
+    clinician 3: organic > neuro-muscular
+    clinician 4: organic > neuro-muscular
+    clinician 5: organic > neuro-muscular
+    clinician 6: organic > neuro-muscular
+    clinician 7: organic > neuro-muscular
+- input: synechia (synechie)
+  labels:
+    not a diagnosis: 4
+    organic > structural: 3
+  votes:
+    clinician 1: organic > structural
+    clinician 2: not a diagnosis
+    clinician 3: not a diagnosis
+    clinician 4: organic > structural
+    clinician 5: organic > structural
+    clinician 6: not a diagnosis
+    clinician 7: not a diagnosis
+- input: valleculacyste (valleculacyste)
+  labels:
+    not a diagnosis: 3
+    organic > structural: 4
+  votes:
+    clinician 1: organic > structural
+    clinician 2: not a diagnosis
+    clinician 3: not a diagnosis
+    clinician 4: organic > structural
+    clinician 5: organic > structural
+    clinician 6: not a diagnosis
+    clinician 7: organic > structural
+- input: velopharyngoplasty (velopharyngoplastik)
+  labels:
+    not a diagnosis: 7
+  votes:
+    clinician 1: not a diagnosis
+    clinician 2: not a diagnosis
+    clinician 3: not a diagnosis
+    clinician 4: not a diagnosis
+    clinician 5: not a diagnosis
+    clinician 6: not a diagnosis
+    clinician 7: not a diagnosis
+- input: vocal fold carcinoma (stimmlippenkarzinom)
+  labels:
+    organic > structural: 7
+  votes:
+    clinician 1: organic > structural
+    clinician 2: organic > structural
+    clinician 3: organic > structural
+    clinician 4: organic > structural
+    clinician 5: organic > structural
+    clinician 6: organic > structural
+    clinician 7: organic > structural
+- input: vocal fold polyp (stimmlippenpolyp)
+  labels:
+    organic > structural: 7
+  votes:
+    clinician 1: organic > structural
+    clinician 2: organic > structural
+    clinician 3: organic > structural
+    clinician 4: organic > structural
+    clinician 5: organic > structural
+    clinician 6: organic > structural
+    clinician 7: organic > structural
+- input: vox senilis (vox senilis)
+  labels:
+    not a diagnosis: 5
+    organic > structural: 2
+  votes:
+    clinician 1: not a diagnosis
+    clinician 2: not a diagnosis
+    clinician 3: not a diagnosis
+    clinician 4: organic > structural
+    clinician 5: organic > structural
+    clinician 6: not a diagnosis
+    clinician 7: not a diagnosis
+- input: dysarthria
+  labels:
+    not a diagnosis: 5
+    organic > neuro-muscular: 2
+  votes:
+    clinician 1: organic > neuro-muscular
+    clinician 2: organic > neuro-muscular
+    clinician 3: not a diagnosis
+    clinician 4: not a diagnosis
+    clinician 5: not a diagnosis
+    clinician 6: not a diagnosis
+    clinician 7: not a diagnosis

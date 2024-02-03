@@ -8,12 +8,10 @@
       "extensions": [
         "eamodio.gitlens",
         "esbenp.prettier-vscode",
-        "mechatroner.rainbow-csv",
         "ms-python.black-formatter",
         "ms-python.flake8",
         "ms-python.python",
-        "RandomFractalsInc.vscode-data-preview",
-        "ms-vscode.cpptools-extension-pack"
+        "hediet.vscode-drawio"
       ]
     }
   },

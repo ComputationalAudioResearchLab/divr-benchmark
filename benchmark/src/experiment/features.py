@@ -5,7 +5,7 @@ from typing import Any, Dict, Tuple
 from .collate import CollateFunc
 
 # import vdml_features as vf
-import src.experiment.praat_features as vf
+# import src.experiment.praat_features as vf
 
 
 class Base:
@@ -139,9 +139,9 @@ class FeaturePraatMeanMfcc(Base):
 
 
 features = {
-    "mean_mfcc": FeaturePraatMeanMfcc,
-    "jitter": FeaturePraatJitter,
-    "shimmer": FeaturePraatShimmer,
+    # "mean_mfcc": FeaturePraatMeanMfcc,
+    # "jitter": FeaturePraatJitter,
+    # "shimmer": FeaturePraatShimmer,
 }
 
 
