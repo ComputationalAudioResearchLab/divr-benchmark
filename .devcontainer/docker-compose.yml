@@ -23,6 +23,8 @@ services:
         reservations:
           devices:
             - capabilities: [gpu]
+    environment:
+      - RELEASE_VERSION=v0.0.0
     # The following commands ensure that the container stays active
     entrypoint: bash
     stdin_open: true
