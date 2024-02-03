@@ -17,7 +17,7 @@ services:
       # Mount working folder
       - ../:/home/workspace
       # Mount storage
-      - /mnt/research-data/PRJ-VDML:/home/storage
+      - "${RESEARCH_DATA_PATH}:/home/storage"
     deploy:
       resources:
         reservations:
