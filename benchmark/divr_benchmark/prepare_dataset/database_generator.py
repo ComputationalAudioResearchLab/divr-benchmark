@@ -15,6 +15,12 @@ class DatabaseGenerator:
     along with other unresolved diagnosis.
     Further leaf level diagnosis that can not be distributed equitably are distributed in
     test, train and validation set in that order so that they definitely appear in test set.
+
+    Since a diagnosis can have multiple parents, the parent that it gets grouped with for
+    distribution is decided with majority vote across the parent weight. In case of a tie
+    classes are chosen in the order of pathological, normal and then unclassified. In case
+    ties are within a subgroup then choice is made via random selection. This randomness
+    is achieved by the presorting logic of the sessions list.
     """
 
     def __init__(self) -> None:
