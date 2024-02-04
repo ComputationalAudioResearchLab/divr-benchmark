@@ -4,7 +4,8 @@ from dataclasses import dataclass
 from typing import Dict, List, Tuple
 from .processed import ProcessedDataset, ProcessedSession
 
-AgePlan = Dict[Tuple[int, int], int]
+AgeBracket = Tuple[int, int]
+AgePlan = Dict[AgeBracket, int]
 GenderPlan = Dict[str, AgePlan]
 DiagnosisPlan = Dict[str, GenderPlan]
 
@@ -96,37 +97,22 @@ class DatabaseGenerator:
         """
         This mutates the current plan
         """
-        session_diagnosis = session.diagnosis[0].name
-        session_gender = session.gender
-        session_age_bracket = self.__age_to_bracket(session.age)
-        if (
-            current_plan.train[session_diagnosis][session_gender][session_age_bracket]
-            > 0
-        ):
-            current_plan.train[session_diagnosis][session_gender][
-                session_age_bracket
-            ] -= 1
-            bucket = DatasetType.TRAIN
-        elif (
-            current_plan.test[session_diagnosis][session_gender][session_age_bracket]
-            > 0
-        ):
-            current_plan.test[session_diagnosis][session_gender][
-                session_age_bracket
-            ] -= 1
-            bucket = DatasetType.TEST
-        elif (
-            current_plan.val[session_diagnosis][session_gender][session_age_bracket] > 0
-        ):
-            current_plan.val[session_diagnosis][session_gender][
-                session_age_bracket
-            ] -= 1
-            bucket = DatasetType.VAL
-        else:
-            raise RuntimeError(
-                "the plan does not allow accommodating this session, plan must be invalid"
-            )
-        return (current_plan, bucket)
+        buckets = {
+            DatasetType.TRAIN: current_plan.train,
+            DatasetType.TEST: current_plan.test,
+            DatasetType.VAL: current_plan.val,
+        }
+        diagnosis = session.diagnosis[0].name
+        gender = session.gender
+        age_bracket = self.__age_to_bracket(session.age)
+        for key, val in buckets.items():
+            if val[diagnosis][gender][age_bracket] > 0:
+                val[diagnosis][gender][age_bracket] -= 1
+                return (current_plan, key)
+
+        raise RuntimeError(
+            "the plan does not allow accommodating this session, plan must be invalid"
+        )
 
     def __plan_dataset(self, sessions: List[ProcessedSession]) -> DatabasePlan:
         diagnosis_counts = self.__count_diagnosis(sessions=sessions)
