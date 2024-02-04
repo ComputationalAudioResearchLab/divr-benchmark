@@ -1,5 +1,5 @@
 from .analysis import analysis
 from .diagnosis import Diagnosis
-from .diagnosisMap import DiagnosisMap
+from .diagnosis_map import DiagnosisMap
 
 __all__ = ["analysis", "Diagnosis", "DiagnosisMap"]
