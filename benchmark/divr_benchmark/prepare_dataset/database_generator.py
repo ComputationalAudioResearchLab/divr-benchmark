@@ -4,12 +4,15 @@ from dataclasses import dataclass
 from typing import Dict, List, Tuple
 from .processed import ProcessedDataset, ProcessedSession
 
+GenderPlan = Dict[str, int]
+DiagnosisPlan = Dict[str, GenderPlan]
+
 
 @dataclass
 class DatabasePlan:
-    train: Dict[str, int]
-    test: Dict[str, int]
-    val: Dict[str, int]
+    train: DiagnosisPlan
+    test: DiagnosisPlan
+    val: DiagnosisPlan
 
 
 class DatasetType(Enum):
@@ -92,14 +95,15 @@ class DatabaseGenerator:
         This mutates the current plan
         """
         session_diagnosis = session.diagnosis[0].name
-        if current_plan.train[session_diagnosis] > 0:
-            current_plan.train[session_diagnosis] -= 1
+        session_gender = session.gender
+        if current_plan.train[session_diagnosis][session_gender] > 0:
+            current_plan.train[session_diagnosis][session_gender] -= 1
             bucket = DatasetType.TRAIN
-        elif current_plan.test[session_diagnosis] > 0:
-            current_plan.test[session_diagnosis] -= 1
+        elif current_plan.test[session_diagnosis][session_gender] > 0:
+            current_plan.test[session_diagnosis][session_gender] -= 1
             bucket = DatasetType.TEST
-        elif current_plan.val[session_diagnosis] > 0:
-            current_plan.val[session_diagnosis] -= 1
+        elif current_plan.val[session_diagnosis][session_gender] > 0:
+            current_plan.val[session_diagnosis][session_gender] -= 1
             bucket = DatasetType.VAL
         else:
             raise RuntimeError(
@@ -114,21 +118,28 @@ class DatabaseGenerator:
             test={},
             val={},
         )
-        for key, val in diagnosis_counts.items():
-            train_len, test_len, val_len = self.__calculate_split(val)
-            plan.train[key] = train_len
-            plan.test[key] = test_len
-            plan.val[key] = val_len
+        for diag_key, diag_val in diagnosis_counts.items():
+            plan.train[diag_key] = {}
+            plan.test[diag_key] = {}
+            plan.val[diag_key] = {}
+            for gender_key, gender_val in diag_val.items():
+                train_len, test_len, val_len = self.__calculate_split(gender_val)
+                plan.train[diag_key][gender_key] = train_len
+                plan.test[diag_key][gender_key] = test_len
+                plan.val[diag_key][gender_key] = val_len
         return plan
 
-    def __count_diagnosis(self, sessions: List[ProcessedSession]) -> Dict[str, int]:
-        counter: Dict[str, int] = {}
+    def __count_diagnosis(self, sessions: List[ProcessedSession]) -> DiagnosisPlan:
+        counter: DiagnosisPlan = {}
         for session in sessions:
             for diagnosis in session.diagnosis:
                 if diagnosis.name not in counter:
-                    counter[diagnosis.name] = 1
-                else:
-                    counter[diagnosis.name] += 1
+                    counter[diagnosis.name] = {}
+                diagnosis_ref = counter[diagnosis.name]
+                if session.gender not in diagnosis_ref:
+                    diagnosis_ref[session.gender] = 0
+
+                diagnosis_ref[session.gender] += 1
         return counter
 
     def __calculate_split(self, total_data: int) -> Tuple[int, int, int]:
