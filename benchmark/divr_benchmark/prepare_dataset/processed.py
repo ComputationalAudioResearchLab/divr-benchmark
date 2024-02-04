@@ -2,8 +2,7 @@ from __future__ import annotations
 import wfdb
 import nspfile
 import soundfile
-import random
-from typing import List, Tuple
+from typing import List
 from pathlib import Path
 from dataclasses import dataclass
 from ..diagnosis import Diagnosis
@@ -65,30 +64,6 @@ class ProcessedDataset:
     train_sessions: List[ProcessedSession]
     val_sessions: List[ProcessedSession]
     test_sessions: List[ProcessedSession]
-
-    @staticmethod
-    def generate_dataset(
-        db: str,
-        sessions: List[ProcessedSession],
-        split: Tuple[float, float] = (0.7, 0.1),
-        seed: int = 42,
-    ):
-        total_data = len(sessions)
-        train_start = 0
-        train_end = int(train_start + split[0] * total_data)
-        val_start = train_end
-        val_end = int(val_start + split[1] * total_data)
-        test_start = val_end
-        test_end = total_data
-
-        random.Random(seed).shuffle(sessions)
-
-        return ProcessedDataset(
-            db=db,
-            train_sessions=sessions[train_start:train_end],
-            val_sessions=sessions[val_start:val_end],
-            test_sessions=sessions[test_start:test_end],
-        )
 
     @property
     def __dict__(self):

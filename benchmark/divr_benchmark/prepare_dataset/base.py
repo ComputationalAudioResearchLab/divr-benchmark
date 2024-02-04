@@ -4,11 +4,13 @@ from pathlib import Path
 from typing import List, Tuple
 from ..diagnosis import DiagnosisMap
 from .processed import ProcessedDataset, ProcessedSession
+from .database_generator import DatabaseGenerator
 
 
 class BaseProcessor:
     def __init__(self) -> None:
         self.diagnosis_map = DiagnosisMap()
+        self.database_generator = DatabaseGenerator()
 
     async def __call__(self, source_path: Path, output_path: Path):
         raise NotImplementedError()
@@ -21,7 +23,7 @@ class BaseProcessor:
         split: Tuple[float, float] = (0.7, 0.1),
         seed: int = 42,
     ) -> ProcessedDataset:
-        dataset = ProcessedDataset.generate_dataset(
+        dataset = self.database_generator.generate(
             db=db,
             sessions=sessions,
             split=split,
