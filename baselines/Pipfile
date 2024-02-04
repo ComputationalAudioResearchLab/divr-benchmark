@@ -6,6 +6,9 @@ pytest = "==7.3.1"
 
 [packages]
 catboost = "==1.2"
+class-argparse = "==0.1.3"
+divr-benchmark = {path = "../benchmark", editable=true}
+divr-feature-toolkit = {path = "../lib/divr-feature-toolkit", editable=true}
 librosa = ">=0.10.0.post2"
 matplotlib = ">=3.7.1"
 pandas = ">=2.0.1"
@@ -16,11 +19,7 @@ seaborn = "==0.12.2"
 tensorboard = "==2.13.0"
 torch-tb-profiler = "==0.4.1"
 tqdm = "==4.64.1"
-wfdb = "==4.1.1"
 xlrd = "==2.0.1"
-class-argparse = "==0.1.3"
-divr-benchmark = {path = "../benchmark", editable=true}
-divr-feature-toolkit = {path = "../lib/divr-feature-toolkit", editable=true}
 
 [requires]
 python_version = "3.10"

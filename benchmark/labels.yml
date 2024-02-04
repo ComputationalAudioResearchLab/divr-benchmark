@@ -1,6 +1,8 @@
 amyotrophic lateral sclerosis:
   inputs:
     - amyotrophe lateralsklerose
+  labels:
+    pathological > organic > neuro-muscular: 7
   votes:
     clinician 1: pathological > organic > neuro-muscular
     clinician 2: pathological > organic > neuro-muscular
@@ -12,6 +14,10 @@ amyotrophic lateral sclerosis:
 aryluxation:
   inputs:
     - aryluxation
+  labels:
+    not a diagnosis: 3
+    pathological > organic > structural: 2
+    pathological > organic > trauma: 2
   votes:
     clinician 1: pathological > organic > trauma
     clinician 2: not a diagnosis
@@ -23,6 +29,8 @@ aryluxation:
 balbuties:
   inputs:
     - balbuties
+  labels:
+    not a diagnosis: 7
   votes:
     clinician 1: not a diagnosis
     clinician 2: not a diagnosis
@@ -34,6 +42,9 @@ balbuties:
 bulbar paralysis:
   inputs:
     - bulb\u00e4rparalyse
+  labels:
+    pathological > organic: 1
+    pathological > organic > neuro-muscular: 6
   votes:
     clinician 1: pathological > organic > neuro-muscular
     clinician 2: pathological > organic > neuro-muscular
@@ -45,6 +56,8 @@ bulbar paralysis:
 carcinoma in situ:
   inputs:
     - carcinoma in situ
+  labels:
+    pathological > organic > structural: 7
   votes:
     clinician 1: pathological > organic > structural
     clinician 2: pathological > organic > structural
@@ -56,6 +69,8 @@ carcinoma in situ:
 central laryngeal movement disorder:
   inputs:
     - zentral-laryngale bewegungsst\u00f6run
+  labels:
+    pathological > organic > neuro-muscular: 7
   votes:
     clinician 1: pathological > organic > neuro-muscular
     clinician 2: pathological > organic > neuro-muscular
@@ -67,6 +82,10 @@ central laryngeal movement disorder:
 chondroma:
   inputs:
     - chondrom
+  labels:
+    NA: 1
+    not a diagnosis: 1
+    pathological > organic > structural: 5
   votes:
     clinician 1: pathological > organic > structural
     clinician 2: not a diagnosis
@@ -78,6 +97,10 @@ chondroma:
 chordectomy:
   inputs:
     - chordektomie
+  labels:
+    not a diagnosis: 4
+    pathological > organic: 1
+    pathological > organic > structural: 2
   votes:
     clinician 1: not a diagnosis
     clinician 2: pathological > organic > structural
@@ -89,6 +112,10 @@ chordectomy:
 contact pachyderma:
   inputs:
     - kontaktpachydermie
+  labels:
+    not a diagnosis: 4
+    pathological > organic > inflammatory: 1
+    pathological > organic > structural: 2
   votes:
     clinician 1: pathological > organic > structural
     clinician 2: not a diagnosis
@@ -100,6 +127,8 @@ contact pachyderma:
 cyst:
   inputs:
     - cyste
+  labels:
+    pathological > organic > structural: 7
   votes:
     clinician 1: pathological > organic > structural
     clinician 2: pathological > organic > structural
@@ -111,6 +140,8 @@ cyst:
 diplophony:
   inputs:
     - diplophonie
+  labels:
+    not a diagnosis: 7
   votes:
     clinician 1: not a diagnosis
     clinician 2: not a diagnosis
@@ -122,6 +153,11 @@ diplophony:
 dish syndrome:
   inputs:
     - dish-syndrom
+  labels:
+    NA: 1
+    not a diagnosis: 4
+    pathological > organic > inflammatory: 1
+    pathological > organic > structural: 1
   votes:
     clinician 1: pathological > organic > structural
     clinician 2: not a diagnosis
@@ -133,6 +169,9 @@ dish syndrome:
 down's disease:
   inputs:
     - morbus down
+  labels:
+    not a diagnosis: 6
+    pathological > organic > neuro-muscular: 1
   votes:
     clinician 1: not a diagnosis
     clinician 2: not a diagnosis
@@ -144,6 +183,9 @@ down's disease:
 dysarthria:
   inputs:
     - dysarthria
+  labels:
+    not a diagnosis: 5
+    pathological > organic > neuro-muscular: 2
   votes:
     clinician 1: pathological > organic > neuro-muscular
     clinician 2: pathological > organic > neuro-muscular
@@ -155,6 +197,10 @@ dysarthria:
 dysarthrophonia:
   inputs:
     - dysarthrophonie
+  labels:
+    NA: 1
+    not a diagnosis: 5
+    pathological > organic > neuro-muscular: 1
   votes:
     clinician 1: pathological > organic > neuro-muscular
     clinician 2: not a diagnosis
@@ -166,6 +212,9 @@ dysarthrophonia:
 dysody:
   inputs:
     - dysodie
+  labels:
+    NA: 1
+    not a diagnosis: 6
   votes:
     clinician 1: not a diagnosis
     clinician 2: not a diagnosis
@@ -177,6 +226,10 @@ dysody:
 dysphonia:
   inputs:
     - dysphonie
+  labels:
+    NA: 1
+    not a diagnosis: 5
+    pathological > muscle tension: 1
   votes:
     clinician 1: pathological > muscle tension
     clinician 2: not a diagnosis
@@ -188,6 +241,10 @@ dysphonia:
 dysplastic dysphonia:
   inputs:
     - dysplastische dysphonie
+  labels:
+    NA: 1
+    not a diagnosis: 5
+    pathological > organic > structural: 1
   votes:
     clinician 1: pathological > organic > structural
     clinician 2: not a diagnosis
@@ -199,6 +256,10 @@ dysplastic dysphonia:
 dysplastic larynx:
   inputs:
     - dysplastischer kehlkopf
+  labels:
+    NA: 1
+    not a diagnosis: 3
+    pathological > organic > structural: 3
   votes:
     clinician 1: pathological > organic > structural
     clinician 2: not a diagnosis
@@ -210,6 +271,10 @@ dysplastic larynx:
 epiglottic carcinoma:
   inputs:
     - epiglottiskarzinom
+  labels:
+    NA: 1
+    not a diagnosis: 1
+    pathological > organic > structural: 5
   votes:
     clinician 1: pathological > organic > structural
     clinician 2: pathological > organic > structural
@@ -221,6 +286,9 @@ epiglottic carcinoma:
 fibroma:
   inputs:
     - fibrom
+  labels:
+    not a diagnosis: 1
+    pathological > organic > structural: 6
   votes:
     clinician 1: pathological > organic > structural
     clinician 2: not a diagnosis
@@ -232,6 +300,9 @@ fibroma:
 frontolateral partial resection:
   inputs:
     - frontolaterale teilresektion
+  labels:
+    not a diagnosis: 6
+    pathological > organic > structural: 1
   votes:
     clinician 1: not a diagnosis
     clinician 2: pathological > organic > structural
@@ -243,6 +314,8 @@ frontolateral partial resection:
 functional dysphonia:
   inputs:
     - funktionelle dysphonie
+  labels:
+    pathological > functional: 7
   votes:
     clinician 1: pathological > functional
     clinician 2: pathological > functional
@@ -254,6 +327,9 @@ functional dysphonia:
 gerd / gastrix reflux:
   inputs:
     - gerd
+  labels:
+    not a diagnosis: 5
+    pathological > organic > inflammatory: 2
   votes:
     clinician 1: pathological > organic > inflammatory
     clinician 2: pathological > organic > inflammatory
@@ -265,6 +341,9 @@ gerd / gastrix reflux:
 granuloma:
   inputs:
     - granulom
+  labels:
+    pathological > organic > inflammatory: 3
+    pathological > organic > structural: 4
   votes:
     clinician 1: pathological > organic > structural
     clinician 2: pathological > organic > inflammatory
@@ -276,6 +355,8 @@ granuloma:
 healthy:
   inputs:
     - healthy
+  labels:
+    normal: 7
   votes:
     clinician 1: normal
     clinician 2: normal
@@ -287,6 +368,8 @@ healthy:
 hyperasthenia:
   inputs:
     - hyperasthenie
+  labels:
+    not a diagnosis: 7
   votes:
     clinician 1: not a diagnosis
     clinician 2: not a diagnosis
@@ -298,6 +381,9 @@ hyperasthenia:
 hyperfunctional dysphonia:
   inputs:
     - hyperfunktionelle dysphonie
+  labels:
+    not a diagnosis: 2
+    pathological > muscle tension: 5
   votes:
     clinician 1: pathological > muscle tension
     clinician 2: not a diagnosis
@@ -309,19 +395,12 @@ hyperfunctional dysphonia:
 hyperkinetic dysphonia:
   inputs:
     - hyperkinetic dysphonia
+  labels:
+    not a diagnosis: 2
+    pathological > muscle tension: 4
+    pathological > organic > neuro-muscular: 1
   votes:
     clinician 1: pathological > organic > neuro-muscular
-    clinician 2: not a diagnosis
-    clinician 3: pathological > muscle tension
-    clinician 4: pathological > muscle tension
-    clinician 5: pathological > muscle tension
-    clinician 6: not a diagnosis
-    clinician 7: pathological > muscle tension
-hyperkinetic dysphonia  (rigid vocal fold):
-  inputs:
-    - hyperkinetic dysphonia  (rigid vocal fold)
-  votes:
-    clinician 1: pathological > organic > structural
     clinician 2: not a diagnosis
     clinician 3: pathological > muscle tension
     clinician 4: pathological > muscle tension
@@ -331,6 +410,10 @@ hyperkinetic dysphonia  (rigid vocal fold):
 hyperkinetic dysphonia (adduction deficit):
   inputs:
     - hyperkinetic dysphonia (adduction deficit)
+  labels:
+    not a diagnosis: 2
+    pathological > muscle tension: 4
+    pathological > organic > neuro-muscular: 1
   votes:
     clinician 1: pathological > organic > neuro-muscular
     clinician 2: not a diagnosis
@@ -342,6 +425,9 @@ hyperkinetic dysphonia (adduction deficit):
 hyperkinetic dysphonia (cordite):
   inputs:
     - hyperkinetic dysphonia (cordite)
+  labels:
+    not a diagnosis: 6
+    pathological > muscle tension: 1
   votes:
     clinician 1: not a diagnosis
     clinician 2: not a diagnosis
@@ -353,6 +439,10 @@ hyperkinetic dysphonia (cordite):
 hyperkinetic dysphonia (nodule):
   inputs:
     - hyperkinetic dysphonia (nodule)
+  labels:
+    not a diagnosis: 3
+    pathological > muscle tension: 3
+    pathological > organic > structural: 1
   votes:
     clinician 1: pathological > muscle tension
     clinician 2: not a diagnosis
@@ -364,6 +454,10 @@ hyperkinetic dysphonia (nodule):
 hyperkinetic dysphonia (polyps):
   inputs:
     - hyperkinetic dysphonia (polyps)
+  labels:
+    not a diagnosis: 2
+    pathological > muscle tension: 3
+    pathological > organic > structural: 2
   votes:
     clinician 1: pathological > muscle tension
     clinician 2: not a diagnosis
@@ -375,6 +469,9 @@ hyperkinetic dysphonia (polyps):
 hyperkinetic dysphonia (prolapse):
   inputs:
     - hyperkinetic dysphonia (prolapse)
+  labels:
+    not a diagnosis: 6
+    pathological > muscle tension: 1
   votes:
     clinician 1: not a diagnosis
     clinician 2: not a diagnosis
@@ -386,6 +483,11 @@ hyperkinetic dysphonia (prolapse):
 hyperkinetic dysphonia (reinke's edema):
   inputs:
     - hyperkinetic dysphonia (reinke's edema)
+  labels:
+    not a diagnosis: 2
+    pathological > muscle tension: 2
+    pathological > organic > inflammatory: 1
+    pathological > organic > structural: 2
   votes:
     clinician 1: pathological > organic > inflammatory
     clinician 2: not a diagnosis
@@ -394,9 +496,28 @@ hyperkinetic dysphonia (reinke's edema):
     clinician 5: not a diagnosis
     clinician 6: pathological > organic > structural
     clinician 7: pathological > muscle tension
+hyperkinetic dysphonia (rigid vocal fold):
+  inputs:
+    - hyperkinetic dysphonia  (rigid vocal fold)
+  labels:
+    not a diagnosis: 2
+    pathological > muscle tension: 4
+    pathological > organic > structural: 1
+  votes:
+    clinician 1: pathological > organic > structural
+    clinician 2: not a diagnosis
+    clinician 3: pathological > muscle tension
+    clinician 4: pathological > muscle tension
+    clinician 5: pathological > muscle tension
+    clinician 6: not a diagnosis
+    clinician 7: pathological > muscle tension
 hyperkinetic dysphonia (vocal fold nodules):
   inputs:
     - hyperkinetic dysphonia (vocal fold nodules)
+  labels:
+    not a diagnosis: 2
+    pathological > muscle tension: 3
+    pathological > organic > structural: 2
   votes:
     clinician 1: pathological > muscle tension
     clinician 2: not a diagnosis
@@ -408,6 +529,12 @@ hyperkinetic dysphonia (vocal fold nodules):
 hyperkinetic dysphonia (vocal fold paralysis):
   inputs:
     - hyperkinetic dysphonia (vocal fold paralysis)
+  labels:
+    not a diagnosis: 2
+    pathological > muscle tension: 2
+    pathological > organic: 1
+    pathological > organic > neuro-muscular: 1
+    pathological > organic > structural: 1
   votes:
     clinician 1: pathological > organic > structural
     clinician 2: not a diagnosis
@@ -419,6 +546,10 @@ hyperkinetic dysphonia (vocal fold paralysis):
 hyperkinetic dysphonia (vocal fold prolapse):
   inputs:
     - hyperkinetic dysphonia (vocal fold prolapse)
+  labels:
+    not a diagnosis: 5
+    pathological > muscle tension: 1
+    pathological > organic > structural: 1
   votes:
     clinician 1: pathological > organic > structural
     clinician 2: not a diagnosis
@@ -430,6 +561,12 @@ hyperkinetic dysphonia (vocal fold prolapse):
 hypofunctional dysphonia:
   inputs:
     - hypofunktionelle dysphonie
+  labels:
+    not a diagnosis: 3
+    pathological > functional: 1
+    pathological > muscle tension: 1
+    pathological > organic > neuro-muscular: 1
+    pathological > organic > structural: 1
   votes:
     clinician 1: pathological > organic > structural
     clinician 2: not a diagnosis
@@ -441,6 +578,10 @@ hypofunctional dysphonia:
 hypokinetic dysphonia:
   inputs:
     - hypokinetic dysphonia
+  labels:
+    not a diagnosis: 3
+    pathological > muscle tension: 1
+    pathological > organic > neuro-muscular: 3
   votes:
     clinician 1: pathological > organic > neuro-muscular
     clinician 2: not a diagnosis
@@ -452,6 +593,10 @@ hypokinetic dysphonia:
 hypokinetic dysphonia (adduction deficit):
   inputs:
     - hypokinetic dysphonia (adduction deficit)
+  labels:
+    not a diagnosis: 2
+    pathological > muscle tension: 1
+    pathological > organic > neuro-muscular: 4
   votes:
     clinician 1: pathological > organic > neuro-muscular
     clinician 2: not a diagnosis
@@ -463,6 +608,10 @@ hypokinetic dysphonia (adduction deficit):
 hypokinetic dysphonia (bilateral vocal fold):
   inputs:
     - hypokinetic dysphonia (bilateral vocal fold)
+  labels:
+    not a diagnosis: 4
+    pathological > organic > neuro-muscular: 2
+    pathological > organic > structural: 1
   votes:
     clinician 1: pathological > organic > structural
     clinician 2: not a diagnosis
@@ -474,6 +623,9 @@ hypokinetic dysphonia (bilateral vocal fold):
 hypokinetic dysphonia (conversion dysphonia):
   inputs:
     - hypokinetic dysphonia (conversion dysphonia)
+  labels:
+    not a diagnosis: 2
+    pathological > functional: 5
   votes:
     clinician 1: pathological > functional
     clinician 2: not a diagnosis
@@ -485,6 +637,11 @@ hypokinetic dysphonia (conversion dysphonia):
 hypokinetic dysphonia (dysphonia by chordal groove):
   inputs:
     - hypokinetic dysphonia (dysphonia by chordal groove)
+  labels:
+    not a diagnosis: 4
+    pathological > muscle tension: 1
+    pathological > organic > neuro-muscular: 1
+    pathological > organic > structural: 1
   votes:
     clinician 1: pathological > organic > structural
     clinician 2: not a diagnosis
@@ -496,6 +653,11 @@ hypokinetic dysphonia (dysphonia by chordal groove):
 hypokinetic dysphonia (extraglottic air leak):
   inputs:
     - hypokinetic dysphonia (extraglottic air leak)
+  labels:
+    not a diagnosis: 2
+    pathological > muscle tension: 1
+    pathological > organic > neuro-muscular: 2
+    pathological > organic > structural: 2
   votes:
     clinician 1: pathological > organic > neuro-muscular
     clinician 2: not a diagnosis
@@ -507,6 +669,11 @@ hypokinetic dysphonia (extraglottic air leak):
 hypokinetic dysphonia (glottic insufficiency):
   inputs:
     - hypokinetic dysphonia (glottic insufficiency)
+  labels:
+    not a diagnosis: 2
+    pathological > muscle tension: 1
+    pathological > organic > neuro-muscular: 2
+    pathological > organic > structural: 2
   votes:
     clinician 1: pathological > organic > neuro-muscular
     clinician 2: not a diagnosis
@@ -518,6 +685,10 @@ hypokinetic dysphonia (glottic insufficiency):
 hypokinetic dysphonia (laryngitis):
   inputs:
     - hypokinetic dysphonia (laryngitis)
+  labels:
+    not a diagnosis: 4
+    pathological > organic > inflammatory: 2
+    pathological > organic > structural: 1
   votes:
     clinician 1: pathological > organic > inflammatory
     clinician 2: not a diagnosis
@@ -529,6 +700,10 @@ hypokinetic dysphonia (laryngitis):
 hypokinetic dysphonia (presbiphonia):
   inputs:
     - hypokinetic dysphonia (presbiphonia)
+  labels:
+    not a diagnosis: 1
+    pathological > muscle tension: 1
+    pathological > organic > structural: 5
   votes:
     clinician 1: pathological > organic > structural
     clinician 2: not a diagnosis
@@ -540,6 +715,9 @@ hypokinetic dysphonia (presbiphonia):
 hypokinetic dysphonia (spasmodic dysphonia):
   inputs:
     - hypokinetic dysphonia (spasmodic dysphonia)
+  labels:
+    not a diagnosis: 2
+    pathological > organic > neuro-muscular: 5
   votes:
     clinician 1: pathological > organic > neuro-muscular
     clinician 2: not a diagnosis
@@ -551,6 +729,10 @@ hypokinetic dysphonia (spasmodic dysphonia):
 hypokinetic dysphonia (vocal fold paralysis):
   inputs:
     - hypokinetic dysphonia (vocal fold paralysis)
+  labels:
+    not a diagnosis: 2
+    pathological > organic: 1
+    pathological > organic > neuro-muscular: 4
   votes:
     clinician 1: pathological > organic > neuro-muscular
     clinician 2: not a diagnosis
@@ -562,6 +744,8 @@ hypokinetic dysphonia (vocal fold paralysis):
 hypopharyngeal tumor:
   inputs:
     - hypopharynxtumor
+  labels:
+    pathological > organic > structural: 7
   votes:
     clinician 1: pathological > organic > structural
     clinician 2: pathological > organic > structural
@@ -573,6 +757,9 @@ hypopharyngeal tumor:
 hypotonic dysphonia:
   inputs:
     - hypotone dysphonie
+  labels:
+    not a diagnosis: 4
+    pathological > organic > neuro-muscular: 3
   votes:
     clinician 1: pathological > organic > neuro-muscular
     clinician 2: not a diagnosis
@@ -584,6 +771,8 @@ hypotonic dysphonia:
 internal weakness:
   inputs:
     - internusschw\u00e4ch)
+  labels:
+    not a diagnosis: 7
   votes:
     clinician 1: not a diagnosis
     clinician 2: not a diagnosis
@@ -595,6 +784,10 @@ internal weakness:
 intubation granuloma:
   inputs:
     - intubationsgranulom
+  labels:
+    pathological > organic > inflammatory: 2
+    pathological > organic > structural: 2
+    pathological > organic > trauma: 3
   votes:
     clinician 1: pathological > organic > trauma
     clinician 2: pathological > organic > trauma
@@ -606,6 +799,9 @@ intubation granuloma:
 intubation trauma:
   inputs:
     - intubationsschaden
+  labels:
+    not a diagnosis: 2
+    pathological > organic > trauma: 5
   votes:
     clinician 1: pathological > organic > trauma
     clinician 2: pathological > organic > trauma
@@ -617,6 +813,9 @@ intubation trauma:
 juvenile dysphonia:
   inputs:
     - juvenile dysphonie
+  labels:
+    not a diagnosis: 4
+    pathological > functional: 3
   votes:
     clinician 1: not a diagnosis
     clinician 2: not a diagnosis
@@ -628,6 +827,8 @@ juvenile dysphonia:
 laryngeal tumor:
   inputs:
     - kehlkopftumor
+  labels:
+    pathological > organic > structural: 7
   votes:
     clinician 1: pathological > organic > structural
     clinician 2: pathological > organic > structural
@@ -639,6 +840,10 @@ laryngeal tumor:
 laryngitis:
   inputs:
     - laryngitis
+  labels:
+    not a diagnosis: 1
+    pathological > organic > inflammatory: 5
+    pathological > organic > structural: 1
   votes:
     clinician 1: pathological > organic > inflammatory
     clinician 2: pathological > organic > inflammatory
@@ -650,6 +855,8 @@ laryngitis:
 laryngocele:
   inputs:
     - laryngozele
+  labels:
+    pathological > organic > structural: 7
   votes:
     clinician 1: pathological > organic > structural
     clinician 2: pathological > organic > structural
@@ -661,6 +868,8 @@ laryngocele:
 leukoplakia:
   inputs:
     - leukoplakie
+  labels:
+    pathological > organic > structural: 7
   votes:
     clinician 1: pathological > organic > structural
     clinician 2: pathological > organic > structural
@@ -672,6 +881,9 @@ leukoplakia:
 medial cervical cyst:
   inputs:
     - mediale halscyste
+  labels:
+    not a diagnosis: 6
+    pathological > organic > structural: 1
   votes:
     clinician 1: pathological > organic > structural
     clinician 2: not a diagnosis
@@ -683,6 +895,9 @@ medial cervical cyst:
 mesopharyngeal tumor:
   inputs:
     - mesopharynxtumor
+  labels:
+    not a diagnosis: 5
+    pathological > organic > structural: 2
   votes:
     clinician 1: pathological > organic > structural
     clinician 2: not a diagnosis
@@ -694,6 +909,10 @@ mesopharyngeal tumor:
 monochorditis:
   inputs:
     - monochorditis
+  labels:
+    not a diagnosis: 2
+    pathological > organic > inflammatory: 4
+    pathological > organic > structural: 1
   votes:
     clinician 1: not a diagnosis
     clinician 2: pathological > organic > inflammatory
@@ -705,6 +924,9 @@ monochorditis:
 mutation:
   inputs:
     - mutatio
+  labels:
+    not a diagnosis: 6
+    pathological > organic > structural: 1
   votes:
     clinician 1: pathological > organic > structural
     clinician 2: not a diagnosis
@@ -716,6 +938,9 @@ mutation:
 mutation fistula voice:
   inputs:
     - mutationsfistelstimme
+  labels:
+    not a diagnosis: 6
+    pathological > organic > structural: 1
   votes:
     clinician 1: not a diagnosis
     clinician 2: not a diagnosis
@@ -727,6 +952,8 @@ mutation fistula voice:
 myasthenia:
   inputs:
     - phonasthenie
+  labels:
+    NA: 7
   votes:
     clinician 1: NA
     clinician 2: NA
@@ -738,6 +965,8 @@ myasthenia:
 non-fluency syndrome:
   inputs:
     - non-fluency-syndrom
+  labels:
+    not a diagnosis: 7
   votes:
     clinician 1: not a diagnosis
     clinician 2: not a diagnosis
@@ -749,6 +978,10 @@ non-fluency syndrome:
 orofacial dyspraxia:
   inputs:
     - orofaciale dyspraxie
+  labels:
+    not a diagnosis: 4
+    pathological > functional: 1
+    pathological > organic > neuro-muscular: 2
   votes:
     clinician 1: pathological > organic > neuro-muscular
     clinician 2: not a diagnosis
@@ -760,6 +993,8 @@ orofacial dyspraxia:
 papilloma:
   inputs:
     - papillom
+  labels:
+    pathological > organic > structural: 7
   votes:
     clinician 1: pathological > organic > structural
     clinician 2: pathological > organic > structural
@@ -771,6 +1006,8 @@ papilloma:
 parkinsons:
   inputs:
     - morbus parkinon)
+  labels:
+    pathological > organic > neuro-muscular: 7
   votes:
     clinician 1: pathological > organic > neuro-muscular
     clinician 2: pathological > organic > neuro-muscular
@@ -782,6 +1019,10 @@ parkinsons:
 phonation nodules:
   inputs:
     - phonationskn\u00f6tcen)
+  labels:
+    not a diagnosis: 3
+    pathological > muscle tension: 1
+    pathological > organic > structural: 3
   votes:
     clinician 1: pathological > muscle tension
     clinician 2: not a diagnosis
@@ -793,6 +1034,9 @@ phonation nodules:
 pocket fold hyperplasia:
   inputs:
     - taschenfaltenhyperplasie
+  labels:
+    not a diagnosis: 6
+    pathological > organic > structural: 1
   votes:
     clinician 1: pathological > organic > structural
     clinician 2: not a diagnosis
@@ -804,6 +1048,8 @@ pocket fold hyperplasia:
 pocket fold voice:
   inputs:
     - taschenfaltenstimme
+  labels:
+    not a diagnosis: 7
   votes:
     clinician 1: not a diagnosis
     clinician 2: not a diagnosis
@@ -815,6 +1061,8 @@ pocket fold voice:
 polter's syndrome:
   inputs:
     - poltersyndrom
+  labels:
+    NA: 7
   votes:
     clinician 1: NA
     clinician 2: NA
@@ -826,6 +1074,8 @@ polter's syndrome:
 psychogenic aphonia:
   inputs:
     - psychogene aphonie
+  labels:
+    pathological > functional: 7
   votes:
     clinician 1: pathological > functional
     clinician 2: pathological > functional
@@ -837,6 +1087,8 @@ psychogenic aphonia:
 psychogenic dysphonia:
   inputs:
     - psychogene dysphonie
+  labels:
+    pathological > functional: 7
   votes:
     clinician 1: pathological > functional
     clinician 2: pathological > functional
@@ -848,6 +1100,9 @@ psychogenic dysphonia:
 psychogenic microphony:
   inputs:
     - psychogene mikrophonie
+  labels:
+    not a diagnosis: 2
+    pathological > functional: 5
   votes:
     clinician 1: pathological > functional
     clinician 2: pathological > functional
@@ -859,6 +1114,9 @@ psychogenic microphony:
 recurrent paralysis:
   inputs:
     - rekurrensparese
+  labels:
+    not a diagnosis: 1
+    pathological > organic > neuro-muscular: 6
   votes:
     clinician 1: pathological > organic > neuro-muscular
     clinician 2: pathological > organic > neuro-muscular
@@ -870,6 +1128,9 @@ recurrent paralysis:
 reflux laryngitis:
   inputs:
     - reflux laryngitis
+  labels:
+    not a diagnosis: 1
+    pathological > organic > inflammatory: 6
   votes:
     clinician 1: pathological > organic > inflammatory
     clinician 2: pathological > organic > inflammatory
@@ -881,6 +1142,9 @@ reflux laryngitis:
 reinke edema:
   inputs:
     - reinke \u00f6de)
+  labels:
+    pathological > organic > inflammatory: 1
+    pathological > organic > structural: 6
   votes:
     clinician 1: pathological > organic > inflammatory
     clinician 2: pathological > organic > structural
@@ -892,6 +1156,8 @@ reinke edema:
 rhinophony aperta:
   inputs:
     - rhinophonie aperta
+  labels:
+    not a diagnosis: 7
   votes:
     clinician 1: not a diagnosis
     clinician 2: not a diagnosis
@@ -903,6 +1169,8 @@ rhinophony aperta:
 rhinophony clausa:
   inputs:
     - rhinophonie clausa
+  labels:
+    not a diagnosis: 7
   votes:
     clinician 1: not a diagnosis
     clinician 2: not a diagnosis
@@ -914,6 +1182,8 @@ rhinophony clausa:
 rhinophony mixta:
   inputs:
     - rhinophonie mixta
+  labels:
+    not a diagnosis: 7
   votes:
     clinician 1: not a diagnosis
     clinician 2: not a diagnosis
@@ -925,6 +1195,8 @@ rhinophony mixta:
 sigmatism:
   inputs:
     - sigmatismus
+  labels:
+    not a diagnosis: 7
   votes:
     clinician 1: not a diagnosis
     clinician 2: not a diagnosis
@@ -936,6 +1208,8 @@ sigmatism:
 singer's voice:
   inputs:
     - s\u00e4ngerstimme
+  labels:
+    normal: 7
   votes:
     clinician 1: normal
     clinician 2: normal
@@ -947,6 +1221,8 @@ singer's voice:
 singing voice:
   inputs:
     - gesangsstimme
+  labels:
+    normal: 7
   votes:
     clinician 1: normal
     clinician 2: normal
@@ -958,6 +1234,8 @@ singing voice:
 spasmodic dysphonia:
   inputs:
     - spasmodische dysphonie
+  labels:
+    pathological > organic > neuro-muscular: 7
   votes:
     clinician 1: pathological > organic > neuro-muscular
     clinician 2: pathological > organic > neuro-muscular
@@ -969,6 +1247,9 @@ spasmodic dysphonia:
 superior laryngeal nerve lesion:
   inputs:
     - n. laryngeus superior l\u00e4sion
+  labels:
+    not a diagnosis: 1
+    pathological > organic > neuro-muscular: 6
   votes:
     clinician 1: pathological > organic > neuro-muscular
     clinician 2: pathological > organic > neuro-muscular
@@ -980,6 +1261,9 @@ superior laryngeal nerve lesion:
 superior laryngeal nerve neuralgia:
   inputs:
     - n. laryngeus superior neuralgie
+  labels:
+    not a diagnosis: 1
+    pathological > organic > neuro-muscular: 6
   votes:
     clinician 1: pathological > organic > neuro-muscular
     clinician 2: pathological > organic > neuro-muscular
@@ -991,6 +1275,9 @@ superior laryngeal nerve neuralgia:
 synechia:
   inputs:
     - synechie
+  labels:
+    not a diagnosis: 4
+    pathological > organic > structural: 3
   votes:
     clinician 1: pathological > organic > structural
     clinician 2: not a diagnosis
@@ -1002,6 +1289,9 @@ synechia:
 valleculacyste:
   inputs:
     - valleculacyste
+  labels:
+    not a diagnosis: 3
+    pathological > organic > structural: 4
   votes:
     clinician 1: pathological > organic > structural
     clinician 2: not a diagnosis
@@ -1013,6 +1303,8 @@ valleculacyste:
 velopharyngoplasty:
   inputs:
     - velopharyngoplastik
+  labels:
+    not a diagnosis: 7
   votes:
     clinician 1: not a diagnosis
     clinician 2: not a diagnosis
@@ -1024,6 +1316,8 @@ velopharyngoplasty:
 vocal fold carcinoma:
   inputs:
     - stimmlippenkarzinom
+  labels:
+    pathological > organic > structural: 7
   votes:
     clinician 1: pathological > organic > structural
     clinician 2: pathological > organic > structural
@@ -1035,6 +1329,8 @@ vocal fold carcinoma:
 vocal fold polyp:
   inputs:
     - stimmlippenpolyp
+  labels:
+    pathological > organic > structural: 7
   votes:
     clinician 1: pathological > organic > structural
     clinician 2: pathological > organic > structural
@@ -1046,6 +1342,9 @@ vocal fold polyp:
 vox senilis:
   inputs:
     - vox senilis
+  labels:
+    not a diagnosis: 5
+    pathological > organic > structural: 2
   votes:
     clinician 1: not a diagnosis
     clinician 2: not a diagnosis

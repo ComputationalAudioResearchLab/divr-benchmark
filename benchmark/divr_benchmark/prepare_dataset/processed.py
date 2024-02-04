@@ -54,19 +54,9 @@ class ProcessedSession:
             "id": self.id,
             "age": self.age,
             "gender": self.gender,
-            "diagnosis": self.diagnosis,
+            "diagnosis": [diagnosis.name for diagnosis in self.diagnosis],
             "files": self.files,
         }
-
-    @staticmethod
-    def from_json(json_data):
-        return ProcessedSession(
-            id=json_data["id"],
-            age=json_data["age"],
-            gender=json_data["gender"],
-            diagnosis=list(map(Diagnosis.from_json, json_data["diagnosis"])),
-            files=list(map(ProcessedFile.from_json, json_data["files"])),
-        )
 
 
 @dataclass
