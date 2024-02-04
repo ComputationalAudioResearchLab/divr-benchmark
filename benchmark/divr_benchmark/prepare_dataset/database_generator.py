@@ -21,6 +21,13 @@ class DatabaseGenerator:
     classes are chosen in the order of pathological, normal and then unclassified. In case
     ties are within a subgroup then choice is made via random selection. This randomness
     is achieved by the presorting logic of the sessions list.
+
+    Since a session can have multiple diagnosis, and we don't have a diagnostic confidence
+    metric as of now, the diagnosis that best balances out the dataset is chosen.
+
+    We only consider balance of the dataset in terms of sessions and not in terms of files,
+    this can result in slight imbalances in data if more sessions are recorded for a given
+    pathology.
     """
 
     def __init__(self) -> None:
