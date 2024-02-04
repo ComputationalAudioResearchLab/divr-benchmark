@@ -28,4 +28,4 @@ class UncommonVoice(BaseProcessor):
                 ],
             )
             sessions += [session]
-        await self.process(output_path=output_path, db=db_key, sessions=sessions)
+        await self.process(output_path=output_path, db_name=db_key, sessions=sessions)

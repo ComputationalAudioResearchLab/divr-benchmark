@@ -39,7 +39,7 @@ class AVFAD(BaseProcessor):
                     ],
                 )
             ]
-        await self.process(output_path=output_path, db=db_key, sessions=sessions)
+        await self.process(output_path=output_path, db_name=db_key, sessions=sessions)
 
     def include(self, path: Path):
         for exclusion in self.ignore_files:

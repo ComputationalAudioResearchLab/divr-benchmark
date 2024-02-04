@@ -23,7 +23,7 @@ class SVD(BaseProcessor):
                     )
                     if session is not None:
                         sessions += [session]
-        await self.process(output_path=output_path, db=db_key, sessions=sessions)
+        await self.process(output_path=output_path, db_name=db_key, sessions=sessions)
 
     def process_session(self, speaker_id, gender, source_path, session):
         session_id = session["session_id"]

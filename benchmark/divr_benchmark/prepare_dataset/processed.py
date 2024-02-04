@@ -60,7 +60,7 @@ class ProcessedSession:
 
 @dataclass
 class ProcessedDataset:
-    db: str
+    db_name: str
     train_sessions: List[ProcessedSession]
     val_sessions: List[ProcessedSession]
     test_sessions: List[ProcessedSession]
@@ -68,7 +68,7 @@ class ProcessedDataset:
     @property
     def __dict__(self):
         return {
-            "db": self.db,
+            "db_name": self.db_name,
             "train_sessions": self.train_sessions,
             "val_sessions": self.val_sessions,
             "test_sessions": self.test_sessions,

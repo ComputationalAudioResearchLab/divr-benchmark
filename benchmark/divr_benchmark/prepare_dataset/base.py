@@ -1,7 +1,7 @@
 import json
 import statistics
 from pathlib import Path
-from typing import List, Tuple
+from typing import List
 from ..diagnosis import DiagnosisMap
 from .processed import ProcessedDataset, ProcessedSession
 from .database_generator import DatabaseGenerator
@@ -10,7 +10,11 @@ from .database_generator import DatabaseGenerator
 class BaseProcessor:
     def __init__(self) -> None:
         self.diagnosis_map = DiagnosisMap()
-        self.database_generator = DatabaseGenerator()
+        self.database_generator = DatabaseGenerator(
+            train_split=0.7,
+            test_split=0.2,
+            random_seed=42,
+        )
 
     async def __call__(self, source_path: Path, output_path: Path):
         raise NotImplementedError()
@@ -18,18 +22,14 @@ class BaseProcessor:
     async def process(
         self,
         output_path: Path,
-        db: str,
+        db_name: str,
         sessions: List[ProcessedSession],
-        split: Tuple[float, float] = (0.7, 0.1),
-        seed: int = 42,
     ) -> ProcessedDataset:
         dataset = self.database_generator.generate(
-            db=db,
+            db_name=db_name,
             sessions=sessions,
-            split=split,
-            seed=seed,
         )
-        db_key = dataset.db
+        db_key = dataset.db_name
         await self.generate_diagnosis_set(
             sessions=sessions, file_path=f"{output_path}/{db_key}_diagnosis.json"
         )

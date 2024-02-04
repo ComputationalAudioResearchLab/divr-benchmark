@@ -1,5 +1,5 @@
 import random
-from typing import List, Tuple
+from typing import List
 from .processed import ProcessedDataset, ProcessedSession
 
 
@@ -30,28 +30,33 @@ class DatabaseGenerator:
     pathology.
     """
 
-    def __init__(self) -> None:
-        pass
+    def __init__(
+        self,
+        train_split: float,
+        test_split: float,
+        random_seed: float,
+    ) -> None:
+        self.train_split = train_split
+        self.test_split = test_split
+        self.random_seed = random_seed
 
     def generate(
         self,
-        db: str,
+        db_name: str,
         sessions: List[ProcessedSession],
-        split: Tuple[float, float] = (0.7, 0.1),
-        seed: int = 42,
     ):
         total_data = len(sessions)
         train_start = 0
-        train_end = int(train_start + split[0] * total_data)
-        val_start = train_end
-        val_end = int(val_start + split[1] * total_data)
-        test_start = val_end
-        test_end = total_data
+        train_end = int(train_start + self.train_split * total_data)
+        test_start = train_end
+        test_end = int(test_start + self.test_split * total_data)
+        val_start = test_end
+        val_end = total_data
 
-        random.Random(seed).shuffle(sessions)
+        random.Random(self.random_seed).shuffle(sessions)
 
         return ProcessedDataset(
-            db=db,
+            db_name=db_name,
             train_sessions=sessions[train_start:train_end],
             val_sessions=sessions[val_start:val_end],
             test_sessions=sessions[test_start:test_end],
