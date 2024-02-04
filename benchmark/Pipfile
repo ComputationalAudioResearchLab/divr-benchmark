@@ -1,8 +1,9 @@
-[dev_packages]
+[dev-packages]
 black = "==22.10.0"
 build = "==1.0.3"
 flake8 = "==6.0.0"
 pylint = "==2.17.4"
+pytest = "==7.3.1"
 tools = "==0.1.9"
 
 [packages]
