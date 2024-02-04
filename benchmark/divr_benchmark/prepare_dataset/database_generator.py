@@ -4,7 +4,8 @@ from dataclasses import dataclass
 from typing import Dict, List, Tuple
 from .processed import ProcessedDataset, ProcessedSession
 
-GenderPlan = Dict[str, int]
+AgePlan = Dict[Tuple[int, int], int]
+GenderPlan = Dict[str, AgePlan]
 DiagnosisPlan = Dict[str, GenderPlan]
 
 
@@ -27,6 +28,7 @@ class DatabaseGenerator:
     of diagnosis, age and gender in the three different datasets i.e. train, val and test.
 
     First priority goes to diagnosis, then gender and then age.
+    Age is considered in buckets of 10 i.e. 0-10, 11-20, 21-30, ...
 
     As we don't have a lot of diagnosis at every level of diagnosis, if a diagnosis can not
     be distributed equitably at a given level it would be resolved later at a parent level
@@ -96,14 +98,29 @@ class DatabaseGenerator:
         """
         session_diagnosis = session.diagnosis[0].name
         session_gender = session.gender
-        if current_plan.train[session_diagnosis][session_gender] > 0:
-            current_plan.train[session_diagnosis][session_gender] -= 1
+        session_age_bracket = self.__age_to_bracket(session.age)
+        if (
+            current_plan.train[session_diagnosis][session_gender][session_age_bracket]
+            > 0
+        ):
+            current_plan.train[session_diagnosis][session_gender][
+                session_age_bracket
+            ] -= 1
             bucket = DatasetType.TRAIN
-        elif current_plan.test[session_diagnosis][session_gender] > 0:
-            current_plan.test[session_diagnosis][session_gender] -= 1
+        elif (
+            current_plan.test[session_diagnosis][session_gender][session_age_bracket]
+            > 0
+        ):
+            current_plan.test[session_diagnosis][session_gender][
+                session_age_bracket
+            ] -= 1
             bucket = DatasetType.TEST
-        elif current_plan.val[session_diagnosis][session_gender] > 0:
-            current_plan.val[session_diagnosis][session_gender] -= 1
+        elif (
+            current_plan.val[session_diagnosis][session_gender][session_age_bracket] > 0
+        ):
+            current_plan.val[session_diagnosis][session_gender][
+                session_age_bracket
+            ] -= 1
             bucket = DatasetType.VAL
         else:
             raise RuntimeError(
@@ -123,10 +140,14 @@ class DatabaseGenerator:
             plan.test[diag_key] = {}
             plan.val[diag_key] = {}
             for gender_key, gender_val in diag_val.items():
-                train_len, test_len, val_len = self.__calculate_split(gender_val)
-                plan.train[diag_key][gender_key] = train_len
-                plan.test[diag_key][gender_key] = test_len
-                plan.val[diag_key][gender_key] = val_len
+                plan.train[diag_key][gender_key] = {}
+                plan.test[diag_key][gender_key] = {}
+                plan.val[diag_key][gender_key] = {}
+                for age_key, age_val in gender_val.items():
+                    train_len, test_len, val_len = self.__calculate_split(age_val)
+                    plan.train[diag_key][gender_key][age_key] = train_len
+                    plan.test[diag_key][gender_key][age_key] = test_len
+                    plan.val[diag_key][gender_key][age_key] = val_len
         return plan
 
     def __count_diagnosis(self, sessions: List[ProcessedSession]) -> DiagnosisPlan:
@@ -137,9 +158,12 @@ class DatabaseGenerator:
                     counter[diagnosis.name] = {}
                 diagnosis_ref = counter[diagnosis.name]
                 if session.gender not in diagnosis_ref:
-                    diagnosis_ref[session.gender] = 0
-
-                diagnosis_ref[session.gender] += 1
+                    diagnosis_ref[session.gender] = {}
+                gender_ref = diagnosis_ref[session.gender]
+                age_bracket = self.__age_to_bracket(session.age)
+                if age_bracket not in gender_ref:
+                    gender_ref[age_bracket] = 0
+                gender_ref[age_bracket] += 1
         return counter
 
     def __calculate_split(self, total_data: int) -> Tuple[int, int, int]:
@@ -147,3 +171,10 @@ class DatabaseGenerator:
         test_len = int(self.test_split * total_data)
         val_len = total_data - train_len - test_len
         return (train_len, test_len, val_len)
+
+    def __age_to_bracket(self, age: int | None) -> Tuple[int, int]:
+        if age is None:
+            return (-1, 0)
+        lower = (age // 10) * 10
+        upper = lower + 10
+        return (lower, upper)
