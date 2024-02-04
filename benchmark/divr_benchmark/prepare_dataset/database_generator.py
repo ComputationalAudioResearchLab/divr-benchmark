@@ -1,6 +1,21 @@
+from enum import Enum
 import random
-from typing import List
+from dataclasses import dataclass
+from typing import Dict, List, Tuple
 from .processed import ProcessedDataset, ProcessedSession
+
+
+@dataclass
+class DatabasePlan:
+    train: Dict[str, int]
+    test: Dict[str, int]
+    val: Dict[str, int]
+
+
+class DatasetType(Enum):
+    TRAIN = "TRAIN"
+    TEST = "TEST"
+    VAL = "VAL"
 
 
 class DatabaseGenerator:
@@ -45,19 +60,79 @@ class DatabaseGenerator:
         db_name: str,
         sessions: List[ProcessedSession],
     ):
-        total_data = len(sessions)
-        train_start = 0
-        train_end = int(train_start + self.train_split * total_data)
-        test_start = train_end
-        test_end = int(test_start + self.test_split * total_data)
-        val_start = test_end
-        val_end = total_data
-
         random.Random(self.random_seed).shuffle(sessions)
+        plan = self.__plan_dataset(sessions=sessions)
+        return self.__execute_plan(db_name=db_name, plan=plan, sessions=sessions)
 
+    def __execute_plan(
+        self, db_name: str, plan: DatabasePlan, sessions: List[ProcessedSession]
+    ) -> ProcessedDataset:
+        buckets: Dict[DatasetType, List[ProcessedSession]] = {
+            DatasetType.TRAIN: [],
+            DatasetType.TEST: [],
+            DatasetType.VAL: [],
+        }
+        current_plan = plan
+        for session in sessions:
+            current_plan, bucket = self.__where_to_put(
+                session=session, current_plan=current_plan
+            )
+            buckets[bucket] += [session]
         return ProcessedDataset(
             db_name=db_name,
-            train_sessions=sessions[train_start:train_end],
-            val_sessions=sessions[val_start:val_end],
-            test_sessions=sessions[test_start:test_end],
+            train_sessions=buckets[DatasetType.TRAIN],
+            test_sessions=buckets[DatasetType.TEST],
+            val_sessions=buckets[DatasetType.VAL],
         )
+
+    def __where_to_put(
+        self, session: ProcessedSession, current_plan: DatabasePlan
+    ) -> Tuple[DatabasePlan, DatasetType]:
+        """
+        This mutates the current plan
+        """
+        session_diagnosis = session.diagnosis[0].name
+        if current_plan.train[session_diagnosis] > 0:
+            current_plan.train[session_diagnosis] -= 1
+            bucket = DatasetType.TRAIN
+        elif current_plan.test[session_diagnosis] > 0:
+            current_plan.test[session_diagnosis] -= 1
+            bucket = DatasetType.TEST
+        elif current_plan.val[session_diagnosis] > 0:
+            current_plan.val[session_diagnosis] -= 1
+            bucket = DatasetType.VAL
+        else:
+            raise RuntimeError(
+                "the plan does not allow accommodating this session, plan must be invalid"
+            )
+        return (current_plan, bucket)
+
+    def __plan_dataset(self, sessions: List[ProcessedSession]) -> DatabasePlan:
+        diagnosis_counts = self.__count_diagnosis(sessions=sessions)
+        plan = DatabasePlan(
+            train={},
+            test={},
+            val={},
+        )
+        for key, val in diagnosis_counts.items():
+            train_len, test_len, val_len = self.__calculate_split(val)
+            plan.train[key] = train_len
+            plan.test[key] = test_len
+            plan.val[key] = val_len
+        return plan
+
+    def __count_diagnosis(self, sessions: List[ProcessedSession]) -> Dict[str, int]:
+        counter: Dict[str, int] = {}
+        for session in sessions:
+            for diagnosis in session.diagnosis:
+                if diagnosis.name not in counter:
+                    counter[diagnosis.name] = 1
+                else:
+                    counter[diagnosis.name] += 1
+        return counter
+
+    def __calculate_split(self, total_data: int) -> Tuple[int, int, int]:
+        train_len = int(self.train_split * total_data)
+        test_len = int(self.test_split * total_data)
+        val_len = total_data - train_len - test_len
+        return (train_len, test_len, val_len)
