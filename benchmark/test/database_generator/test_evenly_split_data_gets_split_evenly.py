@@ -5,17 +5,18 @@ from uuid import uuid4
 from divr_benchmark.diagnosis import DiagnosisMap
 from divr_benchmark.prepare_dataset.database_generator import DatabaseGenerator
 from divr_benchmark.prepare_dataset.processed import ProcessedSession
-from test.database_generator.count_diagnosis import count_diagnosis
+from test.database_generator.count_sessions import count_sessions
 
 train_split = 0.7
 test_split = 0.2
 random_seed = 42
+diagnosis_map = DiagnosisMap()
 database_generator = DatabaseGenerator(
+    diagnosis_map=diagnosis_map,
     train_split=train_split,
     test_split=test_split,
     random_seed=random_seed,
 )
-diagnosis_map = DiagnosisMap()
 
 
 @pytest.mark.parametrize("sessions_count", [5, 10, 100])
@@ -25,7 +26,7 @@ diagnosis_map = DiagnosisMap()
         ["unclassified"],
         ["normal", "pathological"],
         ["normal", "pathological", "unclassified"],
-        ["normal", "pathological", "unclassified", "organic"],
+        ["muscle_tension", "functional", "unclassified", "organic"],
     ],
 )
 @pytest.mark.parametrize(
@@ -81,13 +82,13 @@ def test(
     for diagnosis_key in diagnosis_keys:
         for gender in genders:
             for age_range in age_ranges:
-                train_count = count_diagnosis(
+                train_count = count_sessions(
                     dataset.train_sessions, diagnosis_key, gender, age_range
                 )
-                test_count = count_diagnosis(
+                test_count = count_sessions(
                     dataset.test_sessions, diagnosis_key, gender, age_range
                 )
-                val_count = count_diagnosis(
+                val_count = count_sessions(
                     dataset.val_sessions, diagnosis_key, gender, age_range
                 )
                 assert expected_train_data_count == train_count

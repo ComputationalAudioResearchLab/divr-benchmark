@@ -2,12 +2,14 @@ from enum import Enum
 import random
 from dataclasses import dataclass
 from typing import Dict, List, Tuple
+from ..diagnosis import DiagnosisMap
 from .processed import ProcessedDataset, ProcessedSession
 
 AgeBracket = Tuple[int, int]
 AgePlan = Dict[AgeBracket, int]
 GenderPlan = Dict[str, AgePlan]
 DiagnosisPlan = Dict[str, GenderPlan]
+CountDiagnosisPlan = Dict[str, Tuple[str, GenderPlan]]
 
 
 @dataclass
@@ -53,10 +55,12 @@ class DatabaseGenerator:
 
     def __init__(
         self,
+        diagnosis_map: DiagnosisMap,
         train_split: float,
         test_split: float,
         random_seed: float,
     ) -> None:
+        self.diagnosis_map = diagnosis_map
         self.train_split = train_split
         self.test_split = test_split
         self.random_seed = random_seed
@@ -67,7 +71,13 @@ class DatabaseGenerator:
         sessions: List[ProcessedSession],
     ):
         random.Random(self.random_seed).shuffle(sessions)
-        plan = self.__plan_dataset(sessions=sessions)
+        plan = DatabasePlan(
+            train={},
+            test={},
+            val={},
+        )
+        self.__hydrate_plan(plan=plan, sessions=sessions)
+        print(plan)
         return self.__execute_plan(db_name=db_name, plan=plan, sessions=sessions)
 
     def __execute_plan(
@@ -111,38 +121,90 @@ class DatabaseGenerator:
                 return (current_plan, key)
 
         raise RuntimeError(
-            "the plan does not allow accommodating this session, plan must be invalid"
+            f"the plan does not allow accommodating this session, plan must be invalid. [diagnosis: {diagnosis}, gender: {gender}, age_bracket: {age_bracket}]"
         )
 
-    def __plan_dataset(self, sessions: List[ProcessedSession]) -> DatabasePlan:
-        diagnosis_counts = self.__count_diagnosis(sessions=sessions)
-        plan = DatabasePlan(
-            train={},
-            test={},
-            val={},
-        )
-        for diag_key, diag_val in diagnosis_counts.items():
-            plan.train[diag_key] = {}
-            plan.test[diag_key] = {}
-            plan.val[diag_key] = {}
-            for gender_key, gender_val in diag_val.items():
-                plan.train[diag_key][gender_key] = {}
-                plan.test[diag_key][gender_key] = {}
-                plan.val[diag_key][gender_key] = {}
-                for age_key, age_val in gender_val.items():
-                    train_len, test_len, val_len = self.__calculate_split(age_val)
-                    plan.train[diag_key][gender_key][age_key] = train_len
-                    plan.test[diag_key][gender_key][age_key] = test_len
-                    plan.val[diag_key][gender_key][age_key] = val_len
-        return plan
+    def __hydrate_plan(
+        self,
+        plan: DatabasePlan,
+        sessions: List[ProcessedSession],
+        level: int | None = None,
+        unresolved_keys: List[str] | None = None,
+    ) -> None:
+        if level is None:
+            level = self.__get_max_diagnosis_level(sessions)
+        if level < 0:
+            raise RuntimeError("level should never be less than 0, failed planning")
+        diagnosis_counts = self.__count_diagnosis(sessions=sessions, level=level)
+        print(diagnosis_counts)
+        print(unresolved_keys)
 
-    def __count_diagnosis(self, sessions: List[ProcessedSession]) -> DiagnosisPlan:
+        if unresolved_keys is not None:
+            for diag_key, diag_val in diagnosis_counts.items():
+                for gender_key, gender_val in diag_val.items():
+                    for age_key, age_val in gender_val.items():
+                        train_len, test_len, val_len = self.__calculate_split(age_val)
+                        if min(train_len, test_len, val_len) > 0 or level == 0:
+                            resolved_keys = []
+                            for unresolved_key in unresolved_keys:
+                                if self.diagnosis_map.get(unresolved_key).satisfies(
+                                    diag_key
+                                ):
+                                    resolved_keys.append(unresolved_key)
+                                    unresolved_keys.remove(unresolved_key)
+                            while train_len > 0:
+                                train_len -= 1
+
+        if unresolved_keys is None:
+            unresolved_keys = []
+
+            for diag_key, diag_val in diagnosis_counts.items():
+                plan.train[diag_key] = {}
+                plan.test[diag_key] = {}
+                plan.val[diag_key] = {}
+                for gender_key, gender_val in diag_val.items():
+                    plan.train[diag_key][gender_key] = {}
+                    plan.test[diag_key][gender_key] = {}
+                    plan.val[diag_key][gender_key] = {}
+                    for age_key, age_val in gender_val.items():
+                        train_len, test_len, val_len = self.__calculate_split(age_val)
+                        print(diag_key, train_len, test_len, val_len)
+                        if min(train_len, test_len, val_len) > 0 or level == 0:
+                            # either all values are available or we are at root level
+                            plan.train[diag_key][gender_key][age_key] = train_len
+                            plan.test[diag_key][gender_key][age_key] = test_len
+                            plan.val[diag_key][gender_key][age_key] = val_len
+                        else:
+                            # need to try later
+                            plan.train[diag_key][gender_key][age_key] = 0
+                            plan.test[diag_key][gender_key][age_key] = 0
+                            plan.val[diag_key][gender_key][age_key] = 0
+                            unresolved_keys.append(diag_key)
+
+        if len(unresolved_keys) > 0:
+            filtered_sessions = []
+            for session in sessions:
+                for diagnosis in session.diagnosis:
+                    if diagnosis.name in unresolved_keys:
+                        filtered_sessions += [session]
+            self.__hydrate_plan(
+                plan=plan,
+                sessions=filtered_sessions,
+                level=level - 1,
+                unresolved_keys=unresolved_keys,
+            )
+
+    def __count_diagnosis(
+        self, sessions: List[ProcessedSession], level: int
+    ) -> DiagnosisPlan:
         counter: DiagnosisPlan = {}
         for session in sessions:
             for diagnosis in session.diagnosis:
-                if diagnosis.name not in counter:
-                    counter[diagnosis.name] = {}
-                diagnosis_ref = counter[diagnosis.name]
+                diag_key = diagnosis.name
+                count_key = diagnosis.at_level(level).name
+                if count_key not in counter:
+                    counter[count_key] = {}
+                diagnosis_ref = counter[count_key]
                 if session.gender not in diagnosis_ref:
                     diagnosis_ref[session.gender] = {}
                 gender_ref = diagnosis_ref[session.gender]
@@ -164,3 +226,16 @@ class DatabaseGenerator:
         lower = (age // 10) * 10
         upper = lower + 10
         return (lower, upper)
+
+    def __get_max_diagnosis_level2(self, plan: DiagnosisPlan) -> int:
+        levels = []
+        for key in plan.keys():
+            levels.append(self.diagnosis_map.get(key).level)
+        return max(levels)
+
+    def __get_max_diagnosis_level(self, sessions: List[ProcessedSession]) -> int:
+        levels = []
+        for session in sessions:
+            for diagnosis in session.diagnosis:
+                levels.append(diagnosis.level)
+        return max(levels)

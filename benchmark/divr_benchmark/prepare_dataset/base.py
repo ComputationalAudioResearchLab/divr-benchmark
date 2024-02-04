@@ -11,6 +11,7 @@ class BaseProcessor:
     def __init__(self) -> None:
         self.diagnosis_map = DiagnosisMap()
         self.database_generator = DatabaseGenerator(
+            diagnosis_map=self.diagnosis_map,
             train_split=0.7,
             test_split=0.2,
             random_seed=42,

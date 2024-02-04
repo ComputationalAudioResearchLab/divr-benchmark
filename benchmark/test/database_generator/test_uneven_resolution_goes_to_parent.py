@@ -1,0 +1,56 @@
+from uuid import uuid4
+from divr_benchmark.diagnosis import DiagnosisMap
+from divr_benchmark.prepare_dataset.database_generator import DatabaseGenerator
+from divr_benchmark.prepare_dataset.processed import ProcessedSession
+from test.database_generator.count_sessions import count_sessions
+
+train_split = 0.7
+test_split = 0.2
+random_seed = 42
+diagnosis_map = DiagnosisMap()
+database_generator = DatabaseGenerator(
+    diagnosis_map=diagnosis_map,
+    train_split=train_split,
+    test_split=test_split,
+    random_seed=random_seed,
+)
+
+
+def test_resolution_one_level_up():
+    db_name = str(uuid4())
+    diagnosis_keys = [
+        "organic_inflammatory",
+        "organic_neuro_muscular",
+        "organic_structural",
+        "organic_trauma",
+        "organic",
+    ]
+    age = None
+    gender = ""
+    sessions = [
+        ProcessedSession(
+            id=str(uuid4()),
+            age=age,
+            gender=gender,
+            diagnosis=[diagnosis_map.get(diagnosis_key)],
+            files=[],
+        )
+        for diagnosis_key in diagnosis_keys
+    ]
+    dataset = database_generator.generate(
+        db_name=db_name,
+        sessions=sessions,
+    )
+
+    expected_organic = [
+        (dataset.train_sessions, 3),
+        (dataset.test_sessions, 1),
+        (dataset.val_sessions, 1),
+    ]
+    for bucket, expected_count in expected_organic:
+        assert expected_count == count_sessions(
+            sessions=bucket,
+            diagnosis_key="organic",
+            gender=gender,
+            age_range=age,
+        )
