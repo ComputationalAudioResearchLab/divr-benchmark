@@ -7,7 +7,6 @@ from .prepare_dataset import PrepareDataset
 
 
 class Main(ClassArgParser):
-
     def __init__(self) -> None:
         super().__init__(name="DiVR Benchmark")
 

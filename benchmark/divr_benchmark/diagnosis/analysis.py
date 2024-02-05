@@ -64,7 +64,9 @@ def confusion(data, output_confusion_path: Path):
 
     # print(label_votes)
     total_labels = len(labels)
-    fig, ax = plt.subplots(total_labels, 1, figsize=(10, total_labels*3.5), constrained_layout=True)
+    fig, ax = plt.subplots(
+        total_labels, 1, figsize=(10, total_labels * 3.5), constrained_layout=True
+    )
     for label_idx, (label, votes) in enumerate(label_votes.items()):
         vote_matrix = np.zeros((total_labels, 7))
         for idx, vote in enumerate(votes):
