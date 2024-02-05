@@ -34,7 +34,10 @@ jobs:
           pipenv install --ignore-pipfile --dev
         working-directory: benchmark
       - name: Lint files
-        run: pipenv run black divr_feature_toolkit --check
+        run: pipenv run black divr_benchmark --check
+        working-directory: benchmark
+      - name: Run tests
+        run: pipenv run pytest
         working-directory: benchmark
       - name: Build distribution
         run: pipenv run python -m build
