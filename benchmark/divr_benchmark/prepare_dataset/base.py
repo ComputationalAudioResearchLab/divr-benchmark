@@ -1,3 +1,4 @@
+import asyncio
 import json
 import statistics
 from pathlib import Path
@@ -31,11 +32,13 @@ class BaseProcessor:
             sessions=sessions,
         )
         db_key = dataset.db_name
+        db_path = f"{output_path}/{db_key}"
+        Path(db_path).mkdir(exist_ok=True, parents=True)
         await self.generate_diagnosis_set(
-            sessions=sessions, file_path=f"{output_path}/{db_key}_diagnosis.json"
+            dataset=dataset, file_path=f"{db_path}/diagnosis.json"
         )
         await self.generate_demographics(
-            sessions=sessions, file_path=f"{output_path}/{db_key}_demographics.json"
+            dataset=dataset, file_path_base=f"{db_path}/demographics"
         )
         sessions_db = {
             "train": dataset.train_sessions,
@@ -45,24 +48,48 @@ class BaseProcessor:
         for session_key, session_data in sessions_db.items():
             await self.__save_json(
                 data=session_data,
-                file_path=f"{output_path}/{db_key}_{session_key}.json",
+                file_path=f"{db_path}/{session_key}.json",
             )
         return dataset
 
-    async def generate_diagnosis_set(self, sessions: List[ProcessedSession], file_path):
+    async def generate_diagnosis_set(self, dataset: ProcessedDataset, file_path):
         diagnosis_set = set()
-        for session in sessions:
+        total_sessions = (
+            dataset.train_sessions + dataset.test_sessions + dataset.val_sessions
+        )
+        for session in total_sessions:
             for diagnosis in session.diagnosis:
                 diagnosis_set.add(diagnosis.name)
         await self.__save_json(data=sorted(list(diagnosis_set)), file_path=file_path)
 
-    async def generate_demographics(self, sessions: List[ProcessedSession], file_path):
+    async def generate_demographics(self, dataset: ProcessedDataset, file_path_base):
+        data = {
+            "train": dataset.train_sessions,
+            "test": dataset.test_sessions,
+            "val": dataset.val_sessions,
+        }
+
+        coros = []
+        for level in range(4):
+            for key, val in data.items():
+                coros.append(
+                    self.generate_demographics_at_level(
+                        sessions=val,
+                        level=level,
+                        file_path_base=f"{file_path_base}_{key}",
+                    )
+                )
+        await asyncio.gather(*coros)
+
+    async def generate_demographics_at_level(
+        self, sessions: List[ProcessedSession], level: int, file_path_base
+    ):
         demographics = {}
         for session in sessions:
-            root_diagnosis = session.diagnosis[0].root()
-            if root_diagnosis not in demographics:
-                demographics[root_diagnosis] = {}
-            diagnosis = demographics[root_diagnosis]
+            diagnosis_name = session.diagnosis[0].at_level(0).name
+            if diagnosis_name not in demographics:
+                demographics[diagnosis_name] = {}
+            diagnosis = demographics[diagnosis_name]
             gender = session.gender
             if gender not in diagnosis:
                 diagnosis[gender] = {"ages": [], "total": 0}
@@ -88,7 +115,9 @@ class BaseProcessor:
                     "total": total,
                     "age_stats": age_stats,
                 }
-        await self.__save_json(data=demographics, file_path=file_path)
+        await self.__save_json(
+            data=demographics, file_path=f"{file_path_base}_{level}.json"
+        )
 
     async def __save_json(self, data, file_path):
         with open(file_path, "w") as outfile:
