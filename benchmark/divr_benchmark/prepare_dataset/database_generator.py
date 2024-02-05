@@ -94,39 +94,35 @@ class DatabaseGenerator:
     def select_at_level(
         self, sessions: List[ProcessedSession], level: int
     ) -> List[ProcessedSession]:
-        all_diag_names: List[str] = []
+        grouped_diag_sessions = {}
         for session in sessions:
-            for diagnosis in session.diagnosis:
-                all_diag_names.append(diagnosis.at_level(level).name)
-        max_occurence_diag = max(all_diag_names, key=all_diag_names.count)
+            for diag_name in session.diagnosis_names_at_level(level):
+                if diag_name not in grouped_diag_sessions:
+                    grouped_diag_sessions[diag_name] = []
+                grouped_diag_sessions[diag_name].append(session)
+
+        max_diag_sessions = max(
+            grouped_diag_sessions.items(),
+            key=lambda x: len(x[1]),
+        )[1]
 
         grouped_sessions = {}
-        for session in sessions:
-            if session.has_diagnosis(max_occurence_diag):
-                gender = session.gender
-                if gender not in grouped_sessions:
-                    grouped_sessions[gender] = {}
-                age_bracket = self.__age_to_bracket(session.age)
-                if age_bracket not in grouped_sessions[gender]:
-                    grouped_sessions[gender][age_bracket] = []
-                grouped_sessions[gender][age_bracket].append(session)
+        for session in max_diag_sessions:
+            gender = session.gender
+            age_bracket = self.__age_to_bracket(session.age)
+            key = (gender, age_bracket)
+            if key not in grouped_sessions:
+                grouped_sessions[key] = []
+            grouped_sessions[key].append(session)
 
-        keys_and_counts = []
-        for gender_key, gender_val in grouped_sessions.items():
-            for age_key, age_val in gender_val.items():
-                keys_and_counts.append(((gender_key, age_key), len(age_val)))
-        sorted_keys_and_counts = sorted(
-            keys_and_counts,
-            key=lambda x: x[1],
-            reverse=True,
+        sorted_sessions_by_count = sorted(
+            grouped_sessions.values(), key=lambda x: len(x), reverse=True
         )
 
         selected_sessions = []
-        total_sessions = 0
-        for (gender_key, age_key), session_count in sorted_keys_and_counts:
-            selected_sessions += grouped_sessions[gender_key][age_key]
-            total_sessions += session_count
-            if total_sessions > 2:
+        for sorted_sessions in sorted_sessions_by_count:
+            selected_sessions += sorted_sessions
+            if len(selected_sessions) > 2:
                 return selected_sessions
         return selected_sessions
 

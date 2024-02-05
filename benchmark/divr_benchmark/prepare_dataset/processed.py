@@ -2,7 +2,7 @@ from __future__ import annotations
 import wfdb
 import nspfile
 import soundfile
-from typing import List
+from typing import List, Set
 from pathlib import Path
 from dataclasses import dataclass
 from ..diagnosis import Diagnosis
@@ -62,6 +62,12 @@ class ProcessedSession:
             if diag.satisfies(diagnosis_name):
                 return True
         return False
+
+    def diagnosis_names_at_level(self, level: int) -> Set[str]:
+        diag_names = set()
+        for diagnosis in self.diagnosis:
+            diag_names.add(diagnosis.at_level(level).name)
+        return diag_names
 
 
 @dataclass
