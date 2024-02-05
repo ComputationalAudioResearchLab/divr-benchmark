@@ -31,7 +31,6 @@ class Diagnosis:
         if level >= self.level:
             return self
 
-        print("Getting at level: ", level)
         return self.best_parent_link.parent.at_level(level)
 
     @property

@@ -23,7 +23,7 @@ def test_resolution_one_level_up():
         "organic_neuro_muscular",
         "organic_structural",
         "organic_trauma",
-        "organic",
+        "muscle_tension",
     ]
     age = None
     gender = ""
@@ -43,14 +43,15 @@ def test_resolution_one_level_up():
     )
 
     expected_organic = [
-        (dataset.train_sessions, 3),
-        (dataset.test_sessions, 1),
-        (dataset.val_sessions, 1),
+        (dataset.train_sessions, "muscle_tension", 1),
+        (dataset.train_sessions, "organic", 2),
+        (dataset.test_sessions, "organic", 1),
+        (dataset.val_sessions, "organic", 1),
     ]
-    for bucket, expected_count in expected_organic:
+    for bucket, diagnosis_key, expected_count in expected_organic:
         assert expected_count == count_sessions(
             sessions=bucket,
-            diagnosis_key="organic",
+            diagnosis_key=diagnosis_key,
             gender=gender,
             age_range=age,
         )
