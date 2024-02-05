@@ -1,6 +1,12 @@
 from __future__ import annotations
 from dataclasses import dataclass
-from typing import List
+from typing import List, Tuple
+
+classification_weights = {
+    "pathological": 3,
+    "normal": 2,
+    "unclassified": 1,
+}
 
 
 @dataclass
@@ -15,9 +21,6 @@ class Diagnosis:
     level: int
     alias: List[str]
     parents: List[DiagnosisLink]
-
-    def root(self) -> str:
-        return self.name
 
     def satisfies(self, name: str) -> bool:
         if name == self.name or name in self.alias:
@@ -34,5 +37,12 @@ class Diagnosis:
         return self.best_parent_link.parent.at_level(level)
 
     @property
+    def root(self) -> Diagnosis:
+        return self.at_level(0)
+
+    @property
     def best_parent_link(self) -> DiagnosisLink:
-        return sorted(self.parents, key=lambda x: x.weight, reverse=True)[0]
+        return sorted(self.parents, key=self.__parent_sort_key, reverse=True)[0]
+
+    def __parent_sort_key(self, x: DiagnosisLink) -> Tuple[float, int]:
+        return (x.weight, classification_weights[x.parent.root.name])

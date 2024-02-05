@@ -15,17 +15,15 @@ class DatabaseGenerator:
     As we don't have a lot of diagnosis at every level of diagnosis, if a diagnosis can not
     be distributed equitably at a given level it would be resolved later at a parent level
     along with other unresolved diagnosis.
-    Further leaf level diagnosis that can not be distributed equitably are distributed in
-    test, train and validation set in that order so that they definitely appear in test set.
 
     Since a diagnosis can have multiple parents, the parent that it gets grouped with for
     distribution is decided with majority vote across the parent weight. In case of a tie
-    classes are chosen in the order of pathological, normal and then unclassified. In case
-    ties are within a subgroup then choice is made via random selection. This randomness
-    is achieved by the presorting logic of the sessions list.
+    classes are chosen in the order of pathological, normal and then unclassified.
 
     Since a session can have multiple diagnosis, and we don't have a diagnostic confidence
-    metric as of now, the diagnosis that best balances out the dataset is chosen.
+    metric as of now, the diagnosis that best balances out the dataset is chosen. This is
+    achieved by chosing the diagnosis with most occurences in the input sessions so that
+    it can appear in all train, test and val sets.
 
     We only consider balance of the dataset in terms of sessions and not in terms of files,
     this can result in slight imbalances in data if more sessions are recorded for a given
