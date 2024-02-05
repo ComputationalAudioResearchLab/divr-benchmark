@@ -104,48 +104,38 @@ class DatabaseGenerator:
             for diag in session.diagnosis:
                 if diag.satisfies(max_occurence_diag):
                     selected_sessions.append(session)
-        return self.select_from_gender(selected_sessions)
+        return self.select_from_gender_and_age(selected_sessions)
 
-    def select_from_gender(
+    def select_from_gender_and_age(
         self, sessions: List[ProcessedSession]
     ) -> List[ProcessedSession]:
-        selected_sessions: List[ProcessedSession] = []
-        unselected_sessions: List[ProcessedSession] = []
-        all_genders = []
+        grouped_sessions = {}
         for session in sessions:
-            all_genders.append(session.gender)
-        max_occurence_gender = max(all_genders, key=all_genders.count)
-        for session in sessions:
-            if session.gender == max_occurence_gender:
-                selected_sessions.append(session)
-            else:
-                unselected_sessions.append(session)
-        selected_sessions_count = len(selected_sessions)
-        if selected_sessions_count < 3:
-            sessions_to_add = 3 - selected_sessions_count
-            selected_sessions += unselected_sessions[:sessions_to_add]
-        return self.select_from_age_bracket(sessions=selected_sessions)
+            gender = session.gender
+            if gender not in grouped_sessions:
+                grouped_sessions[gender] = {}
+            age_bracket = self.__age_to_bracket(session.age)
+            if age_bracket not in grouped_sessions[gender]:
+                grouped_sessions[gender][age_bracket] = []
+            grouped_sessions[gender][age_bracket].append(session)
 
-    def select_from_age_bracket(
-        self, sessions: List[ProcessedSession]
-    ) -> List[ProcessedSession]:
-        selected_sessions: List[ProcessedSession] = []
-        unselected_sessions: List[ProcessedSession] = []
-        all_age_brackets = []
-        for session in sessions:
-            age_bracket = self.__age_to_bracket(session.age)
-            all_age_brackets.append(age_bracket)
-        max_occurence_bracket = max(all_age_brackets, key=all_age_brackets.count)
-        for session in sessions:
-            age_bracket = self.__age_to_bracket(session.age)
-            if age_bracket == max_occurence_bracket:
-                selected_sessions.append(session)
-            else:
-                unselected_sessions.append(session)
-        selected_sessions_count = len(selected_sessions)
-        if selected_sessions_count < 3:
-            sessions_to_add = 3 - selected_sessions_count
-            selected_sessions += unselected_sessions[:sessions_to_add]
+        keys_and_counts = []
+        for gender_key, gender_val in grouped_sessions.items():
+            for age_key, age_val in gender_val.items():
+                keys_and_counts.append(((gender_key, age_key), len(age_val)))
+        sorted_keys_and_counts = sorted(
+            keys_and_counts,
+            key=lambda x: x[1],
+            reverse=True,
+        )
+
+        selected_sessions = []
+        total_sessions = 0
+        for (gender_key, age_key), session_count in sorted_keys_and_counts:
+            selected_sessions += grouped_sessions[gender_key][age_key]
+            total_sessions += session_count
+            if total_sessions > 2:
+                return selected_sessions
         return selected_sessions
 
     def __age_to_bracket(self, age: int | None) -> Tuple[int, int]:

@@ -98,7 +98,7 @@ def test(
                 )
                 counts = np.array([train_count, test_count, val_count])
                 ratios = counts / counts.sum()
-                # print(ratios)
+                print(ratios)
                 ratio_diff = expected_ratio - ratios
                 mean_l1_error = np.abs(ratio_diff).mean()
                 assert mean_l1_error < 0.1
