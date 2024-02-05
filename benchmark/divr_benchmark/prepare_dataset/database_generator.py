@@ -74,7 +74,7 @@ class DatabaseGenerator:
         level = max([diagnosis.level for diagnosis in all_diagnosis])
 
         while len(sessions) > 0:
-            selected_sessions = self.select_from_diagnosis(sessions, level)
+            selected_sessions = self.select_at_level(sessions, level)
             selection_count = len(selected_sessions)
             if selection_count > 2 or level == 0:
                 if selection_count < 1:
@@ -91,33 +91,26 @@ class DatabaseGenerator:
 
         return dataset
 
-    def select_from_diagnosis(
+    def select_at_level(
         self, sessions: List[ProcessedSession], level: int
     ) -> List[ProcessedSession]:
-        selected_sessions: List[ProcessedSession] = []
         all_diag_names: List[str] = []
         for session in sessions:
             for diagnosis in session.diagnosis:
                 all_diag_names.append(diagnosis.at_level(level).name)
         max_occurence_diag = max(all_diag_names, key=all_diag_names.count)
+
+        grouped_sessions = {}
         for session in sessions:
             for diag in session.diagnosis:
                 if diag.satisfies(max_occurence_diag):
-                    selected_sessions.append(session)
-        return self.select_from_gender_and_age(selected_sessions)
-
-    def select_from_gender_and_age(
-        self, sessions: List[ProcessedSession]
-    ) -> List[ProcessedSession]:
-        grouped_sessions = {}
-        for session in sessions:
-            gender = session.gender
-            if gender not in grouped_sessions:
-                grouped_sessions[gender] = {}
-            age_bracket = self.__age_to_bracket(session.age)
-            if age_bracket not in grouped_sessions[gender]:
-                grouped_sessions[gender][age_bracket] = []
-            grouped_sessions[gender][age_bracket].append(session)
+                    gender = session.gender
+                    if gender not in grouped_sessions:
+                        grouped_sessions[gender] = {}
+                    age_bracket = self.__age_to_bracket(session.age)
+                    if age_bracket not in grouped_sessions[gender]:
+                        grouped_sessions[gender][age_bracket] = []
+                    grouped_sessions[gender][age_bracket].append(session)
 
         keys_and_counts = []
         for gender_key, gender_val in grouped_sessions.items():
