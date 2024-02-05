@@ -102,15 +102,14 @@ class DatabaseGenerator:
 
         grouped_sessions = {}
         for session in sessions:
-            for diag in session.diagnosis:
-                if diag.satisfies(max_occurence_diag):
-                    gender = session.gender
-                    if gender not in grouped_sessions:
-                        grouped_sessions[gender] = {}
-                    age_bracket = self.__age_to_bracket(session.age)
-                    if age_bracket not in grouped_sessions[gender]:
-                        grouped_sessions[gender][age_bracket] = []
-                    grouped_sessions[gender][age_bracket].append(session)
+            if session.has_diagnosis(max_occurence_diag):
+                gender = session.gender
+                if gender not in grouped_sessions:
+                    grouped_sessions[gender] = {}
+                age_bracket = self.__age_to_bracket(session.age)
+                if age_bracket not in grouped_sessions[gender]:
+                    grouped_sessions[gender][age_bracket] = []
+                grouped_sessions[gender][age_bracket].append(session)
 
         keys_and_counts = []
         for gender_key, gender_val in grouped_sessions.items():

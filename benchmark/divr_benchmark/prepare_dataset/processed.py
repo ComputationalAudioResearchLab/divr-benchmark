@@ -57,6 +57,12 @@ class ProcessedSession:
             "files": self.files,
         }
 
+    def has_diagnosis(self, diagnosis_name) -> bool:
+        for diag in self.diagnosis:
+            if diag.satisfies(diagnosis_name):
+                return True
+        return False
+
 
 @dataclass
 class ProcessedDataset:
