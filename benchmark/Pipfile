@@ -17,7 +17,7 @@ openpyxl = ">=3.1.2"
 pandas = ">=2.0.1"
 PyYAML = ">=6.0.1"
 svd-downloader = ">=0.1.1"
-wfdb = "==4.1.1"
+wfdb = ">=4.1.2"
 
 [requires]
 python_version = "3.10"
