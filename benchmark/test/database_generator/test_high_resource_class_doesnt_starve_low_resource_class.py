@@ -3,6 +3,9 @@ from divr_benchmark.diagnosis import DiagnosisMap
 from divr_benchmark.prepare_dataset.database_generator import DatabaseGenerator
 from divr_benchmark.prepare_dataset.processed import ProcessedSession
 from test.database_generator.count_sessions import count_sessions
+from test.database_generator.assert_all_sessions_allocated import (
+    assert_all_sessions_allocated,
+)
 
 train_split = 0.7
 test_split = 0.2
@@ -46,6 +49,7 @@ def test_10():
         db_name=db_name,
         sessions=sessions,
     )
+    assert_all_sessions_allocated(sessions, dataset)
 
     ## Actual expected
     expected_organic = [
@@ -105,6 +109,7 @@ def test_20():
         db_name=db_name,
         sessions=sessions,
     )
+    assert_all_sessions_allocated(sessions, dataset)
 
     ## Actual expected
     expected_organic = [

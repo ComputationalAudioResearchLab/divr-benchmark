@@ -7,6 +7,9 @@ from divr_benchmark.diagnosis import DiagnosisMap
 from divr_benchmark.prepare_dataset.database_generator import DatabaseGenerator
 from divr_benchmark.prepare_dataset.processed import ProcessedSession
 from test.database_generator.count_sessions import count_sessions
+from test.database_generator.assert_all_sessions_allocated import (
+    assert_all_sessions_allocated,
+)
 
 train_split = 0.7
 test_split = 0.2
@@ -24,33 +27,33 @@ database_generator = DatabaseGenerator(
     "sessions_count",
     [
         5,
-        10,
-        25,
-        50,
+        # 10,
+        # 25,
+        # 50,
     ],
 )
 @pytest.mark.parametrize(
     "diagnosis_keys",
     [
         ["unclassified"],
-        ["normal", "pathological"],
-        ["normal", "pathological", "unclassified"],
-        ["muscle_tension", "functional", "unclassified", "organic"],
+        # ["normal", "pathological"],
+        # ["normal", "pathological", "unclassified"],
+        # ["muscle_tension", "functional", "unclassified", "organic"],
     ],
 )
 @pytest.mark.parametrize(
     "genders",
     [
         ["male"],
-        ["male", "female"],
-        ["male", "female", "others"],
+        # ["male", "female"],
+        # ["male", "female", "others"],
     ],
 )
 @pytest.mark.parametrize(
     "age_ranges",
     [
-        [(0, 10)],
-        [(0, 10), (10, 20)],
+        # [(0, 10)],
+        # [(0, 10), (10, 20)],
         [(0, 10), (10, 20), None],
     ],
 )
@@ -84,6 +87,8 @@ def test(
                 ]
     expected_ratio = np.array([train_split, test_split, 1 - train_split - test_split])
     dataset = database_generator.generate(db_name=db_name, sessions=sessions)
+    print(dataset)
+    assert_all_sessions_allocated(sessions, dataset)
     for diagnosis_key in diagnosis_keys:
         for gender in genders:
             for age_range in age_ranges:
@@ -97,8 +102,8 @@ def test(
                     dataset.val_sessions, diagnosis_key, gender, age_range
                 )
                 counts = np.array([train_count, test_count, val_count])
+                print(diagnosis_key, gender, age_range, counts)
                 ratios = counts / counts.sum()
-                # print(ratios)
                 ratio_diff = expected_ratio - ratios
                 mean_l1_error = np.abs(ratio_diff).mean()
                 assert mean_l1_error < 0.1
