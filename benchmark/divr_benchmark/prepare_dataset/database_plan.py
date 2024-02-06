@@ -56,7 +56,6 @@ class Bucket:
 
 
 class BucketCollection(Dict[str, Bucket]):
-
     def setup(
         self,
         total_train_len: int,
@@ -110,9 +109,11 @@ class BucketCollection(Dict[str, Bucket]):
     def __fill_zeros(self) -> None:
         for key, bucket in self.items():
             if bucket.has_space and bucket.has_zeros:
-                (current_train_len, current_test_len, current_val_len) = (
-                    self.__count_sets()
-                )
+                (
+                    current_train_len,
+                    current_test_len,
+                    current_val_len,
+                ) = self.__count_sets()
                 bucket = self[key]
                 if (
                     bucket.test.occupancy == 0
