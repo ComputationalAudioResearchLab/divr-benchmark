@@ -69,7 +69,10 @@ class DatabaseBucketPlan:
         if diag.level > self.child_level:
             # grandchildren
             child_link = diag.at_level(self.child_level)
-            return self.children[child_link.name].add_with_session(data)
+            if child_link.name in self.children:
+                return self.children[child_link.name].add_with_session(data)
+            else:
+                return False
 
         # direct child
         if self.space < 1:

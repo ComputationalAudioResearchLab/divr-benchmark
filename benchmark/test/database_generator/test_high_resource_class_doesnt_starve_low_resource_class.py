@@ -19,6 +19,51 @@ database_generator = DatabaseGenerator(
 )
 
 
+def test_5():
+    db_name = str(uuid4())
+    diagnosis_keys = [
+        "organic_structural",
+        "organic",
+        "muscle_tension",
+        "muscle_tension",
+        "muscle_tension",
+    ]
+    age = None
+    gender = ""
+    sessions = [
+        ProcessedSession(
+            id=str(uuid4()),
+            age=age,
+            gender=gender,
+            diagnosis=[diagnosis_map.get(diagnosis_key)],
+            files=[],
+        )
+        for diagnosis_key in diagnosis_keys
+    ]
+    dataset = database_generator.generate(
+        db_name=db_name,
+        sessions=sessions,
+    )
+    assert_all_sessions_allocated(sessions, dataset)
+
+    ## Actual expected
+    expected_organic = [
+        (dataset.train_sessions, "organic", 2),
+        (dataset.test_sessions, "organic", 0),
+        (dataset.val_sessions, "organic", 0),
+        (dataset.train_sessions, "muscle_tension", 1),
+        (dataset.test_sessions, "muscle_tension", 1),
+        (dataset.val_sessions, "muscle_tension", 1),
+    ]
+    for bucket, diagnosis_key, expected_count in expected_organic:
+        assert expected_count == count_sessions(
+            sessions=bucket,
+            diagnosis_key=diagnosis_key,
+            gender=gender,
+            age_range=age,
+        )
+
+
 def test_10():
     db_name = str(uuid4())
     diagnosis_keys = [
