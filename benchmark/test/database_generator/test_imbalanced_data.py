@@ -40,12 +40,12 @@ def test_1():
     )
     assert_all_sessions_allocated(sessions, dataset)
     expected_counts = [
-        (dataset.train_sessions, "muscle_tension", 1),
-        (dataset.test_sessions, "muscle_tension", 1),
+        (dataset.train_sessions, "muscle_tension", 2),
+        (dataset.test_sessions, "muscle_tension", 0),
         (dataset.val_sessions, "muscle_tension", 1),
-        (dataset.train_sessions, "organic", 8),  # 7
-        (dataset.test_sessions, "organic", 1),  # 2
-        (dataset.val_sessions, "organic", 1),  # 1
+        (dataset.train_sessions, "organic", 7),
+        (dataset.test_sessions, "organic", 2),
+        (dataset.val_sessions, "organic", 1),
     ]
     for bucket, diagnosis_key, expected_count in expected_counts:
         assert expected_count == count_sessions(
@@ -77,12 +77,12 @@ def test_2():
     )
     assert_all_sessions_allocated(sessions, dataset)
     expected_counts = [
-        (dataset.train_sessions, "muscle_tension", 12),  # 21
-        (dataset.test_sessions, "muscle_tension", 12),  # 6
-        (dataset.val_sessions, "muscle_tension", 6),  # 3
-        (dataset.train_sessions, "organic", 79),  # 70
-        (dataset.test_sessions, "organic", 14),  # 20
-        (dataset.val_sessions, "organic", 7),  # 10
+        (dataset.train_sessions, "muscle_tension", 21),
+        (dataset.test_sessions, "muscle_tension", 6),
+        (dataset.val_sessions, "muscle_tension", 3),
+        (dataset.train_sessions, "organic", 70),
+        (dataset.test_sessions, "organic", 20),
+        (dataset.val_sessions, "organic", 10),
     ]
     for bucket, diagnosis_key, expected_count in expected_counts:
         assert expected_count == count_sessions(
@@ -121,15 +121,15 @@ def test_3():
     )
     assert_all_sessions_allocated(sessions, dataset)
     expected_counts = [
-        (dataset.train_sessions, "muscle_tension", 7),  # 7
-        (dataset.test_sessions, "muscle_tension", 2),  # 2
-        (dataset.val_sessions, "muscle_tension", 1),  # 1
-        (dataset.train_sessions, "organic", 8),  # 7
-        (dataset.test_sessions, "organic", 1),  # 2
-        (dataset.val_sessions, "organic", 1),  # 1
-        (dataset.train_sessions, "healthy", 6),  # 7
-        (dataset.test_sessions, "healthy", 3),  # 2
-        (dataset.val_sessions, "healthy", 1),  # 1
+        (dataset.train_sessions, "muscle_tension", 7),
+        (dataset.test_sessions, "muscle_tension", 2),
+        (dataset.val_sessions, "muscle_tension", 1),
+        (dataset.train_sessions, "organic", 7),
+        (dataset.test_sessions, "organic", 2),
+        (dataset.val_sessions, "organic", 1),
+        (dataset.train_sessions, "healthy", 7),
+        (dataset.test_sessions, "healthy", 2),
+        (dataset.val_sessions, "healthy", 1),
     ]
     for bucket, diagnosis_key, expected_count in expected_counts:
         assert expected_count == count_sessions(
@@ -168,18 +168,18 @@ def test_4():
     )
     assert_all_sessions_allocated(sessions, dataset)
     expected_counts = [
-        (dataset.train_sessions, "functional", 9),  # 7
-        (dataset.test_sessions, "functional", 1),  # 2
-        (dataset.val_sessions, "functional", 0),  # 1
-        (dataset.train_sessions, "muscle_tension", 8),  # 7
-        (dataset.test_sessions, "muscle_tension", 1),  # 2
-        (dataset.val_sessions, "muscle_tension", 1),  # 1
-        (dataset.train_sessions, "organic", 7),  # 7
-        (dataset.test_sessions, "organic", 2),  # 2
-        (dataset.val_sessions, "organic", 1),  # 1
-        (dataset.train_sessions, "healthy", 4),  # 7
-        (dataset.test_sessions, "healthy", 4),  # 2
-        (dataset.val_sessions, "healthy", 2),  # 1
+        (dataset.train_sessions, "functional", 7),
+        (dataset.test_sessions, "functional", 2),
+        (dataset.val_sessions, "functional", 1),
+        (dataset.train_sessions, "muscle_tension", 7),
+        (dataset.test_sessions, "muscle_tension", 2),
+        (dataset.val_sessions, "muscle_tension", 1),
+        (dataset.train_sessions, "organic", 7),
+        (dataset.test_sessions, "organic", 2),
+        (dataset.val_sessions, "organic", 1),
+        (dataset.train_sessions, "healthy", 7),
+        (dataset.test_sessions, "healthy", 2),
+        (dataset.val_sessions, "healthy", 1),
     ]
     for bucket, diagnosis_key, expected_count in expected_counts:
         assert expected_count == count_sessions(

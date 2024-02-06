@@ -48,12 +48,12 @@ def test_5():
 
     ## Actual expected
     expected_organic = [
-        (dataset.train_sessions, "organic", 2),
+        (dataset.train_sessions, "organic", 1),
         (dataset.test_sessions, "organic", 0),
-        (dataset.val_sessions, "organic", 0),
-        (dataset.train_sessions, "muscle_tension", 1),
+        (dataset.val_sessions, "organic", 1),
+        (dataset.train_sessions, "muscle_tension", 2),
         (dataset.test_sessions, "muscle_tension", 1),
-        (dataset.val_sessions, "muscle_tension", 1),
+        (dataset.val_sessions, "muscle_tension", 0),
     ]
     for bucket, diagnosis_key, expected_count in expected_organic:
         assert expected_count == count_sessions(
@@ -158,11 +158,11 @@ def test_20():
 
     ## Actual expected
     expected_organic = [
-        (dataset.train_sessions, "organic", 11),
-        (dataset.test_sessions, "organic", 2),
+        (dataset.train_sessions, "organic", 10),
+        (dataset.test_sessions, "organic", 3),
         (dataset.val_sessions, "organic", 1),
-        (dataset.train_sessions, "muscle_tension", 3),
-        (dataset.test_sessions, "muscle_tension", 2),
+        (dataset.train_sessions, "muscle_tension", 4),
+        (dataset.test_sessions, "muscle_tension", 1),
         (dataset.val_sessions, "muscle_tension", 1),
     ]
     for bucket, diagnosis_key, expected_count in expected_organic:

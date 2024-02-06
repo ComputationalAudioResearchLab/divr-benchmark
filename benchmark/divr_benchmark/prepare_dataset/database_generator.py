@@ -3,7 +3,7 @@ import random
 from typing import Dict, List, Tuple
 from ..diagnosis import DiagnosisMap, Diagnosis
 from .processed import ProcessedSession
-from .database_plan import DatabasePlan
+from .database_plan import BucketCollection
 
 
 class DatabaseGenerator:
@@ -44,6 +44,7 @@ class DatabaseGenerator:
         self.diagnosis_map = diagnosis_map
         self.train_split = train_split
         self.test_split = test_split
+        self.val_split = 1 - train_split - test_split
         self.random_seed = random_seed
 
     def generate(
@@ -58,50 +59,74 @@ class DatabaseGenerator:
             for diag in session.diagnosis:
                 all_levels.append(diag.level)
         max_level = max(all_levels)
-        database_plan = DatabasePlan(
-            total_sessions=len(sessions),
+        sorted_diag_counts = self.__sort_at_level(sessions, max_level)
+        total_count = sum([v["count"] for v in sorted_diag_counts.values()])
+        total_train_len = int(self.train_split * total_count)
+        total_test_len = int(self.test_split * total_count)
+        total_val_len = total_count - total_train_len - total_test_len
+        level_diag_counts = self.__to_specific_level(
+            sorted_diag_counts=sorted_diag_counts,
+            level=0,
+            ignore_level=True,
+        )
+        bucket_values = [
+            (v["diag"].name, v["count"]) for v in level_diag_counts.values()
+        ]
+        weighted_buckets = BucketCollection().setup(
+            total_train_len=total_train_len,
+            total_test_len=total_test_len,
+            total_val_len=total_val_len,
             train_split=self.train_split,
             test_split=self.test_split,
+            val_split=self.val_split,
+            values=bucket_values,
         )
-        max_level_diag_counts = self.__exhaust_names_at_level(sessions, max_level)
-        for level in range(max_level):
-            diag_counts = self.__to_specific_level(max_level_diag_counts, level)
-            while len(diag_counts) > 0:
-                for diag in diag_counts.values():
-                    count_to_add = min(diag["count"], 3)
-                    diag["count"] -= database_plan.add([diag["diag"]] * count_to_add)
-                for diag_name, diag in list(diag_counts.items()):
-                    if diag["count"] == 0:
-                        del diag_counts[diag_name]
+        for level in range(1, max_level + 1):
+            level_diag_counts = self.__to_specific_level(
+                sorted_diag_counts=sorted_diag_counts,
+                level=level,
+                ignore_level=True,
+            )
+            new_buckets = BucketCollection()
+            for key, bucket in weighted_buckets.items():
+                filtered_counts = filter(
+                    lambda x: x["diag"].satisfies(key), level_diag_counts.values()
+                )
+                bucket_values = [(v["diag"].name, v["count"]) for v in filtered_counts]
+                new_bucket = BucketCollection().setup(
+                    total_train_len=bucket.train.occupancy,
+                    total_test_len=bucket.test.occupancy,
+                    total_val_len=bucket.val.occupancy,
+                    train_split=self.train_split,
+                    test_split=self.test_split,
+                    val_split=self.val_split,
+                    values=bucket_values,
+                )
+                new_buckets.update(new_bucket)
+            weighted_buckets = new_buckets
+        allocation_values = dict(
+            [(v["diag"].name, v["sessions"]) for v in sorted_diag_counts.values()]
+        )
+        weighted_buckets.allocate_sessions(allocation_values)
+        return weighted_buckets.to_dataset(db_name)
 
-        while len(max_level_diag_counts) > 0:
-            for diag in max_level_diag_counts.values():
-                count_to_add = min(diag["count"], 3)
-                selected_sessions = self.select_gender_and_age(diag["sessions"])
-                data = [
-                    (diag["diag"], session)
-                    for session in selected_sessions[:count_to_add]
-                ]
-                count_added, sessions_added = database_plan.add_with_sessions(data)
-                diag["count"] -= count_added
-                for session_id in sessions_added:
-                    del diag["sessions"][session_id]
-            for diag_name, max_diag in list(max_level_diag_counts.items()):
-                if max_diag["count"] == 0:
-                    del max_level_diag_counts[diag_name]
-
-        return database_plan.to_dataset(db_name=db_name)
-
-    def __to_specific_level(self, max_level_diag_counts: Dict, level: int):
+    def __to_specific_level(
+        self, sorted_diag_counts: Dict, level: int, ignore_level: bool = False
+    ):
         counts: Dict = {}
-        for val in max_level_diag_counts.values():
+        for val in sorted_diag_counts.values():
             count = val["count"]
             diag = val["diag"].at_level(level)
-            if diag.level == level:
+            if diag.level == level or ignore_level:
                 if diag.name not in counts:
-                    counts[diag.name] = {"count": count, "diag": diag}
+                    counts[diag.name] = {
+                        "count": count,
+                        "diag": diag,
+                        # "sessions": val["sessions"],
+                    }
                 else:
                     counts[diag.name]["count"] += count
+                    # counts[diag.name]["sessions"] += val["sessions"]
         sorted_counts = dict(
             sorted(
                 counts.items(),
@@ -111,17 +136,17 @@ class DatabaseGenerator:
         )
         return sorted_counts
 
-    def __exhaust_names_at_level(self, sessions: List[ProcessedSession], level: int):
+    def __sort_at_level(self, sessions: List[ProcessedSession], level: int):
         working_sessions = sessions.copy()
         counts = {}
         while len(working_sessions) > 0:
             best_diag = self.__most_popular_diag(working_sessions, level)
             if best_diag.name not in counts:
-                counts[best_diag.name] = {"diag": best_diag, "count": 0, "sessions": {}}
+                counts[best_diag.name] = {"diag": best_diag, "count": 0, "sessions": []}
             for session in working_sessions:
                 if best_diag.name in session.diagnosis_names_at_level(level):
                     counts[best_diag.name]["count"] += 1
-                    counts[best_diag.name]["sessions"][session.id] = session
+                    counts[best_diag.name]["sessions"].append(session)
                     working_sessions.remove(session)
         sorted_counts = dict(
             sorted(
