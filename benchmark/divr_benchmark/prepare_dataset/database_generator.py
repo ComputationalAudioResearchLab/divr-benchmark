@@ -80,8 +80,10 @@ class DatabaseGenerator:
                     (diag["diag"], session)
                     for session in selected_sessions[:count_to_add]
                 ]
-                count_added = database_plan.add_with_sessions(data)
+                count_added, sessions_added = database_plan.add_with_sessions(data)
                 diag["count"] -= count_added
+                for session_id in sessions_added:
+                    del diag["sessions"][session_id]
             for diag_name, max_diag in list(max_level_diag_counts.items()):
                 if max_diag["count"] == 0:
                     del max_level_diag_counts[diag_name]
@@ -113,11 +115,11 @@ class DatabaseGenerator:
         while len(working_sessions) > 0:
             best_diag = self.__most_popular_diag(working_sessions, level)
             if best_diag.name not in counts:
-                counts[best_diag.name] = {"diag": best_diag, "count": 0, "sessions": []}
+                counts[best_diag.name] = {"diag": best_diag, "count": 0, "sessions": {}}
             for session in working_sessions:
                 if best_diag.name in session.diagnosis_names_at_level(level):
                     counts[best_diag.name]["count"] += 1
-                    counts[best_diag.name]["sessions"].append(session)
+                    counts[best_diag.name]["sessions"][session.id] = session
                     working_sessions.remove(session)
         sorted_counts = dict(
             sorted(
@@ -140,40 +142,11 @@ class DatabaseGenerator:
                     best_diag[diag.name]["count"] += 1
         return max(best_diag.items(), key=lambda x: x[1]["count"])[1]["diag"]
 
-        # assignments = [
-        #     (dataset.test_sessions, expected_test_len),
-        #     (dataset.train_sessions, expected_train_len),
-        #     (dataset.val_sessions, expected_val_len),
-        # ]
-
-        # all_diagnosis: List[Diagnosis] = []
-        # for session in sessions:
-        #     all_diagnosis += session.diagnosis
-        # level = max([diagnosis.level for diagnosis in all_diagnosis])
-
-        # while len(sessions) > 0:
-        #     selected_sessions = self.select_at_level(sessions, level)
-        #     selection_count = len(selected_sessions)
-        #     if selection_count > 2 or level == 0:
-        #         if selection_count < 1:
-        #             raise ValueError("called fill dataset with 0 sessions")
-        #         j = 0
-        #         for assignment in assignments:
-        #             if (j < selection_count) and assignment[1] > len(assignment[0]):
-        #                 session = selected_sessions[j]
-        #                 assignment[0].append(session)
-        #                 sessions.remove(session)
-        #                 j += 1
-        #     else:
-        #         level -= 1
-
-        # return dataset
-
     def select_gender_and_age(
-        self, sessions: List[ProcessedSession]
+        self, sessions: Dict[str, ProcessedSession]
     ) -> List[ProcessedSession]:
         grouped_sessions = {}
-        for session in sessions:
+        for session in sessions.values():
             gender = session.gender
             age_bracket = self.__age_to_bracket(session.age)
             key = (gender, age_bracket)

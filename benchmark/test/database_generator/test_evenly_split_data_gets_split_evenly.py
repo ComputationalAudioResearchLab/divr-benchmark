@@ -35,10 +35,10 @@ database_generator = DatabaseGenerator(
 @pytest.mark.parametrize(
     "diagnosis_keys",
     [
-        ["unclassified"],
+        # ["unclassified"],
         # ["normal", "pathological"],
         # ["normal", "pathological", "unclassified"],
-        # ["muscle_tension", "functional", "unclassified", "organic"],
+        ["muscle_tension", "functional", "unclassified", "organic"],
     ],
 )
 @pytest.mark.parametrize(
@@ -52,9 +52,9 @@ database_generator = DatabaseGenerator(
 @pytest.mark.parametrize(
     "age_ranges",
     [
-        # [(0, 10)],
+        [(0, 10)],
         # [(0, 10), (10, 20)],
-        [(0, 10), (10, 20), None],
+        # [(0, 10), (10, 20), None],
     ],
 )
 def test(

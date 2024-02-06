@@ -144,20 +144,26 @@ class DatabasePlan:
             added += 1
         return added
 
-    def add_with_sessions(self, data: List[Tuple[Diagnosis, ProcessedSession]]) -> int:
+    def add_with_sessions(
+        self, data: List[Tuple[Diagnosis, ProcessedSession]]
+    ) -> Tuple[int, List[str]]:
         total = len(data)
         added = 0
+        added_session_ids = []
         if total > 3:
             raise ValueError(
                 "only 3 or less items should be added at a time to ensure every class appears in final datasets"
             )
         if (added < total) and self.test.add_with_session(data[added]):
+            added_session_ids.append(data[added][1].id)
             added += 1
         if (added < total) and self.train.add_with_session(data[added]):
+            added_session_ids.append(data[added][1].id)
             added += 1
         if (added < total) and self.val.add_with_session(data[added]):
+            added_session_ids.append(data[added][1].id)
             added += 1
-        return added
+        return added, added_session_ids
 
     def to_dataset(self, db_name: str) -> ProcessedDataset:
         return ProcessedDataset(
