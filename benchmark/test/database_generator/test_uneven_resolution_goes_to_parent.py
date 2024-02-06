@@ -16,7 +16,7 @@ database_generator = DatabaseGenerator(
 )
 
 
-def test_resolution_one_level_up():
+def test():
     db_name = str(uuid4())
     diagnosis_keys = [
         "organic_inflammatory",

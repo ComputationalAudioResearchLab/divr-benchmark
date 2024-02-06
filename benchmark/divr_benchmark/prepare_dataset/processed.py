@@ -69,6 +69,14 @@ class ProcessedSession:
             diag_names.add(diagnosis.at_level(level).name)
         return diag_names
 
+    def diagnosis_at_level(self, level: int) -> List[Diagnosis]:
+        diags = {}
+        for diagnosis in self.diagnosis:
+            diag = diagnosis.at_level(level)
+            if diag.name not in diags:
+                diags[diag.name] = diag
+        return list(diags.values())
+
 
 @dataclass
 class ProcessedDataset:
