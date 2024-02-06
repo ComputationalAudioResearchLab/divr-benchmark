@@ -8,8 +8,10 @@ from .database_plan import DatabasePlan
 
 class DatabaseGenerator:
     """
-    This class does takes a best effort approach to put a proportional amount
+    This class takes a best effort approach to put a proportional amount
     of diagnosis, age and gender in the three different datasets i.e. train, val and test.
+    While also making sure that any given pathology appears in each train, test and val sets
+    at least once.
 
     First priority goes to diagnosis, then gender and then age.
     Age is considered in buckets of 10 i.e. 0-10, 11-20, 21-30, ...
