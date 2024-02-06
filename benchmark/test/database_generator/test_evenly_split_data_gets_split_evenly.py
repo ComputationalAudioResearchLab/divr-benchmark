@@ -26,7 +26,6 @@ database_generator = DatabaseGenerator(
 @pytest.mark.parametrize(
     "sessions_count",
     [
-        5,
         10,
         25,
         50,

@@ -41,8 +41,8 @@ def test_1():
     assert_all_sessions_allocated(sessions, dataset)
     expected_counts = [
         (dataset.train_sessions, "muscle_tension", 2),
-        (dataset.test_sessions, "muscle_tension", 0),
-        (dataset.val_sessions, "muscle_tension", 1),
+        (dataset.test_sessions, "muscle_tension", 1),
+        (dataset.val_sessions, "muscle_tension", 0),
         (dataset.train_sessions, "organic", 7),
         (dataset.test_sessions, "organic", 2),
         (dataset.val_sessions, "organic", 1),

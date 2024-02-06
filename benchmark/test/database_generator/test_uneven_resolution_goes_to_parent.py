@@ -46,10 +46,10 @@ def test():
     )
     assert_all_sessions_allocated(sessions, dataset)
     expected_organic = [
-        (dataset.train_sessions, "muscle_tension", 1),
-        (dataset.train_sessions, "organic", 2),
+        (dataset.test_sessions, "muscle_tension", 1),
+        (dataset.train_sessions, "organic", 3),
         (dataset.test_sessions, "organic", 1),
-        (dataset.val_sessions, "organic", 1),
+        (dataset.val_sessions, "organic", 0),
     ]
     for bucket, diagnosis_key, expected_count in expected_organic:
         assert expected_count == count_sessions(

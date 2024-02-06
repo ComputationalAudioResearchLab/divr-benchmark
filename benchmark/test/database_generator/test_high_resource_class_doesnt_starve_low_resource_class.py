@@ -49,8 +49,8 @@ def test_5():
     ## Actual expected
     expected_organic = [
         (dataset.train_sessions, "organic", 1),
-        (dataset.test_sessions, "organic", 0),
-        (dataset.val_sessions, "organic", 1),
+        (dataset.test_sessions, "organic", 1),
+        (dataset.val_sessions, "organic", 0),
         (dataset.train_sessions, "muscle_tension", 2),
         (dataset.test_sessions, "muscle_tension", 1),
         (dataset.val_sessions, "muscle_tension", 0),

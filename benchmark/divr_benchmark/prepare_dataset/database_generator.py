@@ -62,8 +62,8 @@ class DatabaseGenerator:
         sorted_diag_counts = self.__sort_at_level(sessions, max_level)
         total_count = sum([v["count"] for v in sorted_diag_counts.values()])
         total_train_len = int(self.train_split * total_count)
-        total_test_len = int(self.test_split * total_count)
-        total_val_len = total_count - total_train_len - total_test_len
+        total_val_len = int(self.val_split * total_count)
+        total_test_len = total_count - total_train_len - total_val_len
         level_diag_counts = self.__to_specific_level(
             sorted_diag_counts=sorted_diag_counts,
             level=0,
