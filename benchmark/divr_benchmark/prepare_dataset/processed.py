@@ -57,12 +57,6 @@ class ProcessedSession:
             "files": self.files,
         }
 
-    def has_diagnosis(self, diagnosis_name) -> bool:
-        for diag in self.diagnosis:
-            if diag.satisfies(diagnosis_name):
-                return True
-        return False
-
     def diagnosis_names_at_level(self, level: int) -> Set[str]:
         diag_names = set()
         for diagnosis in self.diagnosis:
