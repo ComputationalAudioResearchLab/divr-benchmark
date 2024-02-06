@@ -30,6 +30,7 @@ database_generator = DatabaseGenerator(
         10,
         25,
         50,
+        100,
     ],
 )
 @pytest.mark.parametrize(
@@ -87,7 +88,6 @@ def test(
                 ]
     expected_ratio = np.array([train_split, test_split, 1 - train_split - test_split])
     dataset = database_generator.generate(db_name=db_name, sessions=sessions)
-    print(dataset)
     assert_all_sessions_allocated(sessions, dataset)
     for diagnosis_key in diagnosis_keys:
         for gender in genders:
@@ -102,7 +102,6 @@ def test(
                     dataset.val_sessions, diagnosis_key, gender, age_range
                 )
                 counts = np.array([train_count, test_count, val_count])
-                print(diagnosis_key, gender, age_range, counts)
                 ratios = counts / counts.sum()
                 ratio_diff = expected_ratio - ratios
                 mean_l1_error = np.abs(ratio_diff).mean()

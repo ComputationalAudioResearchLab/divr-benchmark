@@ -179,6 +179,12 @@ class Cup:
     occupancy: int
     sessions: List[ProcessedSession]
 
+    def allocate_session(self, session: ProcessedSession) -> bool:
+        if len(self.sessions) < self.occupancy:
+            self.sessions.append(session)
+            return True
+        return False
+
 
 @dataclass
 class Bucket:
@@ -199,18 +205,24 @@ class Bucket:
     def has_zeros(self) -> bool:
         return min([self.train.occupancy, self.test.occupancy, self.val.occupancy]) == 0
 
-    def allocate_sessions(self, sessions: List[ProcessedSession]) -> None:
-        test_start = 0
-        test_end = test_start + self.test.occupancy
-        train_start = test_end
-        train_end = train_start + self.train.occupancy
-        val_start = train_end
-        val_end = val_start + self.val.occupancy
-        if val_end != len(sessions):
-            raise RuntimeError("Unable to allocate session")
-        self.train.sessions += sessions[train_start:train_end]
-        self.test.sessions += sessions[test_start:test_end]
-        self.val.sessions += sessions[val_start:val_end]
+    def allocate_sessions(self, data: List[ProcessedSession]) -> List[str]:
+        total = len(data)
+        added = 0
+        added_session_ids = []
+        if total > 3:
+            raise ValueError(
+                "only 3 or less items should be added at a time to ensure every class appears in final datasets"
+            )
+        if (added < total) and self.test.allocate_session(data[added]):
+            added_session_ids.append(data[added].id)
+            added += 1
+        if (added < total) and self.train.allocate_session(data[added]):
+            added_session_ids.append(data[added].id)
+            added += 1
+        if (added < total) and self.val.allocate_session(data[added]):
+            added_session_ids.append(data[added].id)
+            added += 1
+        return added_session_ids
 
 
 class BucketCollection(Dict[str, Bucket]):
@@ -238,11 +250,6 @@ class BucketCollection(Dict[str, Bucket]):
         self.__fill_zeros()
         self.__fill_remaining()
         return self
-
-    def allocate_sessions(self, vals: Dict[str, List[ProcessedSession]]) -> None:
-        for diag_name, sessions in vals.items():
-            bucket = self[diag_name]
-            bucket.allocate_sessions(sessions)
 
     def to_dataset(self, db_name) -> ProcessedDataset:
         train_sessions = []

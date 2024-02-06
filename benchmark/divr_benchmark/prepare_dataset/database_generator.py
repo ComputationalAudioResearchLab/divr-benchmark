@@ -104,10 +104,23 @@ class DatabaseGenerator:
                 )
                 new_buckets.update(new_bucket)
             weighted_buckets = new_buckets
-        allocation_values = dict(
-            [(v["diag"].name, v["sessions"]) for v in sorted_diag_counts.values()]
-        )
-        weighted_buckets.allocate_sessions(allocation_values)
+        # allocation_values = dict(
+        #     [(v["diag"].name, v["sessions"]) for v in sorted_diag_counts.values()]
+        # )
+        # weighted_buckets.allocate_sessions(allocation_values)
+
+        while len(sorted_diag_counts) > 0:
+            for diag_name, diag in sorted_diag_counts.items():
+                selected_sessions = self.select_gender_and_age(diag["sessions"])
+                bucket = weighted_buckets[diag_name]
+                sessions_added = bucket.allocate_sessions(selected_sessions[:3])
+                for session_id in sessions_added:
+                    del diag["sessions"][session_id]
+                    diag["count"] -= 1
+            for diag_name, max_diag in list(sorted_diag_counts.items()):
+                if max_diag["count"] == 0:
+                    del sorted_diag_counts[diag_name]
+
         return weighted_buckets.to_dataset(db_name)
 
     def __to_specific_level(
@@ -142,11 +155,11 @@ class DatabaseGenerator:
         while len(working_sessions) > 0:
             best_diag = self.__most_popular_diag(working_sessions, level)
             if best_diag.name not in counts:
-                counts[best_diag.name] = {"diag": best_diag, "count": 0, "sessions": []}
+                counts[best_diag.name] = {"diag": best_diag, "count": 0, "sessions": {}}
             for session in working_sessions:
                 if best_diag.name in session.diagnosis_names_at_level(level):
                     counts[best_diag.name]["count"] += 1
-                    counts[best_diag.name]["sessions"].append(session)
+                    counts[best_diag.name]["sessions"][session.id] = session
                     working_sessions.remove(session)
         sorted_counts = dict(
             sorted(
