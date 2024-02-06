@@ -22,6 +22,7 @@ class Voiced(BaseProcessor):
             row = pd.Series(
                 list(df[1]), index=df[0].apply(lambda x: x.replace(":", ""))
             )
+            row = self.__fix_errors(ifile, row)
             rows += [row]
         all_data = pd.DataFrame(rows)
         all_data = all_data[["ID", "Diagnosis", "Gender", "Age"]]
@@ -46,3 +47,13 @@ class Voiced(BaseProcessor):
                 )
             ]
         await self.process(output_path=output_path, db_name=db_key, sessions=sessions)
+
+    def __fix_errors(self, ifile: Path, row: pd.Series) -> pd.Series:
+        """
+        Used for fixing errors in the DB
+        """
+        filekey = ifile.stem.removesuffix("-info")
+        if row["ID"] != filekey:
+            print(f"Info: Fixing DB error where original ID={row['ID']}, ifile={ifile}")
+            row["ID"] = filekey
+        return row
