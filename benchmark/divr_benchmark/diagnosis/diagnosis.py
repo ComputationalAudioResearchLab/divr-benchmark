@@ -25,24 +25,28 @@ class Diagnosis:
     def satisfies(self, name: str) -> bool:
         if name == self.name or name in self.alias:
             return True
-        for parent in self.parents:
-            if parent.parent.satisfies(name):
-                return True
+        best_parent = self.best_parent_link
+        if best_parent and best_parent.parent.satisfies(name):
+            return True
         return False
 
     def at_level(self, level: int) -> Diagnosis:
         if level >= self.level:
             return self
-
-        return self.best_parent_link.parent.at_level(level)
+        best_parent = self.best_parent_link
+        if best_parent:
+            return best_parent.parent.at_level(level)
+        return self
 
     @property
     def root(self) -> Diagnosis:
         return self.at_level(0)
 
     @property
-    def best_parent_link(self) -> DiagnosisLink:
-        return sorted(self.parents, key=self.__parent_sort_key, reverse=True)[0]
+    def best_parent_link(self) -> DiagnosisLink | None:
+        if len(self.parents) > 0:
+            return sorted(self.parents, key=self.__parent_sort_key, reverse=True)[0]
+        return None
 
     def __parent_sort_key(self, x: DiagnosisLink) -> Tuple[float, int]:
         return (x.weight, classification_weights[x.parent.root.name])

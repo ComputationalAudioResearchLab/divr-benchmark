@@ -3,6 +3,9 @@ from divr_benchmark.diagnosis import DiagnosisMap
 from divr_benchmark.prepare_dataset.database_generator import DatabaseGenerator
 from divr_benchmark.prepare_dataset.processed import ProcessedSession
 from test.database_generator.count_sessions import count_sessions
+from test.database_generator.assert_all_sessions_allocated import (
+    assert_all_sessions_allocated,
+)
 
 train_split = 0.7
 test_split = 0.2
@@ -16,7 +19,7 @@ database_generator = DatabaseGenerator(
 )
 
 
-def test_resolution_one_level_up():
+def test():
     db_name = str(uuid4())
     diagnosis_keys = [
         "organic_inflammatory",
@@ -41,12 +44,12 @@ def test_resolution_one_level_up():
         db_name=db_name,
         sessions=sessions,
     )
-
+    assert_all_sessions_allocated(sessions, dataset)
     expected_organic = [
-        (dataset.train_sessions, "muscle_tension", 1),
-        (dataset.train_sessions, "organic", 2),
+        (dataset.test_sessions, "muscle_tension", 1),
+        (dataset.train_sessions, "organic", 3),
         (dataset.test_sessions, "organic", 1),
-        (dataset.val_sessions, "organic", 1),
+        (dataset.val_sessions, "organic", 0),
     ]
     for bucket, diagnosis_key, expected_count in expected_organic:
         assert expected_count == count_sessions(

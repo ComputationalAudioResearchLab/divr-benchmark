@@ -57,17 +57,19 @@ class ProcessedSession:
             "files": self.files,
         }
 
-    def has_diagnosis(self, diagnosis_name) -> bool:
-        for diag in self.diagnosis:
-            if diag.satisfies(diagnosis_name):
-                return True
-        return False
-
     def diagnosis_names_at_level(self, level: int) -> Set[str]:
         diag_names = set()
         for diagnosis in self.diagnosis:
             diag_names.add(diagnosis.at_level(level).name)
         return diag_names
+
+    def diagnosis_at_level(self, level: int) -> List[Diagnosis]:
+        diags = {}
+        for diagnosis in self.diagnosis:
+            diag = diagnosis.at_level(level)
+            if diag.name not in diags:
+                diags[diag.name] = diag
+        return list(diags.values())
 
 
 @dataclass

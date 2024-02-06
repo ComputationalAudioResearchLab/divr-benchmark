@@ -1,13 +1,17 @@
+from __future__ import annotations
 import random
-from typing import List, Tuple
+from typing import Dict, List, Tuple
 from ..diagnosis import DiagnosisMap, Diagnosis
-from .processed import ProcessedDataset, ProcessedSession
+from .processed import ProcessedSession
+from .database_plan import BucketCollection
 
 
 class DatabaseGenerator:
     """
-    This class does takes a best effort approach to put a proportional amount
+    This class takes a best effort approach to put a proportional amount
     of diagnosis, age and gender in the three different datasets i.e. train, val and test.
+    While also making sure that any given pathology appears in each train, test and val sets
+    at least once.
 
     First priority goes to diagnosis, then gender and then age.
     Age is considered in buckets of 10 i.e. 0-10, 11-20, 21-30, ...
@@ -40,6 +44,7 @@ class DatabaseGenerator:
         self.diagnosis_map = diagnosis_map
         self.train_split = train_split
         self.test_split = test_split
+        self.val_split = 1 - train_split - test_split
         self.random_seed = random_seed
 
     def generate(
@@ -49,63 +54,128 @@ class DatabaseGenerator:
     ):
         random.Random(self.random_seed).shuffle(sessions)
 
-        dataset = ProcessedDataset(
-            db_name=db_name,
-            train_sessions=[],
-            test_sessions=[],
-            val_sessions=[],
+        all_levels = []
+        for session in sessions:
+            for diag in session.diagnosis:
+                all_levels.append(diag.level)
+        max_level = max(all_levels)
+        sorted_diag_counts = self.__sort_at_level(sessions, max_level)
+        total_count = sum([v["count"] for v in sorted_diag_counts.values()])
+        total_train_len = int(self.train_split * total_count)
+        total_val_len = int(self.val_split * total_count)
+        total_test_len = total_count - total_train_len - total_val_len
+        level_diag_counts = self.__to_specific_level(
+            sorted_diag_counts=sorted_diag_counts,
+            level=0,
         )
-
-        total_sessions = len(sessions)
-        expected_train_len = int(total_sessions * self.train_split)
-        expected_test_len = int(total_sessions * self.test_split)
-        expected_val_len = total_sessions - expected_train_len - expected_test_len
-        assignments = [
-            (dataset.test_sessions, expected_test_len),
-            (dataset.train_sessions, expected_train_len),
-            (dataset.val_sessions, expected_val_len),
+        bucket_values = [
+            (v["diag"].name, v["count"]) for v in level_diag_counts.values()
         ]
+        weighted_buckets = BucketCollection().setup(
+            total_train_len=total_train_len,
+            total_test_len=total_test_len,
+            total_val_len=total_val_len,
+            train_split=self.train_split,
+            test_split=self.test_split,
+            val_split=self.val_split,
+            values=bucket_values,
+        )
+        for level in range(1, max_level + 1):
+            level_diag_counts = self.__to_specific_level(
+                sorted_diag_counts=sorted_diag_counts,
+                level=level,
+            )
+            new_buckets = BucketCollection()
+            for key, bucket in weighted_buckets.items():
+                filtered_counts = filter(
+                    lambda x: x["diag"].satisfies(key), level_diag_counts.values()
+                )
+                bucket_values = [(v["diag"].name, v["count"]) for v in filtered_counts]
+                new_bucket = BucketCollection().setup(
+                    total_train_len=bucket.train.occupancy,
+                    total_test_len=bucket.test.occupancy,
+                    total_val_len=bucket.val.occupancy,
+                    train_split=self.train_split,
+                    test_split=self.test_split,
+                    val_split=self.val_split,
+                    values=bucket_values,
+                )
+                new_buckets.update(new_bucket)
+            weighted_buckets = new_buckets
 
-        all_diagnosis: List[Diagnosis] = []
-        for session in sessions:
-            all_diagnosis += session.diagnosis
-        level = max([diagnosis.level for diagnosis in all_diagnosis])
+        while len(sorted_diag_counts) > 0:
+            for diag_name, diag in sorted_diag_counts.items():
+                selected_sessions = self.__select_gender_and_age(diag["sessions"])
+                bucket = weighted_buckets[diag_name]
+                sessions_added = bucket.allocate_sessions(selected_sessions[:3])
+                for session_id in sessions_added:
+                    del diag["sessions"][session_id]
+                    diag["count"] -= 1
+            for diag_name, max_diag in list(sorted_diag_counts.items()):
+                if max_diag["count"] == 0:
+                    del sorted_diag_counts[diag_name]
 
-        while len(sessions) > 0:
-            selected_sessions = self.select_at_level(sessions, level)
-            selection_count = len(selected_sessions)
-            if selection_count > 2 or level == 0:
-                if selection_count < 1:
-                    raise ValueError("called fill dataset with 0 sessions")
-                j = 0
-                for assignment in assignments:
-                    if (j < selection_count) and assignment[1] > len(assignment[0]):
-                        session = selected_sessions[j]
-                        assignment[0].append(session)
-                        sessions.remove(session)
-                        j += 1
+        return weighted_buckets.to_dataset(db_name)
+
+    def __to_specific_level(self, sorted_diag_counts: Dict, level: int):
+        counts: Dict = {}
+        for val in sorted_diag_counts.values():
+            count = val["count"]
+            diag = val["diag"].at_level(level)
+            if diag.name not in counts:
+                counts[diag.name] = {
+                    "count": count,
+                    "diag": diag,
+                }
             else:
-                level -= 1
+                counts[diag.name]["count"] += count
+        sorted_counts = dict(
+            sorted(
+                counts.items(),
+                key=lambda x: x[1]["count"],
+                reverse=True,
+            )
+        )
+        return sorted_counts
 
-        return dataset
+    def __sort_at_level(self, sessions: List[ProcessedSession], level: int):
+        working_sessions = sessions.copy()
+        counts = {}
+        while len(working_sessions) > 0:
+            best_diag = self.__most_popular_diag(working_sessions, level)
+            if best_diag.name not in counts:
+                counts[best_diag.name] = {"diag": best_diag, "count": 0, "sessions": {}}
+            for session in working_sessions:
+                if best_diag.name in session.diagnosis_names_at_level(level):
+                    counts[best_diag.name]["count"] += 1
+                    counts[best_diag.name]["sessions"][session.id] = session
+                    working_sessions.remove(session)
+        sorted_counts = dict(
+            sorted(
+                counts.items(),
+                key=lambda x: x[1]["count"],
+                reverse=True,
+            )
+        )
+        return sorted_counts
 
-    def select_at_level(
+    def __most_popular_diag(
         self, sessions: List[ProcessedSession], level: int
-    ) -> List[ProcessedSession]:
-        grouped_diag_sessions = {}
+    ) -> Diagnosis:
+        best_diag = {}
         for session in sessions:
-            for diag_name in session.diagnosis_names_at_level(level):
-                if diag_name not in grouped_diag_sessions:
-                    grouped_diag_sessions[diag_name] = []
-                grouped_diag_sessions[diag_name].append(session)
+            for diag in session.diagnosis_at_level(level):
+                if diag.name not in best_diag:
+                    best_diag[diag.name] = {"diag": diag, "count": 1}
+                else:
+                    best_diag[diag.name]["count"] += 1
+        return max(best_diag.items(), key=lambda x: x[1]["count"])[1]["diag"]
 
-        max_diag_sessions = max(
-            grouped_diag_sessions.items(),
-            key=lambda x: len(x[1]),
-        )[1]
-
+    def __select_gender_and_age(
+        self, sessions: Dict[str, ProcessedSession]
+    ) -> List[ProcessedSession]:
         grouped_sessions = {}
-        for session in max_diag_sessions:
+        for session in sessions.values():
             gender = session.gender
             age_bracket = self.__age_to_bracket(session.age)
             key = (gender, age_bracket)

@@ -86,7 +86,7 @@ class BaseProcessor:
     ):
         demographics = {}
         for session in sessions:
-            diagnosis_name = session.diagnosis[0].at_level(0).name
+            diagnosis_name = session.diagnosis[0].at_level(level).name
             if diagnosis_name not in demographics:
                 demographics[diagnosis_name] = {}
             diagnosis = demographics[diagnosis_name]
