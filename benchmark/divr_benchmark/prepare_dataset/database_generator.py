@@ -67,7 +67,6 @@ class DatabaseGenerator:
         level_diag_counts = self.__to_specific_level(
             sorted_diag_counts=sorted_diag_counts,
             level=0,
-            ignore_level=True,
         )
         bucket_values = [
             (v["diag"].name, v["count"]) for v in level_diag_counts.values()
@@ -85,7 +84,6 @@ class DatabaseGenerator:
             level_diag_counts = self.__to_specific_level(
                 sorted_diag_counts=sorted_diag_counts,
                 level=level,
-                ignore_level=True,
             )
             new_buckets = BucketCollection()
             for key, bucket in weighted_buckets.items():
@@ -104,14 +102,10 @@ class DatabaseGenerator:
                 )
                 new_buckets.update(new_bucket)
             weighted_buckets = new_buckets
-        # allocation_values = dict(
-        #     [(v["diag"].name, v["sessions"]) for v in sorted_diag_counts.values()]
-        # )
-        # weighted_buckets.allocate_sessions(allocation_values)
 
         while len(sorted_diag_counts) > 0:
             for diag_name, diag in sorted_diag_counts.items():
-                selected_sessions = self.select_gender_and_age(diag["sessions"])
+                selected_sessions = self.__select_gender_and_age(diag["sessions"])
                 bucket = weighted_buckets[diag_name]
                 sessions_added = bucket.allocate_sessions(selected_sessions[:3])
                 for session_id in sessions_added:
@@ -123,23 +117,18 @@ class DatabaseGenerator:
 
         return weighted_buckets.to_dataset(db_name)
 
-    def __to_specific_level(
-        self, sorted_diag_counts: Dict, level: int, ignore_level: bool = False
-    ):
+    def __to_specific_level(self, sorted_diag_counts: Dict, level: int):
         counts: Dict = {}
         for val in sorted_diag_counts.values():
             count = val["count"]
             diag = val["diag"].at_level(level)
-            if diag.level == level or ignore_level:
-                if diag.name not in counts:
-                    counts[diag.name] = {
-                        "count": count,
-                        "diag": diag,
-                        # "sessions": val["sessions"],
-                    }
-                else:
-                    counts[diag.name]["count"] += count
-                    # counts[diag.name]["sessions"] += val["sessions"]
+            if diag.name not in counts:
+                counts[diag.name] = {
+                    "count": count,
+                    "diag": diag,
+                }
+            else:
+                counts[diag.name]["count"] += count
         sorted_counts = dict(
             sorted(
                 counts.items(),
@@ -182,7 +171,7 @@ class DatabaseGenerator:
                     best_diag[diag.name]["count"] += 1
         return max(best_diag.items(), key=lambda x: x[1]["count"])[1]["diag"]
 
-    def select_gender_and_age(
+    def __select_gender_and_age(
         self, sessions: Dict[str, ProcessedSession]
     ) -> List[ProcessedSession]:
         grouped_sessions = {}
