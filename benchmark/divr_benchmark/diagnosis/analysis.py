@@ -1,7 +1,9 @@
 from pathlib import Path
+from typing import List
 from matplotlib import pyplot as plt
 import yaml
 import numpy as np
+from .diagnosis_map import DiagnosisMap, Diagnosis
 
 
 def load_labels(input_path: Path):
@@ -115,3 +117,18 @@ def analysis(source_path: Path, output_confusion_path: Path):
     with open("labels.yml", "w") as output_labels:
         yaml.dump(data, output_labels, width=1000)
     confusion(data, output_confusion_path)
+
+
+def reclassification_candidates(output_path: Path) -> None:
+    diagnosis_map = DiagnosisMap()
+    candidates: List[Diagnosis] = []
+    candidates += diagnosis_map.find("unclassified")
+    candidates += diagnosis_map.find("unclassified_pathology")
+    data = {}
+    for candidate in candidates:
+        data[candidate.name] = {
+            "alias": candidate.alias,
+            "votes": candidate.votes,
+        }
+    with open(output_path, "w") as reclass_file:
+        yaml.dump(data, reclass_file, width=1000)

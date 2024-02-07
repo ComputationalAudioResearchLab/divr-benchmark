@@ -1,6 +1,6 @@
 from __future__ import annotations
 from dataclasses import dataclass
-from typing import List, Tuple
+from typing import Dict, List, Tuple
 
 classification_weights = {
     "pathological": 3,
@@ -21,6 +21,7 @@ class Diagnosis:
     level: int
     alias: List[str]
     parents: List[DiagnosisLink]
+    votes: Dict[str, str]
 
     def satisfies(self, name: str) -> bool:
         if name == self.name or name in self.alias:
@@ -37,6 +38,12 @@ class Diagnosis:
         if best_parent:
             return best_parent.parent.at_level(level)
         return self
+
+    @property
+    def max_parent_weight(self) -> float | None:
+        if len(self.parents) > 0:
+            return max([parent.weight for parent in self.parents])
+        return None
 
     @property
     def root(self) -> Diagnosis:

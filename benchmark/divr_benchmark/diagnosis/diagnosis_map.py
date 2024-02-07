@@ -1,5 +1,5 @@
 from pathlib import Path
-from typing import Dict
+from typing import Dict, List
 
 import yaml
 from .diagnosis import Diagnosis, DiagnosisLink
@@ -15,6 +15,9 @@ class DiagnosisMap:
 
     def get(self, name: str) -> Diagnosis:
         return self.__index[name.lower()]
+
+    def find(self, name: str) -> List[Diagnosis]:
+        return list(filter(lambda diag: diag.satisfies(name), self.__index.values()))
 
     def __load_map(self, diagnosis_map_file_path: Path) -> None:
         with open(diagnosis_map_file_path, "r") as diagnosis_map_file:
@@ -41,10 +44,14 @@ class DiagnosisMap:
                 DiagnosisLink(parent=self.get(parent_name), weight=parent_weight)
                 for parent_name, parent_weight in data["parents"].items()
             ]
+        votes = {}
+        if "votes" in data and data["votes"] is not None:
+            votes = data["votes"]
 
         return Diagnosis(
             name=key,
             alias=alias,
             level=level,
             parents=parents,
+            votes=votes,
         )

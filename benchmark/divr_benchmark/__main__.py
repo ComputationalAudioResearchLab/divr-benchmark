@@ -2,7 +2,7 @@ from pathlib import Path
 from typing import List
 from class_argparse import ClassArgParser
 from .download import Download
-from .diagnosis import analysis as analyse_diagnosis
+from .diagnosis import analysis as analyse_diagnosis, reclassification_candidates
 from .prepare_dataset import PrepareDataset
 
 
@@ -19,6 +19,9 @@ class Main(ClassArgParser):
             source_path=source_path,
             output_confusion_path=output_confusion_path,
         )
+
+    def reclassification_candidates(self, output_path: Path):
+        reclassification_candidates(output_path=output_path)
 
     async def download_openaccess(
         self,
