@@ -11,7 +11,7 @@ pip install divr-benchmark
 ## How to use
 
 ```python
-from divr_benchmark import Benchmark
+from divr_benchmark import Benchmark, Diagnosis
 
 # Get a specific task from the benchmark
 # Storage path is needed to store the public datasets and generated files
@@ -22,30 +22,30 @@ benchmark = Benchmark(
 task = benchmark.task(stream=1, task=0)
 
 # Train ONLY with train data, and optionally validation data
-for data_point in task.train_set:
+for data_point in task.train:
     audio: np.ndarray = data_point.audio
-    label: str = data_point.label
+    label: Diagnosis = data_point.label
 
 # Validate with validation data
 # or you can combine this with train data if you don't want to validate
 # although we highly recommend that you perform validation
-for data_point in task.val_set:
+for data_point in task.val:
     audio: np.ndarray = data_point.audio
-    label: str = data_point.label
+    label: Diagnosis = data_point.label
 
 # Test with test data
 # Do NOT use the test data for training or validation as this would invalidate your experiment
 # Only run this when you are finished with a set of experiments
-results = {}
-for data_point in task.test_set:
+predictions = {}
+for data_point in task.test:
     id: str = data_point.id
     audio: np.ndarray = data_point.audio
     label: str = model.classify(audio)
-    results[id] = label
+    predictions[id] = label
 
-# Score the results
+# Score the predictions
 # optionally share back in this repo with a Pull-Request
-scores = task.score(results)
+scores = task.score(predictions)
 ```
 
 ## Tasks
