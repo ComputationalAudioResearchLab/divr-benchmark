@@ -1,6 +1,6 @@
 # DiVR Benchmark Tasks (v1)
 
-First revision of benchmarking tasks for disordered voice recognition. These sets of tasks are aimed to answer a few key questions of the domain, as well as provide a standardize measurement metric for comparing future work.
+First version of benchmarking tasks for disordered voice recognition. These sets of tasks are aimed to answer a few key questions of the domain, as well as provide a standardize measurement metric for comparing future work.
 
 ### Overall specifications
 
