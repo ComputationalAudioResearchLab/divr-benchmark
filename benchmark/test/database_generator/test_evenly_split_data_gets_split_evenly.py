@@ -14,7 +14,7 @@ from test.database_generator.assert_all_sessions_allocated import (
 train_split = 0.7
 test_split = 0.2
 random_seed = 42
-diagnosis_map = DiagnosisMap()
+diagnosis_map = DiagnosisMap.v1()
 database_generator = DatabaseGenerator(
     diagnosis_map=diagnosis_map,
     train_split=train_split,

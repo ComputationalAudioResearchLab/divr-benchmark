@@ -10,7 +10,7 @@ from .database_generator import DatabaseGenerator
 
 class BaseProcessor:
     def __init__(self) -> None:
-        self.diagnosis_map = DiagnosisMap()
+        self.diagnosis_map = DiagnosisMap.v1()
         self.database_generator = DatabaseGenerator(
             diagnosis_map=self.diagnosis_map,
             train_split=0.7,

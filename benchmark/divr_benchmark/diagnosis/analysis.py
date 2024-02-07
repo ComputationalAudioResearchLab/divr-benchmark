@@ -120,7 +120,7 @@ def analysis(source_path: Path, output_confusion_path: Path):
 
 
 def reclassification_candidates(output_path: Path) -> None:
-    diagnosis_map = DiagnosisMap()
+    diagnosis_map = DiagnosisMap.v1()
     candidates: List[Diagnosis] = []
     candidates += diagnosis_map.find("unclassified")
     candidates += diagnosis_map.find("unclassified_pathology")

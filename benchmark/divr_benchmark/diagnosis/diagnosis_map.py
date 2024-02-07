@@ -1,7 +1,7 @@
+from __future__ import annotations
+import yaml
 from pathlib import Path
 from typing import Dict, List
-
-import yaml
 from .diagnosis import Diagnosis, DiagnosisLink
 
 
@@ -9,9 +9,15 @@ class DiagnosisMap:
 
     __index: Dict[str, Diagnosis] = {}
 
-    def __init__(self) -> None:
+    def __init__(self, map_file: Path) -> None:
+        self.__load_map(map_file)
+
+    @staticmethod
+    def v1() -> DiagnosisMap:
+        version = "v1"
         curdir = Path(__file__).parent
-        self.__load_map(Path(f"{curdir}/diagnosis_map.yml"))
+        map_file = Path(f"{curdir}/diagnosis_map_{version}.yml")
+        return DiagnosisMap(map_file=map_file)
 
     def get(self, name: str) -> Diagnosis:
         return self.__index[name.lower()]
