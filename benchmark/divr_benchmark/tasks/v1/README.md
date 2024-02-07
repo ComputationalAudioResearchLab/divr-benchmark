@@ -10,6 +10,7 @@ First revision of benchmarking tasks for disordered voice recognition. These set
 4. Only audio data is considered.
 5. Only diagnosis levels 0, 1 and 2 are considered.
 6. The test set is restricted to 16kHz sample rate, z-score normalized audio.
+7. If multiple diagnosis are available for any given data point, then as long as the predicted diagnosis matches any one of the diagnosis then it's considered a success.
 
 ## Task Streams
 
