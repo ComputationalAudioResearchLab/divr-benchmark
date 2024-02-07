@@ -3,10 +3,13 @@ import typing
 import asyncio
 from pathlib import Path
 from typing import Literal
+
+from .audio_loader import AudioLoader
 from .task import Task
 from ..logger import Logger
 from ..download import Download
 from ..diagnosis import DiagnosisMap
+
 
 VERSIONS = Literal["v1"]
 versions = typing.get_args(VERSIONS)
@@ -28,6 +31,7 @@ class Benchmark:
         self.__diagnosis_map = diagnosis_map_maps[version]()
         self.__logger = Logger(log_path=f"{storage_path}/logs", key=f"{version}")
         self.__data_path = Path(f"{storage_path}/data")
+        self.__audio_loader = AudioLoader(version, self.__data_path)
         self.__downloader = Download(
             database_path=self.__data_path, logger=self.__logger
         )
@@ -54,6 +58,7 @@ class Benchmark:
 
         return Task(
             diagnosis_map=self.__diagnosis_map,
+            audio_loader=self.__audio_loader,
             train=train_path,
             val=val_path,
             test=test_path,

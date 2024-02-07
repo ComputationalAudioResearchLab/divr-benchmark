@@ -5,6 +5,7 @@ from typing import Dict, List
 from dataclasses import dataclass
 from ..diagnosis import Diagnosis, DiagnosisMap
 from .result import Result
+from .audio_loader import AudioLoader
 
 
 @dataclass
@@ -48,12 +49,18 @@ class Task:
     __test: Dict[str, DataPoint]
 
     def __init__(
-        self, diagnosis_map: DiagnosisMap, train: Path, val: Path, test: Path
+        self,
+        diagnosis_map: DiagnosisMap,
+        audio_loader: AudioLoader,
+        train: Path,
+        val: Path,
+        test: Path,
     ) -> None:
         self.__train = self.__load_file(train)
         self.__val = self.__load_file(val)
         self.__test = dict([(v.id, v) for v in self.__load_file(test)])
         self.__diagnosis_map = diagnosis_map
+        self.__audio_loader = audio_loader
 
     @property
     def train(self) -> List[TrainPoint]:
@@ -83,7 +90,12 @@ class Task:
     def __load_file(self, data_file: Path) -> List[DataPoint]:
         with open(data_file, "r") as df:
             data = yaml.load(df, Loader=yaml.FullLoader)
+        dataset: List[DataPoint] = []
         for key, val in data.items():
             label = self.__diagnosis_map.get(val["label"])
-            DataPoint(id=key, audio=val["audio"], label=label)
-        return []
+            audio = self.__audio_loader(val["audio"])
+            dataset.append(DataPoint(id=key, audio=audio, label=label))
+        return dataset
+
+    def load_audio(self, audio_key: str) -> np.ndarray:
+        raise NotImplementedError()
