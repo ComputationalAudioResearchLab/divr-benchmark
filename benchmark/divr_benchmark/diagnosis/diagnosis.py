@@ -40,12 +40,6 @@ class Diagnosis:
         return self
 
     @property
-    def max_parent_weight(self) -> float | None:
-        if len(self.parents) > 0:
-            return max([parent.weight for parent in self.parents])
-        return None
-
-    @property
     def root(self) -> Diagnosis:
         return self.at_level(0)
 
@@ -55,5 +49,25 @@ class Diagnosis:
             return sorted(self.parents, key=self.__parent_sort_key, reverse=True)[0]
         return None
 
+    def __lt__(self, other: Diagnosis) -> bool:
+        self_weight = self.__max_parent_weight()
+        other_weight = other.__max_parent_weight()
+
+        if self_weight is None:
+            # current class has no parents so can't be less than other
+            return False
+
+        if other_weight is None:
+            # other class has no parents, and current class must have parents
+            # hence the current class is less than other
+            return True
+
+        return self_weight < other_weight
+
     def __parent_sort_key(self, x: DiagnosisLink) -> Tuple[float, int]:
         return (x.weight, classification_weights[x.parent.root.name])
+
+    def __max_parent_weight(self) -> float | None:
+        if len(self.parents) > 0:
+            return max([parent.weight for parent in self.parents])
+        return None

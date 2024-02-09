@@ -59,14 +59,7 @@ class ProcessedSession:
 
     @property
     def best_diagnosis(self) -> Diagnosis:
-        best_so_far = self.diagnosis[0]
-        for diagnosis in self.diagnosis:
-            if diagnosis.max_parent_weight is None:
-                # root level diagnosis found
-                return diagnosis
-            if diagnosis.max_parent_weight > best_so_far.max_parent_weight:
-                best_so_far = diagnosis
-        return best_so_far
+        return sorted(self.diagnosis, reverse=True)[0]
 
     def diagnosis_names_at_level(self, level: int) -> Set[str]:
         diag_names = set()
