@@ -26,14 +26,15 @@ setup(
     install_requires=[
         "aiofiles>=23.1.0",
         "aiohttp>=3.8.4",
+        "class-argparse>=0.1.3",
         "librosa>=0.10.0.post2",
         "matplotlib>=3.7.1",
         "nspfile>=0.1.4",
         "openpyxl>=3.1.2",
         "pandas>=2.0.1",
         "PyYAML>=6.0.1",
-        "class-argparse>=0.1.3",
         "svd-downloader>=0.1.1",
+        "wfdb>=4.1.2",
     ],
     classifiers=[
         "Development Status :: 4 - Beta",

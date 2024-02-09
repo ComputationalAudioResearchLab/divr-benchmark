@@ -8,11 +8,13 @@ from .diagnosis import (
     level_3_confusion,
 )
 from .prepare_dataset import PrepareDataset
+from .logger import Logger
 
 
 class Main(ClassArgParser):
     def __init__(self) -> None:
         super().__init__(name="DiVR Benchmark")
+        self.logger = Logger(log_path="/tmp/main.log", key="main")
 
     def analyse_diagnosis_classifications(
         self,
@@ -33,7 +35,7 @@ class Main(ClassArgParser):
         all: bool = False,
         datasets: List[str] = [],
     ) -> None:
-        downloader = Download(database_path=database_path)
+        downloader = Download(database_path=database_path, logger=self.logger)
         if all:
             await downloader.all()
         elif len(datasets) != 0:

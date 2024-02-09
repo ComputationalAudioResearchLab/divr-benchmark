@@ -2,6 +2,7 @@ import asyncio
 from pathlib import Path
 from asyncio.subprocess import create_subprocess_exec
 from .logger import Logger
+from .prepare_dataset.processed import ProcessedFile
 
 
 class Download:
@@ -54,3 +55,15 @@ class Download:
             "unzip", "voiced-database-1.0.0.zip", cwd=voiced_path
         )
         await proc.wait()
+
+        dat_files = list(Path(f"{voiced_path}").rglob("*.dat"))
+        processes = []
+        for file in dat_files:
+
+            processes.append(
+                ProcessedFile.from_wfdb(
+                    dat_path=Path(str(file).replace(".dat", "")),
+                    extraction_path=file.parent.resolve(),
+                )
+            )
+        await asyncio.gather(*processes)
