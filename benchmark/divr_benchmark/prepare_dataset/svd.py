@@ -42,7 +42,7 @@ class SVD(BaseProcessor):
         if len(files) == 0:
             return None
         return ProcessedSession(
-            id=f"{speaker_id}.{session_id}",
+            id=f"svd.{speaker_id}.{session_id}",
             age=age,
             gender=gender,
             diagnosis=[

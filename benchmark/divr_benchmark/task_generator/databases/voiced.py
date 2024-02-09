@@ -1,17 +1,20 @@
-import pandas as pd
 from pathlib import Path
-from .base import BaseProcessor
-from .processed import ProcessedFile, ProcessedSession
+import pandas as pd
+from .Base import Base
+from .gender import Gender
+from ...prepare_dataset.processed import (
+    ProcessedDataset,
+    ProcessedSession,
+    ProcessedFile,
+)
 
 
-class Voiced(BaseProcessor):
-    def __init__(self) -> None:
-        super().__init__()
+class Voiced(Base):
 
-    async def __call__(self, source_path: Path, output_path: Path) -> None:
-        db_key = "voiced"
+    def prepare_dataset(self, source_path: Path) -> ProcessedDataset:
+        db_name = "voiced"
         sessions = []
-        data_path = f"{source_path}/voice-icar-federico-ii-database-1.0.0"
+        data_path = f"{source_path}/{db_name}/voice-icar-federico-ii-database-1.0.0"
 
         info_files = list(Path(source_path).rglob("*-info.txt"))
         rows = []
@@ -30,17 +33,20 @@ class Voiced(BaseProcessor):
             speaker_id = row["ID"]
             diagnosis = row["Diagnosis"].lower().strip()
             age = int(row["Age"])
-            gender = row["Gender"].strip()
+            gender = Gender.format(row["Gender"])
             sessions += [
                 ProcessedSession(
-                    id=f"voiced.{speaker_id}",
+                    id=f"voiced_{speaker_id}",
                     age=age,
                     gender=gender,
                     diagnosis=[self.diagnosis_map.get(diagnosis)],
                     files=[ProcessedFile(path=Path(f"{data_path}/{speaker_id}.wav"))],
                 )
             ]
-        await self.process(output_path=output_path, db_name=db_key, sessions=sessions)
+        return self.database_generator.generate(
+            db_name=db_name,
+            sessions=sessions,
+        )
 
     def __fix_errors(self, ifile: Path, row: pd.Series) -> pd.Series:
         """

@@ -1,17 +1,31 @@
 from pathlib import Path
-from .base import BaseProcessor
-from .processed import ProcessedFile, ProcessedSession
+from typing import List
+from .Base import Base
+from .gender import Gender
+from ...prepare_dataset.processed import (
+    ProcessedDataset,
+    ProcessedSession,
+    ProcessedFile,
+)
 
 
-class Torgo(BaseProcessor):
+class Torgo(Base):
     ignore_files = [
         "FC01/Session1/wav_arrayMic/0256.wav",  # 0 length audio
     ]
 
-    async def __call__(self, source_path: Path, output_path: Path) -> None:
-        db_key = "torgo"
+    def test_set_connected_speech(self, level: int):
+        def filter_func(files: List[ProcessedFile]) -> List[ProcessedFile]:
+            return list(filter(lambda x: str(x.path).endswith("-phrase.wav"), files))
+
+        return self.to_tasks(
+            self.dataset.test_sessions, level=level, file_filter=filter_func
+        )
+
+    def prepare_dataset(self, source_path: Path) -> ProcessedDataset:
+        db_name = "torgo"
         sessions = []
-        data_path = f"{source_path}"
+        data_path = f"{source_path}/{db_name}"
         df = [
             {
                 "id": "F01",
@@ -70,11 +84,11 @@ class Torgo(BaseProcessor):
             diagnosis = data["diagnosis"].lower()
             speaker_path = Path(f"{data_path}/{speaker_id}")
             age = int(data["age"]) if data["age"] is not None else None
-            gender = data["gender"].strip()
+            gender = Gender.format(data["gender"])
             for session in speaker_path.glob("Session*"):
                 sessions += [
                     ProcessedSession(
-                        id=f"torgo.{speaker_id}.{session.name}",
+                        id=f"torgo_{speaker_id}_{session.name}",
                         age=age,
                         gender=gender,
                         diagnosis=[self.diagnosis_map.get(diagnosis)],
@@ -85,7 +99,10 @@ class Torgo(BaseProcessor):
                         ],
                     )
                 ]
-        await self.process(output_path=output_path, db_name=db_key, sessions=sessions)
+        return self.database_generator.generate(
+            db_name=db_name,
+            sessions=sessions,
+        )
 
     def include(self, path: Path):
         for exclusion in self.ignore_files:

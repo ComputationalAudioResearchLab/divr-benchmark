@@ -9,6 +9,7 @@ from .diagnosis import (
 )
 from .prepare_dataset import PrepareDataset
 from .logger import Logger
+from .task_generator import generate_tasks, VERSIONS
 
 
 class Main(ClassArgParser):
@@ -64,6 +65,9 @@ class Main(ClassArgParser):
 
     def level_3_confusion(self):
         level_3_confusion()
+
+    def generate_tasks(self, data_store_path: Path, version: VERSIONS):
+        generate_tasks(version=version, source_path=data_store_path)
 
 
 if __name__ == "__main__":

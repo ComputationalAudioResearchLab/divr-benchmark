@@ -1,0 +1,215 @@
+voiced_voice001_0:
+  age: 32
+  audio_key: voiced/voice-icar-federico-ii-database-1.0.0/voice001.wav
+  gender: male
+  label: pathological
+voiced_voice007_0:
+  age: 41
+  audio_key: voiced/voice-icar-federico-ii-database-1.0.0/voice007.wav
+  gender: male
+  label: pathological
+voiced_voice008_0:
+  age: 51
+  audio_key: voiced/voice-icar-federico-ii-database-1.0.0/voice008.wav
+  gender: female
+  label: pathological
+voiced_voice012_0:
+  age: 56
+  audio_key: voiced/voice-icar-federico-ii-database-1.0.0/voice012.wav
+  gender: male
+  label: pathological
+voiced_voice018_0:
+  age: 57
+  audio_key: voiced/voice-icar-federico-ii-database-1.0.0/voice018.wav
+  gender: female
+  label: pathological
+voiced_voice020_0:
+  age: 53
+  audio_key: voiced/voice-icar-federico-ii-database-1.0.0/voice020.wav
+  gender: male
+  label: pathological
+voiced_voice022_0:
+  age: 53
+  audio_key: voiced/voice-icar-federico-ii-database-1.0.0/voice022.wav
+  gender: female
+  label: pathological
+voiced_voice042_0:
+  age: 39
+  audio_key: voiced/voice-icar-federico-ii-database-1.0.0/voice042.wav
+  gender: female
+  label: pathological
+voiced_voice049_0:
+  age: 44
+  audio_key: voiced/voice-icar-federico-ii-database-1.0.0/voice049.wav
+  gender: female
+  label: normal
+voiced_voice055_0:
+  age: 46
+  audio_key: voiced/voice-icar-federico-ii-database-1.0.0/voice055.wav
+  gender: male
+  label: pathological
+voiced_voice056_0:
+  age: 54
+  audio_key: voiced/voice-icar-federico-ii-database-1.0.0/voice056.wav
+  gender: female
+  label: pathological
+voiced_voice058_0:
+  age: 26
+  audio_key: voiced/voice-icar-federico-ii-database-1.0.0/voice058.wav
+  gender: female
+  label: pathological
+voiced_voice061_0:
+  age: 33
+  audio_key: voiced/voice-icar-federico-ii-database-1.0.0/voice061.wav
+  gender: female
+  label: normal
+voiced_voice065_0:
+  age: 60
+  audio_key: voiced/voice-icar-federico-ii-database-1.0.0/voice065.wav
+  gender: female
+  label: pathological
+voiced_voice075_0:
+  age: 30
+  audio_key: voiced/voice-icar-federico-ii-database-1.0.0/voice075.wav
+  gender: female
+  label: pathological
+voiced_voice078_0:
+  age: 53
+  audio_key: voiced/voice-icar-federico-ii-database-1.0.0/voice078.wav
+  gender: female
+  label: pathological
+voiced_voice081_0:
+  age: 31
+  audio_key: voiced/voice-icar-federico-ii-database-1.0.0/voice081.wav
+  gender: male
+  label: pathological
+voiced_voice083_0:
+  age: 48
+  audio_key: voiced/voice-icar-federico-ii-database-1.0.0/voice083.wav
+  gender: male
+  label: pathological
+voiced_voice087_0:
+  age: 61
+  audio_key: voiced/voice-icar-federico-ii-database-1.0.0/voice087.wav
+  gender: female
+  label: pathological
+voiced_voice088_0:
+  age: 70
+  audio_key: voiced/voice-icar-federico-ii-database-1.0.0/voice088.wav
+  gender: female
+  label: pathological
+voiced_voice104_0:
+  age: 32
+  audio_key: voiced/voice-icar-federico-ii-database-1.0.0/voice104.wav
+  gender: male
+  label: normal
+voiced_voice108_0:
+  age: 23
+  audio_key: voiced/voice-icar-federico-ii-database-1.0.0/voice108.wav
+  gender: male
+  label: normal
+voiced_voice111_0:
+  age: 36
+  audio_key: voiced/voice-icar-federico-ii-database-1.0.0/voice111.wav
+  gender: male
+  label: normal
+voiced_voice116_0:
+  age: 34
+  audio_key: voiced/voice-icar-federico-ii-database-1.0.0/voice116.wav
+  gender: female
+  label: pathological
+voiced_voice119_0:
+  age: 47
+  audio_key: voiced/voice-icar-federico-ii-database-1.0.0/voice119.wav
+  gender: female
+  label: pathological
+voiced_voice121_0:
+  age: 38
+  audio_key: voiced/voice-icar-federico-ii-database-1.0.0/voice121.wav
+  gender: female
+  label: pathological
+voiced_voice122_0:
+  age: 45
+  audio_key: voiced/voice-icar-federico-ii-database-1.0.0/voice122.wav
+  gender: female
+  label: pathological
+voiced_voice125_0:
+  age: 36
+  audio_key: voiced/voice-icar-federico-ii-database-1.0.0/voice125.wav
+  gender: female
+  label: normal
+voiced_voice139_0:
+  age: 53
+  audio_key: voiced/voice-icar-federico-ii-database-1.0.0/voice139.wav
+  gender: female
+  label: normal
+voiced_voice143_0:
+  age: 43
+  audio_key: voiced/voice-icar-federico-ii-database-1.0.0/voice143.wav
+  gender: female
+  label: pathological
+voiced_voice147_0:
+  age: 43
+  audio_key: voiced/voice-icar-federico-ii-database-1.0.0/voice147.wav
+  gender: male
+  label: pathological
+voiced_voice152_0:
+  age: 51
+  audio_key: voiced/voice-icar-federico-ii-database-1.0.0/voice152.wav
+  gender: female
+  label: pathological
+voiced_voice154_0:
+  age: 46
+  audio_key: voiced/voice-icar-federico-ii-database-1.0.0/voice154.wav
+  gender: female
+  label: pathological
+voiced_voice155_0:
+  age: 33
+  audio_key: voiced/voice-icar-federico-ii-database-1.0.0/voice155.wav
+  gender: female
+  label: pathological
+voiced_voice159_0:
+  age: 47
+  audio_key: voiced/voice-icar-federico-ii-database-1.0.0/voice159.wav
+  gender: female
+  label: pathological
+voiced_voice165_0:
+  age: 55
+  audio_key: voiced/voice-icar-federico-ii-database-1.0.0/voice165.wav
+  gender: male
+  label: pathological
+voiced_voice169_0:
+  age: 62
+  audio_key: voiced/voice-icar-federico-ii-database-1.0.0/voice169.wav
+  gender: female
+  label: pathological
+voiced_voice178_0:
+  age: 20
+  audio_key: voiced/voice-icar-federico-ii-database-1.0.0/voice178.wav
+  gender: female
+  label: normal
+voiced_voice180_0:
+  age: 26
+  audio_key: voiced/voice-icar-federico-ii-database-1.0.0/voice180.wav
+  gender: female
+  label: normal
+voiced_voice181_0:
+  age: 29
+  audio_key: voiced/voice-icar-federico-ii-database-1.0.0/voice181.wav
+  gender: female
+  label: normal
+voiced_voice184_0:
+  age: 23
+  audio_key: voiced/voice-icar-federico-ii-database-1.0.0/voice184.wav
+  gender: female
+  label: normal
+voiced_voice190_0:
+  age: 38
+  audio_key: voiced/voice-icar-federico-ii-database-1.0.0/voice190.wav
+  gender: female
+  label: pathological
+voiced_voice203_0:
+  age: 22
+  audio_key: voiced/voice-icar-federico-ii-database-1.0.0/voice203.wav
+  gender: female
+  label: normal

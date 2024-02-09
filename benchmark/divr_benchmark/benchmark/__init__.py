@@ -39,7 +39,7 @@ class Benchmark:
         self.__ensure_datasets(tasks_path=self.__tasks_path)
 
     def task(self, stream: int, task: int) -> Task:
-        stream_path = Path(f"{self.__tasks_path}/{stream}/")
+        stream_path = Path(f"{self.__tasks_path}/streams/{stream}/")
         if not stream_path.is_dir():
             raise ValueError("Invalid stream selected")
         task_path = Path(f"{stream_path}/{task}")

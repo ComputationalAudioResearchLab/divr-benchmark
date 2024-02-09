@@ -1,0 +1,45 @@
+normal:
+  female:
+    age_stats:
+      max: 29
+      mean: 21.476744186046513
+      min: 16
+      std: 2.703926313762991
+    total: 86
+  male:
+    age_stats:
+      max: 39
+      mean: 24.57894736842105
+      min: 20
+      std: 4.830262591190851
+    total: 38
+pathological:
+  female:
+    age_stats:
+      max: 77
+      mean: 47.68987341772152
+      min: 21
+      std: 14.12316248066319
+    total: 158
+  male:
+    age_stats:
+      max: 89
+      mean: 54.916666666666664
+      min: 6
+      std: 14.69828968370702
+    total: 108
+unclassified:
+  female:
+    age_stats:
+      max: 30
+      mean: 30
+      min: 30
+      std: null
+    total: 1
+  male:
+    age_stats:
+      max: 38
+      mean: 38
+      min: 38
+      std: null
+    total: 1
