@@ -2,7 +2,11 @@ from pathlib import Path
 from typing import List
 from class_argparse import ClassArgParser
 from .download import Download
-from .diagnosis import analysis as analyse_diagnosis, reclassification_candidates
+from .diagnosis import (
+    analysis as analyse_diagnosis,
+    reclassification_candidates,
+    level_3_confusion,
+)
 from .prepare_dataset import PrepareDataset
 
 
@@ -55,6 +59,9 @@ class Main(ClassArgParser):
             await processor.selected(prepared_data_path, datasets)
         else:
             print("Must specify either --all or --datasets")
+
+    def level_3_confusion(self):
+        level_3_confusion()
 
 
 if __name__ == "__main__":
