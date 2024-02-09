@@ -120,6 +120,7 @@ bulbar_paralysis:
   alias:
     - bulbar paralysis
     - bulbärparalyse
+    - bulb�rparalyse
   parents:
     organic: 0.14
     organic_neuro_muscular: 0.86
@@ -150,6 +151,7 @@ central_laryngeal_movement_disorder:
   alias:
     - central laryngeal movement disorder
     - zentral-laryngale bewegungsstörung
+    - zentral-laryngale bewegungsst�rung
   parents:
     organic_neuro_muscular: 1.00
   votes:
@@ -901,6 +903,7 @@ internal_weakness:
   alias:
     - internal weakness
     - internusschwäche
+    - internusschw�che
   parents:
     unclassified_pathology: 1.00
   votes:
@@ -1177,6 +1180,7 @@ phonation_nodules:
   alias:
     - phonation nodules
     - phonationsknötchen
+    - phonationskn�tchen
   parents:
     unclassified_pathology: 0.43
     muscle_tension: 0.14
@@ -1318,6 +1322,7 @@ reinkes_edema:
     - reinke's edema
     - reinke edema
     - reinke ödem
+    - reinke �dem
   parents:
     organic_inflammatory: 0.14
     organic_structural: 0.86
@@ -1394,6 +1399,7 @@ singers_voice:
     - singer's voice
     - singing voice
     - sängerstimme
+    - s�ngerstimme
     - gesangsstimme
   parents:
     normal: 1.00
@@ -1425,6 +1431,7 @@ superior_laryngeal_nerve_lesion:
   alias:
     - superior laryngeal nerve lesion
     - n. laryngeus superior läsion
+    - n. laryngeus superior l�sion
   parents:
     unclassified_pathology: 0.14
     organic_neuro_muscular: 0.86
