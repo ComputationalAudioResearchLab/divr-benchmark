@@ -95,45 +95,43 @@ def test_ties_with_different_roots(
 @pytest.mark.parametrize(
     "expected_parent, data",
     [
-        ["b.1", {"a.0": {"a.1": 0.2, "a.2": 0.1}, "b.0": {"b.1": 0.4}}],
-        ["a.2", {"a.0": {"a.1": 0.2, "a.2": 0.3}, "b.0": {"b.1": 0.4}}],
+        [
+            "b2.1",
+            {
+                # level 0
+                "pathological": [0, []],
+                # level 1
+                "a1": [1, [("pathological", 1)]],
+                "b1": [1, [("pathological", 1)]],
+                # level 2
+                "a2.1": [2, [("a1", 1)]],
+                "a2.2": [2, [("a1", 1)]],
+                "b2.1": [2, [("b1", 1)]],
+                # Final
+                "test": [3, [("a2.1", 0.2), ("a2.2", 0.2), ("b2.1", 0.3)]],
+            },
+        ],
     ],
 )
-def test_complex_genealogy(expected_parent: str, data: Dict[str, Any]):
-    def generator(
-        val: Dict[str, Any], parents: List[DiagnosisLink]
-    ) -> List[DiagnosisLink]:
-        max_parent_level = max(parents, key=lambda x: x.parent.level).parent.level
-        current_level = max_parent_level + 1
-        links: List[DiagnosisLink] = []
-        for parent_key, parent_val in val.items():
-            parent = Diagnosis(
-                name=parent_key,
-                level=current_level,
-                alias=[],
-                parents=parents,
-                votes={},
+def test_complex_genealogy(
+    expected_parent: str, data: Dict[str, Tuple[int, List[Tuple[str, float]]]]
+):
+    diagnosis_map: Dict[str, Diagnosis] = {}
+    for name, [level, parents] in data.items():
+        parent_links: List[DiagnosisLink] = []
+        for parent_key, parent_weight in parents:
+            parent_links.append(
+                DiagnosisLink(parent=diagnosis_map[parent_key], weight=parent_weight)
             )
-            parent_link = DiagnosisLink(parent=parent, weight=1)
-            for key, val in parent_val.items():
-                if isinstance(val, dict):
-                    links += generator(val=val, parents=[parent_link])
-                else:
-                    parent = Diagnosis(
-                        name=key,
-                        level=current_level,
-                        alias=[],
-                        parents=parents,
-                        votes={},
-                    )
-                    links += [DiagnosisLink(parent=parent, weight=val)]
-        return links
+        diag = Diagnosis(
+            name=name,
+            level=level,
+            alias=[],
+            parents=parent_links,
+            votes={},
+        )
+        diagnosis_map[name] = diag
 
-    root = Diagnosis(name="pathological", level=0, alias=[], parents=[], votes={})
-    root_link = DiagnosisLink(parent=root, weight=1)
-    parents = generator(val=data, parents=[root_link])
-    test_diagnosis = Diagnosis(
-        name=str(uuid4()), level=2, alias=[], parents=parents, votes={}
-    )
+    test_diagnosis = diagnosis_map["test"]
     assert test_diagnosis.best_parent_link is not None
     assert test_diagnosis.best_parent_link.parent.name == expected_parent
