@@ -1,7 +1,10 @@
 import pytest
 from typing import Dict, List, Tuple
 from uuid import uuid4
-from divr_benchmark.diagnosis import Diagnosis, DiagnosisLink
+from divr_benchmark.diagnosis import Diagnosis, DiagnosisLink, DiagnosisMap
+
+
+diagnosis_map = DiagnosisMap.v1()
 
 
 @pytest.mark.parametrize(
@@ -160,5 +163,15 @@ def test_complex_genealogy(
         diagnosis_map[name] = diag
 
     test_diagnosis = diagnosis_map["test"]
+    assert test_diagnosis.best_parent_link is not None
+    assert test_diagnosis.best_parent_link.parent.name == expected_parent
+
+
+@pytest.mark.parametrize(
+    "expected_parent, base_diagnosis_name",
+    [("organic_structural", "hyperkinetic_dysphonia_reinkes_edema")],
+)
+def test_specific_examples(expected_parent: str, base_diagnosis_name: str):
+    test_diagnosis = diagnosis_map.get(base_diagnosis_name)
     assert test_diagnosis.best_parent_link is not None
     assert test_diagnosis.best_parent_link.parent.name == expected_parent
