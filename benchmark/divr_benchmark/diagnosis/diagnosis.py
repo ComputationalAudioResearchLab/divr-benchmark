@@ -1,6 +1,6 @@
 from __future__ import annotations
 from dataclasses import dataclass
-from typing import Dict, List, Tuple
+from typing import Dict, List
 
 classification_weights = {
     "pathological": 3,
@@ -45,9 +45,38 @@ class Diagnosis:
 
     @property
     def best_parent_link(self) -> DiagnosisLink | None:
-        if len(self.parents) > 0:
-            return sorted(self.parents, key=self.__parent_sort_key, reverse=True)[0]
-        return None
+        if len(self.parents) <= 0:
+            return None
+
+        diags_at_levels: Dict[int, Dict[str, DiagnosisLink]] = {
+            self.level: {self.name: DiagnosisLink(parent=self, weight=1)}
+        }
+        for level in range(self.level - 1, -1, -1):
+            if (level + 1) in diags_at_levels:
+                diags_at_prev_level = diags_at_levels[level + 1].values()
+                for diag_link in diags_at_prev_level:
+                    for parent_link in diag_link.parent.parents:
+                        parent = parent_link.parent
+                        parent_level = parent.level
+                        weight = parent_link.weight * diag_link.weight
+                        parent_name = parent.name
+                        if parent_level not in diags_at_levels:
+                            diags_at_levels[parent_level] = {}
+                        if parent_name not in diags_at_levels[parent_level]:
+                            diags_at_levels[parent_level][parent_name] = DiagnosisLink(
+                                parent=parent, weight=weight
+                            )
+                        else:
+                            diags_at_levels[parent_level][parent_name].weight += weight
+
+        best_diag = max(diags_at_levels[0].values(), key=lambda x: x.weight)
+        for level in range(1, self.level):
+            if level in diags_at_levels:
+                best_diag = self.__matching_parent(
+                    best_diag, list(diags_at_levels[level].values())
+                )
+
+        return best_diag
 
     def __lt__(self, other: Diagnosis) -> bool:
         self_weight = self.__max_parent_weight()
@@ -64,10 +93,19 @@ class Diagnosis:
 
         return self_weight < other_weight
 
-    def __parent_sort_key(self, x: DiagnosisLink) -> Tuple[float, int]:
-        return (x.weight, classification_weights[x.parent.root.name])
-
     def __max_parent_weight(self) -> float | None:
         if len(self.parents) > 0:
             return max([parent.weight for parent in self.parents])
         return None
+
+    def __matching_parent(
+        self, to_match: DiagnosisLink, diags: List[DiagnosisLink]
+    ) -> DiagnosisLink:
+        sorted_diags = sorted(diags, key=lambda x: x.weight, reverse=True)
+        for diag in sorted_diags:
+            for parent in diag.parent.parents:
+                if parent.parent == to_match.parent:
+                    return diag
+        # none of the parents from current level match
+        # so pass the current best match to next level
+        return to_match

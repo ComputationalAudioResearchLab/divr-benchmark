@@ -96,7 +96,7 @@ def test_ties_with_different_roots(
     "expected_parent, data",
     [
         [
-            "b2.1",
+            "a2.2",
             {
                 # level 0
                 "pathological": [0, []],
@@ -109,6 +109,33 @@ def test_ties_with_different_roots(
                 "b2.1": [2, [("b1", 1)]],
                 # Final
                 "test": [3, [("a2.1", 0.2), ("a2.2", 0.3), ("b2.1", 0.4)]],
+            },
+        ],
+        [
+            "b1",
+            {
+                # level 0
+                "pathological": [0, []],
+                # level 1
+                "a1": [1, [("pathological", 1)]],
+                "b1": [1, [("pathological", 1)]],
+                # level 2
+                "a2.1": [2, [("a1", 1)]],
+                "a2.2": [2, [("a1", 1)]],
+                # Final
+                "test": [3, [("a2.1", 0.1), ("a2.2", 0.3), ("b1", 0.6)]],
+            },
+        ],
+        [
+            "b1",
+            {
+                # level 0
+                "pathological": [0, []],
+                # level 1
+                "a1": [1, [("pathological", 1)]],
+                "b1": [1, [("pathological", 1)]],
+                # Final
+                "test": [3, [("a1", 0.4), ("b1", 0.6)]],
             },
         ],
     ],
