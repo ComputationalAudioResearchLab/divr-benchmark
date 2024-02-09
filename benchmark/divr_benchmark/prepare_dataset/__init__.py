@@ -23,7 +23,7 @@ class PrepareDataset:
             "MEEI": MEEI(audio_extraction_path=meei_extraction_path),
             "svd": SVD(),
             "torgo": Torgo(),
-            "voiced": Voiced(audio_extraction_path=voiced_extraction_path),
+            "voiced": Voiced(),
             "UASpeech": UASpeech(),
             "UncommonVoice": UncommonVoice(),
         }

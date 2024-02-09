@@ -5,9 +5,8 @@ from .processed import ProcessedFile, ProcessedSession
 
 
 class Voiced(BaseProcessor):
-    def __init__(self, audio_extraction_path: Path) -> None:
+    def __init__(self) -> None:
         super().__init__()
-        self.audio_extraction_path = audio_extraction_path
 
     async def __call__(self, source_path: Path, output_path: Path) -> None:
         db_key = "voiced"
@@ -38,12 +37,7 @@ class Voiced(BaseProcessor):
                     age=age,
                     gender=gender,
                     diagnosis=[self.diagnosis_map.get(diagnosis)],
-                    files=[
-                        await ProcessedFile.from_wfdb(
-                            dat_path=Path(f"{data_path}/{speaker_id}"),
-                            extraction_path=self.audio_extraction_path,
-                        )
-                    ],
+                    files=[ProcessedFile(path=Path(f"{data_path}/{speaker_id}.wav"))],
                 )
             ]
         await self.process(output_path=output_path, db_name=db_key, sessions=sessions)
