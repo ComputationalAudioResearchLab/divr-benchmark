@@ -13,3 +13,8 @@ class Result:
     @property
     def total(self) -> int:
         return self.correct + self.incorrect
+
+    # good metric here is an open research question
+
+    # maybe a multi-level top-k accuracy score that penalizes
+    # higher level classifications more than lower
