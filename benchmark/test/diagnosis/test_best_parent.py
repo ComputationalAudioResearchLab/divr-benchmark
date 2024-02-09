@@ -1,5 +1,5 @@
 import pytest
-from typing import Any, Dict, List, Tuple
+from typing import Dict, List, Tuple
 from uuid import uuid4
 from divr_benchmark.diagnosis import Diagnosis, DiagnosisLink
 
