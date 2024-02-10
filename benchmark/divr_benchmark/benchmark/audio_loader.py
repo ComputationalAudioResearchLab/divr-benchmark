@@ -1,3 +1,4 @@
+from typing import List
 import librosa
 import numpy as np
 from pathlib import Path
@@ -8,9 +9,9 @@ class AudioLoader:
         self.__data_path = data_path
         self.__version = version
 
-    def __call__(self, key: str) -> np.ndarray:
+    def __call__(self, keys: List[str]) -> List[np.ndarray]:
         if self.__version == "v1":
-            return self.__v1(key)
+            return list(map(self.__v1, keys))
         raise ValueError(f"invalid version {self.__version} selected in AudioLoader")
 
     def __v1(self, key: str) -> np.ndarray:

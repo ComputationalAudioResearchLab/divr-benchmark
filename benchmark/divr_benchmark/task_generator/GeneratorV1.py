@@ -249,7 +249,7 @@ class GeneratorV1(Generator):
                     + voiced.all_train(level=level)
                     + voiced.all_val(level=level)
                 ),
-                Path(f"{stream_path}/{task_idx}/train"),
+                Path(f"{stream_path}/{task_idx}/test"),
             )
 
         def torgo_test_set(task_idx: int, level: int):
@@ -260,7 +260,7 @@ class GeneratorV1(Generator):
                     + torgo.all_train(level=level)
                     + torgo.all_val(level=level)
                 ),
-                Path(f"{stream_path}/{task_idx}/train"),
+                Path(f"{stream_path}/{task_idx}/test"),
             )
 
         # task 1
@@ -274,7 +274,7 @@ class GeneratorV1(Generator):
         voiced_test_set(task_idx=3, level=2)
         # task 4
         train_val_set(task_idx=4, level=0)
-        torgo_test_set(task_idx=3, level=0)
+        torgo_test_set(task_idx=4, level=0)
 
     def __stream3(self, stream_path: Path, svd: SVD, torgo: Torgo, voiced: Voiced):
         print(f"Generating stream 3 from at {stream_path}")

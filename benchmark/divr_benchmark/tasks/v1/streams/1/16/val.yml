@@ -1,0 +1,2158 @@
+svd_1019_1538:
+  age: 20
+  audio_keys:
+  - svd/healthy/female/1019/1538/1538-phrase.wav
+  - svd/healthy/female/1019/1538/1538-iau.wav
+  - svd/healthy/female/1019/1538/1538-i_n.wav
+  - svd/healthy/female/1019/1538/1538-i_lhl.wav
+  - svd/healthy/female/1019/1538/1538-a_n.wav
+  - svd/healthy/female/1019/1538/1538-a_lhl.wav
+  - svd/healthy/female/1019/1538/1538-u_n.wav
+  - svd/healthy/female/1019/1538/1538-u_lhl.wav
+  gender: female
+  label: normal
+svd_1023_1542:
+  age: 20
+  audio_keys:
+  - svd/healthy/female/1023/1542/1542-phrase.wav
+  - svd/healthy/female/1023/1542/1542-iau.wav
+  - svd/healthy/female/1023/1542/1542-i_n.wav
+  - svd/healthy/female/1023/1542/1542-i_lhl.wav
+  - svd/healthy/female/1023/1542/1542-a_n.wav
+  - svd/healthy/female/1023/1542/1542-a_lhl.wav
+  - svd/healthy/female/1023/1542/1542-u_n.wav
+  - svd/healthy/female/1023/1542/1542-u_lhl.wav
+  gender: female
+  label: normal
+svd_1035_1695:
+  age: 21
+  audio_keys:
+  - svd/healthy/female/1035/1695/1695-phrase.wav
+  - svd/healthy/female/1035/1695/1695-iau.wav
+  - svd/healthy/female/1035/1695/1695-i_n.wav
+  - svd/healthy/female/1035/1695/1695-i_lhl.wav
+  - svd/healthy/female/1035/1695/1695-a_n.wav
+  - svd/healthy/female/1035/1695/1695-a_lhl.wav
+  - svd/healthy/female/1035/1695/1695-u_n.wav
+  - svd/healthy/female/1035/1695/1695-u_lhl.wav
+  gender: female
+  label: normal
+svd_1036_1696:
+  age: 21
+  audio_keys:
+  - svd/healthy/female/1036/1696/1696-phrase.wav
+  - svd/healthy/female/1036/1696/1696-iau.wav
+  - svd/healthy/female/1036/1696/1696-i_n.wav
+  - svd/healthy/female/1036/1696/1696-i_lhl.wav
+  - svd/healthy/female/1036/1696/1696-a_n.wav
+  - svd/healthy/female/1036/1696/1696-a_lhl.wav
+  - svd/healthy/female/1036/1696/1696-u_n.wav
+  - svd/healthy/female/1036/1696/1696-u_lhl.wav
+  gender: female
+  label: normal
+svd_1052_1711:
+  age: 22
+  audio_keys:
+  - svd/healthy/female/1052/1711/1711-phrase.wav
+  - svd/healthy/female/1052/1711/1711-iau.wav
+  - svd/healthy/female/1052/1711/1711-i_n.wav
+  - svd/healthy/female/1052/1711/1711-i_lhl.wav
+  - svd/healthy/female/1052/1711/1711-a_n.wav
+  - svd/healthy/female/1052/1711/1711-a_lhl.wav
+  - svd/healthy/female/1052/1711/1711-u_n.wav
+  - svd/healthy/female/1052/1711/1711-u_lhl.wav
+  gender: female
+  label: normal
+svd_1063_1732:
+  age: 21
+  audio_keys:
+  - svd/healthy/female/1063/1732/1732-phrase.wav
+  - svd/healthy/female/1063/1732/1732-iau.wav
+  - svd/healthy/female/1063/1732/1732-i_n.wav
+  - svd/healthy/female/1063/1732/1732-i_lhl.wav
+  - svd/healthy/female/1063/1732/1732-a_n.wav
+  - svd/healthy/female/1063/1732/1732-a_lhl.wav
+  - svd/healthy/female/1063/1732/1732-u_n.wav
+  - svd/healthy/female/1063/1732/1732-u_lhl.wav
+  gender: female
+  label: normal
+svd_1065_1734:
+  age: 24
+  audio_keys:
+  - svd/healthy/female/1065/1734/1734-phrase.wav
+  - svd/healthy/female/1065/1734/1734-iau.wav
+  - svd/healthy/female/1065/1734/1734-i_n.wav
+  - svd/healthy/female/1065/1734/1734-i_lhl.wav
+  - svd/healthy/female/1065/1734/1734-a_n.wav
+  - svd/healthy/female/1065/1734/1734-a_lhl.wav
+  - svd/healthy/female/1065/1734/1734-u_n.wav
+  - svd/healthy/female/1065/1734/1734-u_lhl.wav
+  gender: female
+  label: normal
+svd_1079_1846:
+  age: 20
+  audio_keys:
+  - svd/healthy/female/1079/1846/1846-phrase.wav
+  - svd/healthy/female/1079/1846/1846-iau.wav
+  - svd/healthy/female/1079/1846/1846-i_n.wav
+  - svd/healthy/female/1079/1846/1846-i_lhl.wav
+  - svd/healthy/female/1079/1846/1846-a_n.wav
+  - svd/healthy/female/1079/1846/1846-a_lhl.wav
+  - svd/healthy/female/1079/1846/1846-u_n.wav
+  - svd/healthy/female/1079/1846/1846-u_lhl.wav
+  gender: female
+  label: normal
+svd_1081_1848:
+  age: 22
+  audio_keys:
+  - svd/healthy/female/1081/1848/1848-phrase.wav
+  - svd/healthy/female/1081/1848/1848-iau.wav
+  - svd/healthy/female/1081/1848/1848-i_n.wav
+  - svd/healthy/female/1081/1848/1848-i_lhl.wav
+  - svd/healthy/female/1081/1848/1848-a_n.wav
+  - svd/healthy/female/1081/1848/1848-a_lhl.wav
+  - svd/healthy/female/1081/1848/1848-u_n.wav
+  - svd/healthy/female/1081/1848/1848-u_lhl.wav
+  gender: female
+  label: normal
+svd_1084_1851:
+  age: 20
+  audio_keys:
+  - svd/healthy/male/1084/1851/1851-phrase.wav
+  - svd/healthy/male/1084/1851/1851-iau.wav
+  - svd/healthy/male/1084/1851/1851-i_n.wav
+  - svd/healthy/male/1084/1851/1851-i_lhl.wav
+  - svd/healthy/male/1084/1851/1851-a_n.wav
+  - svd/healthy/male/1084/1851/1851-a_lhl.wav
+  - svd/healthy/male/1084/1851/1851-u_n.wav
+  - svd/healthy/male/1084/1851/1851-u_lhl.wav
+  gender: male
+  label: normal
+svd_1087_1854:
+  age: 20
+  audio_keys:
+  - svd/healthy/male/1087/1854/1854-phrase.wav
+  - svd/healthy/male/1087/1854/1854-iau.wav
+  - svd/healthy/male/1087/1854/1854-i_n.wav
+  - svd/healthy/male/1087/1854/1854-i_lhl.wav
+  - svd/healthy/male/1087/1854/1854-a_n.wav
+  - svd/healthy/male/1087/1854/1854-a_lhl.wav
+  - svd/healthy/male/1087/1854/1854-u_n.wav
+  - svd/healthy/male/1087/1854/1854-u_lhl.wav
+  gender: male
+  label: normal
+svd_1089_1856:
+  age: 20
+  audio_keys:
+  - svd/healthy/female/1089/1856/1856-phrase.wav
+  - svd/healthy/female/1089/1856/1856-iau.wav
+  - svd/healthy/female/1089/1856/1856-i_n.wav
+  - svd/healthy/female/1089/1856/1856-i_lhl.wav
+  - svd/healthy/female/1089/1856/1856-a_n.wav
+  - svd/healthy/female/1089/1856/1856-a_lhl.wav
+  - svd/healthy/female/1089/1856/1856-u_n.wav
+  - svd/healthy/female/1089/1856/1856-u_lhl.wav
+  gender: female
+  label: normal
+svd_1089_2175:
+  age: 21
+  audio_keys:
+  - svd/healthy/female/1089/2175/2175-iau.wav
+  - svd/healthy/female/1089/2175/2175-i_n.wav
+  - svd/healthy/female/1089/2175/2175-i_lhl.wav
+  - svd/healthy/female/1089/2175/2175-a_n.wav
+  - svd/healthy/female/1089/2175/2175-a_lhl.wav
+  - svd/healthy/female/1089/2175/2175-u_n.wav
+  - svd/healthy/female/1089/2175/2175-u_lhl.wav
+  gender: female
+  label: normal
+svd_1092_1859:
+  age: 25
+  audio_keys:
+  - svd/healthy/male/1092/1859/1859-phrase.wav
+  - svd/healthy/male/1092/1859/1859-iau.wav
+  - svd/healthy/male/1092/1859/1859-i_n.wav
+  - svd/healthy/male/1092/1859/1859-i_lhl.wav
+  - svd/healthy/male/1092/1859/1859-a_n.wav
+  - svd/healthy/male/1092/1859/1859-a_lhl.wav
+  - svd/healthy/male/1092/1859/1859-u_n.wav
+  - svd/healthy/male/1092/1859/1859-u_lhl.wav
+  gender: male
+  label: normal
+svd_1104_1879:
+  age: 23
+  audio_keys:
+  - svd/healthy/female/1104/1879/1879-phrase.wav
+  - svd/healthy/female/1104/1879/1879-iau.wav
+  - svd/healthy/female/1104/1879/1879-i_n.wav
+  - svd/healthy/female/1104/1879/1879-i_lhl.wav
+  - svd/healthy/female/1104/1879/1879-a_n.wav
+  - svd/healthy/female/1104/1879/1879-a_lhl.wav
+  - svd/healthy/female/1104/1879/1879-u_n.wav
+  - svd/healthy/female/1104/1879/1879-u_lhl.wav
+  gender: female
+  label: normal
+svd_1107_1882:
+  age: 26
+  audio_keys:
+  - svd/healthy/male/1107/1882/1882-phrase.wav
+  - svd/healthy/male/1107/1882/1882-iau.wav
+  - svd/healthy/male/1107/1882/1882-i_n.wav
+  - svd/healthy/male/1107/1882/1882-i_lhl.wav
+  - svd/healthy/male/1107/1882/1882-a_n.wav
+  - svd/healthy/male/1107/1882/1882-a_lhl.wav
+  - svd/healthy/male/1107/1882/1882-u_n.wav
+  - svd/healthy/male/1107/1882/1882-u_lhl.wav
+  gender: male
+  label: normal
+svd_1111_1886:
+  age: 20
+  audio_keys:
+  - svd/healthy/female/1111/1886/1886-phrase.wav
+  - svd/healthy/female/1111/1886/1886-iau.wav
+  - svd/healthy/female/1111/1886/1886-i_n.wav
+  - svd/healthy/female/1111/1886/1886-i_lhl.wav
+  - svd/healthy/female/1111/1886/1886-a_n.wav
+  - svd/healthy/female/1111/1886/1886-a_lhl.wav
+  - svd/healthy/female/1111/1886/1886-u_n.wav
+  - svd/healthy/female/1111/1886/1886-u_lhl.wav
+  gender: female
+  label: normal
+svd_1115_1918:
+  age: 26
+  audio_keys:
+  - svd/healthy/male/1115/1918/1918-phrase.wav
+  - svd/healthy/male/1115/1918/1918-iau.wav
+  - svd/healthy/male/1115/1918/1918-i_n.wav
+  - svd/healthy/male/1115/1918/1918-i_lhl.wav
+  - svd/healthy/male/1115/1918/1918-a_n.wav
+  - svd/healthy/male/1115/1918/1918-a_lhl.wav
+  - svd/healthy/male/1115/1918/1918-u_n.wav
+  - svd/healthy/male/1115/1918/1918-u_lhl.wav
+  gender: male
+  label: normal
+svd_1122_1925:
+  age: 21
+  audio_keys:
+  - svd/healthy/female/1122/1925/1925-iau.wav
+  - svd/healthy/female/1122/1925/1925-i_n.wav
+  - svd/healthy/female/1122/1925/1925-i_lhl.wav
+  - svd/healthy/female/1122/1925/1925-a_n.wav
+  - svd/healthy/female/1122/1925/1925-a_lhl.wav
+  - svd/healthy/female/1122/1925/1925-u_n.wav
+  - svd/healthy/female/1122/1925/1925-u_lhl.wav
+  gender: female
+  label: normal
+svd_1129_2036:
+  age: 21
+  audio_keys:
+  - svd/healthy/female/1129/2036/2036-iau.wav
+  - svd/healthy/female/1129/2036/2036-i_n.wav
+  - svd/healthy/female/1129/2036/2036-i_lhl.wav
+  - svd/healthy/female/1129/2036/2036-a_n.wav
+  - svd/healthy/female/1129/2036/2036-a_lhl.wav
+  - svd/healthy/female/1129/2036/2036-u_n.wav
+  - svd/healthy/female/1129/2036/2036-u_lhl.wav
+  gender: female
+  label: normal
+svd_1137_2045:
+  age: 26
+  audio_keys:
+  - svd/healthy/male/1137/2045/2045-iau.wav
+  - svd/healthy/male/1137/2045/2045-i_n.wav
+  - svd/healthy/male/1137/2045/2045-i_lhl.wav
+  - svd/healthy/male/1137/2045/2045-a_n.wav
+  - svd/healthy/male/1137/2045/2045-a_lhl.wav
+  - svd/healthy/male/1137/2045/2045-u_n.wav
+  - svd/healthy/male/1137/2045/2045-u_lhl.wav
+  gender: male
+  label: normal
+svd_113_97:
+  age: 21
+  audio_keys:
+  - svd/healthy/female/113/97/97-phrase.wav
+  - svd/healthy/female/113/97/97-iau.wav
+  - svd/healthy/female/113/97/97-i_n.wav
+  - svd/healthy/female/113/97/97-i_lhl.wav
+  - svd/healthy/female/113/97/97-a_n.wav
+  - svd/healthy/female/113/97/97-a_lhl.wav
+  - svd/healthy/female/113/97/97-u_n.wav
+  - svd/healthy/female/113/97/97-u_lhl.wav
+  gender: female
+  label: normal
+svd_1141_2049:
+  age: 20
+  audio_keys:
+  - svd/healthy/female/1141/2049/2049-iau.wav
+  - svd/healthy/female/1141/2049/2049-i_n.wav
+  - svd/healthy/female/1141/2049/2049-i_lhl.wav
+  - svd/healthy/female/1141/2049/2049-a_n.wav
+  - svd/healthy/female/1141/2049/2049-a_lhl.wav
+  - svd/healthy/female/1141/2049/2049-u_n.wav
+  - svd/healthy/female/1141/2049/2049-u_lhl.wav
+  gender: female
+  label: normal
+svd_1149_2164:
+  age: 26
+  audio_keys:
+  - svd/healthy/female/1149/2164/2164-iau.wav
+  - svd/healthy/female/1149/2164/2164-i_n.wav
+  - svd/healthy/female/1149/2164/2164-i_lhl.wav
+  - svd/healthy/female/1149/2164/2164-a_n.wav
+  - svd/healthy/female/1149/2164/2164-a_lhl.wav
+  - svd/healthy/female/1149/2164/2164-u_n.wav
+  - svd/healthy/female/1149/2164/2164-u_lhl.wav
+  gender: female
+  label: normal
+svd_1152_2167:
+  age: 20
+  audio_keys:
+  - svd/healthy/female/1152/2167/2167-iau.wav
+  - svd/healthy/female/1152/2167/2167-i_n.wav
+  - svd/healthy/female/1152/2167/2167-i_lhl.wav
+  - svd/healthy/female/1152/2167/2167-a_n.wav
+  - svd/healthy/female/1152/2167/2167-a_lhl.wav
+  - svd/healthy/female/1152/2167/2167-u_n.wav
+  - svd/healthy/female/1152/2167/2167-u_lhl.wav
+  gender: female
+  label: normal
+svd_1157_2172:
+  age: 20
+  audio_keys:
+  - svd/healthy/female/1157/2172/2172-iau.wav
+  - svd/healthy/female/1157/2172/2172-i_n.wav
+  - svd/healthy/female/1157/2172/2172-i_lhl.wav
+  - svd/healthy/female/1157/2172/2172-a_n.wav
+  - svd/healthy/female/1157/2172/2172-a_lhl.wav
+  - svd/healthy/female/1157/2172/2172-u_n.wav
+  - svd/healthy/female/1157/2172/2172-u_lhl.wav
+  gender: female
+  label: normal
+svd_1168_2196:
+  age: 20
+  audio_keys:
+  - svd/healthy/female/1168/2196/2196-iau.wav
+  - svd/healthy/female/1168/2196/2196-i_n.wav
+  - svd/healthy/female/1168/2196/2196-i_lhl.wav
+  - svd/healthy/female/1168/2196/2196-a_n.wav
+  - svd/healthy/female/1168/2196/2196-a_lhl.wav
+  - svd/healthy/female/1168/2196/2196-u_n.wav
+  - svd/healthy/female/1168/2196/2196-u_lhl.wav
+  gender: female
+  label: normal
+svd_1173_2201:
+  age: 20
+  audio_keys:
+  - svd/healthy/female/1173/2201/2201-iau.wav
+  - svd/healthy/female/1173/2201/2201-i_n.wav
+  - svd/healthy/female/1173/2201/2201-i_lhl.wav
+  - svd/healthy/female/1173/2201/2201-a_n.wav
+  - svd/healthy/female/1173/2201/2201-a_lhl.wav
+  - svd/healthy/female/1173/2201/2201-u_n.wav
+  - svd/healthy/female/1173/2201/2201-u_lhl.wav
+  gender: female
+  label: normal
+svd_1186_2251:
+  age: 20
+  audio_keys:
+  - svd/healthy/male/1186/2251/2251-phrase.wav
+  - svd/healthy/male/1186/2251/2251-iau.wav
+  - svd/healthy/male/1186/2251/2251-i_n.wav
+  - svd/healthy/male/1186/2251/2251-i_lhl.wav
+  - svd/healthy/male/1186/2251/2251-a_n.wav
+  - svd/healthy/male/1186/2251/2251-a_lhl.wav
+  - svd/healthy/male/1186/2251/2251-u_n.wav
+  - svd/healthy/male/1186/2251/2251-u_lhl.wav
+  gender: male
+  label: normal
+svd_1196_2261:
+  age: 20
+  audio_keys:
+  - svd/healthy/female/1196/2261/2261-phrase.wav
+  - svd/healthy/female/1196/2261/2261-iau.wav
+  - svd/healthy/female/1196/2261/2261-i_n.wav
+  - svd/healthy/female/1196/2261/2261-i_lhl.wav
+  - svd/healthy/female/1196/2261/2261-a_n.wav
+  - svd/healthy/female/1196/2261/2261-a_lhl.wav
+  - svd/healthy/female/1196/2261/2261-u_n.wav
+  - svd/healthy/female/1196/2261/2261-u_lhl.wav
+  gender: female
+  label: normal
+svd_124_114:
+  age: 20
+  audio_keys:
+  - svd/healthy/female/124/114/114-phrase.wav
+  - svd/healthy/female/124/114/114-iau.wav
+  - svd/healthy/female/124/114/114-i_n.wav
+  - svd/healthy/female/124/114/114-i_lhl.wav
+  - svd/healthy/female/124/114/114-a_n.wav
+  - svd/healthy/female/124/114/114-a_lhl.wav
+  - svd/healthy/female/124/114/114-u_n.wav
+  - svd/healthy/female/124/114/114-u_lhl.wav
+  gender: female
+  label: normal
+svd_12_10:
+  age: 22
+  audio_keys:
+  - svd/healthy/female/12/10/10-phrase.wav
+  - svd/healthy/female/12/10/10-iau.wav
+  - svd/healthy/female/12/10/10-i_n.wav
+  - svd/healthy/female/12/10/10-i_lhl.wav
+  - svd/healthy/female/12/10/10-a_n.wav
+  - svd/healthy/female/12/10/10-a_lhl.wav
+  - svd/healthy/female/12/10/10-u_n.wav
+  - svd/healthy/female/12/10/10-u_lhl.wav
+  gender: female
+  label: normal
+svd_1304_107:
+  age: 60
+  audio_keys:
+  - svd/pathological/male/1304/107/107-phrase.wav
+  - svd/pathological/male/1304/107/107-iau.wav
+  - svd/pathological/male/1304/107/107-i_n.wav
+  - svd/pathological/male/1304/107/107-i_lhl.wav
+  - svd/pathological/male/1304/107/107-a_n.wav
+  - svd/pathological/male/1304/107/107-a_lhl.wav
+  - svd/pathological/male/1304/107/107-u_n.wav
+  - svd/pathological/male/1304/107/107-u_lhl.wav
+  gender: male
+  label: organic_inflammatory
+svd_1305_728:
+  age: 65
+  audio_keys:
+  - svd/pathological/female/1305/728/728-phrase.wav
+  - svd/pathological/female/1305/728/728-iau.wav
+  - svd/pathological/female/1305/728/728-i_n.wav
+  - svd/pathological/female/1305/728/728-i_lhl.wav
+  - svd/pathological/female/1305/728/728-a_n.wav
+  - svd/pathological/female/1305/728/728-a_lhl.wav
+  - svd/pathological/female/1305/728/728-u_n.wav
+  - svd/pathological/female/1305/728/728-u_lhl.wav
+  gender: female
+  label: organic_neuro_muscular
+svd_1314_1780:
+  age: 56
+  audio_keys:
+  - svd/pathological/male/1314/1780/1780-phrase.wav
+  - svd/pathological/male/1314/1780/1780-iau.wav
+  - svd/pathological/male/1314/1780/1780-i_n.wav
+  - svd/pathological/male/1314/1780/1780-i_lhl.wav
+  - svd/pathological/male/1314/1780/1780-a_n.wav
+  - svd/pathological/male/1314/1780/1780-a_lhl.wav
+  - svd/pathological/male/1314/1780/1780-u_n.wav
+  - svd/pathological/male/1314/1780/1780-u_lhl.wav
+  gender: male
+  label: organic_inflammatory
+svd_1315_138:
+  age: 61
+  audio_keys:
+  - svd/pathological/female/1315/138/138-phrase.wav
+  - svd/pathological/female/1315/138/138-iau.wav
+  - svd/pathological/female/1315/138/138-i_n.wav
+  - svd/pathological/female/1315/138/138-i_lhl.wav
+  - svd/pathological/female/1315/138/138-a_n.wav
+  - svd/pathological/female/1315/138/138-a_lhl.wav
+  - svd/pathological/female/1315/138/138-u_n.wav
+  - svd/pathological/female/1315/138/138-u_lhl.wav
+  gender: female
+  label: organic_neuro_muscular
+svd_1320_141:
+  age: 41
+  audio_keys:
+  - svd/pathological/male/1320/141/141-phrase.wav
+  - svd/pathological/male/1320/141/141-iau.wav
+  - svd/pathological/male/1320/141/141-i_n.wav
+  - svd/pathological/male/1320/141/141-i_lhl.wav
+  - svd/pathological/male/1320/141/141-a_n.wav
+  - svd/pathological/male/1320/141/141-a_lhl.wav
+  - svd/pathological/male/1320/141/141-u_n.wav
+  - svd/pathological/male/1320/141/141-u_lhl.wav
+  gender: male
+  label: organic_inflammatory
+svd_1323_144:
+  age: 21
+  audio_keys:
+  - svd/pathological/female/1323/144/144-phrase.wav
+  - svd/pathological/female/1323/144/144-iau.wav
+  - svd/pathological/female/1323/144/144-i_n.wav
+  - svd/pathological/female/1323/144/144-i_lhl.wav
+  - svd/pathological/female/1323/144/144-a_n.wav
+  - svd/pathological/female/1323/144/144-a_lhl.wav
+  - svd/pathological/female/1323/144/144-u_n.wav
+  - svd/pathological/female/1323/144/144-u_lhl.wav
+  gender: female
+  label: muscle_tension
+svd_1329_150:
+  age: 69
+  audio_keys:
+  - svd/pathological/female/1329/150/150-phrase.wav
+  - svd/pathological/female/1329/150/150-iau.wav
+  - svd/pathological/female/1329/150/150-i_n.wav
+  - svd/pathological/female/1329/150/150-i_lhl.wav
+  - svd/pathological/female/1329/150/150-a_n.wav
+  - svd/pathological/female/1329/150/150-a_lhl.wav
+  - svd/pathological/female/1329/150/150-u_n.wav
+  - svd/pathological/female/1329/150/150-u_lhl.wav
+  gender: female
+  label: organic_neuro_muscular
+svd_132_125:
+  age: 20
+  audio_keys:
+  - svd/healthy/female/132/125/125-phrase.wav
+  - svd/healthy/female/132/125/125-iau.wav
+  - svd/healthy/female/132/125/125-i_n.wav
+  - svd/healthy/female/132/125/125-i_lhl.wav
+  - svd/healthy/female/132/125/125-a_n.wav
+  - svd/healthy/female/132/125/125-a_lhl.wav
+  - svd/healthy/female/132/125/125-u_n.wav
+  - svd/healthy/female/132/125/125-u_lhl.wav
+  gender: female
+  label: normal
+svd_1340_351:
+  age: 58
+  audio_keys:
+  - svd/pathological/female/1340/351/351-phrase.wav
+  - svd/pathological/female/1340/351/351-iau.wav
+  - svd/pathological/female/1340/351/351-i_n.wav
+  - svd/pathological/female/1340/351/351-i_lhl.wav
+  - svd/pathological/female/1340/351/351-a_n.wav
+  - svd/pathological/female/1340/351/351-a_lhl.wav
+  - svd/pathological/female/1340/351/351-u_n.wav
+  - svd/pathological/female/1340/351/351-u_lhl.wav
+  gender: female
+  label: functional
+svd_1340_889:
+  age: 59
+  audio_keys:
+  - svd/pathological/female/1340/889/889-phrase.wav
+  - svd/pathological/female/1340/889/889-iau.wav
+  - svd/pathological/female/1340/889/889-i_n.wav
+  - svd/pathological/female/1340/889/889-i_lhl.wav
+  - svd/pathological/female/1340/889/889-a_n.wav
+  - svd/pathological/female/1340/889/889-a_lhl.wav
+  - svd/pathological/female/1340/889/889-u_n.wav
+  - svd/pathological/female/1340/889/889-u_lhl.wav
+  gender: female
+  label: organic_structural
+svd_1351_741:
+  age: 51
+  audio_keys:
+  - svd/pathological/female/1351/741/741-phrase.wav
+  - svd/pathological/female/1351/741/741-iau.wav
+  - svd/pathological/female/1351/741/741-i_n.wav
+  - svd/pathological/female/1351/741/741-i_lhl.wav
+  - svd/pathological/female/1351/741/741-a_n.wav
+  - svd/pathological/female/1351/741/741-a_lhl.wav
+  - svd/pathological/female/1351/741/741-u_n.wav
+  - svd/pathological/female/1351/741/741-u_lhl.wav
+  gender: female
+  label: functional
+svd_1357_2512:
+  age: 40
+  audio_keys:
+  - svd/pathological/female/1357/2512/2512-phrase.wav
+  - svd/pathological/female/1357/2512/2512-iau.wav
+  - svd/pathological/female/1357/2512/2512-i_n.wav
+  - svd/pathological/female/1357/2512/2512-i_lhl.wav
+  - svd/pathological/female/1357/2512/2512-a_n.wav
+  - svd/pathological/female/1357/2512/2512-a_lhl.wav
+  - svd/pathological/female/1357/2512/2512-u_n.wav
+  - svd/pathological/female/1357/2512/2512-u_lhl.wav
+  gender: female
+  label: organic_neuro_muscular
+svd_1386_887:
+  age: 64
+  audio_keys:
+  - svd/pathological/female/1386/887/887-phrase.wav
+  - svd/pathological/female/1386/887/887-iau.wav
+  - svd/pathological/female/1386/887/887-i_n.wav
+  - svd/pathological/female/1386/887/887-i_lhl.wav
+  - svd/pathological/female/1386/887/887-a_n.wav
+  - svd/pathological/female/1386/887/887-a_lhl.wav
+  - svd/pathological/female/1386/887/887-u_n.wav
+  - svd/pathological/female/1386/887/887-u_lhl.wav
+  gender: female
+  label: organic_neuro_muscular
+svd_1401_1331:
+  age: 42
+  audio_keys:
+  - svd/pathological/female/1401/1331/1331-phrase.wav
+  - svd/pathological/female/1401/1331/1331-iau.wav
+  - svd/pathological/female/1401/1331/1331-i_n.wav
+  - svd/pathological/female/1401/1331/1331-i_lhl.wav
+  - svd/pathological/female/1401/1331/1331-a_n.wav
+  - svd/pathological/female/1401/1331/1331-a_lhl.wav
+  - svd/pathological/female/1401/1331/1331-u_n.wav
+  - svd/pathological/female/1401/1331/1331-u_lhl.wav
+  gender: female
+  label: muscle_tension
+svd_1407_1559:
+  age: 65
+  audio_keys:
+  - svd/pathological/female/1407/1559/1559-phrase.wav
+  - svd/pathological/female/1407/1559/1559-iau.wav
+  - svd/pathological/female/1407/1559/1559-i_n.wav
+  - svd/pathological/female/1407/1559/1559-i_lhl.wav
+  - svd/pathological/female/1407/1559/1559-a_n.wav
+  - svd/pathological/female/1407/1559/1559-a_lhl.wav
+  - svd/pathological/female/1407/1559/1559-u_n.wav
+  - svd/pathological/female/1407/1559/1559-u_lhl.wav
+  gender: female
+  label: organic_structural
+svd_140_145:
+  age: 28
+  audio_keys:
+  - svd/healthy/female/140/145/145-phrase.wav
+  - svd/healthy/female/140/145/145-iau.wav
+  - svd/healthy/female/140/145/145-i_n.wav
+  - svd/healthy/female/140/145/145-i_lhl.wav
+  - svd/healthy/female/140/145/145-a_n.wav
+  - svd/healthy/female/140/145/145-a_lhl.wav
+  - svd/healthy/female/140/145/145-u_n.wav
+  - svd/healthy/female/140/145/145-u_lhl.wav
+  gender: female
+  label: normal
+svd_1414_877:
+  age: 58
+  audio_keys:
+  - svd/pathological/female/1414/877/877-phrase.wav
+  - svd/pathological/female/1414/877/877-iau.wav
+  - svd/pathological/female/1414/877/877-i_n.wav
+  - svd/pathological/female/1414/877/877-i_lhl.wav
+  - svd/pathological/female/1414/877/877-a_n.wav
+  - svd/pathological/female/1414/877/877-a_lhl.wav
+  - svd/pathological/female/1414/877/877-u_n.wav
+  - svd/pathological/female/1414/877/877-u_lhl.wav
+  gender: female
+  label: functional
+svd_1448_2395:
+  age: 78
+  audio_keys:
+  - svd/pathological/male/1448/2395/2395-phrase.wav
+  - svd/pathological/male/1448/2395/2395-iau.wav
+  - svd/pathological/male/1448/2395/2395-i_n.wav
+  - svd/pathological/male/1448/2395/2395-i_lhl.wav
+  - svd/pathological/male/1448/2395/2395-a_n.wav
+  - svd/pathological/male/1448/2395/2395-a_lhl.wav
+  - svd/pathological/male/1448/2395/2395-u_n.wav
+  - svd/pathological/male/1448/2395/2395-u_lhl.wav
+  gender: male
+  label: organic_neuro_muscular
+svd_1459_859:
+  age: 53
+  audio_keys:
+  - svd/pathological/female/1459/859/859-phrase.wav
+  - svd/pathological/female/1459/859/859-iau.wav
+  - svd/pathological/female/1459/859/859-i_n.wav
+  - svd/pathological/female/1459/859/859-i_lhl.wav
+  - svd/pathological/female/1459/859/859-a_n.wav
+  - svd/pathological/female/1459/859/859-a_lhl.wav
+  - svd/pathological/female/1459/859/859-u_n.wav
+  - svd/pathological/female/1459/859/859-u_lhl.wav
+  gender: female
+  label: organic_structural
+svd_1466_1222:
+  age: 29
+  audio_keys:
+  - svd/pathological/female/1466/1222/1222-phrase.wav
+  - svd/pathological/female/1466/1222/1222-iau.wav
+  - svd/pathological/female/1466/1222/1222-i_n.wav
+  - svd/pathological/female/1466/1222/1222-i_lhl.wav
+  - svd/pathological/female/1466/1222/1222-a_n.wav
+  - svd/pathological/female/1466/1222/1222-a_lhl.wav
+  - svd/pathological/female/1466/1222/1222-u_n.wav
+  - svd/pathological/female/1466/1222/1222-u_lhl.wav
+  gender: female
+  label: muscle_tension
+svd_1488_893:
+  age: 50
+  audio_keys:
+  - svd/pathological/female/1488/893/893-phrase.wav
+  - svd/pathological/female/1488/893/893-iau.wav
+  - svd/pathological/female/1488/893/893-i_n.wav
+  - svd/pathological/female/1488/893/893-i_lhl.wav
+  - svd/pathological/female/1488/893/893-a_n.wav
+  - svd/pathological/female/1488/893/893-a_lhl.wav
+  - svd/pathological/female/1488/893/893-u_n.wav
+  - svd/pathological/female/1488/893/893-u_lhl.wav
+  gender: female
+  label: organic_neuro_muscular
+svd_1540_1044:
+  age: 31
+  audio_keys:
+  - svd/pathological/female/1540/1044/1044-phrase.wav
+  - svd/pathological/female/1540/1044/1044-iau.wav
+  - svd/pathological/female/1540/1044/1044-i_n.wav
+  - svd/pathological/female/1540/1044/1044-i_lhl.wav
+  - svd/pathological/female/1540/1044/1044-a_n.wav
+  - svd/pathological/female/1540/1044/1044-a_lhl.wav
+  - svd/pathological/female/1540/1044/1044-u_n.wav
+  - svd/pathological/female/1540/1044/1044-u_lhl.wav
+  gender: female
+  label: muscle_tension
+svd_1569_1118:
+  age: 21
+  audio_keys:
+  - svd/pathological/female/1569/1118/1118-phrase.wav
+  - svd/pathological/female/1569/1118/1118-iau.wav
+  - svd/pathological/female/1569/1118/1118-i_n.wav
+  - svd/pathological/female/1569/1118/1118-i_lhl.wav
+  - svd/pathological/female/1569/1118/1118-a_n.wav
+  - svd/pathological/female/1569/1118/1118-a_lhl.wav
+  - svd/pathological/female/1569/1118/1118-u_n.wav
+  - svd/pathological/female/1569/1118/1118-u_lhl.wav
+  gender: female
+  label: muscle_tension
+svd_1575_1158:
+  age: 65
+  audio_keys:
+  - svd/pathological/male/1575/1158/1158-phrase.wav
+  - svd/pathological/male/1575/1158/1158-iau.wav
+  - svd/pathological/male/1575/1158/1158-i_n.wav
+  - svd/pathological/male/1575/1158/1158-i_lhl.wav
+  - svd/pathological/male/1575/1158/1158-a_n.wav
+  - svd/pathological/male/1575/1158/1158-a_lhl.wav
+  - svd/pathological/male/1575/1158/1158-u_n.wav
+  - svd/pathological/male/1575/1158/1158-u_lhl.wav
+  gender: male
+  label: organic_trauma
+svd_1588_1189:
+  age: 25
+  audio_keys:
+  - svd/pathological/female/1588/1189/1189-phrase.wav
+  - svd/pathological/female/1588/1189/1189-iau.wav
+  - svd/pathological/female/1588/1189/1189-i_n.wav
+  - svd/pathological/female/1588/1189/1189-i_lhl.wav
+  - svd/pathological/female/1588/1189/1189-a_n.wav
+  - svd/pathological/female/1588/1189/1189-a_lhl.wav
+  - svd/pathological/female/1588/1189/1189-u_n.wav
+  - svd/pathological/female/1588/1189/1189-u_lhl.wav
+  gender: female
+  label: muscle_tension
+svd_1593_1196:
+  age: 39
+  audio_keys:
+  - svd/pathological/female/1593/1196/1196-phrase.wav
+  - svd/pathological/female/1593/1196/1196-iau.wav
+  - svd/pathological/female/1593/1196/1196-i_n.wav
+  - svd/pathological/female/1593/1196/1196-i_lhl.wav
+  - svd/pathological/female/1593/1196/1196-a_n.wav
+  - svd/pathological/female/1593/1196/1196-a_lhl.wav
+  - svd/pathological/female/1593/1196/1196-u_n.wav
+  - svd/pathological/female/1593/1196/1196-u_lhl.wav
+  gender: female
+  label: muscle_tension
+svd_1597_1894:
+  age: 37
+  audio_keys:
+  - svd/pathological/female/1597/1894/1894-phrase.wav
+  - svd/pathological/female/1597/1894/1894-iau.wav
+  - svd/pathological/female/1597/1894/1894-i_n.wav
+  - svd/pathological/female/1597/1894/1894-i_lhl.wav
+  - svd/pathological/female/1597/1894/1894-a_n.wav
+  - svd/pathological/female/1597/1894/1894-a_lhl.wav
+  - svd/pathological/female/1597/1894/1894-u_n.wav
+  - svd/pathological/female/1597/1894/1894-u_lhl.wav
+  gender: female
+  label: organic_structural
+svd_1614_2469:
+  age: 46
+  audio_keys:
+  - svd/pathological/female/1614/2469/2469-phrase.wav
+  - svd/pathological/female/1614/2469/2469-iau.wav
+  - svd/pathological/female/1614/2469/2469-i_n.wav
+  - svd/pathological/female/1614/2469/2469-i_lhl.wav
+  - svd/pathological/female/1614/2469/2469-a_n.wav
+  - svd/pathological/female/1614/2469/2469-a_lhl.wav
+  - svd/pathological/female/1614/2469/2469-u_n.wav
+  - svd/pathological/female/1614/2469/2469-u_lhl.wav
+  gender: female
+  label: organic_neuro_muscular
+svd_1638_1252:
+  age: 52
+  audio_keys:
+  - svd/pathological/male/1638/1252/1252-phrase.wav
+  - svd/pathological/male/1638/1252/1252-iau.wav
+  - svd/pathological/male/1638/1252/1252-i_n.wav
+  - svd/pathological/male/1638/1252/1252-i_lhl.wav
+  - svd/pathological/male/1638/1252/1252-a_n.wav
+  - svd/pathological/male/1638/1252/1252-a_lhl.wav
+  - svd/pathological/male/1638/1252/1252-u_n.wav
+  - svd/pathological/male/1638/1252/1252-u_lhl.wav
+  gender: male
+  label: organic_structural
+svd_1653_1266:
+  age: 47
+  audio_keys:
+  - svd/pathological/female/1653/1266/1266-phrase.wav
+  - svd/pathological/female/1653/1266/1266-iau.wav
+  - svd/pathological/female/1653/1266/1266-i_n.wav
+  - svd/pathological/female/1653/1266/1266-i_lhl.wav
+  - svd/pathological/female/1653/1266/1266-a_n.wav
+  - svd/pathological/female/1653/1266/1266-a_lhl.wav
+  - svd/pathological/female/1653/1266/1266-u_n.wav
+  - svd/pathological/female/1653/1266/1266-u_lhl.wav
+  gender: female
+  label: functional
+svd_1659_1332:
+  age: 64
+  audio_keys:
+  - svd/pathological/male/1659/1332/1332-phrase.wav
+  - svd/pathological/male/1659/1332/1332-iau.wav
+  - svd/pathological/male/1659/1332/1332-i_n.wav
+  - svd/pathological/male/1659/1332/1332-i_lhl.wav
+  - svd/pathological/male/1659/1332/1332-a_n.wav
+  - svd/pathological/male/1659/1332/1332-a_lhl.wav
+  - svd/pathological/male/1659/1332/1332-u_n.wav
+  - svd/pathological/male/1659/1332/1332-u_lhl.wav
+  gender: male
+  label: organic_structural
+svd_1659_1391:
+  age: 64
+  audio_keys:
+  - svd/pathological/male/1659/1391/1391-phrase.wav
+  - svd/pathological/male/1659/1391/1391-iau.wav
+  - svd/pathological/male/1659/1391/1391-i_n.wav
+  - svd/pathological/male/1659/1391/1391-i_lhl.wav
+  - svd/pathological/male/1659/1391/1391-a_n.wav
+  - svd/pathological/male/1659/1391/1391-a_lhl.wav
+  - svd/pathological/male/1659/1391/1391-u_n.wav
+  - svd/pathological/male/1659/1391/1391-u_lhl.wav
+  gender: male
+  label: organic_structural
+svd_1659_1942:
+  age: 66
+  audio_keys:
+  - svd/pathological/male/1659/1942/1942-phrase.wav
+  - svd/pathological/male/1659/1942/1942-iau.wav
+  - svd/pathological/male/1659/1942/1942-i_n.wav
+  - svd/pathological/male/1659/1942/1942-i_lhl.wav
+  - svd/pathological/male/1659/1942/1942-a_n.wav
+  - svd/pathological/male/1659/1942/1942-a_lhl.wav
+  - svd/pathological/male/1659/1942/1942-u_n.wav
+  - svd/pathological/male/1659/1942/1942-u_lhl.wav
+  gender: male
+  label: organic_structural
+svd_1662_1275:
+  age: 28
+  audio_keys:
+  - svd/pathological/female/1662/1275/1275-phrase.wav
+  - svd/pathological/female/1662/1275/1275-iau.wav
+  - svd/pathological/female/1662/1275/1275-i_n.wav
+  - svd/pathological/female/1662/1275/1275-i_lhl.wav
+  - svd/pathological/female/1662/1275/1275-a_n.wav
+  - svd/pathological/female/1662/1275/1275-a_lhl.wav
+  - svd/pathological/female/1662/1275/1275-u_n.wav
+  - svd/pathological/female/1662/1275/1275-u_lhl.wav
+  gender: female
+  label: normal
+svd_1678_1293:
+  age: 64
+  audio_keys:
+  - svd/pathological/female/1678/1293/1293-phrase.wav
+  - svd/pathological/female/1678/1293/1293-iau.wav
+  - svd/pathological/female/1678/1293/1293-i_n.wav
+  - svd/pathological/female/1678/1293/1293-i_lhl.wav
+  - svd/pathological/female/1678/1293/1293-a_n.wav
+  - svd/pathological/female/1678/1293/1293-a_lhl.wav
+  - svd/pathological/female/1678/1293/1293-u_n.wav
+  - svd/pathological/female/1678/1293/1293-u_lhl.wav
+  gender: female
+  label: organic_neuro_muscular
+svd_1699_1400:
+  age: 51
+  audio_keys:
+  - svd/pathological/female/1699/1400/1400-phrase.wav
+  - svd/pathological/female/1699/1400/1400-iau.wav
+  - svd/pathological/female/1699/1400/1400-i_n.wav
+  - svd/pathological/female/1699/1400/1400-i_lhl.wav
+  - svd/pathological/female/1699/1400/1400-a_n.wav
+  - svd/pathological/female/1699/1400/1400-a_lhl.wav
+  - svd/pathological/female/1699/1400/1400-u_n.wav
+  - svd/pathological/female/1699/1400/1400-u_lhl.wav
+  gender: female
+  label: functional
+svd_1699_1931:
+  age: 52
+  audio_keys:
+  - svd/pathological/female/1699/1931/1931-phrase.wav
+  - svd/pathological/female/1699/1931/1931-iau.wav
+  - svd/pathological/female/1699/1931/1931-i_n.wav
+  - svd/pathological/female/1699/1931/1931-i_lhl.wav
+  - svd/pathological/female/1699/1931/1931-a_n.wav
+  - svd/pathological/female/1699/1931/1931-a_lhl.wav
+  - svd/pathological/female/1699/1931/1931-u_n.wav
+  - svd/pathological/female/1699/1931/1931-u_lhl.wav
+  gender: female
+  label: organic_structural
+svd_1701_1317:
+  age: 42
+  audio_keys:
+  - svd/pathological/male/1701/1317/1317-phrase.wav
+  - svd/pathological/male/1701/1317/1317-iau.wav
+  - svd/pathological/male/1701/1317/1317-i_n.wav
+  - svd/pathological/male/1701/1317/1317-i_lhl.wav
+  - svd/pathological/male/1701/1317/1317-a_n.wav
+  - svd/pathological/male/1701/1317/1317-a_lhl.wav
+  - svd/pathological/male/1701/1317/1317-u_n.wav
+  - svd/pathological/male/1701/1317/1317-u_lhl.wav
+  gender: male
+  label: organic_structural
+svd_1733_1382:
+  age: 48
+  audio_keys:
+  - svd/pathological/female/1733/1382/1382-phrase.wav
+  - svd/pathological/female/1733/1382/1382-iau.wav
+  - svd/pathological/female/1733/1382/1382-i_n.wav
+  - svd/pathological/female/1733/1382/1382-i_lhl.wav
+  - svd/pathological/female/1733/1382/1382-a_n.wav
+  - svd/pathological/female/1733/1382/1382-a_lhl.wav
+  - svd/pathological/female/1733/1382/1382-u_n.wav
+  - svd/pathological/female/1733/1382/1382-u_lhl.wav
+  gender: female
+  label: organic_structural
+svd_1733_1563:
+  age: 49
+  audio_keys:
+  - svd/pathological/female/1733/1563/1563-phrase.wav
+  - svd/pathological/female/1733/1563/1563-iau.wav
+  - svd/pathological/female/1733/1563/1563-i_n.wav
+  - svd/pathological/female/1733/1563/1563-i_lhl.wav
+  - svd/pathological/female/1733/1563/1563-a_n.wav
+  - svd/pathological/female/1733/1563/1563-a_lhl.wav
+  - svd/pathological/female/1733/1563/1563-u_n.wav
+  - svd/pathological/female/1733/1563/1563-u_lhl.wav
+  gender: female
+  label: organic_structural
+svd_1749_1398:
+  age: 76
+  audio_keys:
+  - svd/pathological/male/1749/1398/1398-phrase.wav
+  - svd/pathological/male/1749/1398/1398-iau.wav
+  - svd/pathological/male/1749/1398/1398-i_n.wav
+  - svd/pathological/male/1749/1398/1398-i_lhl.wav
+  - svd/pathological/male/1749/1398/1398-a_n.wav
+  - svd/pathological/male/1749/1398/1398-a_lhl.wav
+  - svd/pathological/male/1749/1398/1398-u_n.wav
+  - svd/pathological/male/1749/1398/1398-u_lhl.wav
+  gender: male
+  label: organic_neuro_muscular
+svd_1756_1405:
+  age: 36
+  audio_keys:
+  - svd/pathological/female/1756/1405/1405-phrase.wav
+  - svd/pathological/female/1756/1405/1405-iau.wav
+  - svd/pathological/female/1756/1405/1405-i_n.wav
+  - svd/pathological/female/1756/1405/1405-i_lhl.wav
+  - svd/pathological/female/1756/1405/1405-a_n.wav
+  - svd/pathological/female/1756/1405/1405-a_lhl.wav
+  - svd/pathological/female/1756/1405/1405-u_n.wav
+  - svd/pathological/female/1756/1405/1405-u_lhl.wav
+  gender: female
+  label: organic_structural
+svd_1758_1407:
+  age: 57
+  audio_keys:
+  - svd/pathological/female/1758/1407/1407-phrase.wav
+  - svd/pathological/female/1758/1407/1407-iau.wav
+  - svd/pathological/female/1758/1407/1407-i_n.wav
+  - svd/pathological/female/1758/1407/1407-i_lhl.wav
+  - svd/pathological/female/1758/1407/1407-a_n.wav
+  - svd/pathological/female/1758/1407/1407-a_lhl.wav
+  - svd/pathological/female/1758/1407/1407-u_n.wav
+  - svd/pathological/female/1758/1407/1407-u_lhl.wav
+  gender: female
+  label: organic_neuro_muscular
+svd_1781_1683:
+  age: 71
+  audio_keys:
+  - svd/pathological/male/1781/1683/1683-phrase.wav
+  - svd/pathological/male/1781/1683/1683-iau.wav
+  - svd/pathological/male/1781/1683/1683-i_n.wav
+  - svd/pathological/male/1781/1683/1683-i_lhl.wav
+  - svd/pathological/male/1781/1683/1683-a_n.wav
+  - svd/pathological/male/1781/1683/1683-a_lhl.wav
+  - svd/pathological/male/1781/1683/1683-u_n.wav
+  - svd/pathological/male/1781/1683/1683-u_lhl.wav
+  gender: male
+  label: organic_neuro_muscular
+svd_1787_1689:
+  age: 70
+  audio_keys:
+  - svd/pathological/male/1787/1689/1689-phrase.wav
+  - svd/pathological/male/1787/1689/1689-iau.wav
+  - svd/pathological/male/1787/1689/1689-i_n.wav
+  - svd/pathological/male/1787/1689/1689-i_lhl.wav
+  - svd/pathological/male/1787/1689/1689-a_n.wav
+  - svd/pathological/male/1787/1689/1689-a_lhl.wav
+  - svd/pathological/male/1787/1689/1689-u_n.wav
+  - svd/pathological/male/1787/1689/1689-u_lhl.wav
+  gender: male
+  label: organic_neuro_muscular
+svd_1787_2352:
+  age: 72
+  audio_keys:
+  - svd/pathological/male/1787/2352/2352-phrase.wav
+  - svd/pathological/male/1787/2352/2352-iau.wav
+  - svd/pathological/male/1787/2352/2352-i_n.wav
+  - svd/pathological/male/1787/2352/2352-i_lhl.wav
+  - svd/pathological/male/1787/2352/2352-a_n.wav
+  - svd/pathological/male/1787/2352/2352-a_lhl.wav
+  - svd/pathological/male/1787/2352/2352-u_n.wav
+  - svd/pathological/male/1787/2352/2352-u_lhl.wav
+  gender: male
+  label: organic_neuro_muscular
+svd_1818_1655:
+  age: 60
+  audio_keys:
+  - svd/pathological/female/1818/1655/1655-phrase.wav
+  - svd/pathological/female/1818/1655/1655-iau.wav
+  - svd/pathological/female/1818/1655/1655-i_n.wav
+  - svd/pathological/female/1818/1655/1655-i_lhl.wav
+  - svd/pathological/female/1818/1655/1655-a_n.wav
+  - svd/pathological/female/1818/1655/1655-a_lhl.wav
+  - svd/pathological/female/1818/1655/1655-u_n.wav
+  - svd/pathological/female/1818/1655/1655-u_lhl.wav
+  gender: female
+  label: organic_neuro_muscular
+svd_1824_1476:
+  age: 42
+  audio_keys:
+  - svd/pathological/female/1824/1476/1476-phrase.wav
+  - svd/pathological/female/1824/1476/1476-iau.wav
+  - svd/pathological/female/1824/1476/1476-i_n.wav
+  - svd/pathological/female/1824/1476/1476-i_lhl.wav
+  - svd/pathological/female/1824/1476/1476-a_n.wav
+  - svd/pathological/female/1824/1476/1476-a_lhl.wav
+  - svd/pathological/female/1824/1476/1476-u_n.wav
+  - svd/pathological/female/1824/1476/1476-u_lhl.wav
+  gender: female
+  label: muscle_tension
+svd_1844_1567:
+  age: 51
+  audio_keys:
+  - svd/pathological/male/1844/1567/1567-phrase.wav
+  - svd/pathological/male/1844/1567/1567-iau.wav
+  - svd/pathological/male/1844/1567/1567-i_n.wav
+  - svd/pathological/male/1844/1567/1567-i_lhl.wav
+  - svd/pathological/male/1844/1567/1567-a_n.wav
+  - svd/pathological/male/1844/1567/1567-a_lhl.wav
+  - svd/pathological/male/1844/1567/1567-u_n.wav
+  - svd/pathological/male/1844/1567/1567-u_lhl.wav
+  gender: male
+  label: organic_inflammatory
+svd_1877_1784:
+  age: 69
+  audio_keys:
+  - svd/pathological/female/1877/1784/1784-phrase.wav
+  - svd/pathological/female/1877/1784/1784-iau.wav
+  - svd/pathological/female/1877/1784/1784-i_n.wav
+  - svd/pathological/female/1877/1784/1784-i_lhl.wav
+  - svd/pathological/female/1877/1784/1784-a_n.wav
+  - svd/pathological/female/1877/1784/1784-a_lhl.wav
+  - svd/pathological/female/1877/1784/1784-u_n.wav
+  - svd/pathological/female/1877/1784/1784-u_lhl.wav
+  gender: female
+  label: organic_neuro_muscular
+svd_1882_1576:
+  age: 57
+  audio_keys:
+  - svd/pathological/male/1882/1576/1576-phrase.wav
+  - svd/pathological/male/1882/1576/1576-iau.wav
+  - svd/pathological/male/1882/1576/1576-i_n.wav
+  - svd/pathological/male/1882/1576/1576-i_lhl.wav
+  - svd/pathological/male/1882/1576/1576-a_n.wav
+  - svd/pathological/male/1882/1576/1576-a_lhl.wav
+  - svd/pathological/male/1882/1576/1576-u_n.wav
+  - svd/pathological/male/1882/1576/1576-u_lhl.wav
+  gender: male
+  label: organic_structural
+svd_1887_1580:
+  age: 75
+  audio_keys:
+  - svd/pathological/male/1887/1580/1580-phrase.wav
+  - svd/pathological/male/1887/1580/1580-iau.wav
+  - svd/pathological/male/1887/1580/1580-i_n.wav
+  - svd/pathological/male/1887/1580/1580-i_lhl.wav
+  - svd/pathological/male/1887/1580/1580-a_n.wav
+  - svd/pathological/male/1887/1580/1580-a_lhl.wav
+  - svd/pathological/male/1887/1580/1580-u_n.wav
+  - svd/pathological/male/1887/1580/1580-u_lhl.wav
+  gender: male
+  label: organic_neuro_muscular
+svd_1899_1599:
+  age: 32
+  audio_keys:
+  - svd/pathological/male/1899/1599/1599-phrase.wav
+  - svd/pathological/male/1899/1599/1599-iau.wav
+  - svd/pathological/male/1899/1599/1599-i_n.wav
+  - svd/pathological/male/1899/1599/1599-i_lhl.wav
+  - svd/pathological/male/1899/1599/1599-a_n.wav
+  - svd/pathological/male/1899/1599/1599-a_lhl.wav
+  - svd/pathological/male/1899/1599/1599-u_n.wav
+  - svd/pathological/male/1899/1599/1599-u_lhl.wav
+  gender: male
+  label: organic_structural
+svd_1909_1609:
+  age: 32
+  audio_keys:
+  - svd/pathological/female/1909/1609/1609-phrase.wav
+  - svd/pathological/female/1909/1609/1609-iau.wav
+  - svd/pathological/female/1909/1609/1609-i_n.wav
+  - svd/pathological/female/1909/1609/1609-i_lhl.wav
+  - svd/pathological/female/1909/1609/1609-a_n.wav
+  - svd/pathological/female/1909/1609/1609-a_lhl.wav
+  - svd/pathological/female/1909/1609/1609-u_n.wav
+  - svd/pathological/female/1909/1609/1609-u_lhl.wav
+  gender: female
+  label: functional
+svd_1916_1616:
+  age: 20
+  audio_keys:
+  - svd/pathological/female/1916/1616/1616-phrase.wav
+  - svd/pathological/female/1916/1616/1616-iau.wav
+  - svd/pathological/female/1916/1616/1616-i_n.wav
+  - svd/pathological/female/1916/1616/1616-i_lhl.wav
+  - svd/pathological/female/1916/1616/1616-a_n.wav
+  - svd/pathological/female/1916/1616/1616-a_lhl.wav
+  - svd/pathological/female/1916/1616/1616-u_n.wav
+  - svd/pathological/female/1916/1616/1616-u_lhl.wav
+  gender: female
+  label: normal
+svd_1930_1631:
+  age: 53
+  audio_keys:
+  - svd/pathological/female/1930/1631/1631-phrase.wav
+  - svd/pathological/female/1930/1631/1631-iau.wav
+  - svd/pathological/female/1930/1631/1631-i_n.wav
+  - svd/pathological/female/1930/1631/1631-a_n.wav
+  - svd/pathological/female/1930/1631/1631-u_n.wav
+  gender: female
+  label: organic_neuro_muscular
+svd_1987_1895:
+  age: 42
+  audio_keys:
+  - svd/pathological/female/1987/1895/1895-phrase.wav
+  - svd/pathological/female/1987/1895/1895-iau.wav
+  - svd/pathological/female/1987/1895/1895-i_n.wav
+  - svd/pathological/female/1987/1895/1895-i_lhl.wav
+  - svd/pathological/female/1987/1895/1895-a_n.wav
+  - svd/pathological/female/1987/1895/1895-a_lhl.wav
+  - svd/pathological/female/1987/1895/1895-u_n.wav
+  - svd/pathological/female/1987/1895/1895-u_lhl.wav
+  gender: female
+  label: muscle_tension
+svd_2007_1743:
+  age: 58
+  audio_keys:
+  - svd/pathological/female/2007/1743/1743-phrase.wav
+  - svd/pathological/female/2007/1743/1743-iau.wav
+  - svd/pathological/female/2007/1743/1743-i_n.wav
+  - svd/pathological/female/2007/1743/1743-i_lhl.wav
+  - svd/pathological/female/2007/1743/1743-a_n.wav
+  - svd/pathological/female/2007/1743/1743-a_lhl.wav
+  - svd/pathological/female/2007/1743/1743-u_n.wav
+  - svd/pathological/female/2007/1743/1743-u_lhl.wav
+  gender: female
+  label: organic_neuro_muscular
+svd_2014_1750:
+  age: 66
+  audio_keys:
+  - svd/pathological/female/2014/1750/1750-phrase.wav
+  - svd/pathological/female/2014/1750/1750-iau.wav
+  - svd/pathological/female/2014/1750/1750-i_n.wav
+  - svd/pathological/female/2014/1750/1750-i_lhl.wav
+  - svd/pathological/female/2014/1750/1750-a_n.wav
+  - svd/pathological/female/2014/1750/1750-a_lhl.wav
+  - svd/pathological/female/2014/1750/1750-u_n.wav
+  - svd/pathological/female/2014/1750/1750-u_lhl.wav
+  gender: female
+  label: organic_trauma
+svd_2019_1754:
+  age: 59
+  audio_keys:
+  - svd/pathological/female/2019/1754/1754-phrase.wav
+  - svd/pathological/female/2019/1754/1754-iau.wav
+  - svd/pathological/female/2019/1754/1754-i_n.wav
+  - svd/pathological/female/2019/1754/1754-i_lhl.wav
+  - svd/pathological/female/2019/1754/1754-a_n.wav
+  - svd/pathological/female/2019/1754/1754-a_lhl.wav
+  - svd/pathological/female/2019/1754/1754-u_n.wav
+  - svd/pathological/female/2019/1754/1754-u_lhl.wav
+  gender: female
+  label: muscle_tension
+svd_2024_1760:
+  age: 55
+  audio_keys:
+  - svd/pathological/female/2024/1760/1760-phrase.wav
+  - svd/pathological/female/2024/1760/1760-iau.wav
+  - svd/pathological/female/2024/1760/1760-i_n.wav
+  - svd/pathological/female/2024/1760/1760-i_lhl.wav
+  - svd/pathological/female/2024/1760/1760-a_n.wav
+  - svd/pathological/female/2024/1760/1760-a_lhl.wav
+  - svd/pathological/female/2024/1760/1760-u_n.wav
+  - svd/pathological/female/2024/1760/1760-u_lhl.wav
+  gender: female
+  label: organic_neuro_muscular
+svd_2027_1902:
+  age: 36
+  audio_keys:
+  - svd/pathological/female/2027/1902/1902-phrase.wav
+  - svd/pathological/female/2027/1902/1902-iau.wav
+  - svd/pathological/female/2027/1902/1902-i_n.wav
+  - svd/pathological/female/2027/1902/1902-i_lhl.wav
+  - svd/pathological/female/2027/1902/1902-a_n.wav
+  - svd/pathological/female/2027/1902/1902-a_lhl.wav
+  - svd/pathological/female/2027/1902/1902-u_n.wav
+  - svd/pathological/female/2027/1902/1902-u_lhl.wav
+  gender: female
+  label: organic_neuro_muscular
+svd_2027_1909:
+  age: 36
+  audio_keys:
+  - svd/pathological/female/2027/1909/1909-phrase.wav
+  - svd/pathological/female/2027/1909/1909-iau.wav
+  - svd/pathological/female/2027/1909/1909-i_n.wav
+  - svd/pathological/female/2027/1909/1909-i_lhl.wav
+  - svd/pathological/female/2027/1909/1909-a_n.wav
+  - svd/pathological/female/2027/1909/1909-a_lhl.wav
+  - svd/pathological/female/2027/1909/1909-u_n.wav
+  - svd/pathological/female/2027/1909/1909-u_lhl.wav
+  gender: female
+  label: organic_neuro_muscular
+svd_2027_1938:
+  age: 36
+  audio_keys:
+  - svd/pathological/female/2027/1938/1938-phrase.wav
+  - svd/pathological/female/2027/1938/1938-iau.wav
+  - svd/pathological/female/2027/1938/1938-i_n.wav
+  - svd/pathological/female/2027/1938/1938-i_lhl.wav
+  - svd/pathological/female/2027/1938/1938-a_n.wav
+  - svd/pathological/female/2027/1938/1938-a_lhl.wav
+  - svd/pathological/female/2027/1938/1938-u_n.wav
+  - svd/pathological/female/2027/1938/1938-u_lhl.wav
+  gender: female
+  label: organic_neuro_muscular
+svd_2027_2304:
+  age: 37
+  audio_keys:
+  - svd/pathological/female/2027/2304/2304-phrase.wav
+  - svd/pathological/female/2027/2304/2304-iau.wav
+  - svd/pathological/female/2027/2304/2304-i_n.wav
+  - svd/pathological/female/2027/2304/2304-i_lhl.wav
+  - svd/pathological/female/2027/2304/2304-a_n.wav
+  - svd/pathological/female/2027/2304/2304-a_lhl.wav
+  - svd/pathological/female/2027/2304/2304-u_n.wav
+  - svd/pathological/female/2027/2304/2304-u_lhl.wav
+  gender: female
+  label: organic_neuro_muscular
+svd_2037_1773:
+  age: 50
+  audio_keys:
+  - svd/pathological/male/2037/1773/1773-phrase.wav
+  - svd/pathological/male/2037/1773/1773-iau.wav
+  - svd/pathological/male/2037/1773/1773-i_n.wav
+  - svd/pathological/male/2037/1773/1773-i_lhl.wav
+  - svd/pathological/male/2037/1773/1773-a_n.wav
+  - svd/pathological/male/2037/1773/1773-a_lhl.wav
+  - svd/pathological/male/2037/1773/1773-u_n.wav
+  - svd/pathological/male/2037/1773/1773-u_lhl.wav
+  gender: male
+  label: organic_structural
+svd_2052_1787:
+  age: 47
+  audio_keys:
+  - svd/pathological/female/2052/1787/1787-phrase.wav
+  - svd/pathological/female/2052/1787/1787-iau.wav
+  - svd/pathological/female/2052/1787/1787-i_n.wav
+  - svd/pathological/female/2052/1787/1787-i_lhl.wav
+  - svd/pathological/female/2052/1787/1787-a_n.wav
+  - svd/pathological/female/2052/1787/1787-a_lhl.wav
+  - svd/pathological/female/2052/1787/1787-u_n.wav
+  - svd/pathological/female/2052/1787/1787-u_lhl.wav
+  gender: female
+  label: functional
+svd_2077_1810:
+  age: 56
+  audio_keys:
+  - svd/pathological/male/2077/1810/1810-phrase.wav
+  - svd/pathological/male/2077/1810/1810-iau.wav
+  - svd/pathological/male/2077/1810/1810-i_n.wav
+  - svd/pathological/male/2077/1810/1810-i_lhl.wav
+  - svd/pathological/male/2077/1810/1810-a_n.wav
+  - svd/pathological/male/2077/1810/1810-a_lhl.wav
+  - svd/pathological/male/2077/1810/1810-u_n.wav
+  - svd/pathological/male/2077/1810/1810-u_lhl.wav
+  gender: male
+  label: organic_structural
+svd_20_19:
+  age: 23
+  audio_keys:
+  - svd/healthy/female/20/19/19-phrase.wav
+  - svd/healthy/female/20/19/19-iau.wav
+  - svd/healthy/female/20/19/19-i_n.wav
+  - svd/healthy/female/20/19/19-i_lhl.wav
+  - svd/healthy/female/20/19/19-a_n.wav
+  - svd/healthy/female/20/19/19-a_lhl.wav
+  - svd/healthy/female/20/19/19-u_n.wav
+  - svd/healthy/female/20/19/19-u_lhl.wav
+  gender: female
+  label: normal
+svd_2129_1906:
+  age: 45
+  audio_keys:
+  - svd/pathological/female/2129/1906/1906-phrase.wav
+  - svd/pathological/female/2129/1906/1906-iau.wav
+  - svd/pathological/female/2129/1906/1906-i_n.wav
+  - svd/pathological/female/2129/1906/1906-i_lhl.wav
+  - svd/pathological/female/2129/1906/1906-a_n.wav
+  - svd/pathological/female/2129/1906/1906-a_lhl.wav
+  - svd/pathological/female/2129/1906/1906-u_n.wav
+  - svd/pathological/female/2129/1906/1906-u_lhl.wav
+  gender: female
+  label: muscle_tension
+svd_2174_1964:
+  age: 46
+  audio_keys:
+  - svd/pathological/female/2174/1964/1964-phrase.wav
+  - svd/pathological/female/2174/1964/1964-iau.wav
+  - svd/pathological/female/2174/1964/1964-i_n.wav
+  - svd/pathological/female/2174/1964/1964-i_lhl.wav
+  - svd/pathological/female/2174/1964/1964-a_n.wav
+  - svd/pathological/female/2174/1964/1964-a_lhl.wav
+  - svd/pathological/female/2174/1964/1964-u_n.wav
+  - svd/pathological/female/2174/1964/1964-u_lhl.wav
+  gender: female
+  label: functional
+svd_2183_1973:
+  age: 59
+  audio_keys:
+  - svd/pathological/male/2183/1973/1973-phrase.wav
+  - svd/pathological/male/2183/1973/1973-iau.wav
+  - svd/pathological/male/2183/1973/1973-i_n.wav
+  - svd/pathological/male/2183/1973/1973-i_lhl.wav
+  - svd/pathological/male/2183/1973/1973-a_n.wav
+  - svd/pathological/male/2183/1973/1973-a_lhl.wav
+  - svd/pathological/male/2183/1973/1973-u_n.wav
+  - svd/pathological/male/2183/1973/1973-u_lhl.wav
+  gender: male
+  label: organic_inflammatory
+svd_2188_1977:
+  age: 59
+  audio_keys:
+  - svd/pathological/female/2188/1977/1977-phrase.wav
+  - svd/pathological/female/2188/1977/1977-iau.wav
+  - svd/pathological/female/2188/1977/1977-i_n.wav
+  - svd/pathological/female/2188/1977/1977-i_lhl.wav
+  - svd/pathological/female/2188/1977/1977-a_n.wav
+  - svd/pathological/female/2188/1977/1977-a_lhl.wav
+  - svd/pathological/female/2188/1977/1977-u_n.wav
+  - svd/pathological/female/2188/1977/1977-u_lhl.wav
+  gender: female
+  label: functional
+svd_21_20:
+  age: 21
+  audio_keys:
+  - svd/healthy/female/21/20/20-phrase.wav
+  - svd/healthy/female/21/20/20-iau.wav
+  - svd/healthy/female/21/20/20-i_n.wav
+  - svd/healthy/female/21/20/20-i_lhl.wav
+  - svd/healthy/female/21/20/20-a_n.wav
+  - svd/healthy/female/21/20/20-a_lhl.wav
+  - svd/healthy/female/21/20/20-u_n.wav
+  - svd/healthy/female/21/20/20-u_lhl.wav
+  gender: female
+  label: normal
+svd_2211_2155:
+  age: 61
+  audio_keys:
+  - svd/pathological/female/2211/2155/2155-phrase.wav
+  - svd/pathological/female/2211/2155/2155-iau.wav
+  - svd/pathological/female/2211/2155/2155-i_n.wav
+  - svd/pathological/female/2211/2155/2155-i_lhl.wav
+  - svd/pathological/female/2211/2155/2155-a_n.wav
+  - svd/pathological/female/2211/2155/2155-a_lhl.wav
+  - svd/pathological/female/2211/2155/2155-u_n.wav
+  - svd/pathological/female/2211/2155/2155-u_lhl.wav
+  gender: female
+  label: organic_neuro_muscular
+svd_2228_2021:
+  age: 51
+  audio_keys:
+  - svd/pathological/female/2228/2021/2021-phrase.wav
+  - svd/pathological/female/2228/2021/2021-iau.wav
+  - svd/pathological/female/2228/2021/2021-i_n.wav
+  - svd/pathological/female/2228/2021/2021-i_lhl.wav
+  - svd/pathological/female/2228/2021/2021-a_n.wav
+  - svd/pathological/female/2228/2021/2021-a_lhl.wav
+  - svd/pathological/female/2228/2021/2021-u_n.wav
+  - svd/pathological/female/2228/2021/2021-u_lhl.wav
+  gender: female
+  label: organic_inflammatory
+svd_2256_2067:
+  age: 56
+  audio_keys:
+  - svd/pathological/female/2256/2067/2067-phrase.wav
+  - svd/pathological/female/2256/2067/2067-iau.wav
+  - svd/pathological/female/2256/2067/2067-i_n.wav
+  - svd/pathological/female/2256/2067/2067-i_lhl.wav
+  - svd/pathological/female/2256/2067/2067-a_n.wav
+  - svd/pathological/female/2256/2067/2067-a_lhl.wav
+  - svd/pathological/female/2256/2067/2067-u_n.wav
+  - svd/pathological/female/2256/2067/2067-u_lhl.wav
+  gender: female
+  label: muscle_tension
+svd_2286_2095:
+  age: 38
+  audio_keys:
+  - svd/pathological/male/2286/2095/2095-phrase.wav
+  - svd/pathological/male/2286/2095/2095-iau.wav
+  - svd/pathological/male/2286/2095/2095-i_n.wav
+  - svd/pathological/male/2286/2095/2095-i_lhl.wav
+  - svd/pathological/male/2286/2095/2095-a_n.wav
+  - svd/pathological/male/2286/2095/2095-a_lhl.wav
+  - svd/pathological/male/2286/2095/2095-u_n.wav
+  - svd/pathological/male/2286/2095/2095-u_lhl.wav
+  gender: male
+  label: organic_neuro_muscular
+svd_2296_2107:
+  age: 44
+  audio_keys:
+  - svd/pathological/female/2296/2107/2107-phrase.wav
+  - svd/pathological/female/2296/2107/2107-iau.wav
+  - svd/pathological/female/2296/2107/2107-i_n.wav
+  - svd/pathological/female/2296/2107/2107-i_lhl.wav
+  - svd/pathological/female/2296/2107/2107-a_n.wav
+  - svd/pathological/female/2296/2107/2107-a_lhl.wav
+  - svd/pathological/female/2296/2107/2107-u_n.wav
+  - svd/pathological/female/2296/2107/2107-u_lhl.wav
+  gender: female
+  label: functional
+svd_2303_2118:
+  age: 44
+  audio_keys:
+  - svd/pathological/female/2303/2118/2118-phrase.wav
+  - svd/pathological/female/2303/2118/2118-iau.wav
+  - svd/pathological/female/2303/2118/2118-i_n.wav
+  - svd/pathological/female/2303/2118/2118-i_lhl.wav
+  - svd/pathological/female/2303/2118/2118-a_n.wav
+  - svd/pathological/female/2303/2118/2118-a_lhl.wav
+  - svd/pathological/female/2303/2118/2118-u_n.wav
+  - svd/pathological/female/2303/2118/2118-u_lhl.wav
+  gender: female
+  label: organic_structural
+svd_2354_2157:
+  age: 58
+  audio_keys:
+  - svd/pathological/male/2354/2157/2157-phrase.wav
+  - svd/pathological/male/2354/2157/2157-iau.wav
+  - svd/pathological/male/2354/2157/2157-i_n.wav
+  - svd/pathological/male/2354/2157/2157-i_lhl.wav
+  - svd/pathological/male/2354/2157/2157-a_n.wav
+  - svd/pathological/male/2354/2157/2157-a_lhl.wav
+  - svd/pathological/male/2354/2157/2157-u_n.wav
+  - svd/pathological/male/2354/2157/2157-u_lhl.wav
+  gender: male
+  label: organic_structural
+svd_2390_2228:
+  age: 36
+  audio_keys:
+  - svd/pathological/female/2390/2228/2228-phrase.wav
+  - svd/pathological/female/2390/2228/2228-iau.wav
+  - svd/pathological/female/2390/2228/2228-i_n.wav
+  - svd/pathological/female/2390/2228/2228-i_lhl.wav
+  - svd/pathological/female/2390/2228/2228-a_n.wav
+  - svd/pathological/female/2390/2228/2228-a_lhl.wav
+  - svd/pathological/female/2390/2228/2228-u_n.wav
+  - svd/pathological/female/2390/2228/2228-u_lhl.wav
+  gender: female
+  label: muscle_tension
+svd_23_22:
+  age: 21
+  audio_keys:
+  - svd/healthy/female/23/22/22-phrase.wav
+  - svd/healthy/female/23/22/22-iau.wav
+  - svd/healthy/female/23/22/22-i_n.wav
+  - svd/healthy/female/23/22/22-i_lhl.wav
+  - svd/healthy/female/23/22/22-a_n.wav
+  - svd/healthy/female/23/22/22-a_lhl.wav
+  - svd/healthy/female/23/22/22-u_n.wav
+  - svd/healthy/female/23/22/22-u_lhl.wav
+  gender: female
+  label: normal
+svd_2436_2302:
+  age: 53
+  audio_keys:
+  - svd/pathological/female/2436/2302/2302-phrase.wav
+  - svd/pathological/female/2436/2302/2302-iau.wav
+  - svd/pathological/female/2436/2302/2302-i_n.wav
+  - svd/pathological/female/2436/2302/2302-i_lhl.wav
+  - svd/pathological/female/2436/2302/2302-a_n.wav
+  - svd/pathological/female/2436/2302/2302-a_lhl.wav
+  - svd/pathological/female/2436/2302/2302-u_n.wav
+  - svd/pathological/female/2436/2302/2302-u_lhl.wav
+  gender: female
+  label: functional
+svd_2444_2310:
+  age: 46
+  audio_keys:
+  - svd/pathological/female/2444/2310/2310-phrase.wav
+  - svd/pathological/female/2444/2310/2310-iau.wav
+  - svd/pathological/female/2444/2310/2310-i_n.wav
+  - svd/pathological/female/2444/2310/2310-i_lhl.wav
+  - svd/pathological/female/2444/2310/2310-a_n.wav
+  - svd/pathological/female/2444/2310/2310-a_lhl.wav
+  - svd/pathological/female/2444/2310/2310-u_n.wav
+  - svd/pathological/female/2444/2310/2310-u_lhl.wav
+  gender: female
+  label: functional
+svd_2455_2321:
+  age: 60
+  audio_keys:
+  - svd/pathological/male/2455/2321/2321-phrase.wav
+  - svd/pathological/male/2455/2321/2321-iau.wav
+  - svd/pathological/male/2455/2321/2321-i_n.wav
+  - svd/pathological/male/2455/2321/2321-i_lhl.wav
+  - svd/pathological/male/2455/2321/2321-a_n.wav
+  - svd/pathological/male/2455/2321/2321-a_lhl.wav
+  - svd/pathological/male/2455/2321/2321-u_n.wav
+  - svd/pathological/male/2455/2321/2321-u_lhl.wav
+  gender: male
+  label: organic_inflammatory
+svd_2479_2345:
+  age: 45
+  audio_keys:
+  - svd/pathological/female/2479/2345/2345-phrase.wav
+  - svd/pathological/female/2479/2345/2345-iau.wav
+  - svd/pathological/female/2479/2345/2345-i_n.wav
+  - svd/pathological/female/2479/2345/2345-i_lhl.wav
+  - svd/pathological/female/2479/2345/2345-a_n.wav
+  - svd/pathological/female/2479/2345/2345-a_lhl.wav
+  - svd/pathological/female/2479/2345/2345-u_n.wav
+  - svd/pathological/female/2479/2345/2345-u_lhl.wav
+  gender: female
+  label: organic_structural
+svd_2553_2419:
+  age: 65
+  audio_keys:
+  - svd/pathological/male/2553/2419/2419-phrase.wav
+  - svd/pathological/male/2553/2419/2419-iau.wav
+  - svd/pathological/male/2553/2419/2419-i_n.wav
+  - svd/pathological/male/2553/2419/2419-i_lhl.wav
+  - svd/pathological/male/2553/2419/2419-a_n.wav
+  - svd/pathological/male/2553/2419/2419-a_lhl.wav
+  - svd/pathological/male/2553/2419/2419-u_n.wav
+  - svd/pathological/male/2553/2419/2419-u_lhl.wav
+  gender: male
+  label: functional
+svd_2559_2425:
+  age: 35
+  audio_keys:
+  - svd/pathological/female/2559/2425/2425-phrase.wav
+  - svd/pathological/female/2559/2425/2425-iau.wav
+  - svd/pathological/female/2559/2425/2425-i_n.wav
+  - svd/pathological/female/2559/2425/2425-i_lhl.wav
+  - svd/pathological/female/2559/2425/2425-a_n.wav
+  - svd/pathological/female/2559/2425/2425-a_lhl.wav
+  - svd/pathological/female/2559/2425/2425-u_n.wav
+  - svd/pathological/female/2559/2425/2425-u_lhl.wav
+  gender: female
+  label: muscle_tension
+svd_2565_2431:
+  age: 32
+  audio_keys:
+  - svd/pathological/female/2565/2431/2431-phrase.wav
+  - svd/pathological/female/2565/2431/2431-iau.wav
+  - svd/pathological/female/2565/2431/2431-i_n.wav
+  - svd/pathological/female/2565/2431/2431-i_lhl.wav
+  - svd/pathological/female/2565/2431/2431-a_n.wav
+  - svd/pathological/female/2565/2431/2431-a_lhl.wav
+  - svd/pathological/female/2565/2431/2431-u_n.wav
+  - svd/pathological/female/2565/2431/2431-u_lhl.wav
+  gender: female
+  label: functional
+svd_2577_2443:
+  age: 50
+  audio_keys:
+  - svd/pathological/male/2577/2443/2443-phrase.wav
+  - svd/pathological/male/2577/2443/2443-iau.wav
+  - svd/pathological/male/2577/2443/2443-i_n.wav
+  - svd/pathological/male/2577/2443/2443-i_lhl.wav
+  - svd/pathological/male/2577/2443/2443-a_n.wav
+  - svd/pathological/male/2577/2443/2443-a_lhl.wav
+  - svd/pathological/male/2577/2443/2443-u_n.wav
+  - svd/pathological/male/2577/2443/2443-u_lhl.wav
+  gender: male
+  label: organic_structural
+svd_2580_2446:
+  age: 63
+  audio_keys:
+  - svd/pathological/female/2580/2446/2446-phrase.wav
+  - svd/pathological/female/2580/2446/2446-iau.wav
+  - svd/pathological/female/2580/2446/2446-i_n.wav
+  - svd/pathological/female/2580/2446/2446-i_lhl.wav
+  - svd/pathological/female/2580/2446/2446-a_n.wav
+  - svd/pathological/female/2580/2446/2446-a_lhl.wav
+  - svd/pathological/female/2580/2446/2446-u_n.wav
+  - svd/pathological/female/2580/2446/2446-u_lhl.wav
+  gender: female
+  label: functional
+svd_2583_2449:
+  age: 65
+  audio_keys:
+  - svd/pathological/female/2583/2449/2449-phrase.wav
+  - svd/pathological/female/2583/2449/2449-iau.wav
+  - svd/pathological/female/2583/2449/2449-i_n.wav
+  - svd/pathological/female/2583/2449/2449-i_lhl.wav
+  - svd/pathological/female/2583/2449/2449-a_n.wav
+  - svd/pathological/female/2583/2449/2449-a_lhl.wav
+  - svd/pathological/female/2583/2449/2449-u_n.wav
+  - svd/pathological/female/2583/2449/2449-u_lhl.wav
+  gender: female
+  label: organic_structural
+svd_2586_2452:
+  age: 55
+  audio_keys:
+  - svd/pathological/female/2586/2452/2452-phrase.wav
+  - svd/pathological/female/2586/2452/2452-iau.wav
+  - svd/pathological/female/2586/2452/2452-i_n.wav
+  - svd/pathological/female/2586/2452/2452-i_lhl.wav
+  - svd/pathological/female/2586/2452/2452-a_n.wav
+  - svd/pathological/female/2586/2452/2452-a_lhl.wav
+  - svd/pathological/female/2586/2452/2452-u_n.wav
+  - svd/pathological/female/2586/2452/2452-u_lhl.wav
+  gender: female
+  label: functional
+svd_2636_2502:
+  age: 56
+  audio_keys:
+  - svd/pathological/female/2636/2502/2502-phrase.wav
+  - svd/pathological/female/2636/2502/2502-iau.wav
+  - svd/pathological/female/2636/2502/2502-i_n.wav
+  - svd/pathological/female/2636/2502/2502-i_lhl.wav
+  - svd/pathological/female/2636/2502/2502-a_n.wav
+  - svd/pathological/female/2636/2502/2502-a_lhl.wav
+  - svd/pathological/female/2636/2502/2502-u_n.wav
+  - svd/pathological/female/2636/2502/2502-u_lhl.wav
+  gender: female
+  label: functional
+svd_2639_2505:
+  age: 48
+  audio_keys:
+  - svd/pathological/female/2639/2505/2505-phrase.wav
+  - svd/pathological/female/2639/2505/2505-iau.wav
+  - svd/pathological/female/2639/2505/2505-i_n.wav
+  - svd/pathological/female/2639/2505/2505-i_lhl.wav
+  - svd/pathological/female/2639/2505/2505-a_n.wav
+  - svd/pathological/female/2639/2505/2505-a_lhl.wav
+  - svd/pathological/female/2639/2505/2505-u_n.wav
+  - svd/pathological/female/2639/2505/2505-u_lhl.wav
+  gender: female
+  label: functional
+svd_2661_2527:
+  age: 60
+  audio_keys:
+  - svd/pathological/male/2661/2527/2527-phrase.wav
+  - svd/pathological/male/2661/2527/2527-iau.wav
+  - svd/pathological/male/2661/2527/2527-i_n.wav
+  - svd/pathological/male/2661/2527/2527-i_lhl.wav
+  - svd/pathological/male/2661/2527/2527-a_n.wav
+  - svd/pathological/male/2661/2527/2527-a_lhl.wav
+  - svd/pathological/male/2661/2527/2527-u_n.wav
+  - svd/pathological/male/2661/2527/2527-u_lhl.wav
+  gender: male
+  label: organic_neuro_muscular
+svd_2696_2562:
+  age: 66
+  audio_keys:
+  - svd/pathological/female/2696/2562/2562-phrase.wav
+  - svd/pathological/female/2696/2562/2562-iau.wav
+  - svd/pathological/female/2696/2562/2562-i_n.wav
+  - svd/pathological/female/2696/2562/2562-i_lhl.wav
+  - svd/pathological/female/2696/2562/2562-a_n.wav
+  - svd/pathological/female/2696/2562/2562-a_lhl.wav
+  - svd/pathological/female/2696/2562/2562-u_n.wav
+  - svd/pathological/female/2696/2562/2562-u_lhl.wav
+  gender: female
+  label: organic_neuro_muscular
+svd_2708_2574:
+  age: 69
+  audio_keys:
+  - svd/pathological/male/2708/2574/2574-phrase.wav
+  - svd/pathological/male/2708/2574/2574-iau.wav
+  - svd/pathological/male/2708/2574/2574-i_n.wav
+  - svd/pathological/male/2708/2574/2574-i_lhl.wav
+  - svd/pathological/male/2708/2574/2574-a_n.wav
+  - svd/pathological/male/2708/2574/2574-a_lhl.wav
+  - svd/pathological/male/2708/2574/2574-u_n.wav
+  - svd/pathological/male/2708/2574/2574-u_lhl.wav
+  gender: male
+  label: organic_inflammatory
+svd_2716_2582:
+  age: 62
+  audio_keys:
+  - svd/pathological/male/2716/2582/2582-phrase.wav
+  - svd/pathological/male/2716/2582/2582-iau.wav
+  - svd/pathological/male/2716/2582/2582-i_n.wav
+  - svd/pathological/male/2716/2582/2582-i_lhl.wav
+  - svd/pathological/male/2716/2582/2582-a_n.wav
+  - svd/pathological/male/2716/2582/2582-a_lhl.wav
+  - svd/pathological/male/2716/2582/2582-u_n.wav
+  - svd/pathological/male/2716/2582/2582-u_lhl.wav
+  gender: male
+  label: organic_inflammatory
+svd_2729_2603:
+  age: 21
+  audio_keys:
+  - svd/pathological/female/2729/2603/2603-phrase.wav
+  - svd/pathological/female/2729/2603/2603-iau.wav
+  - svd/pathological/female/2729/2603/2603-i_n.wav
+  - svd/pathological/female/2729/2603/2603-i_lhl.wav
+  - svd/pathological/female/2729/2603/2603-a_n.wav
+  - svd/pathological/female/2729/2603/2603-a_lhl.wav
+  - svd/pathological/female/2729/2603/2603-u_n.wav
+  - svd/pathological/female/2729/2603/2603-u_lhl.wav
+  gender: female
+  label: muscle_tension
+svd_2730_2604:
+  age: 40
+  audio_keys:
+  - svd/pathological/female/2730/2604/2604-phrase.wav
+  - svd/pathological/female/2730/2604/2604-iau.wav
+  - svd/pathological/female/2730/2604/2604-i_n.wav
+  - svd/pathological/female/2730/2604/2604-i_lhl.wav
+  - svd/pathological/female/2730/2604/2604-a_n.wav
+  - svd/pathological/female/2730/2604/2604-a_lhl.wav
+  - svd/pathological/female/2730/2604/2604-u_n.wav
+  - svd/pathological/female/2730/2604/2604-u_lhl.wav
+  gender: female
+  label: muscle_tension
+svd_36_36:
+  age: 21
+  audio_keys:
+  - svd/healthy/female/36/36/36-phrase.wav
+  - svd/healthy/female/36/36/36-iau.wav
+  - svd/healthy/female/36/36/36-i_n.wav
+  - svd/healthy/female/36/36/36-i_lhl.wav
+  - svd/healthy/female/36/36/36-a_n.wav
+  - svd/healthy/female/36/36/36-a_lhl.wav
+  - svd/healthy/female/36/36/36-u_n.wav
+  - svd/healthy/female/36/36/36-u_lhl.wav
+  gender: female
+  label: normal
+svd_39_39:
+  age: 22
+  audio_keys:
+  - svd/healthy/female/39/39/39-phrase.wav
+  - svd/healthy/female/39/39/39-iau.wav
+  - svd/healthy/female/39/39/39-i_n.wav
+  - svd/healthy/female/39/39/39-i_lhl.wav
+  - svd/healthy/female/39/39/39-a_n.wav
+  - svd/healthy/female/39/39/39-a_lhl.wav
+  - svd/healthy/female/39/39/39-u_n.wav
+  - svd/healthy/female/39/39/39-u_lhl.wav
+  gender: female
+  label: normal
+svd_50_50:
+  age: 20
+  audio_keys:
+  - svd/healthy/female/50/50/50-phrase.wav
+  - svd/healthy/female/50/50/50-iau.wav
+  - svd/healthy/female/50/50/50-i_n.wav
+  - svd/healthy/female/50/50/50-i_lhl.wav
+  - svd/healthy/female/50/50/50-a_n.wav
+  - svd/healthy/female/50/50/50-a_lhl.wav
+  - svd/healthy/female/50/50/50-u_n.wav
+  - svd/healthy/female/50/50/50-u_lhl.wav
+  gender: female
+  label: normal
+svd_58_58:
+  age: 25
+  audio_keys:
+  - svd/healthy/female/58/58/58-phrase.wav
+  - svd/healthy/female/58/58/58-iau.wav
+  - svd/healthy/female/58/58/58-i_n.wav
+  - svd/healthy/female/58/58/58-i_lhl.wav
+  - svd/healthy/female/58/58/58-a_n.wav
+  - svd/healthy/female/58/58/58-a_lhl.wav
+  - svd/healthy/female/58/58/58-u_n.wav
+  - svd/healthy/female/58/58/58-u_lhl.wav
+  gender: female
+  label: normal
+svd_612_684:
+  age: 21
+  audio_keys:
+  - svd/healthy/female/612/684/684-phrase.wav
+  - svd/healthy/female/612/684/684-iau.wav
+  - svd/healthy/female/612/684/684-i_n.wav
+  - svd/healthy/female/612/684/684-i_lhl.wav
+  - svd/healthy/female/612/684/684-a_n.wav
+  - svd/healthy/female/612/684/684-a_lhl.wav
+  - svd/healthy/female/612/684/684-u_n.wav
+  - svd/healthy/female/612/684/684-u_lhl.wav
+  gender: female
+  label: normal
+svd_626_701:
+  age: 21
+  audio_keys:
+  - svd/healthy/male/626/701/701-phrase.wav
+  - svd/healthy/male/626/701/701-iau.wav
+  - svd/healthy/male/626/701/701-i_n.wav
+  - svd/healthy/male/626/701/701-i_lhl.wav
+  - svd/healthy/male/626/701/701-a_n.wav
+  - svd/healthy/male/626/701/701-a_lhl.wav
+  - svd/healthy/male/626/701/701-u_n.wav
+  - svd/healthy/male/626/701/701-u_lhl.wav
+  gender: male
+  label: normal
+svd_635_709:
+  age: 25
+  audio_keys:
+  - svd/healthy/female/635/709/709-phrase.wav
+  - svd/healthy/female/635/709/709-iau.wav
+  - svd/healthy/female/635/709/709-i_n.wav
+  - svd/healthy/female/635/709/709-i_lhl.wav
+  - svd/healthy/female/635/709/709-a_n.wav
+  - svd/healthy/female/635/709/709-a_lhl.wav
+  - svd/healthy/female/635/709/709-u_n.wav
+  - svd/healthy/female/635/709/709-u_lhl.wav
+  gender: female
+  label: normal
+svd_648_744:
+  age: 22
+  audio_keys:
+  - svd/healthy/male/648/744/744-phrase.wav
+  - svd/healthy/male/648/744/744-iau.wav
+  - svd/healthy/male/648/744/744-i_n.wav
+  - svd/healthy/male/648/744/744-i_lhl.wav
+  - svd/healthy/male/648/744/744-a_n.wav
+  - svd/healthy/male/648/744/744-a_lhl.wav
+  - svd/healthy/male/648/744/744-u_n.wav
+  - svd/healthy/male/648/744/744-u_lhl.wav
+  gender: male
+  label: normal
+svd_649_745:
+  age: 26
+  audio_keys:
+  - svd/healthy/female/649/745/745-phrase.wav
+  - svd/healthy/female/649/745/745-iau.wav
+  - svd/healthy/female/649/745/745-i_n.wav
+  - svd/healthy/female/649/745/745-i_lhl.wav
+  - svd/healthy/female/649/745/745-a_n.wav
+  - svd/healthy/female/649/745/745-a_lhl.wav
+  - svd/healthy/female/649/745/745-u_n.wav
+  - svd/healthy/female/649/745/745-u_lhl.wav
+  gender: female
+  label: normal
+svd_734_861:
+  age: 22
+  audio_keys:
+  - svd/healthy/male/734/861/861-phrase.wav
+  - svd/healthy/male/734/861/861-iau.wav
+  - svd/healthy/male/734/861/861-i_n.wav
+  - svd/healthy/male/734/861/861-i_lhl.wav
+  - svd/healthy/male/734/861/861-a_n.wav
+  - svd/healthy/male/734/861/861-a_lhl.wav
+  - svd/healthy/male/734/861/861-u_n.wav
+  - svd/healthy/male/734/861/861-u_lhl.wav
+  gender: male
+  label: normal
+svd_81_151:
+  age: 60
+  audio_keys:
+  - svd/pathological/female/81/151/151-phrase.wav
+  - svd/pathological/female/81/151/151-iau.wav
+  - svd/pathological/female/81/151/151-i_n.wav
+  - svd/pathological/female/81/151/151-i_lhl.wav
+  - svd/pathological/female/81/151/151-a_n.wav
+  - svd/pathological/female/81/151/151-a_lhl.wav
+  - svd/pathological/female/81/151/151-u_n.wav
+  - svd/pathological/female/81/151/151-u_lhl.wav
+  gender: female
+  label: functional
+svd_836_1059:
+  age: 21
+  audio_keys:
+  - svd/healthy/female/836/1059/1059-phrase.wav
+  - svd/healthy/female/836/1059/1059-iau.wav
+  - svd/healthy/female/836/1059/1059-i_n.wav
+  - svd/healthy/female/836/1059/1059-i_lhl.wav
+  - svd/healthy/female/836/1059/1059-a_n.wav
+  - svd/healthy/female/836/1059/1059-a_lhl.wav
+  - svd/healthy/female/836/1059/1059-u_n.wav
+  - svd/healthy/female/836/1059/1059-u_lhl.wav
+  gender: female
+  label: normal
+svd_864_1095:
+  age: 21
+  audio_keys:
+  - svd/healthy/female/864/1095/1095-phrase.wav
+  - svd/healthy/female/864/1095/1095-iau.wav
+  - svd/healthy/female/864/1095/1095-i_n.wav
+  - svd/healthy/female/864/1095/1095-i_lhl.wav
+  - svd/healthy/female/864/1095/1095-a_n.wav
+  - svd/healthy/female/864/1095/1095-a_lhl.wav
+  - svd/healthy/female/864/1095/1095-u_n.wav
+  - svd/healthy/female/864/1095/1095-u_lhl.wav
+  gender: female
+  label: normal
+svd_868_1097:
+  age: 24
+  audio_keys:
+  - svd/healthy/female/868/1097/1097-phrase.wav
+  - svd/healthy/female/868/1097/1097-iau.wav
+  - svd/healthy/female/868/1097/1097-i_n.wav
+  - svd/healthy/female/868/1097/1097-i_lhl.wav
+  - svd/healthy/female/868/1097/1097-a_n.wav
+  - svd/healthy/female/868/1097/1097-a_lhl.wav
+  - svd/healthy/female/868/1097/1097-u_n.wav
+  - svd/healthy/female/868/1097/1097-u_lhl.wav
+  gender: female
+  label: normal
+svd_870_1099:
+  age: 20
+  audio_keys:
+  - svd/healthy/female/870/1099/1099-phrase.wav
+  - svd/healthy/female/870/1099/1099-iau.wav
+  - svd/healthy/female/870/1099/1099-i_n.wav
+  - svd/healthy/female/870/1099/1099-i_lhl.wav
+  - svd/healthy/female/870/1099/1099-a_n.wav
+  - svd/healthy/female/870/1099/1099-a_lhl.wav
+  - svd/healthy/female/870/1099/1099-u_n.wav
+  - svd/healthy/female/870/1099/1099-u_lhl.wav
+  gender: female
+  label: normal
+svd_879_1106:
+  age: 20
+  audio_keys:
+  - svd/healthy/female/879/1106/1106-phrase.wav
+  - svd/healthy/female/879/1106/1106-iau.wav
+  - svd/healthy/female/879/1106/1106-i_n.wav
+  - svd/healthy/female/879/1106/1106-i_lhl.wav
+  - svd/healthy/female/879/1106/1106-a_n.wav
+  - svd/healthy/female/879/1106/1106-a_lhl.wav
+  - svd/healthy/female/879/1106/1106-u_n.wav
+  - svd/healthy/female/879/1106/1106-u_lhl.wav
+  gender: female
+  label: normal
+svd_889_1127:
+  age: 20
+  audio_keys:
+  - svd/healthy/female/889/1127/1127-phrase.wav
+  - svd/healthy/female/889/1127/1127-iau.wav
+  - svd/healthy/female/889/1127/1127-i_n.wav
+  - svd/healthy/female/889/1127/1127-i_lhl.wav
+  - svd/healthy/female/889/1127/1127-a_n.wav
+  - svd/healthy/female/889/1127/1127-a_lhl.wav
+  - svd/healthy/female/889/1127/1127-u_n.wav
+  - svd/healthy/female/889/1127/1127-u_lhl.wav
+  gender: female
+  label: normal
+svd_8_27:
+  age: 20
+  audio_keys:
+  - svd/healthy/female/8/27/27-phrase.wav
+  - svd/healthy/female/8/27/27-iau.wav
+  - svd/healthy/female/8/27/27-i_n.wav
+  - svd/healthy/female/8/27/27-i_lhl.wav
+  - svd/healthy/female/8/27/27-a_n.wav
+  - svd/healthy/female/8/27/27-a_lhl.wav
+  - svd/healthy/female/8/27/27-u_n.wav
+  - svd/healthy/female/8/27/27-u_lhl.wav
+  gender: female
+  label: normal
+svd_909_1145:
+  age: 21
+  audio_keys:
+  - svd/healthy/female/909/1145/1145-phrase.wav
+  - svd/healthy/female/909/1145/1145-iau.wav
+  - svd/healthy/female/909/1145/1145-i_n.wav
+  - svd/healthy/female/909/1145/1145-i_lhl.wav
+  - svd/healthy/female/909/1145/1145-a_n.wav
+  - svd/healthy/female/909/1145/1145-a_lhl.wav
+  - svd/healthy/female/909/1145/1145-u_n.wav
+  - svd/healthy/female/909/1145/1145-u_lhl.wav
+  gender: female
+  label: normal
+svd_910_1146:
+  age: 22
+  audio_keys:
+  - svd/healthy/female/910/1146/1146-phrase.wav
+  - svd/healthy/female/910/1146/1146-iau.wav
+  - svd/healthy/female/910/1146/1146-i_n.wav
+  - svd/healthy/female/910/1146/1146-i_lhl.wav
+  - svd/healthy/female/910/1146/1146-a_n.wav
+  - svd/healthy/female/910/1146/1146-a_lhl.wav
+  - svd/healthy/female/910/1146/1146-u_n.wav
+  - svd/healthy/female/910/1146/1146-u_lhl.wav
+  gender: female
+  label: normal
+svd_921_1172:
+  age: 20
+  audio_keys:
+  - svd/healthy/female/921/1172/1172-phrase.wav
+  - svd/healthy/female/921/1172/1172-iau.wav
+  - svd/healthy/female/921/1172/1172-i_n.wav
+  - svd/healthy/female/921/1172/1172-i_lhl.wav
+  - svd/healthy/female/921/1172/1172-a_n.wav
+  - svd/healthy/female/921/1172/1172-a_lhl.wav
+  - svd/healthy/female/921/1172/1172-u_n.wav
+  - svd/healthy/female/921/1172/1172-u_lhl.wav
+  gender: female
+  label: normal
+svd_933_1180:
+  age: 28
+  audio_keys:
+  - svd/healthy/female/933/1180/1180-phrase.wav
+  - svd/healthy/female/933/1180/1180-iau.wav
+  - svd/healthy/female/933/1180/1180-i_n.wav
+  - svd/healthy/female/933/1180/1180-i_lhl.wav
+  - svd/healthy/female/933/1180/1180-a_n.wav
+  - svd/healthy/female/933/1180/1180-a_lhl.wav
+  - svd/healthy/female/933/1180/1180-u_n.wav
+  - svd/healthy/female/933/1180/1180-u_lhl.wav
+  gender: female
+  label: normal
+svd_939_1208:
+  age: 20
+  audio_keys:
+  - svd/healthy/female/939/1208/1208-phrase.wav
+  - svd/healthy/female/939/1208/1208-iau.wav
+  - svd/healthy/female/939/1208/1208-i_n.wav
+  - svd/healthy/female/939/1208/1208-i_lhl.wav
+  - svd/healthy/female/939/1208/1208-a_n.wav
+  - svd/healthy/female/939/1208/1208-a_lhl.wav
+  - svd/healthy/female/939/1208/1208-u_n.wav
+  - svd/healthy/female/939/1208/1208-u_lhl.wav
+  gender: female
+  label: normal
+svd_953_1347:
+  age: 20
+  audio_keys:
+  - svd/healthy/female/953/1347/1347-phrase.wav
+  - svd/healthy/female/953/1347/1347-iau.wav
+  - svd/healthy/female/953/1347/1347-i_n.wav
+  - svd/healthy/female/953/1347/1347-i_lhl.wav
+  - svd/healthy/female/953/1347/1347-a_n.wav
+  - svd/healthy/female/953/1347/1347-a_lhl.wav
+  - svd/healthy/female/953/1347/1347-u_n.wav
+  - svd/healthy/female/953/1347/1347-u_lhl.wav
+  gender: female
+  label: normal
+svd_955_1357:
+  age: 22
+  audio_keys:
+  - svd/healthy/female/955/1357/1357-phrase.wav
+  - svd/healthy/female/955/1357/1357-iau.wav
+  - svd/healthy/female/955/1357/1357-i_n.wav
+  - svd/healthy/female/955/1357/1357-i_lhl.wav
+  - svd/healthy/female/955/1357/1357-a_n.wav
+  - svd/healthy/female/955/1357/1357-a_lhl.wav
+  - svd/healthy/female/955/1357/1357-u_n.wav
+  - svd/healthy/female/955/1357/1357-u_lhl.wav
+  gender: female
+  label: normal
+svd_958_1349:
+  age: 22
+  audio_keys:
+  - svd/healthy/female/958/1349/1349-phrase.wav
+  - svd/healthy/female/958/1349/1349-iau.wav
+  - svd/healthy/female/958/1349/1349-i_n.wav
+  - svd/healthy/female/958/1349/1349-i_lhl.wav
+  - svd/healthy/female/958/1349/1349-a_n.wav
+  - svd/healthy/female/958/1349/1349-a_lhl.wav
+  - svd/healthy/female/958/1349/1349-u_n.wav
+  - svd/healthy/female/958/1349/1349-u_lhl.wav
+  gender: female
+  label: normal
+svd_959_1350:
+  age: 20
+  audio_keys:
+  - svd/healthy/female/959/1350/1350-phrase.wav
+  - svd/healthy/female/959/1350/1350-iau.wav
+  - svd/healthy/female/959/1350/1350-i_n.wav
+  - svd/healthy/female/959/1350/1350-i_lhl.wav
+  - svd/healthy/female/959/1350/1350-a_n.wav
+  - svd/healthy/female/959/1350/1350-a_lhl.wav
+  - svd/healthy/female/959/1350/1350-u_n.wav
+  - svd/healthy/female/959/1350/1350-u_lhl.wav
+  gender: female
+  label: normal
+svd_968_1363:
+  age: 20
+  audio_keys:
+  - svd/healthy/female/968/1363/1363-phrase.wav
+  - svd/healthy/female/968/1363/1363-iau.wav
+  - svd/healthy/female/968/1363/1363-i_n.wav
+  - svd/healthy/female/968/1363/1363-i_lhl.wav
+  - svd/healthy/female/968/1363/1363-a_n.wav
+  - svd/healthy/female/968/1363/1363-a_lhl.wav
+  - svd/healthy/female/968/1363/1363-u_n.wav
+  - svd/healthy/female/968/1363/1363-u_lhl.wav
+  gender: female
+  label: normal
+svd_970_1364:
+  age: 20
+  audio_keys:
+  - svd/healthy/female/970/1364/1364-phrase.wav
+  - svd/healthy/female/970/1364/1364-iau.wav
+  - svd/healthy/female/970/1364/1364-i_n.wav
+  - svd/healthy/female/970/1364/1364-i_lhl.wav
+  - svd/healthy/female/970/1364/1364-a_n.wav
+  - svd/healthy/female/970/1364/1364-a_lhl.wav
+  - svd/healthy/female/970/1364/1364-u_n.wav
+  - svd/healthy/female/970/1364/1364-u_lhl.wav
+  gender: female
+  label: normal
+svd_979_1371:
+  age: 21
+  audio_keys:
+  - svd/healthy/female/979/1371/1371-phrase.wav
+  - svd/healthy/female/979/1371/1371-iau.wav
+  - svd/healthy/female/979/1371/1371-i_n.wav
+  - svd/healthy/female/979/1371/1371-i_lhl.wav
+  - svd/healthy/female/979/1371/1371-a_n.wav
+  - svd/healthy/female/979/1371/1371-a_lhl.wav
+  - svd/healthy/female/979/1371/1371-u_n.wav
+  - svd/healthy/female/979/1371/1371-u_lhl.wav
+  gender: female
+  label: normal
+svd_983_1374:
+  age: 22
+  audio_keys:
+  - svd/healthy/female/983/1374/1374-phrase.wav
+  - svd/healthy/female/983/1374/1374-iau.wav
+  - svd/healthy/female/983/1374/1374-i_n.wav
+  - svd/healthy/female/983/1374/1374-i_lhl.wav
+  - svd/healthy/female/983/1374/1374-a_n.wav
+  - svd/healthy/female/983/1374/1374-a_lhl.wav
+  - svd/healthy/female/983/1374/1374-u_n.wav
+  - svd/healthy/female/983/1374/1374-u_lhl.wav
+  gender: female
+  label: normal
+svd_987_1522:
+  age: 23
+  audio_keys:
+  - svd/healthy/male/987/1522/1522-phrase.wav
+  - svd/healthy/male/987/1522/1522-iau.wav
+  - svd/healthy/male/987/1522/1522-i_n.wav
+  - svd/healthy/male/987/1522/1522-i_lhl.wav
+  - svd/healthy/male/987/1522/1522-a_n.wav
+  - svd/healthy/male/987/1522/1522-a_lhl.wav
+  - svd/healthy/male/987/1522/1522-u_n.wav
+  - svd/healthy/male/987/1522/1522-u_lhl.wav
+  gender: male
+  label: normal
+svd_997_1515:
+  age: 21
+  audio_keys:
+  - svd/healthy/female/997/1515/1515-phrase.wav
+  - svd/healthy/female/997/1515/1515-iau.wav
+  - svd/healthy/female/997/1515/1515-i_n.wav
+  - svd/healthy/female/997/1515/1515-i_lhl.wav
+  - svd/healthy/female/997/1515/1515-a_n.wav
+  - svd/healthy/female/997/1515/1515-a_lhl.wav
+  - svd/healthy/female/997/1515/1515-u_n.wav
+  - svd/healthy/female/997/1515/1515-u_lhl.wav
+  gender: female
+  label: normal

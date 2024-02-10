@@ -2,37 +2,29 @@ normal:
   female:
     age_stats:
       max: 30
-      mean: 21.69820359281437
+      mean: 21.549700598802396
       min: 20
-      std: 1.9764644285079709
+      std: 2.143723039807736
     total: 835
   male:
     age_stats:
-      max: 38
-      mean: 22.193548387096776
+      max: 32
+      mean: 22.857142857142858
       min: 20
-      std: 2.3523869452485817
-    total: 281
+      std: 2.511225962685875
+    total: 280
 pathological:
   female:
     age_stats:
-      max: 77
-      mean: 37.17102137767221
-      min: 14
-      std: 16.091888474297217
-    total: 2105
+      max: 69
+      mean: 35.84273150543197
+      min: 21
+      std: 14.927641041677607
+    total: 1933
   male:
     age_stats:
-      max: 77
-      mean: 42.920171673819745
-      min: 16
-      std: 20.556007975480757
-    total: 1165
-unclassified:
-  female:
-    age_stats:
-      max: 36
-      mean: 36
-      min: 36
-      std: 0.0
-    total: 14
+      max: 78
+      mean: 39.38452237001209
+      min: 20
+      std: 21.195781762211624
+    total: 827

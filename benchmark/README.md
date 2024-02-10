@@ -23,14 +23,14 @@ task = benchmark.task(stream=1, task=0)
 
 # Train ONLY with train data, and optionally validation data
 for data_point in task.train:
-    audio: np.ndarray = data_point.audio
+    audio: List[np.ndarray] = data_point.audio
     label: Diagnosis = data_point.label
 
 # Validate with validation data
 # or you can combine this with train data if you don't want to validate
 # although we highly recommend that you perform validation
 for data_point in task.val:
-    audio: np.ndarray = data_point.audio
+    audio: List[np.ndarray] = data_point.audio
     label: Diagnosis = data_point.label
 
 # Test with test data
@@ -39,7 +39,7 @@ for data_point in task.val:
 predictions = {}
 for data_point in task.test:
     id: str = data_point.id
-    audio: np.ndarray = data_point.audio
+    audio: List[np.ndarray] = data_point.audio
     label: str = model.classify(audio)
     predictions[id] = label
 

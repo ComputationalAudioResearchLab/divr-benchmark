@@ -1,0 +1,210 @@
+voiced_voice001_0:
+  age: 32
+  audio_keys:
+  - voiced/voice-icar-federico-ii-database-1.0.0/voice001.wav
+  gender: male
+  label: muscle_tension
+voiced_voice018_0:
+  age: 57
+  audio_keys:
+  - voiced/voice-icar-federico-ii-database-1.0.0/voice018.wav
+  gender: female
+  label: muscle_tension
+voiced_voice019_0:
+  age: 46
+  audio_keys:
+  - voiced/voice-icar-federico-ii-database-1.0.0/voice019.wav
+  gender: female
+  label: normal
+voiced_voice020_0:
+  age: 53
+  audio_keys:
+  - voiced/voice-icar-federico-ii-database-1.0.0/voice020.wav
+  gender: male
+  label: organic_structural
+voiced_voice023_0:
+  age: 60
+  audio_keys:
+  - voiced/voice-icar-federico-ii-database-1.0.0/voice023.wav
+  gender: female
+  label: muscle_tension
+voiced_voice032_0:
+  age: 35
+  audio_keys:
+  - voiced/voice-icar-federico-ii-database-1.0.0/voice032.wav
+  gender: male
+  label: normal
+voiced_voice039_0:
+  age: 44
+  audio_keys:
+  - voiced/voice-icar-federico-ii-database-1.0.0/voice039.wav
+  gender: female
+  label: muscle_tension
+voiced_voice044_0:
+  age: 38
+  audio_keys:
+  - voiced/voice-icar-federico-ii-database-1.0.0/voice044.wav
+  gender: female
+  label: organic_inflammatory
+voiced_voice045_0:
+  age: 42
+  audio_keys:
+  - voiced/voice-icar-federico-ii-database-1.0.0/voice045.wav
+  gender: female
+  label: normal
+voiced_voice046_0:
+  age: 43
+  audio_keys:
+  - voiced/voice-icar-federico-ii-database-1.0.0/voice046.wav
+  gender: female
+  label: organic_inflammatory
+voiced_voice047_0:
+  age: 46
+  audio_keys:
+  - voiced/voice-icar-federico-ii-database-1.0.0/voice047.wav
+  gender: male
+  label: organic_inflammatory
+voiced_voice053_0:
+  age: 60
+  audio_keys:
+  - voiced/voice-icar-federico-ii-database-1.0.0/voice053.wav
+  gender: female
+  label: organic_inflammatory
+voiced_voice054_0:
+  age: 46
+  audio_keys:
+  - voiced/voice-icar-federico-ii-database-1.0.0/voice054.wav
+  gender: male
+  label: muscle_tension
+voiced_voice060_0:
+  age: 39
+  audio_keys:
+  - voiced/voice-icar-federico-ii-database-1.0.0/voice060.wav
+  gender: male
+  label: normal
+voiced_voice062_0:
+  age: 36
+  audio_keys:
+  - voiced/voice-icar-federico-ii-database-1.0.0/voice062.wav
+  gender: male
+  label: organic_inflammatory
+voiced_voice066_0:
+  age: 51
+  audio_keys:
+  - voiced/voice-icar-federico-ii-database-1.0.0/voice066.wav
+  gender: female
+  label: organic_inflammatory
+voiced_voice067_0:
+  age: 51
+  audio_keys:
+  - voiced/voice-icar-federico-ii-database-1.0.0/voice067.wav
+  gender: female
+  label: normal
+voiced_voice079_0:
+  age: 52
+  audio_keys:
+  - voiced/voice-icar-federico-ii-database-1.0.0/voice079.wav
+  gender: male
+  label: organic_inflammatory
+voiced_voice096_0:
+  age: 30
+  audio_keys:
+  - voiced/voice-icar-federico-ii-database-1.0.0/voice096.wav
+  gender: female
+  label: normal
+voiced_voice098_0:
+  age: 23
+  audio_keys:
+  - voiced/voice-icar-federico-ii-database-1.0.0/voice098.wav
+  gender: female
+  label: normal
+voiced_voice099_0:
+  age: 29
+  audio_keys:
+  - voiced/voice-icar-federico-ii-database-1.0.0/voice099.wav
+  gender: male
+  label: normal
+voiced_voice116_0:
+  age: 34
+  audio_keys:
+  - voiced/voice-icar-federico-ii-database-1.0.0/voice116.wav
+  gender: female
+  label: functional
+voiced_voice119_0:
+  age: 47
+  audio_keys:
+  - voiced/voice-icar-federico-ii-database-1.0.0/voice119.wav
+  gender: female
+  label: muscle_tension
+voiced_voice125_0:
+  age: 36
+  audio_keys:
+  - voiced/voice-icar-federico-ii-database-1.0.0/voice125.wav
+  gender: female
+  label: normal
+voiced_voice132_0:
+  age: 50
+  audio_keys:
+  - voiced/voice-icar-federico-ii-database-1.0.0/voice132.wav
+  gender: male
+  label: muscle_tension
+voiced_voice136_0:
+  age: 43
+  audio_keys:
+  - voiced/voice-icar-federico-ii-database-1.0.0/voice136.wav
+  gender: female
+  label: organic_neuro_muscular
+voiced_voice160_0:
+  age: 32
+  audio_keys:
+  - voiced/voice-icar-federico-ii-database-1.0.0/voice160.wav
+  gender: female
+  label: muscle_tension
+voiced_voice173_0:
+  age: 57
+  audio_keys:
+  - voiced/voice-icar-federico-ii-database-1.0.0/voice173.wav
+  gender: female
+  label: muscle_tension
+voiced_voice174_0:
+  age: 59
+  audio_keys:
+  - voiced/voice-icar-federico-ii-database-1.0.0/voice174.wav
+  gender: male
+  label: organic_neuro_muscular
+voiced_voice175_0:
+  age: 55
+  audio_keys:
+  - voiced/voice-icar-federico-ii-database-1.0.0/voice175.wav
+  gender: female
+  label: organic_neuro_muscular
+voiced_voice177_0:
+  age: 22
+  audio_keys:
+  - voiced/voice-icar-federico-ii-database-1.0.0/voice177.wav
+  gender: female
+  label: normal
+voiced_voice180_0:
+  age: 26
+  audio_keys:
+  - voiced/voice-icar-federico-ii-database-1.0.0/voice180.wav
+  gender: female
+  label: normal
+voiced_voice182_0:
+  age: 23
+  audio_keys:
+  - voiced/voice-icar-federico-ii-database-1.0.0/voice182.wav
+  gender: female
+  label: normal
+voiced_voice184_0:
+  age: 23
+  audio_keys:
+  - voiced/voice-icar-federico-ii-database-1.0.0/voice184.wav
+  gender: female
+  label: normal
+voiced_voice188_0:
+  age: 31
+  audio_keys:
+  - voiced/voice-icar-federico-ii-database-1.0.0/voice188.wav
+  gender: female
+  label: muscle_tension

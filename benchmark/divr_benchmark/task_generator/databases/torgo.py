@@ -1,5 +1,4 @@
 from pathlib import Path
-from typing import List
 from .Base import Base
 from .gender import Gender
 from ...prepare_dataset.processed import (

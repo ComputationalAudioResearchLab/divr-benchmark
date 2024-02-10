@@ -1,0 +1,2010 @@
+svd_1001_1517_0:
+  age: 23
+  audio_keys:
+  - svd/healthy/male/1001/1517/1517-a_lhl.wav
+  gender: male
+  label: normal
+svd_1003_1519_0:
+  age: 23
+  audio_keys:
+  - svd/healthy/female/1003/1519/1519-a_lhl.wav
+  gender: female
+  label: normal
+svd_1004_1520_0:
+  age: 21
+  audio_keys:
+  - svd/healthy/male/1004/1520/1520-a_lhl.wav
+  gender: male
+  label: normal
+svd_1006_1524_0:
+  age: 21
+  audio_keys:
+  - svd/healthy/male/1006/1524/1524-a_lhl.wav
+  gender: male
+  label: normal
+svd_1008_1527_0:
+  age: 19
+  audio_keys:
+  - svd/healthy/female/1008/1527/1527-a_lhl.wav
+  gender: female
+  label: normal
+svd_1022_1541_0:
+  age: 24
+  audio_keys:
+  - svd/healthy/female/1022/1541/1541-a_lhl.wav
+  gender: female
+  label: normal
+svd_1032_1586_0:
+  age: 25
+  audio_keys:
+  - svd/healthy/male/1032/1586/1586-a_lhl.wav
+  gender: male
+  label: normal
+svd_1040_1699_0:
+  age: 22
+  audio_keys:
+  - svd/healthy/female/1040/1699/1699-a_lhl.wav
+  gender: female
+  label: normal
+svd_1046_1705_0:
+  age: 21
+  audio_keys:
+  - svd/healthy/male/1046/1705/1705-a_lhl.wav
+  gender: male
+  label: normal
+svd_1047_1706_0:
+  age: 24
+  audio_keys:
+  - svd/healthy/male/1047/1706/1706-a_lhl.wav
+  gender: male
+  label: normal
+svd_1048_1707_0:
+  age: 23
+  audio_keys:
+  - svd/healthy/female/1048/1707/1707-a_lhl.wav
+  gender: female
+  label: normal
+svd_1049_1708_0:
+  age: 22
+  audio_keys:
+  - svd/healthy/female/1049/1708/1708-a_lhl.wav
+  gender: female
+  label: normal
+svd_1050_1709_0:
+  age: 26
+  audio_keys:
+  - svd/healthy/male/1050/1709/1709-a_lhl.wav
+  gender: male
+  label: normal
+svd_1053_1724_0:
+  age: 22
+  audio_keys:
+  - svd/healthy/male/1053/1724/1724-a_lhl.wav
+  gender: male
+  label: normal
+svd_1059_1728_0:
+  age: 20
+  audio_keys:
+  - svd/healthy/female/1059/1728/1728-a_lhl.wav
+  gender: female
+  label: normal
+svd_1060_1729_0:
+  age: 21
+  audio_keys:
+  - svd/healthy/female/1060/1729/1729-a_lhl.wav
+  gender: female
+  label: normal
+svd_1068_1737_0:
+  age: 20
+  audio_keys:
+  - svd/healthy/female/1068/1737/1737-a_lhl.wav
+  gender: female
+  label: normal
+svd_1071_1838_0:
+  age: 20
+  audio_keys:
+  - svd/healthy/female/1071/1838/1838-a_lhl.wav
+  gender: female
+  label: normal
+svd_1072_1839_0:
+  age: 28
+  audio_keys:
+  - svd/healthy/female/1072/1839/1839-a_lhl.wav
+  gender: female
+  label: normal
+svd_1085_1852_0:
+  age: 20
+  audio_keys:
+  - svd/healthy/female/1085/1852/1852-a_lhl.wav
+  gender: female
+  label: normal
+svd_1088_1855_0:
+  age: 23
+  audio_keys:
+  - svd/healthy/female/1088/1855/1855-a_lhl.wav
+  gender: female
+  label: normal
+svd_1095_1870_0:
+  age: 25
+  audio_keys:
+  - svd/healthy/female/1095/1870/1870-a_lhl.wav
+  gender: female
+  label: normal
+svd_1097_1872_0:
+  age: 19
+  audio_keys:
+  - svd/healthy/female/1097/1872/1872-a_lhl.wav
+  gender: female
+  label: normal
+svd_1099_1874_0:
+  age: 20
+  audio_keys:
+  - svd/healthy/female/1099/1874/1874-a_lhl.wav
+  gender: female
+  label: normal
+svd_1101_1876_0:
+  age: 22
+  audio_keys:
+  - svd/healthy/male/1101/1876/1876-a_lhl.wav
+  gender: male
+  label: normal
+svd_1112_1915_0:
+  age: 29
+  audio_keys:
+  - svd/healthy/female/1112/1915/1915-a_lhl.wav
+  gender: female
+  label: normal
+svd_1113_1916_0:
+  age: 21
+  audio_keys:
+  - svd/healthy/female/1113/1916/1916-a_lhl.wav
+  gender: female
+  label: normal
+svd_1114_1917_0:
+  age: 21
+  audio_keys:
+  - svd/healthy/male/1114/1917/1917-a_lhl.wav
+  gender: male
+  label: normal
+svd_1120_1923_0:
+  age: 27
+  audio_keys:
+  - svd/healthy/male/1120/1923/1923-a_lhl.wav
+  gender: male
+  label: normal
+svd_1124_1947_0:
+  age: 20
+  audio_keys:
+  - svd/healthy/female/1124/1947/1947-a_lhl.wav
+  gender: female
+  label: normal
+svd_1126_1996_0:
+  age: 19
+  audio_keys:
+  - svd/healthy/female/1126/1996/1996-a_lhl.wav
+  gender: female
+  label: normal
+svd_1127_2018_0:
+  age: 23
+  audio_keys:
+  - svd/healthy/female/1127/2018/2018-a_lhl.wav
+  gender: female
+  label: normal
+svd_1128_2037_0:
+  age: 20
+  audio_keys:
+  - svd/healthy/female/1128/2037/2037-a_lhl.wav
+  gender: female
+  label: normal
+svd_1130_2038_0:
+  age: 24
+  audio_keys:
+  - svd/healthy/female/1130/2038/2038-a_lhl.wav
+  gender: female
+  label: normal
+svd_1131_2039_0:
+  age: 21
+  audio_keys:
+  - svd/healthy/female/1131/2039/2039-a_lhl.wav
+  gender: female
+  label: normal
+svd_1132_2040_0:
+  age: 26
+  audio_keys:
+  - svd/healthy/female/1132/2040/2040-a_lhl.wav
+  gender: female
+  label: normal
+svd_1134_2042_0:
+  age: 20
+  audio_keys:
+  - svd/healthy/female/1134/2042/2042-a_lhl.wav
+  gender: female
+  label: normal
+svd_1138_2046_0:
+  age: 20
+  audio_keys:
+  - svd/healthy/female/1138/2046/2046-a_lhl.wav
+  gender: female
+  label: normal
+svd_1142_2050_0:
+  age: 22
+  audio_keys:
+  - svd/healthy/female/1142/2050/2050-a_lhl.wav
+  gender: female
+  label: normal
+svd_1143_2051_0:
+  age: 20
+  audio_keys:
+  - svd/healthy/female/1143/2051/2051-a_lhl.wav
+  gender: female
+  label: normal
+svd_1144_2052_0:
+  age: 24
+  audio_keys:
+  - svd/healthy/female/1144/2052/2052-a_lhl.wav
+  gender: female
+  label: normal
+svd_1146_2054_0:
+  age: 20
+  audio_keys:
+  - svd/healthy/female/1146/2054/2054-a_lhl.wav
+  gender: female
+  label: normal
+svd_1161_2176_0:
+  age: 24
+  audio_keys:
+  - svd/healthy/male/1161/2176/2176-a_lhl.wav
+  gender: male
+  label: normal
+svd_1162_2177_0:
+  age: 19
+  audio_keys:
+  - svd/healthy/female/1162/2177/2177-a_lhl.wav
+  gender: female
+  label: normal
+svd_1171_2199_0:
+  age: 20
+  audio_keys:
+  - svd/healthy/female/1171/2199/2199-a_lhl.wav
+  gender: female
+  label: normal
+svd_1180_2208_0:
+  age: 19
+  audio_keys:
+  - svd/healthy/female/1180/2208/2208-a_lhl.wav
+  gender: female
+  label: normal
+svd_1182_2210_0:
+  age: 20
+  audio_keys:
+  - svd/healthy/female/1182/2210/2210-a_lhl.wav
+  gender: female
+  label: normal
+svd_1183_2248_0:
+  age: 22
+  audio_keys:
+  - svd/healthy/female/1183/2248/2248-a_lhl.wav
+  gender: female
+  label: normal
+svd_1184_2249_0:
+  age: 24
+  audio_keys:
+  - svd/healthy/male/1184/2249/2249-a_lhl.wav
+  gender: male
+  label: normal
+svd_1188_2253_0:
+  age: 19
+  audio_keys:
+  - svd/healthy/female/1188/2253/2253-a_lhl.wav
+  gender: female
+  label: normal
+svd_1190_2255_0:
+  age: 20
+  audio_keys:
+  - svd/healthy/female/1190/2255/2255-a_lhl.wav
+  gender: female
+  label: normal
+svd_1191_2256_0:
+  age: 19
+  audio_keys:
+  - svd/healthy/female/1191/2256/2256-a_lhl.wav
+  gender: female
+  label: normal
+svd_1194_2259_0:
+  age: 20
+  audio_keys:
+  - svd/healthy/female/1194/2259/2259-a_lhl.wav
+  gender: female
+  label: normal
+svd_1195_2260_0:
+  age: 19
+  audio_keys:
+  - svd/healthy/female/1195/2260/2260-a_lhl.wav
+  gender: female
+  label: normal
+svd_1199_2264_0:
+  age: 21
+  audio_keys:
+  - svd/healthy/female/1199/2264/2264-a_lhl.wav
+  gender: female
+  label: normal
+svd_119_103_0:
+  age: 21
+  audio_keys:
+  - svd/healthy/male/119/103/103-a_lhl.wav
+  gender: male
+  label: normal
+svd_1204_2282_0:
+  age: 19
+  audio_keys:
+  - svd/healthy/female/1204/2282/2282-a_lhl.wav
+  gender: female
+  label: normal
+svd_1208_2286_0:
+  age: 20
+  audio_keys:
+  - svd/healthy/female/1208/2286/2286-a_lhl.wav
+  gender: female
+  label: normal
+svd_123_113_0:
+  age: 18
+  audio_keys:
+  - svd/healthy/female/123/113/113-a_lhl.wav
+  gender: female
+  label: normal
+svd_1301_101_0:
+  age: 69
+  audio_keys:
+  - svd/pathological/female/1301/101/101-a_lhl.wav
+  gender: female
+  label: organic
+svd_1305_108_0:
+  age: 65
+  audio_keys:
+  - svd/pathological/female/1305/108/108-a_lhl.wav
+  gender: female
+  label: organic
+svd_1307_2120_0:
+  age: 66
+  audio_keys:
+  - svd/pathological/male/1307/2120/2120-a_lhl.wav
+  gender: male
+  label: organic
+svd_130_123_0:
+  age: 20
+  audio_keys:
+  - svd/healthy/female/130/123/123-a_lhl.wav
+  gender: female
+  label: normal
+svd_1311_1269_0:
+  age: 58
+  audio_keys:
+  - svd/pathological/male/1311/1269/1269-a_lhl.wav
+  gender: male
+  label: organic
+svd_1311_1614_0:
+  age: 59
+  audio_keys:
+  - svd/pathological/male/1311/1614/1614-a_lhl.wav
+  gender: male
+  label: organic
+svd_1312_120_0:
+  age: 49
+  audio_keys:
+  - svd/pathological/female/1312/120/120-a_lhl.wav
+  gender: female
+  label: organic
+svd_1316_130_0:
+  age: 60
+  audio_keys:
+  - svd/pathological/female/1316/130/130-a_lhl.wav
+  gender: female
+  label: organic
+svd_1317_131_0:
+  age: 48
+  audio_keys:
+  - svd/pathological/male/1317/131/131-a_lhl.wav
+  gender: male
+  label: organic
+svd_1319_1464_0:
+  age: 46
+  audio_keys:
+  - svd/pathological/female/1319/1464/1464-a_lhl.wav
+  gender: female
+  label: muscle_tension
+svd_1324_146_0:
+  age: 56
+  audio_keys:
+  - svd/pathological/male/1324/146/146-a_lhl.wav
+  gender: male
+  label: organic
+svd_1340_1090_0:
+  age: 59
+  audio_keys:
+  - svd/pathological/female/1340/1090/1090-a_lhl.wav
+  gender: female
+  label: organic
+svd_1343_357_0:
+  age: 54
+  audio_keys:
+  - svd/pathological/female/1343/357/357-a_lhl.wav
+  gender: female
+  label: organic
+svd_1358_878_0:
+  age: 58
+  audio_keys:
+  - svd/pathological/female/1358/878/878-a_lhl.wav
+  gender: female
+  label: functional
+svd_135_133_0:
+  age: 21
+  audio_keys:
+  - svd/healthy/female/135/133/133-a_lhl.wav
+  gender: female
+  label: normal
+svd_1365_493_0:
+  age: 37
+  audio_keys:
+  - svd/pathological/male/1365/493/493-a_lhl.wav
+  gender: male
+  label: organic
+svd_1372_499_0:
+  age: 28
+  audio_keys:
+  - svd/pathological/female/1372/499/499-a_lhl.wav
+  gender: female
+  label: muscle_tension
+svd_1383_627_0:
+  age: 45
+  audio_keys:
+  - svd/pathological/female/1383/627/627-a_lhl.wav
+  gender: female
+  label: organic
+svd_1386_1206_0:
+  age: 65
+  audio_keys:
+  - svd/pathological/female/1386/1206/1206-a_lhl.wav
+  gender: female
+  label: organic
+svd_1388_631_0:
+  age: 62
+  audio_keys:
+  - svd/pathological/male/1388/631/631-a_lhl.wav
+  gender: male
+  label: functional
+svd_1393_666_0:
+  age: 23
+  audio_keys:
+  - svd/pathological/female/1393/666/666-a_lhl.wav
+  gender: female
+  label: normal
+svd_1396_669_0:
+  age: 29
+  audio_keys:
+  - svd/pathological/female/1396/669/669-a_lhl.wav
+  gender: female
+  label: muscle_tension
+svd_1397_1564_0:
+  age: 78
+  audio_keys:
+  - svd/pathological/male/1397/1564/1564-a_lhl.wav
+  gender: male
+  label: organic
+svd_1398_671_0:
+  age: 66
+  audio_keys:
+  - svd/pathological/female/1398/671/671-a_lhl.wav
+  gender: female
+  label: organic
+svd_1407_1303_0:
+  age: 64
+  audio_keys:
+  - svd/pathological/female/1407/1303/1303-a_lhl.wav
+  gender: female
+  label: organic
+svd_1407_1557_0:
+  age: 65
+  audio_keys:
+  - svd/pathological/female/1407/1557/1557-a_lhl.wav
+  gender: female
+  label: organic
+svd_1417_724_0:
+  age: 45
+  audio_keys:
+  - svd/pathological/female/1417/724/724-a_lhl.wav
+  gender: female
+  label: muscle_tension
+svd_1421_729_0:
+  age: 36
+  audio_keys:
+  - svd/pathological/female/1421/729/729-a_lhl.wav
+  gender: female
+  label: functional
+svd_1423_731_0:
+  age: 66
+  audio_keys:
+  - svd/pathological/male/1423/731/731-a_lhl.wav
+  gender: male
+  label: organic
+svd_1429_817_0:
+  age: 35
+  audio_keys:
+  - svd/pathological/female/1429/817/817-a_lhl.wav
+  gender: female
+  label: normal
+svd_142_495_0:
+  age: 54
+  audio_keys:
+  - svd/pathological/female/142/495/495-a_lhl.wav
+  gender: female
+  label: organic
+svd_1437_825_0:
+  age: 49
+  audio_keys:
+  - svd/pathological/female/1437/825/825-a_lhl.wav
+  gender: female
+  label: organic
+svd_1447_848_0:
+  age: 50
+  audio_keys:
+  - svd/pathological/female/1447/848/848-a_lhl.wav
+  gender: female
+  label: functional
+svd_1448_2455_0:
+  age: 78
+  audio_keys:
+  - svd/pathological/male/1448/2455/2455-a_lhl.wav
+  gender: male
+  label: organic
+svd_1448_849_0:
+  age: 73
+  audio_keys:
+  - svd/pathological/male/1448/849/849-a_lhl.wav
+  gender: male
+  label: organic
+svd_1448_896_0:
+  age: 74
+  audio_keys:
+  - svd/pathological/male/1448/896/896-a_lhl.wav
+  gender: male
+  label: organic
+svd_1450_851_0:
+  age: 53
+  audio_keys:
+  - svd/pathological/female/1450/851/851-a_lhl.wav
+  gender: female
+  label: functional
+svd_1462_869_0:
+  age: 67
+  audio_keys:
+  - svd/pathological/female/1462/869/869-a_lhl.wav
+  gender: female
+  label: organic
+svd_1473_880_0:
+  age: 56
+  audio_keys:
+  - svd/pathological/female/1473/880/880-a_lhl.wav
+  gender: female
+  label: organic
+svd_1480_886_0:
+  age: 50
+  audio_keys:
+  - svd/pathological/female/1480/886/886-a_lhl.wav
+  gender: female
+  label: organic
+svd_1482_888_0:
+  age: 43
+  audio_keys:
+  - svd/pathological/female/1482/888/888-a_lhl.wav
+  gender: female
+  label: muscle_tension
+svd_1490_898_0:
+  age: 28
+  audio_keys:
+  - svd/pathological/female/1490/898/898-a_lhl.wav
+  gender: female
+  label: muscle_tension
+svd_1495_918_0:
+  age: 68
+  audio_keys:
+  - svd/pathological/male/1495/918/918-a_lhl.wav
+  gender: male
+  label: organic
+svd_1499_1459_0:
+  age: 50
+  audio_keys:
+  - svd/pathological/female/1499/1459/1459-a_lhl.wav
+  gender: female
+  label: functional
+svd_1505_1468_0:
+  age: 39
+  audio_keys:
+  - svd/pathological/female/1505/1468/1468-a_lhl.wav
+  gender: female
+  label: muscle_tension
+svd_1510_917_0:
+  age: 58
+  audio_keys:
+  - svd/pathological/female/1510/917/917-a_lhl.wav
+  gender: female
+  label: functional
+svd_1527_935_0:
+  age: 32
+  audio_keys:
+  - svd/pathological/male/1527/935/935-a_lhl.wav
+  gender: male
+  label: organic
+svd_1529_937_0:
+  age: 14
+  audio_keys:
+  - svd/pathological/female/1529/937/937-a_lhl.wav
+  gender: female
+  label: functional
+svd_1531_939_0:
+  age: 39
+  audio_keys:
+  - svd/pathological/male/1531/939/939-a_lhl.wav
+  gender: male
+  label: normal
+svd_1533_1037_0:
+  age: 50
+  audio_keys:
+  - svd/pathological/female/1533/1037/1037-a_lhl.wav
+  gender: female
+  label: muscle_tension
+svd_1538_1042_0:
+  age: 47
+  audio_keys:
+  - svd/pathological/male/1538/1042/1042-a_lhl.wav
+  gender: male
+  label: functional
+svd_1542_1046_0:
+  age: 47
+  audio_keys:
+  - svd/pathological/female/1542/1046/1046-a_lhl.wav
+  gender: female
+  label: organic
+svd_1545_1049_0:
+  age: 50
+  audio_keys:
+  - svd/pathological/female/1545/1049/1049-a_lhl.wav
+  gender: female
+  label: organic
+svd_1551_1053_0:
+  age: 37
+  audio_keys:
+  - svd/pathological/female/1551/1053/1053-a_lhl.wav
+  gender: female
+  label: functional
+svd_1555_1083_0:
+  age: 50
+  audio_keys:
+  - svd/pathological/male/1555/1083/1083-a_lhl.wav
+  gender: male
+  label: muscle_tension
+svd_1555_1649_0:
+  age: 51
+  audio_keys:
+  - svd/pathological/male/1555/1649/1649-a_lhl.wav
+  gender: male
+  label: organic
+svd_1562_1088_0:
+  age: 55
+  audio_keys:
+  - svd/pathological/female/1562/1088/1088-a_lhl.wav
+  gender: female
+  label: muscle_tension
+svd_1563_1113_0:
+  age: 26
+  audio_keys:
+  - svd/pathological/female/1563/1113/1113-a_lhl.wav
+  gender: female
+  label: muscle_tension
+svd_1574_1157_0:
+  age: 60
+  audio_keys:
+  - svd/pathological/male/1574/1157/1157-a_lhl.wav
+  gender: male
+  label: organic
+svd_1581_1166_0:
+  age: 54
+  audio_keys:
+  - svd/pathological/female/1581/1166/1166-a_lhl.wav
+  gender: female
+  label: organic
+svd_1596_1200_0:
+  age: 44
+  audio_keys:
+  - svd/pathological/female/1596/1200/1200-a_lhl.wav
+  gender: female
+  label: functional
+svd_1597_1201_0:
+  age: 35
+  audio_keys:
+  - svd/pathological/female/1597/1201/1201-a_lhl.wav
+  gender: female
+  label: organic
+svd_1602_1205_0:
+  age: 46
+  audio_keys:
+  - svd/pathological/male/1602/1205/1205-a_lhl.wav
+  gender: male
+  label: organic
+svd_1617_1447_0:
+  age: 38
+  audio_keys:
+  - svd/pathological/female/1617/1447/1447-a_lhl.wav
+  gender: female
+  label: organic
+svd_1621_1246_0:
+  age: 53
+  audio_keys:
+  - svd/pathological/male/1621/1246/1246-a_lhl.wav
+  gender: male
+  label: organic
+svd_1625_1239_0:
+  age: 57
+  audio_keys:
+  - svd/pathological/male/1625/1239/1239-a_lhl.wav
+  gender: male
+  label: organic
+svd_1634_1248_0:
+  age: 59
+  audio_keys:
+  - svd/pathological/female/1634/1248/1248-a_lhl.wav
+  gender: female
+  label: organic
+svd_1645_1259_0:
+  age: 47
+  audio_keys:
+  - svd/pathological/male/1645/1259/1259-a_lhl.wav
+  gender: male
+  label: organic
+svd_1646_1264_0:
+  age: 65
+  audio_keys:
+  - svd/pathological/male/1646/1264/1264-a_lhl.wav
+  gender: male
+  label: organic
+svd_1659_1403_0:
+  age: 64
+  audio_keys:
+  - svd/pathological/male/1659/1403/1403-a_lhl.wav
+  gender: male
+  label: organic
+svd_1659_1465_0:
+  age: 64
+  audio_keys:
+  - svd/pathological/male/1659/1465/1465-a_lhl.wav
+  gender: male
+  label: organic
+svd_1663_1281_0:
+  age: 22
+  audio_keys:
+  - svd/pathological/female/1663/1281/1281-a_lhl.wav
+  gender: female
+  label: functional
+svd_1663_1592_0:
+  age: 23
+  audio_keys:
+  - svd/pathological/female/1663/1592/1592-a_lhl.wav
+  gender: female
+  label: normal
+svd_1679_1294_0:
+  age: 39
+  audio_keys:
+  - svd/pathological/female/1679/1294/1294-a_lhl.wav
+  gender: female
+  label: muscle_tension
+svd_1680_1295_0:
+  age: 41
+  audio_keys:
+  - svd/pathological/female/1680/1295/1295-a_lhl.wav
+  gender: female
+  label: organic
+svd_1685_1300_0:
+  age: 30
+  audio_keys:
+  - svd/pathological/female/1685/1300/1300-a_lhl.wav
+  gender: female
+  label: organic
+svd_1686_1301_0:
+  age: 60
+  audio_keys:
+  - svd/pathological/male/1686/1301/1301-a_lhl.wav
+  gender: male
+  label: organic
+svd_1693_1315_0:
+  age: 57
+  audio_keys:
+  - svd/pathological/male/1693/1315/1315-a_lhl.wav
+  gender: male
+  label: organic
+svd_1699_1322_0:
+  age: 51
+  audio_keys:
+  - svd/pathological/female/1699/1322/1322-a_lhl.wav
+  gender: female
+  label: functional
+svd_1699_1340_0:
+  age: 51
+  audio_keys:
+  - svd/pathological/female/1699/1340/1340-a_lhl.wav
+  gender: female
+  label: organic
+svd_1699_1432_0:
+  age: 51
+  audio_keys:
+  - svd/pathological/female/1699/1432/1432-a_lhl.wav
+  gender: female
+  label: functional
+svd_1700_1316_0:
+  age: 12
+  audio_keys:
+  - svd/pathological/male/1700/1316/1316-a_lhl.wav
+  gender: male
+  label: functional
+svd_1712_1327_0:
+  age: 36
+  audio_keys:
+  - svd/pathological/female/1712/1327/1327-a_lhl.wav
+  gender: female
+  label: muscle_tension
+svd_1714_1329_0:
+  age: 51
+  audio_keys:
+  - svd/pathological/female/1714/1329/1329-a_lhl.wav
+  gender: female
+  label: functional
+svd_1714_2246_0:
+  age: 54
+  audio_keys:
+  - svd/pathological/female/1714/2246/2246-a_lhl.wav
+  gender: female
+  label: functional
+svd_1716_1664_0:
+  age: 60
+  audio_keys:
+  - svd/pathological/female/1716/1664/1664-a_lhl.wav
+  gender: female
+  label: organic
+svd_1716_1713_0:
+  age: 60
+  audio_keys:
+  - svd/pathological/female/1716/1713/1713-a_lhl.wav
+  gender: female
+  label: organic
+svd_1727_1608_0:
+  age: 39
+  audio_keys:
+  - svd/pathological/female/1727/1608/1608-a_lhl.wav
+  gender: female
+  label: muscle_tension
+svd_1729_1380_0:
+  age: 48
+  audio_keys:
+  - svd/pathological/female/1729/1380/1380-a_lhl.wav
+  gender: female
+  label: muscle_tension
+svd_1729_1435_0:
+  age: 48
+  audio_keys:
+  - svd/pathological/female/1729/1435/1435-a_lhl.wav
+  gender: female
+  label: functional
+svd_1741_1433_0:
+  age: 57
+  audio_keys:
+  - svd/pathological/male/1741/1433/1433-a_lhl.wav
+  gender: male
+  label: organic
+svd_1772_1424_0:
+  age: 62
+  audio_keys:
+  - svd/pathological/male/1772/1424/1424-a_lhl.wav
+  gender: male
+  label: organic
+svd_1782_1441_0:
+  age: 36
+  audio_keys:
+  - svd/pathological/female/1782/1441/1441-a_lhl.wav
+  gender: female
+  label: functional
+svd_1787_1652_0:
+  age: 70
+  audio_keys:
+  - svd/pathological/male/1787/1652/1652-a_lhl.wav
+  gender: male
+  label: organic
+svd_1787_1666_0:
+  age: 70
+  audio_keys:
+  - svd/pathological/male/1787/1666/1666-a_lhl.wav
+  gender: male
+  label: organic
+svd_1787_1769_0:
+  age: 70
+  audio_keys:
+  - svd/pathological/male/1787/1769/1769-a_lhl.wav
+  gender: male
+  label: organic
+svd_1787_1914_0:
+  age: 71
+  audio_keys:
+  - svd/pathological/male/1787/1914/1914-a_lhl.wav
+  gender: male
+  label: organic
+svd_1787_2159_0:
+  age: 72
+  audio_keys:
+  - svd/pathological/male/1787/2159/2159-a_lhl.wav
+  gender: male
+  label: organic
+svd_1787_2373_0:
+  age: 72
+  audio_keys:
+  - svd/pathological/male/1787/2373/2373-a_lhl.wav
+  gender: male
+  label: organic
+svd_1789_1442_0:
+  age: 31
+  audio_keys:
+  - svd/pathological/female/1789/1442/1442-a_lhl.wav
+  gender: female
+  label: muscle_tension
+svd_1790_1443_0:
+  age: 53
+  audio_keys:
+  - svd/pathological/female/1790/1443/1443-a_lhl.wav
+  gender: female
+  label: muscle_tension
+svd_1818_1676_0:
+  age: 60
+  audio_keys:
+  - svd/pathological/female/1818/1676/1676-a_lhl.wav
+  gender: female
+  label: organic
+svd_1818_2536_0:
+  age: 64
+  audio_keys:
+  - svd/pathological/female/1818/2536/2536-a_lhl.wav
+  gender: female
+  label: organic
+svd_1851_1545_0:
+  age: 67
+  audio_keys:
+  - svd/pathological/male/1851/1545/1545-a_lhl.wav
+  gender: male
+  label: organic
+svd_1854_1547_0:
+  age: 63
+  audio_keys:
+  - svd/pathological/female/1854/1547/1547-a_lhl.wav
+  gender: female
+  label: organic
+svd_1877_1570_0:
+  age: 68
+  audio_keys:
+  - svd/pathological/female/1877/1570/1570-a_lhl.wav
+  gender: female
+  label: organic
+svd_1911_1611_0:
+  age: 46
+  audio_keys:
+  - svd/pathological/female/1911/1611/1611-a_lhl.wav
+  gender: female
+  label: functional
+svd_1926_1627_0:
+  age: 55
+  audio_keys:
+  - svd/pathological/female/1926/1627/1627-a_lhl.wav
+  gender: female
+  label: functional
+svd_1928_1665_0:
+  age: 51
+  audio_keys:
+  - svd/pathological/male/1928/1665/1665-a_lhl.wav
+  gender: male
+  label: organic
+svd_1944_1532_0:
+  age: 21
+  audio_keys:
+  - svd/healthy/male/1944/1532/1532-a_lhl.wav
+  gender: male
+  label: normal
+svd_1947_1648_0:
+  age: 36
+  audio_keys:
+  - svd/pathological/female/1947/1648/1648-a_lhl.wav
+  gender: female
+  label: muscle_tension
+svd_1955_1656_0:
+  age: 43
+  audio_keys:
+  - svd/pathological/female/1955/1656/1656-a_lhl.wav
+  gender: female
+  label: organic
+svd_1966_1778_0:
+  age: 53
+  audio_keys:
+  - svd/pathological/female/1966/1778/1778-a_lhl.wav
+  gender: female
+  label: organic
+svd_1973_1673_0:
+  age: 49
+  audio_keys:
+  - svd/pathological/female/1973/1673/1673-a_lhl.wav
+  gender: female
+  label: functional
+svd_2000_1749_0:
+  age: 57
+  audio_keys:
+  - svd/pathological/male/2000/1749/1749-a_lhl.wav
+  gender: male
+  label: organic
+svd_2000_1913_0:
+  age: 57
+  audio_keys:
+  - svd/pathological/male/2000/1913/1913-a_lhl.wav
+  gender: male
+  label: organic
+svd_2001_1717_0:
+  age: 61
+  audio_keys:
+  - svd/pathological/female/2001/1717/1717-a_lhl.wav
+  gender: female
+  label: organic
+svd_2001_2491_0:
+  age: 64
+  audio_keys:
+  - svd/pathological/female/2001/2491/2491-a_lhl.wav
+  gender: female
+  label: organic
+svd_2004_1719_0:
+  age: 30
+  audio_keys:
+  - svd/pathological/male/2004/1719/1719-a_lhl.wav
+  gender: male
+  label: organic
+svd_2008_1744_0:
+  age: 68
+  audio_keys:
+  - svd/pathological/female/2008/1744/1744-a_lhl.wav
+  gender: female
+  label: functional
+svd_2019_2151_0:
+  age: 60
+  audio_keys:
+  - svd/pathological/female/2019/2151/2151-a_lhl.wav
+  gender: female
+  label: muscle_tension
+svd_2027_1763_0:
+  age: 35
+  audio_keys:
+  - svd/pathological/female/2027/1763/1763-a_lhl.wav
+  gender: female
+  label: organic
+svd_2027_1797_0:
+  age: 36
+  audio_keys:
+  - svd/pathological/female/2027/1797/1797-a_lhl.wav
+  gender: female
+  label: organic
+svd_2027_1804_0:
+  age: 36
+  audio_keys:
+  - svd/pathological/female/2027/1804/1804-a_lhl.wav
+  gender: female
+  label: organic
+svd_2027_1817_0:
+  age: 36
+  audio_keys:
+  - svd/pathological/female/2027/1817/1817-a_lhl.wav
+  gender: female
+  label: organic
+svd_2027_1834_0:
+  age: 36
+  audio_keys:
+  - svd/pathological/female/2027/1834/1834-a_lhl.wav
+  gender: female
+  label: organic
+svd_2027_2030_0:
+  age: 36
+  audio_keys:
+  - svd/pathological/female/2027/2030/2030-a_lhl.wav
+  gender: female
+  label: organic
+svd_2028_1764_0:
+  age: 78
+  audio_keys:
+  - svd/pathological/male/2028/1764/1764-a_lhl.wav
+  gender: male
+  label: organic
+svd_2032_1798_0:
+  age: 57
+  audio_keys:
+  - svd/pathological/female/2032/1798/1798-a_lhl.wav
+  gender: female
+  label: functional
+svd_2050_1786_0:
+  age: 56
+  audio_keys:
+  - svd/pathological/female/2050/1786/1786-a_lhl.wav
+  gender: female
+  label: muscle_tension
+svd_2056_1792_0:
+  age: 29
+  audio_keys:
+  - svd/pathological/female/2056/1792/1792-a_lhl.wav
+  gender: female
+  label: muscle_tension
+svd_2065_1929_0:
+  age: 23
+  audio_keys:
+  - svd/pathological/female/2065/1929/1929-a_lhl.wav
+  gender: female
+  label: muscle_tension
+svd_2069_1803_0:
+  age: 71
+  audio_keys:
+  - svd/pathological/female/2069/1803/1803-a_lhl.wav
+  gender: female
+  label: organic
+svd_2074_1809_0:
+  age: 31
+  audio_keys:
+  - svd/pathological/female/2074/1809/1809-a_lhl.wav
+  gender: female
+  label: organic
+svd_2078_2031_0:
+  age: 72
+  audio_keys:
+  - svd/pathological/female/2078/2031/2031-a_lhl.wav
+  gender: female
+  label: organic
+svd_2086_1822_0:
+  age: 26
+  audio_keys:
+  - svd/pathological/female/2086/1822/1822-a_lhl.wav
+  gender: female
+  label: muscle_tension
+svd_2088_2482_0:
+  age: 49
+  audio_keys:
+  - svd/pathological/female/2088/2482/2482-a_lhl.wav
+  gender: female
+  label: muscle_tension
+svd_2091_1826_0:
+  age: 57
+  audio_keys:
+  - svd/pathological/female/2091/1826/1826-a_lhl.wav
+  gender: female
+  label: organic
+svd_2091_1835_0:
+  age: 57
+  audio_keys:
+  - svd/pathological/female/2091/1835/1835-a_lhl.wav
+  gender: female
+  label: organic
+svd_2100_1832_0:
+  age: 62
+  audio_keys:
+  - svd/pathological/male/2100/1832/1832-a_lhl.wav
+  gender: male
+  label: organic
+svd_2103_1836_0:
+  age: 57
+  audio_keys:
+  - svd/pathological/female/2103/1836/1836-a_lhl.wav
+  gender: female
+  label: organic
+svd_2108_1867_0:
+  age: 74
+  audio_keys:
+  - svd/pathological/female/2108/1867/1867-a_lhl.wav
+  gender: female
+  label: organic
+svd_2112_1888_0:
+  age: 31
+  audio_keys:
+  - svd/pathological/female/2112/1888/1888-a_lhl.wav
+  gender: female
+  label: muscle_tension
+svd_2115_1890_0:
+  age: 42
+  audio_keys:
+  - svd/pathological/female/2115/1890/1890-a_lhl.wav
+  gender: female
+  label: organic
+svd_2123_1899_0:
+  age: 20
+  audio_keys:
+  - svd/pathological/female/2123/1899/1899-a_lhl.wav
+  gender: female
+  label: functional
+svd_2126_1841_0:
+  age: 22
+  audio_keys:
+  - svd/healthy/male/2126/1841/1841-a_lhl.wav
+  gender: male
+  label: normal
+svd_2130_1943_0:
+  age: 38
+  audio_keys:
+  - svd/pathological/male/2130/1943/1943-a_lhl.wav
+  gender: male
+  label: organic
+svd_2132_1910_0:
+  age: 26
+  audio_keys:
+  - svd/pathological/female/2132/1910/1910-a_lhl.wav
+  gender: female
+  label: functional
+svd_2148_2194_0:
+  age: 60
+  audio_keys:
+  - svd/pathological/female/2148/2194/2194-a_lhl.wav
+  gender: female
+  label: organic
+svd_2152_1940_0:
+  age: 55
+  audio_keys:
+  - svd/pathological/female/2152/1940/1940-a_lhl.wav
+  gender: female
+  label: organic
+svd_2161_1952_0:
+  age: 45
+  audio_keys:
+  - svd/pathological/female/2161/1952/1952-a_lhl.wav
+  gender: female
+  label: muscle_tension
+svd_2176_1966_0:
+  age: 57
+  audio_keys:
+  - svd/pathological/male/2176/1966/1966-a_lhl.wav
+  gender: male
+  label: functional
+svd_2193_1983_0:
+  age: 57
+  audio_keys:
+  - svd/pathological/female/2193/1983/1983-a_lhl.wav
+  gender: female
+  label: muscle_tension
+svd_2198_1988_0:
+  age: 49
+  audio_keys:
+  - svd/pathological/female/2198/1988/1988-a_lhl.wav
+  gender: female
+  label: functional
+svd_2220_2012_0:
+  age: 49
+  audio_keys:
+  - svd/pathological/female/2220/2012/2012-a_lhl.wav
+  gender: female
+  label: muscle_tension
+svd_2222_2014_0:
+  age: 52
+  audio_keys:
+  - svd/pathological/female/2222/2014/2014-a_lhl.wav
+  gender: female
+  label: organic
+svd_2234_2025_0:
+  age: 60
+  audio_keys:
+  - svd/pathological/female/2234/2025/2025-a_lhl.wav
+  gender: female
+  label: functional
+svd_2251_2062_0:
+  age: 28
+  audio_keys:
+  - svd/pathological/female/2251/2062/2062-a_lhl.wav
+  gender: female
+  label: muscle_tension
+svd_2258_2069_0:
+  age: 51
+  audio_keys:
+  - svd/pathological/male/2258/2069/2069-a_lhl.wav
+  gender: male
+  label: organic
+svd_2269_2080_0:
+  age: 44
+  audio_keys:
+  - svd/pathological/female/2269/2080/2080-a_lhl.wav
+  gender: female
+  label: muscle_tension
+svd_2281_2098_0:
+  age: 61
+  audio_keys:
+  - svd/pathological/female/2281/2098/2098-a_lhl.wav
+  gender: female
+  label: organic
+svd_2304_2114_0:
+  age: 38
+  audio_keys:
+  - svd/pathological/female/2304/2114/2114-a_lhl.wav
+  gender: female
+  label: muscle_tension
+svd_2313_2124_0:
+  age: 64
+  audio_keys:
+  - svd/pathological/female/2313/2124/2124-a_lhl.wav
+  gender: female
+  label: muscle_tension
+svd_2326_2137_0:
+  age: 31
+  audio_keys:
+  - svd/pathological/female/2326/2137/2137-a_lhl.wav
+  gender: female
+  label: organic
+svd_2357_2430_0:
+  age: 41
+  audio_keys:
+  - svd/pathological/female/2357/2430/2430-a_lhl.wav
+  gender: female
+  label: organic
+svd_2375_2214_0:
+  age: 77
+  audio_keys:
+  - svd/pathological/male/2375/2214/2214-a_lhl.wav
+  gender: male
+  label: organic
+svd_2383_2221_0:
+  age: 29
+  audio_keys:
+  - svd/pathological/female/2383/2221/2221-a_lhl.wav
+  gender: female
+  label: muscle_tension
+svd_2393_2231_0:
+  age: 37
+  audio_keys:
+  - svd/pathological/male/2393/2231/2231-a_lhl.wav
+  gender: male
+  label: functional
+svd_23_1359_0:
+  age: 23
+  audio_keys:
+  - svd/healthy/female/23/1359/1359-a_lhl.wav
+  gender: female
+  label: normal
+svd_2408_2247_0:
+  age: 48
+  audio_keys:
+  - svd/pathological/female/2408/2247/2247-a_lhl.wav
+  gender: female
+  label: organic
+svd_2418_2274_0:
+  age: 47
+  audio_keys:
+  - svd/pathological/female/2418/2274/2274-a_lhl.wav
+  gender: female
+  label: organic
+svd_2422_2288_0:
+  age: 49
+  audio_keys:
+  - svd/pathological/female/2422/2288/2288-a_lhl.wav
+  gender: female
+  label: muscle_tension
+svd_2426_2292_0:
+  age: 35
+  audio_keys:
+  - svd/pathological/female/2426/2292/2292-a_lhl.wav
+  gender: female
+  label: muscle_tension
+svd_2435_2301_0:
+  age: 47
+  audio_keys:
+  - svd/pathological/male/2435/2301/2301-a_lhl.wav
+  gender: male
+  label: organic
+svd_2446_2312_0:
+  age: 36
+  audio_keys:
+  - svd/pathological/female/2446/2312/2312-a_lhl.wav
+  gender: female
+  label: functional
+svd_2462_2328_0:
+  age: 64
+  audio_keys:
+  - svd/pathological/male/2462/2328/2328-a_lhl.wav
+  gender: male
+  label: organic
+svd_2467_2504_0:
+  age: 32
+  audio_keys:
+  - svd/pathological/female/2467/2504/2504-a_lhl.wav
+  gender: female
+  label: functional
+svd_2476_2342_0:
+  age: 65
+  audio_keys:
+  - svd/pathological/male/2476/2342/2342-a_lhl.wav
+  gender: male
+  label: organic
+svd_24_23_0:
+  age: 26
+  audio_keys:
+  - svd/healthy/female/24/23/23-a_lhl.wav
+  gender: female
+  label: normal
+svd_2504_2370_0:
+  age: 48
+  audio_keys:
+  - svd/pathological/female/2504/2370/2370-a_lhl.wav
+  gender: female
+  label: organic
+svd_2506_2372_0:
+  age: 67
+  audio_keys:
+  - svd/pathological/female/2506/2372/2372-a_lhl.wav
+  gender: female
+  label: functional
+svd_2508_2374_0:
+  age: 40
+  audio_keys:
+  - svd/pathological/female/2508/2374/2374-a_lhl.wav
+  gender: female
+  label: muscle_tension
+svd_2509_2375_0:
+  age: 52
+  audio_keys:
+  - svd/pathological/female/2509/2375/2375-a_lhl.wav
+  gender: female
+  label: organic
+svd_2512_2378_0:
+  age: 47
+  audio_keys:
+  - svd/pathological/female/2512/2378/2378-a_lhl.wav
+  gender: female
+  label: organic
+svd_2515_2381_0:
+  age: 47
+  audio_keys:
+  - svd/pathological/female/2515/2381/2381-a_lhl.wav
+  gender: female
+  label: organic
+svd_2525_2432_0:
+  age: 66
+  audio_keys:
+  - svd/pathological/female/2525/2432/2432-a_lhl.wav
+  gender: female
+  label: functional
+svd_2537_2403_0:
+  age: 70
+  audio_keys:
+  - svd/pathological/male/2537/2403/2403-a_lhl.wav
+  gender: male
+  label: organic
+svd_2538_2404_0:
+  age: 52
+  audio_keys:
+  - svd/pathological/male/2538/2404/2404-a_lhl.wav
+  gender: male
+  label: organic
+svd_2542_2408_0:
+  age: 64
+  audio_keys:
+  - svd/pathological/male/2542/2408/2408-a_lhl.wav
+  gender: male
+  label: organic
+svd_2550_2416_0:
+  age: 63
+  audio_keys:
+  - svd/pathological/male/2550/2416/2416-a_lhl.wav
+  gender: male
+  label: functional
+svd_2560_2426_0:
+  age: 45
+  audio_keys:
+  - svd/pathological/female/2560/2426/2426-a_lhl.wav
+  gender: female
+  label: organic
+svd_2591_2457_0:
+  age: 61
+  audio_keys:
+  - svd/pathological/female/2591/2457/2457-a_lhl.wav
+  gender: female
+  label: functional
+svd_2594_2460_0:
+  age: 57
+  audio_keys:
+  - svd/pathological/female/2594/2460/2460-a_lhl.wav
+  gender: female
+  label: organic
+svd_2598_2464_0:
+  age: 74
+  audio_keys:
+  - svd/pathological/female/2598/2464/2464-a_lhl.wav
+  gender: female
+  label: organic
+svd_2599_2465_0:
+  age: 50
+  audio_keys:
+  - svd/pathological/female/2599/2465/2465-a_lhl.wav
+  gender: female
+  label: organic
+svd_25_24_0:
+  age: 20
+  audio_keys:
+  - svd/healthy/female/25/24/24-a_lhl.wav
+  gender: female
+  label: normal
+svd_2623_2489_0:
+  age: 55
+  audio_keys:
+  - svd/pathological/male/2623/2489/2489-a_lhl.wav
+  gender: male
+  label: functional
+svd_2645_2511_0:
+  age: 54
+  audio_keys:
+  - svd/pathological/male/2645/2511/2511-a_lhl.wav
+  gender: male
+  label: organic
+svd_2662_2528_0:
+  age: 67
+  audio_keys:
+  - svd/pathological/female/2662/2528/2528-a_lhl.wav
+  gender: female
+  label: functional
+svd_2663_2529_0:
+  age: 44
+  audio_keys:
+  - svd/pathological/male/2663/2529/2529-a_lhl.wav
+  gender: male
+  label: organic
+svd_2673_2539_0:
+  age: 70
+  audio_keys:
+  - svd/pathological/male/2673/2539/2539-a_lhl.wav
+  gender: male
+  label: organic
+svd_2675_2541_0:
+  age: 62
+  audio_keys:
+  - svd/pathological/male/2675/2541/2541-a_lhl.wav
+  gender: male
+  label: organic
+svd_2697_2563_0:
+  age: 62
+  audio_keys:
+  - svd/pathological/female/2697/2563/2563-a_lhl.wav
+  gender: female
+  label: organic
+svd_2700_2566_0:
+  age: 49
+  audio_keys:
+  - svd/pathological/female/2700/2566/2566-a_lhl.wav
+  gender: female
+  label: organic
+svd_2726_2600_0:
+  age: 43
+  audio_keys:
+  - svd/pathological/male/2726/2600/2600-a_lhl.wav
+  gender: male
+  label: organic
+svd_2_2_0:
+  age: 22
+  audio_keys:
+  - svd/healthy/female/2/2/2-a_lhl.wav
+  gender: female
+  label: normal
+svd_33_33_0:
+  age: 27
+  audio_keys:
+  - svd/healthy/female/33/33/33-a_lhl.wav
+  gender: female
+  label: normal
+svd_34_34_0:
+  age: 20
+  audio_keys:
+  - svd/healthy/female/34/34/34-a_lhl.wav
+  gender: female
+  label: normal
+svd_35_35_0:
+  age: 22
+  audio_keys:
+  - svd/healthy/female/35/35/35-a_lhl.wav
+  gender: female
+  label: normal
+svd_38_38_0:
+  age: 23
+  audio_keys:
+  - svd/healthy/female/38/38/38-a_lhl.wav
+  gender: female
+  label: normal
+svd_3_3_0:
+  age: 23
+  audio_keys:
+  - svd/healthy/female/3/3/3-a_lhl.wav
+  gender: female
+  label: normal
+svd_40_40_0:
+  age: 20
+  audio_keys:
+  - svd/healthy/male/40/40/40-a_lhl.wav
+  gender: male
+  label: normal
+svd_41_41_0:
+  age: 20
+  audio_keys:
+  - svd/healthy/male/41/41/41-a_lhl.wav
+  gender: male
+  label: normal
+svd_4_4_0:
+  age: 22
+  audio_keys:
+  - svd/healthy/male/4/4/4-a_lhl.wav
+  gender: male
+  label: normal
+svd_54_54_0:
+  age: 22
+  audio_keys:
+  - svd/healthy/female/54/54/54-a_lhl.wav
+  gender: female
+  label: normal
+svd_55_55_0:
+  age: 21
+  audio_keys:
+  - svd/healthy/female/55/55/55-a_lhl.wav
+  gender: female
+  label: normal
+svd_56_56_0:
+  age: 22
+  audio_keys:
+  - svd/healthy/female/56/56/56-a_lhl.wav
+  gender: female
+  label: normal
+svd_57_57_0:
+  age: 21
+  audio_keys:
+  - svd/healthy/female/57/57/57-a_lhl.wav
+  gender: female
+  label: normal
+svd_5_5_0:
+  age: 22
+  audio_keys:
+  - svd/healthy/male/5/5/5-a_lhl.wav
+  gender: male
+  label: normal
+svd_605_677_0:
+  age: 20
+  audio_keys:
+  - svd/healthy/female/605/677/677-a_lhl.wav
+  gender: female
+  label: normal
+svd_609_681_0:
+  age: 21
+  audio_keys:
+  - svd/healthy/male/609/681/681-a_lhl.wav
+  gender: male
+  label: normal
+svd_610_682_0:
+  age: 21
+  audio_keys:
+  - svd/healthy/female/610/682/682-a_lhl.wav
+  gender: female
+  label: normal
+svd_613_685_0:
+  age: 20
+  audio_keys:
+  - svd/healthy/female/613/685/685-a_lhl.wav
+  gender: female
+  label: normal
+svd_614_686_0:
+  age: 20
+  audio_keys:
+  - svd/healthy/female/614/686/686-a_lhl.wav
+  gender: female
+  label: normal
+svd_615_687_0:
+  age: 20
+  audio_keys:
+  - svd/healthy/female/615/687/687-a_lhl.wav
+  gender: female
+  label: normal
+svd_619_691_0:
+  age: 20
+  audio_keys:
+  - svd/healthy/female/619/691/691-a_lhl.wav
+  gender: female
+  label: normal
+svd_621_696_0:
+  age: 20
+  audio_keys:
+  - svd/healthy/female/621/696/696-a_lhl.wav
+  gender: female
+  label: normal
+svd_623_698_0:
+  age: 20
+  audio_keys:
+  - svd/healthy/male/623/698/698-a_lhl.wav
+  gender: male
+  label: normal
+svd_625_700_0:
+  age: 20
+  audio_keys:
+  - svd/healthy/female/625/700/700-a_lhl.wav
+  gender: female
+  label: normal
+svd_62_62_0:
+  age: 22
+  audio_keys:
+  - svd/healthy/female/62/62/62-a_lhl.wav
+  gender: female
+  label: normal
+svd_633_707_0:
+  age: 21
+  audio_keys:
+  - svd/healthy/female/633/707/707-a_lhl.wav
+  gender: female
+  label: normal
+svd_634_708_0:
+  age: 21
+  audio_keys:
+  - svd/healthy/male/634/708/708-a_lhl.wav
+  gender: male
+  label: normal
+svd_646_740_0:
+  age: 22
+  audio_keys:
+  - svd/healthy/male/646/740/740-a_lhl.wav
+  gender: male
+  label: normal
+svd_650_746_0:
+  age: 24
+  audio_keys:
+  - svd/healthy/female/650/746/746-a_lhl.wav
+  gender: female
+  label: normal
+svd_651_747_0:
+  age: 26
+  audio_keys:
+  - svd/healthy/female/651/747/747-a_lhl.wav
+  gender: female
+  label: normal
+svd_716_811_0:
+  age: 22
+  audio_keys:
+  - svd/healthy/male/716/811/811-a_lhl.wav
+  gender: male
+  label: normal
+svd_720_833_0:
+  age: 17
+  audio_keys:
+  - svd/healthy/female/720/833/833-a_lhl.wav
+  gender: female
+  label: normal
+svd_728_840_0:
+  age: 17
+  audio_keys:
+  - svd/healthy/female/728/840/840-a_lhl.wav
+  gender: female
+  label: normal
+svd_733_860_0:
+  age: 26
+  audio_keys:
+  - svd/healthy/male/733/860/860-a_lhl.wav
+  gender: male
+  label: normal
+svd_739_955_0:
+  age: 36
+  audio_keys:
+  - svd/healthy/male/739/955/955-a_lhl.wav
+  gender: male
+  label: normal
+svd_776_972_0:
+  age: 27
+  audio_keys:
+  - svd/healthy/male/776/972/972-a_lhl.wav
+  gender: male
+  label: normal
+svd_791_992_0:
+  age: 34
+  audio_keys:
+  - svd/healthy/male/791/992/992-a_lhl.wav
+  gender: male
+  label: normal
+svd_793_993_0:
+  age: 23
+  audio_keys:
+  - svd/healthy/male/793/993/993-a_lhl.wav
+  gender: male
+  label: normal
+svd_817_999_0:
+  age: 34
+  audio_keys:
+  - svd/healthy/male/817/999/999-a_lhl.wav
+  gender: male
+  label: normal
+svd_838_1061_0:
+  age: 24
+  audio_keys:
+  - svd/healthy/male/838/1061/1061-a_lhl.wav
+  gender: male
+  label: normal
+svd_843_1066_0:
+  age: 21
+  audio_keys:
+  - svd/healthy/female/843/1066/1066-a_lhl.wav
+  gender: female
+  label: normal
+svd_848_1070_0:
+  age: 31
+  audio_keys:
+  - svd/healthy/male/848/1070/1070-a_lhl.wav
+  gender: male
+  label: normal
+svd_851_1072_0:
+  age: 32
+  audio_keys:
+  - svd/healthy/male/851/1072/1072-a_lhl.wav
+  gender: male
+  label: normal
+svd_862_1093_0:
+  age: 28
+  audio_keys:
+  - svd/healthy/male/862/1093/1093-a_lhl.wav
+  gender: male
+  label: normal
+svd_863_1094_0:
+  age: 19
+  audio_keys:
+  - svd/healthy/female/863/1094/1094-a_lhl.wav
+  gender: female
+  label: normal
+svd_866_1110_0:
+  age: 20
+  audio_keys:
+  - svd/healthy/female/866/1110/1110-a_lhl.wav
+  gender: female
+  label: normal
+svd_869_1098_0:
+  age: 24
+  audio_keys:
+  - svd/healthy/female/869/1098/1098-a_lhl.wav
+  gender: female
+  label: normal
+svd_880_1107_0:
+  age: 20
+  audio_keys:
+  - svd/healthy/female/880/1107/1107-a_lhl.wav
+  gender: female
+  label: normal
+svd_884_1123_0:
+  age: 28
+  audio_keys:
+  - svd/healthy/female/884/1123/1123-a_lhl.wav
+  gender: female
+  label: normal
+svd_885_1124_0:
+  age: 24
+  audio_keys:
+  - svd/healthy/female/885/1124/1124-a_lhl.wav
+  gender: female
+  label: normal
+svd_887_1126_0:
+  age: 24
+  audio_keys:
+  - svd/healthy/male/887/1126/1126-a_lhl.wav
+  gender: male
+  label: normal
+svd_896_1133_0:
+  age: 21
+  audio_keys:
+  - svd/healthy/female/896/1133/1133-a_lhl.wav
+  gender: female
+  label: normal
+svd_899_1137_0:
+  age: 25
+  audio_keys:
+  - svd/healthy/female/899/1137/1137-a_lhl.wav
+  gender: female
+  label: normal
+svd_904_1153_0:
+  age: 24
+  audio_keys:
+  - svd/healthy/male/904/1153/1153-a_lhl.wav
+  gender: male
+  label: normal
+svd_911_1147_0:
+  age: 25
+  audio_keys:
+  - svd/healthy/female/911/1147/1147-a_lhl.wav
+  gender: female
+  label: normal
+svd_913_1149_0:
+  age: 19
+  audio_keys:
+  - svd/healthy/female/913/1149/1149-a_lhl.wav
+  gender: female
+  label: normal
+svd_919_1171_0:
+  age: 17
+  audio_keys:
+  - svd/healthy/female/919/1171/1171-a_lhl.wav
+  gender: female
+  label: normal
+svd_920_1167_0:
+  age: 18
+  audio_keys:
+  - svd/healthy/female/920/1167/1167-a_lhl.wav
+  gender: female
+  label: normal
+svd_922_1168_0:
+  age: 20
+  audio_keys:
+  - svd/healthy/female/922/1168/1168-a_lhl.wav
+  gender: female
+  label: normal
+svd_925_1175_0:
+  age: 19
+  audio_keys:
+  - svd/healthy/female/925/1175/1175-a_lhl.wav
+  gender: female
+  label: normal
+svd_930_1178_0:
+  age: 18
+  audio_keys:
+  - svd/healthy/female/930/1178/1178-a_lhl.wav
+  gender: female
+  label: normal
+svd_944_1216_0:
+  age: 21
+  audio_keys:
+  - svd/healthy/female/944/1216/1216-a_lhl.wav
+  gender: female
+  label: normal
+svd_961_1351_0:
+  age: 21
+  audio_keys:
+  - svd/healthy/female/961/1351/1351-a_lhl.wav
+  gender: female
+  label: normal
+svd_963_1353_0:
+  age: 21
+  audio_keys:
+  - svd/healthy/female/963/1353/1353-a_lhl.wav
+  gender: female
+  label: normal
+svd_966_1355_0:
+  age: 21
+  audio_keys:
+  - svd/healthy/female/966/1355/1355-a_lhl.wav
+  gender: female
+  label: normal
+svd_969_1361_0:
+  age: 20
+  audio_keys:
+  - svd/healthy/female/969/1361/1361-a_lhl.wav
+  gender: female
+  label: normal
+svd_971_1365_0:
+  age: 21
+  audio_keys:
+  - svd/healthy/female/971/1365/1365-a_lhl.wav
+  gender: female
+  label: normal
+svd_973_1367_0:
+  age: 20
+  audio_keys:
+  - svd/healthy/female/973/1367/1367-a_lhl.wav
+  gender: female
+  label: normal
+svd_980_1372_0:
+  age: 21
+  audio_keys:
+  - svd/healthy/female/980/1372/1372-a_lhl.wav
+  gender: female
+  label: normal
+svd_994_1512_0:
+  age: 23
+  audio_keys:
+  - svd/healthy/male/994/1512/1512-a_lhl.wav
+  gender: male
+  label: normal
+svd_999_1516_0:
+  age: 20
+  audio_keys:
+  - svd/healthy/female/999/1516/1516-a_lhl.wav
+  gender: female
+  label: normal

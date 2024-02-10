@@ -10,20 +10,20 @@ from .audio_loader import AudioLoader
 
 @dataclass
 class TrainPoint:
-    audio: np.ndarray
+    audio: List[np.ndarray]
     label: Diagnosis
 
 
 @dataclass
 class TestPoint:
     id: str
-    audio: np.ndarray
+    audio: List[np.ndarray]
 
 
 @dataclass
 class DataPoint:
     id: str
-    audio: np.ndarray
+    audio: List[np.ndarray]
     label: Diagnosis
 
     def to_testpoint(self) -> TestPoint:
@@ -56,11 +56,11 @@ class Task:
         val: Path,
         test: Path,
     ) -> None:
+        self.__diagnosis_map = diagnosis_map
+        self.__audio_loader = audio_loader
         self.__train = self.__load_file(train)
         self.__val = self.__load_file(val)
         self.__test = dict([(v.id, v) for v in self.__load_file(test)])
-        self.__diagnosis_map = diagnosis_map
-        self.__audio_loader = audio_loader
 
     @property
     def train(self) -> List[TrainPoint]:
@@ -93,7 +93,7 @@ class Task:
         dataset: List[DataPoint] = []
         for key, val in data.items():
             label = self.__diagnosis_map.get(val["label"])
-            audio = self.__audio_loader(val["audio"])
+            audio = self.__audio_loader(val["audio_keys"])
             dataset.append(DataPoint(id=key, audio=audio, label=label))
         return dataset
 

@@ -1,0 +1,22 @@
+normal:
+  female:
+    age_stats: null
+    total: 199
+  male:
+    age_stats: null
+    total: 295
+pathological:
+  female:
+    age_stats:
+      max: 21
+      mean: 21
+      min: 21
+      std: 0.0
+    total: 387
+  male:
+    age_stats:
+      max: 20
+      mean: 20
+      min: 20
+      std: 0.0
+    total: 689
