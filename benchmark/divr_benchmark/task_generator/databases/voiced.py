@@ -11,7 +11,9 @@ from ...prepare_dataset.processed import (
 
 class Voiced(Base):
 
-    def prepare_dataset(self, source_path: Path) -> ProcessedDataset:
+    def prepare_dataset(
+        self, source_path: Path, allow_incomplete_classification: bool
+    ) -> ProcessedDataset:
         db_name = "voiced"
         sessions = []
         data_path = f"{source_path}/{db_name}/voice-icar-federico-ii-database-1.0.0"
@@ -32,17 +34,21 @@ class Voiced(Base):
         for _, row in all_data.iterrows():
             speaker_id = row["ID"]
             diagnosis = row["Diagnosis"].lower().strip()
+            diagnosis = self.diagnosis_map.get(diagnosis)
             age = int(row["Age"])
             gender = Gender.format(row["Gender"])
-            sessions += [
-                ProcessedSession(
-                    id=f"voiced_{speaker_id}",
-                    age=age,
-                    gender=gender,
-                    diagnosis=[self.diagnosis_map.get(diagnosis)],
-                    files=[ProcessedFile(path=Path(f"{data_path}/{speaker_id}.wav"))],
-                )
-            ]
+            if allow_incomplete_classification or not diagnosis.incompletely_classified:
+                sessions += [
+                    ProcessedSession(
+                        id=f"voiced_{speaker_id}",
+                        age=age,
+                        gender=gender,
+                        diagnosis=[diagnosis],
+                        files=[
+                            ProcessedFile(path=Path(f"{data_path}/{speaker_id}.wav"))
+                        ],
+                    )
+                ]
         return self.database_generator.generate(
             db_name=db_name,
             sessions=sessions,

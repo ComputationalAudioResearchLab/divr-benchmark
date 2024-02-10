@@ -28,19 +28,21 @@ This stream is to do level 0 classification i.e. binary healthy vs pathological 
 This stream aims to identify which vocal tasks we need patients to perform in order to get an acceptable level of recognition accuracy. We validate this at all levels of classification. Since out of the public datasets only SVD has multiple vocal tasks available this stream is limited to only using SVD. There are following 14 tasks that contain train, validation and test set respectively:
 
 1. level 1 - /a/ (neutral single vowel vocalisation only)
-2. level 1 - /a/ (low-high-low)
-3. level 1 - /i/ (neutral single vowel vocalisation only)
-4. level 1 - /u/ (neutral single vowel vocalisation only)
+2. level 1 - /i/ (neutral single vowel vocalisation only)
+3. level 1 - /u/ (neutral single vowel vocalisation only)
+4. level 1 - /a/ (low-high-low)
 5. level 1 - /a/, /i/, /u/ (neutral single vowel vocalisation only)
 6. level 1 - /a/, /i/, /u/ (combined vocalisation)
 7. level 1 - connected speech
-8. level 2 - /a/ (neutral single vowel vocalisation only)
-9. level 2 - /a/ (low-high-low)
+8. level 1 - /a/, /i/, /u/ (neutral + low-high-low single vowel vocalisation only) + /a/, /i/, /u/ (combined vocalisation) + connected speech
+9. level 2 - /a/ (neutral single vowel vocalisation only)
 10. level 2 - /i/ (neutral single vowel vocalisation only)
 11. level 2 - /u/ (neutral single vowel vocalisation only)
-12. level 2 - /a/, /i/, /u/ (neutral single vowel vocalisation only)
-13. level 2 - /a/, /i/, /u/ (combined vocalisation)
-14. level 2 - connected speech
+12. level 2 - /a/ (low-high-low)
+13. level 2 - /a/, /i/, /u/ (neutral single vowel vocalisation only)
+14. level 2 - /a/, /i/, /u/ (combined vocalisation)
+15. level 2 - connected speech
+16. level 2 - /a/, /i/, /u/ (neutral + low-high-low single vowel vocalisation only) + /a/, /i/, /u/ (combined vocalisation) + connected speech
 
 ### 2. Cross domain transfer
 

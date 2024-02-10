@@ -18,11 +18,13 @@ class Torgo(Base):
         def filter_func(files: List[ProcessedFile]) -> List[ProcessedFile]:
             return list(filter(lambda x: str(x.path).endswith("-phrase.wav"), files))
 
-        return self.to_tasks(
+        return self.to_individual_file_tasks(
             self.dataset.test_sessions, level=level, file_filter=filter_func
         )
 
-    def prepare_dataset(self, source_path: Path) -> ProcessedDataset:
+    def prepare_dataset(
+        self, source_path: Path, allow_incomplete_classification: bool
+    ) -> ProcessedDataset:
         db_name = "torgo"
         sessions = []
         data_path = f"{source_path}/{db_name}"
@@ -82,23 +84,27 @@ class Torgo(Base):
         for data in df:
             speaker_id = data["id"]
             diagnosis = data["diagnosis"].lower()
+            diagnosis = self.diagnosis_map.get(diagnosis)
             speaker_path = Path(f"{data_path}/{speaker_id}")
             age = int(data["age"]) if data["age"] is not None else None
             gender = Gender.format(data["gender"])
-            for session in speaker_path.glob("Session*"):
-                sessions += [
-                    ProcessedSession(
-                        id=f"torgo_{speaker_id}_{session.name}",
-                        age=age,
-                        gender=gender,
-                        diagnosis=[self.diagnosis_map.get(diagnosis)],
-                        files=[
-                            ProcessedFile(path=path)
-                            for path in Path(f"{session}/wav_arrayMic").glob("*.wav")
-                            if self.include(path)
-                        ],
-                    )
-                ]
+            if not diagnosis.incompletely_classified or allow_incomplete_classification:
+                for session in speaker_path.glob("Session*"):
+                    sessions += [
+                        ProcessedSession(
+                            id=f"torgo_{speaker_id}_{session.name}",
+                            age=age,
+                            gender=gender,
+                            diagnosis=[diagnosis],
+                            files=[
+                                ProcessedFile(path=path)
+                                for path in Path(f"{session}/wav_arrayMic").glob(
+                                    "*.wav"
+                                )
+                                if self.include(path)
+                            ],
+                        )
+                    ]
         return self.database_generator.generate(
             db_name=db_name,
             sessions=sessions,

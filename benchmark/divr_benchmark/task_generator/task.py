@@ -1,4 +1,5 @@
 from dataclasses import dataclass
+from typing import List
 from ..diagnosis import Diagnosis
 
 
@@ -8,4 +9,4 @@ class Task:
     age: int | None
     gender: str
     label: Diagnosis
-    audio_key: str
+    audio_keys: List[str]

@@ -13,7 +13,9 @@ FileFilter = Callable[[List[ProcessedFile]], List[ProcessedFile]]
 
 
 class Base:
-    def __init__(self, source_path: Path) -> None:
+    def __init__(
+        self, source_path: Path, allow_incomplete_classification: bool
+    ) -> None:
         self.diagnosis_map = DiagnosisMap.v1()
         self.database_generator = DatabaseGenerator(
             diagnosis_map=self.diagnosis_map,
@@ -21,25 +23,36 @@ class Base:
             test_split=0.2,
             random_seed=42,
         )
-        self.dataset = self.prepare_dataset(source_path=source_path)
+        self.dataset = self.prepare_dataset(
+            source_path=source_path,
+            allow_incomplete_classification=allow_incomplete_classification,
+        )
         self.__source_path = str(source_path)
 
-    def prepare_dataset(self, source_path: Path) -> ProcessedDataset:
+    def prepare_dataset(
+        self, source_path: Path, allow_incomplete_classification: bool
+    ) -> ProcessedDataset:
         raise NotImplementedError()
 
     def to_audio_key(self, source_path: ProcessedFile) -> str:
         return str(source_path.path).removeprefix(self.__source_path).removeprefix("/")
 
     def all_train(self, level: int) -> List[Task]:
-        return self.to_tasks(self.dataset.train_sessions, level=level, file_filter=None)
+        return self.to_individual_file_tasks(
+            self.dataset.train_sessions, level=level, file_filter=None
+        )
 
     def all_val(self, level: int) -> List[Task]:
-        return self.to_tasks(self.dataset.val_sessions, level=level, file_filter=None)
+        return self.to_individual_file_tasks(
+            self.dataset.val_sessions, level=level, file_filter=None
+        )
 
     def all_test(self, level: int) -> List[Task]:
-        return self.to_tasks(self.dataset.test_sessions, level=level, file_filter=None)
+        return self.to_individual_file_tasks(
+            self.dataset.test_sessions, level=level, file_filter=None
+        )
 
-    def to_tasks(
+    def to_individual_file_tasks(
         self,
         sessions: List[ProcessedSession],
         level: int,
@@ -58,7 +71,30 @@ class Base:
                     age=session.age,
                     gender=session.gender,
                     label=root_diagnosis,
-                    audio_key=self.to_audio_key(file_path),
+                    audio_keys=[self.to_audio_key(file_path)],
                 )
                 tasks.append(task)
+        return tasks
+
+    def to_multi_file_tasks(
+        self,
+        sessions: List[ProcessedSession],
+        level: int,
+        file_filter: FileFilter | None,
+    ) -> List[Task]:
+        tasks: List[Task] = []
+        for session in sessions:
+            root_diagnosis = session.best_diagnosis.at_level(level)
+            if file_filter is None:
+                files = session.files
+            else:
+                files = file_filter(session.files)
+            task = Task(
+                id=f"{session.id}",
+                age=session.age,
+                gender=session.gender,
+                label=root_diagnosis,
+                audio_keys=list(map(self.to_audio_key, files)),
+            )
+            tasks.append(task)
         return tasks

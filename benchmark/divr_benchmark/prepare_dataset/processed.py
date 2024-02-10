@@ -59,7 +59,13 @@ class ProcessedSession:
 
     @property
     def best_diagnosis(self) -> Diagnosis:
-        return sorted(self.diagnosis, reverse=True)[0]
+        sorted_diagnosis = sorted(self.diagnosis, reverse=True)
+        complete_diagnosis = list(
+            filter(lambda x: not x.incompletely_classified, sorted_diagnosis)
+        )
+        if len(complete_diagnosis) > 0:
+            return complete_diagnosis[0]
+        return sorted_diagnosis[0]
 
     def diagnosis_names_at_level(self, level: int) -> Set[str]:
         diag_names = set()

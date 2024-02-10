@@ -2,17 +2,26 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Dict, List
 
-classification_weights = {
+root_classification_weights = {
     "pathological": 3,
     "normal": 2,
     "unclassified": 1,
 }
+
+incomplete_classifications = ["unclassified", "unclassified_pathology"]
 
 
 @dataclass
 class DiagnosisLink:
     parent: Diagnosis
     weight: float
+
+    def __lt__(self, other: DiagnosisLink) -> bool:
+        if self.weight == other.weight:
+            self_root_weight = root_classification_weights[self.parent.root.name]
+            other_root_weight = root_classification_weights[other.parent.root.name]
+            return self_root_weight < other_root_weight
+        return self.weight < other.weight
 
 
 @dataclass
@@ -38,6 +47,13 @@ class Diagnosis:
         if best_parent:
             return best_parent.parent.at_level(level)
         return self
+
+    @property
+    def incompletely_classified(self) -> bool:
+        for key in incomplete_classifications:
+            if self.satisfies(key):
+                return True
+        return False
 
     @property
     def root(self) -> Diagnosis:
@@ -91,6 +107,11 @@ class Diagnosis:
             # hence the current class is less than other
             return True
 
+        if self_weight == other_weight:
+            self_root_weight = root_classification_weights[self.root.name]
+            other_root_weight = root_classification_weights[other.root.name]
+            return self_root_weight < other_root_weight
+
         return self_weight < other_weight
 
     def __max_parent_weight(self) -> float | None:
@@ -101,7 +122,7 @@ class Diagnosis:
     def __matching_parent(
         self, to_match: DiagnosisLink, diags: List[DiagnosisLink]
     ) -> DiagnosisLink:
-        sorted_diags = sorted(diags, key=lambda x: x.weight, reverse=True)
+        sorted_diags = sorted(diags, reverse=True)
         for diag in sorted_diags:
             for parent in diag.parent.parents:
                 if parent.parent == to_match.parent:

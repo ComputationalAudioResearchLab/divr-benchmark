@@ -1,6 +1,6 @@
 import json
 from pathlib import Path
-from typing import List
+from typing import List, Literal
 from .Base import Base
 from .gender import Gender
 from ...prepare_dataset.processed import (
@@ -10,29 +10,124 @@ from ...prepare_dataset.processed import (
 )
 
 
+VOWELS = Literal["a", "i", "u", ""]
+
+
 class SVD(Base):
     ignore_files = [
         "1405/713/713-iau.wav",  # invalid file
         "1405/713/713-i_n.wav",  # invalid file
     ]
 
-    def test_set_neutral_vowels(self, level: int):
-        def filter_func(files: List[ProcessedFile]) -> List[ProcessedFile]:
-            return list(filter(lambda x: str(x.path).endswith("_n.wav"), files))
+    def train_set_multi_neutral_vowels(self, level: int, vowels: List[VOWELS]):
+        return self.filtered_multi_file_tasks(
+            self.dataset.train_sessions,
+            level=level,
+            suffixes=[f"{v}_n.wav" for v in vowels],
+        )
 
-        return self.to_tasks(
-            self.dataset.test_sessions, level=level, file_filter=filter_func
+    def val_set_multi_neutral_vowels(self, level: int, vowels: List[VOWELS]):
+        return self.filtered_multi_file_tasks(
+            self.dataset.val_sessions,
+            level=level,
+            suffixes=[f"{v}_n.wav" for v in vowels],
+        )
+
+    def test_set_multi_neutral_vowels(self, level: int, vowels: List[VOWELS]):
+        return self.filtered_multi_file_tasks(
+            self.dataset.test_sessions,
+            level=level,
+            suffixes=[f"{v}_n.wav" for v in vowels],
+        )
+
+    def train_set_combined_vowel_vocalisation(self, level: int):
+        return self.filtered_single_file_tasks(
+            self.dataset.train_sessions, level=level, suffix="iau.wav"
+        )
+
+    def val_set_combined_vowel_vocalisation(self, level: int):
+        return self.filtered_single_file_tasks(
+            self.dataset.val_sessions, level=level, suffix="iau.wav"
+        )
+
+    def test_set_combined_vowel_vocalisation(self, level: int):
+        return self.filtered_single_file_tasks(
+            self.dataset.test_sessions, level=level, suffix="iau.wav"
+        )
+
+    def train_set_lhl_vowels(self, level: int, vowel: VOWELS = ""):
+        return self.filtered_single_file_tasks(
+            self.dataset.train_sessions, level=level, suffix=f"{vowel}_lhl.wav"
+        )
+
+    def val_set_lhl_vowels(self, level: int, vowel: VOWELS = ""):
+        return self.filtered_single_file_tasks(
+            self.dataset.val_sessions, level=level, suffix=f"{vowel}_lhl.wav"
+        )
+
+    def test_set_lhl_vowels(self, level: int, vowel: VOWELS = ""):
+        return self.filtered_single_file_tasks(
+            self.dataset.test_sessions, level=level, suffix=f"{vowel}_lhl.wav"
+        )
+
+    def train_set_neutral_vowels(self, level: int, vowel: VOWELS = ""):
+        return self.filtered_single_file_tasks(
+            self.dataset.train_sessions, level=level, suffix=f"{vowel}_n.wav"
+        )
+
+    def val_set_neutral_vowels(self, level: int, vowel: VOWELS = ""):
+        return self.filtered_single_file_tasks(
+            self.dataset.val_sessions, level=level, suffix=f"{vowel}_n.wav"
+        )
+
+    def test_set_neutral_vowels(self, level: int, vowel: VOWELS = ""):
+        return self.filtered_single_file_tasks(
+            self.dataset.test_sessions, level=level, suffix=f"{vowel}_n.wav"
+        )
+
+    def train_set_connected_speech(self, level: int):
+        return self.filtered_single_file_tasks(
+            self.dataset.train_sessions, level=level, suffix="-phrase.wav"
+        )
+
+    def val_set_connected_speech(self, level: int):
+        return self.filtered_single_file_tasks(
+            self.dataset.val_sessions, level=level, suffix="-phrase.wav"
         )
 
     def test_set_connected_speech(self, level: int):
-        def filter_func(files: List[ProcessedFile]) -> List[ProcessedFile]:
-            return list(filter(lambda x: str(x.path).endswith("-phrase.wav"), files))
-
-        return self.to_tasks(
-            self.dataset.test_sessions, level=level, file_filter=filter_func
+        return self.filtered_single_file_tasks(
+            self.dataset.test_sessions, level=level, suffix="-phrase.wav"
         )
 
-    def prepare_dataset(self, source_path: Path) -> ProcessedDataset:
+    def filtered_single_file_tasks(
+        self, sessions: List[ProcessedSession], level: int, suffix: str
+    ):
+        def filter_func(files: List[ProcessedFile]) -> List[ProcessedFile]:
+            return list(filter(lambda x: str(x.path).endswith(suffix), files))
+
+        return self.to_individual_file_tasks(
+            sessions, level=level, file_filter=filter_func
+        )
+
+    def filtered_multi_file_tasks(
+        self, sessions: List[ProcessedSession], level: int, suffixes: List[str]
+    ):
+        def file_name_filter_func(processed_file: ProcessedFile):
+            file_path_str = str(processed_file.path)
+            for suffix in suffixes:
+                if file_path_str.endswith(suffix):
+                    return True
+            return False
+
+        def filter_func(files: List[ProcessedFile]) -> List[ProcessedFile]:
+            return list(filter(file_name_filter_func, files))
+
+        return self.to_multi_file_tasks(sessions, level=level, file_filter=filter_func)
+
+    def prepare_dataset(
+        self, source_path: Path, allow_incomplete_classification: bool
+    ) -> ProcessedDataset:
         db_name = "svd"
         sessions = []
         with open(f"{source_path}/{db_name}/data.json", "r") as inputfile:
@@ -40,7 +135,11 @@ class SVD(Base):
                 gender = Gender.format(val["gender"])
                 for session in val["sessions"]:
                     session = self.__process_session(
-                        speaker_id, gender, f"{source_path}/{db_name}", session
+                        speaker_id=speaker_id,
+                        gender=gender,
+                        source_path=f"{source_path}/{db_name}",
+                        session=session,
+                        allow_incomplete_classification=allow_incomplete_classification,
                     )
                     if session is not None:
                         sessions += [session]
@@ -49,7 +148,14 @@ class SVD(Base):
             sessions=sessions,
         )
 
-    def __process_session(self, speaker_id, gender, source_path, session):
+    def __process_session(
+        self,
+        speaker_id,
+        gender,
+        source_path,
+        session,
+        allow_incomplete_classification: bool,
+    ):
         session_id = session["session_id"]
         age = int(session["age"])
         classification = session["classification"]
@@ -65,15 +171,28 @@ class SVD(Base):
                 files += [ProcessedFile(path=path)]
         if len(files) == 0:
             return None
-        return ProcessedSession(
+        diagnosis = [
+            self.diagnosis_map.get(x.strip().lower()) for x in diagnosis.split(",")
+        ]
+        session = ProcessedSession(
             id=f"svd_{speaker_id}_{session_id}",
             age=age,
             gender=gender,
-            diagnosis=[
-                self.diagnosis_map.get(x.strip().lower()) for x in diagnosis.split(",")
-            ],
+            diagnosis=diagnosis,
             files=files,
         )
+        if (
+            session.best_diagnosis.incompletely_classified
+            and not allow_incomplete_classification
+        ):
+            if session.id == "svd_2537_2403":
+                print(session.best_diagnosis.name)
+                # print([d.name for d in sorted_diagnosis])
+                # print([d.name for d in complete_diagnosis])
+                # print(complete_diagnosis[0].incompletely_classified)
+                exit()
+            return None
+        return session
 
     def __include(self, path: Path):
         for exclusion in self.ignore_files:
