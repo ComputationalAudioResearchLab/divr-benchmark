@@ -21,7 +21,7 @@ This stream is to do level 0 classification i.e. binary healthy vs pathological 
 1. SVD - level 0 - /a/, /i/, /u/ (neutral single vowel vocalisation only)
 2. SVD - level 0 - connected speech
 3. Voiced - level 0 - /a/
-4. Torgo - level 0 - connected speech
+4. Torgo - level 0 - all data
 
 ### 1. Minimum and sufficient vocal task
 
@@ -46,19 +46,19 @@ This stream aims to identify which vocal tasks we need patients to perform in or
 
 ### 2. Cross domain transfer
 
-This task stream is to evaluate how well a fully trained model can transfer from one domain to another. We use the entire SVD dataset as that has the maximum amount of data for training in this stream and test on Voiced and Torgo. The following tests sets are available:
+This task stream is to evaluate how well a fully trained model can transfer from one domain to another. We use the entire SVD dataset (neutral /a/ vowel vocalisation task only) as that has the maximum amount of data for training in this stream and test on Voiced and Torgo. The following tests sets are available:
 
 1. level 0 - voiced
 2. level 1 - voiced
 3. level 2 - voiced
-4. level 1 - torgo
+4. level 0 - torgo
 
 ### 3. Low resource training
 
-As Voiced and Torgo have significantly less data than SVD we believe this provides an interesting avenue to test low resource ML algorithms. This task is restricted to only training on data from Voiced and Torgo, but is tested on all 3 datasets with the test sets listed below. The training set provides level 2 classifications however they can easily be converted to level 1 classifications using the benchmark library if needed for experiments.
+As Voiced and Torgo have significantly less data than SVD we believe this provides an interesting avenue to test low resource ML algorithms. This task is restricted to only training on data from Voiced and Torgo, but is tested on all 3 datasets with the test sets listed below. The SVD test is limited to /a/ neutral vocalisation because that is the data available in Voiced and we believe it makes the test more fair than testing on all types of data availabel in SVD.
 
 1. level 1 - voiced
-2. level 1 - torgo
+2. level 0 - torgo
 3. level 1 - svd, /a/ (neutral single vowel vocalisation only)
 4. level 2 - voiced
 5. level 2 - svd, /a/ (neutral single vowel vocalisation only)

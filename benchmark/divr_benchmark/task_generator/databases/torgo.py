@@ -14,14 +14,6 @@ class Torgo(Base):
         "FC01/Session1/wav_arrayMic/0256.wav",  # 0 length audio
     ]
 
-    def test_set_connected_speech(self, level: int):
-        def filter_func(files: List[ProcessedFile]) -> List[ProcessedFile]:
-            return list(filter(lambda x: str(x.path).endswith("-phrase.wav"), files))
-
-        return self.to_individual_file_tasks(
-            self.dataset.test_sessions, level=level, file_filter=filter_func
-        )
-
     def prepare_dataset(
         self, source_path: Path, allow_incomplete_classification: bool
     ) -> ProcessedDataset:

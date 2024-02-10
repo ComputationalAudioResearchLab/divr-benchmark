@@ -22,18 +22,34 @@ class GeneratorV1(Generator):
             stream_path=Path(f"{tasks_path}/streams/1"),
             svd=svd,
         )
+        self.__stream2(
+            stream_path=Path(f"{tasks_path}/streams/2"),
+            svd=svd,
+            torgo=torgo,
+            voiced=voiced,
+        )
+        self.__stream3(
+            stream_path=Path(f"{tasks_path}/streams/3"),
+            svd=svd,
+            torgo=torgo,
+            voiced=voiced,
+        )
 
     def __stream0(self, stream_path: Path, svd: SVD, voiced: Voiced, torgo: Torgo):
         print(f"Generating stream 0 from at {stream_path}")
         stream_path.mkdir(exist_ok=True)
-        train = (
-            svd.all_train(level=0)
-            + torgo.all_train(level=0)
-            + voiced.all_train(level=0)
+        self.to_task_file(
+            (
+                svd.all_train(level=0)
+                + torgo.all_train(level=0)
+                + voiced.all_train(level=0)
+            ),
+            Path(f"{stream_path}/train"),
         )
-        self.to_task_file(train, Path(f"{stream_path}/train"))
-        val = svd.all_val(level=0) + torgo.all_val(level=0) + voiced.all_val(level=0)
-        self.to_task_file(val, Path(f"{stream_path}/val"))
+        self.to_task_file(
+            (svd.all_val(level=0) + torgo.all_val(level=0) + voiced.all_val(level=0)),
+            Path(f"{stream_path}/val"),
+        )
 
         # task 1
         Path(f"{stream_path}/{1}").mkdir(exist_ok=True)
@@ -57,11 +73,11 @@ class GeneratorV1(Generator):
         )
 
         # task 4
-        # Path(f"{stream_path}/{4}").mkdir(exist_ok=True)
-        # self.to_task_file(
-        #     torgo.test_set_connected_speech(level=0),
-        #     Path(f"{stream_path}/{4}/test"),
-        # )
+        Path(f"{stream_path}/{4}").mkdir(exist_ok=True)
+        self.to_task_file(
+            torgo.all_test(level=0),
+            Path(f"{stream_path}/{4}/test"),
+        )
 
     def __stream1(self, stream_path: Path, svd: SVD):
         print(f"Generating stream 1 from at {stream_path}")
@@ -206,3 +222,110 @@ class GeneratorV1(Generator):
         connected_speech_task(task_idx=15, level=2)
         # task 16
         all_combined_task(task_idx=16, level=2)
+
+    def __stream2(self, stream_path: Path, svd: SVD, torgo: Torgo, voiced: Voiced):
+        print(f"Generating stream 2 from at {stream_path}")
+        stream_path.mkdir(exist_ok=True)
+
+        def train_val_set(task_idx: int, level: int):
+            Path(f"{stream_path}/{task_idx}").mkdir(exist_ok=True)
+            self.to_task_file(
+                (
+                    svd.train_set_neutral_vowels(level=level, vowel="a")
+                    + svd.test_set_neutral_vowels(level=level, vowel="a")
+                ),
+                Path(f"{stream_path}/{task_idx}/train"),
+            )
+            self.to_task_file(
+                svd.val_set_neutral_vowels(level=level, vowel="a"),
+                Path(f"{stream_path}/{task_idx}/val"),
+            )
+
+        def voiced_test_set(task_idx: int, level: int):
+            Path(f"{stream_path}/{task_idx}").mkdir(exist_ok=True)
+            self.to_task_file(
+                (
+                    voiced.all_test(level=level)
+                    + voiced.all_train(level=level)
+                    + voiced.all_val(level=level)
+                ),
+                Path(f"{stream_path}/{task_idx}/train"),
+            )
+
+        def torgo_test_set(task_idx: int, level: int):
+            Path(f"{stream_path}/{task_idx}").mkdir(exist_ok=True)
+            self.to_task_file(
+                (
+                    torgo.all_test(level=level)
+                    + torgo.all_train(level=level)
+                    + torgo.all_val(level=level)
+                ),
+                Path(f"{stream_path}/{task_idx}/train"),
+            )
+
+        # task 1
+        train_val_set(task_idx=1, level=0)
+        voiced_test_set(task_idx=1, level=0)
+        # task 2
+        train_val_set(task_idx=2, level=1)
+        voiced_test_set(task_idx=2, level=1)
+        # task 3
+        train_val_set(task_idx=3, level=2)
+        voiced_test_set(task_idx=3, level=2)
+        # task 4
+        train_val_set(task_idx=4, level=0)
+        torgo_test_set(task_idx=3, level=0)
+
+    def __stream3(self, stream_path: Path, svd: SVD, torgo: Torgo, voiced: Voiced):
+        print(f"Generating stream 3 from at {stream_path}")
+        stream_path.mkdir(exist_ok=True)
+
+        def train_val_set(task_idx: int, level: int):
+            Path(f"{stream_path}/{task_idx}").mkdir(exist_ok=True)
+            self.to_task_file(
+                (voiced.all_train(level=level) + torgo.all_train(level=level)),
+                Path(f"{stream_path}/{task_idx}/train"),
+            )
+            self.to_task_file(
+                (voiced.all_val(level=level) + torgo.all_val(level=level)),
+                Path(f"{stream_path}/{task_idx}/val"),
+            )
+
+        # task 1
+        train_val_set(task_idx=1, level=1)
+        self.to_task_file(
+            voiced.all_test(level=1),
+            Path(f"{stream_path}/{1}/test"),
+        )
+        # task 2
+        train_val_set(task_idx=2, level=0)
+        self.to_task_file(
+            torgo.all_test(level=0),
+            Path(f"{stream_path}/{2}/test"),
+        )
+        # task 3
+        train_val_set(task_idx=3, level=1)
+        self.to_task_file(
+            (
+                svd.test_set_neutral_vowels(level=1, vowel="a")
+                + svd.val_set_neutral_vowels(level=1, vowel="a")
+                + svd.train_set_neutral_vowels(level=1, vowel="a")
+            ),
+            Path(f"{stream_path}/{3}/test"),
+        )
+        # task 4
+        train_val_set(task_idx=4, level=2)
+        self.to_task_file(
+            voiced.all_test(level=2),
+            Path(f"{stream_path}/{4}/test"),
+        )
+        # task 5
+        train_val_set(task_idx=5, level=2)
+        self.to_task_file(
+            (
+                svd.test_set_neutral_vowels(level=2, vowel="a")
+                + svd.val_set_neutral_vowels(level=2, vowel="a")
+                + svd.train_set_neutral_vowels(level=2, vowel="a")
+            ),
+            Path(f"{stream_path}/{5}/test"),
+        )
