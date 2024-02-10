@@ -4,7 +4,6 @@ from pathlib import Path
 
 
 class AudioLoader:
-
     def __init__(self, version: str, data_path: Path) -> None:
         self.__data_path = data_path
         self.__version = version

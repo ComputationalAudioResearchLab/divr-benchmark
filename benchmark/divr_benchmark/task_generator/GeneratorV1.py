@@ -6,7 +6,6 @@ from .databases.svd import VOWELS
 
 
 class GeneratorV1(Generator):
-
     def __call__(self, source_path: Path, tasks_path: Path) -> None:
         print("Generating benchmark v1 tasks")
         Path(f"{tasks_path}/streams").mkdir(exist_ok=True)
@@ -191,7 +190,6 @@ class GeneratorV1(Generator):
         connected_speech_task(task_idx=7, level=1)
         # task 8
         all_combined_task(task_idx=8, level=1)
-
         # task 9
         single_vowel_task(task_idx=9, level=2, vowel="a")
         # task 10

@@ -8,7 +8,6 @@ val_map = {
 
 
 class Gender(str):
-
     @staticmethod
     def format(value: str) -> str:
         return val_map[value.strip().lower()]

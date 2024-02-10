@@ -6,7 +6,6 @@ from typing import List
 
 
 class Generator:
-
     def to_task_file(self, tasks: List[Task], output_path: Path) -> None:
         tasks_dict = {}
         for task in tasks:

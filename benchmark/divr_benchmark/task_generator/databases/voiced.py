@@ -10,7 +10,6 @@ from ...prepare_dataset.processed import (
 
 
 class Voiced(Base):
-
     def prepare_dataset(
         self, source_path: Path, allow_incomplete_classification: bool
     ) -> ProcessedDataset:

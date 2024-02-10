@@ -17,7 +17,6 @@ diagnosis_map_maps = {"v1": DiagnosisMap.v1}
 
 
 class Benchmark:
-
     def __init__(self, storage_path: str, version: VERSIONS) -> None:
         if not Path(storage_path).is_dir():
             raise ValueError(
