@@ -1,5 +1,6 @@
 import yaml
 import numpy as np
+from tqdm import tqdm
 from pathlib import Path
 from typing import Dict, List
 from dataclasses import dataclass
@@ -55,12 +56,44 @@ class Task:
         train: Path,
         val: Path,
         test: Path,
+        quiet: bool,
     ) -> None:
         self.__diagnosis_map = diagnosis_map
         self.__audio_loader = audio_loader
-        self.__train = self.__load_file(train)
-        self.__val = self.__load_file(val)
-        self.__test = dict([(v.id, v) for v in self.__load_file(test)])
+        self.__train = self.__load_file(
+            data_file=train,
+            key="train",
+            quiet=quiet,
+        )
+        self.__val = self.__load_file(
+            data_file=val,
+            key="val",
+            quiet=quiet,
+        )
+        self.__test = dict(
+            [
+                (v.id, v)
+                for v in self.__load_file(
+                    data_file=test,
+                    key="test",
+                    quiet=quiet,
+                )
+            ]
+        )
+        self.__diagnosis_index = self.__count_diagnosis()
+        self.__diagnosis_index_reversed = dict(
+            [(v.name, k) for k, v in self.__diagnosis_index.items()]
+        )
+
+    @property
+    def num_unique_diagnosis(self) -> int:
+        return len(self.__diagnosis_index)
+
+    def index_to_diag(self, index: int) -> Diagnosis:
+        return self.__diagnosis_index[index]
+
+    def diag_to_index(self, diag_name: str) -> int:
+        return self.__diagnosis_index_reversed[diag_name]
 
     @property
     def train(self) -> List[TrainPoint]:
@@ -87,15 +120,23 @@ class Task:
             incorrect=incorrect,
         )
 
-    def __load_file(self, data_file: Path) -> List[DataPoint]:
+    def __load_file(self, data_file: Path, key: str, quiet: bool) -> List[DataPoint]:
         with open(data_file, "r") as df:
             data = yaml.load(df, Loader=yaml.FullLoader)
         dataset: List[DataPoint] = []
-        for key, val in data.items():
+        if not quiet:
+            iterator = tqdm(data.items(), desc=f"Loading {key} files", leave=True)
+        else:
+            iterator = data.items()
+        for key, val in iterator:
             label = self.__diagnosis_map.get(val["label"])
             audio = self.__audio_loader(val["audio_keys"])
             dataset.append(DataPoint(id=key, audio=audio, label=label))
         return dataset
 
-    def load_audio(self, audio_key: str) -> np.ndarray:
-        raise NotImplementedError()
+    def __count_diagnosis(self) -> Dict[int, Diagnosis]:
+        train_diags = [d.label for d in self.__train]
+        test_diags = [d.label for d in self.__test.values()]
+        val_diags = [d.label for d in self.__val]
+        unique_diagnosis = set(train_diags + test_diags + val_diags)
+        return dict(enumerate(unique_diagnosis))

@@ -17,7 +17,13 @@ diagnosis_map_maps = {"v1": DiagnosisMap.v1}
 
 
 class Benchmark:
-    def __init__(self, storage_path: str, version: VERSIONS) -> None:
+    def __init__(
+        self,
+        storage_path: str,
+        version: VERSIONS,
+        quiet: bool = False,
+    ) -> None:
+        self.__quiet = quiet
         if not Path(storage_path).is_dir():
             raise ValueError(
                 f"storage_path: ({storage_path}) is not a valid directory."
@@ -61,6 +67,7 @@ class Benchmark:
             train=train_path,
             val=val_path,
             test=test_path,
+            quiet=self.__quiet,
         )
 
     def __ensure_datasets(self, tasks_path: str) -> None:
