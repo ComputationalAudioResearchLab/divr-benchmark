@@ -29,14 +29,17 @@ class S3PrlFeature(DataLoader):
 
 class Data2Vec(S3PrlFeature):
     model_name = "data2vec_large_ll60k"
+    feature_size = 25600
 
 
 class Wav2Vec(S3PrlFeature):
     model_name = "wav2vec_large"
+    feature_size = 6656
 
 
 class UnispeechSAT(S3PrlFeature):
     model_name = "unispeech_sat_large"
+    feature_size = 25600
 
 
 class ModifiedCPC(S3PrlFeature):
