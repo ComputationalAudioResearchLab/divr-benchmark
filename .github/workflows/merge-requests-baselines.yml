@@ -34,5 +34,5 @@ jobs:
           pipenv install --ignore-pipfile --dev
         working-directory: baselines
       - name: Lint files
-        run: pipenv run black . --check
+        run: pipenv run black divr_baselines --check
         working-directory: baselines

@@ -1,7 +1,6 @@
 from __future__ import annotations
 import torch
 import numpy as np
-from abc import ABC
 from typing import List, Tuple, Union
 from divr_benchmark import Task, TestPoint, TrainPoint
 
@@ -67,7 +66,9 @@ LabelTensor
 """
 
 
-class DataLoader(ABC):
+class DataLoader:
+    feature_size: int
+
     def __init__(
         self,
         task: Task,
@@ -79,6 +80,8 @@ class DataLoader(ABC):
         np.random.seed(random_seed)
         self.audio_sample_rate = task.audio_sample_rate
         self.device = device
+        self.unique_diagnosis = task.unique_diagnosis
+        self.num_unique_diagnosis = len(task.unique_diagnosis)
         self.__task = task
         self.__train_points = task.train
         self.__train_indices = np.arange(len(self.__train_points) // batch_size)
@@ -105,7 +108,7 @@ class DataLoader(ABC):
         self.__getitem = self.__tv_getitem
         return self
 
-    def val(self) -> DataLoader:
+    def eval(self) -> DataLoader:
         self.__indices = self.__val_indices
         self.__points = self.__val_points
         self.__data_len = len(self.__points) // self.__batch_size

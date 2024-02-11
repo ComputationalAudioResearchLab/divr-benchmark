@@ -87,8 +87,8 @@ class Task:
         )
 
     @property
-    def num_unique_diagnosis(self) -> int:
-        return len(self.__diagnosis_index)
+    def unique_diagnosis(self) -> List[str]:
+        return list(self.__diagnosis_index_reversed.keys())
 
     def index_to_diag(self, index: int) -> Diagnosis:
         return self.__diagnosis_index[index]

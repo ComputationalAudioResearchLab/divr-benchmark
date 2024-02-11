@@ -41,3 +41,4 @@ class UnispeechSAT(S3PrlFeature):
 
 class ModifiedCPC(S3PrlFeature):
     model_name = "modified_cpc"
+    feature_size = 512

@@ -12,6 +12,7 @@ class MeanMfcc(DataLoader):
     window = "hann"
     center = False
     power = 2
+    feature_size = n_mfcc
 
     def feature_function(self, batch: InputArrays) -> InputTensors:
         batch_size, max_audios_in_session, max_audio_len = batch[0].shape
