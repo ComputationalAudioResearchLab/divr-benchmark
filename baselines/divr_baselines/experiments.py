@@ -17,7 +17,7 @@ experiments = [
         criterion=nn.CrossEntropyLoss(),
         OptimClass=Adam,
         lr=1e-5,
-        batch_size=16,
+        batch_size=8,
     ),
     HParams(
         experiment_key="S1/T1/ModifiedCPC/Simple",

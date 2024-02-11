@@ -143,4 +143,4 @@ class Task:
         test_diags = [d.label for d in self.__test.values()]
         val_diags = [d.label for d in self.__val]
         unique_diagnosis = set(train_diags + test_diags + val_diags)
-        return dict(enumerate(unique_diagnosis))
+        return dict(enumerate(sorted(unique_diagnosis, key=lambda x: x.name)))

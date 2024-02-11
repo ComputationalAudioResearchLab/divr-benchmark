@@ -51,7 +51,6 @@ class Trainer:
         self.unique_diagnosis = task.unique_diagnosis
 
     def run(self) -> None:
-        self.tboard.launch()
         for epoch in tqdm(range(self.num_epochs), desc="Epoch", position=0):
             train_loss = self.__train_loop()
             eval_loss, eval_accuracy = self.__eval_loop(epoch=epoch)
@@ -138,7 +137,7 @@ class Trainer:
         ax.set_ylabel("Actual")
         ax.set_xlabel("Predicted")
         self.tboard.add_figure(tag="eval confusion", figure=fig, global_step=epoch)
-        plt.close()
+        plt.close(fig=fig)
 
     def __save(self, epoch: int, eval_accuracy: float):
         if not self.save_enabled:
