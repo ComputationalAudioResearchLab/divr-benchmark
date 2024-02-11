@@ -32,6 +32,9 @@ class Diagnosis:
     parents: List[DiagnosisLink]
     votes: Dict[str, str]
 
+    def __hash__(self) -> int:
+        return hash(self.name)
+
     def satisfies(self, name: str) -> bool:
         if name == self.name or name in self.alias:
             return True

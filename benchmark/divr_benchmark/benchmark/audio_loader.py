@@ -5,6 +5,8 @@ from pathlib import Path
 
 
 class AudioLoader:
+    sample_rate = 16000
+
     def __init__(self, version: str, data_path: Path) -> None:
         self.__data_path = data_path
         self.__version = version
@@ -16,7 +18,7 @@ class AudioLoader:
 
     def __v1(self, key: str) -> np.ndarray:
         audio_path = f"{self.__data_path}/{key}"
-        audio, _ = librosa.load(audio_path, sr=16000)
+        audio, _ = librosa.load(audio_path, sr=self.sample_rate)
         return self.__normalize(audio)
 
     def __normalize(self, audio: np.ndarray) -> np.ndarray:

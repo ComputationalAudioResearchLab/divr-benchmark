@@ -80,6 +80,7 @@ class Task:
                 )
             ]
         )
+        self.audio_sample_rate = audio_loader.sample_rate
         self.__diagnosis_index = self.__count_diagnosis()
         self.__diagnosis_index_reversed = dict(
             [(v.name, k) for k, v in self.__diagnosis_index.items()]
@@ -92,7 +93,10 @@ class Task:
     def index_to_diag(self, index: int) -> Diagnosis:
         return self.__diagnosis_index[index]
 
-    def diag_to_index(self, diag_name: str) -> int:
+    def diag_to_index(self, diag: Diagnosis) -> int:
+        return self.diag_name_to_index(diag.name)
+
+    def diag_name_to_index(self, diag_name: str) -> int:
         return self.__diagnosis_index_reversed[diag_name]
 
     @property
