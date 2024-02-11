@@ -1,3 +1,4 @@
+from __future__ import annotations
 import torch
 import numpy as np
 from abc import ABC
@@ -87,6 +88,7 @@ class DataLoader(ABC):
         self.__val_indices = np.arange(len(self.__val_points) // batch_size)
         self.__batch_size = batch_size
         self.__shuffle_train = shuffle_train
+        self.feature_init()
 
     def __len__(self) -> int:
         return self.__data_len
@@ -94,25 +96,31 @@ class DataLoader(ABC):
     def __getitem__(self, idx: int):
         return self.__getitem(idx)
 
-    def train(self) -> None:
+    def train(self) -> DataLoader:
         if self.__shuffle_train:
             np.random.shuffle(self.__train_indices)
         self.__indices = self.__train_indices
         self.__points = self.__train_points
         self.__data_len = len(self.__points) // self.__batch_size
         self.__getitem = self.__tv_getitem
+        return self
 
-    def val(self) -> None:
+    def val(self) -> DataLoader:
         self.__indices = self.__val_indices
         self.__points = self.__val_points
         self.__data_len = len(self.__points) // self.__batch_size
         self.__getitem = self.__tv_getitem
+        return self
 
-    def test(self) -> None:
+    def test(self) -> DataLoader:
         self.__indices = self.__test_indices
         self.__points = self.__test_points
         self.__data_len = len(self.__points) // self.__batch_size
         self.__getitem = self.__test_getitem
+        return self
+
+    def feature_init(self) -> None:
+        pass
 
     def feature_function(self, batch: InputArrays) -> InputTensors:
         raise NotImplementedError()
