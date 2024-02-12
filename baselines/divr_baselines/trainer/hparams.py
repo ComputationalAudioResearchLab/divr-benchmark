@@ -16,6 +16,8 @@ class HParams:
     # storage path config
     experiment_key: str
     base_path = Path(f"{project_root}/data/divr_benchmark")
+    cache_base_path = Path("/home/storage/divr_benchmark")
+    benchmark_path = Path(f"{base_path}/storage")
 
     # model and features
     DataLoaderClass: Type

@@ -82,7 +82,7 @@ class DataLoader:
 
     def __init__(
         self,
-        base_path: Path,
+        benchmark_path: Path,
         benchmark_version: str,
         stream: int,
         task: int,
@@ -91,6 +91,7 @@ class DataLoader:
         random_seed: int,
         shuffle_train: bool,
         cache_enabled: bool,
+        cache_base_path: Path,
         cache_key: str,
     ) -> None:
         np.random.seed(random_seed)
@@ -100,10 +101,11 @@ class DataLoader:
         self.__batch_size = batch_size
         self.__shuffle_train = shuffle_train
         self.__load_data(
-            base_path=base_path,
+            benchmark_path=benchmark_path,
             benchmark_version=benchmark_version,
             stream=stream,
             task=task,
+            cache_base_path=cache_base_path,
             cache_key=cache_key,
         )
 
@@ -157,7 +159,7 @@ class DataLoader:
         shapes = self.__points.shapes[start:end]
         labels = self.__points.labels[start:end]
         batch_size = len(shapes)
-        max_audio_len = shapes.max()[0]
+        max_audio_len = np.concatenate(shapes).max()
         max_audios = len(max(shapes, key=len))
         feature = np.zeros((batch_size, max_audios, max_audio_len, self.feature_size))
         feature_lens = np.zeros((batch_size, max_audios))
@@ -217,15 +219,16 @@ class DataLoader:
 
     def __load_data(
         self,
-        base_path: Path,
+        benchmark_path: Path,
         benchmark_version: str,
         stream: int,
         task: int,
+        cache_base_path: Path,
         cache_key: str,
     ) -> None:
         if not self.__cache_enabled:
             btask = self.__load_task(
-                base_path=base_path,
+                benchmark_path=benchmark_path,
                 benchmark_version=benchmark_version,
                 stream=stream,
                 task=task,
@@ -245,12 +248,11 @@ class DataLoader:
             )
             self.__val_indices = np.arange(len(self.__val_points) // self.__batch_size)
         else:
-            cache_path = Path(f"{base_path}/cache/{cache_key}.hdf5")
-            print(cache_path)
+            cache_path = Path(f"{cache_base_path}/cache/{cache_key}.hdf5")
             if not cache_path.is_file():
                 self.__create_cache(
                     cache_path=cache_path,
-                    base_path=base_path,
+                    benchmark_path=benchmark_path,
                     benchmark_version=benchmark_version,
                     stream=stream,
                     task=task,
@@ -280,15 +282,15 @@ class DataLoader:
     def __create_cache(
         self,
         cache_path: Path,
-        base_path: Path,
+        benchmark_path: Path,
         benchmark_version: str,
         stream: int,
         task: int,
     ) -> None:
         print(f"cache does not exist, creating at {cache_path}")
-        cache_path.parent.mkdir(parents=True)
+        cache_path.parent.mkdir(exist_ok=True, parents=True)
         btask = self.__load_task(
-            base_path=base_path,
+            benchmark_path=benchmark_path,
             benchmark_version=benchmark_version,
             stream=stream,
             task=task,
@@ -332,15 +334,13 @@ class DataLoader:
 
     def __load_task(
         self,
-        base_path: Path,
+        benchmark_path: Path,
         benchmark_version: str,
         stream: int,
         task: int,
     ) -> Task:
-        storage_path = Path(f"{base_path}/storage")
-        storage_path.mkdir(parents=True, exist_ok=True)
         benchmark = Benchmark(
-            storage_path=storage_path,
+            storage_path=benchmark_path,
             version=benchmark_version,
         )
         return benchmark.task(stream=stream, task=task)

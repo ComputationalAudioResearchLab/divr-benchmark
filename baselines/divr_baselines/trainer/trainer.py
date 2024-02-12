@@ -20,8 +20,9 @@ class Trainer:
             f"{hparams.base_path}/checkpoints/{hparams.experiment_key}"
         )
         tensorboard_path = Path(f"{hparams.base_path}/tboard/{hparams.experiment_key}")
+        hparams.benchmark_path.mkdir(parents=True, exist_ok=True)
         self.data_loader = hparams.DataLoaderClass(
-            base_path=hparams.base_path,
+            benchmark_path=hparams.benchmark_path,
             benchmark_version=hparams.benchmark_version,
             stream=hparams.stream,
             task=hparams.task,
@@ -30,13 +31,15 @@ class Trainer:
             random_seed=hparams.random_seed,
             shuffle_train=hparams.shuffle_train,
             cache_enabled=hparams.cache_enabled,
+            cache_base_path=hparams.cache_base_path,
             cache_key=hparams.cache_key,
         )
-        self.model = hparams.ModelClass(
+        model = hparams.ModelClass(
             input_size=self.data_loader.feature_size,
             num_classes=self.data_loader.num_unique_diagnosis,
             checkpoint_path=checkpoint_path,
         ).to(hparams.device)
+        self.model = torch.compile(model)
         self.optimizer = hparams.OptimClass(
             params=self.model.parameters(), lr=hparams.lr
         )
