@@ -11,6 +11,7 @@ First version of benchmarking tasks for disordered voice recognition. These sets
 5. Only diagnosis levels 0, 1 and 2 are considered.
 6. The test set is restricted to 16kHz sample rate, z-score normalized audio.
 7. Only single diagnosis from the original dataset are captured in the tests. If there are multiple diagnosis then the diagnosis that is best classified under our system is chosen. In case of ties whichever appears first is chosen.
+8. Many prompts in Torgo are not performed by all participants, as such we have chosen only prompts that are performed by all participants to ensure that the data does not automatically bias based on prompts.
 
 ## Task Streams
 
