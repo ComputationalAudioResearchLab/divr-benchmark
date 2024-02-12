@@ -3,6 +3,8 @@ from pathlib import Path
 from dataclasses import dataclass
 from typing import Type, Callable
 
+project_root = Path(__file__).parent.parent.parent.resolve()
+
 
 @dataclass
 class HParams:
@@ -13,7 +15,7 @@ class HParams:
 
     # storage path config
     experiment_key: str
-    base_path = Path("/home/divr_benchmark")
+    base_path = Path(f"{project_root}/data/divr_benchmark")
 
     # model and features
     DataLoaderClass: Type
