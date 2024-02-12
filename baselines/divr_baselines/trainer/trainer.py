@@ -3,7 +3,7 @@ import numpy as np
 from tqdm import tqdm
 from typing import Dict
 from pathlib import Path
-from .tboard import TBoard
+from .tboard import TBoard, MockBoard
 from .hparams import HParams
 import matplotlib.pyplot as plt
 import torch.nn.functional as F
@@ -16,23 +16,21 @@ class Trainer:
     best_eval_accuracy = 0
 
     def __init__(self, hparams: HParams) -> None:
-        storage_path = Path(f"{hparams.base_path}/storage")
         checkpoint_path = Path(
             f"{hparams.base_path}/checkpoints/{hparams.experiment_key}"
         )
         tensorboard_path = Path(f"{hparams.base_path}/tboard/{hparams.experiment_key}")
-        storage_path.mkdir(parents=True, exist_ok=True)
-        self.benchmark = Benchmark(
-            storage_path=storage_path,
-            version=hparams.benchmark_version,
-        )
-        task = self.benchmark.task(stream=hparams.stream, task=hparams.task)
         self.data_loader = hparams.DataLoaderClass(
-            task=task,
+            base_path=hparams.base_path,
+            benchmark_version=hparams.benchmark_version,
+            stream=hparams.stream,
+            task=hparams.task,
             device=hparams.device,
             batch_size=hparams.batch_size,
             random_seed=hparams.random_seed,
             shuffle_train=hparams.shuffle_train,
+            cache_enabled=hparams.cache_enabled,
+            cache_key=hparams.cache_key,
         )
         self.model = hparams.ModelClass(
             input_size=self.data_loader.feature_size,
@@ -42,13 +40,16 @@ class Trainer:
         self.optimizer = hparams.OptimClass(
             params=self.model.parameters(), lr=hparams.lr
         )
-        self.tboard = TBoard(tensorboard_path=tensorboard_path)
+        if hparams.tboard_enabled:
+            self.tboard = TBoard(tensorboard_path=tensorboard_path)
+        else:
+            self.tboard = MockBoard()
         self.criterion = hparams.criterion
         self.num_epochs = hparams.num_epochs
         self.save_epochs = hparams.save_epochs
         self.confusion_epochs = hparams.confusion_epochs
         self.save_enabled = hparams.save_enabled
-        self.unique_diagnosis = task.unique_diagnosis
+        self.unique_diagnosis = self.data_loader.unique_diagnosis
 
     def run(self) -> None:
         for epoch in tqdm(range(self.num_epochs), desc="Epoch", position=0):

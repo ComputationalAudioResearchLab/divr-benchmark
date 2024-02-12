@@ -39,6 +39,7 @@ experiments = [
     ## S0
     HParams(
         experiment_key="S0/ModifiedCPC/Simple",
+        cache_key="S0",
         stream=0,
         task=1,
         DataLoaderClass=ModifiedCPC,
@@ -52,6 +53,7 @@ experiments = [
     ## S1/T1
     HParams(
         experiment_key="S1/T1/Data2Vec/Simple",
+        cache_key="S1/T1",
         stream=1,
         task=1,
         DataLoaderClass=Data2Vec,
@@ -64,6 +66,7 @@ experiments = [
     ),
     HParams(
         experiment_key="S1/T1/MeanMfcc/Simple",
+        cache_key="S1/T1",
         stream=1,
         task=1,
         DataLoaderClass=MeanMfcc,
@@ -76,6 +79,7 @@ experiments = [
     ),
     HParams(
         experiment_key="S1/T1/ModifiedCPC/Simple",
+        cache_key="S1/T1",
         stream=1,
         task=1,
         DataLoaderClass=ModifiedCPC,
@@ -88,6 +92,7 @@ experiments = [
     ),
     HParams(
         experiment_key="S1/T1/UnispeechSAT/Simple",
+        cache_key="S1/T1",
         stream=1,
         task=1,
         DataLoaderClass=UnispeechSAT,
@@ -100,6 +105,7 @@ experiments = [
     ),
     HParams(
         experiment_key="S1/T1/Wav2Vec/Simple",
+        cache_key="S1/T1",
         stream=1,
         task=1,
         DataLoaderClass=Wav2Vec,
@@ -113,6 +119,7 @@ experiments = [
     ## S1/T9
     HParams(
         experiment_key="S1/T9/Data2Vec/Simple",
+        cache_key="S1/T9",
         stream=1,
         task=9,
         DataLoaderClass=Data2Vec,

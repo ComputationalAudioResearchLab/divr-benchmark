@@ -4,6 +4,17 @@ from tensorboard.program import TensorBoard
 from torch.utils.tensorboard.writer import SummaryWriter
 
 
+class MockBoard:
+    def add_figure(self, *args, **kwargs):
+        pass
+
+    def add_scalar(self, *args, **kwargs):
+        pass
+
+    def add_scalars(self, *args, **kwargs):
+        pass
+
+
 class TBoard(SummaryWriter):
     def __init__(self, tensorboard_path: Path):
         self.logpath = Path(

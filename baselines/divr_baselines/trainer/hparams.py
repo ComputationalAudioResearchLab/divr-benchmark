@@ -25,9 +25,12 @@ class HParams:
     # execution
     batch_size: int
     device: torch.device
+    cache_key: str
+    cache_enabled = False
     num_epochs = 1000
     save_epochs = list(range(0, num_epochs + 1, num_epochs // 10))
     confusion_epochs = list(range(0, num_epochs + 1, 10))
     random_seed = 42
     shuffle_train = True
     save_enabled = True
+    tboard_enabled = True
