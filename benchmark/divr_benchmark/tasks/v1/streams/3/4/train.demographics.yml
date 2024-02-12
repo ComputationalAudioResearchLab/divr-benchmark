@@ -20,14 +20,14 @@ normal:
       mean: 37.36363636363637
       min: 20
       std: 13.967804662851178
-    total: 1253
+    total: 59
   male:
     age_stats:
       max: 66
-      mean: 56.42925659472422
+      mean: 55.237037037037034
       min: 23
-      std: 3.918080337685608
-    total: 1347
+      std: 6.748363436106728
+    total: 474
 organic_inflammatory:
   female:
     age_stats:
@@ -70,14 +70,14 @@ unclassified_pathology:
   female:
     age_stats:
       max: 28
-      mean: 23.289752650176677
+      mean: 24.069252077562325
       min: 21
-      std: 2.81792938553759
-    total: 1132
+      std: 2.8339551759084287
+    total: 361
   male:
     age_stats:
       max: 29
-      mean: 27.692789968652036
+      mean: 27.59
       min: 26
-      std: 1.4880256227134094
-    total: 2616
+      std: 1.4997993176792142
+    total: 468

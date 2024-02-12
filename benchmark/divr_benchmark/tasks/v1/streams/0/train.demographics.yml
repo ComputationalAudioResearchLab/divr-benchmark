@@ -5,26 +5,26 @@ normal:
       mean: 27.601382488479263
       min: 9
       std: 13.374793810892292
-    total: 5137
+    total: 3943
   male:
     age_stats:
       max: 69
-      mean: 35.85154880187025
+      mean: 33.952229299363054
       min: 16
-      std: 13.953053063604973
-    total: 4352
+      std: 12.976475816802251
+    total: 3479
 pathological:
   female:
     age_stats:
       max: 94
-      mean: 44.751633986928105
+      mean: 47.574735782586814
       min: 12
-      std: 16.958655852501956
-    total: 6732
+      std: 15.944634468172477
+    total: 5961
   male:
     age_stats:
       max: 89
-      mean: 46.05392773683264
+      mean: 51.617853795688845
       min: 14
-      std: 17.185295459240326
-    total: 6584
+      std: 15.851857829865043
+    total: 4436

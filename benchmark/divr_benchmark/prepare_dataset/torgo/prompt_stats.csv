@@ -1,0 +1,996 @@
+prompt,total_speakers,min_sessions,max_sessions,average_sessions
+[relax your mouth in its normal position],15.0,2.0,13.0,6.133333333333334
+[say ah for 5 seconds],15.0,1.0,5.0,2.1333333333333333
+[say eee in a very high pitch],15.0,1.0,3.0,1.2
+[say oa as in coat in a very low pitch],15.0,1.0,3.0,1.2
+"a long, flowing beard clings to his chin,",15.0,1.0,2.0,1.1333333333333333
+air,15.0,2.0,5.0,3.8666666666666667
+alpha,15.0,1.0,2.0,1.0666666666666667
+bat,15.0,1.0,4.0,2.1333333333333333
+beat,15.0,2.0,6.0,3.3333333333333335
+beta,15.0,1.0,2.0,1.1333333333333333
+bit,15.0,1.0,3.0,2.0
+bubble,15.0,1.0,2.0,1.0666666666666667
+bug,15.0,1.0,2.0,1.2
+"but he always answers, banana oil!",15.0,1.0,2.0,1.2666666666666666
+car,15.0,1.0,2.0,1.0666666666666667
+chair,15.0,2.0,4.0,2.6666666666666665
+corn,15.0,1.0,2.0,1.3333333333333333
+dagger,15.0,1.0,2.0,1.0666666666666667
+dark,15.0,1.0,2.0,1.8666666666666667
+double,15.0,1.0,2.0,1.0666666666666667
+down,15.0,1.0,2.0,1.6
+dug,15.0,1.0,3.0,1.8
+"except in the winter when the ooze or snow or ice prevents,",15.0,1.0,2.0,1.1333333333333333
+fair,15.0,1.0,2.0,1.0666666666666667
+farm,15.0,1.0,2.0,1.2666666666666666
+fee,15.0,1.0,2.0,1.0666666666666667
+feed,15.0,1.0,5.0,2.6666666666666665
+feet,15.0,2.0,6.0,3.2666666666666666
+floor,15.0,1.0,3.0,2.0
+for,15.0,1.0,2.0,1.1333333333333333
+form,15.0,1.0,2.0,1.2666666666666666
+gadget,15.0,1.0,2.0,1.0666666666666667
+giving those who observe him a pronounced feeling of the utmost respect.,15.0,1.0,2.0,1.0666666666666667
+go,15.0,1.0,2.0,1.0666666666666667
+goat,15.0,1.0,3.0,1.6
+grow,15.0,1.0,2.0,1.1333333333333333
+hair,15.0,1.0,2.0,1.0666666666666667
+horn,15.0,1.0,3.0,1.3333333333333333
+input/images/kitchen.jpg,15.0,1.0,2.0,1.1333333333333333
+input/images/story_starters_15.jpg,15.0,1.0,2.0,1.2
+jacket,15.0,1.0,2.0,1.1333333333333333
+jagged,15.0,1.0,2.0,1.0666666666666667
+knee,15.0,1.0,2.0,1.0666666666666667
+knew,15.0,2.0,5.0,3.0
+know,15.0,1.0,3.0,2.1333333333333333
+left,15.0,1.0,6.0,1.9333333333333333
+meat,15.0,1.0,5.0,2.8
+no,15.0,1.0,5.0,3.7333333333333334
+one,15.0,1.0,3.0,2.0
+park,15.0,1.0,3.0,1.9333333333333333
+pat,15.0,1.0,6.0,2.933333333333333
+race,15.0,1.0,2.0,1.0666666666666667
+rage,15.0,1.0,2.0,1.2
+raid,15.0,1.0,2.0,1.0666666666666667
+rain,15.0,1.0,2.0,1.1333333333333333
+rake,15.0,1.0,5.0,2.3333333333333335
+range,15.0,1.0,2.0,1.0666666666666667
+rate,15.0,1.0,2.0,1.0666666666666667
+rave,15.0,1.0,2.0,1.1333333333333333
+right,15.0,1.0,2.0,1.6666666666666667
+share,15.0,1.0,2.0,1.0666666666666667
+she had your dark suit in greasy wash water all year.,15.0,1.0,2.0,1.0666666666666667
+sheet,15.0,1.0,5.0,2.533333333333333
+ship,15.0,1.0,4.0,2.2
+sip,15.0,3.0,6.0,3.933333333333333
+slip,15.0,1.0,4.0,3.066666666666667
+spark,15.0,1.0,3.0,2.066666666666667
+stick,15.0,1.0,2.0,1.0666666666666667
+sticks,15.0,1.0,3.0,1.8
+store,15.0,1.0,2.0,1.1333333333333333
+storm,15.0,2.0,4.0,2.2666666666666666
+stubble,15.0,1.0,2.0,1.1333333333333333
+swarm,15.0,2.0,4.0,2.2666666666666666
+swore,15.0,1.0,2.0,1.0666666666666667
+tear [as in tear up that paper],15.0,1.0,2.0,1.2
+the,15.0,1.0,2.0,1.2666666666666666
+the quick brown fox jumps over the lazy dog.,15.0,1.0,2.0,1.1333333333333333
+tip,15.0,1.0,2.0,1.3333333333333333
+torn,15.0,1.0,2.0,1.2666666666666666
+trace,15.0,1.0,2.0,1.0666666666666667
+trade,15.0,1.0,2.0,1.0666666666666667
+train,15.0,1.0,2.0,1.1333333333333333
+trait,15.0,1.0,3.0,1.2
+trouble,15.0,1.0,2.0,1.1333333333333333
+twice each day he plays skillfully and with zest upon our small organ.,15.0,1.0,2.0,1.0666666666666667
+up,15.0,1.0,3.0,1.7333333333333334
+warm,15.0,2.0,4.0,2.2
+"we have often urged him to walk more and smoke less,",15.0,1.0,3.0,1.2
+weed,15.0,1.0,2.0,1.1333333333333333
+"when he speaks, his voice is just a bit cracked and quivers a trifle.",15.0,1.0,2.0,1.2666666666666666
+yes,15.0,1.0,6.0,3.7333333333333334
+yet he still thinks as swiftly as ever.,15.0,1.0,3.0,1.2
+you wished to know all about my grandfather.,15.0,1.0,2.0,1.0666666666666667
+[say ah-p-eee repeatedly],14.0,1.0,3.0,1.3571428571428572
+[say eee-p-ah repeatedly],14.0,1.0,2.0,1.1428571428571428
+ate,14.0,2.0,4.0,2.7142857142857144
+boot,14.0,1.0,3.0,1.6428571428571428
+born,14.0,1.0,3.0,1.3571428571428572
+coupe,14.0,1.0,1.0,1.0
+deer,14.0,1.0,1.0,1.0
+delta,14.0,1.0,1.0,1.0
+dont ask me to carry an oily rag like that.,14.0,1.0,2.0,1.0714285714285714
+galore,14.0,1.0,1.0,1.0
+glow,14.0,1.0,2.0,1.0714285714285714
+grandfather likes to be modern in his language.,14.0,1.0,2.0,1.1428571428571428
+group,14.0,1.0,1.0,1.0
+"he dresses himself in an ancient black frock coat,",14.0,1.0,4.0,1.3571428571428572
+he slowly takes a short walk in the open air each day.,14.0,1.0,2.0,1.0714285714285714
+hear,14.0,1.0,1.0,1.0
+i just try to do my best.,14.0,1.0,2.0,1.0714285714285714
+jungle,14.0,1.0,2.0,1.0714285714285714
+lead [as in i will lead you],14.0,1.0,2.0,1.0714285714285714
+mother sews yellow gingham aprons.,14.0,1.0,2.0,1.2857142857142858
+nothing is as offensive as innocence.,14.0,1.0,2.0,1.0714285714285714
+play,14.0,1.0,1.0,1.0
+pot,14.0,1.0,2.0,1.0714285714285714
+prior,14.0,1.0,2.0,1.0714285714285714
+rock,14.0,1.0,4.0,2.2857142857142856
+rocks,14.0,1.0,3.0,1.1428571428571428
+sigh,14.0,2.0,5.0,3.857142857142857
+slay,14.0,1.0,1.0,1.0
+sleep,14.0,1.0,1.0,1.0
+steer,14.0,1.0,1.0,1.0
+suit,14.0,1.0,2.0,1.9285714285714286
+their house is grey and white.,14.0,1.0,2.0,1.0714285714285714
+thigh,14.0,1.0,1.0,1.0
+troop,14.0,1.0,1.0,1.0
+two,14.0,1.0,3.0,2.2142857142857144
+urgent,14.0,1.0,2.0,1.0714285714285714
+we gathered shells on the beach.,14.0,1.0,1.0,1.0
+whoop,14.0,1.0,2.0,1.0714285714285714
+wish,14.0,1.0,1.0,1.0
+write,14.0,1.0,4.0,2.642857142857143
+[say pah-tah-kah repeatedly],13.0,1.0,2.0,1.1538461538461537
+all the big baseball players get traded.,13.0,1.0,2.0,1.0769230769230769
+aluminum silverware can often be flimsy.,13.0,1.0,3.0,1.1538461538461537
+are your grades higher or lower than nancys?,13.0,1.0,1.0,1.0
+back,13.0,1.0,2.0,1.6153846153846154
+bad,13.0,2.0,3.0,2.230769230769231
+bear,13.0,1.0,2.0,1.0769230769230769
+both figures would go higher in later years.,13.0,1.0,2.0,1.0769230769230769
+both injuries were to the same leg.,13.0,1.0,3.0,1.1538461538461537
+brawn,13.0,1.0,2.0,1.0769230769230769
+briar,13.0,1.0,2.0,1.0769230769230769
+bright sunshine shimmers on the ocean.,13.0,1.0,1.0,1.0
+charlie,13.0,1.0,1.0,1.0
+cheer,13.0,1.0,4.0,1.9230769230769231
+cycle,13.0,1.0,1.0,1.0
+dot,13.0,1.0,1.0,1.0
+droop,13.0,1.0,1.0,1.0
+error,13.0,1.0,1.0,1.0
+"everything went real smooth, the sheriff said.",13.0,1.0,1.0,1.0
+explore,13.0,1.0,1.0,1.0
+fat,13.0,1.0,4.0,2.769230769230769
+fate,13.0,1.0,1.0,1.0
+fear,13.0,1.0,2.0,1.0769230769230769
+forward,13.0,1.0,2.0,1.4615384615384615
+four,13.0,1.0,4.0,2.5384615384615383
+fruit,13.0,1.0,1.0,1.0
+gnaw,13.0,1.0,2.0,1.0769230769230769
+hat,13.0,1.0,4.0,2.076923076923077
+hate,13.0,1.0,2.0,1.2307692307692308
+he will allow a rare lie.,13.0,1.0,2.0,1.0769230769230769
+here,13.0,1.0,1.0,1.0
+i expect well bounce back this week.,13.0,1.0,1.0,1.0
+i feel i can play this weekend.,13.0,1.0,1.0,1.0
+i looked up and noticed two old men.,13.0,1.0,1.0,1.0
+i scrubbed the floors thoroughly.,13.0,1.0,2.0,1.0769230769230769
+i tried to tell people in the community.,13.0,1.0,1.0,1.0
+i was conscious all the time.,13.0,1.0,2.0,1.0769230769230769
+"if you destroy confidence in banks, you do something to the economy, he said.",13.0,1.0,2.0,1.2307692307692308
+input/images/story_starters_17.jpg,13.0,1.0,1.0,1.0
+input/images/story_starters_22.jpg,13.0,1.0,1.0,1.0
+it was a good win for us.,13.0,1.0,2.0,1.0769230769230769
+jane may earn more money by working hard.,13.0,1.0,1.0,1.0
+juliet,13.0,1.0,1.0,1.0
+just one side got wet.,13.0,1.0,1.0,1.0
+kitten,13.0,1.0,1.0,1.0
+knot,13.0,1.0,4.0,2.5384615384615383
+light,13.0,1.0,1.0,1.0
+lip,13.0,1.0,5.0,2.3846153846153846
+loop,13.0,1.0,1.0,1.0
+loyal,13.0,1.0,2.0,1.0769230769230769
+menu,13.0,1.0,2.0,1.4615384615384615
+mere,13.0,1.0,2.0,1.0769230769230769
+mut,13.0,1.0,1.0,1.0
+my sister made the flowered curtains.,13.0,1.0,1.0,1.0
+near,13.0,1.0,1.0,1.0
+nothing has been done yet to take advantage of the enabling legislation.,13.0,1.0,2.0,1.0769230769230769
+of,13.0,1.0,1.0,1.0
+one validated acts of school districts.,13.0,1.0,1.0,1.0
+pad,13.0,1.0,3.0,1.6923076923076923
+papa,13.0,1.0,2.0,1.0769230769230769
+pay,13.0,1.0,1.0,1.0
+peer,13.0,1.0,1.0,1.0
+pile,13.0,1.0,1.0,1.0
+read [as in i can read],13.0,2.0,4.0,2.230769230769231
+root,13.0,1.0,1.0,1.0
+select,13.0,1.0,2.0,1.5384615384615385
+she is thinner than i am.,13.0,1.0,2.0,1.0769230769230769
+"she wore warm, fleecy, woolen overalls.",13.0,1.0,1.0,1.0
+shear,13.0,1.0,1.0,1.0
+shoot,13.0,1.0,4.0,2.230769230769231
+side,13.0,2.0,3.0,2.5384615384615383
+single,13.0,1.0,1.0,1.0
+snoop,13.0,1.0,1.0,1.0
+spit,13.0,1.0,4.0,2.230769230769231
+sprinkle,13.0,1.0,1.0,1.0
+sway,13.0,1.0,1.0,1.0
+tear [as in tear in my eye],13.0,1.0,2.0,1.4615384615384615
+the humidity is overwhelming there.,13.0,1.0,1.0,1.0
+the islands are sparsely populated.,13.0,1.0,1.0,1.0
+the train approached the depot slowly.,13.0,1.0,1.0,1.0
+there is a treehouse up above.,13.0,1.0,1.0,1.0
+they carried me off on the stretcher.,13.0,1.0,1.0,1.0
+this is not a program of socialized medicine.,13.0,1.0,2.0,1.2307692307692308
+this was easy for us.,13.0,1.0,1.0,1.0
+though,13.0,1.0,2.0,1.0769230769230769
+three,13.0,1.0,3.0,1.9230769230769231
+tie,13.0,1.0,2.0,1.0769230769230769
+tile,13.0,1.0,3.0,1.8461538461538463
+toot,13.0,1.0,1.0,1.0
+two other cases also were under advisement.,13.0,1.0,2.0,1.2307692307692308
+usually minus several buttons;,13.0,1.0,2.0,1.1538461538461537
+vat,13.0,1.0,2.0,1.0769230769230769
+"well, he is nearly ninety-three years old;",13.0,1.0,2.0,1.1538461538461537
+were,13.0,1.0,3.0,1.4615384615384615
+where were you while we were away?,13.0,1.0,1.0,1.0
+white,13.0,1.0,1.0,1.0
+why yell or worry over silly items?,13.0,1.0,2.0,1.0769230769230769
+will robin wear a yellow lily?,13.0,1.0,1.0,1.0
+witch,13.0,1.0,4.0,2.769230769230769
+youd be better off taking a cold shower.,13.0,1.0,2.0,1.1538461538461537
+youre used to being on the field.,13.0,1.0,1.0,1.0
+a roll of wire lay near the wall.,12.0,1.0,2.0,1.0833333333333333
+alimony harms a divorced mans wealth.,12.0,1.0,1.0,1.0
+and,12.0,1.0,2.0,1.75
+area,12.0,1.0,2.0,1.0833333333333333
+at,12.0,1.0,4.0,2.4166666666666665
+barn,12.0,1.0,1.0,1.0
+"before thursdays exam, review every formula.",12.0,1.0,1.0,1.0
+bitten,12.0,1.0,2.0,1.0833333333333333
+blow,12.0,1.0,3.0,1.5833333333333333
+brought,12.0,1.0,1.0,1.0
+carl lives in a lively home.,12.0,1.0,1.0,1.0
+cart,12.0,1.0,1.0,1.0
+chop,12.0,1.0,3.0,1.9166666666666667
+city,12.0,1.0,1.0,1.0
+dart,12.0,1.0,1.0,1.0
+day after day some new episode is reported.,12.0,1.0,1.0,1.0
+echo,12.0,1.0,1.0,1.0
+eight,12.0,1.0,3.0,1.9166666666666667
+fill,12.0,1.0,4.0,1.9166666666666667
+fitting,12.0,1.0,1.0,1.0
+foxtrot,12.0,1.0,2.0,1.0833333333333333
+golf,12.0,1.0,1.0,1.0
+hark,12.0,1.0,1.0,1.0
+harp,12.0,1.0,1.0,1.0
+he further proposed grants of an unspecified sum for experimental hospitals.,12.0,1.0,2.0,1.25
+he wrapped the package hastily.,12.0,1.0,2.0,1.0833333333333333
+heart,12.0,1.0,2.0,1.0833333333333333
+hem,12.0,1.0,1.0,1.0
+hill,12.0,1.0,2.0,1.0833333333333333
+him,12.0,2.0,4.0,2.8333333333333335
+hitting,12.0,1.0,2.0,1.0833333333333333
+hotel,12.0,1.0,2.0,1.1666666666666667
+hum,12.0,1.0,1.0,1.0
+i have had my bell rung.,12.0,1.0,1.0,1.0
+"if you are losing water, replace it immediately.",12.0,1.0,1.0,1.0
+it also provides for funds to clear slums and help colleges build dormitories.,12.0,1.0,2.0,1.1666666666666667
+it eventually became a rather proud claim.,12.0,1.0,2.0,1.0833333333333333
+kilo,12.0,1.0,2.0,1.0833333333333333
+knitting,12.0,1.0,1.0,1.0
+lair,12.0,1.0,1.0,1.0
+league,12.0,1.0,1.0,1.0
+leak,12.0,3.0,6.0,4.333333333333333
+lick,12.0,1.0,2.0,1.0833333333333333
+mike,12.0,1.0,1.0,1.0
+mitten,12.0,1.0,1.0,1.0
+much,12.0,1.0,3.0,2.4166666666666665
+"night after night, they received annoying phone calls.",12.0,1.0,1.0,1.0
+nine,12.0,1.0,3.0,1.8333333333333333
+oscar,12.0,1.0,2.0,1.0833333333333333
+part,12.0,1.0,1.0,1.0
+pit,12.0,2.0,4.0,3.0
+pitting,12.0,1.0,3.0,1.25
+pretty,12.0,1.0,1.0,1.0
+quebec,12.0,1.0,1.0,1.0
+reek,12.0,1.0,1.0,1.0
+rich,12.0,1.0,1.0,1.0
+seed,12.0,1.0,3.0,1.75
+seeds,12.0,1.0,2.0,1.0833333333333333
+sell,12.0,1.0,3.0,2.0833333333333335
+sergeant,12.0,1.0,1.0,1.0
+seven,12.0,1.0,3.0,2.0
+shy,12.0,1.0,2.0,1.0833333333333333
+sign,12.0,1.0,1.0,1.0
+sitting,12.0,1.0,1.0,1.0
+six,12.0,1.0,4.0,2.4166666666666665
+spain,12.0,1.0,2.0,1.0833333333333333
+start,12.0,1.0,1.0,1.0
+students watched as he got out.,12.0,1.0,1.0,1.0
+swing your arm as high as you can.,12.0,1.0,1.0,1.0
+take,12.0,1.0,2.0,1.4166666666666667
+tell,12.0,1.0,1.0,1.0
+the books are very expensive.,12.0,1.0,2.0,1.0833333333333333
+the box contained three sweaters.,12.0,1.0,1.0,1.0
+the dolphins swam around our boat.,12.0,1.0,2.0,1.0833333333333333
+the little schoolhouse stood empty.,12.0,1.0,1.0,1.0
+the misguided souls have lost their way.,12.0,1.0,1.0,1.0
+the museum hires musicians every evening.,12.0,1.0,1.0,1.0
+thorn,12.0,1.0,2.0,1.0833333333333333
+thought,12.0,1.0,2.0,1.0833333333333333
+we rode horseback to the farm.,12.0,1.0,1.0,1.0
+witty,12.0,1.0,2.0,1.0833333333333333
+written,12.0,1.0,1.0,1.0
+zero,12.0,1.0,3.0,1.9166666666666667
+alfalfa is healthy for you.,11.0,1.0,1.0,1.0
+bloat,11.0,1.0,1.0,1.0
+cake,11.0,1.0,3.0,1.9090909090909092
+darn,11.0,1.0,1.0,1.0
+five,11.0,1.0,4.0,2.1818181818181817
+lima,11.0,1.0,1.0,1.0
+mush,11.0,1.0,1.0,1.0
+november,11.0,1.0,2.0,1.0909090909090908
+the job provides many benefits.,11.0,1.0,2.0,1.0909090909090908
+this is a period of transition for me.,11.0,1.0,2.0,1.0909090909090908
+top,11.0,1.0,1.0,1.0
+"when all else fails, use force.",11.0,1.0,2.0,1.0909090909090908
+wicked,11.0,1.0,1.0,1.0
+xxx,11.0,1.0,12.0,5.2727272727272725
+a good attitude is unbeatable.,10.0,1.0,1.0,1.0
+bread,10.0,1.0,2.0,1.6
+dread,10.0,1.0,3.0,1.8
+each one volunteered to jump first.,10.0,1.0,2.0,1.1
+people who value themselves are lifes winners.,10.0,1.0,1.0,1.0
+said,10.0,1.0,3.0,1.7
+sin,10.0,1.0,3.0,2.3
+slicker,10.0,1.0,1.0,1.0
+uniform,10.0,1.0,1.0,1.0
+victor,10.0,1.0,1.0,1.0
+"although always alone, we survive.",9.0,1.0,1.0,1.0
+being able to dance can help too.,9.0,1.0,1.0,1.0
+bitter,9.0,1.0,1.0,1.0
+chip,9.0,1.0,2.0,1.1111111111111112
+dress,9.0,1.0,2.0,1.1111111111111112
+ham,9.0,1.0,1.0,1.0
+he is definitely a notch above us.,9.0,1.0,3.0,1.2222222222222223
+im willing to experiment for the first time.,9.0,1.0,1.0,1.0
+lock,9.0,1.0,1.0,1.0
+nest,9.0,1.0,1.0,1.0
+sand,9.0,1.0,1.0,1.0
+sink,9.0,1.0,3.0,1.7777777777777777
+tango,9.0,1.0,1.0,1.0
+the hotel owner shrugged.,9.0,1.0,1.0,1.0
+the prospect of cutting back spending is an unpleasant one for any governor.,9.0,1.0,1.0,1.0
+the wait for work can be very long.,9.0,1.0,1.0,1.0
+ticker,9.0,1.0,1.0,1.0
+tin,9.0,1.0,2.0,1.1111111111111112
+tread,9.0,1.0,2.0,1.1111111111111112
+walk,9.0,1.0,1.0,1.0
+we bought a brown chair.,9.0,1.0,1.0,1.0
+yankee,9.0,1.0,1.0,1.0
+zip,9.0,1.0,2.0,1.1111111111111112
+bed,8.0,1.0,2.0,1.5
+beg that guard for one gallon of gas.,8.0,1.0,1.0,1.0
+best,8.0,1.0,1.0,1.0
+dead,8.0,1.0,2.0,1.75
+dice,8.0,1.0,2.0,1.125
+did dad do academic bidding?,8.0,1.0,2.0,1.125
+fork,8.0,1.0,4.0,3.25
+get a calico cat to keep.,8.0,1.0,1.0,1.0
+hand,8.0,1.0,3.0,2.25
+he really crucified him; he nailed it for a yard loss.,8.0,1.0,2.0,1.125
+he took me out one day.,8.0,1.0,1.0,1.0
+help greg to pick a peck of potatoes.,8.0,1.0,1.0,1.0
+in,8.0,1.0,2.0,1.75
+most young rise early every morning.,8.0,1.0,1.0,1.0
+neat,8.0,1.0,3.0,1.75
+ned,8.0,1.0,1.0,1.0
+nice,8.0,1.0,4.0,2.875
+nobody really expects to evacuate.,8.0,1.0,2.0,1.375
+nod,8.0,1.0,1.0,1.0
+nut,8.0,1.0,1.0,1.0
+only lawyers love millionaires.,8.0,1.0,1.0,1.0
+please open the window quickly.,8.0,1.0,1.0,1.0
+red,8.0,1.0,2.0,1.875
+rest,8.0,1.0,1.0,1.0
+shell,8.0,1.0,1.0,1.0
+sierra,8.0,1.0,2.0,1.125
+sing,8.0,1.0,1.0,1.0
+sit,8.0,1.0,1.0,1.0
+sitter,8.0,1.0,1.0,1.0
+some hotels are available nearby.,8.0,1.0,2.0,1.125
+the owners regularly look for plumbing leaks.,8.0,1.0,1.0,1.0
+the pair of shoes was new.,8.0,1.0,1.0,1.0
+"this is a good place, though small.",8.0,1.0,1.0,1.0
+those musicians harmonize marvelously.,8.0,1.0,2.0,1.125
+travel is about the only leisure we have.,8.0,1.0,1.0,1.0
+we have an excellent team.,8.0,1.0,1.0,1.0
+whisky,8.0,1.0,2.0,1.125
+white-capped waves covered the entire bay.,8.0,1.0,2.0,1.125
+wicker,8.0,1.0,2.0,1.125
+wit,8.0,1.0,1.0,1.0
+xray,8.0,1.0,1.0,1.0
+you can ride stagecoach.,8.0,1.0,1.0,1.0
+you want him to do well.,8.0,1.0,1.0,1.0
+zulu,8.0,1.0,1.0,1.0
+a,7.0,1.0,1.0,1.0
+bill,7.0,1.0,4.0,2.857142857142857
+blend,7.0,2.0,3.0,2.7142857142857144
+cash,7.0,1.0,3.0,2.5714285714285716
+catch,7.0,1.0,1.0,1.0
+cork,7.0,1.0,3.0,1.7142857142857142
+court,7.0,1.0,3.0,1.7142857142857142
+critical equipment needs proper maintenance.,7.0,1.0,1.0,1.0
+eat,7.0,1.0,2.0,1.8571428571428572
+etiquette mandates compliance with existing regulations.,7.0,1.0,2.0,1.1428571428571428
+fed,7.0,1.0,2.0,1.1428571428571428
+flicker,7.0,1.0,1.0,1.0
+foe,7.0,1.0,1.0,1.0
+geese,7.0,2.0,3.0,2.857142857142857
+glitter,7.0,1.0,2.0,1.1428571428571428
+goose,7.0,1.0,2.0,1.1428571428571428
+he,7.0,1.0,1.0,1.0
+he asked you for a loan.,7.0,1.0,1.0,1.0
+he played basketball there while working toward a law degree.,7.0,1.0,1.0,1.0
+hold,7.0,1.0,3.0,2.142857142857143
+in fact our whole defensive unit did a good job.,7.0,1.0,1.0,1.0
+input/images/story_starters_26.jpg,7.0,1.0,1.0,1.0
+input/images/story_starters_3.jpg,7.0,1.0,2.0,1.1428571428571428
+its fun to roast marshmallows on a gas burner.,7.0,1.0,1.0,1.0
+ive kept it with me ever since.,7.0,1.0,2.0,1.1428571428571428
+lake,7.0,1.0,1.0,1.0
+lee,7.0,1.0,1.0,1.0
+lend,7.0,1.0,1.0,1.0
+liquor,7.0,1.0,1.0,1.0
+litter,7.0,1.0,2.0,1.1428571428571428
+meats,7.0,1.0,1.0,1.0
+mill,7.0,1.0,1.0,1.0
+muck,7.0,1.0,1.0,1.0
+night,7.0,1.0,1.0,1.0
+quart,7.0,1.0,1.0,1.0
+quicker,7.0,1.0,1.0,1.0
+ray,7.0,1.0,1.0,1.0
+rid,7.0,1.0,1.0,1.0
+ride,7.0,1.0,1.0,1.0
+rip,7.0,1.0,2.0,1.7142857142857142
+rise,7.0,1.0,4.0,2.4285714285714284
+romeo,7.0,1.0,1.0,1.0
+see,7.0,1.0,3.0,2.4285714285714284
+sew,7.0,2.0,3.0,2.857142857142857
+she doesnt like to have it hanging around.,7.0,1.0,1.0,1.0
+shop,7.0,1.0,1.0,1.0
+shred,7.0,1.0,1.0,1.0
+sicker,7.0,1.0,1.0,1.0
+sight,7.0,1.0,1.0,1.0
+snake,7.0,1.0,1.0,1.0
+some prefer the traditional steel kind.,7.0,1.0,1.0,1.0
+sort,7.0,1.0,2.0,1.5714285714285714
+the fish swam across the pond.,7.0,1.0,1.0,1.0
+the results were very disappointing.,7.0,1.0,2.0,1.2857142857142858
+then wed really have someplace to go.,7.0,1.0,1.0,1.0
+there was only one decision to be made.,7.0,1.0,3.0,1.2857142857142858
+tort,7.0,1.0,2.0,1.5714285714285714
+trespassers can be prosecuted and fined.,7.0,1.0,1.0,1.0
+we selected places where families will be welcome.,7.0,1.0,1.0,1.0
+young people participate in athletic activities.,7.0,1.0,1.0,1.0
+a fire in straw makes a quick blaze.,6.0,1.0,1.0,1.0
+a quick touchdown resulted.,6.0,1.0,2.0,1.1666666666666667
+ash,6.0,1.0,1.0,1.0
+at twilight on the twelfth day well have chablis.,6.0,1.0,2.0,1.1666666666666667
+barbs gold bracelet was a graduation present.,6.0,1.0,1.0,1.0
+beam,6.0,1.0,1.0,1.0
+beast,6.0,1.0,1.0,1.0
+beef,6.0,1.0,1.0,1.0
+beep,6.0,1.0,1.0,1.0
+bend,6.0,1.0,1.0,1.0
+bender,6.0,1.0,1.0,1.0
+biblical scholars argue history.,6.0,1.0,1.0,1.0
+bumper,6.0,1.0,1.0,1.0
+cakes,6.0,1.0,1.0,1.0
+center,6.0,1.0,1.0,1.0
+coat,6.0,1.0,2.0,1.8333333333333333
+coconut cream pie makes a nice dessert.,6.0,1.0,1.0,1.0
+dill,6.0,1.0,1.0,1.0
+do they make any money?,6.0,1.0,1.0,1.0
+dont do charlies dirty dishes.,6.0,1.0,1.0,1.0
+forks,6.0,1.0,1.0,1.0
+fort,6.0,1.0,1.0,1.0
+gas,6.0,1.0,1.0,1.0
+gash,6.0,1.0,1.0,1.0
+gill,6.0,1.0,2.0,1.1666666666666667
+grandmother outgrew her upbringing in petticoats.,6.0,1.0,1.0,1.0
+harm,6.0,1.0,3.0,2.3333333333333335
+hash,6.0,1.0,3.0,2.3333333333333335
+heat,6.0,1.0,3.0,2.3333333333333335
+help celebrate your brothers success.,6.0,1.0,1.0,1.0
+her classical performance gained critical acclaim.,6.0,1.0,2.0,1.1666666666666667
+her dark hair is combed casually.,6.0,1.0,1.0,1.0
+i called two different painters.,6.0,1.0,1.0,1.0
+i dont think its a good idea.,6.0,1.0,1.0,1.0
+i havent seen that friend for years.,6.0,1.0,1.0,1.0
+i loved every minute of it.,6.0,1.0,1.0,1.0
+i scream to warm up my voice.,6.0,1.0,1.0,1.0
+i think im full of this stuff.,6.0,1.0,1.0,1.0
+input/images/story_starters_31.jpg,6.0,1.0,1.0,1.0
+input/images/story_starters_31r.jpg,6.0,1.0,1.0,1.0
+it,6.0,1.0,2.0,1.3333333333333333
+leap,6.0,1.0,2.0,1.8333333333333333
+life is short and precious.,6.0,1.0,1.0,1.0
+me,6.0,1.0,1.0,1.0
+member,6.0,1.0,1.0,1.0
+old,6.0,1.0,2.0,1.1666666666666667
+only the most accomplished artists obtain popularity.,6.0,1.0,1.0,1.0
+pete,6.0,1.0,1.0,1.0
+pork,6.0,1.0,1.0,1.0
+port,6.0,1.0,1.0,1.0
+read,6.0,1.0,2.0,1.1666666666666667
+reap,6.0,1.0,4.0,3.5
+row,6.0,1.0,3.0,2.3333333333333335
+sea,6.0,1.0,2.0,1.1666666666666667
+seat,6.0,1.0,3.0,2.1666666666666665
+she suggested we all have dinner together.,6.0,1.0,1.0,1.0
+shed,6.0,1.0,1.0,1.0
+sheep,6.0,1.0,1.0,1.0
+sheer,6.0,1.0,1.0,1.0
+shin,6.0,1.0,1.0,1.0
+short,6.0,1.0,3.0,1.8333333333333333
+shot,6.0,1.0,1.0,1.0
+show,6.0,1.0,1.0,1.0
+sketch,6.0,1.0,1.0,1.0
+snort,6.0,1.0,1.0,1.0
+sport,6.0,1.0,1.0,1.0
+steak,6.0,1.0,3.0,2.6666666666666665
+stimulating discussions keep students attention.,6.0,1.0,1.0,1.0
+stretch,6.0,1.0,1.0,1.0
+suddenly my reflexes are gone.,6.0,1.0,2.0,1.1666666666666667
+tea,6.0,1.0,1.0,1.0
+temper,6.0,1.0,1.0,1.0
+that pickpocket was caught red-handed.,6.0,1.0,2.0,1.3333333333333333
+thats what life is really all about.,6.0,1.0,1.0,1.0
+the four brothers looked identical.,6.0,1.0,1.0,1.0
+the little girls cut lacy valentines.,6.0,1.0,1.0,1.0
+the sun died at night.,6.0,1.0,1.0,1.0
+there is definitely some ligament damage in his knee.,6.0,1.0,1.0,1.0
+thread,6.0,1.0,2.0,1.1666666666666667
+threat,6.0,1.0,1.0,1.0
+toe,6.0,1.0,1.0,1.0
+tug,6.0,1.0,1.0,1.0
+we just didnt look good.,6.0,1.0,1.0,1.0
+weep,6.0,1.0,2.0,1.6666666666666667
+who knows what youll discover about yourself.,6.0,1.0,1.0,1.0
+wise,6.0,1.0,2.0,1.6666666666666667
+academic aptitude guarantees your diploma.,5.0,1.0,1.0,1.0
+ache,5.0,3.0,4.0,3.8
+aches,5.0,1.0,1.0,1.0
+add,5.0,2.0,2.0,2.0
+addition and subtraction are learned skills.,5.0,1.0,2.0,1.2
+aid,5.0,1.0,1.0,1.0
+ail,5.0,1.0,1.0,1.0
+ambidextrous pickpockets accomplish more.,5.0,1.0,1.0,1.0
+any contributions will be greatly appreciated.,5.0,1.0,1.0,1.0
+ape,5.0,1.0,1.0,1.0
+are,5.0,1.0,1.0,1.0
+arm,5.0,1.0,1.0,1.0
+basketball can be an entertaining sport.,5.0,1.0,1.0,1.0
+be prepared for odd behavior from friends.,5.0,1.0,1.0,1.0
+begin by trying to speak up more.,5.0,1.0,2.0,1.2
+bun,5.0,1.0,1.0,1.0
+bunch,5.0,3.0,3.0,3.0
+cat,5.0,1.0,1.0,1.0
+catastrophic economic cutbacks neglect the poor.,5.0,1.0,1.0,1.0
+chap,5.0,1.0,1.0,1.0
+charm,5.0,1.0,1.0,1.0
+cheese,5.0,1.0,1.0,1.0
+chocolate and roses never fail as a romantic gift.,5.0,1.0,1.0,1.0
+code,5.0,1.0,1.0,1.0
+dock,5.0,2.0,3.0,2.6
+duck,5.0,1.0,1.0,1.0
+ease,5.0,3.0,3.0,3.0
+elderly people are often excluded.,5.0,1.0,1.0,1.0
+ember,5.0,1.0,1.0,1.0
+end,5.0,1.0,1.0,1.0
+even a simple vocabulary contains symbols.,5.0,1.0,2.0,1.2
+fell,5.0,1.0,2.0,1.4
+fender,5.0,1.0,2.0,1.2
+fit,5.0,1.0,1.0,1.0
+food,5.0,1.0,1.0,1.0
+full,5.0,1.0,2.0,1.4
+gold can be found anywhere.,5.0,1.0,1.0,1.0
+guess,5.0,1.0,2.0,1.2
+had,5.0,1.0,3.0,2.2
+hail,5.0,2.0,4.0,3.4
+hall,5.0,1.0,5.0,3.6
+hatch,5.0,1.0,2.0,1.2
+have no fear if you come alone.,5.0,1.0,1.0,1.0
+he has played very well.,5.0,1.0,2.0,1.2
+hell sell them by the box.,5.0,1.0,1.0,1.0
+her position covers a number of daily tasks common to any social director.,5.0,1.0,2.0,1.2
+i also can be quite vocal.,5.0,1.0,1.0,1.0
+i didnt know where they were coming from.,5.0,1.0,1.0,1.0
+i had no desire to change my ways.,5.0,1.0,1.0,1.0
+"i tell you, it was wonderful.",5.0,1.0,1.0,1.0
+i wanted to be an actress.,5.0,1.0,1.0,1.0
+i was pleased with the way things went.,5.0,1.0,1.0,1.0
+input/images/story_starters_32.jpg,5.0,1.0,1.0,1.0
+input/images/story_starters_37.jpg,5.0,1.0,1.0,1.0
+input/images/story_starters_4.jpg,5.0,1.0,1.0,1.0
+is,5.0,2.0,2.0,2.0
+it requires no big investment.,5.0,1.0,1.0,1.0
+it was a great meeting.,5.0,1.0,1.0,1.0
+it was very popular with our fans.,5.0,1.0,1.0,1.0
+knife,5.0,1.0,1.0,1.0
+knock,5.0,1.0,1.0,1.0
+lax,5.0,1.0,1.0,1.0
+leaks,5.0,1.0,1.0,1.0
+lender,5.0,1.0,1.0,1.0
+lies,5.0,1.0,1.0,1.0
+lit,5.0,1.0,1.0,1.0
+look for pockets of black sand.,5.0,1.0,2.0,1.2
+low,5.0,1.0,2.0,1.8
+mile,5.0,1.0,2.0,1.2
+mock,5.0,1.0,1.0,1.0
+mom strongly dislikes appetizers.,5.0,1.0,1.0,1.0
+munch,5.0,1.0,1.0,1.0
+now im living exactly as i choose.,5.0,1.0,1.0,1.0
+peas,5.0,1.0,1.0,1.0
+pet,5.0,1.0,3.0,1.4
+pill,5.0,1.0,1.0,1.0
+punch,5.0,1.0,1.0,1.0
+racks,5.0,1.0,1.0,1.0
+rakes,5.0,1.0,1.0,1.0
+range was a vital detail.,5.0,1.0,1.0,1.0
+reef,5.0,1.0,1.0,1.0
+renter,5.0,1.0,1.0,1.0
+sake,5.0,1.0,1.0,1.0
+sender,5.0,1.0,1.0,1.0
+she,5.0,1.0,1.0,1.0
+"so, if anybody solicits by phone, make sure you mail the dough to the above.",5.0,1.0,1.0,1.0
+tail,5.0,1.0,2.0,1.6
+tall,5.0,1.0,3.0,2.0
+tender,5.0,1.0,1.0,1.0
+the eastern coast is a place for pure pleasure and excitement.,5.0,1.0,1.0,1.0
+the golfing fathers ruled in his favor.,5.0,1.0,1.0,1.0
+the job also covers a number of other items.,5.0,1.0,1.0,1.0
+the lack of heat compounded the tenants grievances.,5.0,1.0,1.0,1.0
+the legislature met to judge the state of public education.,5.0,1.0,2.0,1.4
+the marriage went well from the start.,5.0,1.0,2.0,1.2
+the plot is laced with mysterious incidents.,5.0,1.0,2.0,1.2
+the prowler wore a ski mask for disguise.,5.0,1.0,1.0,1.0
+the singers finger had a splinter.,5.0,1.0,1.0,1.0
+the structures housing the apartments are of masonry and frame construction.,5.0,1.0,1.0,1.0
+there was no confirmation of such massive assaults from independent sources.,5.0,1.0,2.0,1.2
+they will take a wedding trip later.,5.0,1.0,1.0,1.0
+"this, he added, brought about petty jealousies and petty personal grievances.",5.0,1.0,2.0,1.4
+those people are much quicker than i am.,5.0,1.0,1.0,1.0
+ticks,5.0,1.0,1.0,1.0
+timber,5.0,1.0,1.0,1.0
+to,5.0,1.0,1.0,1.0
+try to work things out.,5.0,1.0,1.0,1.0
+wax,5.0,2.0,3.0,2.8
+we all sat down and relaxed.,5.0,1.0,1.0,1.0
+we are the largest of the four states.,5.0,1.0,2.0,1.2
+we experience distress and frustration obtaining our degrees.,5.0,1.0,1.0,1.0
+we have a big house.,5.0,1.0,1.0,1.0
+we know we can score.,5.0,1.0,3.0,1.4
+we shelled clams for the chowder.,5.0,1.0,1.0,1.0
+we talked about the situation.,5.0,1.0,1.0,1.0
+wives,5.0,1.0,1.0,1.0
+woe,5.0,1.0,1.0,1.0
+worse luck was still to come.,5.0,1.0,1.0,1.0
+yet he remains the fiercest of competitors.,5.0,1.0,2.0,1.2
+a few may be hard to find.,4.0,1.0,1.0,1.0
+"cable confirmation, it said translated.",4.0,1.0,1.0,1.0
+challenge each generals intelligence.,4.0,1.0,1.0,1.0
+continental drift is a geological theory.,4.0,1.0,1.0,1.0
+dash,4.0,1.0,1.0,1.0
+dial,4.0,1.0,1.0,1.0
+did you eat yet?,4.0,1.0,1.0,1.0
+docks,4.0,1.0,1.0,1.0
+eat your raisins outdoors on the porch steps.,4.0,1.0,1.0,1.0
+eyes,4.0,1.0,1.0,1.0
+fold,4.0,1.0,2.0,1.5
+he cant abide mistakes in his own game.,4.0,1.0,1.0,1.0
+he took heart and played.,4.0,1.0,1.0,1.0
+hid,4.0,1.0,1.0,1.0
+input/images/story_starters_16.jpg,4.0,1.0,1.0,1.0
+input/images/story_starters_5.jpg,4.0,1.0,1.0,1.0
+it was a huge part of my life.,4.0,1.0,1.0,1.0
+it was time to go up myself.,4.0,1.0,1.0,1.0
+last years gas shortage caused steep price increases.,4.0,1.0,1.0,1.0
+pant,4.0,1.0,1.0,1.0
+pink,4.0,1.0,1.0,1.0
+regular attendance is seldom required.,4.0,1.0,1.0,1.0
+seam,4.0,1.0,1.0,1.0
+she will order the wine.,4.0,1.0,1.0,1.0
+that,4.0,1.0,1.0,1.0
+the family requests that flowers be omitted.,4.0,1.0,1.0,1.0
+the new highway is straight and empty.,4.0,1.0,1.0,1.0
+the snow blew into large drifts.,4.0,1.0,1.0,1.0
+the store serves meals every day.,4.0,1.0,1.0,1.0
+wart,4.0,1.0,1.0,1.0
+was,4.0,1.0,2.0,1.25
+waste,4.0,1.0,1.0,1.0
+we got drenched from the uninterrupted rain.,4.0,1.0,3.0,1.5
+we knew we werent doing well.,4.0,1.0,1.0,1.0
+were all disappointed with our start.,4.0,1.0,1.0,1.0
+weve done it in the past.,4.0,1.0,1.0,1.0
+"when you are through, write a clean report.",4.0,1.0,1.0,1.0
+win,4.0,1.0,1.0,1.0
+wine,4.0,1.0,1.0,1.0
+wipe,4.0,1.0,1.0,1.0
+you have to expect a few bad calls.,4.0,1.0,2.0,1.25
+all,3.0,1.0,2.0,1.6666666666666667
+ball,3.0,1.0,2.0,1.6666666666666667
+both cars were slightly damaged.,3.0,1.0,1.0,1.0
+bow [as in bow and arrow],3.0,1.0,2.0,1.3333333333333333
+burn,3.0,1.0,1.0,1.0
+cold,3.0,1.0,2.0,1.3333333333333333
+handle it any way you have to.,3.0,1.0,2.0,1.3333333333333333
+he noted the fact carefully.,3.0,1.0,1.0,1.0
+i can read,3.0,2.0,2.0,2.0
+ink,3.0,1.0,1.0,1.0
+input/images/story_starters_46.jpg,3.0,1.0,1.0,1.0
+luke,3.0,1.0,1.0,1.0
+owe,3.0,1.0,1.0,1.0
+porcupines resemble sea urchins.,3.0,1.0,1.0,1.0
+sail,3.0,1.0,1.0,1.0
+spring street is straight ahead.,3.0,1.0,1.0,1.0
+term,3.0,1.0,1.0,1.0
+the staff deserves a lot of credit working down here under real obstacles.,3.0,1.0,1.0,1.0
+there is such a program.,3.0,1.0,1.0,1.0
+they received all the things they needed.,3.0,1.0,1.0,1.0
+theyll never fit me again.,3.0,1.0,1.0,1.0
+through,3.0,1.0,1.0,1.0
+upgrade your status to reflect your wealth.,3.0,1.0,1.0,1.0
+wack,3.0,1.0,1.0,1.0
+weave,3.0,1.0,1.0,1.0
+whip,3.0,1.0,1.0,1.0
+why,3.0,1.0,1.0,1.0
+wide,3.0,1.0,1.0,1.0
+with,3.0,1.0,1.0,1.0
+able,2.0,1.0,1.0,1.0
+bag,2.0,1.0,1.0,1.0
+bagpipes and bongos are musical instruments.,2.0,1.0,1.0,1.0
+ban,2.0,1.0,1.0,1.0
+bank,2.0,1.0,1.0,1.0
+bash,2.0,1.0,1.0,1.0
+big,2.0,1.0,1.0,1.0
+boat,2.0,1.0,1.0,1.0
+bull,2.0,1.0,1.0,1.0
+can you paint a room or a portrait?,2.0,1.0,1.0,1.0
+cliffs display was misplaced on the screen.,2.0,1.0,1.0,1.0
+crawl,2.0,1.0,1.0,1.0
+each,2.0,1.0,1.0,1.0
+fable,2.0,1.0,1.0,1.0
+fall,2.0,2.0,2.0,2.0
+feel,2.0,1.0,1.0,1.0
+fill that canteen with fresh spring water.,2.0,1.0,1.0,1.0
+final,2.0,1.0,1.0,1.0
+fool,2.0,1.0,1.0,1.0
+funnel,2.0,1.0,1.0,1.0
+gable,2.0,1.0,1.0,1.0
+hiring the wife for ones company may win her tax-aided retirement income.,2.0,1.0,1.0,1.0
+i can,2.0,1.0,1.0,1.0
+i like them because they are practical.,2.0,1.0,1.0,1.0
+i saw him a few weeks later.,2.0,1.0,1.0,1.0
+i soon found myself muttering to the walls.,2.0,1.0,1.0,1.0
+input/images/story_starters_58.jpg,2.0,1.0,1.0,1.0
+it fell out of his pocket.,2.0,1.0,1.0,1.0
+it looked like an accordion.,2.0,1.0,1.0,1.0
+its impossible to deal with bureaucracy.,2.0,1.0,1.0,1.0
+ladle,2.0,1.0,1.0,1.0
+liar,2.0,1.0,1.0,1.0
+mall,2.0,1.0,1.0,1.0
+map,2.0,1.0,1.0,1.0
+mat,2.0,1.0,1.0,1.0
+old telephone booths arent easy to find.,2.0,1.0,1.0,1.0
+only two seemed really appealing to me.,2.0,1.0,1.0,1.0
+pace,2.0,1.0,1.0,1.0
+page,2.0,1.0,1.0,1.0
+pain,2.0,1.0,2.0,1.5
+paint,2.0,1.0,1.0,1.0
+panel,2.0,1.0,1.0,1.0
+peach,2.0,1.0,1.0,1.0
+phone,2.0,1.0,1.0,1.0
+pole,2.0,1.0,1.0,1.0
+preach,2.0,1.0,1.0,1.0
+pull,2.0,1.0,1.0,1.0
+ramp,2.0,1.0,1.0,1.0
+rattle,2.0,1.0,1.0,1.0
+reach,2.0,1.0,1.0,1.0
+sat,2.0,1.0,1.0,1.0
+screech,2.0,1.0,1.0,1.0
+shawl,2.0,1.0,1.0,1.0
+she makes other trips for pleasure.,2.0,1.0,1.0,1.0
+she was not seriously injured.,2.0,1.0,1.0,1.0
+so he hides the mayonnaise.,2.0,1.0,1.0,1.0
+sold,2.0,1.0,1.0,1.0
+soul,2.0,1.0,1.0,1.0
+space,2.0,1.0,1.0,1.0
+sprain,2.0,1.0,1.0,1.0
+spray,2.0,1.0,1.0,1.0
+street,2.0,1.0,1.0,1.0
+table,2.0,1.0,1.0,1.0
+teach,2.0,1.0,1.0,1.0
+"they make gin saws and deal in parts, supplies and some used gin machinery.",2.0,1.0,1.0,1.0
+two other cases were also under advisement.,2.0,1.0,1.0,1.0
+wall,2.0,1.0,1.0,1.0
+we got married right here.,2.0,1.0,1.0,1.0
+we just sat there giggling.,2.0,1.0,1.0,1.0
+we must be ready for any needed sacrifice.,2.0,1.0,1.0,1.0
+young and old also got together.,2.0,1.0,1.0,1.0
+a large household needs lots of appliances.,1.0,1.0,1.0,1.0
+absurd,1.0,1.0,1.0,1.0
+although always again again,1.0,1.0,1.0,1.0
+an official deadline cannot be postponed.,1.0,1.0,1.0,1.0
+beg,1.0,1.0,1.0,1.0
+bin,1.0,1.0,1.0,1.0
+bird,1.0,2.0,2.0,2.0
+bite,1.0,1.0,1.0,1.0
+boast,1.0,1.0,1.0,1.0
+bog,1.0,1.0,1.0,1.0
+book,1.0,1.0,1.0,1.0
+boone,1.0,1.0,1.0,1.0
+booth,1.0,1.0,1.0,1.0
+both,1.0,1.0,1.0,1.0
+bought,1.0,1.0,1.0,1.0
+bowl,1.0,2.0,2.0,2.0
+brain,1.0,1.0,1.0,1.0
+bran,1.0,1.0,1.0,1.0
+bust,1.0,1.0,1.0,1.0
+but,1.0,1.0,1.0,1.0
+cable,1.0,1.0,1.0,1.0
+call,1.0,1.0,1.0,1.0
+carl lives in a lovely home,1.0,1.0,1.0,1.0
+carl lives in a lovely home.,1.0,1.0,1.0,1.0
+cement is measured in cubic yards.,1.0,1.0,1.0,1.0
+chocolate and roses never fail actually,1.0,1.0,1.0,1.0
+conserve,1.0,1.0,1.0,1.0
+contract,1.0,1.0,1.0,1.0
+contrast,1.0,1.0,1.0,1.0
+converge,1.0,1.0,1.0,1.0
+cope,1.0,1.0,1.0,1.0
+creature,1.0,1.0,1.0,1.0
+damp,1.0,1.0,1.0,1.0
+depress,1.0,1.0,1.0,1.0
+deserve,1.0,1.0,1.0,1.0
+"displayed as lamps, the puppets delight the children and are decorative accent.",1.0,1.0,1.0,1.0
+doctors prescribe drugs too freely.,1.0,1.0,1.0,1.0
+drop,1.0,1.0,1.0,1.0
+dusk,1.0,1.0,1.0,1.0
+except in the winter when the ozone or snow or ice prevents.,1.0,1.0,1.0,1.0
+file,1.0,1.0,1.0,1.0
+find,1.0,1.0,1.0,1.0
+flying standby can be practical if you want to save money.,1.0,1.0,1.0,1.0
+foil,1.0,1.0,1.0,1.0
+fudge,1.0,1.0,1.0,1.0
+gently place jims foam sculpture in the box.,1.0,1.0,1.0,1.0
+glib,1.0,1.0,1.0,1.0
+globe,1.0,1.0,1.0,1.0
+good service should be rewarded by big tips.,1.0,1.0,1.0,1.0
+grain,1.0,2.0,2.0,2.0
+grange,1.0,1.0,1.0,1.0
+grape,1.0,1.0,1.0,1.0
+grave,1.0,1.0,1.0,1.0
+grope,1.0,1.0,1.0,1.0
+he dressed himself in an ancient black frock coat,1.0,1.0,1.0,1.0
+he really crucified himself; he nailed it for a yard loss.,1.0,1.0,1.0,1.0
+he will allow a rare lily...rare lie[d[d[d[d[d[d[d[d[d[c[c[c[c[c[c[c[c[c[c[c,1.0,1.0,1.0,1.0
+help celebrate your brothers success,1.0,1.0,1.0,1.0
+hispanic costumes are quite colorful.,1.0,1.0,1.0,1.0
+i can play this weekend.,1.0,1.0,1.0,1.0
+i got into acting by accident.,1.0,1.0,1.0,1.0
+i said id put on weight.,1.0,1.0,1.0,1.0
+i will lead you,1.0,1.0,1.0,1.0
+impress,1.0,1.0,1.0,1.0
+innocence,1.0,1.0,1.0,1.0
+input/images/story_starters_56.jpg,1.0,1.0,1.0,1.0
+input/images/story_starters_59.jpg,1.0,1.0,1.0,1.0
+intact,1.0,1.0,1.0,1.0
+it was only,1.0,1.0,1.0,1.0
+its about,1.0,1.0,1.0,1.0
+its beauty that surrounds you.,1.0,1.0,1.0,1.0
+its hard to tell an original from a forgery.,1.0,1.0,1.0,1.0
+its illegal to postdate a check.,1.0,1.0,1.0,1.0
+jaw,1.0,1.0,1.0,1.0
+judge,1.0,1.0,1.0,1.0
+last years gas shortage caused steep,1.0,1.0,1.0,1.0
+lid,1.0,1.0,1.0,1.0
+limb,1.0,1.0,1.0,1.0
+lisp,1.0,1.0,1.0,1.0
+list,1.0,1.0,1.0,1.0
+mabel,1.0,1.0,1.0,1.0
+maybe its taking longer to get things squared away than the bankers expected.,1.0,1.0,1.0,1.0
+mold,1.0,1.0,1.0,1.0
+mole,1.0,1.0,1.0,1.0
+most weeds grow strong and fast.,1.0,1.0,1.0,1.0
+mother sews yellow,1.0,1.0,1.0,1.0
+musk,1.0,1.0,1.0,1.0
+my instructions desperately need updating.,1.0,1.0,1.0,1.0
+nap,1.0,1.0,1.0,1.0
+naval,1.0,1.0,1.0,1.0
+nothing is as offensive as ignorance,1.0,1.0,1.0,1.0
+nothing is offensive as innocense.,1.0,1.0,1.0,1.0
+now,1.0,1.0,1.0,1.0
+now im living exactly as i chose.,1.0,1.0,1.0,1.0
+observe,1.0,1.0,1.0,1.0
+occur,1.0,1.0,1.0,1.0
+oh,1.0,1.0,1.0,1.0
+ok,1.0,1.0,1.0,1.0
+owl,1.0,1.0,1.0,1.0
+paid,1.0,1.0,1.0,1.0
+pale,1.0,1.0,1.0,1.0
+paste,1.0,1.0,1.0,1.0
+porch,1.0,1.0,1.0,1.0
+preserve,1.0,1.0,1.0,1.0
+primitive tribes have an upbeat attitude.,1.0,1.0,1.0,1.0
+rat,1.0,1.0,1.0,1.0
+refer,1.0,1.0,1.0,1.0
+relax,1.0,1.0,1.0,1.0
+repress,1.0,1.0,1.0,1.0
+reserve,1.0,1.0,1.0,1.0
+retract,1.0,1.0,1.0,1.0
+rust,1.0,1.0,1.0,1.0
+rut,1.0,1.0,1.0,1.0
+sable,1.0,1.0,1.0,1.0
+saddle,1.0,1.0,1.0,1.0
+sap,1.0,1.0,1.0,1.0
+scorch,1.0,1.0,1.0,1.0
+score,1.0,1.0,1.0,1.0
+serve,1.0,1.0,1.0,1.0
+several paintings were sold at the auction.,1.0,1.0,1.0,1.0
+she doesnt like it to have,1.0,1.0,1.0,1.0
+she is not sure what to expect.,1.0,1.0,1.0,1.0
+she was really shook up.,1.0,1.0,1.0,1.0
+she wore a she,1.0,1.0,1.0,1.0
+she wore wore fleecy over wooden wool oh,1.0,1.0,1.0,1.0
+shore,1.0,1.0,1.0,1.0
+shout,1.0,1.0,1.0,1.0
+shut,1.0,1.0,1.0,1.0
+skip ah slip,1.0,1.0,1.0,1.0
+slid,1.0,1.0,1.0,1.0
+slim,1.0,1.0,1.0,1.0
+"so, if anybody solicits by phone, make sure you mail the dough to",1.0,1.0,1.0,1.0
+spade,1.0,1.0,1.0,1.0
+spark spark spark,1.0,1.0,1.0,1.0
+sparkle,1.0,1.0,1.0,1.0
+split,1.0,1.0,1.0,1.0
+stable,1.0,1.0,1.0,1.0
+stall,1.0,1.0,1.0,1.0
+strange,1.0,1.0,1.0,1.0
+subtract,1.0,1.0,1.0,1.0
+super,1.0,1.0,1.0,1.0
+suppress,1.0,1.0,1.0,1.0
+sweet,1.0,1.0,1.0,1.0
+tap,1.0,1.0,1.0,1.0
+tear up that paper,1.0,1.0,1.0,1.0
+that plant needs more water.,1.0,1.0,1.0,1.0
+thats the name of the game.,1.0,1.0,1.0,1.0
+thats what i thought it was at first.,1.0,1.0,1.0,1.0
+the hotel man,1.0,1.0,1.0,1.0
+the hotel owner struggled.,1.0,1.0,1.0,1.0
+the kat had five kittens.,1.0,1.0,1.0,1.0
+the misprint provoked an immediate disclaimer.,1.0,1.0,1.0,1.0
+the pair of shoes was new,1.0,1.0,1.0,1.0
+the prospect of cutting back spending is an unpleasant one for any governor,1.0,1.0,1.0,1.0
+the prospects of cupping,1.0,1.0,1.0,1.0
+the strike spread through much of the state.,1.0,1.0,1.0,1.0
+the structures housing the apartments are of,1.0,1.0,1.0,1.0
+the wait for work can be very do it again,1.0,1.0,1.0,1.0
+"they could walk, ride on a bus or be driven.",1.0,1.0,1.0,1.0
+they either walked or were driven.,1.0,1.0,1.0,1.0
+they will take a wedding trip together.,1.0,1.0,1.0,1.0
+this railroads future is in the west.,1.0,1.0,1.0,1.0
+tier,1.0,1.0,1.0,1.0
+todays date. february 13th,1.0,1.0,1.0,1.0
+told,1.0,1.0,1.0,1.0
+tore,1.0,1.0,1.0,1.0
+twice each day he plays skillfully and with zest upon our little organ.,1.0,1.0,1.0,1.0
+"unfortunately, there is still little demand for broccoli and cauliflower.",1.0,1.0,1.0,1.0
+usually min min,1.0,1.0,1.0,1.0
+usually minus several buttons,1.0,1.0,1.0,1.0
+usually minus several buttons.,1.0,1.0,1.0,1.0
+vamp,1.0,1.0,1.0,1.0
+wages are a key issue.,1.0,1.0,1.0,1.0
+we had a picnic on the beach.,1.0,1.0,1.0,1.0
+we have an excellent team,1.0,1.0,1.0,1.0
+we just dont,1.0,1.0,1.0,1.0
+we saw three deer and a badger.,1.0,1.0,1.0,1.0
+"well, he is nearly ninety three years old",1.0,1.0,1.0,1.0
+"well, he is nearly ninety-three years old.",1.0,1.0,1.0,1.0
+when when,1.0,1.0,1.0,1.0
+will you please describe the idiotic predicament.,1.0,1.0,1.0,1.0

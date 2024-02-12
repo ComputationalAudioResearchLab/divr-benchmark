@@ -12,19 +12,19 @@ normal:
       mean: 22.857142857142858
       min: 20
       std: 2.511225962685875
-    total: 280
+    total: 253
 pathological:
   female:
     age_stats:
       max: 69
-      mean: 35.84273150543197
+      mean: 46.68780971258672
       min: 21
-      std: 14.927641041677607
-    total: 1933
+      std: 13.446346204432974
+    total: 1009
   male:
     age_stats:
       max: 78
-      mean: 39.38452237001209
+      mean: 56.93778801843318
       min: 20
-      std: 21.195781762211624
-    total: 827
+      std: 14.392495500626724
+    total: 434

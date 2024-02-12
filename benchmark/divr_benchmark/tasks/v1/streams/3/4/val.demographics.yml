@@ -20,7 +20,7 @@ normal:
       mean: 32
       min: 32
       std: null
-    total: 127
+    total: 100
 organic_inflammatory:
   female:
     age_stats:
@@ -59,11 +59,11 @@ unclassified_pathology:
       mean: 24
       min: 24
       std: 0.0
-    total: 992
+    total: 68
   male:
     age_stats:
       max: 20
       mean: 20
       min: 20
       std: 0.0
-    total: 419
+    total: 26

@@ -1,7 +1,9 @@
+import pandas as pd
+from typing import List
 from pathlib import Path
-from .Base import Base
-from .gender import Gender
-from ...prepare_dataset.processed import (
+from ..Base import Base
+from ..gender import Gender
+from ....prepare_dataset.processed import (
     ProcessedDataset,
     ProcessedSession,
     ProcessedFile,
@@ -12,6 +14,20 @@ class Torgo(Base):
     ignore_files = [
         "FC01/Session1/wav_arrayMic/0256.wav",  # 0 length audio
     ]
+
+    def __init__(
+        self, source_path: Path, allow_incomplete_classification: bool
+    ) -> None:
+        curdir = Path(__file__).parent.resolve()
+        # only valid prompts that all speakers have spoken are selected
+        self.__selected_prompts: List[str] = pd.read_csv(
+            f"{curdir}/selected_prompts.csv"
+        )["prompt"].to_list()
+
+        super().__init__(
+            source_path=source_path,
+            allow_incomplete_classification=allow_incomplete_classification,
+        )
 
     def prepare_dataset(
         self, source_path: Path, allow_incomplete_classification: bool
@@ -87,13 +103,7 @@ class Torgo(Base):
                             age=age,
                             gender=gender,
                             diagnosis=[diagnosis],
-                            files=[
-                                ProcessedFile(path=path)
-                                for path in Path(f"{session}/wav_arrayMic").glob(
-                                    "*.wav"
-                                )
-                                if self.include(path)
-                            ],
+                            files=self.__select_files(session=session),
                         )
                     ]
         return self.database_generator.generate(
@@ -101,8 +111,26 @@ class Torgo(Base):
             sessions=sessions,
         )
 
-    def include(self, path: Path):
+    def __select_files(self, session):
+        files = []
+        for path in Path(f"{session}/wav_arrayMic").glob("*.wav"):
+            if self.__include(path) and self.__is_allowed_prompt(path):
+                files.append(ProcessedFile(path=path))
+        return files
+
+    def __include(self, path: Path):
         for exclusion in self.ignore_files:
             if exclusion in str(path):
                 return False
         return True
+
+    def __is_allowed_prompt(self, wav_path: Path) -> bool:
+        prompt_path = Path(
+            str(wav_path).replace("wav_arrayMic", "prompts").replace(".wav", ".txt")
+        )
+        if not prompt_path.is_file():
+            return False
+        with open(prompt_path, "r") as prompt_file:
+            line = prompt_file.readline()
+            prompt = line.lower().replace('"', "").replace("'", "")
+            return prompt in self.__selected_prompts

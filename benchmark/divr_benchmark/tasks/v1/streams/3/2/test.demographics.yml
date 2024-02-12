@@ -1,10 +1,7 @@
 normal:
   female:
     age_stats: null
-    total: 199
-  male:
-    age_stats: null
-    total: 295
+    total: 114
 pathological:
   female:
     age_stats:
@@ -12,11 +9,11 @@ pathological:
       mean: 21
       min: 21
       std: 0.0
-    total: 387
+    total: 30
   male:
     age_stats:
       max: 20
       mean: 20
       min: 20
       std: 0.0
-    total: 689
+    total: 144
