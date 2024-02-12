@@ -81,8 +81,6 @@ class Trainer:
         self.model.eval()
         total_loss = 0
         total_batch_size = 0
-        total_corrects = 0
-        total_elements = 0
         num_unique_diagnosis = len(self.unique_diagnosis)
         confusion = np.zeros((num_unique_diagnosis, num_unique_diagnosis))
 
@@ -90,32 +88,33 @@ class Trainer:
             predicted_labels = self.model(inputs)
             loss = F.cross_entropy(predicted_labels, labels)
             predicted_labels = predicted_labels.argmax(dim=1)
-            corrects = labels == predicted_labels
-            total_elements += len(corrects)
-            total_corrects += corrects.count_nonzero().item()
             total_loss += loss.item()
             total_batch_size += 1
             total_batch_size += 1
 
-            self.__process_confusion(
-                epoch=epoch,
+            self.__process_result(
                 confusion_ref=confusion,
                 actual=labels,
                 predicted=predicted_labels,
             )
 
         self.__add_confusion(epoch=epoch, confusion=confusion)
-        return total_loss / total_batch_size, total_corrects / total_elements
+        eval_accuracy = self.__weighted_accuracy(confusion=confusion)
+        return total_loss / total_batch_size, eval_accuracy
 
-    def __process_confusion(
+    def __weighted_accuracy(self, confusion: np.ndarray) -> float:
+        total_per_class = np.maximum(1, confusion.sum(axis=1))
+        corrects = confusion.diagonal()
+        per_class_accuracy = corrects / total_per_class
+        accuracy = per_class_accuracy.mean()
+        return accuracy
+
+    def __process_result(
         self,
-        epoch: int,
         confusion_ref: np.ndarray,
         actual: torch.LongTensor,
         predicted: torch.LongTensor,
     ) -> None:
-        if epoch not in self.confusion_epochs:
-            return
         for actual_label, predicted_label in zip(
             actual.cpu().tolist(),
             predicted.cpu().tolist(),
