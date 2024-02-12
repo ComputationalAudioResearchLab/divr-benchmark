@@ -1,7 +1,9 @@
 from __future__ import annotations
+from dataclasses import dataclass
 import h5py
 import torch
 import numpy as np
+from tqdm import tqdm
 from pathlib import Path
 from typing import List, Tuple, Union
 from divr_benchmark import Benchmark, Task, TestPoint, TrainPoint
@@ -68,6 +70,13 @@ LabelTensor
 """
 
 
+@dataclass
+class CacheSet:
+    inputs: h5py.Dataset
+    shapes: h5py.Dataset
+    labels: h5py.Dataset
+
+
 class DataLoader:
     feature_size: int
 
@@ -97,13 +106,11 @@ class DataLoader:
             task=task,
             cache_key=cache_key,
         )
-        self.__train_indices = np.arange(len(self.__train_points) // batch_size)
-        self.__test_indices = np.arange(len(self.__test_points) // batch_size)
-        self.__val_indices = np.arange(len(self.__val_points) // batch_size)
 
     def __len__(self) -> int:
         return self.__data_len
 
+    @torch.no_grad()
     def __getitem__(self, idx: int):
         return self.__getitem(idx)
 
@@ -112,7 +119,7 @@ class DataLoader:
             np.random.shuffle(self.__train_indices)
         self.__indices = self.__train_indices
         self.__points = self.__train_points
-        self.__data_len = len(self.__points) // self.__batch_size
+        self.__data_len = len(self.__indices)
         if self.__cache_enabled:
             self.__getitem = self.__tv_getitem_cached
         else:
@@ -122,7 +129,7 @@ class DataLoader:
     def eval(self) -> DataLoader:
         self.__indices = self.__val_indices
         self.__points = self.__val_points
-        self.__data_len = len(self.__points) // self.__batch_size
+        self.__data_len = len(self.__indices)
         if self.__cache_enabled:
             self.__getitem = self.__tv_getitem_cached
         else:
@@ -143,7 +150,27 @@ class DataLoader:
         raise NotImplementedError()
 
     def __tv_getitem_cached(self, idx: int) -> Tuple[InputTensors, LabelTensor]:
-
+        idx = self.__indices[idx]
+        start = idx * self.__batch_size
+        end = start + self.__batch_size
+        data = self.__points.inputs[start:end]
+        shapes = self.__points.shapes[start:end]
+        labels = self.__points.labels[start:end]
+        batch_size = len(shapes)
+        max_audio_len = shapes.max()[0]
+        max_audios = len(max(shapes, key=len))
+        feature = np.zeros((batch_size, max_audios, max_audio_len, self.feature_size))
+        feature_lens = np.zeros((batch_size, max_audios))
+        for idx, (shape, row) in enumerate(zip(shapes, data)):
+            audios_in_session = len(shape)
+            audio_len = max(shape)
+            data_point = row.reshape(audios_in_session, audio_len, self.feature_size)
+            feature[idx, :audios_in_session, :audio_len, :] = data_point
+            feature_lens[idx, :audios_in_session] = shape
+        feature = torch.FloatTensor(feature).to(self.device)
+        feature_lens = torch.LongTensor(feature_lens).to(self.device)
+        labels = torch.LongTensor(labels).to(self.device)
+        inputs = (feature, feature_lens)
         return (inputs, labels)
 
     def __tv_getitem(self, idx: int) -> Tuple[InputTensors, LabelTensor]:
@@ -205,19 +232,103 @@ class DataLoader:
             )
             self.audio_sample_rate = btask.audio_sample_rate
             self.unique_diagnosis = btask.unique_diagnosis
-            self.num_unique_diagnosis = len(btask.unique_diagnosis)
+            self.num_unique_diagnosis = len(self.unique_diagnosis)
             self.__task = btask
             self.__train_points = btask.train
             self.__test_points = btask.test
             self.__val_points = btask.val
+            self.__train_indices = np.arange(
+                len(self.__train_points) // self.__batch_size
+            )
+            self.__test_indices = np.arange(
+                len(self.__test_points) // self.__batch_size
+            )
+            self.__val_indices = np.arange(len(self.__val_points) // self.__batch_size)
         else:
             cache_path = Path(f"{base_path}/cache/{cache_key}.hdf5")
             print(cache_path)
-            if cache_path.is_file():
-                print("cache exists")
-            else:
-                print("cache does not exist")
-            exit()
+            if not cache_path.is_file():
+                self.__create_cache(
+                    cache_path=cache_path,
+                    base_path=base_path,
+                    benchmark_version=benchmark_version,
+                    stream=stream,
+                    task=task,
+                )
+            self.__load_cache(cache_path=cache_path)
+
+    def __load_cache(self, cache_path):
+        print("cache exists")
+        cache = h5py.File(cache_path, "r")
+        train_len = cache["train"].shape[0]
+        self.unique_diagnosis = cache.attrs["unique_diagnosis"]
+        self.num_unique_diagnosis = len(self.unique_diagnosis)
+        self.__train_points = CacheSet(
+            inputs=cache["train"],
+            shapes=cache["train_shapes"],
+            labels=cache["train_labels"],
+        )
+        self.__train_indices = np.arange(train_len // self.__batch_size)
+        val_len = cache["val"].shape[0]
+        self.__val_points = CacheSet(
+            inputs=cache["val"],
+            shapes=cache["val_shapes"],
+            labels=cache["val_labels"],
+        )
+        self.__val_indices = np.arange(val_len // self.__batch_size)
+
+    def __create_cache(
+        self,
+        cache_path: Path,
+        base_path: Path,
+        benchmark_version: str,
+        stream: int,
+        task: int,
+    ) -> None:
+        print(f"cache does not exist, creating at {cache_path}")
+        cache_path.parent.mkdir(parents=True)
+        btask = self.__load_task(
+            base_path=base_path,
+            benchmark_version=benchmark_version,
+            stream=stream,
+            task=task,
+        )
+        # audio_sample_rate is needed for some features
+        self.audio_sample_rate = btask.audio_sample_rate
+        cache = h5py.File(cache_path, "w")
+        cache.attrs["unique_diagnosis"] = btask.unique_diagnosis
+        vfloat = h5py.vlen_dtype(np.float32)
+        vint = h5py.vlen_dtype(int)
+
+        def create_dset(key, task_data):
+            dset = cache.create_dataset(
+                name=key,
+                shape=(len(task_data),),
+                dtype=vfloat,
+            )
+            dset_shapes = cache.create_dataset(
+                name=f"{key}_shapes",
+                shape=(len(task_data)),
+                dtype=vint,
+            )
+            dlabels = cache.create_dataset(
+                name=f"{key}_labels",
+                shape=(len(task_data)),
+                dtype=int,
+            )
+            for idx, point in enumerate(
+                tqdm(task_data, desc=f"caching {key}", leave=True)
+            ):
+                feature, feature_len = self.__collate_function([point.audio])
+                feature = feature[0].cpu().numpy()
+                feature_len = feature_len[0].cpu().numpy()
+                dset_shapes[idx] = feature_len.reshape(-1)
+                dset[idx] = feature.reshape(-1)
+                dlabels[idx] = btask.diag_to_index(point.label)
+
+        create_dset("train", btask.train)
+        create_dset("val", btask.val)
+        cache.close()
 
     def __load_task(
         self,
@@ -225,7 +336,7 @@ class DataLoader:
         benchmark_version: str,
         stream: int,
         task: int,
-    ):
+    ) -> Task:
         storage_path = Path(f"{base_path}/storage")
         storage_path.mkdir(parents=True, exist_ok=True)
         benchmark = Benchmark(
