@@ -1,9 +1,15 @@
 import torch
 from torch import nn
-from pathlib import Path
 from ..model import Simple
 from torch.optim import Adam
-from ..data_loader import Data2Vec, MeanMfcc, ModifiedCPC, UnispeechSAT, Wav2Vec
+from ..data_loader import (
+    Data2Vec,
+    MeanMfcc,
+    ModifiedCPC,
+    UnispeechSAT,
+    Wav2Vec,
+    LoaderTypes,
+)
 from ..trainer import HParams
 from .device import device
 
@@ -26,7 +32,7 @@ s0_experiments = [
         lr=1e-5,
         batch_size=4,
         device=device,
-        cache_enabled=False,
+        loader_type=LoaderTypes.NORMAL,
     ),
     HParams(
         experiment_key="S0/MeanMfcc/Simple",
@@ -66,7 +72,7 @@ s0_experiments = [
         lr=1e-5,
         batch_size=8,
         device=device,
-        cache_enabled=False,
+        loader_type=LoaderTypes.NORMAL,
     ),
     HParams(
         experiment_key="S0/Wav2Vec/Simple",
@@ -80,6 +86,6 @@ s0_experiments = [
         lr=1e-5,
         batch_size=8,
         device=device,
-        cache_enabled=True,
+        loader_type=LoaderTypes.NORMAL,
     ),
 ]

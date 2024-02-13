@@ -2,6 +2,7 @@ import torch
 from pathlib import Path
 from dataclasses import dataclass
 from typing import Type, Callable
+from ..data_loader import LoaderTypes
 
 project_root = Path(__file__).parent.parent.parent.resolve()
 
@@ -31,7 +32,7 @@ class HParams:
     cache_base_path: Path = base_path  # Path("/home/storage/divr_benchmark")
     benchmark_path: Path = Path(f"{base_path}/storage")
 
-    cache_enabled: bool = True
+    loader_type: LoaderTypes = LoaderTypes.NORMAL
     num_epochs = 1000
     save_epochs = list(range(0, num_epochs + 1, num_epochs // 10))
     confusion_epochs = list(range(0, num_epochs + 1, 10))

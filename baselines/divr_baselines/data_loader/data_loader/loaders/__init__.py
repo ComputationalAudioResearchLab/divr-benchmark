@@ -1,4 +1,11 @@
 from .cached import CachedLoader
 from .normal import NormalLoader
+from enum import Enum
 
-__all__ = ["CachedLoader", "NormalLoader"]
+
+class LoaderTypes(Enum):
+    NORMAL = "NORMAL"
+    CACHED = "CACHED"
+
+
+__all__ = ["CachedLoader", "NormalLoader", "LoaderTypes"]

@@ -1,7 +1,7 @@
 from __future__ import annotations
 import torch
 from pathlib import Path
-from .loaders import CachedLoader, NormalLoader
+from .loaders import CachedLoader, NormalLoader, LoaderTypes
 from .dtypes import InputArrays, InputTensors
 
 
@@ -18,13 +18,13 @@ class DataLoader:
         batch_size: int,
         random_seed: int,
         shuffle_train: bool,
-        cache_enabled: bool,
+        loader_type: LoaderTypes,
         cache_base_path: Path,
         cache_key: str,
     ) -> None:
         self.device = device
 
-        if cache_enabled:
+        if loader_type == LoaderTypes.CACHED:
             self.__impl = CachedLoader(
                 benchmark_path=benchmark_path,
                 benchmark_version=benchmark_version,
@@ -40,7 +40,7 @@ class DataLoader:
                 feature_function=self.feature_function,
                 feature_size=self.feature_size,
             )
-        else:
+        elif loader_type == LoaderTypes.NORMAL:
             self.__impl = NormalLoader(
                 benchmark_path=benchmark_path,
                 benchmark_version=benchmark_version,
@@ -55,7 +55,8 @@ class DataLoader:
                 feature_size=self.feature_size,
             )
             self.audio_sample_rate = self.__impl.audio_sample_rate
-
+        else:
+            raise ValueError(f"Invalid loader_type {loader_type} selected")
         self.unique_diagnosis = self.__impl.unique_diagnosis
         self.num_unique_diagnosis = self.__impl.num_unique_diagnosis
 

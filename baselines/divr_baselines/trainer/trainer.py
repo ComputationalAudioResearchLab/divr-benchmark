@@ -7,7 +7,6 @@ from .tboard import TBoard, MockBoard
 from .hparams import HParams
 import matplotlib.pyplot as plt
 import torch.nn.functional as F
-from divr_benchmark import Benchmark
 
 ConfusionData = Dict[int, Dict[int, int]]
 
@@ -30,7 +29,7 @@ class Trainer:
             batch_size=hparams.batch_size,
             random_seed=hparams.random_seed,
             shuffle_train=hparams.shuffle_train,
-            cache_enabled=hparams.cache_enabled,
+            loader_type=hparams.loader_type,
             cache_base_path=hparams.cache_base_path,
             cache_key=hparams.cache_key,
         )
