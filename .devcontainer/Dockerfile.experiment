@@ -1,0 +1,29 @@
+FROM pytorch/pytorch:2.0.0-cuda11.7-cudnn8-devel
+
+ARG DEBIAN_FRONTEND=noninteractive
+
+RUN apt-get update && apt-get install -y \
+    git \
+    libsndfile-dev \
+    unzip \
+    wget
+
+RUN pip install pipenv
+
+WORKDIR /var/divr
+
+ADD benchmark/divr_benchmark benchmark/divr_benchmark
+ADD \
+    benchmark/README.md \
+    benchmark/setup.py \
+    benchmark
+ADD baselines/divr_baselines baselines/divr_baselines
+ADD \
+    baselines/Pipfile \
+    baselines/Pipfile.lock \
+    baselines
+WORKDIR /var/divr/baselines
+ENV RELEASE_VERSION v0.0.0
+RUN pipenv install --ignore-pipfile
+
+ENTRYPOINT ["pipenv", "run", "python", "-m", "divr_baselines", "experiment"]

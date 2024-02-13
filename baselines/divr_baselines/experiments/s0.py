@@ -1,5 +1,6 @@
 import torch
 from torch import nn
+from pathlib import Path
 from ..model import Simple
 from torch.optim import Adam
 from ..data_loader import Data2Vec, MeanMfcc, ModifiedCPC, UnispeechSAT, Wav2Vec
@@ -23,8 +24,9 @@ s0_experiments = [
         criterion=nn.CrossEntropyLoss(weight=S0_class_weights.to(device)),
         OptimClass=Adam,
         lr=1e-5,
-        batch_size=8,
+        batch_size=4,
         device=device,
+        cache_enabled=False,
     ),
     HParams(
         experiment_key="S0/MeanMfcc/Simple",
@@ -64,6 +66,7 @@ s0_experiments = [
         lr=1e-5,
         batch_size=8,
         device=device,
+        cache_enabled=False,
     ),
     HParams(
         experiment_key="S0/Wav2Vec/Simple",
@@ -77,5 +80,6 @@ s0_experiments = [
         lr=1e-5,
         batch_size=8,
         device=device,
+        cache_enabled=False,
     ),
 ]

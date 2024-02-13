@@ -1,11 +1,8 @@
 import os
-from pathlib import Path
 from setuptools import setup
 
 with open("README.md", "r") as readme:
     long_description = readme.read()
-
-cwd = Path(__file__).resolve().parent
 
 setup(
     name="divr-benchmark",

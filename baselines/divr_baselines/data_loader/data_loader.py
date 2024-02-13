@@ -151,6 +151,7 @@ class DataLoader:
     def feature_function(self, batch: InputArrays) -> InputTensors:
         raise NotImplementedError()
 
+    @torch.no_grad()
     def __tv_getitem_cached(self, idx: int) -> Tuple[InputTensors, LabelTensor]:
         idx = self.__indices[idx]
         start = idx * self.__batch_size
@@ -169,20 +170,24 @@ class DataLoader:
             data_point = row.reshape(audios_in_session, audio_len, self.feature_size)
             feature[idx, :audios_in_session, :audio_len, :] = data_point
             feature_lens[idx, :audios_in_session] = shape
-        feature = torch.FloatTensor(feature).to(self.device)
-        feature_lens = torch.LongTensor(feature_lens).to(self.device)
-        labels = torch.LongTensor(labels).to(self.device)
+        feature = torch.tensor(feature, device=self.device, dtype=torch.float32)
+        feature_lens = torch.tensor(feature_lens, device=self.device, dtype=torch.long)
+        labels = torch.tensor(labels, device=self.device, dtype=torch.long)
         inputs = (feature, feature_lens)
         return (inputs, labels)
 
+    @torch.no_grad()
     def __tv_getitem(self, idx: int) -> Tuple[InputTensors, LabelTensor]:
         batch: List[TrainPoint] = self.__get_batch(idx)
         inputs: InputTensors = self.__collate_function([b.audio for b in batch])
-        labels: LabelTensor = torch.LongTensor(
-            [self.__task.diag_to_index(b.label) for b in batch]
-        ).to(self.device)
+        labels: LabelTensor = torch.tensor(
+            [self.__task.diag_to_index(b.label) for b in batch],
+            device=self.device,
+            dtype=torch.long,
+        )
         return (inputs, labels)
 
+    @torch.no_grad()
     def __test_getitem(self, idx) -> InputTensors:
         batch: List[TestPoint] = self.__get_batch(idx)
         inputs: InputTensors = self.__collate_function([b.audio for b in batch])

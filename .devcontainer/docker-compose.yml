@@ -16,7 +16,8 @@ services:
       - ~/.gitconfig:/root/.gitconfig:ro
       # Mount working folder
       - ../:/home/workspace
-      # Mount storage
+      # Mount storage and cache
+      - ../.cache/s3prl:/root/.cache/s3prl/
       - "${RESEARCH_DATA_PATH}:/home/storage"
     deploy:
       resources:
@@ -29,3 +30,20 @@ services:
     entrypoint: bash
     stdin_open: true
     tty: true
+  experiment:
+    build:
+      context: ..
+      dockerfile: .devcontainer/Dockerfile.experiment
+    image: divr-baselines-experiment:v1
+    volumes:
+      - ../baselines/data:/var/divr/baselines/data
+      - ../baselines/divr_baselines:/var/divr/baselines/divr_baselines
+      # Mount storage and cache
+      - ../.cache/s3prl:/root/.cache/s3prl/
+      - "${RESEARCH_DATA_PATH}:/home/storage"
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - capabilities: [gpu]
+

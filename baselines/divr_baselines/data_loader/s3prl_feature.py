@@ -15,8 +15,8 @@ class S3PrlFeature(DataLoader):
         batch_size, max_audios_in_session, max_audio_len = batch_inputs.shape
         audios = batch_inputs.reshape(batch_size * max_audios_in_session, max_audio_len)
         audio_lens = batch_lens.reshape(batch_size * max_audios_in_session)
-        audios = torch.FloatTensor(audios).to(self.device)
-        audio_lens = torch.LongTensor(audio_lens).to(self.device)
+        audios = torch.tensor(audios, device=self.device, dtype=torch.float32)
+        audio_lens = torch.tensor(audio_lens, device=self.device, dtype=torch.long)
         all_hs, all_hs_len = self.model(audios, audio_lens)
         feature = torch.cat(all_hs, dim=2)
         _, max_feature_len, feature_hidden_len = feature.shape

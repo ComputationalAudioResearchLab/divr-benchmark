@@ -39,7 +39,8 @@ class Trainer:
             num_classes=self.data_loader.num_unique_diagnosis,
             checkpoint_path=checkpoint_path,
         ).to(hparams.device)
-        self.model = torch.compile(model)
+        self.model = model
+        # self.model = torch.compile(model) # empirically this wasn't really faster
         self.optimizer = hparams.OptimClass(
             params=self.model.parameters(), lr=hparams.lr
         )
@@ -71,7 +72,7 @@ class Trainer:
         total_loss = 0
         total_batch_size = 0
         for inputs, labels in tqdm(self.data_loader.train(), desc="Training"):
-            self.optimizer.zero_grad()
+            self.optimizer.zero_grad(set_to_none=True)
             predicted_labels = self.model(inputs)
             loss = self.criterion(predicted_labels, labels)
             loss.backward()
