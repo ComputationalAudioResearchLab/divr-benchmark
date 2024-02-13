@@ -80,6 +80,6 @@ s0_experiments = [
         lr=1e-5,
         batch_size=8,
         device=device,
-        cache_enabled=False,
+        cache_enabled=True,
     ),
 ]
