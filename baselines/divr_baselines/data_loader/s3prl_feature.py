@@ -6,8 +6,9 @@ from s3prl.nn import S3PRLUpstream
 class S3PrlFeature(DataLoader):
     model_name: str
 
-    def feature_init(self) -> None:
+    def feature_init(self) -> S3PRLUpstream:
         self.model = S3PRLUpstream(self.model_name).eval().to(self.device)
+        return self.model
 
     @torch.no_grad()
     def feature_function(self, batch: InputArrays) -> InputTensors:

@@ -86,6 +86,6 @@ s0_experiments = [
         lr=1e-5,
         batch_size=8,
         device=device,
-        loader_type=LoaderTypes.NORMAL,
+        loader_type=LoaderTypes.BATCH_AHEAD,
     ),
 ]
