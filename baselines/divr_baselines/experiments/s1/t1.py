@@ -2,7 +2,14 @@ import torch
 from torch import nn
 from ...model import Simple
 from torch.optim import Adam
-from ...data_loader import Data2Vec, MeanMfcc, ModifiedCPC, UnispeechSAT, Wav2Vec
+from ...data_loader import (
+    Data2Vec,
+    Mfcc,
+    ModifiedCPC,
+    UnispeechSAT,
+    Wav2Vec,
+    LoaderTypes,
+)
 from ...trainer import HParams
 from ..device import device
 
@@ -25,13 +32,14 @@ t1_experiments = [
         lr=1e-5,
         batch_size=32,
         device=device,
+        loader_type=LoaderTypes.CACHED,
     ),
     HParams(
-        experiment_key="S1/T1/MeanMfcc/Simple",
-        cache_key="S1/T1/MeanMfcc",
+        experiment_key="S1/T1/Mfcc/Simple",
+        cache_key="S1/T1/Mfcc",
         stream=1,
         task=1,
-        DataLoaderClass=MeanMfcc,
+        DataLoaderClass=Mfcc,
         ModelClass=Simple,
         criterion=nn.CrossEntropyLoss(weight=S1T1_class_weights.to(device)),
         OptimClass=Adam,

@@ -4,7 +4,7 @@ import torch
 from .data_loader import DataLoader, InputArrays, InputTensors
 
 
-class MeanMfcc(DataLoader):
+class Mfcc(DataLoader):
     n_mfcc = 13
     win_length = 1024
     hop_length = 256

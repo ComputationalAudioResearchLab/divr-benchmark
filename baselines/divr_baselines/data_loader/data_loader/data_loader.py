@@ -1,7 +1,13 @@
 from __future__ import annotations
 import torch
 from pathlib import Path
-from .loaders import BatchAheadLoader, CachedLoader, NormalLoader, LoaderTypes
+from .loaders import (
+    BatchAheadLoader,
+    CachedLoader,
+    FeatureAheadLoader,
+    NormalLoader,
+    LoaderTypes,
+)
 from .dtypes import InputArrays, InputTensors
 
 
@@ -57,6 +63,20 @@ class DataLoader:
             self.audio_sample_rate = self.__impl.audio_sample_rate
         elif loader_type == LoaderTypes.BATCH_AHEAD:
             self.__impl = BatchAheadLoader(
+                benchmark_path=benchmark_path,
+                benchmark_version=benchmark_version,
+                stream=stream,
+                task=task,
+                device=device,
+                batch_size=batch_size,
+                random_seed=random_seed,
+                shuffle_train=shuffle_train,
+                feature_init=self.feature_init,
+                feature_size=self.feature_size,
+            )
+            self.audio_sample_rate = self.__impl.audio_sample_rate
+        elif loader_type == LoaderTypes.FEATURE_AHEAD:
+            self.__impl = FeatureAheadLoader(
                 benchmark_path=benchmark_path,
                 benchmark_version=benchmark_version,
                 stream=stream,

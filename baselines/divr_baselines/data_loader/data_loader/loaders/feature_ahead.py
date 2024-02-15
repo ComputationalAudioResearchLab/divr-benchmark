@@ -8,7 +8,7 @@ from ..dtypes import InputTensors, LabelTensor
 from divr_benchmark import Benchmark
 
 
-class BatchAheadLoader(Base):
+class FeatureAheadLoader(Base):
     cache_enabled = False
 
     def __init__(
@@ -46,33 +46,16 @@ class BatchAheadLoader(Base):
     @torch.no_grad()
     def tv_getitem(self, idx: int) -> Tuple[InputTensors, LabelTensor]:
         inputs, labels = self._points[idx]
-        inputs = self.__feature_function(inputs)
+        (audio_tensor, audio_lens) = inputs
+        inputs = (audio_tensor.to(self.device), audio_lens)
         return (inputs, labels)
 
     @torch.no_grad()
     def test_getitem(self, idx) -> InputTensors:
         inputs, _ = self._points[idx]
-        inputs = self.__feature_function(inputs)
+        (audio_tensor, audio_lens) = inputs
+        inputs = (audio_tensor.to(self.device), audio_lens)
         return inputs
-
-    @torch.no_grad()
-    def __feature_function(self, batch):
-        batch_inputs, batch_lens = batch
-        batch_size, max_audios_in_session, max_audio_len = batch_inputs.shape
-        audios = batch_inputs.to(self.device).reshape(
-            batch_size * max_audios_in_session, max_audio_len
-        )
-        audio_lens = batch_lens.to(self.device).reshape(
-            batch_size * max_audios_in_session
-        )
-        all_hs, all_hs_len = self.model(audios, audio_lens)
-        feature = torch.cat(all_hs, dim=2)
-        _, max_feature_len, feature_hidden_len = feature.shape
-        feature = feature.reshape(
-            (batch_size, max_audios_in_session, max_feature_len, feature_hidden_len)
-        )
-        feature_lens = all_hs_len[0].reshape((batch_size, max_audios_in_session))
-        return feature, feature_lens
 
     def __load_data(
         self,
@@ -95,7 +78,6 @@ class BatchAheadLoader(Base):
         self._train_indices = np.arange(len(self._train_points))
         self._test_indices = np.arange(len(self._test_points))
         self._val_indices = np.arange(len(self._val_points))
-        del btask
 
     def __load_tv_batches(self, key, pointset, btask) -> List:
         total_points = len(pointset)
@@ -142,13 +124,33 @@ class BatchAheadLoader(Base):
                 audio_len = audio.shape[0]
                 audio_tensor[batch_idx, audio_idx, :audio_len] = audio
                 audio_lens[batch_idx, audio_idx] = audio_len
-        audio_tensor = torch.tensor(audio_tensor, dtype=torch.float32)
+        audio_tensor = torch.tensor(
+            audio_tensor,
+            device=self.device,
+            dtype=torch.float32,
+        )
         audio_lens = torch.tensor(
             audio_lens,
             device=self.device,
             dtype=torch.long,
         )
-        return (audio_tensor, audio_lens)
+        features = self.__feature_function((audio_tensor, audio_lens))
+        return features
+
+    @torch.no_grad()
+    def __feature_function(self, batch):
+        batch_inputs, batch_lens = batch
+        batch_size, max_audios_in_session, max_audio_len = batch_inputs.shape
+        audios = batch_inputs.reshape(batch_size * max_audios_in_session, max_audio_len)
+        audio_lens = batch_lens.reshape(batch_size * max_audios_in_session)
+        all_hs, all_hs_len = self.model(audios, audio_lens)
+        feature = torch.cat(all_hs, dim=2)
+        _, max_feature_len, feature_hidden_len = feature.shape
+        feature = feature.reshape(
+            (batch_size, max_audios_in_session, max_feature_len, feature_hidden_len)
+        )
+        feature_lens = all_hs_len[0].reshape((batch_size, max_audios_in_session))
+        return feature.to(device="cpu", non_blocking=True), feature_lens
 
     def __prepare_label(self, batch, btask):
         return torch.tensor(
