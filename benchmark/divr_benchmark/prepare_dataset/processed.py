@@ -79,7 +79,7 @@ class ProcessedSession:
             diag = diagnosis.at_level(level)
             if diag.name not in diags:
                 diags[diag.name] = diag
-        return list(diags.values())
+        return sorted(list(diags.values()), reverse=True)
 
 
 @dataclass

@@ -1,10 +1,12 @@
 services:
   experiment:
-    build: .
-    image: divr-baselines-experiment:v1
+    # build:
+    #   context: ..
+    #   dockerfile: baselines/Dockerfile
+    image: df5687290abe
     volumes:
-      - ../baselines/data:/var/divr/baselines/data
-      - ../baselines/divr_baselines:/var/divr/baselines/divr_baselines
+      - ./data:/var/divr/baselines/data
+      - ./divr_baselines:/var/divr/baselines/divr_baselines
       # Mount storage and cache
       - ../.cache/s3prl:/root/.cache/s3prl/
       - "${RESEARCH_DATA_PATH}:/home/storage"
@@ -13,3 +15,4 @@ services:
         reservations:
           devices:
             - capabilities: [gpu]
+    ipc: host
