@@ -2,10 +2,10 @@ import torch
 import numpy as np
 from tqdm import tqdm
 from pathlib import Path
-from typing import List, Tuple
+from typing import Dict, List, Tuple
 from .base import Base
 from ..dtypes import InputTensors, LabelTensor
-from divr_benchmark import Benchmark
+from divr_benchmark import Benchmark, Result
 
 
 class BatchAheadLoader(Base):
@@ -42,6 +42,9 @@ class BatchAheadLoader(Base):
         self._points = self._test_points
         self._data_len = len(self._points) // self._batch_size
         self._getitem = self.test_getitem
+
+    def score(self, predictions: Dict[str, int]) -> Result:
+        return self.__task.score(predictions)
 
     @torch.no_grad()
     def tv_getitem(self, idx: int) -> Tuple[InputTensors, LabelTensor]:
@@ -86,6 +89,7 @@ class BatchAheadLoader(Base):
             version=benchmark_version,
         )
         btask = benchmark.task(stream=stream, task=task)
+        self.__task = btask
         self.audio_sample_rate = btask.audio_sample_rate
         self.unique_diagnosis = btask.unique_diagnosis
         self.num_unique_diagnosis = len(self.unique_diagnosis)

@@ -113,6 +113,9 @@ class DataLoader:
         self.__impl.test()
         return self
 
+    def score(self, predictions):
+        return self.__impl.score(predictions)
+
     def feature_init(self) -> None:
         pass
 

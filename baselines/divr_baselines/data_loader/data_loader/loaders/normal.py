@@ -1,10 +1,10 @@
 import torch
 import numpy as np
 from pathlib import Path
-from typing import List, Tuple, Union
+from typing import Dict, List, Tuple, Union
 from .base import Base
 from ..dtypes import InputTensors, LabelTensor
-from divr_benchmark import Benchmark, TrainPoint, TestPoint
+from divr_benchmark import Benchmark, TrainPoint, TestPoint, Result
 
 
 class NormalLoader(Base):
@@ -45,6 +45,9 @@ class NormalLoader(Base):
         self._data_len = len(self._points) // self._batch_size
         self._getitem = self.test_getitem
 
+    def score(self, predictions: Dict[str, int]) -> Result:
+        return self.__task.score(predictions)
+
     @torch.no_grad()
     def tv_getitem(self, idx: int) -> Tuple[InputTensors, LabelTensor]:
         batch: List[TrainPoint] = self.__get_batch(idx)
@@ -57,10 +60,11 @@ class NormalLoader(Base):
         return (inputs, labels)
 
     @torch.no_grad()
-    def test_getitem(self, idx) -> InputTensors:
+    def test_getitem(self, idx) -> Tuple[List[str], InputTensors]:
         batch: List[TestPoint] = self.__get_batch(idx)
         inputs: InputTensors = self.collate_function([b.audio for b in batch])
-        return inputs
+        ids = [b.id for b in batch]
+        return (ids, inputs)
 
     def __get_batch(self, idx: int) -> List[Union[TrainPoint, TestPoint]]:
         idx = self._indices[idx]

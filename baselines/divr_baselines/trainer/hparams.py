@@ -34,6 +34,7 @@ class HParams:
     benchmark_path: Path = Path(f"{base_path}/storage")
 
     loader_type: LoaderTypes = LoaderTypes.NORMAL
+    best_checkpoint_epoch: int | None = None
     num_epochs = 1000
     save_epochs = list(range(0, num_epochs + 1, num_epochs // 10))
     confusion_epochs = list(range(0, num_epochs + 1, 10))

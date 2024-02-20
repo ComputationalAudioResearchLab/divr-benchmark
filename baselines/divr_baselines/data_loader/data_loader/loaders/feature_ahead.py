@@ -2,10 +2,10 @@ import torch
 import numpy as np
 from tqdm import tqdm
 from pathlib import Path
-from typing import List, Tuple
+from typing import Dict, List, Tuple
 from .base import Base
 from ..dtypes import InputTensors, LabelTensor
-from divr_benchmark import Benchmark
+from divr_benchmark import Benchmark, Result
 
 
 class FeatureAheadLoader(Base):
@@ -43,6 +43,9 @@ class FeatureAheadLoader(Base):
         self._data_len = len(self._points) // self._batch_size
         self._getitem = self.test_getitem
 
+    def score(self, predictions: Dict[str, int]) -> Result:
+        return self.__task.score(predictions)
+
     @torch.no_grad()
     def tv_getitem(self, idx: int) -> Tuple[InputTensors, LabelTensor]:
         inputs, labels = self._points[idx]
@@ -71,6 +74,7 @@ class FeatureAheadLoader(Base):
         btask = benchmark.task(stream=stream, task=task)
         self.audio_sample_rate = btask.audio_sample_rate
         self.unique_diagnosis = btask.unique_diagnosis
+        self.__task = btask
         self.num_unique_diagnosis = len(self.unique_diagnosis)
         self._train_points = self.__load_tv_batches("train", btask.train, btask)
         self._test_points = self.__load_test_batches(btask.test, btask)

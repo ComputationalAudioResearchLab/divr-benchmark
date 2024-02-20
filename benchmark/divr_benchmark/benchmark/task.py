@@ -2,7 +2,7 @@ import yaml
 import numpy as np
 from tqdm import tqdm
 from pathlib import Path
-from typing import Dict, List
+from typing import Dict, List, Tuple
 from dataclasses import dataclass
 from ..diagnosis import Diagnosis, DiagnosisMap
 from .result import Result
@@ -94,10 +94,7 @@ class Task:
         return self.__diagnosis_index[index]
 
     def diag_to_index(self, diag: Diagnosis) -> int:
-        return self.diag_name_to_index(diag.name)
-
-    def diag_name_to_index(self, diag_name: str) -> int:
-        return self.__diagnosis_index_reversed[diag_name]
+        return self.__diagnosis_index_reversed[diag.name]
 
     @property
     def train(self) -> List[TrainPoint]:
@@ -111,18 +108,16 @@ class Task:
     def test(self) -> List[TestPoint]:
         return [x.to_testpoint() for x in self.__test.values()]
 
-    def score(self, predictions: Dict[str, str]) -> Result:
-        correct = 0
-        incorrect = 0
-        for test_id, predicted_diagnosis in predictions:
-            if self.__test[test_id].label.satisfies(predicted_diagnosis):
-                correct += 1
-            else:
-                incorrect += 1
-        return Result(
-            correct=correct,
-            incorrect=incorrect,
-        )
+    def score(self, predictions: Dict[str, int]) -> Result:
+        """
+        predictions: Dict[test_id, index_of_diag]
+        """
+        results: List[Tuple[Diagnosis, Diagnosis]] = []
+        for test_id, predicted_diagnosis in predictions.items():
+            predicted_diagnosis = self.index_to_diag(predicted_diagnosis)
+            actual_diagnosis = self.__test[test_id].label
+            results += [(actual_diagnosis, predicted_diagnosis)]
+        return Result(data=results)
 
     def __load_file(self, data_file: Path, key: str, quiet: bool) -> List[DataPoint]:
         with open(data_file, "r") as df:

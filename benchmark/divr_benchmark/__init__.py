@@ -1,4 +1,4 @@
-from .benchmark import Benchmark, Task, TrainPoint, TestPoint
+from .benchmark import Benchmark, Result, Task, TrainPoint, TestPoint
 from .diagnosis import Diagnosis
 
-__all__ = ["Benchmark", "Diagnosis", "Task", "TrainPoint", "TestPoint"]
+__all__ = ["Benchmark", "Diagnosis", "Result", "Task", "TrainPoint", "TestPoint"]

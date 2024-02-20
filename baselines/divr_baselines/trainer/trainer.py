@@ -90,7 +90,7 @@ class Trainer:
 
         for inputs, labels in tqdm(self.data_loader.eval(), desc="Validating"):
             predicted_labels = self.model(inputs)
-            loss = F.cross_entropy(predicted_labels, labels)
+            loss = self.criterion(predicted_labels, labels)
             predicted_labels = predicted_labels.argmax(dim=1)
             total_loss += loss.item()
             total_batch_size += 1
