@@ -1,3 +1,4 @@
+import itertools
 import numpy as np
 import pandas as pd
 from typing import Dict, List, Tuple
@@ -7,15 +8,9 @@ from ..diagnosis import Diagnosis
 class Result:
 
     def __init__(self, data: List[Tuple[Diagnosis, Diagnosis]]) -> None:
-        confusion: Dict[str, Dict[str, int]] = {}
+        confusion = self.__create_confusion_matrix(data)
         for actual, predicted in data:
-            if actual.name not in confusion:
-                confusion[actual.name] = {}
-            actual = confusion[actual.name]
-            if predicted.name not in actual:
-                actual[predicted.name] = 1
-            else:
-                actual[predicted.name] += 1
+            confusion[predicted.name][actual.name] += 1
         self.confusion = (
             pd.DataFrame(confusion).fillna(0).sort_index(axis=0).sort_index(axis=1)
         )
@@ -28,6 +23,23 @@ class Result:
         per_class_accuracy = corrects / total_per_class
         accuracy = per_class_accuracy.mean()
         return accuracy
+
+    def __create_confusion_matrix(self, data):
+        confusion: Dict[str, Dict[str, int]] = {}
+        all_names = list(
+            set(
+                [actual.name for (actual, _) in data]
+                + [predicted.name for (_, predicted) in data]
+            )
+        )
+        product_name_pair = itertools.product(all_names, all_names)
+        for actual, predicted in product_name_pair:
+            if actual not in confusion:
+                confusion[actual] = {}
+            actual = confusion[actual]
+            if predicted not in actual:
+                actual[predicted] = 0
+        return confusion
 
     # good metric here is an open research question
 
