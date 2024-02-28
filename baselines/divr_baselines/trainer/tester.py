@@ -50,9 +50,7 @@ class Tester:
         accuracy = results.top_1_accuracy
         with open(f"{self.results_path}/result.log", "w") as result_file:
             result_file.write(f"Top 1 Accuracy: {accuracy}\n")
-            result_file.write("Confusion: \n")
-            result_file.write(str(results.confusion))
-            result_file.write("\n")
+        results.confusion.to_csv(f"{self.results_path}/confusion.csv")
         self.__save_confusion(confusion_frame=results.confusion)
 
     def __save_confusion(self, confusion_frame: pd.DataFrame) -> None:
