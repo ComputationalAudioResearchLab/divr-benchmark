@@ -16,7 +16,9 @@ class Result:
                 actual[predicted.name] = 1
             else:
                 actual[predicted.name] += 1
-        self.confusion = pd.DataFrame(confusion)
+        self.confusion = (
+            pd.DataFrame(confusion).fillna(0).sort_index(axis=0).sort_index(axis=1)
+        )
 
     @property
     def top_1_accuracy(self) -> float:

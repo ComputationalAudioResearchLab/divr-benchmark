@@ -58,8 +58,8 @@ This task stream is to evaluate how well a fully trained model can transfer from
 
 As Voiced and Torgo have significantly less data than SVD we believe this provides an interesting avenue to test low resource ML algorithms. This task is restricted to only training on data from Voiced and Torgo, but is tested on all 3 datasets with the test sets listed below. The SVD test is limited to /a/ neutral vocalisation because that is the data available in Voiced and we believe it makes the test more fair than testing on all types of data availabel in SVD.
 
-\item level 1 - voiced
-\item level 0 - torgo
-\item level 1 - svd, /a/ (neutral single vowel vocalisation only)
-\item level 2 - voiced
-\item level 2 - svd, /a/ (neutral single vowel vocalisation only)
+1. level 1 - voiced
+2. level 0 - torgo
+3. level 1 - svd, /a/ (neutral single vowel vocalisation only)
+4. level 2 - voiced
+5. level 2 - svd, /a/ (neutral single vowel vocalisation only)

@@ -21,6 +21,21 @@ class Simple(SavableModule):
 
     def forward(self, inputs: InputTensors) -> torch.Tensor:
         input_audios, input_lens = inputs
-        per_frame_predicted_labels = self.model(input_audios)
-        predicted_labels = per_frame_predicted_labels.mean(dim=(2, 1))
-        return predicted_labels
+        per_frame_labels = self.model(input_audios)
+        per_frame_labels = self.__mask(per_frame_labels, input_lens)
+        per_audio_labels = per_frame_labels.sum(dim=2) / input_lens.unsqueeze(2)
+        audios_per_session = input_lens.count_nonzero(dim=1)
+        per_session_labels = per_audio_labels.sum(dim=1) / audios_per_session.unsqueeze(
+            1
+        )
+        return per_session_labels
+
+    def __mask(
+        self, per_frame_labels: torch.Tensor, input_lens: torch.Tensor
+    ) -> torch.Tensor:
+        max_len = input_lens.max().item()
+        batch_size, max_audios = input_lens.shape
+        mask = torch.arange(max_len, device=input_lens.device).expand(
+            batch_size, max_audios, max_len
+        ) < input_lens.unsqueeze(2)
+        return per_frame_labels * mask.unsqueeze(3)

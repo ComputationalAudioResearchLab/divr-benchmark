@@ -27,7 +27,9 @@ class HParams:
     cache_key: str
 
     # storage path config
-    experiment_key: str
+    results_key: str
+    checkpoint_key: str
+    tensorboard_key: str
     base_path: Path = Path(f"{project_root}/data/divr_benchmark")
     cache_base_path: Path = Path("/home/storage/divr_benchmark")
     # cache_base_path: Path = base_path  # Path("/home/storage/divr_benchmark")
@@ -35,7 +37,7 @@ class HParams:
 
     loader_type: LoaderTypes = LoaderTypes.NORMAL
     best_checkpoint_epoch: int | None = None
-    num_epochs = 1000
+    num_epochs = 202
     save_epochs = list(range(0, num_epochs + 1, num_epochs // 10))
     confusion_epochs = list(range(0, num_epochs + 1, 10))
     random_seed = 42

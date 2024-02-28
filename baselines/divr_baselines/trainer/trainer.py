@@ -6,7 +6,6 @@ from pathlib import Path
 from .tboard import TBoard, MockBoard
 from .hparams import HParams
 import matplotlib.pyplot as plt
-import torch.nn.functional as F
 
 ConfusionData = Dict[int, Dict[int, int]]
 
@@ -16,9 +15,9 @@ class Trainer:
 
     def __init__(self, hparams: HParams) -> None:
         checkpoint_path = Path(
-            f"{hparams.base_path}/checkpoints/{hparams.experiment_key}"
+            f"{hparams.base_path}/checkpoints/{hparams.checkpoint_key}"
         )
-        tensorboard_path = Path(f"{hparams.base_path}/tboard/{hparams.experiment_key}")
+        tensorboard_path = Path(f"{hparams.base_path}/tboard/{hparams.tensorboard_key}")
         hparams.benchmark_path.mkdir(parents=True, exist_ok=True)
         self.data_loader = hparams.DataLoaderClass(
             benchmark_path=hparams.benchmark_path,

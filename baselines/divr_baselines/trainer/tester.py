@@ -1,5 +1,4 @@
 import torch
-import numpy as np
 import pandas as pd
 from tqdm import tqdm
 import seaborn as sns
@@ -11,9 +10,9 @@ import matplotlib.pyplot as plt
 class Tester:
     def __init__(self, hparams: HParams) -> None:
         checkpoint_path = Path(
-            f"{hparams.base_path}/checkpoints/{hparams.experiment_key}"
+            f"{hparams.base_path}/checkpoints/{hparams.checkpoint_key}"
         )
-        results_path = Path(f"{hparams.base_path}/results/{hparams.experiment_key}")
+        results_path = Path(f"{hparams.base_path}/results/{hparams.results_key}")
         results_path.mkdir(parents=True, exist_ok=True)
         self.results_path = results_path
         self.data_loader = hparams.DataLoaderClass(
