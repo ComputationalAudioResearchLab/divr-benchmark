@@ -107,6 +107,7 @@ t6_experiments = [
         batch_size=4,
         device=device,
         loader_type=LoaderTypes.NORMAL,
+        best_checkpoint_epoch=52,
     ),
     HParams(
         results_key="S1/T6/Wav2Vec/Simple4",
@@ -123,5 +124,6 @@ t6_experiments = [
         batch_size=4,
         device=device,
         loader_type=LoaderTypes.NORMAL,
+        best_checkpoint_epoch=194,
     ),
 ]
