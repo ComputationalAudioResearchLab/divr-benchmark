@@ -52,6 +52,12 @@ class Tester:
             result_file.write(f"Top 1 Accuracy: {accuracy}\n")
         results.confusion.to_csv(f"{self.results_path}/confusion.csv")
         self.__save_confusion(confusion_frame=results.confusion)
+        self.__save_results(results=results.results)
+
+    def __save_results(self, results) -> None:
+        df = pd.DataFrame.from_records(results, columns=["actual", "predicted"])
+        df = df.map(lambda x: x.name)
+        df.to_csv(f"{self.results_path}/results.csv", index=False)
 
     def __save_confusion(self, confusion_frame: pd.DataFrame) -> None:
         fig, ax = plt.subplots(1, 1, figsize=(8, 8), constrained_layout=True)

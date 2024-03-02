@@ -14,6 +14,7 @@ class Result:
         self.confusion = (
             pd.DataFrame(confusion).fillna(0).sort_index(axis=0).sort_index(axis=1)
         )
+        self.results = data
 
     @property
     def top_1_accuracy(self) -> float:

@@ -3,8 +3,7 @@ from typing import Literal
 from class_argparse import ClassArgParser
 
 
-# exps = ["Data2Vec", "Mfcc", "MfccWithDeltas", "ModifiedCPC", "UnispeechSAT", "Wav2Vec"]
-exps = ["UnispeechSAT", "Wav2Vec"]
+exps = ["Data2Vec", "Mfcc", "MfccWithDeltas", "ModifiedCPC", "UnispeechSAT", "Wav2Vec"]
 
 
 class Shell(ClassArgParser):
@@ -18,7 +17,7 @@ class Shell(ClassArgParser):
     ):
         tasks = {
             "0": [1, 2, 3, 4],
-            "1": [6],
+            "1": [1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15],
             "2": [1, 2, 3, 4],
             "3": [1, 2, 3, 4, 5],
         }
