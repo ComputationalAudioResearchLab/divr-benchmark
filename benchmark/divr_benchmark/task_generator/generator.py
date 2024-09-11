@@ -50,3 +50,25 @@ class Generator:
                 }
         with open(f"{output_path}.demographics.yml", "w") as output_file:
             yaml.dump(demographics, output_file)
+
+    def truncate_low_resource_classes(self, task_list: List[List[Task]], min_examples: int) -> List[List[Task]]:
+        to_remove = []
+        for tasks in task_list:
+            counts = {}
+            for task in tasks:
+                diagnosis_name = task.label.name
+                if diagnosis_name not in counts:
+                    counts[diagnosis_name] = 0
+                counts[diagnosis_name] += 1
+            for label, count in counts.items():
+                if count < min_examples:
+                    to_remove += [label]
+        new_list = []
+        for tasks in task_list:
+            new_tasks = []
+            for task in tasks:
+                diagnosis_name = task.label.name
+                if diagnosis_name not in to_remove:
+                    new_tasks += [task]
+            new_list += [new_tasks]
+        return new_list

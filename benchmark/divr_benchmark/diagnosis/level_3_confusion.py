@@ -14,13 +14,17 @@ def level_3_confusion():
             parents = list(set(row["parents"].keys()))
             for parent1 in parents:
                 if parent1 not in confusion:
-                    confusion[parent1] = {}
+                    confusion[parent1] = {
+                        "full_consensus": 0
+                    }
                 parent1 = confusion[parent1]
                 for parent2 in parents:
                     if parent2 not in parent1:
                         parent1[parent2] = 1
                     else:
                         parent1[parent2] += 1
+            if len(parents) == 1:
+                confusion[parents[0]]["full_consensus"] += 1
 
     df = pd.DataFrame.from_records(confusion)
     print(df)

@@ -119,7 +119,7 @@ class Main:
 
 if __name__ == "__main__":
     main = Main(
-        database_path="/home/storage/databases",
+        database_path="/home/storage/PRJ-VDML/databases",
         lib_path="/home/workspace/lib",
         audio_extraction_path="/home/workspace/data/extracted",
     )

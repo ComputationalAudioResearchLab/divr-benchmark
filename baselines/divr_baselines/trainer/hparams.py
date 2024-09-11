@@ -31,8 +31,8 @@ class HParams:
     checkpoint_key: str
     tensorboard_key: str
     base_path: Path = Path(f"{project_root}/data/divr_benchmark")
-    cache_base_path: Path = Path("/home/storage/divr_benchmark")
-    # cache_base_path: Path = base_path  # Path("/home/storage/divr_benchmark")
+    cache_base_path: Path = Path("/home/storage/PRJ-VDML/divr_benchmark")
+    # cache_base_path: Path = base_path  # Path("/home/storage/PRJ-VDML/divr_benchmark")
     benchmark_path: Path = Path(f"{base_path}/storage")
 
     loader_type: LoaderTypes = LoaderTypes.NORMAL

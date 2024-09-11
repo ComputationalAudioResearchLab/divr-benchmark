@@ -2,6 +2,7 @@
   "files.exclude": {
     "benchmark": true,
     "baselines": true,
-    "feature-toolkit": true
+    "feature-toolkit": true,
+    "icassp_2025": true
   }
 }

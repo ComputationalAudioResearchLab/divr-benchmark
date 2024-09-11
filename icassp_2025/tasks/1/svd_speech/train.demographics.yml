@@ -1,0 +1,60 @@
+functional:
+  female:
+    age_stats:
+      max: 74
+      mean: 47.20224719101124
+      min: 14
+      std: 13.530420082910227
+    total: 89
+  male:
+    age_stats:
+      max: 71
+      mean: 48.46511627906977
+      min: 20
+      std: 14.043044096140882
+    total: 43
+muscle_tension:
+  female:
+    age_stats:
+      max: 94
+      mean: 41.77647058823529
+      min: 13
+      std: 16.731333928112416
+    total: 85
+  male:
+    age_stats:
+      max: 73
+      mean: 46.51162790697674
+      min: 22
+      std: 13.729308401794448
+    total: 43
+normal:
+  female:
+    age_stats:
+      max: 84
+      mean: 28.019455252918288
+      min: 9
+      std: 13.75268478387371
+    total: 257
+  male:
+    age_stats:
+      max: 69
+      mean: 33.25238095238095
+      min: 16
+      std: 12.394941051974877
+    total: 210
+organic:
+  female:
+    age_stats:
+      max: 82
+      mean: 52.585585585585584
+      min: 12
+      std: 14.431594593329478
+    total: 222
+  male:
+    age_stats:
+      max: 89
+      mean: 56.194871794871794
+      min: 14
+      std: 14.778536064344404
+    total: 195

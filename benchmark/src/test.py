@@ -18,10 +18,10 @@ def valid_files(file_name: Path):
 
 if __name__ == "__main__":
     # audio_files = list(
-    #     Path("/home/storage/databases/svd2/pathological/male/1303/106/").glob("*.wav")
+    #     Path("/home/storage/PRJ-VDML/databases/svd2/pathological/male/1303/106/").glob("*.wav")
     # )
     audio_files = list(
-        filter(valid_files, Path("/home/storage/databases/svd2").rglob("*.wav"))
+        filter(valid_files, Path("/home/storage/PRJ-VDML/databases/svd2").rglob("*.wav"))
     )
     torch_device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     factory = FeatureFactory(

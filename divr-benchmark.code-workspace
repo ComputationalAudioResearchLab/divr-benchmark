@@ -8,6 +8,12 @@
     },
     {
       "path": "baselines"
+    },
+    {
+      "path": "icassp_2025"
+    },
+    {
+      "path": "../storage"
     }
   ],
   "settings": {
