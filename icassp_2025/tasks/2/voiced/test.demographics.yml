@@ -1,0 +1,83 @@
+functional:
+  female:
+    age_stats:
+      max: 34
+      mean: 34
+      min: 34
+      std: null
+    total: 1
+muscle_tension:
+  female:
+    age_stats:
+      max: 70
+      mean: 46.0625
+      min: 24
+      std: 11.815619787710753
+    total: 32
+  male:
+    age_stats:
+      max: 70
+      mean: 45.3
+      min: 22
+      std: 14.429866687935094
+    total: 20
+normal:
+  female:
+    age_stats:
+      max: 62
+      mean: 34.416666666666664
+      min: 20
+      std: 12.984331216618635
+    total: 36
+  male:
+    age_stats:
+      max: 66
+      mean: 41.23809523809524
+      min: 23
+      std: 13.269908673026961
+    total: 21
+organic_inflammatory:
+  female:
+    age_stats:
+      max: 70
+      mean: 47.89473684210526
+      min: 31
+      std: 10.471626939508202
+    total: 19
+  male:
+    age_stats:
+      max: 70
+      mean: 51
+      min: 31
+      std: 11.377365443917341
+    total: 19
+organic_neuro_muscular:
+  female:
+    age_stats:
+      max: 70
+      mean: 54.25
+      min: 26
+      std: 12.188854819800826
+    total: 12
+  male:
+    age_stats:
+      max: 65
+      mean: 59.666666666666664
+      min: 55
+      std: 5.033222956847166
+    total: 3
+organic_structural:
+  female:
+    age_stats:
+      max: 67
+      mean: 45
+      min: 23
+      std: 31.11269837220809
+    total: 2
+  male:
+    age_stats:
+      max: 70
+      mean: 61.5
+      min: 53
+      std: 12.020815280171307
+    total: 2

@@ -113,10 +113,13 @@ class Runner:
         "svd_speech_1_1_mfcc": ["svd_speech", 1, 1, MFCC, 3000],
         "svd_speech_2_1_mfcc": ["svd_speech", 2, 1, MFCC, 3000],
         "svd_speech_3_1_mfcc": ["svd_speech", 3, 1, MFCC, 3000],
+
         "svd_speech_0_0.5_mfcc": ["svd_speech", 0, 0.5, MFCC, 3000],
         "svd_speech_1_0.5_mfcc": ["svd_speech", 1, 0.5, MFCC, 3000],
+        
         "svd_speech_0_0.25_mfcc": ["svd_speech", 0, 0.25, MFCC, 3000],
         "svd_speech_1_0.25_mfcc": ["svd_speech", 1, 0.25, MFCC, 3000],
+        
         "svd_speech_0_0.125_mfcc": ["svd_speech", 0, 0.125, MFCC, 3000],
         "svd_speech_1_0.125_mfcc": ["svd_speech", 1, 0.125, MFCC, 3000],
     }

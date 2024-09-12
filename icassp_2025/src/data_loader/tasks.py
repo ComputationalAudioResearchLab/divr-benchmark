@@ -6,14 +6,14 @@ from divr_benchmark.benchmark import Task
 from divr_benchmark.diagnosis import DiagnosisMap
 from divr_benchmark.benchmark.audio_loader import AudioLoader
 from divr_benchmark.task_generator.generator import Generator
-from divr_benchmark.task_generator.databases import SVD
+from divr_benchmark.task_generator.databases import SVD, Voiced
 
 from .dtypes import Database
 
 
 class Tasks:
 
-    keys = Literal["svd_speech", "svd_a", "svd_i", "svd_u"]
+    keys = Literal["svd_speech", "svd_a", "svd_i", "svd_u", "voiced"]
 
     def __init__(self, data_path: Path, tasks_path: Path) -> None:
         self.__data_path = data_path
@@ -30,15 +30,27 @@ class Tasks:
             [train_set, val_set, test_set] = self.__svd_vowel(diagnosis_level=diagnosis_level, vowel="i")
         elif task_key == "svd_u":
             [train_set, val_set, test_set] = self.__svd_vowel(diagnosis_level=diagnosis_level, vowel="u")
+        elif task_key == "voiced":
+            test_set = self.__voiced(diagnosis_level=diagnosis_level)
+
         gen = Generator()
-        train_set, val_set, test_set = gen.truncate_low_resource_classes(
-            task_list=[train_set, val_set, test_set],
-            min_examples=5,
-        )
-        gen.to_task_file(train_set, output_path=f"{task_path}/train")
-        gen.to_task_file(val_set, output_path=f"{task_path}/val")
+        if task_key != "voiced":
+            train_set, val_set, test_set = gen.truncate_low_resource_classes(
+                task_list=[train_set, val_set, test_set],
+                min_examples=5,
+            )
+            gen.to_task_file(train_set, output_path=f"{task_path}/train")
+            gen.to_task_file(val_set, output_path=f"{task_path}/val")
+
         gen.to_task_file(test_set, output_path=f"{task_path}/test")
 
+    def __voiced(self, diagnosis_level: int):
+        voiced = Voiced(source_path=self.__data_path, allow_incomplete_classification=False)
+        test_set = voiced.all_train(level=diagnosis_level)
+        test_set += voiced.all_val(level=diagnosis_level)
+        test_set += voiced.all_test(level=diagnosis_level)
+        return test_set
+    
     def __svd_speech(self, diagnosis_level: int):
         svd = SVD(source_path=self.__data_path, allow_incomplete_classification=False)
         train_set = svd.train_set_connected_speech(level=diagnosis_level)
@@ -59,6 +71,11 @@ class Tasks:
         val_set = self.load_task_file(Path(f"{task_path}/val.yml"))
         test_set = self.load_task_file(Path(f"{task_path}/test.yml"))
         return (train_set, val_set, test_set)
+    
+    def load_test_task(self, task_key: Tasks.keys, diagnosis_level: int) -> Database:
+        task_path = Path(f"{self.__tasks_path}/{diagnosis_level}/{task_key}")
+        test_set = self.load_task_file(Path(f"{task_path}/test.yml"))
+        return ([], [], test_set)
 
     def load_task_file(self, task_file: Path):
         with open(task_file, "r") as data_file:

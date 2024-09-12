@@ -23,7 +23,6 @@ class Normalized(SavableModule):
     def forward(self, inputs: InputTensors) -> InputTensors:
         input_audios, input_lens = inputs
         per_frame_labels = self.model(input_audios)
-        # print(per_frame_labels.shape, input_audios.shape, input_lens.shape)
         per_frame_labels = self.__mask(per_frame_labels, input_lens)
         per_audio_labels = per_frame_labels.sum(dim=1) / input_lens.unsqueeze(1)
         return per_audio_labels, per_frame_labels

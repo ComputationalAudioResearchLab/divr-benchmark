@@ -7,7 +7,6 @@ from typing import Dict
 from pathlib import Path
 import matplotlib.pyplot as plt
 
-from .hparams import HParams
 from .tboard import TBoard, MockBoard
 from ..model import Feature, Normalized
 from ..data_loader import DataLoaderWithFeature, RandomAudioDataLoaderWithFeature, Database
@@ -27,14 +26,16 @@ class Trainer:
         database: Database,
         exp_key: str,
         num_epochs: int,
+        sample_rate: int = 16000,
+        random_seed: int = 42,
     ) -> None:
         data_loader = DataLoaderWithFeature(
             data_root=data_path,
-            sample_rate=HParams.sample_rate,
+            sample_rate=sample_rate,
             feature=feature,
             device=device,
             batch_size=32,
-            random_seed=HParams.random_seed,
+            random_seed=random_seed,
             shuffle_train=True,
             database=database,
         )
@@ -43,9 +44,7 @@ class Trainer:
         model = Normalized(
             input_size=feature.feature_size,
             num_classes=num_classes,
-            checkpoint_path=Path(
-                f"{cache_path}/checkpoints/{exp_key}"
-            ),
+            checkpoint_path=Path(f"{cache_path}/checkpoints/{exp_key}"),
         )
         model.to(device=device)
         criterion=nn.CrossEntropyLoss(weight=class_weights)
@@ -181,26 +180,26 @@ class TrainerShort:
         exp_key: str,
         max_audio_seconds: float,
         num_epochs: int,
+        sample_rate: int = 16000,
+        random_seed: int = 42,
     ) -> None:
         data_loader = RandomAudioDataLoaderWithFeature(
             data_root=data_path,
-            sample_rate=HParams.sample_rate,
+            sample_rate=sample_rate,
             feature=feature,
             device=device,
             batch_size=32,
-            random_seed=HParams.random_seed,
+            random_seed=random_seed,
             shuffle_train=True,
             database=database,
-            max_audio_samples=int(HParams.sample_rate*max_audio_seconds),
+            max_audio_samples=int(sample_rate*max_audio_seconds),
         )
         num_classes = len(data_loader.unique_diagnosis)
         class_weights = data_loader.class_counts.sum() / data_loader.class_counts
         model = Normalized(
             input_size=feature.feature_size,
             num_classes=num_classes,
-            checkpoint_path=Path(
-                f"{cache_path}/checkpoints/{exp_key}"
-            ),
+            checkpoint_path=Path(f"{cache_path}/checkpoints/{exp_key}"),
         )
         model.to(device=device)
         criterion=nn.CrossEntropyLoss(weight=class_weights)
