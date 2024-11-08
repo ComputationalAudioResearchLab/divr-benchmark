@@ -16,5 +16,5 @@
     }
   },
   "shutdownAction": "none",
-  "onCreateCommand": "./init.sh"
+  "onCreateCommand": "/home/workspace/init.sh"
 }
