@@ -6,12 +6,25 @@ from .databases.svd import VOWELS
 
 
 class GeneratorV1(Generator):
+
     def __call__(self, source_path: Path, tasks_path: Path) -> None:
         print("Generating benchmark v1 tasks")
         Path(f"{tasks_path}/streams").mkdir(exist_ok=True)
-        svd = SVD(source_path=source_path, allow_incomplete_classification=False)
-        torgo = Torgo(source_path=source_path, allow_incomplete_classification=True)
-        voiced = Voiced(source_path=source_path, allow_incomplete_classification=False)
+        svd = SVD(
+            source_path=source_path,
+            allow_incomplete_classification=False,
+            min_tasks=SVD.max_tasks,
+        )
+        torgo = Torgo(
+            source_path=source_path,
+            allow_incomplete_classification=True,
+            min_tasks=None,
+        )
+        voiced = Voiced(
+            source_path=source_path,
+            allow_incomplete_classification=False,
+            min_tasks=None,
+        )
         self.__stream0(
             stream_path=Path(f"{tasks_path}/streams/0"),
             svd=svd,

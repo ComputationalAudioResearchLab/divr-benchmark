@@ -46,6 +46,7 @@ class ProcessedSession:
     gender: str
     diagnosis: List[Diagnosis]
     files: List[ProcessedFile]
+    num_files: int
 
     @property
     def __dict__(self):
@@ -55,6 +56,7 @@ class ProcessedSession:
             "gender": self.gender,
             "diagnosis": [diagnosis.name for diagnosis in self.diagnosis],
             "files": self.files,
+            "num_files": self.num_files,
         }
 
     @property

@@ -14,7 +14,10 @@ FileFilter = Callable[[List[ProcessedFile]], List[ProcessedFile]]
 
 class Base:
     def __init__(
-        self, source_path: Path, allow_incomplete_classification: bool
+        self,
+        source_path: Path,
+        allow_incomplete_classification: bool,
+        min_tasks: int|None,
     ) -> None:
         self.diagnosis_map = DiagnosisMap.v1()
         self.database_generator = DatabaseGenerator(
@@ -26,11 +29,15 @@ class Base:
         self.dataset = self.prepare_dataset(
             source_path=source_path,
             allow_incomplete_classification=allow_incomplete_classification,
+            min_tasks=min_tasks,
         )
         self.__source_path = str(source_path)
 
     def prepare_dataset(
-        self, source_path: Path, allow_incomplete_classification: bool
+        self,
+        source_path: Path,
+        allow_incomplete_classification: bool,
+        min_tasks: int|None,
     ) -> ProcessedDataset:
         raise NotImplementedError()
 

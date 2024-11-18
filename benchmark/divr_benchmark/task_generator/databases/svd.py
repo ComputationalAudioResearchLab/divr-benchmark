@@ -18,6 +18,7 @@ class SVD(Base):
         "1405/713/713-iau.wav",  # invalid file
         "1405/713/713-i_n.wav",  # invalid file
     ]
+    max_tasks = 14
 
     def train_set_multi_neutral_vowels(self, level: int, vowels: List[VOWELS]):
         return self.filtered_multi_file_tasks(
@@ -126,7 +127,10 @@ class SVD(Base):
         return self.to_multi_file_tasks(sessions, level=level, file_filter=filter_func)
 
     def prepare_dataset(
-        self, source_path: Path, allow_incomplete_classification: bool
+        self,
+        source_path: Path,
+        allow_incomplete_classification: bool,
+        min_tasks: int|None,
     ) -> ProcessedDataset:
         db_name = "svd"
         sessions = []
@@ -141,8 +145,8 @@ class SVD(Base):
                         session=session,
                         allow_incomplete_classification=allow_incomplete_classification,
                     )
-                    if session is not None:
-                        sessions += [session]
+                    if (session is not None) and (min_tasks is None or session.num_files >= min_tasks):
+                            sessions += [session]
         return self.database_generator.generate(
             db_name=db_name,
             sessions=sessions,
@@ -180,6 +184,7 @@ class SVD(Base):
             gender=gender,
             diagnosis=diagnosis,
             files=files,
+            num_files=len(files),
         )
         if (
             session.best_diagnosis.incompletely_classified

@@ -11,7 +11,10 @@ from ...prepare_dataset.processed import (
 
 class Voiced(Base):
     def prepare_dataset(
-        self, source_path: Path, allow_incomplete_classification: bool
+        self,
+        source_path: Path,
+        allow_incomplete_classification: bool,
+        min_tasks: int|None,
     ) -> ProcessedDataset:
         db_name = "voiced"
         sessions = []
@@ -37,17 +40,20 @@ class Voiced(Base):
             age = int(row["Age"])
             gender = Gender.format(row["Gender"])
             if allow_incomplete_classification or not diagnosis.incompletely_classified:
-                sessions += [
-                    ProcessedSession(
-                        id=f"voiced_{speaker_id}",
-                        age=age,
-                        gender=gender,
-                        diagnosis=[diagnosis],
-                        files=[
-                            ProcessedFile(path=Path(f"{data_path}/{speaker_id}.wav"))
-                        ],
-                    )
-                ]
+                num_files = 1
+                if min_tasks is None or num_files >= min_tasks:
+                    sessions += [
+                        ProcessedSession(
+                            id=f"voiced_{speaker_id}",
+                            age=age,
+                            gender=gender,
+                            diagnosis=[diagnosis],
+                            files=[
+                                ProcessedFile(path=Path(f"{data_path}/{speaker_id}.wav"))
+                            ],
+                            num_files=num_files,
+                        )
+                    ]
         return self.database_generator.generate(
             db_name=db_name,
             sessions=sessions,

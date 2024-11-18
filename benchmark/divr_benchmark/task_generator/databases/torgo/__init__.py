@@ -14,9 +14,15 @@ class Torgo(Base):
     ignore_files = [
         "FC01/Session1/wav_arrayMic/0256.wav",  # 0 length audio
     ]
+    max_tasks = 142
+    avg_tasks = 60
+    min_tasks = 0
 
     def __init__(
-        self, source_path: Path, allow_incomplete_classification: bool
+        self,
+        source_path: Path,
+        allow_incomplete_classification: bool,
+        min_tasks: int|None,
     ) -> None:
         curdir = Path(__file__).parent.resolve()
         # only valid prompts that all speakers have spoken are selected
@@ -27,10 +33,14 @@ class Torgo(Base):
         super().__init__(
             source_path=source_path,
             allow_incomplete_classification=allow_incomplete_classification,
+            min_tasks=min_tasks,
         )
 
     def prepare_dataset(
-        self, source_path: Path, allow_incomplete_classification: bool
+        self,
+        source_path: Path,
+        allow_incomplete_classification: bool,
+        min_tasks: int|None,
     ) -> ProcessedDataset:
         db_name = "torgo"
         sessions = []
@@ -97,15 +107,19 @@ class Torgo(Base):
             gender = Gender.format(data["gender"])
             if not diagnosis.incompletely_classified or allow_incomplete_classification:
                 for session in speaker_path.glob("Session*"):
-                    sessions += [
-                        ProcessedSession(
-                            id=f"torgo_{speaker_id}_{session.name}",
-                            age=age,
-                            gender=gender,
-                            diagnosis=[diagnosis],
-                            files=self.__select_files(session=session),
-                        )
-                    ]
+                    files = self.__select_files(session=session)
+                    num_files = len(files)
+                    if min_tasks is None or num_files >= min_tasks:
+                        sessions += [
+                            ProcessedSession(
+                                id=f"torgo_{speaker_id}_{session.name}",
+                                age=age,
+                                gender=gender,
+                                diagnosis=[diagnosis],
+                                files=files,
+                                num_files=num_files,
+                            )
+                        ]
         return self.database_generator.generate(
             db_name=db_name,
             sessions=sessions,
