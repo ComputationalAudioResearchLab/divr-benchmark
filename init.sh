@@ -3,13 +3,13 @@
 set -e
 
 cd /home/workspace/benchmark;
-export PIPENV_CUSTOM_VENV_NAME=divr-benchmark;
+cp -n .env.default .env;
 pipenv install --dev;
 
 cd /home/workspace/baselines;
-export PIPENV_CUSTOM_VENV_NAME=divr-baselines;
+cp -n .env.default .env;
 pipenv install --site-packages --dev;
 
 cd /home/workspace/icassp_2025;
-export PIPENV_CUSTOM_VENV_NAME=icassp-2025;
+cp -n .env.default .env;
 pipenv install --site-packages --dev;
