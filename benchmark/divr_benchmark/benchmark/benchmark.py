@@ -9,11 +9,13 @@ from .task import Task
 from ..logger import Logger
 from ..download import Download
 from ..diagnosis import DiagnosisMap
-
+from ..task_generator.databases import Base as Database
+from ..task_generator import generator_map
 
 VERSIONS = Literal["v1"]
 versions = typing.get_args(VERSIONS)
 diagnosis_map_maps = {"v1": DiagnosisMap.v1}
+task_generator_maps = {"v1": generator_map["v1"]}
 
 
 class Benchmark:
@@ -41,7 +43,15 @@ class Benchmark:
             database_path=self.__data_path, logger=self.__logger
         )
         self.__tasks_path = f"{module_path}/tasks/{version}"
+        self.__task_generator = task_generator_maps[version]
         self.__ensure_datasets(tasks_path=self.__tasks_path)
+
+    def generate_task(self, filter_func, task_path: Path) -> None:
+        self.__task_generator.generate_task(
+            source_path=self.__data_path,
+            filter_func=filter_func,
+            task_path=task_path,
+        )
 
     def task(self, stream: int, task: int) -> Task:
         stream_path = Path(f"{self.__tasks_path}/streams/{stream}/")

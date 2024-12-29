@@ -3,6 +3,7 @@
     "benchmark": true,
     "baselines": true,
     "feature-toolkit": true,
-    "icassp_2025": true
+    "icassp_2025": true,
+    "acm_transactions_2025": true
   }
 }

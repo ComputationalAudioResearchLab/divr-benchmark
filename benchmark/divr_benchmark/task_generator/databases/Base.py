@@ -17,7 +17,7 @@ class Base:
         self,
         source_path: Path,
         allow_incomplete_classification: bool,
-        min_tasks: int|None,
+        min_tasks: int | None,
     ) -> None:
         self.diagnosis_map = DiagnosisMap.v1()
         self.database_generator = DatabaseGenerator(
@@ -37,7 +37,7 @@ class Base:
         self,
         source_path: Path,
         allow_incomplete_classification: bool,
-        min_tasks: int|None,
+        min_tasks: int | None,
     ) -> ProcessedDataset:
         raise NotImplementedError()
 
@@ -75,6 +75,7 @@ class Base:
             for file_idx, file_path in enumerate(files):
                 task = Task(
                     id=f"{session.id}_{file_idx}",
+                    speaker_id=session.speaker_id,
                     age=session.age,
                     gender=session.gender,
                     label=root_diagnosis,
@@ -98,6 +99,7 @@ class Base:
                 files = file_filter(session.files)
             task = Task(
                 id=f"{session.id}",
+                speaker_id=session.speaker_id,
                 age=session.age,
                 gender=session.gender,
                 label=root_diagnosis,

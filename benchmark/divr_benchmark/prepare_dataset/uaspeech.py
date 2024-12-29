@@ -53,6 +53,7 @@ class UASpeech(BaseProcessor):
             gender = data["gender"].strip()
             session = ProcessedSession(
                 id=speaker_id,
+                speaker_id=speaker_id,
                 age=age,
                 gender=gender,
                 diagnosis=[self.diagnosis_map.get(diagnosis)],

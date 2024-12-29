@@ -1,8 +1,20 @@
 import statistics
-from divr_benchmark.task_generator.task import Task
 import yaml
 from pathlib import Path
-from typing import List
+from typing import List, Callable
+from dataclasses import dataclass
+
+from .task import Task
+from .databases import Base as Database
+
+DatabaseFunc = Callable[[str], Database]
+
+
+@dataclass
+class Dataset:
+    train: List[Task]
+    val: List[Task]
+    test: List[Task]
 
 
 class Generator:
@@ -51,7 +63,9 @@ class Generator:
         with open(f"{output_path}.demographics.yml", "w") as output_file:
             yaml.dump(demographics, output_file)
 
-    def truncate_low_resource_classes(self, task_list: List[List[Task]], min_examples: int) -> List[List[Task]]:
+    def truncate_low_resource_classes(
+        self, task_list: List[List[Task]], min_examples: int
+    ) -> List[List[Task]]:
         to_remove = []
         for tasks in task_list:
             counts = {}

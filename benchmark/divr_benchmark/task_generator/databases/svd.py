@@ -130,7 +130,7 @@ class SVD(Base):
         self,
         source_path: Path,
         allow_incomplete_classification: bool,
-        min_tasks: int|None,
+        min_tasks: int | None,
     ) -> ProcessedDataset:
         db_name = "svd"
         sessions = []
@@ -145,8 +145,10 @@ class SVD(Base):
                         session=session,
                         allow_incomplete_classification=allow_incomplete_classification,
                     )
-                    if (session is not None) and (min_tasks is None or session.num_files >= min_tasks):
-                            sessions += [session]
+                    if (session is not None) and (
+                        min_tasks is None or session.num_files >= min_tasks
+                    ):
+                        sessions += [session]
         return self.database_generator.generate(
             db_name=db_name,
             sessions=sessions,
@@ -180,6 +182,7 @@ class SVD(Base):
         ]
         session = ProcessedSession(
             id=f"svd_{speaker_id}_{session_id}",
+            speaker_id=speaker_id,
             age=age,
             gender=gender,
             diagnosis=diagnosis,

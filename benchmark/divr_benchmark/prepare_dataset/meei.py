@@ -65,6 +65,7 @@ class MEEI(BaseProcessor):
             sessions += [
                 ProcessedSession(
                     id=speaker_id,
+                    speaker_id=speaker_id,
                     age=age,
                     gender=gender,
                     diagnosis=diagnosis,

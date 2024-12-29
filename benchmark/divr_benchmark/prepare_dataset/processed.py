@@ -42,6 +42,7 @@ class ProcessedFile:
 @dataclass
 class ProcessedSession:
     id: str
+    speaker_id: str
     age: int | None
     gender: str
     diagnosis: List[Diagnosis]
@@ -52,6 +53,7 @@ class ProcessedSession:
     def __dict__(self):
         return {
             "id": self.id,
+            "speaker_id": self.speaker_id,
             "age": self.age,
             "gender": self.gender,
             "diagnosis": [diagnosis.name for diagnosis in self.diagnosis],

@@ -43,6 +43,7 @@ class SVD(BaseProcessor):
             return None
         return ProcessedSession(
             id=f"svd.{speaker_id}.{session_id}",
+            speaker_id=speaker_id,
             age=age,
             gender=gender,
             diagnosis=[

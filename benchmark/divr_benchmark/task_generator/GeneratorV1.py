@@ -1,11 +1,45 @@
 from pathlib import Path
-from typing import List
-from .generator import Generator
-from .databases import SVD, Torgo, Voiced
+from typing import List, Callable
+from .generator import Generator, DatabaseFunc, Dataset
+from .databases import SVD, Torgo, Voiced, Base as Database
 from .databases.svd import VOWELS
 
 
 class GeneratorV1(Generator):
+
+    def generate_task(
+        self,
+        source_path: Path,
+        filter_func: Callable[[DatabaseFunc], Dataset],
+        task_path: Path,
+    ) -> None:
+        def __database(name: str) -> Database:
+            name = name.lower()
+            if name == "svd":
+                return SVD(
+                    source_path=source_path,
+                    allow_incomplete_classification=False,
+                    min_tasks=SVD.max_tasks,
+                )
+            elif name == "torgo":
+                return Torgo(
+                    source_path=source_path,
+                    allow_incomplete_classification=True,
+                    min_tasks=None,
+                )
+            elif name == "voiced":
+                return Voiced(
+                    source_path=source_path,
+                    allow_incomplete_classification=False,
+                    min_tasks=None,
+                )
+            else:
+                raise NotImplementedError(f"Unsupported database {name}")
+
+        tasks = filter_func(__database)
+        self.to_task_file(tasks=tasks.train, output_path=Path(f"{task_path}/train"))
+        self.to_task_file(tasks=tasks.val, output_path=Path(f"{task_path}/val"))
+        self.to_task_file(tasks=tasks.test, output_path=Path(f"{task_path}/test"))
 
     def __call__(self, source_path: Path, tasks_path: Path) -> None:
         print("Generating benchmark v1 tasks")

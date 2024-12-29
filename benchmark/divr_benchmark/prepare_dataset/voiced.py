@@ -34,6 +34,7 @@ class Voiced(BaseProcessor):
             sessions += [
                 ProcessedSession(
                     id=f"voiced.{speaker_id}",
+                    speaker_id=speaker_id,
                     age=age,
                     gender=gender,
                     diagnosis=[self.diagnosis_map.get(diagnosis)],
