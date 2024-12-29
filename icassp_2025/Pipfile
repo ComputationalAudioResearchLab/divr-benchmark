@@ -20,7 +20,12 @@ tensorboard = "==2.13.0"
 torch-tb-profiler = "==0.4.1"
 tqdm = "==4.64.1"
 xlrd = "==2.0.1"
-s3prl = ">=0.4.14"
+transformers = "==4.44.2"
+s3prl = "==0.4.16"
+pytorch-lightning = "==2.4.0"
+resampy = "*"
+"pyannote.audio" = "*"
+huggingface-hub = {extras = ["cli"], version = "*"}
 
 [requires]
 python_version = "3.10"
