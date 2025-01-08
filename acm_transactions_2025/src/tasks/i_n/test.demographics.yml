@@ -1,0 +1,121 @@
+functional_dysphonia:
+  female:
+    age_stats:
+      max: 66
+      mean: 47.1764705882353
+      min: 20
+      std: 12.938485682826483
+    total: 17
+  male:
+    age_stats:
+      max: 62
+      mean: 52
+      min: 32
+      std: 13.759844960366863
+    total: 4
+hyperfunctional_dysphonia:
+  female:
+    age_stats:
+      max: 65
+      mean: 40.054054054054056
+      min: 21
+      std: 12.245057837406954
+    total: 37
+laryngitis:
+  female:
+    age_stats:
+      max: 62
+      mean: 51.666666666666664
+      min: 31
+      std: 11.093541664710449
+    total: 6
+  male:
+    age_stats:
+      max: 70
+      mean: 54.733333333333334
+      min: 33
+      std: 11.804760944313143
+    total: 15
+leukoplakia:
+  female:
+    age_stats:
+      max: 64
+      mean: 49
+      min: 35
+      std: 14.52583904633395
+    total: 3
+  male:
+    age_stats:
+      max: 58
+      mean: 52.75
+      min: 50
+      std: 3.593976442141304
+    total: 4
+normal:
+  female:
+    age_stats:
+      max: 26
+      mean: 20.976470588235294
+      min: 18
+      std: 1.851488915570869
+    total: 85
+  male:
+    age_stats:
+      max: 38
+      mean: 25.341463414634145
+      min: 20
+      std: 4.993043941813255
+    total: 41
+psychogenic_dysphonia:
+  female:
+    age_stats:
+      max: 67
+      mean: 54.2
+      min: 38
+      std: 9.829660330968828
+    total: 10
+  male:
+    age_stats:
+      max: 58
+      mean: 58
+      min: 58
+      std: null
+    total: 1
+recurrent_paralysis:
+  female:
+    age_stats:
+      max: 74
+      mean: 58.77777777777778
+      min: 42
+      std: 8.626137977696416
+    total: 27
+  male:
+    age_stats:
+      max: 74
+      mean: 68.1
+      min: 60
+      std: 4.976611966656298
+    total: 10
+reinkes_edema:
+  female:
+    age_stats:
+      max: 73
+      mean: 55.1
+      min: 43
+      std: 11.51279481465923
+    total: 10
+vocal_fold_polyp:
+  female:
+    age_stats:
+      max: 45
+      mean: 43.5
+      min: 42
+      std: 2.1213203435596424
+    total: 2
+  male:
+    age_stats:
+      max: 78
+      mean: 54.833333333333336
+      min: 36
+      std: 14.091368516459523
+    total: 6

@@ -57,6 +57,7 @@ class Task:
         val: Path,
         test: Path,
         quiet: bool,
+        diag_level: int | None,
     ) -> None:
         self.__diagnosis_map = diagnosis_map
         self.__audio_loader = audio_loader
@@ -64,11 +65,13 @@ class Task:
             data_file=train,
             key="train",
             quiet=quiet,
+            diag_level=diag_level,
         )
         self.__val = self.__load_file(
             data_file=val,
             key="val",
             quiet=quiet,
+            diag_level=diag_level,
         )
         self.__test = dict(
             [
@@ -77,36 +80,67 @@ class Task:
                     data_file=test,
                     key="test",
                     quiet=quiet,
+                    diag_level=diag_level,
                 )
             ]
         )
         self.audio_sample_rate = audio_loader.sample_rate
-        self.__diagnosis_index = self.__count_diagnosis()
-        self.__diagnosis_index_reversed = dict(
-            [(v.name, k) for k, v in self.__diagnosis_index.items()]
-        )
+        self.__diagnosis_indices = self.__count_diagnosis()
+        self.__max_diag_level = list(self.__diagnosis_indices.keys())[-1]
+
+    def unique_diagnosis(self, level: int | None = None) -> List[str]:
+        if level is None:
+            level = self.__max_diag_level
+        _, diag_indices_reversed = self.__diagnosis_indices[level]
+        return list(diag_indices_reversed.keys())
+
+    def index_to_diag(self, index: int, level: int | None = None) -> Diagnosis:
+        if level is None:
+            level = self.__max_diag_level
+        diag_indices, _ = self.__diagnosis_indices[level]
+        return diag_indices[index]
+
+    def diag_to_index(self, diag: Diagnosis, level: int | None = None) -> int:
+        if level is None:
+            level = self.__max_diag_level
+        _, diag_indices_reversed = self.__diagnosis_indices[level]
+        return diag_indices_reversed[diag.at_level(level).name]
+
+    def diag_name_to_index(self, diag_name: str, level: int | None = None) -> int:
+        if level is None:
+            level = self.__max_diag_level
+        _, diag_indices_reversed = self.__diagnosis_indices[level]
+        diag = self.__diagnosis_map.get(name=diag_name)
+        return diag_indices_reversed[diag.at_level(level).name]
+
+    def train_class_weights(self, level: int | None = None) -> List[float]:
+        """
+        Returns a list of (total_samples / class_samples)
+        """
+        if level is None:
+            level = self.__max_diag_level
+        diags = np.array([t.label.at_level(level).name for t in self.__train])
+        class_weights = [0.0] * len(self.unique_diagnosis(level=level))
+        _, diag_indices_reversed = self.__diagnosis_indices[level]
+        for diag_name, count in zip(*np.unique(diags, return_counts=True)):
+            idx = diag_indices_reversed[diag_name]
+            class_weights[idx] = count
+        total_sessions = sum(class_weights)
+        for i in range(len(class_weights)):
+            class_weights[i] = total_sessions / class_weights[i]
+        return class_weights
 
     @property
-    def unique_diagnosis(self) -> List[str]:
-        return list(self.__diagnosis_index_reversed.keys())
-
-    def index_to_diag(self, index: int) -> Diagnosis:
-        return self.__diagnosis_index[index]
-
-    def diag_to_index(self, diag: Diagnosis) -> int:
-        return self.__diagnosis_index_reversed[diag.name]
+    def train(self) -> List[DataPoint]:
+        return self.__train
 
     @property
-    def train(self) -> List[TrainPoint]:
-        return [x.to_trainpoint() for x in self.__train]
+    def val(self) -> List[DataPoint]:
+        return self.__val
 
     @property
-    def val(self) -> List[TrainPoint]:
-        return [x.to_trainpoint() for x in self.__val]
-
-    @property
-    def test(self) -> List[TestPoint]:
-        return [x.to_testpoint() for x in self.__test.values()]
+    def test(self) -> List[DataPoint]:
+        return list(self.__test.values())
 
     def score(self, predictions: Dict[str, int]) -> Result:
         """
@@ -119,7 +153,13 @@ class Task:
             results += [(actual_diagnosis, predicted_diagnosis)]
         return Result(data=results)
 
-    def __load_file(self, data_file: Path, key: str, quiet: bool) -> List[DataPoint]:
+    def __load_file(
+        self,
+        data_file: Path,
+        key: str,
+        quiet: bool,
+        diag_level: int | None,
+    ) -> List[DataPoint]:
         with open(data_file, "r") as df:
             data = yaml.load(df, Loader=yaml.FullLoader)
         dataset: List[DataPoint] = []
@@ -129,13 +169,32 @@ class Task:
             iterator = data.items()
         for key, val in iterator:
             label = self.__diagnosis_map.get(val["label"])
+            if diag_level is not None:
+                label = label.at_level(diag_level)
             audio = self.__audio_loader(val["audio_keys"])
             dataset.append(DataPoint(id=key, audio=audio, label=label))
         return dataset
 
-    def __count_diagnosis(self) -> Dict[int, Diagnosis]:
+    def __count_diagnosis(
+        self,
+    ) -> Dict[int, Tuple[Dict[int, Diagnosis], Dict[str, int]]]:
         train_diags = [d.label for d in self.__train]
         test_diags = [d.label for d in self.__test.values()]
         val_diags = [d.label for d in self.__val]
         unique_diagnosis = set(train_diags + test_diags + val_diags)
-        return dict(enumerate(sorted(unique_diagnosis, key=lambda x: x.name)))
+        max_level = max([d.level for d in unique_diagnosis])
+        counts = {}
+        for level in range(max_level + 1):
+            diags_at_level = set([d.at_level(level) for d in unique_diagnosis])
+            counts[level] = [
+                dict(enumerate(sorted(diags_at_level, key=lambda x: x.name))),
+                dict(
+                    [
+                        (diag.name, idx)
+                        for idx, diag in enumerate(
+                            sorted(diags_at_level, key=lambda x: x.name)
+                        )
+                    ]
+                ),
+            ]
+        return counts

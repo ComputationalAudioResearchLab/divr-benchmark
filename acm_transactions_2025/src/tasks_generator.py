@@ -1,4 +1,5 @@
-from typing import List, Dict
+from __future__ import annotations
+from typing import Dict, List, Literal
 from pathlib import Path
 from divr_benchmark import Benchmark
 from divr_benchmark.task_generator import DatabaseFunc, Dataset
@@ -7,33 +8,80 @@ from divr_benchmark.task_generator.task import Task
 
 class TaskGenerator:
 
+    TASKS = Literal["phrase", "a_n", "i_n", "u_n"]
+
     def __init__(self, research_data_path: Path) -> None:
         self.__benchmark = Benchmark(
             storage_path=research_data_path,
             version="v1",
         )
+        cur_path = Path(__file__).parent.resolve()
+        self.__tasks_path = self.__ensure_path(f"{cur_path}/tasks")
+
+    def load_task(self, task: TaskGenerator.TASKS, diag_level: int | None) -> Task:
+        task_path = Path(f"{self.__tasks_path}/{task}")
+        return self.__benchmark.load_task(task_path=task_path, diag_level=diag_level)
 
     def generate(self) -> None:
-        cur_path = Path(__file__).parent.resolve()
-        tasks_path = self.__ensure_path(f"{cur_path}/tasks")
         self.__benchmark.generate_task(
-            filter_func=self.__filter_func,
-            task_path=self.__ensure_path(f"{tasks_path}"),
+            filter_func=self.__filter_func(
+                allowed_suffixes=[
+                    "-phrase.wav",
+                ]
+            ),
+            task_path=self.__ensure_path(f"{self.__tasks_path}/phrase"),
+        )
+        self.__benchmark.generate_task(
+            filter_func=self.__filter_func(
+                allowed_suffixes=[
+                    "-a_n.wav",
+                ]
+            ),
+            task_path=self.__ensure_path(f"{self.__tasks_path}/a_n"),
+        )
+        self.__benchmark.generate_task(
+            filter_func=self.__filter_func(
+                allowed_suffixes=[
+                    "-i_n.wav",
+                ]
+            ),
+            task_path=self.__ensure_path(f"{self.__tasks_path}/i_n"),
+        )
+        self.__benchmark.generate_task(
+            filter_func=self.__filter_func(
+                allowed_suffixes=[
+                    "-u_n.wav",
+                ]
+            ),
+            task_path=self.__ensure_path(f"{self.__tasks_path}/u_n"),
+        )
+        self.__benchmark.generate_task(
+            filter_func=self.__filter_func(
+                allowed_suffixes=[
+                    "-phrase.wav",
+                    "-a_n.wav",
+                    "-i_n.wav",
+                    "-u_n.wav",
+                ]
+            ),
+            task_path=self.__ensure_path(f"{self.__tasks_path}/all"),
         )
 
-    def __filter_func(self, database_func: DatabaseFunc) -> List[Task]:
-        svd_data = self.__svd_data(database_func=database_func)
-        allowed_suffixes = ["-phrase.wav", "-a_n.wav", "-i_n.wav", "-u_n.wav"]
-        svd_data.train = self.__filter_audio_files(
-            tasks=svd_data.train, allowed_suffixes=allowed_suffixes
-        )
-        svd_data.val = self.__filter_audio_files(
-            tasks=svd_data.val, allowed_suffixes=allowed_suffixes
-        )
-        svd_data.test = self.__filter_audio_files(
-            tasks=svd_data.test, allowed_suffixes=allowed_suffixes
-        )
-        return svd_data
+    def __filter_func(self, allowed_suffixes: List[str]):
+        def filter_func(database_func: DatabaseFunc) -> List[Task]:
+            svd_data = self.__svd_data(database_func=database_func)
+            svd_data.train = self.__filter_audio_files(
+                tasks=svd_data.train, allowed_suffixes=allowed_suffixes
+            )
+            svd_data.val = self.__filter_audio_files(
+                tasks=svd_data.val, allowed_suffixes=allowed_suffixes
+            )
+            svd_data.test = self.__filter_audio_files(
+                tasks=svd_data.test, allowed_suffixes=allowed_suffixes
+            )
+            return svd_data
+
+        return filter_func
 
     def __filter_audio_files(
         self, tasks: List[Task], allowed_suffixes: List[str]

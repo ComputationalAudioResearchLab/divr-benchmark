@@ -1,0 +1,114 @@
+functional_dysphonia:
+  female:
+    age_stats:
+      max: 67
+      mean: 49.7
+      min: 32
+      std: 10.739853092312039
+    total: 10
+  male:
+    age_stats:
+      max: 63
+      mean: 63
+      min: 63
+      std: null
+    total: 1
+hyperfunctional_dysphonia:
+  female:
+    age_stats:
+      max: 57
+      mean: 37.6
+      min: 21
+      std: 11.16627575719471
+    total: 15
+laryngitis:
+  female:
+    age_stats:
+      max: 52
+      mean: 52
+      min: 52
+      std: null
+    total: 1
+  male:
+    age_stats:
+      max: 60
+      mean: 54.4
+      min: 47
+      std: 5.594640292279746
+    total: 5
+leukoplakia:
+  male:
+    age_stats:
+      max: 57
+      mean: 53.666666666666664
+      min: 50
+      std: 3.5118845842842465
+    total: 3
+normal:
+  female:
+    age_stats:
+      max: 29
+      mean: 22.431372549019606
+      min: 20
+      std: 2.6325265579726587
+    total: 51
+  male:
+    age_stats:
+      max: 28
+      mean: 22.583333333333332
+      min: 20
+      std: 2.151461800448216
+    total: 12
+psychogenic_dysphonia:
+  female:
+    age_stats:
+      max: 62
+      mean: 49.9
+      min: 39
+      std: 7.680422442085389
+    total: 10
+recurrent_paralysis:
+  female:
+    age_stats:
+      max: 69
+      mean: 59.25
+      min: 44
+      std: 7.932957719654012
+    total: 12
+  male:
+    age_stats:
+      max: 78
+      mean: 73.66666666666667
+      min: 65
+      std: 7.505553499465135
+    total: 3
+reinkes_edema:
+  female:
+    age_stats:
+      max: 65
+      mean: 48
+      min: 32
+      std: 10.263202878893768
+    total: 7
+  male:
+    age_stats:
+      max: 66
+      mean: 66
+      min: 66
+      std: null
+    total: 1
+vocal_fold_polyp:
+  female:
+    age_stats:
+      max: 53
+      mean: 53
+      min: 53
+      std: null
+    total: 1
+  male:
+    age_stats:
+      max: 58
+      mean: 51.666666666666664
+      min: 40
+      std: 10.115993936995679
+    total: 3

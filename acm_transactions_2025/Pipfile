@@ -8,20 +8,21 @@ pytest = "==7.3.1"
 python-dotenv = "==1.0.1"
 catboost = "==1.2"
 class-argparse = "==0.1.3"
+divr-benchmark = {file = "../benchmark", editable = true}
 h5py = ">=3.10.0"
 librosa = ">=0.10.0.post2"
 matplotlib = ">=3.7.1"
 pandas = ">=2.0.1"
 pathos = "==0.3.1"
 scikit-learn = "==1.2.2"
+s3prl = "==0.4.16"
 scipy = "==1.10.1"
 seaborn = ">=0.13.2"
 tensorboard = "==2.13.0"
 torch-tb-profiler = "==0.4.1"
 tqdm = "==4.64.1"
+transformers = "==4.44.2"
 xlrd = "==2.0.1"
-s3prl = ">=0.4.14"
-divr-benchmark = {file = "../benchmark", editable = true}
 
 [requires]
 python_version = "3.10"

@@ -9,7 +9,6 @@ from .task import Task
 from ..logger import Logger
 from ..download import Download
 from ..diagnosis import DiagnosisMap
-from ..task_generator.databases import Base as Database
 from ..task_generator import generator_map
 
 VERSIONS = Literal["v1"]
@@ -51,6 +50,19 @@ class Benchmark:
             source_path=self.__data_path,
             filter_func=filter_func,
             task_path=task_path,
+        )
+
+    def load_task(self, task_path: Path, diag_level: int | None) -> Task:
+        if not task_path.is_dir():
+            raise ValueError("Invalid task selected")
+        return Task(
+            diagnosis_map=self.__diagnosis_map,
+            audio_loader=self.__audio_loader,
+            train=Path(f"{task_path}/train.yml"),
+            val=Path(f"{task_path}/val.yml"),
+            test=Path(f"{task_path}/test.yml"),
+            quiet=self.__quiet,
+            diag_level=diag_level,
         )
 
     def task(self, stream: int, task: int) -> Task:
