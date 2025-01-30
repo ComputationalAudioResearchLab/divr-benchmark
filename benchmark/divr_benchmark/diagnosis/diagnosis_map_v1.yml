@@ -36,7 +36,7 @@ organic:
 unclassified_pathology:
   level: 1
   alias:
-    - voice disorders: undiagnosed or not otherwise specified (nos)
+    - "voice disorders: undiagnosed or not otherwise specified (nos)"
   parents:
     pathological: 1.00
 
