@@ -1,13 +1,13 @@
 import statistics
 import yaml
 from pathlib import Path
-from typing import List, Callable
+from typing import List, Callable, Awaitable
 from dataclasses import dataclass
 
 from .task import Task
 from .databases import Base as Database
 
-DatabaseFunc = Callable[[str], Database]
+DatabaseFunc = Callable[[str], Awaitable[Database]]
 
 
 @dataclass

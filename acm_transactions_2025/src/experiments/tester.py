@@ -77,22 +77,12 @@ class Tester:
             int(idx), self.__data_loader.max_diag_level
         )
 
-    def __weighted_accuracy(self, confusion: np.ndarray) -> float:
-        total_per_class = np.maximum(1, confusion.sum(axis=1))
-        corrects = confusion.diagonal()
-        per_class_accuracy = corrects / total_per_class
-        accuracy = per_class_accuracy.mean()
-        return accuracy
-
     def __add_confusion(self, results: pd.DataFrame) -> None:
         confusion = confusion_matrix(
             y_pred=results["predicted"],
             y_true=results["actual"],
             labels=self.unique_diagnosis,
         )
-        print(results["actual"].value_counts())
-        print(results["predicted"].value_counts())
-        print(confusion)
         fig, ax = plt.subplots(1, 1, figsize=(8, 8), constrained_layout=True)
         sns.heatmap(
             data=confusion,
@@ -102,7 +92,7 @@ class Tester:
             annot=True,
             cbar=False,
         )
-        # ax.set_ylabel("Actual")
-        # ax.set_xlabel("Predicted")
+        ax.set_ylabel("Actual")
+        ax.set_xlabel("Predicted")
         fig.savefig(f"{self.__results_path}/confusion.png")
         plt.close(fig=fig)

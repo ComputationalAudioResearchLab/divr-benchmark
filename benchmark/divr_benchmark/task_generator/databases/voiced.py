@@ -10,17 +10,18 @@ from ...prepare_dataset.processed import (
 
 
 class Voiced(Base):
-    def prepare_dataset(
+    async def prepare_dataset(
         self,
         source_path: Path,
         allow_incomplete_classification: bool,
-        min_tasks: int|None,
+        min_tasks: int | None,
     ) -> ProcessedDataset:
         db_name = "voiced"
+        db_path = f"{source_path}/{db_name}"
         sessions = []
-        data_path = f"{source_path}/{db_name}/voice-icar-federico-ii-database-1.0.0"
+        data_path = f"{db_path}/voice-icar-federico-ii-database-1.0.0"
 
-        info_files = list(Path(source_path).rglob("*-info.txt"))
+        info_files = list(Path(data_path).rglob("*-info.txt"))
         rows = []
         for ifile in info_files:
             df = pd.read_csv(ifile, delimiter="\t", header=None)
@@ -45,11 +46,14 @@ class Voiced(Base):
                     sessions += [
                         ProcessedSession(
                             id=f"voiced_{speaker_id}",
+                            speaker_id=speaker_id,
                             age=age,
                             gender=gender,
                             diagnosis=[diagnosis],
                             files=[
-                                ProcessedFile(path=Path(f"{data_path}/{speaker_id}.wav"))
+                                ProcessedFile(
+                                    path=Path(f"{data_path}/{speaker_id}.wav")
+                                )
                             ],
                             num_files=num_files,
                         )

@@ -1,4 +1,5 @@
 from __future__ import annotations
+import math
 import torch
 import numpy as np
 from typing import Tuple, List, Union
@@ -45,9 +46,13 @@ class DataLoader:
             self.train_class_weights[diag_level] = task.train_class_weights(
                 level=diag_level
             )
-        self.__train_indices = np.arange(len(self.__train_points) // batch_size)
-        self.__test_indices = np.arange(len(self.__test_points) // batch_size)
-        self.__val_indices = np.arange(len(self.__val_points) // batch_size)
+        self.__train_indices = np.arange(
+            math.ceil((len(self.__train_points) / batch_size))
+        )
+        self.__test_indices = np.arange(
+            math.ceil((len(self.__test_points) / batch_size))
+        )
+        self.__val_indices = np.arange(math.ceil((len(self.__val_points) / batch_size)))
         self.__diag_levels = diag_levels
         self.max_diag_level = max_diag_level
         self.__batch_size = batch_size

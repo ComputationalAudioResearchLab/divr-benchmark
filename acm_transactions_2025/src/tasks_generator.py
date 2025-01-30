@@ -1,4 +1,5 @@
 from __future__ import annotations
+import asyncio
 from typing import Dict, List, Literal
 from pathlib import Path
 from divr_benchmark import Benchmark
@@ -22,54 +23,94 @@ class TaskGenerator:
         task_path = Path(f"{self.__tasks_path}/{task}")
         return self.__benchmark.load_task(task_path=task_path, diag_level=diag_level)
 
-    def generate(self) -> None:
-        self.__benchmark.generate_task(
-            filter_func=self.__filter_func(
-                allowed_suffixes=[
-                    "-phrase.wav",
-                ]
-            ),
-            task_path=self.__ensure_path(f"{self.__tasks_path}/phrase"),
-        )
-        self.__benchmark.generate_task(
-            filter_func=self.__filter_func(
-                allowed_suffixes=[
-                    "-a_n.wav",
-                ]
-            ),
-            task_path=self.__ensure_path(f"{self.__tasks_path}/a_n"),
-        )
-        self.__benchmark.generate_task(
-            filter_func=self.__filter_func(
-                allowed_suffixes=[
-                    "-i_n.wav",
-                ]
-            ),
-            task_path=self.__ensure_path(f"{self.__tasks_path}/i_n"),
-        )
-        self.__benchmark.generate_task(
-            filter_func=self.__filter_func(
-                allowed_suffixes=[
-                    "-u_n.wav",
-                ]
-            ),
-            task_path=self.__ensure_path(f"{self.__tasks_path}/u_n"),
-        )
-        self.__benchmark.generate_task(
-            filter_func=self.__filter_func(
-                allowed_suffixes=[
-                    "-phrase.wav",
-                    "-a_n.wav",
-                    "-i_n.wav",
-                    "-u_n.wav",
-                ]
-            ),
-            task_path=self.__ensure_path(f"{self.__tasks_path}/all"),
-        )
+    async def generate(self) -> None:
+        coros = []
+        # coros += [
+        #     self.__benchmark.generate_task(
+        #         filter_func=self.__filter_func(
+        #             allowed_suffixes=[
+        #                 "-phrase.wav",
+        #             ]
+        #         ),
+        #         task_path=self.__ensure_path(f"{self.__tasks_path}/phrase"),
+        #     )
+        # ]
+        # coros += [
+        #     self.__benchmark.generate_task(
+        #         filter_func=self.__filter_func(
+        #             allowed_suffixes=[
+        #                 "-a_n.wav",
+        #             ]
+        #         ),
+        #         task_path=self.__ensure_path(f"{self.__tasks_path}/a_n"),
+        #     )
+        # ]
+        # coros += [
+        #     self.__benchmark.generate_task(
+        #         filter_func=self.__filter_func(
+        #             allowed_suffixes=[
+        #                 "-i_n.wav",
+        #             ]
+        #         ),
+        #         task_path=self.__ensure_path(f"{self.__tasks_path}/i_n"),
+        #     )
+        # ]
+        # coros += [
+        #     self.__benchmark.generate_task(
+        #         filter_func=self.__filter_func(
+        #             allowed_suffixes=[
+        #                 "-u_n.wav",
+        #             ]
+        #         ),
+        #         task_path=self.__ensure_path(f"{self.__tasks_path}/u_n"),
+        #     )
+        # ]
+        # coros += [
+        #     self.__benchmark.generate_task(
+        #         filter_func=self.__filter_func(
+        #             allowed_suffixes=[
+        #                 "-phrase.wav",
+        #                 "-a_n.wav",
+        #                 "-i_n.wav",
+        #                 "-u_n.wav",
+        #             ]
+        #         ),
+        #         task_path=self.__ensure_path(f"{self.__tasks_path}/all"),
+        #     )
+        # ]
+        cross_test_datasets = [
+            # "avfad",
+            "meei",
+            # "torgo",
+            # "uaspeech",
+            # "uncommon_voice",
+            # "voiced",
+        ]
+        for db in cross_test_datasets:
+            coros += [
+                self.__benchmark.generate_task(
+                    filter_func=self.__cross_test_filter_func(databse_name=db),
+                    task_path=self.__ensure_path(
+                        f"{self.__tasks_path}/cross_test_{db}"
+                    ),
+                )
+            ]
+        await asyncio.gather(*coros)
+
+    def __cross_test_filter_func(self, databse_name: str):
+        async def filter_func(database_func: DatabaseFunc) -> DatabaseFunc:
+            db = await database_func(name=databse_name)
+            return Dataset(
+                train=[],
+                val=[],
+                test=db.all(level=3),
+            )
+
+        return filter_func
 
     def __filter_func(self, allowed_suffixes: List[str]):
-        def filter_func(database_func: DatabaseFunc) -> List[Task]:
-            svd_data = self.__svd_data(database_func=database_func)
+        async def filter_func(database_func: DatabaseFunc) -> Dataset:
+            svd_data = await self.__svd_data(database_func=database_func)
             svd_data.train = self.__filter_audio_files(
                 tasks=svd_data.train, allowed_suffixes=allowed_suffixes
             )
@@ -96,8 +137,8 @@ class TaskGenerator:
             task.audio_keys = [x for x in task.audio_keys if file_filter(x)]
         return tasks
 
-    def __svd_data(self, database_func: DatabaseFunc) -> Dataset:
-        db = database_func(name="svd")
+    async def __svd_data(self, database_func: DatabaseFunc) -> Dataset:
+        db = await database_func(name="svd")
         train_data = db.all_train(level=3)
         val_data = db.all_val(level=3)
         test_data = db.all_test(level=3)

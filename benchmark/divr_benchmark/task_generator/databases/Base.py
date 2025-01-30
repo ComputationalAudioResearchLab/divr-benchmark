@@ -26,14 +26,18 @@ class Base:
             test_split=0.2,
             random_seed=42,
         )
-        self.dataset = self.prepare_dataset(
-            source_path=source_path,
-            allow_incomplete_classification=allow_incomplete_classification,
-            min_tasks=min_tasks,
-        )
-        self.__source_path = str(source_path)
+        self.__source_path = source_path
+        self.__allow_incomplete_classification = allow_incomplete_classification
+        self.__min_tasks = min_tasks
 
-    def prepare_dataset(
+    async def init(self):
+        self.dataset = await self.prepare_dataset(
+            source_path=self.__source_path,
+            allow_incomplete_classification=self.__allow_incomplete_classification,
+            min_tasks=self.__min_tasks,
+        )
+
+    async def prepare_dataset(
         self,
         source_path: Path,
         allow_incomplete_classification: bool,
@@ -42,7 +46,11 @@ class Base:
         raise NotImplementedError()
 
     def to_audio_key(self, source_path: ProcessedFile) -> str:
-        return str(source_path.path).removeprefix(self.__source_path).removeprefix("/")
+        return (
+            str(source_path.path)
+            .removeprefix(str(self.__source_path))
+            .removeprefix("/")
+        )
 
     def all_train(self, level: int) -> List[Task]:
         return self.to_individual_file_tasks(
@@ -57,6 +65,11 @@ class Base:
     def all_test(self, level: int) -> List[Task]:
         return self.to_individual_file_tasks(
             self.dataset.test_sessions, level=level, file_filter=None
+        )
+
+    def all(self, level: int) -> List[Task]:
+        return self.to_individual_file_tasks(
+            sessions=self.dataset.all_sessions, level=level, file_filter=None
         )
 
     def to_individual_file_tasks(

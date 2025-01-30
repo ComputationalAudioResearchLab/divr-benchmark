@@ -126,22 +126,23 @@ class SVD(Base):
 
         return self.to_multi_file_tasks(sessions, level=level, file_filter=filter_func)
 
-    def prepare_dataset(
+    async def prepare_dataset(
         self,
         source_path: Path,
         allow_incomplete_classification: bool,
         min_tasks: int | None,
     ) -> ProcessedDataset:
         db_name = "svd"
+        db_path = f"{source_path}/{db_name}"
         sessions = []
-        with open(f"{source_path}/{db_name}/data.json", "r") as inputfile:
+        with open(f"{db_path}/data.json", "r") as inputfile:
             for speaker_id, val in json.loads(inputfile.read()).items():
                 gender = Gender.format(val["gender"])
                 for session in val["sessions"]:
                     session = self.__process_session(
                         speaker_id=speaker_id,
                         gender=gender,
-                        source_path=f"{source_path}/{db_name}",
+                        source_path=db_path,
                         session=session,
                         allow_incomplete_classification=allow_incomplete_classification,
                     )

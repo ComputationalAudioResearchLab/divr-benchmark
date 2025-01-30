@@ -1,0 +1,115 @@
+import torch
+import torch.optim
+import pandas as pd
+import seaborn as sns
+from tqdm import tqdm
+from typing import Dict, List
+from pathlib import Path
+import matplotlib.pyplot as plt
+from sklearn.metrics import confusion_matrix
+
+from ..model import NormalizedMultiCrit
+from ..data_loader import DataLoader
+
+ConfusionData = Dict[int, Dict[int, int]]
+
+
+class TesterMultiCrit:
+    best_eval_accuracy = 0
+
+    def __init__(
+        self,
+        cache_path: Path,
+        results_path: Path,
+        device: torch.device,
+        data_loader: DataLoader,
+        exp_key: str,
+        load_epoch: int,
+    ) -> None:
+        max_diag_level = max(data_loader.num_unique_diagnosis)
+        self.unique_diagnosis = data_loader.unique_diagnosis
+        model = NormalizedMultiCrit(
+            input_size=data_loader.feature_size,
+            num_classes=data_loader.num_unique_diagnosis[max_diag_level],
+            checkpoint_path=Path(f"{cache_path}/checkpoints/{exp_key}"),
+            levels_map=data_loader.levels_map,
+        )
+        model.to(device=device)
+        model.eval()
+        model.load(load_epoch)
+        self.__data_loader = data_loader
+        self.__results_path = Path(f"{results_path}/{exp_key}/{load_epoch}")
+        self.__results_path.mkdir(parents=True, exist_ok=True)
+        self.model = model
+
+    @torch.no_grad()
+    def eval(self) -> None:
+        all_results = []
+        all_ids = []
+        for inputs, labels, ids in tqdm(
+            self.__data_loader.eval(),
+            desc="Validating",
+        ):
+            labels = labels.squeeze(1)
+            probabilities, _, _ = self.model(inputs)
+            data_at_level = []
+            data = []
+            for idx, key in enumerate(self.unique_diagnosis):
+                labels_at_level = self.model.labels_at_level(
+                    probabilities, level=key
+                ).argmax(dim=1)
+                data_at_level += [
+                    labels[:, idx : idx + 1],
+                    labels_at_level[:, None],
+                ]
+            print(torch.cat(data_at_level, dim=1))
+            print(self.__data_loader.unique_diagnosis)
+            exit()
+            all_ids += ids
+            data = torch.cat(data_at_level + [probabilities], dim=1)
+            all_results += [data]
+        all_results = torch.cat(all_results, dim=0).round(decimals=2)
+        column_names: List[str] = []
+        for key, val in self.unique_diagnosis.items():
+            column_names += [f"actual_{key}", f"predicted_{key}"]
+        column_names += val
+        all_results = pd.DataFrame(
+            data=all_results.cpu().numpy(),
+            columns=column_names,
+        )
+        all_results["id"] = all_ids
+        all_results = all_results[["id"] + column_names]
+        for cname in column_names:
+            if cname.startswith("actual") or cname.startswith("predicted"):
+                prefix, suffix = cname.split("_")
+                level = int(suffix)
+                all_results[cname] = all_results[cname].apply(
+                    lambda idx: self.__data_loader.idx_to_diag_name(int(idx), level)
+                )
+        all_results.to_csv(f"{self.__results_path}/results.csv", index=False)
+        for i in self.unique_diagnosis:
+            self.__add_confusion(
+                pred=all_results[f"predicted_{i}"],
+                actual=all_results[f"actual_{i}"],
+                level=i,
+            )
+
+    def __add_confusion(self, pred: pd.Series, actual: pd.Series, level: int) -> None:
+        confusion = confusion_matrix(
+            y_pred=pred,
+            y_true=actual,
+            labels=self.unique_diagnosis[level],
+        )
+        fig, ax = plt.subplots(1, 1, figsize=(8, 8), constrained_layout=True)
+        sns.heatmap(
+            data=confusion,
+            ax=ax,
+            xticklabels=self.unique_diagnosis[level],
+            yticklabels=self.unique_diagnosis[level],
+            annot=True,
+            cbar=False,
+        )
+        ax.set_ylabel("Actual")
+        ax.set_xlabel("Predicted")
+        fig.savefig(f"{self.__results_path}/confusion_{level}.png")
+        plt.close(fig=fig)

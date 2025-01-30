@@ -45,8 +45,8 @@ class Benchmark:
         self.__task_generator = task_generator_maps[version]
         self.__ensure_datasets(tasks_path=self.__tasks_path)
 
-    def generate_task(self, filter_func, task_path: Path) -> None:
-        self.__task_generator.generate_task(
+    async def generate_task(self, filter_func, task_path: Path) -> None:
+        await self.__task_generator.generate_task(
             source_path=self.__data_path,
             filter_func=filter_func,
             task_path=task_path,
@@ -107,4 +107,9 @@ class Benchmark:
                     f"{dataset} does not exist. Will create at {dataset_path}"
                 )
                 to_download.append(dataset)
-        asyncio.run(self.__downloader.selected(datasets=to_download))
+        coro = self.__downloader.selected(datasets=to_download)
+        try:
+            loop = asyncio.get_running_loop()
+            asyncio.run_coroutine_threadsafe(coro=coro, loop=loop)
+        except RuntimeError:
+            asyncio.run(coro)

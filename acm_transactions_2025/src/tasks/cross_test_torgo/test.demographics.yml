@@ -1,0 +1,26 @@
+dysarthria:
+  female:
+    age_stats:
+      max: 28
+      mean: 23.85838779956427
+      min: 21
+      std: 2.6241218980348493
+    total: 459
+  male:
+    age_stats:
+      max: 29
+      mean: 24.84468085106383
+      min: 20
+      std: 3.842213542814579
+    total: 638
+without_dysarthria:
+  female:
+    age_stats: null
+    total: 151
+  male:
+    age_stats:
+      max: 57
+      mean: 57
+      min: 57
+      std: 0.0
+    total: 556

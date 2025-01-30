@@ -2,7 +2,7 @@ from __future__ import annotations
 import random
 from typing import Dict, List, Tuple
 from ..diagnosis import DiagnosisMap, Diagnosis
-from .processed import ProcessedSession
+from .processed import ProcessedSession, ProcessedDataset
 from .database_plan import BucketCollection
 
 
@@ -51,7 +51,7 @@ class DatabaseGenerator:
         self,
         db_name: str,
         sessions: List[ProcessedSession],
-    ):
+    ) -> ProcessedDataset:
         random.Random(self.random_seed).shuffle(sessions)
 
         all_levels = []

@@ -1,42 +1,77 @@
 from pathlib import Path
-from typing import List, Callable
+from typing import List, Callable, Awaitable
 from .generator import Generator, DatabaseFunc, Dataset
-from .databases import SVD, Torgo, Voiced, Base as Database
+from .databases import (
+    SVD,
+    Torgo,
+    Voiced,
+    AVFAD,
+    MEEI,
+    UASpeech,
+    UncommonVoice,
+    Base as Database,
+)
 from .databases.svd import VOWELS
 
 
 class GeneratorV1(Generator):
 
-    def generate_task(
+    async def generate_task(
         self,
         source_path: Path,
-        filter_func: Callable[[DatabaseFunc], Dataset],
+        filter_func: Callable[[DatabaseFunc], Awaitable[Dataset]],
         task_path: Path,
     ) -> None:
-        def __database(name: str) -> Database:
+        async def __database(name: str) -> Database:
             name = name.lower()
-            if name == "svd":
-                return SVD(
+            if name == "avfad":
+                db = AVFAD(
+                    source_path=source_path,
+                    allow_incomplete_classification=False,
+                    min_tasks=None,
+                )
+            elif name == "meei":
+                db = MEEI(
+                    source_path=source_path,
+                    allow_incomplete_classification=False,
+                    min_tasks=None,
+                )
+            elif name == "svd":
+                db = SVD(
                     source_path=source_path,
                     allow_incomplete_classification=False,
                     min_tasks=SVD.max_tasks,
                 )
             elif name == "torgo":
-                return Torgo(
+                db = Torgo(
                     source_path=source_path,
                     allow_incomplete_classification=True,
                     min_tasks=None,
                 )
+            elif name == "uaspeech":
+                db = UASpeech(
+                    source_path=source_path,
+                    allow_incomplete_classification=False,
+                    min_tasks=None,
+                )
+            elif name == "uncommon_voice":
+                db = UncommonVoice(
+                    source_path=source_path,
+                    allow_incomplete_classification=False,
+                    min_tasks=None,
+                )
             elif name == "voiced":
-                return Voiced(
+                db = Voiced(
                     source_path=source_path,
                     allow_incomplete_classification=False,
                     min_tasks=None,
                 )
             else:
                 raise NotImplementedError(f"Unsupported database {name}")
+            await db.init()
+            return db
 
-        tasks = filter_func(__database)
+        tasks = await filter_func(__database)
         self.to_task_file(tasks=tasks.train, output_path=Path(f"{task_path}/train"))
         self.to_task_file(tasks=tasks.val, output_path=Path(f"{task_path}/val"))
         self.to_task_file(tasks=tasks.test, output_path=Path(f"{task_path}/test"))

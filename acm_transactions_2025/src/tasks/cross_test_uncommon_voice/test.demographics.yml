@@ -1,0 +1,14 @@
+normal:
+  female:
+    age_stats: null
+    total: 484
+  male:
+    age_stats: null
+    total: 296
+pathological:
+  female:
+    age_stats: null
+    total: 2292
+  male:
+    age_stats: null
+    total: 621

@@ -5,3 +5,5 @@ Starting unique speaker per pathology in SVD test set
 
 Final unique speaker per pathology in SVD test set after filtering by minimum 5 samples
 {'recurrent_paralysis': 37, 'reinkes_edema': 10, 'vocal_fold_polyp': 8, 'leukoplakia': 7, 'laryngitis': 21, 'hyperfunctional_dysphonia': 37, 'psychogenic_dysphonia': 11, 'functional_dysphonia': 21, 'normal': 126}
+
+Since my model essentially takes the joint probability over time, it is quite likely that you can convert a pathological sample to healthy by just adding more unvoiced/noise samples to the speech. Perhaps using attention mechanism can detect the unvoiced segments and ignore them, but if not we need to detect and ignore them so that we are only paying attention to the important parts of the audio signal.

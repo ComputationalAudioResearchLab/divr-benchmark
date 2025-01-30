@@ -101,3 +101,7 @@ class ProcessedDataset:
             "val_sessions": self.val_sessions,
             "test_sessions": self.test_sessions,
         }
+
+    @property
+    def all_sessions(self) -> List[ProcessedSession]:
+        return self.train_sessions + self.val_sessions + self.test_sessions

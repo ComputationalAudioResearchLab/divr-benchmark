@@ -22,7 +22,7 @@ class Torgo(Base):
         self,
         source_path: Path,
         allow_incomplete_classification: bool,
-        min_tasks: int|None,
+        min_tasks: int | None,
     ) -> None:
         curdir = Path(__file__).parent.resolve()
         # only valid prompts that all speakers have spoken are selected
@@ -36,11 +36,11 @@ class Torgo(Base):
             min_tasks=min_tasks,
         )
 
-    def prepare_dataset(
+    async def prepare_dataset(
         self,
         source_path: Path,
         allow_incomplete_classification: bool,
-        min_tasks: int|None,
+        min_tasks: int | None,
     ) -> ProcessedDataset:
         db_name = "torgo"
         sessions = []
@@ -113,6 +113,7 @@ class Torgo(Base):
                         sessions += [
                             ProcessedSession(
                                 id=f"torgo_{speaker_id}_{session.name}",
+                                speaker_id=speaker_id,
                                 age=age,
                                 gender=gender,
                                 diagnosis=[diagnosis],

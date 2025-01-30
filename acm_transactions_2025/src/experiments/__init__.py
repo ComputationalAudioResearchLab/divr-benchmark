@@ -10,6 +10,8 @@ from .trainer import Trainer
 from .trainer_multitask import TrainerMultiTask
 from .trainer_multicrit import TrainerMultiCrit
 from .tester import Tester
+from .tester_multitask import TesterMultiTask
+from .tester_multicrit import TesterMultiCrit
 
 
 class Runner:
@@ -198,24 +200,24 @@ class Runner:
                 exp_key=exp_key,
                 load_epoch=load_epoch,
             )
-        # elif trainer_cls == TrainerMultiTask:
-        #     trainer = TrainerMultiTask(
-        #         cache_path=self.__cache_path,
-        #         device=device,
-        #         data_loader=data_loader,
-        #         exp_key=exp_key,
-        #         num_epochs=num_epochs,
-        #         tboard_enabled=tboard_enabled,
-        #     )
-        # elif trainer_cls == TrainerMultiCrit:
-        #     trainer = TrainerMultiCrit(
-        #         cache_path=self.__cache_path,
-        #         device=device,
-        #         data_loader=data_loader,
-        #         exp_key=exp_key,
-        #         num_epochs=num_epochs,
-        #         tboard_enabled=tboard_enabled,
-        #     )
-        # else:
-        #     raise ValueError(f"Unsupported trainer type: {trainer_cls}")
+        elif trainer_cls == TrainerMultiTask:
+            tester = TesterMultiTask(
+                cache_path=self.__cache_path,
+                results_path=self.__results_path,
+                device=device,
+                data_loader=data_loader,
+                exp_key=exp_key,
+                load_epoch=load_epoch,
+            )
+        elif trainer_cls == TrainerMultiCrit:
+            tester = TesterMultiCrit(
+                cache_path=self.__cache_path,
+                results_path=self.__results_path,
+                device=device,
+                data_loader=data_loader,
+                exp_key=exp_key,
+                load_epoch=load_epoch,
+            )
+        else:
+            raise ValueError(f"Unsupported trainer type: {trainer_cls}")
         tester.eval()
