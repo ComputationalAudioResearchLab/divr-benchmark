@@ -9,6 +9,9 @@ normal:
   parents:
 unclassified:
   level: 0
+  alias:
+    - not sure
+    - pathological voice- diagnosis n/a
   parents:
 
 ### level 1
@@ -37,6 +40,7 @@ unclassified_pathology:
   level: 1
   alias:
     - "voice disorders: undiagnosed or not otherwise specified (nos)"
+    - "mixed"
   parents:
     pathological: 1.00
 
@@ -79,6 +83,69 @@ organic_trauma:
     organic: 1.00
 
 ### level 3
+a_p_compression:
+  level: 3
+  alias:
+    - a-p compression
+    - a-p compression (moderate)
+  parents:
+    muscle_tension: 0.43
+    unclassified_pathology: 0.57
+  votes:
+    clinician 1: muscle tension
+    clinician 2: muscle tension
+    clinician 3: not a diagnosis
+    clinician 4: not a diagnosis
+    clinician 5: not a diagnosis
+    clinician 6: muscle tension
+    clinician 7: not a diagnosis
+a_p_squeezing:
+  level: 3
+  alias:
+    - a-p squeezing
+    - a-p squeezing (mild)
+    - a-p squeezing (moderate)
+    - a-p squeezing (severe)
+  parents:
+    muscle_tension: 0.17
+    unclassified_pathology: 0.83
+  votes:
+    clinician 1: not a diagnosis
+    clinician 2: muscle tension
+    clinician 3: not a diagnosis
+    clinician 4: not a diagnosis
+    clinician 5: not a diagnosis
+    clinician 6: -
+    clinician 7: not a diagnosis
+abductor_spasmodic_dysphonia:
+  level: 3
+  alias:
+    - abductor spasmodic dysphonia
+  parents:
+    organic_neuro_muscular: 1.00
+  votes:
+    clinician 1: organic > neuro-muscular
+    clinician 2: organic > neuro-muscular
+    clinician 3: organic > neuro-muscular
+    clinician 4: organic > neuro-muscular
+    clinician 5: organic > neuro-muscular
+    clinician 6: -
+    clinician 7: organic > neuro-muscular
+abnormal_vocal_process:
+  level: 3
+  alias:
+    - abnormal vocal process
+  parents:
+    organic_structural: 0.50
+    unclassified_pathology: 0.50
+  votes:
+    clinician 1: organic > structural
+    clinician 2: organic > structural
+    clinician 3: organic > structural
+    clinician 4: not a diagnosis
+    clinician 5: not a diagnosis
+    clinician 6: -
+    clinician 7: not a diagnosis
 acute_laryngitis:
   level: 3
   alias:
@@ -93,6 +160,34 @@ acute_laryngitis:
     clinician 4: organic > inflammatory
     clinician 5: organic > inflammatory
     clinician 6: organic > inflammatory
+    clinician 7: not a diagnosis
+adductor_spasmodic_dysphonia:
+  level: 3
+  alias:
+    - adductor spasmodic dysphonia
+  parents:
+    organic_neuro_muscular: 1.00
+  votes:
+    clinician 1: organic > neuro-muscular
+    clinician 2: organic > neuro-muscular
+    clinician 3: organic > neuro-muscular
+    clinician 4: organic > neuro-muscular
+    clinician 5: organic > neuro-muscular
+    clinician 6: -
+    clinician 7: organic > neuro-muscular
+afrin_rhinitis:
+  level: 3
+  alias:
+    - afrin rhinitis
+  parents:
+    unclassified_pathology: 1.00
+  votes:
+    clinician 1: not a diagnosis
+    clinician 2: not a diagnosis
+    clinician 3: not a diagnosis
+    clinician 4: not a diagnosis
+    clinician 5: not a diagnosis
+    clinician 6: -
     clinician 7: not a diagnosis
 amyotrophic_lateral_sclerosis:
   level: 3
@@ -110,6 +205,20 @@ amyotrophic_lateral_sclerosis:
     clinician 5: organic > neuro-muscular
     clinician 6: organic > neuro-muscular
     clinician 7: organic > neuro-muscular
+anterior_saccular_cyst:
+  level: 3
+  alias:
+    - anterior saccular cyst
+  parents:
+    organic_neuro_muscular: 1.00
+  votes:
+    clinician 1: organic > structural
+    clinician 2: organic > structural
+    clinician 3: organic > structural
+    clinician 4: organic > structural
+    clinician 5: organic > structural
+    clinician 6: -
+    clinician 7: organic > structural
 aryluxation:
   level: 3
   parents:
@@ -124,6 +233,60 @@ aryluxation:
     clinician 5: not a diagnosis
     clinician 6: organic > organic_structural
     clinician 7: organic > organic_structural
+arytenoid:
+  level: 3
+  parents:
+    unclassified_pathology: 1.00
+  votes:
+    clinician 1: not a diagnosis
+    clinician 2: not a diagnosis
+    clinician 3: not a diagnosis
+    clinician 4: not a diagnosis
+    clinician 5: not a diagnosis
+    clinician 6: not a diagnosis
+    clinician 7: not a diagnosis
+arytenoid_dislocation:
+  level: 3
+  alias:
+    - arytenoid dislocation
+  parents:
+    organic_structural: 0.43
+    organic_trauma: 0.57
+  votes:
+    clinician 1: organic > trauma
+    clinician 2: organic > trauma
+    clinician 3: organic > trauma
+    clinician 4: organic > structural
+    clinician 5: organic > trauma
+    clinician 6: organic > structural
+    clinician 7: organic > structural
+aspiration:
+  level: 3
+  parents:
+    unclassified_pathology: 1.00
+  votes:
+    clinician 1: not a diagnosis
+    clinician 2: not a diagnosis
+    clinician 3: not a diagnosis
+    clinician 4: not a diagnosis
+    clinician 5: not a diagnosis
+    clinician 6: not a diagnosis
+    clinician 7: not a diagnosis
+athetoid:
+  level: 3
+  alias:
+    - athetoid (or mixed)
+  parents:
+    organic_neuro_muscular: 0.43
+    unclassified_pathology: 0.57
+  votes:
+    clinician 1: not a diagnosis
+    clinician 2: organic > neuro muscular
+    clinician 3: organic > neuro muscular
+    clinician 4: not a diagnosis
+    clinician 5: not a diagnosis
+    clinician 6: organic > neuro muscular
+    clinician 7: not a diagnosis
 balbuties:
   level: 3
   parents:
@@ -1270,6 +1433,20 @@ papilloma:
     clinician 5: organic > structural
     clinician 6: organic > structural
     clinician 7: organic > structural
+paralysis:
+  level: 3
+  alias:
+    - paralysis
+  parents:
+    organic_neuro_muscular: 1.00
+  votes:
+    clinician 1: organic > neuro-muscular
+    clinician 2: organic > neuro-muscular
+    clinician 3: organic > neuro-muscular
+    clinician 4: organic > neuro-muscular
+    clinician 5: organic > neuro-muscular
+    clinician 6: organic > neuro-muscular
+    clinician 7: organic > neuro-muscular
 parkinsons:
   level: 3
   alias:
@@ -1579,6 +1756,19 @@ spasmodic_dysphonia:
     clinician 5: organic > neuro-muscular
     clinician 6: organic > neuro-muscular
     clinician 7: organic > neuro-muscular
+spastic:
+  level: 3
+  parents:
+    organic_neuro_muscular: 0.14
+    unclassified_pathology: 0.86
+  votes:
+    clinician 1: organic > neuro-muscular
+    clinician 2: not a diagnosis
+    clinician 3: not a diagnosis
+    clinician 4: not a diagnosis
+    clinician 5: not a diagnosis
+    clinician 6: not a diagnosis
+    clinician 7: not a diagnosis
 superior_laryngeal_nerve_lesion:
   level: 3
   alias:
