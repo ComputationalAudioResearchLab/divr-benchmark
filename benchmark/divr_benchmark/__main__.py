@@ -6,6 +6,7 @@ from .diagnosis import (
     analysis as analyse_diagnosis,
     reclassification_candidates,
     level_3_confusion,
+    Processor,
 )
 from .prepare_dataset import PrepareDataset
 from .logger import Logger
@@ -68,6 +69,9 @@ class Main(ClassArgParser):
 
     def generate_tasks(self, data_store_path: Path, version: VERSIONS):
         generate_tasks(version=version, source_path=data_store_path)
+
+    def process_diagnosis_list(self):
+        Processor().run()
 
 
 if __name__ == "__main__":

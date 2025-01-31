@@ -3,9 +3,19 @@ import torch
 from pathlib import Path
 from typing import Literal
 
-from ..model import UnispeechSAT
+from ..model import (
+    UnispeechSAT,
+    MFCCDD,
+    Wav2Vec,
+    Compare2016Functional,
+    Compare2016LLD,
+    Compare2016LLDDE,
+    EGEMapsv2Functional,
+    EGEMapsv2LLD,
+)
+from ..model.feature import OpenSmile
 from ..tasks_generator import TaskGenerator
-from ..data_loader import DataLoader
+from ..data_loader import CachedDataLoader, DataLoader
 from .trainer import Trainer
 from .trainer_multitask import TrainerMultiTask
 from .trainer_multicrit import TrainerMultiCrit
@@ -18,83 +28,193 @@ class Runner:
 
     # fmt: off
     __exp = {
-        "unispeechSAT_phrase_0": ["phrase", [0], UnispeechSAT, 200, 16, Trainer],
-        "unispeechSAT_a_0": ["a_n", [0], UnispeechSAT, 200, 16, Trainer],
-        "unispeechSAT_i_0": ["i_n", [0], UnispeechSAT, 200, 16, Trainer],
-        "unispeechSAT_u_0": ["u_n", [0], UnispeechSAT, 200, 16, Trainer],
-        "unispeechSAT_phrase_1": ["phrase", [1], UnispeechSAT, 200, 16, Trainer],
-        "unispeechSAT_a_1": ["a_n", [1], UnispeechSAT, 200, 16, Trainer],
-        "unispeechSAT_i_1": ["i_n", [1], UnispeechSAT, 200, 16, Trainer],
-        "unispeechSAT_u_1": ["u_n", [1], UnispeechSAT, 200, 16, Trainer],
-        "unispeechSAT_phrase_2": ["phrase", [2], UnispeechSAT, 200, 16, Trainer],
-        "unispeechSAT_phrase_3": ["phrase", [3], UnispeechSAT, 200, 16, Trainer],
-        "unispeechSAT_a_3": ["a_n", [3], UnispeechSAT, 200, 16, Trainer],
-        "unispeechSAT_i_3": ["i_n", [3], UnispeechSAT, 200, 16, Trainer],
-        "unispeechSAT_u_3": ["u_n", [3], UnispeechSAT, 200, 16, Trainer],
+        # Compare2016 Functional
+        "compare2016_func_phrase_0": ["phrase", [0], Compare2016Functional, 2000, 16, Trainer, 1e-5],
+        "compare2016_func_a_0": ["a_n", [0], Compare2016Functional, 2000, 16, Trainer, 1e-5],
+        "compare2016_func_i_0": ["i_n", [0], Compare2016Functional, 2000, 16, Trainer, 1e-5],
+        "compare2016_func_u_0": ["u_n", [0], Compare2016Functional, 2000, 16, Trainer, 1e-5],
+        "compare2016_func_phrase_1": ["phrase", [1], Compare2016Functional, 2000, 16, Trainer, 1e-5],
+        "compare2016_func_a_1": ["a_n", [1], Compare2016Functional, 2000, 16, Trainer, 1e-5],
+        "compare2016_func_i_1": ["i_n", [1], Compare2016Functional, 2000, 16, Trainer, 1e-5],
+        "compare2016_func_u_1": ["u_n", [1], Compare2016Functional, 2000, 16, Trainer, 1e-5],
+        "compare2016_func_phrase_2": ["phrase", [2], Compare2016Functional, 2000, 16, Trainer, 1e-5],
+        "compare2016_func_a_2": ["a_n", [2], Compare2016Functional, 2000, 16, Trainer, 1e-5],
+        "compare2016_func_i_2": ["i_n", [2], Compare2016Functional, 2000, 16, Trainer, 1e-5],
+        "compare2016_func_u_2": ["u_n", [2], Compare2016Functional, 2000, 16, Trainer, 1e-5],
+        "compare2016_func_phrase_3": ["phrase", [3], Compare2016Functional, 2000, 16, Trainer, 1e-5],
+        "compare2016_func_a_3": ["a_n", [3], Compare2016Functional, 2000, 16, Trainer, 1e-5],
+        "compare2016_func_i_3": ["i_n", [3], Compare2016Functional, 2000, 16, Trainer, 1e-5],
+        "compare2016_func_u_3": ["u_n", [3], Compare2016Functional, 2000, 16, Trainer, 1e-5],
+        
+        # Compare2016 LLD
+        "compare2016_lld_phrase_0": ["phrase", [0], Compare2016LLD, 2000, 16, Trainer, 1e-5],
+        "compare2016_lld_a_0": ["a_n", [0], Compare2016LLD, 2000, 16, Trainer, 1e-5],
+        "compare2016_lld_i_0": ["i_n", [0], Compare2016LLD, 2000, 16, Trainer, 1e-5],
+        "compare2016_lld_u_0": ["u_n", [0], Compare2016LLD, 2000, 16, Trainer, 1e-5],
+        "compare2016_lld_phrase_1": ["phrase", [1], Compare2016LLD, 2000, 16, Trainer, 1e-5],
+        "compare2016_lld_a_1": ["a_n", [1], Compare2016LLD, 2000, 16, Trainer, 1e-5],
+        "compare2016_lld_i_1": ["i_n", [1], Compare2016LLD, 2000, 16, Trainer, 1e-5],
+        "compare2016_lld_u_1": ["u_n", [1], Compare2016LLD, 2000, 16, Trainer, 1e-5],
+        "compare2016_lld_phrase_2": ["phrase", [2], Compare2016LLD, 2000, 16, Trainer, 1e-5],
+        "compare2016_lld_a_2": ["a_n", [2], Compare2016LLD, 2000, 16, Trainer, 1e-5],
+        "compare2016_lld_i_2": ["i_n", [2], Compare2016LLD, 2000, 16, Trainer, 1e-5],
+        "compare2016_lld_u_2": ["u_n", [2], Compare2016LLD, 2000, 16, Trainer, 1e-5],
+        "compare2016_lld_phrase_3": ["phrase", [3], Compare2016LLD, 2000, 16, Trainer, 1e-5],
+        "compare2016_lld_a_3": ["a_n", [3], Compare2016LLD, 2000, 16, Trainer, 1e-5],
+        "compare2016_lld_i_3": ["i_n", [3], Compare2016LLD, 2000, 16, Trainer, 1e-5],
+        "compare2016_lld_u_3": ["u_n", [3], Compare2016LLD, 2000, 16, Trainer, 1e-5],
+        
+        # Compare2016 LLD_DE
+        "compare2016_lldde_phrase_0": ["phrase", [0], Compare2016LLDDE, 2000, 16, Trainer, 1e-5],
+        "compare2016_lldde_a_0": ["a_n", [0], Compare2016LLDDE, 2000, 16, Trainer, 1e-5],
+        "compare2016_lldde_i_0": ["i_n", [0], Compare2016LLDDE, 2000, 16, Trainer, 1e-5],
+        "compare2016_lldde_u_0": ["u_n", [0], Compare2016LLDDE, 2000, 16, Trainer, 1e-5],
+        "compare2016_lldde_phrase_1": ["phrase", [1], Compare2016LLDDE, 2000, 16, Trainer, 1e-5],
+        "compare2016_lldde_a_1": ["a_n", [1], Compare2016LLDDE, 2000, 16, Trainer, 1e-5],
+        "compare2016_lldde_i_1": ["i_n", [1], Compare2016LLDDE, 2000, 16, Trainer, 1e-5],
+        "compare2016_lldde_u_1": ["u_n", [1], Compare2016LLDDE, 2000, 16, Trainer, 1e-5],
+        "compare2016_lldde_phrase_2": ["phrase", [2], Compare2016LLDDE, 2000, 16, Trainer, 1e-5],
+        "compare2016_lldde_a_2": ["a_n", [2], Compare2016LLDDE, 2000, 16, Trainer, 1e-5],
+        "compare2016_lldde_i_2": ["i_n", [2], Compare2016LLDDE, 2000, 16, Trainer, 1e-5],
+        "compare2016_lldde_u_2": ["u_n", [2], Compare2016LLDDE, 2000, 16, Trainer, 1e-5],
+        "compare2016_lldde_phrase_3": ["phrase", [3], Compare2016LLDDE, 2000, 16, Trainer, 1e-5],
+        "compare2016_lldde_a_3": ["a_n", [3], Compare2016LLDDE, 2000, 16, Trainer, 1e-5],
+        "compare2016_lldde_i_3": ["i_n", [3], Compare2016LLDDE, 2000, 16, Trainer, 1e-5],
+        "compare2016_lldde_u_3": ["u_n", [3], Compare2016LLDDE, 2000, 16, Trainer, 1e-5],
+        
+        # EGEMapsv2 Functional
+        "egemapsv2_func_phrase_0": ["phrase", [0], EGEMapsv2Functional, 2000, 16, Trainer, 1e-5],
+        "egemapsv2_func_a_0": ["a_n", [0], EGEMapsv2Functional, 2000, 16, Trainer, 1e-5],
+        "egemapsv2_func_i_0": ["i_n", [0], EGEMapsv2Functional, 2000, 16, Trainer, 1e-5],
+        "egemapsv2_func_u_0": ["u_n", [0], EGEMapsv2Functional, 2000, 16, Trainer, 1e-5],
+        "egemapsv2_func_phrase_1": ["phrase", [1], EGEMapsv2Functional, 2000, 16, Trainer, 1e-5],
+        "egemapsv2_func_a_1": ["a_n", [1], EGEMapsv2Functional, 2000, 16, Trainer, 1e-5],
+        "egemapsv2_func_i_1": ["i_n", [1], EGEMapsv2Functional, 2000, 16, Trainer, 1e-5],
+        "egemapsv2_func_u_1": ["u_n", [1], EGEMapsv2Functional, 2000, 16, Trainer, 1e-5],
+        "egemapsv2_func_phrase_2": ["phrase", [2], EGEMapsv2Functional, 2000, 16, Trainer, 1e-5],
+        "egemapsv2_func_a_2": ["a_n", [2], EGEMapsv2Functional, 2000, 16, Trainer, 1e-5],
+        "egemapsv2_func_i_2": ["i_n", [2], EGEMapsv2Functional, 2000, 16, Trainer, 1e-5],
+        "egemapsv2_func_u_2": ["u_n", [2], EGEMapsv2Functional, 2000, 16, Trainer, 1e-5],
+        "egemapsv2_func_phrase_3": ["phrase", [3], EGEMapsv2Functional, 2000, 16, Trainer, 1e-5],
+        "egemapsv2_func_a_3": ["a_n", [3], EGEMapsv2Functional, 2000, 16, Trainer, 1e-5],
+        "egemapsv2_func_i_3": ["i_n", [3], EGEMapsv2Functional, 2000, 16, Trainer, 1e-5],
+        "egemapsv2_func_u_3": ["u_n", [3], EGEMapsv2Functional, 2000, 16, Trainer, 1e-5],
+        
+        # EGEMapsv2 LLD
+        "egemapsv2_lld_phrase_0": ["phrase", [0], EGEMapsv2LLD, 2000, 16, Trainer, 1e-5],
+        "egemapsv2_lld_a_0": ["a_n", [0], EGEMapsv2LLD, 2000, 16, Trainer, 1e-5],
+        "egemapsv2_lld_i_0": ["i_n", [0], EGEMapsv2LLD, 2000, 16, Trainer, 1e-5],
+        "egemapsv2_lld_u_0": ["u_n", [0], EGEMapsv2LLD, 2000, 16, Trainer, 1e-5],
+        "egemapsv2_lld_phrase_1": ["phrase", [1], EGEMapsv2LLD, 2000, 16, Trainer, 1e-5],
+        "egemapsv2_lld_a_1": ["a_n", [1], EGEMapsv2LLD, 2000, 16, Trainer, 1e-5],
+        "egemapsv2_lld_i_1": ["i_n", [1], EGEMapsv2LLD, 2000, 16, Trainer, 1e-5],
+        "egemapsv2_lld_u_1": ["u_n", [1], EGEMapsv2LLD, 2000, 16, Trainer, 1e-5],
+        "egemapsv2_lld_phrase_2": ["phrase", [2], EGEMapsv2LLD, 2000, 16, Trainer, 1e-5],
+        "egemapsv2_lld_a_2": ["a_n", [2], EGEMapsv2LLD, 2000, 16, Trainer, 1e-5],
+        "egemapsv2_lld_i_2": ["i_n", [2], EGEMapsv2LLD, 2000, 16, Trainer, 1e-5],
+        "egemapsv2_lld_u_2": ["u_n", [2], EGEMapsv2LLD, 2000, 16, Trainer, 1e-5],
+        "egemapsv2_lld_phrase_3": ["phrase", [3], EGEMapsv2LLD, 2000, 16, Trainer, 1e-5],
+        "egemapsv2_lld_a_3": ["a_n", [3], EGEMapsv2LLD, 2000, 16, Trainer, 1e-5],
+        "egemapsv2_lld_i_3": ["i_n", [3], EGEMapsv2LLD, 2000, 16, Trainer, 1e-5],
+        "egemapsv2_lld_u_3": ["u_n", [3], EGEMapsv2LLD, 2000, 16, Trainer, 1e-5],
+        
+        # MFCC + Deltas
+        "mfccdd_phrase_0": ["phrase", [0], MFCCDD, 2000, 16, Trainer, 1e-5],
+        "mfccdd_a_0": ["a_n", [0], MFCCDD, 2000, 16, Trainer, 1e-5],
+        "mfccdd_i_0": ["i_n", [0], MFCCDD, 2000, 16, Trainer, 1e-5],
+        "mfccdd_u_0": ["u_n", [0], MFCCDD, 2000, 16, Trainer, 1e-5],
+        "mfccdd_phrase_1": ["phrase", [1], MFCCDD, 2000, 16, Trainer, 1e-5],
+        "mfccdd_a_1": ["a_n", [1], MFCCDD, 2000, 16, Trainer, 1e-5],
+        "mfccdd_i_1": ["i_n", [1], MFCCDD, 2000, 16, Trainer, 1e-5],
+        "mfccdd_u_1": ["u_n", [1], MFCCDD, 2000, 16, Trainer, 1e-5],
+        "mfccdd_phrase_2": ["phrase", [2], MFCCDD, 2000, 16, Trainer, 1e-5],
+        "mfccdd_a_2": ["a_n", [2], MFCCDD, 2000, 16, Trainer, 1e-5],
+        "mfccdd_i_2": ["i_n", [2], MFCCDD, 2000, 16, Trainer, 1e-5],
+        "mfccdd_u_2": ["u_n", [2], MFCCDD, 2000, 16, Trainer, 1e-5],
+        "mfccdd_phrase_3": ["phrase", [3], MFCCDD, 2000, 16, Trainer, 1e-5],
+        "mfccdd_a_3": ["a_n", [3], MFCCDD, 2000, 16, Trainer, 1e-5],
+        "mfccdd_i_3": ["i_n", [3], MFCCDD, 2000, 16, Trainer, 1e-5],
+        "mfccdd_u_3": ["u_n", [3], MFCCDD, 2000, 16, Trainer, 1e-5],
+        
+        "mc_mfccdd_phrase_0+2": ["phrase", [0,2], MFCCDD, 2000, 16, TrainerMultiCrit, 1e-5],
+        "mc_mfccdd_a_0+2": ["a_n", [0,2], MFCCDD, 2000, 16, TrainerMultiCrit, 1e-5],
+        "mc_mfccdd_i_0+2": ["i_n", [0,2], MFCCDD, 2000, 16, TrainerMultiCrit, 1e-5],
+        "mc_mfccdd_u_0+2": ["u_n", [0,2], MFCCDD, 2000, 16, TrainerMultiCrit, 1e-5],
+        "mc_mfccdd_phrase_0+3": ["phrase", [0, 3], MFCCDD, 2000, 16, TrainerMultiCrit, 1e-5],
+        "mc_mfccdd_a_0+3": ["a_n", [0, 3], MFCCDD, 2000, 16, TrainerMultiCrit, 1e-5],
+        "mc_mfccdd_i_0+3": ["i_n", [0, 3], MFCCDD, 2000, 16, TrainerMultiCrit, 1e-5],
+        "mc_mfccdd_u_0+3": ["u_n", [0, 3], MFCCDD, 2000, 16, TrainerMultiCrit, 1e-5],
+        
+        # Wav2Vec
+        "wav2vec_phrase_0": ["phrase", [0], Wav2Vec, 200, 16, Trainer, 1e-5],
+        "wav2vec_a_0": ["a_n", [0], Wav2Vec, 200, 16, Trainer, 1e-5],
+        "wav2vec_i_0": ["i_n", [0], Wav2Vec, 200, 16, Trainer, 1e-5],
+        "wav2vec_u_0": ["u_n", [0], Wav2Vec, 200, 16, Trainer, 1e-5],
+        "wav2vec_phrase_1": ["phrase", [1], Wav2Vec, 200, 16, Trainer, 1e-5],
+        "wav2vec_a_1": ["a_n", [1], Wav2Vec, 200, 16, Trainer, 1e-5],
+        "wav2vec_i_1": ["i_n", [1], Wav2Vec, 200, 16, Trainer, 1e-5],
+        "wav2vec_u_1": ["u_n", [1], Wav2Vec, 200, 16, Trainer, 1e-5],
+        "wav2vec_phrase_2": ["phrase", [2], Wav2Vec, 200, 16, Trainer, 1e-5],
+        "wav2vec_a_2": ["a_n", [2], Wav2Vec, 200, 16, Trainer, 1e-5],
+        "wav2vec_i_2": ["i_n", [2], Wav2Vec, 200, 16, Trainer, 1e-5],
+        "wav2vec_u_2": ["u_n", [2], Wav2Vec, 200, 16, Trainer, 1e-5],
+        "wav2vec_phrase_3": ["phrase", [3], Wav2Vec, 200, 16, Trainer, 1e-5],
+        "wav2vec_a_3": ["a_n", [3], Wav2Vec, 200, 16, Trainer, 1e-5],
+        "wav2vec_i_3": ["i_n", [3], Wav2Vec, 200, 16, Trainer, 1e-5],
+        "wav2vec_u_3": ["u_n", [3], Wav2Vec, 200, 16, Trainer, 1e-5],
+        
+        "mc_wav2vec_phrase_0+2": ["phrase", [0,2], Wav2Vec, 200, 16, TrainerMultiCrit, 1e-5],
+        "mc_wav2vec_a_0+2": ["a_n", [0,2], Wav2Vec, 200, 16, TrainerMultiCrit, 1e-5],
+        "mc_wav2vec_i_0+2": ["i_n", [0,2], Wav2Vec, 200, 16, TrainerMultiCrit, 1e-5],
+        "mc_wav2vec_u_0+2": ["u_n", [0,2], Wav2Vec, 200, 16, TrainerMultiCrit, 1e-5],
+        "mc_wav2vec_phrase_0+3": ["phrase", [0, 3], Wav2Vec, 200, 16, TrainerMultiCrit, 1e-5],
+        "mc_wav2vec_a_0+3": ["a_n", [0, 3], Wav2Vec, 200, 16, TrainerMultiCrit, 1e-5],
+        "mc_wav2vec_i_0+3": ["i_n", [0, 3], Wav2Vec, 200, 16, TrainerMultiCrit, 1e-5],
+        "mc_wav2vec_u_0+3": ["u_n", [0, 3], Wav2Vec, 200, 16, TrainerMultiCrit, 1e-5],
+
+
+        # UnispeechSAT
+        "unispeechSAT_phrase_0": ["phrase", [0], UnispeechSAT, 200, 16, Trainer, 1e-5],
+        "unispeechSAT_a_0": ["a_n", [0], UnispeechSAT, 200, 16, Trainer, 1e-5],
+        "unispeechSAT_i_0": ["i_n", [0], UnispeechSAT, 200, 16, Trainer, 1e-5],
+        "unispeechSAT_u_0": ["u_n", [0], UnispeechSAT, 200, 16, Trainer, 1e-5],
+        "unispeechSAT_phrase_1": ["phrase", [1], UnispeechSAT, 200, 16, Trainer, 1e-5],
+        "unispeechSAT_a_1": ["a_n", [1], UnispeechSAT, 200, 16, Trainer, 1e-5],
+        "unispeechSAT_i_1": ["i_n", [1], UnispeechSAT, 200, 16, Trainer, 1e-5],
+        "unispeechSAT_u_1": ["u_n", [1], UnispeechSAT, 200, 16, Trainer, 1e-5],
+        "unispeechSAT_phrase_2": ["phrase", [2], UnispeechSAT, 200, 16, Trainer, 1e-5],
+        "unispeechSAT_phrase_3": ["phrase", [3], UnispeechSAT, 200, 16, Trainer, 1e-5],
+        "unispeechSAT_a_3": ["a_n", [3], UnispeechSAT, 200, 16, Trainer, 1e-5],
+        "unispeechSAT_i_3": ["i_n", [3], UnispeechSAT, 200, 16, Trainer, 1e-5],
+        "unispeechSAT_u_3": ["u_n", [3], UnispeechSAT, 200, 16, Trainer, 1e-5],
         # Multitask experiments
-        "unispeechSAT_phrase_0+1": ["phrase", [0, 1], UnispeechSAT, 200, 16, TrainerMultiTask],
-        "unispeechSAT_phrase_0+2": ["phrase", [0, 2], UnispeechSAT, 200, 16, TrainerMultiTask],
-        "unispeechSAT_phrase_0+3": ["phrase", [0, 3], UnispeechSAT, 200, 16, TrainerMultiTask],
-        "unispeechSAT_phrase_1+2": ["phrase", [1, 2], UnispeechSAT, 200, 16, TrainerMultiTask],
-        "unispeechSAT_phrase_1+3": ["phrase", [1, 3], UnispeechSAT, 200, 16, TrainerMultiTask],
-        "unispeechSAT_phrase_2+3": ["phrase", [2, 3], UnispeechSAT, 200, 16, TrainerMultiTask],
-        "unispeechSAT_phrase_0+1+2": ["phrase", [0, 1, 2], UnispeechSAT, 200, 16, TrainerMultiTask],
-        "unispeechSAT_phrase_0+1+3": ["phrase", [0, 1, 3], UnispeechSAT, 200, 16, TrainerMultiTask],
-        "unispeechSAT_phrase_0+2+3": ["phrase", [0, 2, 3], UnispeechSAT, 200, 16, TrainerMultiTask],
-        "unispeechSAT_phrase_1+2+3": ["phrase", [1, 2, 3], UnispeechSAT, 200, 16, TrainerMultiTask],
-        "unispeechSAT_phrase_0+1+2+3": ["phrase", [0, 1, 2, 3], UnispeechSAT, 200, 16, TrainerMultiTask],
+        "unispeechSAT_phrase_0+1": ["phrase", [0, 1], UnispeechSAT, 200, 16, TrainerMultiTask, 1e-5],
+        "unispeechSAT_phrase_0+2": ["phrase", [0, 2], UnispeechSAT, 200, 16, TrainerMultiTask, 1e-5],
+        "unispeechSAT_phrase_0+3": ["phrase", [0, 3], UnispeechSAT, 200, 16, TrainerMultiTask, 1e-5],
+        "unispeechSAT_phrase_1+2": ["phrase", [1, 2], UnispeechSAT, 200, 16, TrainerMultiTask, 1e-5],
+        "unispeechSAT_phrase_1+3": ["phrase", [1, 3], UnispeechSAT, 200, 16, TrainerMultiTask, 1e-5],
+        "unispeechSAT_phrase_2+3": ["phrase", [2, 3], UnispeechSAT, 200, 16, TrainerMultiTask, 1e-5],
+        "unispeechSAT_phrase_0+1+2": ["phrase", [0, 1, 2], UnispeechSAT, 200, 16, TrainerMultiTask, 1e-5],
+        "unispeechSAT_phrase_0+1+3": ["phrase", [0, 1, 3], UnispeechSAT, 200, 16, TrainerMultiTask, 1e-5],
+        "unispeechSAT_phrase_0+2+3": ["phrase", [0, 2, 3], UnispeechSAT, 200, 16, TrainerMultiTask, 1e-5],
+        "unispeechSAT_phrase_1+2+3": ["phrase", [1, 2, 3], UnispeechSAT, 200, 16, TrainerMultiTask, 1e-5],
+        "unispeechSAT_phrase_0+1+2+3": ["phrase", [0, 1, 2, 3], UnispeechSAT, 200, 16, TrainerMultiTask, 1e-5],
         # Single output multitask experiments
-        "mc_unispeechSAT_phrase_0+1": ["phrase", [0, 1], UnispeechSAT, 200, 16, TrainerMultiCrit],
-        "mc_unispeechSAT_phrase_0+2": ["phrase", [0, 2], UnispeechSAT, 200, 16, TrainerMultiCrit],
-        "mc_unispeechSAT_phrase_0+3": ["phrase", [0, 3], UnispeechSAT, 200, 16, TrainerMultiCrit],
-        "mc_unispeechSAT_phrase_1+2": ["phrase", [1, 2], UnispeechSAT, 200, 16, TrainerMultiCrit],
-        "mc_unispeechSAT_phrase_1+3": ["phrase", [1, 3], UnispeechSAT, 1000, 16, TrainerMultiCrit],
-        "mc_unispeechSAT_phrase_2+3": ["phrase", [2, 3], UnispeechSAT, 200, 16, TrainerMultiCrit],
-        "mc_unispeechSAT_phrase_0+1+2": ["phrase", [0, 1, 2], UnispeechSAT, 200, 16, TrainerMultiCrit],
-        "mc_unispeechSAT_phrase_0+1+3": ["phrase", [0, 1, 3], UnispeechSAT, 200, 16, TrainerMultiCrit],
-        "mc_unispeechSAT_phrase_0+2+3": ["phrase", [0, 2, 3], UnispeechSAT, 200, 16, TrainerMultiCrit],
-        "mc_unispeechSAT_phrase_1+2+3": ["phrase", [1, 2, 3], UnispeechSAT, 200, 16, TrainerMultiCrit],
-        "mc_unispeechSAT_phrase_0+1+2+3": ["phrase", [0, 1, 2, 3], UnispeechSAT, 200, 16, TrainerMultiCrit],
+        "mc_unispeechSAT_phrase_0+1": ["phrase", [0, 1], UnispeechSAT, 200, 16, TrainerMultiCrit, 1e-5],
+        "mc_unispeechSAT_phrase_0+2": ["phrase", [0, 2], UnispeechSAT, 200, 16, TrainerMultiCrit, 1e-5],
+        "mc_unispeechSAT_phrase_0+3": ["phrase", [0, 3], UnispeechSAT, 200, 16, TrainerMultiCrit, 1e-5],
+        "mc_unispeechSAT_phrase_1+2": ["phrase", [1, 2], UnispeechSAT, 200, 16, TrainerMultiCrit, 1e-5],
+        "mc_unispeechSAT_phrase_1+3": ["phrase", [1, 3], UnispeechSAT, 1000, 16, TrainerMultiCrit, 1e-5],
+        "mc_unispeechSAT_phrase_2+3": ["phrase", [2, 3], UnispeechSAT, 200, 16, TrainerMultiCrit, 1e-5],
+        "mc_unispeechSAT_phrase_0+1+2": ["phrase", [0, 1, 2], UnispeechSAT, 200, 16, TrainerMultiCrit, 1e-5],
+        "mc_unispeechSAT_phrase_0+1+3": ["phrase", [0, 1, 3], UnispeechSAT, 200, 16, TrainerMultiCrit, 1e-5],
+        "mc_unispeechSAT_phrase_0+2+3": ["phrase", [0, 2, 3], UnispeechSAT, 200, 16, TrainerMultiCrit, 1e-5],
+        "mc_unispeechSAT_phrase_1+2+3": ["phrase", [1, 2, 3], UnispeechSAT, 200, 16, TrainerMultiCrit, 1e-5],
+        "mc_unispeechSAT_phrase_0+1+2+3": ["phrase", [0, 1, 2, 3], UnispeechSAT, 200, 16, TrainerMultiCrit, 1e-5],
     }
     # fmt: on
 
-    EXP_KEYS = Literal[
-        "unispeechSAT_phrase_0",
-        "unispeechSAT_a_0",
-        "unispeechSAT_i_0",
-        "unispeechSAT_u_0",
-        "unispeechSAT_phrase_1",
-        "unispeechSAT_a_1",
-        "unispeechSAT_i_1",
-        "unispeechSAT_u_1",
-        "unispeechSAT_phrase_2",
-        "unispeechSAT_phrase_3",
-        "unispeechSAT_a_3",
-        "unispeechSAT_i_3",
-        "unispeechSAT_u_3",
-        "unispeechSAT_phrase_0+1",
-        "unispeechSAT_phrase_0+2",
-        "unispeechSAT_phrase_0+3",
-        "unispeechSAT_phrase_1+2",
-        "unispeechSAT_phrase_1+3",
-        "unispeechSAT_phrase_2+3",
-        "unispeechSAT_phrase_0+1+2",
-        "unispeechSAT_phrase_0+1+3",
-        "unispeechSAT_phrase_0+2+3",
-        "unispeechSAT_phrase_1+2+3",
-        "unispeechSAT_phrase_0+1+2+3",
-        "mc_unispeechSAT_phrase_0+1",
-        "mc_unispeechSAT_phrase_0+2",
-        "mc_unispeechSAT_phrase_0+3",
-        "mc_unispeechSAT_phrase_1+2",
-        "mc_unispeechSAT_phrase_1+3",
-        "mc_unispeechSAT_phrase_2+3",
-        "mc_unispeechSAT_phrase_0+1+2",
-        "mc_unispeechSAT_phrase_0+1+3",
-        "mc_unispeechSAT_phrase_0+2+3",
-        "mc_unispeechSAT_phrase_1+2+3",
-        "mc_unispeechSAT_phrase_0+1+2+3",
-    ]
+    EXP_KEYS = Literal[tuple(__exp.keys())]
 
     def __init__(
         self,
@@ -115,24 +235,44 @@ class Runner:
             num_epochs,
             batch_size,
             trainer_cls,
+            lr,
         ) = self.__exp[exp_key]
         task = self.__tasks_generator.load_task(
             task=task_key,
             diag_level=max(diag_levels),
         )
         feature_function = (
-            feature_cls(device=device) if feature_cls is not None else None
+            feature_cls(device=device, sampling_rate=task.sample_rate)
+            if feature_cls is not None
+            else None
         )
-        data_loader = DataLoader(
-            random_seed=42,
-            shuffle_train=True,
-            batch_size=batch_size,
-            device=device,
-            task=task,
-            feature_function=feature_function,
-            diag_levels=diag_levels,
-            return_ids=False,
-        )
+        if isinstance(feature_function, OpenSmile):
+            max_diag_level = max(diag_levels)
+            cache_path = Path(
+                f"{self.__cache_path}/.data_loader/{task_key}/{max_diag_level}/{feature_cls.__name__}"
+            )
+            data_loader = CachedDataLoader(
+                random_seed=42,
+                shuffle_train=True,
+                batch_size=batch_size,
+                device=device,
+                task=task,
+                feature_function=feature_function,
+                diag_levels=diag_levels,
+                return_ids=False,
+                cache_path=cache_path,
+            )
+        else:
+            data_loader = DataLoader(
+                random_seed=42,
+                shuffle_train=True,
+                batch_size=batch_size,
+                device=device,
+                task=task,
+                feature_function=feature_function,
+                diag_levels=diag_levels,
+                return_ids=False,
+            )
         if trainer_cls == Trainer:
             trainer = Trainer(
                 cache_path=self.__cache_path,
@@ -141,6 +281,7 @@ class Runner:
                 exp_key=exp_key,
                 num_epochs=num_epochs,
                 tboard_enabled=tboard_enabled,
+                lr=lr,
             )
         elif trainer_cls == TrainerMultiTask:
             trainer = TrainerMultiTask(
@@ -150,6 +291,7 @@ class Runner:
                 exp_key=exp_key,
                 num_epochs=num_epochs,
                 tboard_enabled=tboard_enabled,
+                lr=lr,
             )
         elif trainer_cls == TrainerMultiCrit:
             trainer = TrainerMultiCrit(
@@ -159,6 +301,7 @@ class Runner:
                 exp_key=exp_key,
                 num_epochs=num_epochs,
                 tboard_enabled=tboard_enabled,
+                lr=lr,
             )
         else:
             raise ValueError(f"Unsupported trainer type: {trainer_cls}")

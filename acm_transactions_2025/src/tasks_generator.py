@@ -25,66 +25,66 @@ class TaskGenerator:
 
     async def generate(self) -> None:
         coros = []
-        # coros += [
-        #     self.__benchmark.generate_task(
-        #         filter_func=self.__filter_func(
-        #             allowed_suffixes=[
-        #                 "-phrase.wav",
-        #             ]
-        #         ),
-        #         task_path=self.__ensure_path(f"{self.__tasks_path}/phrase"),
-        #     )
-        # ]
-        # coros += [
-        #     self.__benchmark.generate_task(
-        #         filter_func=self.__filter_func(
-        #             allowed_suffixes=[
-        #                 "-a_n.wav",
-        #             ]
-        #         ),
-        #         task_path=self.__ensure_path(f"{self.__tasks_path}/a_n"),
-        #     )
-        # ]
-        # coros += [
-        #     self.__benchmark.generate_task(
-        #         filter_func=self.__filter_func(
-        #             allowed_suffixes=[
-        #                 "-i_n.wav",
-        #             ]
-        #         ),
-        #         task_path=self.__ensure_path(f"{self.__tasks_path}/i_n"),
-        #     )
-        # ]
-        # coros += [
-        #     self.__benchmark.generate_task(
-        #         filter_func=self.__filter_func(
-        #             allowed_suffixes=[
-        #                 "-u_n.wav",
-        #             ]
-        #         ),
-        #         task_path=self.__ensure_path(f"{self.__tasks_path}/u_n"),
-        #     )
-        # ]
-        # coros += [
-        #     self.__benchmark.generate_task(
-        #         filter_func=self.__filter_func(
-        #             allowed_suffixes=[
-        #                 "-phrase.wav",
-        #                 "-a_n.wav",
-        #                 "-i_n.wav",
-        #                 "-u_n.wav",
-        #             ]
-        #         ),
-        #         task_path=self.__ensure_path(f"{self.__tasks_path}/all"),
-        #     )
-        # ]
+        coros += [
+            self.__benchmark.generate_task(
+                filter_func=self.__filter_func(
+                    allowed_suffixes=[
+                        "-phrase.wav",
+                    ]
+                ),
+                task_path=self.__ensure_path(f"{self.__tasks_path}/phrase"),
+            )
+        ]
+        coros += [
+            self.__benchmark.generate_task(
+                filter_func=self.__filter_func(
+                    allowed_suffixes=[
+                        "-a_n.wav",
+                    ]
+                ),
+                task_path=self.__ensure_path(f"{self.__tasks_path}/a_n"),
+            )
+        ]
+        coros += [
+            self.__benchmark.generate_task(
+                filter_func=self.__filter_func(
+                    allowed_suffixes=[
+                        "-i_n.wav",
+                    ]
+                ),
+                task_path=self.__ensure_path(f"{self.__tasks_path}/i_n"),
+            )
+        ]
+        coros += [
+            self.__benchmark.generate_task(
+                filter_func=self.__filter_func(
+                    allowed_suffixes=[
+                        "-u_n.wav",
+                    ]
+                ),
+                task_path=self.__ensure_path(f"{self.__tasks_path}/u_n"),
+            )
+        ]
+        coros += [
+            self.__benchmark.generate_task(
+                filter_func=self.__filter_func(
+                    allowed_suffixes=[
+                        "-phrase.wav",
+                        "-a_n.wav",
+                        "-i_n.wav",
+                        "-u_n.wav",
+                    ]
+                ),
+                task_path=self.__ensure_path(f"{self.__tasks_path}/all"),
+            )
+        ]
         cross_test_datasets = [
-            # "avfad",
+            "avfad",
             "meei",
-            # "torgo",
-            # "uaspeech",
-            # "uncommon_voice",
-            # "voiced",
+            "torgo",
+            "uaspeech",
+            "uncommon_voice",
+            "voiced",
         ]
         for db in cross_test_datasets:
             coros += [

@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 
 from .tboard import TBoard, MockBoard
 from ..model import Normalized
-from ..data_loader import DataLoader
+from ..data_loader import BaseDataLoader
 
 ConfusionData = Dict[int, Dict[int, int]]
 
@@ -21,14 +21,15 @@ class Trainer:
         self,
         cache_path: Path,
         device: torch.device,
-        data_loader: DataLoader,
+        data_loader: BaseDataLoader,
         exp_key: str,
         num_epochs: int,
         tboard_enabled: bool,
+        lr: float,
     ) -> None:
         max_diag_level = max(data_loader.num_unique_diagnosis.keys())
         num_classes = data_loader.num_unique_diagnosis[max_diag_level]
-        self.unique_diagnosis = self.__data_loader.unique_diagnosis[max_diag_level]
+        self.unique_diagnosis = data_loader.unique_diagnosis[max_diag_level]
         class_weights = torch.tensor(
             data_loader.train_class_weights[max_diag_level],
             dtype=torch.float32,
@@ -41,7 +42,7 @@ class Trainer:
         )
         model.to(device=device)
         criterion = nn.CrossEntropyLoss(weight=class_weights)
-        optimizer = torch.optim.Adam(params=model.parameters(), lr=1e-5)
+        optimizer = torch.optim.Adam(params=model.parameters(), lr=lr)
         save_epochs = list(range(0, num_epochs + 1, num_epochs // 10))
         confusion_epochs = list(range(0, num_epochs + 1, 10))
         tensorboard_path = Path(f"{cache_path}/tboard/{exp_key}")
@@ -76,10 +77,14 @@ class Trainer:
         self.model.train()
         total_loss = 0
         total_batch_size = 0
-        for inputs, labels in tqdm(
+        for batch in tqdm(
             self.__data_loader.train(),
             desc="Training",
         ):
+            if len(batch) == 2:
+                inputs, labels = batch
+            else:
+                inputs, labels, _ = batch
             labels = labels.squeeze(1)
             self.optimizer.zero_grad(set_to_none=True)
             predicted_labels, _, _ = self.model(inputs)
@@ -98,10 +103,14 @@ class Trainer:
         num_unique_diagnosis = len(self.unique_diagnosis)
         confusion = np.zeros((num_unique_diagnosis, num_unique_diagnosis))
 
-        for inputs, labels in tqdm(
+        for batch in tqdm(
             self.__data_loader.eval(),
             desc="Validating",
         ):
+            if len(batch) == 2:
+                inputs, labels = batch
+            else:
+                inputs, labels, _ = batch
             labels = labels.squeeze(1)
             predicted_labels, _, _ = self.model(inputs)
             loss = self.criterion(predicted_labels, labels)
@@ -129,8 +138,8 @@ class Trainer:
     def __process_result(
         self,
         confusion_ref: np.ndarray,
-        actual: torch.LongTensor,
-        predicted: torch.LongTensor,
+        actual: torch.Tensor,
+        predicted: torch.Tensor,
     ) -> None:
         for actual_label, predicted_label in zip(
             actual.cpu().tolist(),

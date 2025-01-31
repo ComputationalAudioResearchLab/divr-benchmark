@@ -88,6 +88,10 @@ class Task:
         self.__diagnosis_indices = self.__count_diagnosis()
         self.__max_diag_level = list(self.__diagnosis_indices.keys())[-1]
 
+    @property
+    def sample_rate(self) -> int:
+        return self.__audio_loader.sample_rate
+
     def unique_diagnosis(self, level: int | None = None) -> List[str]:
         if level is None:
             level = self.__max_diag_level

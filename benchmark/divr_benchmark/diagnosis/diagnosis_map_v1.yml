@@ -115,7 +115,7 @@ a_p_squeezing:
     clinician 3: not a diagnosis
     clinician 4: not a diagnosis
     clinician 5: not a diagnosis
-    clinician 6: -
+    clinician 6: na
     clinician 7: not a diagnosis
 abductor_spasmodic_dysphonia:
   level: 3
@@ -129,7 +129,7 @@ abductor_spasmodic_dysphonia:
     clinician 3: organic > neuro-muscular
     clinician 4: organic > neuro-muscular
     clinician 5: organic > neuro-muscular
-    clinician 6: -
+    clinician 6: na
     clinician 7: organic > neuro-muscular
 abnormal_vocal_process:
   level: 3
@@ -144,7 +144,7 @@ abnormal_vocal_process:
     clinician 3: organic > structural
     clinician 4: not a diagnosis
     clinician 5: not a diagnosis
-    clinician 6: -
+    clinician 6: na
     clinician 7: not a diagnosis
 acute_laryngitis:
   level: 3
@@ -173,7 +173,7 @@ adductor_spasmodic_dysphonia:
     clinician 3: organic > neuro-muscular
     clinician 4: organic > neuro-muscular
     clinician 5: organic > neuro-muscular
-    clinician 6: -
+    clinician 6: na
     clinician 7: organic > neuro-muscular
 afrin_rhinitis:
   level: 3
@@ -187,7 +187,7 @@ afrin_rhinitis:
     clinician 3: not a diagnosis
     clinician 4: not a diagnosis
     clinician 5: not a diagnosis
-    clinician 6: -
+    clinician 6: na
     clinician 7: not a diagnosis
 amyotrophic_lateral_sclerosis:
   level: 3
@@ -217,7 +217,7 @@ anterior_saccular_cyst:
     clinician 3: organic > structural
     clinician 4: organic > structural
     clinician 5: organic > structural
-    clinician 6: -
+    clinician 6: na
     clinician 7: organic > structural
 aryluxation:
   level: 3

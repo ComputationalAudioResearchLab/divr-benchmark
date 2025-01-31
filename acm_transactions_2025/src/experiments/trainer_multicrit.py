@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 
 from .tboard import TBoard, MockBoard
 from ..model import NormalizedMultiCrit
-from ..data_loader import DataLoader
+from ..data_loader import BaseDataLoader
 
 ConfusionData = Dict[int, Dict[int, int]]
 
@@ -21,10 +21,11 @@ class TrainerMultiCrit:
         self,
         cache_path: Path,
         device: torch.device,
-        data_loader: DataLoader,
+        data_loader: BaseDataLoader,
         exp_key: str,
         num_epochs: int,
         tboard_enabled: bool,
+        lr: float,
     ) -> None:
         max_diag_level = max(data_loader.num_unique_diagnosis)
         model = NormalizedMultiCrit(
@@ -34,6 +35,7 @@ class TrainerMultiCrit:
             levels_map=data_loader.levels_map,
         )
         model.to(device=device)
+        criterions = data_loader.train_class_weights.items()
         self.criterions = dict(
             [
                 (
@@ -46,10 +48,10 @@ class TrainerMultiCrit:
                         )
                     ),
                 )
-                for level, class_weights in data_loader.train_class_weights.items()
+                for level, class_weights in criterions
             ]
         )
-        optimizer = torch.optim.Adam(params=model.parameters(), lr=1e-5)
+        optimizer = torch.optim.Adam(params=model.parameters(), lr=lr)
         save_epochs = list(range(0, num_epochs + 1, num_epochs // 10))
         confusion_epochs = list(range(0, num_epochs + 1, 10))
         tensorboard_path = Path(f"{cache_path}/tboard/{exp_key}")
@@ -86,16 +88,23 @@ class TrainerMultiCrit:
         self.model.train()
         total_loss = 0
         total_batch_size = 0
-        for inputs, labels in tqdm(
+        for batch in tqdm(
             self.__data_loader.train(),
             desc="Training",
         ):
+            if len(batch) == 2:
+                inputs, labels = batch
+            else:
+                inputs, labels, _ = batch
             labels = labels.squeeze(1)
             self.optimizer.zero_grad(set_to_none=True)
             predicted_labels, _, _ = self.model(inputs)
             loss = torch.scalar_tensor(0, device=labels.device)
             for i, (level, criterion) in enumerate(self.criterions.items()):
-                labels_at_level = self.model.labels_at_level(predicted_labels, level)
+                labels_at_level = self.model.labels_at_level(
+                    predicted_labels,
+                    level,
+                )
                 loss += criterion(labels_at_level, labels[:, i])
             loss.backward()
             self.optimizer.step()
@@ -118,16 +127,23 @@ class TrainerMultiCrit:
             ]
         )
 
-        for inputs, labels in tqdm(
+        for batch in tqdm(
             self.__data_loader.eval(),
             desc="Validating",
         ):
+            if len(batch) == 2:
+                inputs, labels = batch
+            else:
+                inputs, labels, _ = batch
             labels = labels.squeeze(1)
             predicted_labels, _, _ = self.model(inputs)
             loss = torch.scalar_tensor(0, device=labels.device)
             predictions = []
             for i, (level, criterion) in enumerate(self.criterions.items()):
-                labels_at_level = self.model.labels_at_level(predicted_labels, level)
+                labels_at_level = self.model.labels_at_level(
+                    predicted_labels,
+                    level,
+                )
                 loss += criterion(labels_at_level, labels[:, i])
                 predictions += [labels_at_level.argmax(dim=1)]
             total_loss += loss.item()
@@ -158,8 +174,8 @@ class TrainerMultiCrit:
     def __process_result(
         self,
         confusion_ref: Dict[int, np.ndarray],
-        actual: torch.LongTensor,
-        predicted: List[torch.LongTensor],
+        actual: torch.Tensor,
+        predicted: List[torch.Tensor],
     ) -> None:
         for idx, key in enumerate(confusion_ref):
             for actual_label, predicted_label in zip(
@@ -168,7 +184,11 @@ class TrainerMultiCrit:
             ):
                 confusion_ref[key][actual_label, predicted_label] += 1
 
-    def __add_confusions(self, epoch: int, confusions: Dict[int, np.ndarray]) -> None:
+    def __add_confusions(
+        self,
+        epoch: int,
+        confusions: Dict[int, np.ndarray],
+    ) -> None:
         if epoch not in self.confusion_epochs:
             return
         for level, confusion in confusions.items():
@@ -176,7 +196,12 @@ class TrainerMultiCrit:
             total_items_per_class = confusion.sum(axis=1, keepdims=True)
             total_items_per_class = np.maximum(1, total_items_per_class)
             confusion_matrix = confusion / total_items_per_class
-            fig, ax = plt.subplots(1, 1, figsize=(4, 4), constrained_layout=True)
+            fig, ax = plt.subplots(
+                1,
+                1,
+                figsize=(4, 4),
+                constrained_layout=True,
+            )
             ax.imshow(
                 confusion_matrix,
                 cmap="magma",
@@ -200,7 +225,8 @@ class TrainerMultiCrit:
     def __save(self, epoch: int, eval_accuracies: Dict[int, float]):
         if not self.save_enabled:
             return
-        # Take the last accuracy as that should be for the max level of diagnosis
+        # Take the last accuracy as that should be for the
+        # max level of diagnosis
         eval_accuracy = list(eval_accuracies.values())[-1]
         if eval_accuracy > self.best_eval_accuracy:
             self.best_eval_accuracy = eval_accuracy
