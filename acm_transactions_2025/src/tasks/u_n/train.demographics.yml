@@ -1,135 +1,135 @@
-functional_dysphonia:
-  female:
-    age_stats:
-      max: 74
-      mean: 45.19047619047619
-      min: 16
-      std: 14.97842040458514
-    total: 42
-  male:
-    age_stats:
-      max: 71
-      mean: 46.392857142857146
-      min: 20
-      std: 15.661557762061587
-    total: 28
-hyperfunctional_dysphonia:
-  female:
-    age_stats:
-      max: 94
-      mean: 42.526315789473685
-      min: 13
-      std: 16.63928979591018
-    total: 76
-  male:
-    age_stats:
-      max: 73
-      mean: 46.41860465116279
-      min: 22
-      std: 13.690859930102716
-    total: 43
-laryngitis:
-  female:
-    age_stats:
-      max: 73
-      mean: 47.22222222222222
-      min: 12
-      std: 16.6440872692269
-    total: 27
-  male:
-    age_stats:
-      max: 77
-      mean: 48.30555555555556
-      min: 16
-      std: 16.182564593580242
-    total: 36
-leukoplakia:
-  female:
-    age_stats:
-      max: 67
-      mean: 49
-      min: 26
-      std: 15.242484486898235
-    total: 7
-  male:
-    age_stats:
-      max: 71
-      mean: 52.11764705882353
-      min: 32
-      std: 12.251950625008536
-    total: 17
-normal:
-  female:
-    age_stats:
-      max: 84
-      mean: 27.051063829787235
-      min: 9
-      std: 13.320408356276456
-    total: 235
-  male:
-    age_stats:
-      max: 69
-      mean: 33.47179487179487
-      min: 16
-      std: 12.593279764042308
-    total: 195
-psychogenic_dysphonia:
-  female:
-    age_stats:
-      max: 68
-      mean: 49.42857142857143
-      min: 26
-      std: 11.402491250717498
-    total: 35
-  male:
-    age_stats:
-      max: 63
-      mean: 51.857142857142854
-      min: 28
-      std: 9.289010404005062
-    total: 14
 recurrent_paralysis:
   female:
+    total: 68
     age_stats:
-      max: 79
-      mean: 54.08450704225352
+      mean: 54.11764705882353
+      std: 14.152189231800067
       min: 21
-      std: 14.001782007886648
-    total: 71
+      max: 79
   male:
+    total: 44
     age_stats:
-      max: 81
-      mean: 56.53488372093023
+      mean: 57.13636363636363
+      std: 16.36586195811682
       min: 14
-      std: 16.270553064046926
-    total: 43
+      max: 81
 reinkes_edema:
   female:
+    total: 25
     age_stats:
-      max: 77
-      mean: 52.285714285714285
+      mean: 53.8
+      std: 12.642520845675254
       min: 31
-      std: 11.759494644146672
-    total: 28
+      max: 77
   male:
+    total: 7
     age_stats:
-      max: 65
-      mean: 59.166666666666664
+      mean: 60.142857142857146
+      std: 5.080307452263476
       min: 52
-      std: 4.792355023020171
-    total: 6
+      max: 66
 vocal_fold_polyp:
   female:
+    total: 12
     age_stats:
-      max: 79
-      mean: 54.76923076923077
+      mean: 54.583333333333336
+      std: 16.54447632805877
       min: 28
-      std: 16.187206090787907
-    total: 13
+      max: 79
   male:
+    total: 16
     age_stats:
-      max: 78
-      mean: 53.1764705882353
+      mean: 51.5625
+      std: 14.683181989382728
       min: 29
-      std: 15.957894966589606
-    total: 17
+      max: 78
+leukoplakia:
+  male:
+    total: 12
+    age_stats:
+      mean: 50.083333333333336
+      std: 10.833100230592377
+      min: 32
+      max: 64
+  female:
+    total: 7
+    age_stats:
+      mean: 50.857142857142854
+      std: 14.346063007303565
+      min: 26
+      max: 67
+hyperfunctional_dysphonia:
+  male:
+    total: 41
+    age_stats:
+      mean: 46.26829268292683
+      std: 14.007184567649386
+      min: 22
+      max: 73
+  female:
+    total: 79
+    age_stats:
+      mean: 41.64556962025316
+      std: 16.657975663237533
+      min: 13
+      max: 94
+psychogenic_dysphonia:
+  female:
+    total: 39
+    age_stats:
+      mean: 50.43589743589744
+      std: 9.461264163321472
+      min: 27
+      max: 66
+  male:
+    total: 11
+    age_stats:
+      mean: 51.90909090909091
+      std: 10.300044130532116
+      min: 28
+      max: 63
+laryngitis:
+  male:
+    total: 41
+    age_stats:
+      mean: 49.609756097560975
+      std: 16.267879469648907
+      min: 16
+      max: 77
+  female:
+    total: 29
+    age_stats:
+      mean: 45.37931034482759
+      std: 15.288683473881328
+      min: 12
+      max: 73
+functional_dysphonia:
+  female:
+    total: 39
+    age_stats:
+      mean: 45.64102564102564
+      std: 15.28068471097311
+      min: 16
+      max: 74
+  male:
+    total: 28
+    age_stats:
+      mean: 45.92857142857143
+      std: 15.441475105674115
+      min: 20
+      max: 71
+normal:
+  female:
+    total: 235
+    age_stats:
+      mean: 27.29787234042553
+      std: 13.289213693139411
+      min: 9
+      max: 84
+  male:
+    total: 195
+    age_stats:
+      mean: 33.40512820512821
+      std: 12.583943883737154
+      min: 16
+      max: 69

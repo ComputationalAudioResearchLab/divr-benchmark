@@ -1,0 +1,248 @@
+hyperfunction:
+  female:
+    total: 46
+    age_stats:
+      mean: 44.47826086956522
+      std: 15.33005636060493
+      min: 17
+      max: 77
+  male:
+    total: 28
+    age_stats:
+      mean: 49.214285714285715
+      std: 16.8354941250283
+      min: 25
+      max: 73
+adductor_spasmodic_dysphonia:
+  female:
+    total: 14
+    age_stats:
+      mean: 54.714285714285715
+      std: 21.061918136874326
+      min: 31
+      max: 93
+vocal_fold_nodules:
+  female:
+    total: 8
+    age_stats:
+      mean: 32.25
+      std: 12.383745106273096
+      min: 18
+      max: 48
+  male:
+    total: 2
+    age_stats:
+      mean: 47
+      std: 0.0
+      min: 47
+      max: 47
+conversion_dysphonia:
+  male:
+    total: 4
+    age_stats:
+      mean: 40.5
+      std: 24.826061575153908
+      min: 19
+      max: 62
+  female:
+    total: 8
+    age_stats:
+      mean: 40
+      std: 23.724610489050033
+      min: 17
+      max: 76
+vocal_fold_polyp:
+  male:
+    total: 8
+    age_stats:
+      mean: 25
+      std: 3.3806170189140663
+      min: 21
+      max: 29
+  female:
+    total: 6
+    age_stats:
+      mean: 49
+      std: 9.959919678390985
+      min: 39
+      max: 61
+presbyphonia:
+  female:
+    total: 2
+    age_stats:
+      mean: 86
+      std: 0.0
+      min: 86
+      max: 86
+  male:
+    total: 4
+    age_stats:
+      mean: 72
+      std: 5.773502691896258
+      min: 67
+      max: 77
+exudative_hyperkeratotic_lesions_of_epithelium:
+  male:
+    total: 2
+    age_stats:
+      mean: 53
+      std: 0.0
+      min: 53
+      max: 53
+vocal_tremor:
+  female:
+    total: 2
+    age_stats:
+      mean: 63
+      std: 0.0
+      min: 63
+      max: 63
+varix:
+  male:
+    total: 4
+    age_stats:
+      mean: 41.5
+      std: 5.196152422706632
+      min: 37
+      max: 46
+paralysis:
+  female:
+    total: 12
+    age_stats:
+      mean: 45
+      std: 20.617732879511973
+      min: 19
+      max: 70
+  male:
+    total: 9
+    age_stats:
+      mean: 54
+      std: 11.423659658795863
+      min: 39
+      max: 69
+paresis:
+  female:
+    total: 2
+    age_stats:
+      mean: 44
+      std: 0.0
+      min: 44
+      max: 44
+  male:
+    total: 4
+    age_stats:
+      mean: 69.5
+      std: 4.041451884327381
+      min: 66
+      max: 73
+leukoplakia:
+  male:
+    total: 4
+    age_stats:
+      mean: 48.5
+      std: 8.660254037844387
+      min: 41
+      max: 56
+polypoid_degeneration_reinkes:
+  female:
+    total: 4
+    age_stats:
+      mean: 57.5
+      std: 10.969655114602888
+      min: 48
+      max: 67
+vocal_fold_edema:
+  female:
+    total: 4
+    age_stats:
+      mean: 42.5
+      std: 7.505553499465135
+      min: 36
+      max: 49
+normal:
+  female:
+    total: 60
+    age_stats:
+      mean: 33.7
+      std: 7.833651874759004
+      min: 22
+      max: 52
+  male:
+    total: 36
+    age_stats:
+      mean: 37.77777777777778
+      std: 7.6086834269841646
+      min: 26
+      max: 55
+laryngeal_tuberculosis:
+  male:
+    total: 2
+    age_stats:
+      mean: 44
+      std: 0.0
+      min: 44
+      max: 44
+subglottal_mass:
+  male:
+    total: 2
+    age_stats:
+      mean: 40
+      std: 0.0
+      min: 40
+      max: 40
+episodic_functional_dysphonia:
+  female:
+    total: 2
+    age_stats:
+      mean: 38
+      std: 0.0
+      min: 38
+      max: 38
+scarring:
+  female:
+    total: 2
+    age_stats:
+      mean: 32
+      std: 0.0
+      min: 32
+      max: 32
+abductor_spasmodic_dysphonia:
+  female:
+    total: 2
+    age_stats:
+      mean: 34
+      std: 0.0
+      min: 34
+      max: 34
+hemmoragic_reinke_s_edema:
+  male:
+    total: 2
+    age_stats:
+      mean: 47
+      std: 0.0
+      min: 47
+      max: 47
+cyst:
+  male:
+    total: 2
+    age_stats:
+      mean: 52
+      std: 0.0
+      min: 52
+      max: 52
+subglottis_stenosis:
+  male:
+    total: 2
+    age_stats:
+      mean: 26
+      std: 0.0
+      min: 26
+      max: 26
+post_intubation_submucosal_edema_mild:
+  female:
+    total: 2
+    age_stats:
+      mean: 53
+      std: 0.0
+      min: 53
+      max: 53

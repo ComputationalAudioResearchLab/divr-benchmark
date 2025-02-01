@@ -100,6 +100,7 @@ class MEEI(Base):
             file_key=file_key,
         )
         full_data = pd.concat([path_data, norm_data])
+        full_data = full_data.sort_values(by=full_data.columns.tolist())
         return file_key, full_data
 
     def __collate_data(self, df: pd.DataFrame, is_pathological: bool, file_key: str):
@@ -115,5 +116,5 @@ class MEEI(Base):
     def __clean_white_spaces(self, df: pd.DataFrame):
         clean_columns = list(map(str.strip, df.columns))
         df.columns = clean_columns
-        df = df.applymap(lambda x: x.strip() if isinstance(x, str) else x)
+        df = df.map(lambda x: x.strip() if isinstance(x, str) else x)
         return df

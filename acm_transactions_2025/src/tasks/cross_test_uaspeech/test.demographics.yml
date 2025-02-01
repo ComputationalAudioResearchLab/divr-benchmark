@@ -1,7 +1,7 @@
 normal:
-  female:
-    age_stats: null
-    total: 21420
   male:
-    age_stats: null
     total: 48195
+    age_stats: null
+  female:
+    total: 21420
+    age_stats: null

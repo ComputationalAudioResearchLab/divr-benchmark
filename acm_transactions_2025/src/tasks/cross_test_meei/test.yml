@@ -1,0 +1,2037 @@
+meei_LBA24_0:
+  speaker_id: LBA24
+  age: 45
+  gender: female
+  label: hyperfunction
+  audio_keys:
+  - meei/.extracted/LBA24R.NSP.wav
+meei_LBA24_1:
+  speaker_id: LBA24
+  age: 45
+  gender: female
+  label: hyperfunction
+  audio_keys:
+  - meei/.extracted/LBA24AN.NSP.wav
+meei_MAM08_0:
+  speaker_id: MAM08
+  age: 45
+  gender: female
+  label: hyperfunction
+  audio_keys:
+  - meei/.extracted/MAM08R.NSP.wav
+meei_MAM08_1:
+  speaker_id: MAM08
+  age: 45
+  gender: female
+  label: hyperfunction
+  audio_keys:
+  - meei/.extracted/MAM08AN.NSP.wav
+meei_JXS39_0:
+  speaker_id: JXS39
+  age: 60
+  gender: female
+  label: adductor_spasmodic_dysphonia
+  audio_keys:
+  - meei/.extracted/JXS39R.NSP.wav
+meei_JXS39_1:
+  speaker_id: JXS39
+  age: 60
+  gender: female
+  label: adductor_spasmodic_dysphonia
+  audio_keys:
+  - meei/.extracted/JXS39AN.NSP.wav
+meei_MRB11_0:
+  speaker_id: MRB11
+  age: 41
+  gender: male
+  label: hyperfunction
+  audio_keys:
+  - meei/.extracted/MRB11R.NSP.wav
+meei_MRB11_1:
+  speaker_id: MRB11
+  age: 41
+  gender: male
+  label: hyperfunction
+  audio_keys:
+  - meei/.extracted/MRB11AN.NSP.wav
+meei_LAC02_0:
+  speaker_id: LAC02
+  age: 25
+  gender: female
+  label: vocal_fold_nodules
+  audio_keys:
+  - meei/.extracted/LAC02R.NSP.wav
+meei_LAC02_1:
+  speaker_id: LAC02
+  age: 25
+  gender: female
+  label: vocal_fold_nodules
+  audio_keys:
+  - meei/.extracted/LAC02AN.NSP.wav
+meei_LAP05_0:
+  speaker_id: LAP05
+  age: 42
+  gender: female
+  label: hyperfunction
+  audio_keys:
+  - meei/.extracted/LAP05R.NSP.wav
+meei_LAP05_1:
+  speaker_id: LAP05
+  age: 42
+  gender: female
+  label: hyperfunction
+  audio_keys:
+  - meei/.extracted/LAP05AN.NSP.wav
+meei_RXG29_0:
+  speaker_id: RXG29
+  age: 62
+  gender: male
+  label: conversion_dysphonia
+  audio_keys:
+  - meei/.extracted/RXG29R.NSP.wav
+meei_RXG29_1:
+  speaker_id: RXG29
+  age: 62
+  gender: male
+  label: conversion_dysphonia
+  audio_keys:
+  - meei/.extracted/RXG29AN.NSP.wav
+meei_DJP04_0:
+  speaker_id: DJP04
+  age: 43
+  gender: male
+  label: hyperfunction
+  audio_keys:
+  - meei/.extracted/DJP04R.NSP.wav
+meei_DJP04_1:
+  speaker_id: DJP04
+  age: 43
+  gender: male
+  label: hyperfunction
+  audio_keys:
+  - meei/.extracted/DJP04AN.NSP.wav
+meei_BSD30_0:
+  speaker_id: BSD30
+  age: 62
+  gender: female
+  label: hyperfunction
+  audio_keys:
+  - meei/.extracted/BSD30R.NSP.wav
+meei_BSD30_1:
+  speaker_id: BSD30
+  age: 62
+  gender: female
+  label: hyperfunction
+  audio_keys:
+  - meei/.extracted/BSD30AN.NSP.wav
+meei_RJR15_0:
+  speaker_id: RJR15
+  age: 27
+  gender: male
+  label: vocal_fold_polyp
+  audio_keys:
+  - meei/.extracted/RJR15R.NSP.wav
+meei_RJR15_1:
+  speaker_id: RJR15
+  age: 27
+  gender: male
+  label: vocal_fold_polyp
+  audio_keys:
+  - meei/.extracted/RJR15AN.NSP.wav
+meei_MAB06_0:
+  speaker_id: MAB06
+  age: 33
+  gender: female
+  label: hyperfunction
+  audio_keys:
+  - meei/.extracted/MAB06R.NSP.wav
+meei_MAB06_1:
+  speaker_id: MAB06
+  age: 33
+  gender: female
+  label: hyperfunction
+  audio_keys:
+  - meei/.extracted/MAB06AN.NSP.wav
+meei_RAN30_0:
+  speaker_id: RAN30
+  age: 71
+  gender: male
+  label: hyperfunction
+  audio_keys:
+  - meei/.extracted/RAN30R.NSP.wav
+meei_RAN30_1:
+  speaker_id: RAN30
+  age: 71
+  gender: male
+  label: hyperfunction
+  audio_keys:
+  - meei/.extracted/RAN30AN.NSP.wav
+meei_BLB03_0:
+  speaker_id: BLB03
+  age: 37
+  gender: male
+  label: hyperfunction
+  audio_keys:
+  - meei/.extracted/BLB03R.NSP.wav
+meei_BLB03_1:
+  speaker_id: BLB03
+  age: 37
+  gender: male
+  label: hyperfunction
+  audio_keys:
+  - meei/.extracted/BLB03AN.NSP.wav
+meei_KMS29_0:
+  speaker_id: KMS29
+  age: 43
+  gender: female
+  label: hyperfunction
+  audio_keys:
+  - meei/.extracted/KMS29R.NSP.wav
+meei_KMS29_1:
+  speaker_id: KMS29
+  age: 43
+  gender: female
+  label: hyperfunction
+  audio_keys:
+  - meei/.extracted/KMS29AN.NSP.wav
+meei_CMA22_0:
+  speaker_id: CMA22
+  age: 56
+  gender: male
+  label: hyperfunction
+  audio_keys:
+  - meei/.extracted/CMA22R.NSP.wav
+meei_CMA22_1:
+  speaker_id: CMA22
+  age: 56
+  gender: male
+  label: hyperfunction
+  audio_keys:
+  - meei/.extracted/CMA22AN.NSP.wav
+meei_DFS24_0:
+  speaker_id: DFS24
+  age: 76
+  gender: female
+  label: conversion_dysphonia
+  audio_keys:
+  - meei/.extracted/DFS24R.NSP.wav
+meei_DFS24_1:
+  speaker_id: DFS24
+  age: 76
+  gender: female
+  label: conversion_dysphonia
+  audio_keys:
+  - meei/.extracted/DFS24AN.NSP.wav
+meei_EJM04_0:
+  speaker_id: EJM04
+  age: 69
+  gender: male
+  label: hyperfunction
+  audio_keys:
+  - meei/.extracted/EJM04R.NSP.wav
+meei_EJM04_1:
+  speaker_id: EJM04
+  age: 69
+  gender: male
+  label: hyperfunction
+  audio_keys:
+  - meei/.extracted/EJM04AN.NSP.wav
+meei_HJH07_0:
+  speaker_id: HJH07
+  age: 50
+  gender: female
+  label: hyperfunction
+  audio_keys:
+  - meei/.extracted/HJH07R.NSP.wav
+meei_HJH07_1:
+  speaker_id: HJH07
+  age: 50
+  gender: female
+  label: hyperfunction
+  audio_keys:
+  - meei/.extracted/HJH07AN.NSP.wav
+meei_JCL50_0:
+  speaker_id: JCL50
+  age: 64
+  gender: female
+  label: hyperfunction
+  audio_keys:
+  - meei/.extracted/JCL50R.NSP.wav
+meei_JCL50_1:
+  speaker_id: JCL50
+  age: 64
+  gender: female
+  label: hyperfunction
+  audio_keys:
+  - meei/.extracted/JCL50AN.NSP.wav
+meei_ESS05_0:
+  speaker_id: ESS05
+  age: 29
+  gender: female
+  label: hyperfunction
+  audio_keys:
+  - meei/.extracted/ESS05R.NSP.wav
+meei_ESS05_1:
+  speaker_id: ESS05
+  age: 29
+  gender: female
+  label: hyperfunction
+  audio_keys:
+  - meei/.extracted/ESS05AN.NSP.wav
+meei_EAS11_0:
+  speaker_id: EAS11
+  age: 47
+  gender: male
+  label: vocal_fold_nodules
+  audio_keys:
+  - meei/.extracted/EAS11R.NSP.wav
+meei_EAS11_1:
+  speaker_id: EAS11
+  age: 47
+  gender: male
+  label: vocal_fold_nodules
+  audio_keys:
+  - meei/.extracted/EAS11AN.NSP.wav
+meei_JAJ31_0:
+  speaker_id: JAJ31
+  age: 17
+  gender: female
+  label: hyperfunction
+  audio_keys:
+  - meei/.extracted/JAJ31R.NSP.wav
+meei_JAJ31_1:
+  speaker_id: JAJ31
+  age: 17
+  gender: female
+  label: hyperfunction
+  audio_keys:
+  - meei/.extracted/JAJ31AN.NSP.wav
+meei_VAW07_0:
+  speaker_id: VAW07
+  age: 39
+  gender: female
+  label: conversion_dysphonia
+  audio_keys:
+  - meei/.extracted/VAW07R.NSP.wav
+meei_VAW07_1:
+  speaker_id: VAW07
+  age: 39
+  gender: female
+  label: conversion_dysphonia
+  audio_keys:
+  - meei/.extracted/VAW07AN.NSP.wav
+meei_KLD26_0:
+  speaker_id: KLD26
+  age: 42
+  gender: female
+  label: hyperfunction
+  audio_keys:
+  - meei/.extracted/KLD26R.NSP.wav
+meei_KLD26_1:
+  speaker_id: KLD26
+  age: 42
+  gender: female
+  label: hyperfunction
+  audio_keys:
+  - meei/.extracted/KLD26AN.NSP.wav
+meei_JLS11_0:
+  speaker_id: JLS11
+  age: 29
+  gender: male
+  label: vocal_fold_polyp
+  audio_keys:
+  - meei/.extracted/JLS11R.NSP.wav
+meei_JLS11_1:
+  speaker_id: JLS11
+  age: 29
+  gender: male
+  label: vocal_fold_polyp
+  audio_keys:
+  - meei/.extracted/JLS11AN.NSP.wav
+meei_JCH21_0:
+  speaker_id: JCH21
+  age: 73
+  gender: male
+  label: hyperfunction
+  audio_keys:
+  - meei/.extracted/JCH21R.NSP.wav
+meei_JCH21_1:
+  speaker_id: JCH21
+  age: 73
+  gender: male
+  label: hyperfunction
+  audio_keys:
+  - meei/.extracted/JCH21AN.NSP.wav
+meei_PSA21_0:
+  speaker_id: PSA21
+  age: 93
+  gender: female
+  label: adductor_spasmodic_dysphonia
+  audio_keys:
+  - meei/.extracted/PSA21R.NSP.wav
+meei_PSA21_1:
+  speaker_id: PSA21
+  age: 93
+  gender: female
+  label: adductor_spasmodic_dysphonia
+  audio_keys:
+  - meei/.extracted/PSA21AN.NSP.wav
+meei_KWD22_0:
+  speaker_id: KWD22
+  age: 86
+  gender: female
+  label: presbyphonia
+  audio_keys:
+  - meei/.extracted/KWD22R.NSP.wav
+meei_KWD22_1:
+  speaker_id: KWD22
+  age: 86
+  gender: female
+  label: presbyphonia
+  audio_keys:
+  - meei/.extracted/KWD22AN.NSP.wav
+meei_RBC09_0:
+  speaker_id: RBC09
+  age: 63
+  gender: male
+  label: hyperfunction
+  audio_keys:
+  - meei/.extracted/RBC09R.NSP.wav
+meei_RBC09_1:
+  speaker_id: RBC09
+  age: 63
+  gender: male
+  label: hyperfunction
+  audio_keys:
+  - meei/.extracted/RBC09AN.NSP.wav
+meei_RJF22_0:
+  speaker_id: RJF22
+  age: 53
+  gender: male
+  label: exudative_hyperkeratotic_lesions_of_epithelium
+  audio_keys:
+  - meei/.extracted/RJF22R.NSP.wav
+meei_RJF22_1:
+  speaker_id: RJF22
+  age: 53
+  gender: male
+  label: exudative_hyperkeratotic_lesions_of_epithelium
+  audio_keys:
+  - meei/.extracted/RJF22AN.NSP.wav
+meei_ABG04_0:
+  speaker_id: ABG04
+  age: 19
+  gender: male
+  label: conversion_dysphonia
+  audio_keys:
+  - meei/.extracted/ABG04R.NSP.wav
+meei_ABG04_1:
+  speaker_id: ABG04
+  age: 19
+  gender: male
+  label: conversion_dysphonia
+  audio_keys:
+  - meei/.extracted/ABG04AN.NSP.wav
+meei_JSC27_0:
+  speaker_id: JSC27
+  age: 77
+  gender: female
+  label: hyperfunction
+  audio_keys:
+  - meei/.extracted/JSC27R.NSP.wav
+meei_JSC27_1:
+  speaker_id: JSC27
+  age: 77
+  gender: female
+  label: hyperfunction
+  audio_keys:
+  - meei/.extracted/JSC27AN.NSP.wav
+meei_KMC22_0:
+  speaker_id: KMC22
+  age: 26
+  gender: female
+  label: hyperfunction
+  audio_keys:
+  - meei/.extracted/KMC22R.NSP.wav
+meei_KMC22_1:
+  speaker_id: KMC22
+  age: 26
+  gender: female
+  label: hyperfunction
+  audio_keys:
+  - meei/.extracted/KMC22AN.NSP.wav
+meei_SEG18_0:
+  speaker_id: SEG18
+  age: 33
+  gender: male
+  label: hyperfunction
+  audio_keys:
+  - meei/.extracted/SEG18R.NSP.wav
+meei_SEG18_1:
+  speaker_id: SEG18
+  age: 33
+  gender: male
+  label: hyperfunction
+  audio_keys:
+  - meei/.extracted/SEG18AN.NSP.wav
+meei_CMS10_0:
+  speaker_id: CMS10
+  age: 54
+  gender: female
+  label: adductor_spasmodic_dysphonia
+  audio_keys:
+  - meei/.extracted/CMS10R.NSP.wav
+meei_CMS10_1:
+  speaker_id: CMS10
+  age: 54
+  gender: female
+  label: adductor_spasmodic_dysphonia
+  audio_keys:
+  - meei/.extracted/CMS10AN.NSP.wav
+meei_BRT18_0:
+  speaker_id: BRT18
+  age: 63
+  gender: female
+  label: vocal_tremor
+  audio_keys:
+  - meei/.extracted/BRT18R.NSP.wav
+meei_BRT18_1:
+  speaker_id: BRT18
+  age: 63
+  gender: female
+  label: vocal_tremor
+  audio_keys:
+  - meei/.extracted/BRT18AN.NSP.wav
+meei_DWK04_0:
+  speaker_id: DWK04
+  age: 46
+  gender: male
+  label: varix
+  audio_keys:
+  - meei/.extracted/DWK04R.NSP.wav
+meei_DWK04_1:
+  speaker_id: DWK04
+  age: 46
+  gender: male
+  label: varix
+  audio_keys:
+  - meei/.extracted/DWK04AN.NSP.wav
+meei_KAB03_0:
+  speaker_id: KAB03
+  age: 31
+  gender: female
+  label: adductor_spasmodic_dysphonia
+  audio_keys:
+  - meei/.extracted/KAB03R.NSP.wav
+meei_KAB03_1:
+  speaker_id: KAB03
+  age: 31
+  gender: female
+  label: adductor_spasmodic_dysphonia
+  audio_keys:
+  - meei/.extracted/KAB03AN.NSP.wav
+meei_KJB19_0:
+  speaker_id: KJB19
+  age: 28
+  gender: male
+  label: hyperfunction
+  audio_keys:
+  - meei/.extracted/KJB19R.NSP.wav
+meei_KJB19_1:
+  speaker_id: KJB19
+  age: 28
+  gender: male
+  label: hyperfunction
+  audio_keys:
+  - meei/.extracted/KJB19AN.NSP.wav
+meei_GMM06_0:
+  speaker_id: GMM06
+  age: 45
+  gender: female
+  label: hyperfunction
+  audio_keys:
+  - meei/.extracted/GMM06R.NSP.wav
+meei_GMM06_1:
+  speaker_id: GMM06
+  age: 45
+  gender: female
+  label: hyperfunction
+  audio_keys:
+  - meei/.extracted/GMM06AN.NSP.wav
+meei_LME07_0:
+  speaker_id: LME07
+  age: 17
+  gender: female
+  label: conversion_dysphonia
+  audio_keys:
+  - meei/.extracted/LME07R.NSP.wav
+meei_LME07_1:
+  speaker_id: LME07
+  age: 17
+  gender: female
+  label: conversion_dysphonia
+  audio_keys:
+  - meei/.extracted/LME07AN.NSP.wav
+meei_MEC28_0:
+  speaker_id: MEC28
+  age: 32
+  gender: female
+  label: paralysis
+  audio_keys:
+  - meei/.extracted/MEC28R.NSP.wav
+meei_MEC28_1:
+  speaker_id: MEC28
+  age: 32
+  gender: female
+  label: paralysis
+  audio_keys:
+  - meei/.extracted/MEC28AN.NSP.wav
+meei_LJS31_0:
+  speaker_id: LJS31
+  age: 51
+  gender: female
+  label: paralysis
+  audio_keys:
+  - meei/.extracted/LJS31R.NSP.wav
+meei_LJS31_1:
+  speaker_id: LJS31
+  age: 51
+  gender: female
+  label: paralysis
+  audio_keys:
+  - meei/.extracted/LJS31AN.NSP.wav
+meei_EEC04_0:
+  speaker_id: EEC04
+  age: 52
+  gender: male
+  label: paralysis
+  audio_keys:
+  - meei/.extracted/EEC04R.NSP.wav
+meei_EEC04_1:
+  speaker_id: EEC04
+  age: 52
+  gender: male
+  label: paralysis
+  audio_keys:
+  - meei/.extracted/EEC04AN.NSP.wav
+meei_ESL28_0:
+  speaker_id: ESL28
+  age: 70
+  gender: female
+  label: paralysis
+  audio_keys:
+  - meei/.extracted/ESL28R.NSP.wav
+meei_ESL28_1:
+  speaker_id: ESL28
+  age: 70
+  gender: female
+  label: paralysis
+  audio_keys:
+  - meei/.extracted/ESL28AN.NSP.wav
+meei_BSA26_0:
+  speaker_id: BSA26
+  age: 69
+  gender: male
+  label: paralysis
+  audio_keys:
+  - meei/.extracted/BSA26R.NSP.wav
+meei_BSA26_1:
+  speaker_id: BSA26
+  age: 69
+  gender: male
+  label: paralysis
+  audio_keys:
+  - meei/.extracted/BSA26AN.NSP.wav
+meei_JXS14_0:
+  speaker_id: JXS14
+  age: 77
+  gender: male
+  label: presbyphonia
+  audio_keys:
+  - meei/.extracted/JXS14R.NSP.wav
+meei_JXS14_1:
+  speaker_id: JXS14
+  age: 77
+  gender: male
+  label: presbyphonia
+  audio_keys:
+  - meei/.extracted/JXS14AN.NSP.wav
+meei_MNH14_0:
+  speaker_id: MNH14
+  age: 19
+  gender: female
+  label: paralysis
+  audio_keys:
+  - meei/.extracted/MNH14R.NSP.wav
+meei_MNH14_1:
+  speaker_id: MNH14
+  age: 19
+  gender: female
+  label: paralysis
+  audio_keys:
+  - meei/.extracted/MNH14AN.NSP.wav
+meei_MEC06_0:
+  speaker_id: MEC06
+  age: 29
+  gender: female
+  label: paralysis
+  audio_keys:
+  - meei/.extracted/MEC06R.NSP.wav
+meei_MEC06_1:
+  speaker_id: MEC06
+  age: 29
+  gender: female
+  label: paralysis
+  audio_keys:
+  - meei/.extracted/MEC06AN.NSP.wav
+meei_TPS16_0:
+  speaker_id: TPS16
+  age: 39
+  gender: male
+  label: paralysis
+  audio_keys:
+  - meei/.extracted/TPS16R.NSP.wav
+meei_TPS16_1:
+  speaker_id: TPS16
+  age: 39
+  gender: male
+  label: paralysis
+  audio_keys:
+  - meei/.extracted/TPS16AN.NSP.wav
+meei_LBA15_0:
+  speaker_id: LBA15
+  age: 44
+  gender: female
+  label: paresis
+  audio_keys:
+  - meei/.extracted/LBA15R.NSP.wav
+meei_LBA15_1:
+  speaker_id: LBA15
+  age: 44
+  gender: female
+  label: paresis
+  audio_keys:
+  - meei/.extracted/LBA15AN.NSP.wav
+meei_JEG29_0:
+  speaker_id: JEG29
+  age: 37
+  gender: female
+  label: adductor_spasmodic_dysphonia
+  audio_keys:
+  - meei/.extracted/JEG29R.NSP.wav
+meei_JEG29_1:
+  speaker_id: JEG29
+  age: 37
+  gender: female
+  label: adductor_spasmodic_dysphonia
+  audio_keys:
+  - meei/.extracted/JEG29AN.NSP.wav
+meei_RHG07_0:
+  speaker_id: RHG07
+  age: 70
+  gender: female
+  label: adductor_spasmodic_dysphonia
+  audio_keys:
+  - meei/.extracted/RHG07R.NSP.wav
+meei_RHG07_1:
+  speaker_id: RHG07
+  age: 70
+  gender: female
+  label: adductor_spasmodic_dysphonia
+  audio_keys:
+  - meei/.extracted/RHG07AN.NSP.wav
+meei_DMG24_0:
+  speaker_id: DMG24
+  age: 23
+  gender: male
+  label: vocal_fold_polyp
+  audio_keys:
+  - meei/.extracted/DMG24R.NSP.wav
+meei_DMG24_1:
+  speaker_id: DMG24
+  age: 23
+  gender: male
+  label: vocal_fold_polyp
+  audio_keys:
+  - meei/.extracted/DMG24AN.NSP.wav
+meei_MRB30_0:
+  speaker_id: MRB30
+  age: 41
+  gender: male
+  label: leukoplakia
+  audio_keys:
+  - meei/.extracted/MRB30R.NSP.wav
+meei_MRB30_1:
+  speaker_id: MRB30
+  age: 41
+  gender: male
+  label: leukoplakia
+  audio_keys:
+  - meei/.extracted/MRB30AN.NSP.wav
+meei_JFC28_0:
+  speaker_id: JFC28
+  age: 73
+  gender: male
+  label: paresis
+  audio_keys:
+  - meei/.extracted/JFC28R.NSP.wav
+meei_JFC28_1:
+  speaker_id: JFC28
+  age: 73
+  gender: male
+  label: paresis
+  audio_keys:
+  - meei/.extracted/JFC28AN.NSP.wav
+meei_KCG25_0:
+  speaker_id: KCG25
+  age: 39
+  gender: female
+  label: vocal_fold_polyp
+  audio_keys:
+  - meei/.extracted/KCG25R.NSP.wav
+meei_KCG25_1:
+  speaker_id: KCG25
+  age: 39
+  gender: female
+  label: vocal_fold_polyp
+  audio_keys:
+  - meei/.extracted/KCG25AN.NSP.wav
+meei_ANB28_0:
+  speaker_id: ANB28
+  age: 18
+  gender: female
+  label: vocal_fold_nodules
+  audio_keys:
+  - meei/.extracted/ANB28R.NSP.wav
+meei_ANB28_1:
+  speaker_id: ANB28
+  age: 18
+  gender: female
+  label: vocal_fold_nodules
+  audio_keys:
+  - meei/.extracted/ANB28AN.NSP.wav
+meei_AMD07_0:
+  speaker_id: AMD07
+  age: 67
+  gender: female
+  label: polypoid_degeneration_reinkes
+  audio_keys:
+  - meei/.extracted/AMD07R.NSP.wav
+meei_AMD07_1:
+  speaker_id: AMD07
+  age: 67
+  gender: female
+  label: polypoid_degeneration_reinkes
+  audio_keys:
+  - meei/.extracted/AMD07AN.NSP.wav
+meei_CAC10_0:
+  speaker_id: CAC10
+  age: 49
+  gender: female
+  label: vocal_fold_edema
+  audio_keys:
+  - meei/.extracted/CAC10R.NSP.wav
+meei_CAC10_1:
+  speaker_id: CAC10
+  age: 49
+  gender: female
+  label: vocal_fold_edema
+  audio_keys:
+  - meei/.extracted/CAC10AN.NSP.wav
+meei_SCT1N_0:
+  speaker_id: SCT1N
+  age: 39
+  gender: female
+  label: normal
+  audio_keys:
+  - meei/.extracted/SCT1NRL.NSP.wav
+meei_SCT1N_1:
+  speaker_id: SCT1N
+  age: 39
+  gender: female
+  label: normal
+  audio_keys:
+  - meei/.extracted/SCT1NAL.NSP.wav
+meei_AXH1N_0:
+  speaker_id: AXH1N
+  age: 29
+  gender: female
+  label: normal
+  audio_keys:
+  - meei/.extracted/AXH1NRL.NSP.wav
+meei_AXH1N_1:
+  speaker_id: AXH1N
+  age: 29
+  gender: female
+  label: normal
+  audio_keys:
+  - meei/.extracted/AXH1NAL.NSP.wav
+meei_LMW1N_0:
+  speaker_id: LMW1N
+  age: 45
+  gender: female
+  label: normal
+  audio_keys:
+  - meei/.extracted/LMW1NRL.NSP.wav
+meei_LMW1N_1:
+  speaker_id: LMW1N
+  age: 45
+  gender: female
+  label: normal
+  audio_keys:
+  - meei/.extracted/LMW1NAL.NSP.wav
+meei_LLA1N_0:
+  speaker_id: LLA1N
+  age: 30
+  gender: female
+  label: normal
+  audio_keys:
+  - meei/.extracted/LLA1NRL.NSP.wav
+meei_LLA1N_1:
+  speaker_id: LLA1N
+  age: 30
+  gender: female
+  label: normal
+  audio_keys:
+  - meei/.extracted/LLA1NAL.NSP.wav
+meei_SIS1N_0:
+  speaker_id: SIS1N
+  age: 36
+  gender: male
+  label: normal
+  audio_keys:
+  - meei/.extracted/SIS1NRL.NSP.wav
+meei_SIS1N_1:
+  speaker_id: SIS1N
+  age: 36
+  gender: male
+  label: normal
+  audio_keys:
+  - meei/.extracted/SIS1NAL.NSP.wav
+meei_JEG1N_0:
+  speaker_id: JEG1N
+  age: 26
+  gender: female
+  label: normal
+  audio_keys:
+  - meei/.extracted/JEG1NRL.NSP.wav
+meei_JEG1N_1:
+  speaker_id: JEG1N
+  age: 26
+  gender: female
+  label: normal
+  audio_keys:
+  - meei/.extracted/JEG1NAL.NSP.wav
+meei_GPC1N_0:
+  speaker_id: GPC1N
+  age: 40
+  gender: male
+  label: normal
+  audio_keys:
+  - meei/.extracted/GPC1NRL.NSP.wav
+meei_GPC1N_1:
+  speaker_id: GPC1N
+  age: 40
+  gender: male
+  label: normal
+  audio_keys:
+  - meei/.extracted/GPC1NAL.NSP.wav
+meei_JXC1N_0:
+  speaker_id: JXC1N
+  age: 43
+  gender: female
+  label: normal
+  audio_keys:
+  - meei/.extracted/JXC1NRL.NSP.wav
+meei_JXC1N_1:
+  speaker_id: JXC1N
+  age: 43
+  gender: female
+  label: normal
+  audio_keys:
+  - meei/.extracted/JXC1NAL.NSP.wav
+meei_PCA1N_0:
+  speaker_id: PCA1N
+  age: 36
+  gender: male
+  label: normal
+  audio_keys:
+  - meei/.extracted/PCA1NRL.NSP.wav
+meei_PCA1N_1:
+  speaker_id: PCA1N
+  age: 36
+  gender: male
+  label: normal
+  audio_keys:
+  - meei/.extracted/PCA1NAL.NSP.wav
+meei_CAD1N_0:
+  speaker_id: CAD1N
+  age: 31
+  gender: female
+  label: normal
+  audio_keys:
+  - meei/.extracted/CAD1NRL.NSP.wav
+meei_CAD1N_1:
+  speaker_id: CAD1N
+  age: 31
+  gender: female
+  label: normal
+  audio_keys:
+  - meei/.extracted/CAD1NAL.NSP.wav
+meei_SLC1N_0:
+  speaker_id: SLC1N
+  age: 22
+  gender: female
+  label: normal
+  audio_keys:
+  - meei/.extracted/SLC1NRL.NSP.wav
+meei_SLC1N_1:
+  speaker_id: SLC1N
+  age: 22
+  gender: female
+  label: normal
+  audio_keys:
+  - meei/.extracted/SLC1NAL.NSP.wav
+meei_OVK1N_0:
+  speaker_id: OVK1N
+  age: 29
+  gender: male
+  label: normal
+  audio_keys:
+  - meei/.extracted/OVK1NRL.NSP.wav
+meei_OVK1N_1:
+  speaker_id: OVK1N
+  age: 29
+  gender: male
+  label: normal
+  audio_keys:
+  - meei/.extracted/OVK1NAL.NSP.wav
+meei_RJS1N_0:
+  speaker_id: RJS1N
+  age: 46
+  gender: male
+  label: normal
+  audio_keys:
+  - meei/.extracted/RJS1NRL.NSP.wav
+meei_RJS1N_1:
+  speaker_id: RJS1N
+  age: 46
+  gender: male
+  label: normal
+  audio_keys:
+  - meei/.extracted/RJS1NAL.NSP.wav
+meei_FMB1N_0:
+  speaker_id: FMB1N
+  age: 28
+  gender: male
+  label: normal
+  audio_keys:
+  - meei/.extracted/FMB1NRL.NSP.wav
+meei_FMB1N_1:
+  speaker_id: FMB1N
+  age: 28
+  gender: male
+  label: normal
+  audio_keys:
+  - meei/.extracted/FMB1NAL.NSP.wav
+meei_LMV1N_0:
+  speaker_id: LMV1N
+  age: 43
+  gender: female
+  label: normal
+  audio_keys:
+  - meei/.extracted/LMV1NRL.NSP.wav
+meei_LMV1N_1:
+  speaker_id: LMV1N
+  age: 43
+  gender: female
+  label: normal
+  audio_keys:
+  - meei/.extracted/LMV1NAL.NSP.wav
+meei_BJB1N_0:
+  speaker_id: BJB1N
+  age: 34
+  gender: male
+  label: normal
+  audio_keys:
+  - meei/.extracted/BJB1NRL.NSP.wav
+meei_BJB1N_1:
+  speaker_id: BJB1N
+  age: 34
+  gender: male
+  label: normal
+  audio_keys:
+  - meei/.extracted/BJB1NAL.NSP.wav
+meei_EJC1N_0:
+  speaker_id: EJC1N
+  age: 44
+  gender: male
+  label: normal
+  audio_keys:
+  - meei/.extracted/EJC1NRL.NSP.wav
+meei_EJC1N_1:
+  speaker_id: EJC1N
+  age: 44
+  gender: male
+  label: normal
+  audio_keys:
+  - meei/.extracted/EJC1NAL.NSP.wav
+meei_HBL1N_0:
+  speaker_id: HBL1N
+  age: 25
+  gender: female
+  label: normal
+  audio_keys:
+  - meei/.extracted/HBL1NRL.NSP.wav
+meei_HBL1N_1:
+  speaker_id: HBL1N
+  age: 25
+  gender: female
+  label: normal
+  audio_keys:
+  - meei/.extracted/HBL1NAL.NSP.wav
+meei_NJS1N_0:
+  speaker_id: NJS1N
+  age: 39
+  gender: female
+  label: normal
+  audio_keys:
+  - meei/.extracted/NJS1NRL.NSP.wav
+meei_NJS1N_1:
+  speaker_id: NJS1N
+  age: 39
+  gender: female
+  label: normal
+  audio_keys:
+  - meei/.extracted/NJS1NAL.NSP.wav
+meei_PBD1N_0:
+  speaker_id: PBD1N
+  age: 40
+  gender: female
+  label: normal
+  audio_keys:
+  - meei/.extracted/PBD1NRL.NSP.wav
+meei_PBD1N_1:
+  speaker_id: PBD1N
+  age: 40
+  gender: female
+  label: normal
+  audio_keys:
+  - meei/.extracted/PBD1NAL.NSP.wav
+meei_MFM1N_0:
+  speaker_id: MFM1N
+  age: 28
+  gender: male
+  label: normal
+  audio_keys:
+  - meei/.extracted/MFM1NRL.NSP.wav
+meei_MFM1N_1:
+  speaker_id: MFM1N
+  age: 28
+  gender: male
+  label: normal
+  audio_keys:
+  - meei/.extracted/MFM1NAL.NSP.wav
+meei_RHM1N_0:
+  speaker_id: RHM1N
+  age: 40
+  gender: male
+  label: normal
+  audio_keys:
+  - meei/.extracted/RHM1NRL.NSP.wav
+meei_RHM1N_1:
+  speaker_id: RHM1N
+  age: 40
+  gender: male
+  label: normal
+  audio_keys:
+  - meei/.extracted/RHM1NAL.NSP.wav
+meei_MAS1N_0:
+  speaker_id: MAS1N
+  age: 37
+  gender: male
+  label: normal
+  audio_keys:
+  - meei/.extracted/MAS1NRL.NSP.wav
+meei_MAS1N_1:
+  speaker_id: MAS1N
+  age: 37
+  gender: male
+  label: normal
+  audio_keys:
+  - meei/.extracted/MAS1NAL.NSP.wav
+meei_DMA1N_0:
+  speaker_id: DMA1N
+  age: 24
+  gender: female
+  label: normal
+  audio_keys:
+  - meei/.extracted/DMA1NRL.NSP.wav
+meei_DMA1N_1:
+  speaker_id: DMA1N
+  age: 24
+  gender: female
+  label: normal
+  audio_keys:
+  - meei/.extracted/DMA1NAL.NSP.wav
+meei_SEB1N_0:
+  speaker_id: SEB1N
+  age: 37
+  gender: female
+  label: normal
+  audio_keys:
+  - meei/.extracted/SEB1NRL.NSP.wav
+meei_SEB1N_1:
+  speaker_id: SEB1N
+  age: 37
+  gender: female
+  label: normal
+  audio_keys:
+  - meei/.extracted/SEB1NAL.NSP.wav
+meei_MJU1N_0:
+  speaker_id: MJU1N
+  age: 26
+  gender: male
+  label: normal
+  audio_keys:
+  - meei/.extracted/MJU1NRL.NSP.wav
+meei_MJU1N_1:
+  speaker_id: MJU1N
+  age: 26
+  gender: male
+  label: normal
+  audio_keys:
+  - meei/.extracted/MJU1NAL.NSP.wav
+meei_VMC1N_0:
+  speaker_id: VMC1N
+  age: 44
+  gender: female
+  label: normal
+  audio_keys:
+  - meei/.extracted/VMC1NRL.NSP.wav
+meei_VMC1N_1:
+  speaker_id: VMC1N
+  age: 44
+  gender: female
+  label: normal
+  audio_keys:
+  - meei/.extracted/VMC1NAL.NSP.wav
+meei_BJV1N_0:
+  speaker_id: BJV1N
+  age: 52
+  gender: female
+  label: normal
+  audio_keys:
+  - meei/.extracted/BJV1NRL.NSP.wav
+meei_BJV1N_1:
+  speaker_id: BJV1N
+  age: 52
+  gender: female
+  label: normal
+  audio_keys:
+  - meei/.extracted/BJV1NAL.NSP.wav
+meei_KAN1N_0:
+  speaker_id: KAN1N
+  age: 55
+  gender: male
+  label: normal
+  audio_keys:
+  - meei/.extracted/KAN1NRL.NSP.wav
+meei_KAN1N_1:
+  speaker_id: KAN1N
+  age: 55
+  gender: male
+  label: normal
+  audio_keys:
+  - meei/.extracted/KAN1NAL.NSP.wav
+meei_GZZ1N_0:
+  speaker_id: GZZ1N
+  age: 47
+  gender: male
+  label: normal
+  audio_keys:
+  - meei/.extracted/GZZ1NRL.NSP.wav
+meei_GZZ1N_1:
+  speaker_id: GZZ1N
+  age: 47
+  gender: male
+  label: normal
+  audio_keys:
+  - meei/.extracted/GZZ1NAL.NSP.wav
+meei_DWS1N_0:
+  speaker_id: DWS1N
+  age: 32
+  gender: male
+  label: normal
+  audio_keys:
+  - meei/.extracted/DWS1NRL.NSP.wav
+meei_DWS1N_1:
+  speaker_id: DWS1N
+  age: 32
+  gender: male
+  label: normal
+  audio_keys:
+  - meei/.extracted/DWS1NAL.NSP.wav
+meei_MXB1N_0:
+  speaker_id: MXB1N
+  age: 24
+  gender: female
+  label: normal
+  audio_keys:
+  - meei/.extracted/MXB1NRL.NSP.wav
+meei_MXB1N_1:
+  speaker_id: MXB1N
+  age: 24
+  gender: female
+  label: normal
+  audio_keys:
+  - meei/.extracted/MXB1NAL.NSP.wav
+meei_DFP1N_0:
+  speaker_id: DFP1N
+  age: 34
+  gender: female
+  label: normal
+  audio_keys:
+  - meei/.extracted/DFP1NRL.NSP.wav
+meei_DFP1N_1:
+  speaker_id: DFP1N
+  age: 34
+  gender: female
+  label: normal
+  audio_keys:
+  - meei/.extracted/DFP1NAL.NSP.wav
+meei_SLG05_0:
+  speaker_id: SLG05
+  age: 46
+  gender: female
+  label: hyperfunction
+  audio_keys:
+  - meei/.extracted/SLG05R.NSP.wav
+meei_SLG05_1:
+  speaker_id: SLG05
+  age: 46
+  gender: female
+  label: hyperfunction
+  audio_keys:
+  - meei/.extracted/SLG05AN.NSP.wav
+meei_LAD13_0:
+  speaker_id: LAD13
+  age: 41
+  gender: female
+  label: hyperfunction
+  audio_keys:
+  - meei/.extracted/LAD13R.NSP.wav
+meei_LAD13_1:
+  speaker_id: LAD13
+  age: 41
+  gender: female
+  label: hyperfunction
+  audio_keys:
+  - meei/.extracted/LAD13AN.NSP.wav
+meei_MLG10_0:
+  speaker_id: MLG10
+  age: 66
+  gender: female
+  label: hyperfunction
+  audio_keys:
+  - meei/.extracted/MLG10R.NSP.wav
+meei_MLG10_1:
+  speaker_id: MLG10
+  age: 66
+  gender: female
+  label: hyperfunction
+  audio_keys:
+  - meei/.extracted/MLG10AN.NSP.wav
+meei_MRB25_0:
+  speaker_id: MRB25
+  age: 41
+  gender: male
+  label: hyperfunction
+  audio_keys:
+  - meei/.extracted/MRB25R.NSP.wav
+meei_MRB25_1:
+  speaker_id: MRB25
+  age: 41
+  gender: male
+  label: hyperfunction
+  audio_keys:
+  - meei/.extracted/MRB25AN.NSP.wav
+meei_TPP24_0:
+  speaker_id: TPP24
+  age: 21
+  gender: female
+  label: hyperfunction
+  audio_keys:
+  - meei/.extracted/TPP24R.NSP.wav
+meei_TPP24_1:
+  speaker_id: TPP24
+  age: 21
+  gender: female
+  label: hyperfunction
+  audio_keys:
+  - meei/.extracted/TPP24AN.NSP.wav
+meei_JXS09_0:
+  speaker_id: JXS09
+  age: 60
+  gender: male
+  label: paralysis
+  audio_keys:
+  - meei/.extracted/JXS09R.NSP.wav
+meei_JXS09_1:
+  speaker_id: JXS09
+  age: 60
+  gender: male
+  label: paralysis
+  audio_keys:
+  - meei/.extracted/JXS09AN.NSP.wav
+meei_JAF1N_0:
+  speaker_id: JAF1N
+  age: 31
+  gender: female
+  label: normal
+  audio_keys:
+  - meei/.extracted/JAF1NRL.NSP.wav
+meei_JAF1N_1:
+  speaker_id: JAF1N
+  age: 31
+  gender: female
+  label: normal
+  audio_keys:
+  - meei/.extracted/JAF1NAL.NSP.wav
+meei_DAJ1N_0:
+  speaker_id: DAJ1N
+  age: 26
+  gender: female
+  label: normal
+  audio_keys:
+  - meei/.extracted/DAJ1NRL.NSP.wav
+meei_DAJ1N_1:
+  speaker_id: DAJ1N
+  age: 26
+  gender: female
+  label: normal
+  audio_keys:
+  - meei/.extracted/DAJ1NAL.NSP.wav
+meei_JAP1N_0:
+  speaker_id: JAP1N
+  age: 40
+  gender: female
+  label: normal
+  audio_keys:
+  - meei/.extracted/JAP1NRL.NSP.wav
+meei_JAP1N_1:
+  speaker_id: JAP1N
+  age: 40
+  gender: female
+  label: normal
+  audio_keys:
+  - meei/.extracted/JAP1NAL.NSP.wav
+meei_SCK1N_0:
+  speaker_id: SCK1N
+  age: 33
+  gender: female
+  label: normal
+  audio_keys:
+  - meei/.extracted/SCK1NRL.NSP.wav
+meei_SCK1N_1:
+  speaker_id: SCK1N
+  age: 33
+  gender: female
+  label: normal
+  audio_keys:
+  - meei/.extracted/SCK1NAL.NSP.wav
+meei_JCC08_0:
+  speaker_id: JCC08
+  age: 48
+  gender: female
+  label: hyperfunction
+  audio_keys:
+  - meei/.extracted/JCC08R.NSP.wav
+meei_JCC08_1:
+  speaker_id: JCC08
+  age: 48
+  gender: female
+  label: hyperfunction
+  audio_keys:
+  - meei/.extracted/JCC08AN.NSP.wav
+meei_PMD25_0:
+  speaker_id: PMD25
+  age: 45
+  gender: female
+  label: hyperfunction
+  audio_keys:
+  - meei/.extracted/PMD25R.NSP.wav
+meei_PMD25_1:
+  speaker_id: PMD25
+  age: 45
+  gender: female
+  label: hyperfunction
+  audio_keys:
+  - meei/.extracted/PMD25AN.NSP.wav
+meei_CXR13_0:
+  speaker_id: CXR13
+  age: 61
+  gender: female
+  label: vocal_fold_polyp
+  audio_keys:
+  - meei/.extracted/CXR13R.NSP.wav
+meei_CXR13_1:
+  speaker_id: CXR13
+  age: 61
+  gender: female
+  label: vocal_fold_polyp
+  audio_keys:
+  - meei/.extracted/CXR13AN.NSP.wav
+meei_AOS21_0:
+  speaker_id: AOS21
+  age: 44
+  gender: male
+  label: laryngeal_tuberculosis
+  audio_keys:
+  - meei/.extracted/AOS21R.NSP.wav
+meei_AOS21_1:
+  speaker_id: AOS21
+  age: 44
+  gender: male
+  label: laryngeal_tuberculosis
+  audio_keys:
+  - meei/.extracted/AOS21AN.NSP.wav
+meei_WJB06_0:
+  speaker_id: WJB06
+  age: 25
+  gender: female
+  label: hyperfunction
+  audio_keys:
+  - meei/.extracted/WJB06R.NSP.wav
+meei_WJB06_1:
+  speaker_id: WJB06
+  age: 25
+  gender: female
+  label: hyperfunction
+  audio_keys:
+  - meei/.extracted/WJB06AN.NSP.wav
+meei_JXC21_0:
+  speaker_id: JXC21
+  age: 42
+  gender: female
+  label: hyperfunction
+  audio_keys:
+  - meei/.extracted/JXC21R.NSP.wav
+meei_JXC21_1:
+  speaker_id: JXC21
+  age: 42
+  gender: female
+  label: hyperfunction
+  audio_keys:
+  - meei/.extracted/JXC21AN.NSP.wav
+meei_JPB17_0:
+  speaker_id: JPB17
+  age: 67
+  gender: male
+  label: presbyphonia
+  audio_keys:
+  - meei/.extracted/JPB17R.NSP.wav
+meei_JPB17_1:
+  speaker_id: JPB17
+  age: 67
+  gender: male
+  label: presbyphonia
+  audio_keys:
+  - meei/.extracted/JPB17AN.NSP.wav
+meei_EAS15_0:
+  speaker_id: EAS15
+  age: 40
+  gender: male
+  label: subglottal_mass
+  audio_keys:
+  - meei/.extracted/EAS15R.NSP.wav
+meei_EAS15_1:
+  speaker_id: EAS15
+  age: 40
+  gender: male
+  label: subglottal_mass
+  audio_keys:
+  - meei/.extracted/EAS15AN.NSP.wav
+meei_FMC08_0:
+  speaker_id: FMC08
+  age: 69
+  gender: female
+  label: hyperfunction
+  audio_keys:
+  - meei/.extracted/FMC08R.NSP.wav
+meei_FMC08_1:
+  speaker_id: FMC08
+  age: 69
+  gender: female
+  label: hyperfunction
+  audio_keys:
+  - meei/.extracted/FMC08AN.NSP.wav
+meei_SAM25_0:
+  speaker_id: SAM25
+  age: 25
+  gender: male
+  label: hyperfunction
+  audio_keys:
+  - meei/.extracted/SAM25R.NSP.wav
+meei_SAM25_1:
+  speaker_id: SAM25
+  age: 25
+  gender: male
+  label: hyperfunction
+  audio_keys:
+  - meei/.extracted/SAM25AN.NSP.wav
+meei_SBF11_0:
+  speaker_id: SBF11
+  age: 38
+  gender: female
+  label: episodic_functional_dysphonia
+  audio_keys:
+  - meei/.extracted/SBF11R.NSP.wav
+meei_SBF11_1:
+  speaker_id: SBF11
+  age: 38
+  gender: female
+  label: episodic_functional_dysphonia
+  audio_keys:
+  - meei/.extracted/SBF11AN.NSP.wav
+meei_AJM05_0:
+  speaker_id: AJM05
+  age: 70
+  gender: male
+  label: hyperfunction
+  audio_keys:
+  - meei/.extracted/AJM05R.NSP.wav
+meei_AJM05_1:
+  speaker_id: AJM05
+  age: 70
+  gender: male
+  label: hyperfunction
+  audio_keys:
+  - meei/.extracted/AJM05AN.NSP.wav
+meei_LRD21_0:
+  speaker_id: LRD21
+  age: 39
+  gender: male
+  label: hyperfunction
+  audio_keys:
+  - meei/.extracted/LRD21R.NSP.wav
+meei_LRD21_1:
+  speaker_id: LRD21
+  age: 39
+  gender: male
+  label: hyperfunction
+  audio_keys:
+  - meei/.extracted/LRD21AN.NSP.wav
+meei_SMA08_0:
+  speaker_id: SMA08
+  age: 32
+  gender: female
+  label: scarring
+  audio_keys:
+  - meei/.extracted/SMA08R.NSP.wav
+meei_SMA08_1:
+  speaker_id: SMA08
+  age: 32
+  gender: female
+  label: scarring
+  audio_keys:
+  - meei/.extracted/SMA08AN.NSP.wav
+meei_FXC12_0:
+  speaker_id: FXC12
+  age: 46
+  gender: male
+  label: paralysis
+  audio_keys:
+  - meei/.extracted/FXC12AN.NSP.wav
+meei_GMW05_0:
+  speaker_id: GMW05
+  age: 69
+  gender: female
+  label: paralysis
+  audio_keys:
+  - meei/.extracted/GMW05R.NSP.wav
+meei_GMW05_1:
+  speaker_id: GMW05
+  age: 69
+  gender: female
+  label: paralysis
+  audio_keys:
+  - meei/.extracted/GMW05AN.NSP.wav
+meei_NAC21_0:
+  speaker_id: NAC21
+  age: 66
+  gender: male
+  label: paresis
+  audio_keys:
+  - meei/.extracted/NAC21R.NSP.wav
+meei_NAC21_1:
+  speaker_id: NAC21
+  age: 66
+  gender: male
+  label: paresis
+  audio_keys:
+  - meei/.extracted/NAC21AN.NSP.wav
+meei_KXH30_0:
+  speaker_id: KXH30
+  age: 38
+  gender: female
+  label: adductor_spasmodic_dysphonia
+  audio_keys:
+  - meei/.extracted/KXH30R.NSP.wav
+meei_KXH30_1:
+  speaker_id: KXH30
+  age: 38
+  gender: female
+  label: adductor_spasmodic_dysphonia
+  audio_keys:
+  - meei/.extracted/KXH30AN.NSP.wav
+meei_NMC22_0:
+  speaker_id: NMC22
+  age: 34
+  gender: female
+  label: abductor_spasmodic_dysphonia
+  audio_keys:
+  - meei/.extracted/NMC22R.NSP.wav
+meei_NMC22_1:
+  speaker_id: NMC22
+  age: 34
+  gender: female
+  label: abductor_spasmodic_dysphonia
+  audio_keys:
+  - meei/.extracted/NMC22AN.NSP.wav
+meei_MPB23_0:
+  speaker_id: MPB23
+  age: 47
+  gender: female
+  label: vocal_fold_polyp
+  audio_keys:
+  - meei/.extracted/MPB23R.NSP.wav
+meei_MPB23_1:
+  speaker_id: MPB23
+  age: 47
+  gender: female
+  label: vocal_fold_polyp
+  audio_keys:
+  - meei/.extracted/MPB23AN.NSP.wav
+meei_CMA06_0:
+  speaker_id: CMA06
+  age: 56
+  gender: male
+  label: leukoplakia
+  audio_keys:
+  - meei/.extracted/CMA06R.NSP.wav
+meei_CMA06_1:
+  speaker_id: CMA06
+  age: 56
+  gender: male
+  label: leukoplakia
+  audio_keys:
+  - meei/.extracted/CMA06AN.NSP.wav
+meei_KCG23_0:
+  speaker_id: KCG23
+  age: 38
+  gender: female
+  label: vocal_fold_nodules
+  audio_keys:
+  - meei/.extracted/KCG23R.NSP.wav
+meei_KCG23_1:
+  speaker_id: KCG23
+  age: 38
+  gender: female
+  label: vocal_fold_nodules
+  audio_keys:
+  - meei/.extracted/KCG23AN.NSP.wav
+meei_JCC10_0:
+  speaker_id: JCC10
+  age: 48
+  gender: female
+  label: vocal_fold_nodules
+  audio_keys:
+  - meei/.extracted/JCC10R.NSP.wav
+meei_JCC10_1:
+  speaker_id: JCC10
+  age: 48
+  gender: female
+  label: vocal_fold_nodules
+  audio_keys:
+  - meei/.extracted/JCC10AN.NSP.wav
+meei_RMB07_0:
+  speaker_id: RMB07
+  age: 48
+  gender: female
+  label: polypoid_degeneration_reinkes
+  audio_keys:
+  - meei/.extracted/RMB07R.NSP.wav
+meei_RMB07_1:
+  speaker_id: RMB07
+  age: 48
+  gender: female
+  label: polypoid_degeneration_reinkes
+  audio_keys:
+  - meei/.extracted/RMB07AN.NSP.wav
+meei_HLM24_0:
+  speaker_id: HLM24
+  age: 36
+  gender: female
+  label: vocal_fold_edema
+  audio_keys:
+  - meei/.extracted/HLM24R.NSP.wav
+meei_HLM24_1:
+  speaker_id: HLM24
+  age: 36
+  gender: female
+  label: vocal_fold_edema
+  audio_keys:
+  - meei/.extracted/HLM24AN.NSP.wav
+meei_JTM05_0:
+  speaker_id: JTM05
+  age: 47
+  gender: male
+  label: hemmoragic_reinke_s_edema
+  audio_keys:
+  - meei/.extracted/JTM05R.NSP.wav
+meei_JTM05_1:
+  speaker_id: JTM05
+  age: 47
+  gender: male
+  label: hemmoragic_reinke_s_edema
+  audio_keys:
+  - meei/.extracted/JTM05AN.NSP.wav
+meei_DVD19_0:
+  speaker_id: DVD19
+  age: 52
+  gender: male
+  label: cyst
+  audio_keys:
+  - meei/.extracted/DVD19R.NSP.wav
+meei_DVD19_1:
+  speaker_id: DVD19
+  age: 52
+  gender: male
+  label: cyst
+  audio_keys:
+  - meei/.extracted/DVD19AN.NSP.wav
+meei_JBS17_0:
+  speaker_id: JBS17
+  age: 21
+  gender: male
+  label: vocal_fold_polyp
+  audio_keys:
+  - meei/.extracted/JBS17R.NSP.wav
+meei_JBS17_1:
+  speaker_id: JBS17
+  age: 21
+  gender: male
+  label: vocal_fold_polyp
+  audio_keys:
+  - meei/.extracted/JBS17AN.NSP.wav
+meei_SEK06_0:
+  speaker_id: SEK06
+  age: 26
+  gender: male
+  label: subglottis_stenosis
+  audio_keys:
+  - meei/.extracted/SEK06R.NSP.wav
+meei_SEK06_1:
+  speaker_id: SEK06
+  age: 26
+  gender: male
+  label: subglottis_stenosis
+  audio_keys:
+  - meei/.extracted/SEK06AN.NSP.wav
+meei_PMC26_0:
+  speaker_id: PMC26
+  age: 37
+  gender: male
+  label: varix
+  audio_keys:
+  - meei/.extracted/PMC26R.NSP.wav
+meei_PMC26_1:
+  speaker_id: PMC26
+  age: 37
+  gender: male
+  label: varix
+  audio_keys:
+  - meei/.extracted/PMC26AN.NSP.wav
+meei_JJD11_0:
+  speaker_id: JJD11
+  age: 53
+  gender: female
+  label: post_intubation_submucosal_edema_mild
+  audio_keys:
+  - meei/.extracted/JJD11R.NSP.wav
+meei_JJD11_1:
+  speaker_id: JJD11
+  age: 53
+  gender: female
+  label: post_intubation_submucosal_edema_mild
+  audio_keys:
+  - meei/.extracted/JJD11AN.NSP.wav
+meei_KMW05_0:
+  speaker_id: KMW05
+  age: 28
+  gender: female
+  label: conversion_dysphonia
+  audio_keys:
+  - meei/.extracted/KMW05R.NSP.wav
+meei_KMW05_1:
+  speaker_id: KMW05
+  age: 28
+  gender: female
+  label: conversion_dysphonia
+  audio_keys:
+  - meei/.extracted/KMW05AN.NSP.wav
+meei_EDC1N_0:
+  speaker_id: EDC1N
+  age: 32
+  gender: female
+  label: normal
+  audio_keys:
+  - meei/.extracted/EDC1NRL.NSP.wav
+meei_EDC1N_1:
+  speaker_id: EDC1N
+  age: 32
+  gender: female
+  label: normal
+  audio_keys:
+  - meei/.extracted/EDC1NAL.NSP.wav
+meei_LDP1N_0:
+  speaker_id: LDP1N
+  age: 22
+  gender: female
+  label: normal
+  audio_keys:
+  - meei/.extracted/LDP1NRL.NSP.wav
+meei_LDP1N_1:
+  speaker_id: LDP1N
+  age: 22
+  gender: female
+  label: normal
+  audio_keys:
+  - meei/.extracted/LDP1NAL.NSP.wav
+meei_LAD1N_0:
+  speaker_id: LAD1N
+  age: 40
+  gender: female
+  label: normal
+  audio_keys:
+  - meei/.extracted/LAD1NRL.NSP.wav
+meei_LAD1N_1:
+  speaker_id: LAD1N
+  age: 40
+  gender: female
+  label: normal
+  audio_keys:
+  - meei/.extracted/LAD1NAL.NSP.wav
+meei_JAN1N_0:
+  speaker_id: JAN1N
+  age: 30
+  gender: female
+  label: normal
+  audio_keys:
+  - meei/.extracted/JAN1NRL.NSP.wav
+meei_JAN1N_1:
+  speaker_id: JAN1N
+  age: 30
+  gender: female
+  label: normal
+  audio_keys:
+  - meei/.extracted/JAN1NAL.NSP.wav
+meei_TXN1N_0:
+  speaker_id: TXN1N
+  age: 39
+  gender: male
+  label: normal
+  audio_keys:
+  - meei/.extracted/TXN1NRL.NSP.wav
+meei_TXN1N_1:
+  speaker_id: TXN1N
+  age: 39
+  gender: male
+  label: normal
+  audio_keys:
+  - meei/.extracted/TXN1NAL.NSP.wav
+meei_MCB1N_0:
+  speaker_id: MCB1N
+  age: 28
+  gender: female
+  label: normal
+  audio_keys:
+  - meei/.extracted/MCB1NRL.NSP.wav
+meei_MCB1N_1:
+  speaker_id: MCB1N
+  age: 28
+  gender: female
+  label: normal
+  audio_keys:
+  - meei/.extracted/MCB1NAL.NSP.wav
+meei_JMC1N_0:
+  speaker_id: JMC1N
+  age: 45
+  gender: male
+  label: normal
+  audio_keys:
+  - meei/.extracted/JMC1NRL.NSP.wav
+meei_JMC1N_1:
+  speaker_id: JMC1N
+  age: 45
+  gender: male
+  label: normal
+  audio_keys:
+  - meei/.extracted/JMC1NAL.NSP.wav
+meei_CEB1N_0:
+  speaker_id: CEB1N
+  age: 43
+  gender: female
+  label: normal
+  audio_keys:
+  - meei/.extracted/CEB1NRL.NSP.wav
+meei_CEB1N_1:
+  speaker_id: CEB1N
+  age: 43
+  gender: female
+  label: normal
+  audio_keys:
+  - meei/.extracted/CEB1NAL.NSP.wav
+meei_SXV1N_0:
+  speaker_id: SXV1N
+  age: 38
+  gender: male
+  label: normal
+  audio_keys:
+  - meei/.extracted/SXV1NRL.NSP.wav
+meei_SXV1N_1:
+  speaker_id: SXV1N
+  age: 38
+  gender: male
+  label: normal
+  audio_keys:
+  - meei/.extracted/SXV1NAL.NSP.wav
+meei_JTH1N_0:
+  speaker_id: JTH1N
+  age: 31
+  gender: female
+  label: normal
+  audio_keys:
+  - meei/.extracted/JTH1NRL.NSP.wav
+meei_JTH1N_1:
+  speaker_id: JTH1N
+  age: 31
+  gender: female
+  label: normal
+  audio_keys:
+  - meei/.extracted/JTH1NAL.NSP.wav
+meei_MXZ1N_0:
+  speaker_id: MXZ1N
+  age: 28
+  gender: female
+  label: normal
+  audio_keys:
+  - meei/.extracted/MXZ1NRL.NSP.wav
+meei_MXZ1N_1:
+  speaker_id: MXZ1N
+  age: 28
+  gender: female
+  label: normal
+  audio_keys:
+  - meei/.extracted/MXZ1NAL.NSP.wav

@@ -1,170 +1,192 @@
-hyperkinetic_dysphonia:
-  female:
-    age_stats:
-      max: 70
-      mean: 46.642857142857146
-      min: 24
-      std: 12.049940174169256
-    total: 28
+reflux_laryngitis:
   male:
+    total: 19
     age_stats:
-      max: 69
-      mean: 45
-      min: 22
-      std: 14.476582074903888
-    total: 15
-hyperkinetic_dysphonia_adduction_deficit:
-  male:
-    age_stats:
-      max: 43
-      mean: 43
-      min: 43
-      std: null
-    total: 1
-hyperkinetic_dysphonia_polyps:
-  female:
-    age_stats:
-      max: 47
-      mean: 39
-      min: 27
-      std: 10.583005244258363
-    total: 3
-  male:
-    age_stats:
-      max: 70
-      mean: 46
-      min: 26
-      std: 22.271057451320086
-    total: 3
-hyperkinetic_dysphonia_reinkes_edema:
-  female:
-    age_stats:
-      max: 67
-      mean: 45
-      min: 23
-      std: 31.11269837220809
-    total: 2
-  male:
-    age_stats:
-      max: 53
-      mean: 53
-      min: 53
-      std: null
-    total: 1
-hyperkinetic_dysphonia_rigid_vocal_fold:
-  male:
-    age_stats:
-      max: 50
-      mean: 50
-      min: 50
-      std: null
-    total: 1
-hyperkinetic_dysphonia_vocal_fold_nodules:
-  female:
-    age_stats:
-      max: 51
       mean: 51
-      min: 51
-      std: null
-    total: 1
-hyperkinetic_dysphonia_vocal_fold_paralysis:
+      std: 11.377365443917341
+      min: 31
+      max: 70
   female:
+    total: 19
     age_stats:
-      max: 58
-      mean: 58
-      min: 58
-      std: null
-    total: 1
-hypokinetic_dysphonia_adduction_deficit:
+      mean: 47.89473684210526
+      std: 10.471626939508202
+      min: 31
+      max: 70
+hypokinetic_dysphonia:
   female:
+    total: 19
     age_stats:
-      max: 55
-      mean: 55
-      min: 55
-      std: null
-    total: 1
-hypokinetic_dysphonia_conversion_dysphonia:
-  female:
-    age_stats:
-      max: 34
-      mean: 34
-      min: 34
-      std: null
-    total: 1
-hypokinetic_dysphonia_extraglottic_air_leak:
-  female:
-    age_stats:
-      max: 26
-      mean: 26
-      min: 26
-      std: null
-    total: 1
-hypokinetic_dysphonia_glottic_insufficiency:
-  female:
-    age_stats:
-      max: 67
-      mean: 56.75
-      min: 44
-      std: 9.810708435174291
-    total: 4
+      mean: 41.10526315789474
+      std: 14.192700537177965
+      min: 18
+      max: 64
   male:
-    age_stats:
-      max: 65
-      mean: 59.666666666666664
-      min: 55
-      std: 5.033222956847166
     total: 3
-hypokinetic_dysphonia_presbiphonia:
-  male:
     age_stats:
-      max: 70
-      mean: 70
-      min: 70
-      std: null
-    total: 1
-hypokinetic_dysphonia_spasmodic_dysphonia:
-  female:
-    age_stats:
-      max: 70
-      mean: 70
-      min: 70
-      std: null
-    total: 1
+      mean: 35
+      std: 14.52583904633395
+      min: 21
+      max: 50
 hypokinetic_dysphonia_vocal_fold_paralysis:
   female:
-    age_stats:
-      max: 62
-      mean: 53.75
-      min: 43
-      std: 9.287087810503355
     total: 4
+    age_stats:
+      mean: 53.75
+      std: 9.287087810503355
+      min: 43
+      max: 62
+hypokinetic_dysphonia_glottic_insufficiency:
+  male:
+    total: 3
+    age_stats:
+      mean: 59.666666666666664
+      std: 5.033222956847166
+      min: 55
+      max: 65
+  female:
+    total: 4
+    age_stats:
+      mean: 56.75
+      std: 9.810708435174291
+      min: 44
+      max: 67
+hyperkinetic_dysphonia_reinkes_edema:
+  female:
+    total: 2
+    age_stats:
+      mean: 45
+      std: 31.11269837220809
+      min: 23
+      max: 67
+  male:
+    total: 1
+    age_stats:
+      mean: 53
+      std: null
+      min: 53
+      max: 53
+hyperkinetic_dysphonia:
+  female:
+    total: 28
+    age_stats:
+      mean: 46.642857142857146
+      std: 12.049940174169256
+      min: 24
+      max: 70
+  male:
+    total: 15
+    age_stats:
+      mean: 45
+      std: 14.476582074903888
+      min: 22
+      max: 69
+hyperkinetic_dysphonia_polyps:
+  female:
+    total: 3
+    age_stats:
+      mean: 39
+      std: 10.583005244258363
+      min: 27
+      max: 47
+  male:
+    total: 3
+    age_stats:
+      mean: 46
+      std: 22.271057451320086
+      min: 26
+      max: 70
+hyperkinetic_dysphonia_nodule:
+  female:
+    total: 3
+    age_stats:
+      mean: 36.333333333333336
+      std: 14.571661996262929
+      min: 26
+      max: 53
+  male:
+    total: 2
+    age_stats:
+      mean: 37.5
+      std: 4.949747468305833
+      min: 34
+      max: 41
 normal:
   female:
-    age_stats:
-      max: 62
-      mean: 34.416666666666664
-      min: 20
-      std: 12.984331216618635
     total: 36
-  male:
     age_stats:
-      max: 66
-      mean: 41.23809523809524
-      min: 23
-      std: 13.269908673026961
+      mean: 34.416666666666664
+      std: 12.984331216618635
+      min: 20
+      max: 62
+  male:
     total: 21
-reflux_laryngitis:
+    age_stats:
+      mean: 41.23809523809524
+      std: 13.269908673026961
+      min: 23
+      max: 66
+hypokinetic_dysphonia_spasmodic_dysphonia:
   female:
+    total: 1
     age_stats:
+      mean: 70
+      std: null
+      min: 70
       max: 70
-      mean: 47.89473684210526
-      min: 31
-      std: 10.471626939508202
-    total: 19
+hypokinetic_dysphonia_adduction_deficit:
+  female:
+    total: 1
+    age_stats:
+      mean: 55
+      std: null
+      min: 55
+      max: 55
+hyperkinetic_dysphonia_vocal_fold_paralysis:
+  female:
+    total: 1
+    age_stats:
+      mean: 58
+      std: null
+      min: 58
+      max: 58
+hypokinetic_dysphonia_presbiphonia:
   male:
+    total: 1
     age_stats:
+      mean: 70
+      std: null
+      min: 70
       max: 70
+hyperkinetic_dysphonia_vocal_fold_nodules:
+  female:
+    total: 1
+    age_stats:
       mean: 51
-      min: 31
-      std: 11.377365443917341
-    total: 19
+      std: null
+      min: 51
+      max: 51
+hyperkinetic_dysphonia_rigid_vocal_fold:
+  male:
+    total: 1
+    age_stats:
+      mean: 50
+      std: null
+      min: 50
+      max: 50
+hyperkinetic_dysphonia_adduction_deficit:
+  male:
+    total: 1
+    age_stats:
+      mean: 43
+      std: null
+      min: 43
+      max: 43
+hypokinetic_dysphonia_conversion_dysphonia:
+  female:
+    total: 1
+    age_stats:
+      mean: 34
+      std: null
+      min: 34
+      max: 34

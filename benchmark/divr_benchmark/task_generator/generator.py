@@ -21,6 +21,8 @@ class Generator:
     def to_task_file(self, tasks: List[Task], output_path: Path) -> None:
         tasks_dict = {}
         for task in tasks:
+            if len(task.audio_keys) < 1:
+                raise ValueError(f"Invalid task (no audio keys): {task.id}")
             task_data = task.__dict__.copy()
             del task_data["id"]
             task_data["label"] = task.label.name
