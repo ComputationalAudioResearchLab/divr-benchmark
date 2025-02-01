@@ -1,4 +1,5 @@
 from pathlib import Path
+from typing import Literal
 from class_argparse import ClassArgParser
 
 from .analysis import (
@@ -7,7 +8,10 @@ from .analysis import (
 )
 from .level_3_confusion import level_3_confusion
 from .processor import Processor
+from .validate_terms import ValidateTerms
 from .logger import Logger
+from .diag_maps import DIAGNOSIS_MAPS
+from .match_manual import MatchManual
 
 
 class Main(ClassArgParser):
@@ -33,6 +37,12 @@ class Main(ClassArgParser):
 
     def process_diagnosis_list(self):
         Processor().run()
+
+    def validate_terms(self, map: Literal[tuple(DIAGNOSIS_MAPS.keys())]):  # type: ignore -- appease pylance
+        ValidateTerms(diagnosis_map=DIAGNOSIS_MAPS[map]()).run()
+
+    def match_manual(self):
+        MatchManual().run()
 
 
 if __name__ == "__main__":

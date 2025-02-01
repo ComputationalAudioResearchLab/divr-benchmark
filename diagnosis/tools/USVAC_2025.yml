@@ -1,0 +1,2024 @@
+### level 0
+pathological:
+  level: 0
+normal:
+  level: 0
+  alias:
+    - healthy
+unclassified:
+  level: 0
+  alias:
+    - not sure
+    - pathological voice- diagnosis n/a
+
+### level 1
+functional:
+  level: 1
+  alias:
+    - psychogenic
+  parents:
+    pathological: 1.00
+muscle_tension:
+  level: 1
+  alias:
+    - muscle tension/adaptive dysphonia (secondary)
+    - muscle tension dysphonia (primary)
+  parents:
+    pathological: 1.00
+non_laryngeal:
+  level: 1
+  parents:
+    pathological: 1.00
+organic:
+  level: 1
+  parents:
+    pathological: 1.00
+unclassified_pathology:
+  level: 1
+  alias:
+    - "voice disorders: undiagnosed or not otherwise specified (nos)"
+    - "mixed"
+  parents:
+    pathological: 1.00
+
+### level 2
+organic_inflammatory:
+  level: 2
+  parents:
+    organic: 1.00
+metabolic:
+  level: 2
+  alias:
+    - endocrine
+  parents:
+    non_laryngeal: 1.00
+organic_neuro_muscular:
+  level: 2
+  parents:
+    organic: 1.00
+psychiatric:
+  level: 2
+  alias:
+    - psychological
+  parents:
+    non_laryngeal: 1.00
+respiratory:
+  level: 2
+  parents:
+    organic: 1.00
+organic_structural:
+  level: 2
+  parents:
+    organic: 1.00
+systemic:
+  level: 2
+  parents:
+    non_laryngeal: 1.00
+organic_trauma:
+  level: 2
+  parents:
+    organic: 1.00
+
+### level 3
+a_p_compression:
+  level: 3
+  alias:
+    - a-p compression
+    - a-p compression (moderate)
+  parents:
+    muscle_tension: 0.43
+    unclassified_pathology: 0.57
+  votes:
+    clinician 1: muscle tension
+    clinician 2: muscle tension
+    clinician 3: not a diagnosis
+    clinician 4: not a diagnosis
+    clinician 5: not a diagnosis
+    clinician 6: muscle tension
+    clinician 7: not a diagnosis
+a_p_squeezing:
+  level: 3
+  alias:
+    - a-p squeezing
+    - a-p squeezing (mild)
+    - a-p squeezing (moderate)
+    - a-p squeezing (severe)
+  parents:
+    muscle_tension: 0.17
+    unclassified_pathology: 0.83
+  votes:
+    clinician 1: not a diagnosis
+    clinician 2: muscle tension
+    clinician 3: not a diagnosis
+    clinician 4: not a diagnosis
+    clinician 5: not a diagnosis
+    clinician 6: na
+    clinician 7: not a diagnosis
+abductor_spasmodic_dysphonia:
+  level: 3
+  alias:
+    - abductor spasmodic dysphonia
+  parents:
+    organic_neuro_muscular: 1.00
+  votes:
+    clinician 1: organic > neuro-muscular
+    clinician 2: organic > neuro-muscular
+    clinician 3: organic > neuro-muscular
+    clinician 4: organic > neuro-muscular
+    clinician 5: organic > neuro-muscular
+    clinician 6: na
+    clinician 7: organic > neuro-muscular
+abnormal_vocal_process:
+  level: 3
+  alias:
+    - abnormal vocal process
+  parents:
+    organic_structural: 0.50
+    unclassified_pathology: 0.50
+  votes:
+    clinician 1: organic > structural
+    clinician 2: organic > structural
+    clinician 3: organic > structural
+    clinician 4: not a diagnosis
+    clinician 5: not a diagnosis
+    clinician 6: na
+    clinician 7: not a diagnosis
+acute_laryngitis:
+  level: 3
+  alias:
+    - acute laryngitis
+  parents:
+    organic_inflammatory: 0.86
+    unclassified_pathology: 0.14
+  votes:
+    clinician 1: organic > inflammatory
+    clinician 2: organic > inflammatory
+    clinician 3: organic > inflammatory
+    clinician 4: organic > inflammatory
+    clinician 5: organic > inflammatory
+    clinician 6: organic > inflammatory
+    clinician 7: not a diagnosis
+adductor_spasmodic_dysphonia:
+  level: 3
+  alias:
+    - adductor spasmodic dysphonia
+  parents:
+    organic_neuro_muscular: 1.00
+  votes:
+    clinician 1: organic > neuro-muscular
+    clinician 2: organic > neuro-muscular
+    clinician 3: organic > neuro-muscular
+    clinician 4: organic > neuro-muscular
+    clinician 5: organic > neuro-muscular
+    clinician 6: na
+    clinician 7: organic > neuro-muscular
+afrin_rhinitis:
+  level: 3
+  alias:
+    - afrin rhinitis
+  parents:
+    unclassified_pathology: 1.00
+  votes:
+    clinician 1: not a diagnosis
+    clinician 2: not a diagnosis
+    clinician 3: not a diagnosis
+    clinician 4: not a diagnosis
+    clinician 5: not a diagnosis
+    clinician 6: na
+    clinician 7: not a diagnosis
+amyotrophic_lateral_sclerosis:
+  level: 3
+  alias:
+    - amyotrophic lateral sclerosis
+    - amyotrophe lateralsklerose
+    - amyotrophic lateral sclerosis (als; lou gehrig's disease)
+  parents:
+    organic_neuro_muscular: 1.00
+  votes:
+    clinician 1: organic > neuro-muscular
+    clinician 2: organic > neuro-muscular
+    clinician 3: organic > neuro-muscular
+    clinician 4: organic > neuro-muscular
+    clinician 5: organic > neuro-muscular
+    clinician 6: organic > neuro-muscular
+    clinician 7: organic > neuro-muscular
+anterior_saccular_cyst:
+  level: 3
+  alias:
+    - anterior saccular cyst
+  parents:
+    organic_neuro_muscular: 1.00
+  votes:
+    clinician 1: organic > structural
+    clinician 2: organic > structural
+    clinician 3: organic > structural
+    clinician 4: organic > structural
+    clinician 5: organic > structural
+    clinician 6: na
+    clinician 7: organic > structural
+aryluxation:
+  level: 3
+  parents:
+    unclassified_pathology: 0.43
+    organic_structural: 0.29
+    organic_trauma: 0.29
+  votes:
+    clinician 1: organic > trauma
+    clinician 2: not a diagnosis
+    clinician 3: organic > trauma
+    clinician 4: not a diagnosis
+    clinician 5: not a diagnosis
+    clinician 6: organic > organic_structural
+    clinician 7: organic > organic_structural
+arytenoid:
+  level: 3
+  parents:
+    unclassified_pathology: 1.00
+  votes:
+    clinician 1: not a diagnosis
+    clinician 2: not a diagnosis
+    clinician 3: not a diagnosis
+    clinician 4: not a diagnosis
+    clinician 5: not a diagnosis
+    clinician 6: not a diagnosis
+    clinician 7: not a diagnosis
+arytenoid_dislocation:
+  level: 3
+  alias:
+    - arytenoid dislocation
+  parents:
+    organic_structural: 0.43
+    organic_trauma: 0.57
+  votes:
+    clinician 1: organic > trauma
+    clinician 2: organic > trauma
+    clinician 3: organic > trauma
+    clinician 4: organic > structural
+    clinician 5: organic > trauma
+    clinician 6: organic > structural
+    clinician 7: organic > structural
+aspiration:
+  level: 3
+  parents:
+    unclassified_pathology: 1.00
+  votes:
+    clinician 1: not a diagnosis
+    clinician 2: not a diagnosis
+    clinician 3: not a diagnosis
+    clinician 4: not a diagnosis
+    clinician 5: not a diagnosis
+    clinician 6: not a diagnosis
+    clinician 7: not a diagnosis
+athetoid:
+  level: 3
+  alias:
+    - athetoid (or mixed)
+  parents:
+    organic_neuro_muscular: 0.43
+    unclassified_pathology: 0.57
+  votes:
+    clinician 1: not a diagnosis
+    clinician 2: organic > neuro muscular
+    clinician 3: organic > neuro muscular
+    clinician 4: not a diagnosis
+    clinician 5: not a diagnosis
+    clinician 6: organic > neuro muscular
+    clinician 7: not a diagnosis
+balbuties:
+  level: 3
+  parents:
+    unclassified_pathology: 1.00
+  votes:
+    clinician 1: not a diagnosis
+    clinician 2: not a diagnosis
+    clinician 3: not a diagnosis
+    clinician 4: not a diagnosis
+    clinician 5: not a diagnosis
+    clinician 6: not a diagnosis
+    clinician 7: not a diagnosis
+bilateral_recurrent_laryngeal_nerve_(rln)_paralysis_peripheral:
+  level: 3
+  alias:
+    - bilateral recurrent laryngeal nerve (rln) paralysis-peripheral
+  parents:
+    organic_neuro_muscular: 1.00
+  votes:
+    clinician 1: organic > neuro-muscular
+    clinician 2: organic > neuro-muscular
+    clinician 3: organic > neuro-muscular
+    clinician 4: organic > neuro-muscular
+    clinician 5: organic > neuro-muscular
+    clinician 6: organic > neuro-muscular
+    clinician 7: organic > neuro-muscular
+bulbar_paralysis:
+  level: 3
+  alias:
+    - bulbar paralysis
+    - bulbärparalyse
+    - bulb�rparalyse
+  parents:
+    organic: 0.14
+    organic_neuro_muscular: 0.86
+  votes:
+    clinician 1: organic > neuro-muscular
+    clinician 2: organic > neuro-muscular
+    clinician 3: organic > neuro-muscular
+    clinician 4: organic > neuro-muscular
+    clinician 5: organic > neuro-muscular
+    clinician 6: organic
+    clinician 7: organic > neuro-muscular
+carcinoma_in_situ:
+  level: 3
+  alias:
+    - carcinoma in situ
+  parents:
+    organic_structural: 1.00
+  votes:
+    clinician 1: organic > structural
+    clinician 2: organic > structural
+    clinician 3: organic > structural
+    clinician 4: organic > structural
+    clinician 5: organic > structural
+    clinician 6: organic > structural
+    clinician 7: organic > structural
+central_laryngeal_movement_disorder:
+  level: 3
+  alias:
+    - central laryngeal movement disorder
+    - zentral-laryngale bewegungsstörung
+    - zentral-laryngale bewegungsst�rung
+  parents:
+    organic_neuro_muscular: 1.00
+  votes:
+    clinician 1: organic > neuro-muscular
+    clinician 2: organic > neuro-muscular
+    clinician 3: organic > neuro-muscular
+    clinician 4: organic > neuro-muscular
+    clinician 5: organic > neuro-muscular
+    clinician 6: organic > neuro-muscular
+    clinician 7: organic > neuro-muscular
+chondroma:
+  level: 3
+  alias:
+    - chondrom
+  parents:
+    unclassified: 0.14
+    unclassified_pathology: 0.14
+    organic_structural: 0.71
+  votes:
+    clinician 1: organic > structural
+    clinician 2: not a diagnosis
+    clinician 3: organic > structural
+    clinician 4: organic > structural
+    clinician 5: organic > structural
+    clinician 6: na
+    clinician 7: organic > structural
+chordectomy:
+  level: 3
+  alias:
+    - chordektomie
+  parents:
+    unclassified_pathology: 0.57
+    organic: 0.14
+    organic_structural: 0.29
+  votes:
+    clinician 1: not a diagnosis
+    clinician 2: organic > structural
+    clinician 3: organic > structural
+    clinician 4: not a diagnosis
+    clinician 5: not a diagnosis
+    clinician 6: organic
+    clinician 7: not a diagnosis
+contact_pachyderma:
+  level: 3
+  alias:
+    - contact pachyderma
+    - kontaktpachydermie
+  parents:
+    unclassified_pathology: 0.57
+    organic_inflammatory: 0.14
+    organic_structural: 0.29
+  votes:
+    clinician 1: organic > structural
+    clinician 2: not a diagnosis
+    clinician 3: organic > inflammatory
+    clinician 4: not a diagnosis
+    clinician 5: not a diagnosis
+    clinician 6: not a diagnosis
+    clinician 7: organic > structural
+cyst:
+  level: 3
+  alias:
+    - cyste
+  parents:
+    organic_structural: 1.00
+  votes:
+    clinician 1: organic > structural
+    clinician 2: organic > structural
+    clinician 3: organic > structural
+    clinician 4: organic > structural
+    clinician 5: organic > structural
+    clinician 6: organic > structural
+    clinician 7: organic > structural
+diplophony:
+  level: 3
+  alias:
+    - diplophonie
+  parents:
+    unclassified_pathology: 1.00
+  votes:
+    clinician 1: not a diagnosis
+    clinician 2: not a diagnosis
+    clinician 3: not a diagnosis
+    clinician 4: not a diagnosis
+    clinician 5: not a diagnosis
+    clinician 6: not a diagnosis
+    clinician 7: not a diagnosis
+dish_syndrome:
+  level: 3
+  alias:
+    - dish syndrome
+    - dish-syndrom
+  parents:
+    unclassified: 0.14
+    unclassified_pathology: 0.57
+    organic_inflammatory: 0.14
+    organic_structural: 0.14
+  votes:
+    clinician 1: organic > structural
+    clinician 2: not a diagnosis
+    clinician 3: organic > inflammatory
+    clinician 4: not a diagnosis
+    clinician 5: not a diagnosis
+    clinician 6: na
+    clinician 7: not a diagnosis
+downs_disease:
+  level: 3
+  alias:
+    - down's disease
+    - morbus down
+  parents:
+    unclassified_pathology: 0.86
+    organic_neuro_muscular: 0.14
+  votes:
+    clinician 1: not a diagnosis
+    clinician 2: not a diagnosis
+    clinician 3: organic > neuro-muscular
+    clinician 4: not a diagnosis
+    clinician 5: not a diagnosis
+    clinician 6: not a diagnosis
+    clinician 7: not a diagnosis
+dysarthria:
+  level: 3
+  alias:
+    - dysarthria
+  parents:
+    unclassified_pathology: 0.71
+    organic_neuro_muscular: 0.29
+  votes:
+    clinician 1: organic > neuro-muscular
+    clinician 2: organic > neuro-muscular
+    clinician 3: not a diagnosis
+    clinician 4: not a diagnosis
+    clinician 5: not a diagnosis
+    clinician 6: not a diagnosis
+    clinician 7: not a diagnosis
+dysarthrophonia:
+  level: 3
+  alias:
+    - dysarthrophonie
+  parents:
+    unclassified: 0.14
+    unclassified_pathology: 0.71
+    organic_neuro_muscular: 0.14
+  votes:
+    clinician 1: organic > neuro-muscular
+    clinician 2: not a diagnosis
+    clinician 3: not a diagnosis
+    clinician 4: not a diagnosis
+    clinician 5: not a diagnosis
+    clinician 6: na
+    clinician 7: not a diagnosis
+dysody:
+  level: 3
+  alias:
+    - dysodie
+  parents:
+    unclassified: 0.14
+    unclassified_pathology: 0.86
+  votes:
+    clinician 1: not a diagnosis
+    clinician 2: not a diagnosis
+    clinician 3: not a diagnosis
+    clinician 4: not a diagnosis
+    clinician 5: not a diagnosis
+    clinician 6: na
+    clinician 7: not a diagnosis
+dysphonia:
+  level: 3
+  alias:
+    - dysphonie
+  parents:
+    unclassified: 0.14
+    unclassified_pathology: 0.71
+    muscle_tension: 0.14
+  votes:
+    clinician 1: muscle tension
+    clinician 2: not a diagnosis
+    clinician 3: not a diagnosis
+    clinician 4: not a diagnosis
+    clinician 5: not a diagnosis
+    clinician 6: na
+    clinician 7: not a diagnosis
+dysplastic_dysphonia:
+  level: 3
+  alias:
+    - dysplastic dysphonia
+    - dysplastische dysphonie
+  parents:
+    unclassified: 0.14
+    unclassified_pathology: 0.71
+    organic_structural: 0.14
+  votes:
+    clinician 1: organic > structural
+    clinician 2: not a diagnosis
+    clinician 3: not a diagnosis
+    clinician 4: not a diagnosis
+    clinician 5: not a diagnosis
+    clinician 6: na
+    clinician 7: not a diagnosis
+dysplastic_larynx:
+  level: 3
+  alias:
+    - dysplastic larynx
+    - dysplastischer kehlkopf
+  parents:
+    unclassified: 0.14
+    unclassified_pathology: 0.43
+    organic_structural: 0.43
+  votes:
+    clinician 1: organic > structural
+    clinician 2: not a diagnosis
+    clinician 3: not a diagnosis
+    clinician 4: organic > structural
+    clinician 5: organic > structural
+    clinician 6: na
+    clinician 7: not a diagnosis
+epiglottic_carcinoma:
+  level: 3
+  alias:
+    - epiglottic carcinoma
+    - epiglottiskarzinom
+  parents:
+    unclassified: 0.14
+    unclassified_pathology: 0.14
+    organic_structural: 0.71
+  votes:
+    clinician 1: organic > structural
+    clinician 2: organic > structural
+    clinician 3: not a diagnosis
+    clinician 4: organic > structural
+    clinician 5: organic > structural
+    clinician 6: na
+    clinician 7: organic > structural
+fibroma:
+  level: 3
+  alias:
+    - fibrom
+  parents:
+    unclassified_pathology: 0.14
+    organic_structural: 0.86
+  votes:
+    clinician 1: organic > structural
+    clinician 2: not a diagnosis
+    clinician 3: organic > structural
+    clinician 4: organic > structural
+    clinician 5: organic > structural
+    clinician 6: organic > structural
+    clinician 7: organic > structural
+frontolateral_partial_resection:
+  level: 3
+  alias:
+    - frontolateral partial resection
+    - frontolaterale teilresektion
+  parents:
+    unclassified_pathology: 0.86
+    organic_structural: 0.14
+  votes:
+    clinician 1: not a diagnosis
+    clinician 2: organic > structural
+    clinician 3: not a diagnosis
+    clinician 4: not a diagnosis
+    clinician 5: not a diagnosis
+    clinician 6: not a diagnosis
+    clinician 7: not a diagnosis
+functional_dysphonia:
+  level: 3
+  alias:
+    - functional dysphonia
+    - funktionelle dysphonie
+  parents:
+    functional: 1.00
+  votes:
+    clinician 1: functional
+    clinician 2: functional
+    clinician 3: functional
+    clinician 4: functional
+    clinician 5: functional
+    clinician 6: functional
+    clinician 7: functional
+gerd:
+  level: 3
+  alias:
+    - gastrix reflux
+    - gerd
+  parents:
+    unclassified_pathology: 0.71
+    organic_inflammatory: 0.29
+  votes:
+    clinician 1: organic > inflammatory
+    clinician 2: organic > inflammatory
+    clinician 3: not a diagnosis
+    clinician 4: not a diagnosis
+    clinician 5: not a diagnosis
+    clinician 6: not a diagnosis
+    clinician 7: not a diagnosis
+granuloma:
+  level: 3
+  alias:
+    - granulom
+  parents:
+    organic_inflammatory: 0.43
+    organic_structural: 0.57
+  votes:
+    clinician 1: organic > structural
+    clinician 2: organic > inflammatory
+    clinician 3: organic > structural
+    clinician 4: organic > inflammatory
+    clinician 5: organic > inflammatory
+    clinician 6: organic > structural
+    clinician 7: organic > structural
+hyperasthenia:
+  level: 3
+  alias:
+    - hyperasthenie
+  parents:
+    unclassified_pathology: 1.00
+  votes:
+    clinician 1: not a diagnosis
+    clinician 2: not a diagnosis
+    clinician 3: not a diagnosis
+    clinician 4: not a diagnosis
+    clinician 5: not a diagnosis
+    clinician 6: not a diagnosis
+    clinician 7: not a diagnosis
+hyperfunctional_dysphonia:
+  level: 3
+  alias:
+    - hyperfunctional dysphonia
+    - hyperfunktionelle dysphonie
+  parents:
+    unclassified_pathology: 0.29
+    muscle_tension: 0.71
+  votes:
+    clinician 1: muscle tension
+    clinician 2: not a diagnosis
+    clinician 3: muscle tension
+    clinician 4: muscle tension
+    clinician 5: muscle tension
+    clinician 6: not a diagnosis
+    clinician 7: muscle tension
+hyperkinetic_dysphonia:
+  level: 3
+  alias:
+    - hyperkinetic dysphonia
+    - hyperkinetic dysphonia
+  parents:
+    unclassified_pathology: 0.29
+    muscle_tension: 0.57
+    organic_neuro_muscular: 0.14
+  votes:
+    clinician 1: organic > neuro-muscular
+    clinician 2: not a diagnosis
+    clinician 3: muscle tension
+    clinician 4: muscle tension
+    clinician 5: muscle tension
+    clinician 6: not a diagnosis
+    clinician 7: muscle tension
+hyperkinetic_dysphonia_adduction_deficit:
+  level: 3
+  alias:
+    - hyperkinetic dysphonia (adduction deficit)
+  parents:
+    unclassified_pathology: 0.29
+    muscle_tension: 0.57
+    organic_neuro_muscular: 0.14
+  votes:
+    clinician 1: organic > neuro-muscular
+    clinician 2: not a diagnosis
+    clinician 3: muscle tension
+    clinician 4: muscle tension
+    clinician 5: muscle tension
+    clinician 6: not a diagnosis
+    clinician 7: muscle tension
+hyperkinetic_dysphonia_cordite:
+  level: 3
+  alias:
+    - hyperkinetic dysphonia (cordite)
+  parents:
+    unclassified_pathology: 0.86
+    muscle_tension: 0.14
+  votes:
+    clinician 1: not a diagnosis
+    clinician 2: not a diagnosis
+    clinician 3: muscle tension
+    clinician 4: not a diagnosis
+    clinician 5: not a diagnosis
+    clinician 6: not a diagnosis
+    clinician 7: not a diagnosis
+hyperkinetic_dysphonia_nodule:
+  level: 3
+  alias:
+    - hyperkinetic dysphonia (nodule)
+  parents:
+    unclassified_pathology: 0.43
+    muscle_tension: 0.43
+    organic_structural: 0.14
+  votes:
+    clinician 1: muscle tension
+    clinician 2: not a diagnosis
+    clinician 3: muscle tension
+    clinician 4: not a diagnosis
+    clinician 5: not a diagnosis
+    clinician 6: organic > structural
+    clinician 7: muscle tension
+hyperkinetic_dysphonia_polyps:
+  level: 3
+  alias:
+    - hyperkinetic dysphonia (polyps)
+  parents:
+    unclassified_pathology: 0.29
+    muscle_tension: 0.43
+    organic_structural: 0.29
+  votes:
+    clinician 1: muscle tension
+    clinician 2: not a diagnosis
+    clinician 3: muscle tension
+    clinician 4: organic > structural
+    clinician 5: not a diagnosis
+    clinician 6: organic > structural
+    clinician 7: muscle tension
+hyperkinetic_dysphonia_prolapse:
+  level: 3
+  alias:
+    - hyperkinetic dysphonia (prolapse)
+  parents:
+    unclassified_pathology: 0.86
+    muscle_tension: 0.14
+  votes:
+    clinician 1: not a diagnosis
+    clinician 2: not a diagnosis
+    clinician 3: muscle tension
+    clinician 4: not a diagnosis
+    clinician 5: not a diagnosis
+    clinician 6: not a diagnosis
+    clinician 7: not a diagnosis
+hyperkinetic_dysphonia_reinkes_edema:
+  level: 3
+  alias:
+    - hyperkinetic dysphonia (reinke's edema)
+  parents:
+    unclassified_pathology: 0.29
+    muscle_tension: 0.29
+    organic_inflammatory: 0.14
+    organic_structural: 0.29
+  votes:
+    clinician 1: organic > inflammatory
+    clinician 2: not a diagnosis
+    clinician 3: muscle tension
+    clinician 4: organic > structural
+    clinician 5: not a diagnosis
+    clinician 6: organic > structural
+    clinician 7: muscle tension
+hyperkinetic_dysphonia_rigid_vocal_fold:
+  level: 3
+  alias:
+    - hyperkinetic dysphonia  (rigid vocal fold)
+  parents:
+    unclassified_pathology: 0.29
+    muscle_tension: 0.57
+    organic_structural: 0.14
+  votes:
+    clinician 1: organic > structural
+    clinician 2: not a diagnosis
+    clinician 3: muscle tension
+    clinician 4: muscle tension
+    clinician 5: muscle tension
+    clinician 6: not a diagnosis
+    clinician 7: muscle tension
+hyperkinetic_dysphonia_vocal_fold_nodules:
+  level: 3
+  alias:
+    - hyperkinetic dysphonia (vocal fold nodules)
+  parents:
+    unclassified_pathology: 0.29
+    muscle_tension: 0.43
+    organic_structural: 0.29
+  votes:
+    clinician 1: muscle tension
+    clinician 2: not a diagnosis
+    clinician 3: muscle tension
+    clinician 4: organic > structural
+    clinician 5: not a diagnosis
+    clinician 6: organic > structural
+    clinician 7: muscle tension
+hyperkinetic_dysphonia_vocal_fold_paralysis:
+  level: 3
+  alias:
+    - hyperkinetic dysphonia (vocal fold paralysis)
+  parents:
+    unclassified_pathology: 0.29
+    muscle_tension: 0.29
+    organic: 0.14
+    organic_neuro_muscular: 0.14
+    organic_structural: 0.14
+  votes:
+    clinician 1: organic > structural
+    clinician 2: not a diagnosis
+    clinician 3: muscle tension
+    clinician 4: organic > neuro-muscular
+    clinician 5: not a diagnosis
+    clinician 6: organic
+    clinician 7: muscle tension
+hyperkinetic_dysphonia_vocal_fold_prolapse:
+  level: 3
+  alias:
+    - hyperkinetic dysphonia (vocal fold prolapse)
+  parents:
+    unclassified_pathology: 0.71
+    muscle_tension: 0.14
+    organic_structural: 0.14
+  votes:
+    clinician 1: organic > structural
+    clinician 2: not a diagnosis
+    clinician 3: muscle tension
+    clinician 4: not a diagnosis
+    clinician 5: not a diagnosis
+    clinician 6: not a diagnosis
+    clinician 7: not a diagnosis
+hypofunctional_dysphonia:
+  level: 3
+  alias:
+    - hypofunctional dysphonia
+    - hypofunktionelle dysphonie
+  parents:
+    unclassified_pathology: 0.43
+    functional: 0.14
+    muscle_tension: 0.14
+    organic_neuro_muscular: 0.14
+    organic_structural: 0.14
+  votes:
+    clinician 1: organic > structural
+    clinician 2: not a diagnosis
+    clinician 3: organic > neuro-muscular
+    clinician 4: not a diagnosis
+    clinician 5: not a diagnosis
+    clinician 6: functional
+    clinician 7: muscle tension
+hypokinetic_dysphonia:
+  level: 3
+  alias:
+    - hypokinetic dysphonia
+  parents:
+    unclassified_pathology: 0.43
+    muscle_tension: 0.14
+    organic_neuro_muscular: 0.43
+  votes:
+    clinician 1: organic > neuro-muscular
+    clinician 2: not a diagnosis
+    clinician 3: organic > neuro-muscular
+    clinician 4: not a diagnosis
+    clinician 5: not a diagnosis
+    clinician 6: organic > neuro-muscular
+    clinician 7: muscle tension
+hypokinetic_dysphonia_adduction_deficit:
+  level: 3
+  alias:
+    - hypokinetic dysphonia (adduction deficit)
+  parents:
+    unclassified_pathology: 0.29
+    muscle_tension: 0.14
+    organic_neuro_muscular: 0.57
+  votes:
+    clinician 1: organic > neuro-muscular
+    clinician 2: not a diagnosis
+    clinician 3: organic > neuro-muscular
+    clinician 4: organic > neuro-muscular
+    clinician 5: not a diagnosis
+    clinician 6: organic > neuro-muscular
+    clinician 7: muscle tension
+hypokinetic_dysphonia_bilateral_vocal_fold:
+  level: 3
+  alias:
+    - hypokinetic dysphonia (bilateral vocal fold)
+  parents:
+    unclassified_pathology: 0.57
+    organic_neuro_muscular: 0.29
+    organic_structural: 0.14
+  votes:
+    clinician 1: organic > structural
+    clinician 2: not a diagnosis
+    clinician 3: organic > neuro-muscular
+    clinician 4: not a diagnosis
+    clinician 5: not a diagnosis
+    clinician 6: organic > neuro-muscular
+    clinician 7: not a diagnosis
+hypokinetic_dysphonia_conversion_dysphonia:
+  level: 3
+  alias:
+    - hypokinetic dysphonia (conversion dysphonia)
+  parents:
+    unclassified_pathology: 0.29
+    functional: 0.71
+  votes:
+    clinician 1: functional
+    clinician 2: not a diagnosis
+    clinician 3: functional
+    clinician 4: functional
+    clinician 5: functional
+    clinician 6: functional
+    clinician 7: not a diagnosis
+hypokinetic_dysphonia_dysphonia_by_chordal_groove:
+  level: 3
+  alias:
+    - hypokinetic dysphonia (dysphonia by chordal groove)
+  parents:
+    unclassified_pathology: 0.57
+    muscle_tension: 0.14
+    organic_neuro_muscular: 0.14
+    organic_structural: 0.14
+  votes:
+    clinician 1: organic > structural
+    clinician 2: not a diagnosis
+    clinician 3: organic > neuro-muscular
+    clinician 4: not a diagnosis
+    clinician 5: not a diagnosis
+    clinician 6: not a diagnosis
+    clinician 7: muscle tension
+hypokinetic_dysphonia_extraglottic_air_leak:
+  level: 3
+  alias:
+    - hypokinetic dysphonia (extraglottic air leak)
+  parents:
+    unclassified_pathology: 0.29
+    muscle_tension: 0.14
+    organic_neuro_muscular: 0.29
+    organic_structural: 0.29
+  votes:
+    clinician 1: organic > neuro-muscular
+    clinician 2: not a diagnosis
+    clinician 3: organic > neuro-muscular
+    clinician 4: organic > structural
+    clinician 5: organic > structural
+    clinician 6: not a diagnosis
+    clinician 7: muscle tension
+hypokinetic_dysphonia_glottic_insufficiency:
+  level: 3
+  alias:
+    - hypokinetic dysphonia (glottic insufficiency)
+  parents:
+    unclassified_pathology: 0.29
+    muscle_tension: 0.14
+    organic_neuro_muscular: 0.29
+    organic_structural: 0.29
+  votes:
+    clinician 1: organic > neuro-muscular
+    clinician 2: not a diagnosis
+    clinician 3: organic > neuro-muscular
+    clinician 4: organic > structural
+    clinician 5: organic > structural
+    clinician 6: not a diagnosis
+    clinician 7: muscle tension
+hypokinetic_dysphonia_laryngitis:
+  level: 3
+  alias:
+    - hypokinetic dysphonia (laryngitis)
+  parents:
+    unclassified_pathology: 0.57
+    organic_inflammatory: 0.29
+    organic_structural: 0.14
+  votes:
+    clinician 1: organic > inflammatory
+    clinician 2: not a diagnosis
+    clinician 3: organic > inflammatory
+    clinician 4: not a diagnosis
+    clinician 5: not a diagnosis
+    clinician 6: organic > structural
+    clinician 7: not a diagnosis
+hypokinetic_dysphonia_presbiphonia:
+  level: 3
+  alias:
+    - hypokinetic dysphonia (presbiphonia)
+  parents:
+    unclassified_pathology: 0.14
+    muscle_tension: 0.14
+    organic_structural: 0.71
+  votes:
+    clinician 1: organic > structural
+    clinician 2: not a diagnosis
+    clinician 3: organic > structural
+    clinician 4: organic > structural
+    clinician 5: organic > structural
+    clinician 6: organic > structural
+    clinician 7: muscle tension
+hypokinetic_dysphonia_spasmodic_dysphonia:
+  level: 3
+  alias:
+    - hypokinetic dysphonia (spasmodic dysphonia)
+  parents:
+    unclassified_pathology: 0.29
+    organic_neuro_muscular: 0.71
+  votes:
+    clinician 1: organic > neuro-muscular
+    clinician 2: not a diagnosis
+    clinician 3: organic > neuro-muscular
+    clinician 4: organic > neuro-muscular
+    clinician 5: organic > neuro-muscular
+    clinician 6: organic > neuro-muscular
+    clinician 7: not a diagnosis
+hypokinetic_dysphonia_vocal_fold_paralysis:
+  level: 3
+  alias:
+    - hypokinetic dysphonia (vocal fold paralysis)
+  parents:
+    unclassified_pathology: 0.29
+    organic: 0.14
+    organic_neuro_muscular: 0.57
+  votes:
+    clinician 1: organic > neuro-muscular
+    clinician 2: not a diagnosis
+    clinician 3: organic > neuro-muscular
+    clinician 4: organic > neuro-muscular
+    clinician 5: organic > neuro-muscular
+    clinician 6: organic
+    clinician 7: not a diagnosis
+hypopharyngeal_tumor:
+  level: 3
+  alias:
+    - hypopharyngeal tumor
+    - hypopharynxtumor
+  parents:
+    organic_structural: 1.00
+  votes:
+    clinician 1: organic > structural
+    clinician 2: organic > structural
+    clinician 3: organic > structural
+    clinician 4: organic > structural
+    clinician 5: organic > structural
+    clinician 6: organic > structural
+    clinician 7: organic > structural
+hypotonic_dysphonia:
+  level: 3
+  alias:
+    - hypotonic dysphonia
+    - hypotone dysphonie
+  parents:
+    unclassified_pathology: 0.57
+    organic_neuro_muscular: 0.43
+  votes:
+    clinician 1: organic > neuro-muscular
+    clinician 2: not a diagnosis
+    clinician 3: organic > neuro-muscular
+    clinician 4: not a diagnosis
+    clinician 5: not a diagnosis
+    clinician 6: not a diagnosis
+    clinician 7: organic > neuro-muscular
+internal_weakness:
+  level: 3
+  alias:
+    - internal weakness
+    - internusschwäche
+    - internusschw�che
+  parents:
+    unclassified_pathology: 1.00
+  votes:
+    clinician 1: not a diagnosis
+    clinician 2: not a diagnosis
+    clinician 3: not a diagnosis
+    clinician 4: not a diagnosis
+    clinician 5: not a diagnosis
+    clinician 6: not a diagnosis
+    clinician 7: not a diagnosis
+intubation_granuloma:
+  level: 3
+  alias:
+    - intubation granuloma
+    - intubationsgranulom
+  parents:
+    organic_inflammatory: 0.29
+    organic_structural: 0.29
+    organic_trauma: 0.43
+  votes:
+    clinician 1: organic > trauma
+    clinician 2: organic > trauma
+    clinician 3: organic > trauma
+    clinician 4: organic > inflammatory
+    clinician 5: organic > inflammatory
+    clinician 6: organic > structural
+    clinician 7: organic > structural
+intubation_trauma:
+  level: 3
+  alias:
+    - intubation trauma
+    - intubationsschaden
+  parents:
+    unclassified_pathology: 0.29
+    organic_trauma: 0.71
+  votes:
+    clinician 1: organic > trauma
+    clinician 2: organic > trauma
+    clinician 3: organic > trauma
+    clinician 4: organic > trauma
+    clinician 5: organic > trauma
+    clinician 6: not a diagnosis
+    clinician 7: not a diagnosis
+juvenile_dysphonia:
+  level: 3
+  alias:
+    - juvenile dysphonia
+    - juvenile dysphonie
+  parents:
+    unclassified_pathology: 0.57
+    functional: 0.43
+  votes:
+    clinician 1: not a diagnosis
+    clinician 2: not a diagnosis
+    clinician 3: not a diagnosis
+    clinician 4: functional
+    clinician 5: functional
+    clinician 6: functional
+    clinician 7: not a diagnosis
+keratosis:
+  level: 3
+  alias:
+    - keratosis (sometimes described as leukoplakia or erythroplasia)
+  parents:
+    organic_structural: 1.00
+  votes:
+    clinician 1: organic > structural
+    clinician 2: organic > structural
+    clinician 3: organic > structural
+    clinician 4: organic > structural
+    clinician 5: organic > structural
+    clinician 6: organic > structural
+    clinician 7: organic > structural
+laryngeal_mucosa_trauma:
+  level: 3
+  alias:
+    - laryngeal mucosa trauma (chemical and thermal)
+  parents:
+    organic: 0.14
+    organic_trauma: 0.86
+  votes:
+    clinician 1: organic > trauma
+    clinician 2: organic > trauma
+    clinician 3: organic > trauma
+    clinician 4: organic > trauma
+    clinician 5: organic > trauma
+    clinician 6: organic
+    clinician 7: organic > trauma
+laryngeal_tumor:
+  level: 3
+  alias:
+    - laryngeal tumor
+    - kehlkopftumor
+  parents:
+    organic_structural: 1.00
+  votes:
+    clinician 1: organic > structural
+    clinician 2: organic > structural
+    clinician 3: organic > structural
+    clinician 4: organic > structural
+    clinician 5: organic > structural
+    clinician 6: organic > structural
+    clinician 7: organic > structural
+laryngitis:
+  level: 3
+  alias:
+    - laryngitis
+  parents:
+    unclassified_pathology: 0.14
+    organic_inflammatory: 0.71
+    organic_structural: 0.14
+  votes:
+    clinician 1: organic > inflammatory
+    clinician 2: organic > inflammatory
+    clinician 3: organic > inflammatory
+    clinician 4: organic > inflammatory
+    clinician 5: organic > inflammatory
+    clinician 6: organic > structural
+    clinician 7: not a diagnosis
+laryngocele:
+  level: 3
+  alias:
+    - laryngozele
+  parents:
+    organic_structural: 1.00
+  votes:
+    clinician 1: organic > structural
+    clinician 2: organic > structural
+    clinician 3: organic > structural
+    clinician 4: organic > structural
+    clinician 5: organic > structural
+    clinician 6: organic > structural
+    clinician 7: organic > structural
+laryngopharyngeal_reflux:
+  level: 3
+  alias:
+    - laryngopharyngeal reflux
+  parents:
+    unclassified_pathology: 0.43
+    organic_inflammatory: 0.57
+  votes:
+    clinician 1: organic > inflammatory
+    clinician 2: organic > inflammatory
+    clinician 3: not a diagnosis
+    clinician 4: organic > inflammatory
+    clinician 5: not a diagnosis
+    clinician 6: not a diagnosis
+    clinician 7: not a diagnosis
+leukoplakia:
+  level: 3
+  alias:
+    - leukoplakie
+  parents:
+    organic_structural: 1.00
+  votes:
+    clinician 1: organic > structural
+    clinician 2: organic > structural
+    clinician 3: organic > structural
+    clinician 4: organic > structural
+    clinician 5: organic > structural
+    clinician 6: organic > structural
+    clinician 7: organic > structural
+major_depressive_disorder:
+  level: 3
+  alias:
+    - major depressive disorder (recurrent)
+  parents:
+    unclassified_pathology: 1.00
+  votes:
+    clinician 1: not a diagnosis
+    clinician 2: not a diagnosis
+    clinician 3: not a diagnosis
+    clinician 4: not a diagnosis
+    clinician 5: not a diagnosis
+    clinician 6: not a diagnosis
+    clinician 7: not a diagnosis
+medial_cervical_cyst:
+  level: 3
+  alias:
+    - medial cervical cyst
+    - mediale halscyste
+  parents:
+    unclassified_pathology: 0.86
+    organic_structural: 0.14
+  votes:
+    clinician 1: organic > structural
+    clinician 2: not a diagnosis
+    clinician 3: not a diagnosis
+    clinician 4: not a diagnosis
+    clinician 5: not a diagnosis
+    clinician 6: not a diagnosis
+    clinician 7: not a diagnosis
+mesopharyngeal_tumor:
+  level: 3
+  alias:
+    - mesopharyngeal tumor
+    - mesopharynxtumor
+  parents:
+    unclassified_pathology: 0.71
+    organic_structural: 0.29
+  votes:
+    clinician 1: organic > structural
+    clinician 2: not a diagnosis
+    clinician 3: organic > structural
+    clinician 4: not a diagnosis
+    clinician 5: not a diagnosis
+    clinician 6: not a diagnosis
+    clinician 7: not a diagnosis
+monochorditis:
+  level: 3
+  alias:
+    - monochorditis
+  parents:
+    unclassified_pathology: 0.29
+    organic_inflammatory: 0.57
+    organic_structural: 0.14
+  votes:
+    clinician 1: not a diagnosis
+    clinician 2: organic > inflammatory
+    clinician 3: organic > inflammatory
+    clinician 4: organic > inflammatory
+    clinician 5: organic > inflammatory
+    clinician 6: organic > structural
+    clinician 7: not a diagnosis
+mutation:
+  level: 3
+  alias:
+    - mutatio
+  parents:
+    unclassified_pathology: 0.86
+    organic_structural: 0.14
+  votes:
+    clinician 1: organic > structural
+    clinician 2: not a diagnosis
+    clinician 3: not a diagnosis
+    clinician 4: not a diagnosis
+    clinician 5: not a diagnosis
+    clinician 6: not a diagnosis
+    clinician 7: not a diagnosis
+mutation_fistula_voice:
+  level: 3
+  alias:
+    - mutation fistula voice
+    - mutationsfistelstimme
+  parents:
+    unclassified_pathology: 0.86
+    organic_structural: 0.14
+  votes:
+    clinician 1: not a diagnosis
+    clinician 2: not a diagnosis
+    clinician 3: organic > structural
+    clinician 4: not a diagnosis
+    clinician 5: not a diagnosis
+    clinician 6: not a diagnosis
+    clinician 7: not a diagnosis
+myasthenia:
+  level: 3
+  alias:
+    - phonasthenie
+  parents:
+    unclassified: 1.00
+  votes:
+    clinician 1: na
+    clinician 2: na
+    clinician 3: na
+    clinician 4: na
+    clinician 5: na
+    clinician 6: na
+    clinician 7: na
+non_fluency_syndrome:
+  level: 3
+  alias:
+    - non-fluency syndrome
+    - non-fluency-syndrom
+  parents:
+    unclassified_pathology: 1.00
+  votes:
+    clinician 1: not a diagnosis
+    clinician 2: not a diagnosis
+    clinician 3: not a diagnosis
+    clinician 4: not a diagnosis
+    clinician 5: not a diagnosis
+    clinician 6: not a diagnosis
+    clinician 7: not a diagnosis
+non_intubation_related_vocal_fold_granuloma:
+  level: 3
+  alias:
+    - non-intubation related vocal fold granuloma
+  parents:
+    organic_inflammatory: 0.43
+    organic_structural: 0.43
+    organic_trauma: 0.14
+  votes:
+    clinician 1: organic > structural
+    clinician 2: organic > inflammatory
+    clinician 3: organic > trauma
+    clinician 4: organic > inflammatory
+    clinician 5: organic > inflammatory
+    clinician 6: organic > structural
+    clinician 7: organic > structural
+orofacial_dyspraxia:
+  level: 3
+  alias:
+    - orofacial dyspraxia
+    - orofaciale dyspraxie
+  parents:
+    unclassified_pathology: 0.57
+    functional: 0.14
+    organic_neuro_muscular: 0.29
+  votes:
+    clinician 1: organic > neuro-muscular
+    clinician 2: not a diagnosis
+    clinician 3: organic > neuro-muscular
+    clinician 4: not a diagnosis
+    clinician 5: not a diagnosis
+    clinician 6: functional
+    clinician 7: not a diagnosis
+papilloma:
+  level: 3
+  alias:
+    - papillom
+  parents:
+    organic_structural: 1.00
+  votes:
+    clinician 1: organic > structural
+    clinician 2: organic > structural
+    clinician 3: organic > structural
+    clinician 4: organic > structural
+    clinician 5: organic > structural
+    clinician 6: organic > structural
+    clinician 7: organic > structural
+paralysis:
+  level: 3
+  alias:
+    - paralysis
+  parents:
+    organic_neuro_muscular: 1.00
+  votes:
+    clinician 1: organic > neuro-muscular
+    clinician 2: organic > neuro-muscular
+    clinician 3: organic > neuro-muscular
+    clinician 4: organic > neuro-muscular
+    clinician 5: organic > neuro-muscular
+    clinician 6: organic > neuro-muscular
+    clinician 7: organic > neuro-muscular
+parkinsons:
+  level: 3
+  alias:
+    - morbus parkinson
+    - parkinson disease
+  parents:
+    organic_neuro_muscular: 1.00
+  votes:
+    clinician 1: organic > neuro-muscular
+    clinician 2: organic > neuro-muscular
+    clinician 3: organic > neuro-muscular
+    clinician 4: organic > neuro-muscular
+    clinician 5: organic > neuro-muscular
+    clinician 6: organic > neuro-muscular
+    clinician 7: organic > neuro-muscular
+phonation_nodules:
+  level: 3
+  alias:
+    - phonation nodules
+    - phonationsknötchen
+    - phonationskn�tchen
+  parents:
+    unclassified_pathology: 0.43
+    muscle_tension: 0.14
+    organic_structural: 0.43
+  votes:
+    clinician 1: muscle tension
+    clinician 2: not a diagnosis
+    clinician 3: organic > structural
+    clinician 4: organic > structural
+    clinician 5: organic > structural
+    clinician 6: not a diagnosis
+    clinician 7: not a diagnosis
+pocket_fold_hyperplasia:
+  level: 3
+  alias:
+    - pocket fold hyperplasia
+    - taschenfaltenhyperplasie
+  parents:
+    unclassified_pathology: 0.86
+    organic_structural: 0.14
+  votes:
+    clinician 1: organic > structural
+    clinician 2: not a diagnosis
+    clinician 3: not a diagnosis
+    clinician 4: not a diagnosis
+    clinician 5: not a diagnosis
+    clinician 6: not a diagnosis
+    clinician 7: not a diagnosis
+pocket_fold_voice:
+  level: 3
+  alias:
+    - pocket fold voice
+    - taschenfaltenstimme
+  parents:
+    unclassified_pathology: 1.00
+  votes:
+    clinician 1: not a diagnosis
+    clinician 2: not a diagnosis
+    clinician 3: not a diagnosis
+    clinician 4: not a diagnosis
+    clinician 5: not a diagnosis
+    clinician 6: not a diagnosis
+    clinician 7: not a diagnosis
+polters_syndrome:
+  level: 3
+  alias:
+    - polter's syndrome
+    - poltersyndrom
+  parents:
+    unclassified: 1.00
+  votes:
+    clinician 1: na
+    clinician 2: na
+    clinician 3: na
+    clinician 4: na
+    clinician 5: na
+    clinician 6: na
+    clinician 7: na
+presbyphonia:
+  level: 3
+  alias:
+    - presbyphonia
+  parents:
+    organic_structural: 1.00
+  votes:
+    clinician 1: organic > structural
+    clinician 2: organic > structural
+    clinician 3: organic > structural
+    clinician 4: organic > structural
+    clinician 5: organic > structural
+    clinician 6: organic > structural
+    clinician 7: organic > structural
+psychogenic_aphonia:
+  level: 3
+  alias:
+    - psychogenic aphonia
+    - psychogene aphonie
+  parents:
+    functional: 1.00
+  votes:
+    clinician 1: functional
+    clinician 2: functional
+    clinician 3: functional
+    clinician 4: functional
+    clinician 5: functional
+    clinician 6: functional
+    clinician 7: functional
+psychogenic_dysphonia:
+  level: 3
+  alias:
+    - psychogenic dysphonia
+    - psychogene dysphonie
+  parents:
+    functional: 1.00
+  votes:
+    clinician 1: functional
+    clinician 2: functional
+    clinician 3: functional
+    clinician 4: functional
+    clinician 5: functional
+    clinician 6: functional
+    clinician 7: functional
+psychogenic_microphony:
+  level: 3
+  alias:
+    - psychogenic microphony
+    - psychogene mikrophonie
+  parents:
+    unclassified_pathology: 0.29
+    functional: 0.71
+  votes:
+    clinician 1: functional
+    clinician 2: functional
+    clinician 3: functional
+    clinician 4: functional
+    clinician 5: functional
+    clinician 6: not a diagnosis
+    clinician 7: not a diagnosis
+puberphonia:
+  level: 3
+  alias:
+    - puberphonia
+  parents:
+    functional: 1.00
+  votes:
+    clinician 1: functional
+    clinician 2: functional
+    clinician 3: functional
+    clinician 4: functional
+    clinician 5: functional
+    clinician 6: functional
+    clinician 7: functional
+reactive_vocal_fold_lesion:
+  level: 3
+  alias:
+    - reactive vocal fold lesion
+  parents:
+    organic_structural: 1.00
+  votes:
+    clinician 1: organic > structural
+    clinician 2: organic > structural
+    clinician 3: organic > structural
+    clinician 4: organic > structural
+    clinician 5: organic > structural
+    clinician 6: organic > structural
+    clinician 7: organic > structural
+recurrent_paralysis:
+  level: 3
+  alias:
+    - recurrent paralysis
+    - rekurrensparese
+  parents:
+    unclassified_pathology: 0.14
+    organic_neuro_muscular: 0.86
+  votes:
+    clinician 1: organic > neuro-muscular
+    clinician 2: organic > neuro-muscular
+    clinician 3: organic > neuro-muscular
+    clinician 4: organic > neuro-muscular
+    clinician 5: organic > neuro-muscular
+    clinician 6: organic > neuro-muscular
+    clinician 7: not a diagnosis
+reflux_laryngitis:
+  level: 3
+  alias:
+    - reflux laryngitis
+  parents:
+    unclassified_pathology: 0.14
+    organic_inflammatory: 0.86
+  votes:
+    clinician 1: organic > inflammatory
+    clinician 2: organic > inflammatory
+    clinician 3: organic > inflammatory
+    clinician 4: organic > inflammatory
+    clinician 5: organic > inflammatory
+    clinician 6: organic > inflammatory
+    clinician 7: not a diagnosis
+reinkes_edema:
+  level: 3
+  alias:
+    - reinke's edema
+    - reinke’s edema
+    - reinke edema
+    - reinke ödem
+    - reinke �dem
+  parents:
+    organic_inflammatory: 0.14
+    organic_structural: 0.86
+  votes:
+    clinician 1: organic > inflammatory
+    clinician 2: organic > structural
+    clinician 3: organic > structural
+    clinician 4: organic > structural
+    clinician 5: organic > structural
+    clinician 6: organic > structural
+    clinician 7: organic > structural
+rhinophony_aperta:
+  level: 3
+  alias:
+    - rhinophony aperta
+    - rhinophonie aperta
+  parents:
+    unclassified_pathology: 1.00
+  votes:
+    clinician 1: not a diagnosis
+    clinician 2: not a diagnosis
+    clinician 3: not a diagnosis
+    clinician 4: not a diagnosis
+    clinician 5: not a diagnosis
+    clinician 6: not a diagnosis
+    clinician 7: not a diagnosis
+rhinophony_clausa:
+  level: 3
+  alias:
+    - rhinophony clausa
+    - rhinophonie clausa
+  parents:
+    unclassified_pathology: 1.00
+  votes:
+    clinician 1: not a diagnosis
+    clinician 2: not a diagnosis
+    clinician 3: not a diagnosis
+    clinician 4: not a diagnosis
+    clinician 5: not a diagnosis
+    clinician 6: not a diagnosis
+    clinician 7: not a diagnosis
+rhinophony_mixta:
+  level: 3
+  alias:
+    - rhinophony mixta
+    - rhinophonie mixta
+  parents:
+    unclassified_pathology: 1.00
+  votes:
+    clinician 1: not a diagnosis
+    clinician 2: not a diagnosis
+    clinician 3: not a diagnosis
+    clinician 4: not a diagnosis
+    clinician 5: not a diagnosis
+    clinician 6: not a diagnosis
+    clinician 7: not a diagnosis
+sigmatism:
+  level: 3
+  alias:
+    - sigmatismus
+  parents:
+    unclassified_pathology: 1.00
+  votes:
+    clinician 1: not a diagnosis
+    clinician 2: not a diagnosis
+    clinician 3: not a diagnosis
+    clinician 4: not a diagnosis
+    clinician 5: not a diagnosis
+    clinician 6: not a diagnosis
+    clinician 7: not a diagnosis
+singers_voice:
+  level: 3
+  alias:
+    - singer's voice
+    - singing voice
+    - sängerstimme
+    - s�ngerstimme
+    - gesangsstimme
+  parents:
+    normal: 1.00
+  votes:
+    clinician 1: normal
+    clinician 2: normal
+    clinician 3: normal
+    clinician 4: normal
+    clinician 5: normal
+    clinician 6: normal
+    clinician 7: normal
+spasmodic_dysphonia:
+  level: 3
+  alias:
+    - spasmodic dysphonia
+    - spasmodische dysphonie
+  parents:
+    organic_neuro_muscular: 1.00
+  votes:
+    clinician 1: organic > neuro-muscular
+    clinician 2: organic > neuro-muscular
+    clinician 3: organic > neuro-muscular
+    clinician 4: organic > neuro-muscular
+    clinician 5: organic > neuro-muscular
+    clinician 6: organic > neuro-muscular
+    clinician 7: organic > neuro-muscular
+spastic:
+  level: 3
+  parents:
+    organic_neuro_muscular: 0.14
+    unclassified_pathology: 0.86
+  votes:
+    clinician 1: organic > neuro-muscular
+    clinician 2: not a diagnosis
+    clinician 3: not a diagnosis
+    clinician 4: not a diagnosis
+    clinician 5: not a diagnosis
+    clinician 6: not a diagnosis
+    clinician 7: not a diagnosis
+superior_laryngeal_nerve_lesion:
+  level: 3
+  alias:
+    - superior laryngeal nerve lesion
+    - n. laryngeus superior läsion
+    - n. laryngeus superior l�sion
+  parents:
+    unclassified_pathology: 0.14
+    organic_neuro_muscular: 0.86
+  votes:
+    clinician 1: organic > neuro-muscular
+    clinician 2: organic > neuro-muscular
+    clinician 3: organic > neuro-muscular
+    clinician 4: organic > neuro-muscular
+    clinician 5: organic > neuro-muscular
+    clinician 6: not a diagnosis
+    clinician 7: organic > neuro-muscular
+superior_laryngeal_nerve_neuralgia:
+  level: 3
+  alias:
+    - superior laryngeal nerve neuralgia
+    - n. laryngeus superior neuralgie
+  parents:
+    unclassified_pathology: 0.14
+    organic_neuro_muscular: 0.86
+  votes:
+    clinician 1: organic > neuro-muscular
+    clinician 2: organic > neuro-muscular
+    clinician 3: organic > neuro-muscular
+    clinician 4: organic > neuro-muscular
+    clinician 5: organic > neuro-muscular
+    clinician 6: not a diagnosis
+    clinician 7: organic > neuro-muscular
+synechia:
+  level: 3
+  alias:
+    - synechie
+  parents:
+    unclassified_pathology: 0.57
+    organic_structural: 0.43
+  votes:
+    clinician 1: organic > structural
+    clinician 2: not a diagnosis
+    clinician 3: not a diagnosis
+    clinician 4: organic > structural
+    clinician 5: organic > structural
+    clinician 6: not a diagnosis
+    clinician 7: not a diagnosis
+unilateral_or_bilateral_recurrent_laryngeal_nerve_(rln)_paresis:
+  level: 3
+  alias:
+    - unilateral or bilateral recurrent laryngeal nerve (rln) paresis
+  parents:
+    organic_neuro_muscular: 1.00
+  votes:
+    clinician 1: organic > neuro-muscular
+    clinician 2: organic > neuro-muscular
+    clinician 3: organic > neuro-muscular
+    clinician 4: organic > neuro-muscular
+    clinician 5: organic > neuro-muscular
+    clinician 6: organic > neuro-muscular
+    clinician 7: organic > neuro-muscular
+unilateral_recurrent_laryngeal_nerve_(rln)_paralysis:
+  level: 3
+  alias:
+    - unilateral recurrent laryngeal nerve (rln) paralysis
+  parents:
+    organic_neuro_muscular: 1.00
+  votes:
+    clinician 1: organic > neuro-muscular
+    clinician 2: organic > neuro-muscular
+    clinician 3: organic > neuro-muscular
+    clinician 4: organic > neuro-muscular
+    clinician 5: organic > neuro-muscular
+    clinician 6: organic > neuro-muscular
+    clinician 7: organic > neuro-muscular
+varix_and_ectasia_of_the_vocal_fold:
+  level: 3
+  alias:
+    - varix and ectasia of the vocal fold
+  parents:
+    organic_structural: 1.00
+  votes:
+    clinician 1: organic > structural
+    clinician 2: organic > structural
+    clinician 3: organic > structural
+    clinician 4: organic > structural
+    clinician 5: organic > structural
+    clinician 6: organic > structural
+    clinician 7: organic > structural
+valleculacyste:
+  level: 3
+  alias:
+    - valleculacyste
+  parents:
+    unclassified_pathology: 0.43
+    organic_structural: 0.57
+  votes:
+    clinician 1: organic > structural
+    clinician 2: not a diagnosis
+    clinician 3: not a diagnosis
+    clinician 4: organic > structural
+    clinician 5: organic > structural
+    clinician 6: not a diagnosis
+    clinician 7: organic > structural
+velopharyngoplasty:
+  level: 3
+  alias:
+    - velopharyngoplastik
+  parents:
+    unclassified_pathology: 1.00
+  votes:
+    clinician 1: not a diagnosis
+    clinician 2: not a diagnosis
+    clinician 3: not a diagnosis
+    clinician 4: not a diagnosis
+    clinician 5: not a diagnosis
+    clinician 6: not a diagnosis
+    clinician 7: not a diagnosis
+ventricular_dysphonia:
+  level: 3
+  alias:
+    - ventricular dysphonia
+  parents:
+    muscle_tension: 0.57
+    unclassified_pathology: 0.43
+  votes:
+    clinician 1: muscle tension
+    clinician 2: not a diagnosis
+    clinician 3: not a diagnosis
+    clinician 4: muscle tension
+    clinician 5: muscle tension
+    clinician 6: not a diagnosis
+    clinician 7: muscle tension
+vocal_fold_carcinoma:
+  level: 3
+  alias:
+    - vocal fold carcinoma
+    - stimmlippenkarzinom
+  parents:
+    organic_structural: 1.00
+  votes:
+    clinician 1: organic > structural
+    clinician 2: organic > structural
+    clinician 3: organic > structural
+    clinician 4: organic > structural
+    clinician 5: organic > structural
+    clinician 6: organic > structural
+    clinician 7: organic > structural
+vocal_fold_cyst_sub_epithelial:
+  level: 3
+  alias:
+    - vocal fold cyst-sub-epithelial
+  parents:
+    organic_structural: 1.00
+  votes:
+    clinician 1: organic > structural
+    clinician 2: organic > structural
+    clinician 3: organic > structural
+    clinician 4: organic > structural
+    clinician 5: organic > structural
+    clinician 6: organic > structural
+    clinician 7: organic > structural
+vocal_fold_hemorrhage:
+  level: 3
+  alias:
+    - vocal fold hemorrhage
+  parents:
+    organic_structural: 1.00
+  votes:
+    clinician 1: organic > structural
+    clinician 2: organic > structural
+    clinician 3: organic > structural
+    clinician 4: organic > structural
+    clinician 5: organic > structural
+    clinician 6: organic > structural
+    clinician 7: organic > structural
+vocal_fold_nodules:
+  level: 3
+  alias:
+    - vocal fold nodules
+  parents:
+    organic_structural: 1.00
+  votes:
+    clinician 1: organic > structural
+    clinician 2: organic > structural
+    clinician 3: organic > structural
+    clinician 4: organic > structural
+    clinician 5: organic > structural
+    clinician 6: organic > structural
+    clinician 7: organic > structural
+vocal_fold_polyp:
+  level: 3
+  alias:
+    - vocal fold polyp
+    - stimmlippenpolyp
+    - vocal fold polyp(s)
+  parents:
+    organic_structural: 1.00
+  votes:
+    clinician 1: organic > structural
+    clinician 2: organic > structural
+    clinician 3: organic > structural
+    clinician 4: organic > structural
+    clinician 5: organic > structural
+    clinician 6: organic > structural
+    clinician 7: organic > structural
+vocal_fold_scar:
+  level: 3
+  alias:
+    - vocal fold scar proper
+  parents:
+    organic_structural: 1.00
+  votes:
+    clinician 1: organic > structural
+    clinician 2: organic > structural
+    clinician 3: organic > structural
+    clinician 4: organic > structural
+    clinician 5: organic > structural
+    clinician 6: organic > structural
+    clinician 7: organic > structural
+vocal_fold_sulcus:
+  level: 3
+  alias:
+    - vocal fold sulcus
+  parents:
+    organic_structural: 1.00
+  votes:
+    clinician 1: organic > structural
+    clinician 2: organic > structural
+    clinician 3: organic > structural
+    clinician 4: organic > structural
+    clinician 5: organic > structural
+    clinician 6: organic > structural
+    clinician 7: organic > structural
+vox_senilis:
+  level: 3
+  alias:
+    - vox senilis
+  parents:
+    unclassified_pathology: 0.71
+    organic_structural: 0.29
+  votes:
+    clinician 1: not a diagnosis
+    clinician 2: not a diagnosis
+    clinician 3: not a diagnosis
+    clinician 4: organic > structural
+    clinician 5: organic > structural
+    clinician 6: not a diagnosis
+    clinician 7: not a diagnosis
+without_dysarthria:
+  level: 3
+  alias:
+    - without dysarthria
+  parents:
+    normal: 1.00

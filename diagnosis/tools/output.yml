@@ -8,7 +8,8 @@ normal:
     (also normal voice)'
   level: 0
 pathological:
-  alias: []
+  alias:
+  - pathological
   level: 0
 unclassified:
   alias: []
@@ -698,7 +699,7 @@ diffuse_mild_irregularities_of_musculomembranous_vocal_folds:
     clinician 5: unclassified
     clinician 6: na
     clinician 7: unclassified
-diplophonie:
+diplophony:
   alias:
   - diplophonie
   level: 3
@@ -743,7 +744,7 @@ dish_syndrome:
     clinician 5: unclassified
     clinician 6: na
     clinician 7: unclassified
-down_syndrome:
+downs_disease:
   alias:
   - down's disease
   level: 3
@@ -1191,7 +1192,7 @@ hemorrhagic_polyp:
     clinician 5: organic > structural
     clinician 6: organic > structural
     clinician 7: organic > structural
-hyperasthenie:
+hyperasthenia:
   alias:
   - hyperasthenie
   level: 3
@@ -1223,7 +1224,7 @@ hyperfunction:
     clinician 5: muscle_tension
     clinician 6: unclassified
     clinician 7: muscle_tension
-hyperfunktionelle_dysphonie:
+hyperfunctional_dysphonia:
   alias:
   - hyperfunktionelle dysphonie
   level: 3
@@ -2352,7 +2353,7 @@ nodular_swelling:
     clinician 5: organic > structural
     clinician 6: organic > structural
     clinician 7: organic > structural
-non_fluency_syndrom:
+non_fluency_syndrome:
   alias:
   - non-fluency-syndrom
   level: 3
@@ -2517,20 +2518,6 @@ partial_laryngectomy:
     clinician 5: unclassified
     clinician 6: unclassified
     clinician 7: organic > structural
-pathological:
-  alias:
-  - pathological
-  level: 3
-  parents:
-    unclassified: 1.0
-  votes:
-    clinician 1: unclassified
-    clinician 2: unclassified
-    clinician 3: unclassified
-    clinician 4: unclassified
-    clinician 5: unclassified
-    clinician 6: unclassified
-    clinician 7: unclassified
 pathological_voice_diagnosis_n_a:
   alias:
   - pathological voice- diagnosis n/a
@@ -2576,7 +2563,7 @@ pocket_fold_hyperplasia:
     clinician 5: unclassified
     clinician 6: unclassified
     clinician 7: unclassified
-pocket_wrinkled_voice:
+pocket_fold_voice:
   alias:
   - pocket wrinkled voice
   level: 3
@@ -3298,7 +3285,7 @@ reflux_laryngitis:
     clinician 5: organic > inflammatory
     clinician 6: organic > inflammatory
     clinician 7: unclassified
-reinke_s_edema:
+reinkes_edema:
   alias:
   - 'reinke''s edema
 
@@ -3331,7 +3318,7 @@ restriction_of_arytenoid_movement:
     clinician 5: organic > structural
     clinician 6: unclassified
     clinician 7: organic > structural
-rhinophonie_aperta:
+rhinophony_aperta:
   alias:
   - rhinophonie aperta
   level: 3
@@ -3345,7 +3332,7 @@ rhinophonie_aperta:
     clinician 5: unclassified
     clinician 6: unclassified
     clinician 7: unclassified
-rhinophonie_clausa:
+rhinophony_clausa:
   alias:
   - rhinophonie clausa
   level: 3
@@ -3359,7 +3346,7 @@ rhinophonie_clausa:
     clinician 5: unclassified
     clinician 6: unclassified
     clinician 7: unclassified
-rhinophonie_mixta:
+rhinophony_mixta:
   alias:
   - rhinophonie mixta
   level: 3
@@ -4034,7 +4021,7 @@ vocal_fold_polyp:
     clinician 5: organic > structural
     clinician 6: organic > structural
     clinician 7: organic > structural
-vocal_fold_scar_proper:
+vocal_fold_scar:
   alias:
   - vocal fold scar proper
   level: 3
