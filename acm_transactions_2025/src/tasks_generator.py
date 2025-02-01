@@ -31,13 +31,15 @@ class TaskGenerator:
 
     async def generate(self) -> None:
         diagnosis_map = diagnosis_maps.USVAC_2025()
+        diag_level = 4
         coros = []
         coros += [
             self.__benchmark.generate_task(
                 filter_func=self.__filter_func(
                     allowed_suffixes=[
                         "-phrase.wav",
-                    ]
+                    ],
+                    diag_level=diag_level,
                 ),
                 task_path=self.__ensure_path(f"{self.__tasks_path}/phrase"),
                 diagnosis_map=diagnosis_map,
@@ -48,7 +50,8 @@ class TaskGenerator:
                 filter_func=self.__filter_func(
                     allowed_suffixes=[
                         "-a_n.wav",
-                    ]
+                    ],
+                    diag_level=diag_level,
                 ),
                 task_path=self.__ensure_path(f"{self.__tasks_path}/a_n"),
                 diagnosis_map=diagnosis_map,
@@ -59,7 +62,8 @@ class TaskGenerator:
                 filter_func=self.__filter_func(
                     allowed_suffixes=[
                         "-i_n.wav",
-                    ]
+                    ],
+                    diag_level=diag_level,
                 ),
                 task_path=self.__ensure_path(f"{self.__tasks_path}/i_n"),
                 diagnosis_map=diagnosis_map,
@@ -70,7 +74,8 @@ class TaskGenerator:
                 filter_func=self.__filter_func(
                     allowed_suffixes=[
                         "-u_n.wav",
-                    ]
+                    ],
+                    diag_level=diag_level,
                 ),
                 task_path=self.__ensure_path(f"{self.__tasks_path}/u_n"),
                 diagnosis_map=diagnosis_map,
@@ -84,7 +89,8 @@ class TaskGenerator:
                         "-a_n.wav",
                         "-i_n.wav",
                         "-u_n.wav",
-                    ]
+                    ],
+                    diag_level=diag_level,
                 ),
                 task_path=self.__ensure_path(f"{self.__tasks_path}/all"),
                 diagnosis_map=diagnosis_map,
@@ -101,7 +107,10 @@ class TaskGenerator:
         for db in cross_test_datasets:
             coros += [
                 self.__benchmark.generate_task(
-                    filter_func=self.__cross_test_filter_func(databse_name=db),
+                    filter_func=self.__cross_test_filter_func(
+                        databse_name=db,
+                        diag_level=diag_level,
+                    ),
                     task_path=self.__ensure_path(
                         f"{self.__tasks_path}/cross_test_{db}"
                     ),
@@ -110,20 +119,22 @@ class TaskGenerator:
             ]
         await asyncio.gather(*coros)
 
-    def __cross_test_filter_func(self, databse_name: str):
+    def __cross_test_filter_func(self, databse_name: str, diag_level: int):
         async def filter_func(database_func: DatabaseFunc) -> DatabaseFunc:
             db = await database_func(name=databse_name)
             return Dataset(
                 train=[],
                 val=[],
-                test=db.all(level=3),
+                test=db.all(level=diag_level),
             )
 
         return filter_func
 
-    def __filter_func(self, allowed_suffixes: List[str]):
+    def __filter_func(self, allowed_suffixes: List[str], diag_level: int):
         async def filter_func(database_func: DatabaseFunc) -> Dataset:
-            svd_data = await self.__svd_data(database_func=database_func)
+            svd_data = await self.__svd_data(
+                database_func=database_func, diag_level=diag_level
+            )
             svd_data.train = self.__filter_audio_files(
                 tasks=svd_data.train, allowed_suffixes=allowed_suffixes
             )
@@ -150,11 +161,11 @@ class TaskGenerator:
             task.audio_keys = [x for x in task.audio_keys if file_filter(x)]
         return tasks
 
-    async def __svd_data(self, database_func: DatabaseFunc) -> Dataset:
+    async def __svd_data(self, database_func: DatabaseFunc, diag_level: int) -> Dataset:
         db = await database_func(name="svd")
-        train_data = db.all_train(level=3)
-        val_data = db.all_val(level=3)
-        test_data = db.all_test(level=3)
+        train_data = db.all_train(level=diag_level)
+        val_data = db.all_val(level=diag_level)
+        test_data = db.all_test(level=diag_level)
 
         train_data = self.__collate_by_speaker_id(tasks=train_data)
         val_data = self.__collate_by_speaker_id(tasks=val_data)
