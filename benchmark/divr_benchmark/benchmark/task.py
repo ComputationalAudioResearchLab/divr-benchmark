@@ -177,6 +177,8 @@ class Task:
             if diag_level is not None:
                 label = label.at_level(diag_level)
             audio = self.__audio_loader(val["audio_keys"])
+            if len(audio) < 1:
+                raise ValueError(f"Invalid data point (no audio): {key}")
             dataset.append(DataPoint(id=key, audio=audio, label=label))
         return dataset
 

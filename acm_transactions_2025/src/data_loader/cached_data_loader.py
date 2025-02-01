@@ -32,7 +32,7 @@ class CachedDataLoader(BaseDataLoader):
         device: torch.device,
         diag_levels: List[int],
         task,
-        feature_function: Feature,
+        feature_function: Feature | None,
         return_ids: bool,
         cache_path: Path,
     ) -> None:
@@ -56,13 +56,15 @@ class CachedDataLoader(BaseDataLoader):
             self.feature_size = feature_function.feature_size
         self.__shuffle_train = shuffle_train
         self.__return_ids = return_ids
+        self.__create_cache(task.train, self.__cache_key_train)
+        self.__create_cache(task.val, self.__cache_key_val)
+        self.__create_cache(task.test, self.__cache_key_test)
+        self.__train_points = self.__prepare_points_for_indexing(task.train)
+        self.__val_points = self.__prepare_points_for_indexing(task.val)
+        self.__test_points = self.__prepare_points_for_indexing(task.test)
 
-        train_len = self.__create_cache(task.train, self.__cache_key_train)
-        val_len = self.__create_cache(task.val, self.__cache_key_val)
-        test_len = self.__create_cache(task.test, self.__cache_key_test)
-        self.__train_indices = np.arange(train_len)
-        self.__test_indices = np.arange(test_len)
-        self.__val_indices = np.arange(val_len)
+    def __prepare_points_for_indexing(self, points: list) -> np.ndarray:
+        return np.array([{"id": point.id, "label": point.label} for point in points])
 
     def __del__(self):
         self.__cache.close()
@@ -100,21 +102,26 @@ class CachedDataLoader(BaseDataLoader):
         start = idx * self.__batch_size
         end = start + self.__batch_size
         return [
-            self.__cache[f"{self.__cache_key}:{i}"] for i in self.__indices[start:end]
+            {
+                "features": self.__cache[f"{self.__cache_key}:{point['id']}"],
+                "id": point["id"],
+                "label": point["label"],
+            }
+            for point in self.__points[start:end]
         ]
 
     def train(self) -> CachedDataLoader:
         if self.__shuffle_train:
-            np.random.shuffle(self.__train_indices)
-        self.__indices = self.__train_indices
+            np.random.shuffle(self.__train_points)
+        self.__points = self.__train_points
         self.__cache_key = self.__cache_key_train
-        self._data_len = self._num_batches(len(self.__indices))
+        self._data_len = self._num_batches(len(self.__points))
         return self
 
     def eval(self) -> CachedDataLoader:
-        self.__indices = self.__val_indices
+        self.__points = self.__val_points
         self.__cache_key = self.__cache_key_val
-        self._data_len = self._num_batches(len(self.__indices))
+        self._data_len = self._num_batches(len(self.__points))
         return self
 
     def collate_function(self, batch: AudioBatch) -> InputTensors:
@@ -172,23 +179,16 @@ class CachedDataLoader(BaseDataLoader):
         )
         return (audio_tensor, audio_lens)
 
-    def __create_cache(self, points, cache_key: str) -> int:
+    def __create_cache(self, points, cache_key: str) -> None:
         for i, point in tqdm(
             enumerate(points),
             total=len(points),
             desc=f"caching {cache_key}",
             leave=False,
         ):
-            key = f"{cache_key}:{i}"
+            key = f"{cache_key}:{point.id}"
             if key not in self.__cache:
-                features = [
+                self.__cache[key] = [
                     self.__feature_function.individual_np(audio)
                     for audio in point.audio
                 ]
-                cache_point: CachePoint = {
-                    "features": features,
-                    "label": point.label,
-                    "id": point.id,
-                }
-                self.__cache[key] = cache_point
-        return len(points)

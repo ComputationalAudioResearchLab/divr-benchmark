@@ -19,6 +19,8 @@ class AudioLoader:
     def __v1(self, key: str) -> np.ndarray:
         audio_path = f"{self.__data_path}/{key}"
         audio, _ = librosa.load(audio_path, sr=self.sample_rate)
+        if len(audio) < 1:
+            raise ValueError(f"0 length audio file: {audio_path}")
         return self.__normalize(audio)
 
     def __normalize(self, audio: np.ndarray) -> np.ndarray:

@@ -25,6 +25,13 @@ class S3PRLFrozen(Feature):
         self.model = S3PRLUpstream(self.model_name).eval().to(self.__device)
 
     @torch.no_grad()
+    def individual_np(self, audio: np.ndarray) -> np.ndarray:
+        audio_tensor = torch.tensor([audio], dtype=torch.float, device=self.__device)
+        audio_lens = torch.tensor([len(audio)], dtype=torch.long, device=self.__device)
+        all_hs, _ = self.model(audio_tensor, audio_lens)
+        return torch.cat(all_hs, dim=2)[0].cpu().numpy()
+
+    @torch.no_grad()
     def forward(self, batch: InputTensors) -> InputTensors:
         batch_inputs, batch_lens = batch
         batch_size, max_audios_in_session, max_audio_len = batch_inputs.shape
@@ -107,6 +114,7 @@ class OpenSmile(Feature):
         self.__win = sampling_rate * self.window
         self.__hop = sampling_rate * self.hop_size
 
+    @torch.no_grad()
     def individual_np(self, audio: np.ndarray) -> np.ndarray:
         return self.__smile.process_signal(
             signal=audio,
@@ -217,6 +225,7 @@ class MFCCDD(Feature):
     def __init__(self, device: torch.device, sampling_rate: int) -> None:
         super().__init__()
         self.__device = device
+        self.__sample_rate = sampling_rate
         self.__mfcc = torchaudio.transforms.MFCC(
             sample_rate=self.__sample_rate,
             n_mfcc=self.n_mfcc,
@@ -227,7 +236,15 @@ class MFCCDD(Feature):
                 "hop_length": self.hop_length,
             },
         ).to(device)
-        self.__sample_rate = sampling_rate
+
+    @torch.no_grad()
+    def individual_np(self, audio: np.ndarray) -> np.ndarray:
+        audio_tensor = torch.tensor([audio], dtype=torch.float, device=self.__device)
+        mfcc = self.__mfcc(audio_tensor)
+        deltas = torchaudio.functional.compute_deltas(mfcc)
+        double_deltas = torchaudio.functional.compute_deltas(mfcc)
+        mfccdd = torch.cat([mfcc, deltas, double_deltas], dim=-2)
+        return mfccdd[0].T.cpu().numpy()
 
     @torch.no_grad()
     def forward(self, batch: InputTensors) -> InputTensors:

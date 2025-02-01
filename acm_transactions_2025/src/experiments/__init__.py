@@ -135,6 +135,10 @@ class Runner:
         "mfccdd_a_3": ["a_n", [3], MFCCDD, 2000, 16, Trainer, 1e-5],
         "mfccdd_i_3": ["i_n", [3], MFCCDD, 2000, 16, Trainer, 1e-5],
         "mfccdd_u_3": ["u_n", [3], MFCCDD, 2000, 16, Trainer, 1e-5],
+        "mfccdd_phrase_4": ["phrase", [4], MFCCDD, 2000, 16, Trainer, 1e-5],
+        "mfccdd_a_4": ["a_n", [4], MFCCDD, 2000, 16, Trainer, 1e-5],
+        "mfccdd_i_4": ["i_n", [4], MFCCDD, 2000, 16, Trainer, 1e-5],
+        "mfccdd_u_4": ["u_n", [4], MFCCDD, 2000, 16, Trainer, 1e-5],
         
         "mc_mfccdd_phrase_0+2": ["phrase", [0,2], MFCCDD, 2000, 16, TrainerMultiCrit, 1e-5],
         "mc_mfccdd_a_0+2": ["a_n", [0,2], MFCCDD, 2000, 16, TrainerMultiCrit, 1e-5],
@@ -162,6 +166,10 @@ class Runner:
         "wav2vec_a_3": ["a_n", [3], Wav2Vec, 200, 16, Trainer, 1e-5],
         "wav2vec_i_3": ["i_n", [3], Wav2Vec, 200, 16, Trainer, 1e-5],
         "wav2vec_u_3": ["u_n", [3], Wav2Vec, 200, 16, Trainer, 1e-5],
+        "wav2vec_phrase_4": ["phrase", [4], Wav2Vec, 200, 16, Trainer, 1e-5],
+        "wav2vec_a_4": ["a_n", [4], Wav2Vec, 200, 16, Trainer, 1e-5],
+        "wav2vec_i_4": ["i_n", [4], Wav2Vec, 200, 16, Trainer, 1e-5],
+        "wav2vec_u_4": ["u_n", [4], Wav2Vec, 200, 16, Trainer, 1e-5],
         
         "mc_wav2vec_phrase_0+2": ["phrase", [0,2], Wav2Vec, 200, 16, TrainerMultiCrit, 1e-5],
         "mc_wav2vec_a_0+2": ["a_n", [0,2], Wav2Vec, 200, 16, TrainerMultiCrit, 1e-5],
@@ -183,34 +191,57 @@ class Runner:
         "unispeechSAT_i_1": ["i_n", [1], UnispeechSAT, 200, 16, Trainer, 1e-5],
         "unispeechSAT_u_1": ["u_n", [1], UnispeechSAT, 200, 16, Trainer, 1e-5],
         "unispeechSAT_phrase_2": ["phrase", [2], UnispeechSAT, 200, 16, Trainer, 1e-5],
+        "unispeechSAT_a_2": ["a_n", [2], UnispeechSAT, 200, 16, Trainer, 1e-5],
+        "unispeechSAT_i_2": ["i_n", [2], UnispeechSAT, 200, 16, Trainer, 1e-5],
+        "unispeechSAT_u_2": ["u_n", [2], UnispeechSAT, 200, 16, Trainer, 1e-5],
         "unispeechSAT_phrase_3": ["phrase", [3], UnispeechSAT, 200, 16, Trainer, 1e-5],
         "unispeechSAT_a_3": ["a_n", [3], UnispeechSAT, 200, 16, Trainer, 1e-5],
         "unispeechSAT_i_3": ["i_n", [3], UnispeechSAT, 200, 16, Trainer, 1e-5],
         "unispeechSAT_u_3": ["u_n", [3], UnispeechSAT, 200, 16, Trainer, 1e-5],
+        "unispeechSAT_phrase_4": ["phrase", [4], UnispeechSAT, 200, 16, Trainer, 1e-5],
+        "unispeechSAT_a_4": ["a_n", [4], UnispeechSAT, 200, 16, Trainer, 1e-5],
+        "unispeechSAT_i_4": ["i_n", [4], UnispeechSAT, 200, 16, Trainer, 1e-5],
+        "unispeechSAT_u_4": ["u_n", [4], UnispeechSAT, 200, 16, Trainer, 1e-5],
         # Multitask experiments
         "unispeechSAT_phrase_0+1": ["phrase", [0, 1], UnispeechSAT, 200, 16, TrainerMultiTask, 1e-5],
         "unispeechSAT_phrase_0+2": ["phrase", [0, 2], UnispeechSAT, 200, 16, TrainerMultiTask, 1e-5],
         "unispeechSAT_phrase_0+3": ["phrase", [0, 3], UnispeechSAT, 200, 16, TrainerMultiTask, 1e-5],
+        "unispeechSAT_phrase_0+4": ["phrase", [0, 4], UnispeechSAT, 200, 16, TrainerMultiTask, 1e-5],
         "unispeechSAT_phrase_1+2": ["phrase", [1, 2], UnispeechSAT, 200, 16, TrainerMultiTask, 1e-5],
         "unispeechSAT_phrase_1+3": ["phrase", [1, 3], UnispeechSAT, 200, 16, TrainerMultiTask, 1e-5],
+        "unispeechSAT_phrase_1+4": ["phrase", [1, 4], UnispeechSAT, 200, 16, TrainerMultiTask, 1e-5],
         "unispeechSAT_phrase_2+3": ["phrase", [2, 3], UnispeechSAT, 200, 16, TrainerMultiTask, 1e-5],
+        "unispeechSAT_phrase_2+4": ["phrase", [2, 4], UnispeechSAT, 200, 16, TrainerMultiTask, 1e-5],
         "unispeechSAT_phrase_0+1+2": ["phrase", [0, 1, 2], UnispeechSAT, 200, 16, TrainerMultiTask, 1e-5],
         "unispeechSAT_phrase_0+1+3": ["phrase", [0, 1, 3], UnispeechSAT, 200, 16, TrainerMultiTask, 1e-5],
+        "unispeechSAT_phrase_0+1+4": ["phrase", [0, 1, 4], UnispeechSAT, 200, 16, TrainerMultiTask, 1e-5],
         "unispeechSAT_phrase_0+2+3": ["phrase", [0, 2, 3], UnispeechSAT, 200, 16, TrainerMultiTask, 1e-5],
+        "unispeechSAT_phrase_0+2+4": ["phrase", [0, 2, 4], UnispeechSAT, 200, 16, TrainerMultiTask, 1e-5],
         "unispeechSAT_phrase_1+2+3": ["phrase", [1, 2, 3], UnispeechSAT, 200, 16, TrainerMultiTask, 1e-5],
+        "unispeechSAT_phrase_1+2+4": ["phrase", [1, 2, 4], UnispeechSAT, 200, 16, TrainerMultiTask, 1e-5],
         "unispeechSAT_phrase_0+1+2+3": ["phrase", [0, 1, 2, 3], UnispeechSAT, 200, 16, TrainerMultiTask, 1e-5],
+        "unispeechSAT_phrase_0+1+2+4": ["phrase", [0, 1, 2, 4], UnispeechSAT, 200, 16, TrainerMultiTask, 1e-5],
+        "unispeechSAT_phrase_0+1+2+3+4": ["phrase", [0, 1, 2, 3, 4], UnispeechSAT, 200, 16, TrainerMultiTask, 1e-5],
         # Single output multitask experiments
         "mc_unispeechSAT_phrase_0+1": ["phrase", [0, 1], UnispeechSAT, 200, 16, TrainerMultiCrit, 1e-5],
         "mc_unispeechSAT_phrase_0+2": ["phrase", [0, 2], UnispeechSAT, 200, 16, TrainerMultiCrit, 1e-5],
         "mc_unispeechSAT_phrase_0+3": ["phrase", [0, 3], UnispeechSAT, 200, 16, TrainerMultiCrit, 1e-5],
+        "mc_unispeechSAT_phrase_0+4": ["phrase", [0, 4], UnispeechSAT, 200, 16, TrainerMultiCrit, 1e-5],
         "mc_unispeechSAT_phrase_1+2": ["phrase", [1, 2], UnispeechSAT, 200, 16, TrainerMultiCrit, 1e-5],
-        "mc_unispeechSAT_phrase_1+3": ["phrase", [1, 3], UnispeechSAT, 1000, 16, TrainerMultiCrit, 1e-5],
+        "mc_unispeechSAT_phrase_1+3": ["phrase", [1, 3], UnispeechSAT, 200, 16, TrainerMultiCrit, 1e-5],
+        "mc_unispeechSAT_phrase_1+4": ["phrase", [1, 4], UnispeechSAT, 200, 16, TrainerMultiCrit, 1e-5],
         "mc_unispeechSAT_phrase_2+3": ["phrase", [2, 3], UnispeechSAT, 200, 16, TrainerMultiCrit, 1e-5],
+        "mc_unispeechSAT_phrase_2+4": ["phrase", [2, 4], UnispeechSAT, 200, 16, TrainerMultiCrit, 1e-5],
         "mc_unispeechSAT_phrase_0+1+2": ["phrase", [0, 1, 2], UnispeechSAT, 200, 16, TrainerMultiCrit, 1e-5],
         "mc_unispeechSAT_phrase_0+1+3": ["phrase", [0, 1, 3], UnispeechSAT, 200, 16, TrainerMultiCrit, 1e-5],
+        "mc_unispeechSAT_phrase_0+1+4": ["phrase", [0, 1, 4], UnispeechSAT, 200, 16, TrainerMultiCrit, 1e-5],
         "mc_unispeechSAT_phrase_0+2+3": ["phrase", [0, 2, 3], UnispeechSAT, 200, 16, TrainerMultiCrit, 1e-5],
+        "mc_unispeechSAT_phrase_0+2+4": ["phrase", [0, 2, 4], UnispeechSAT, 200, 16, TrainerMultiCrit, 1e-5],
         "mc_unispeechSAT_phrase_1+2+3": ["phrase", [1, 2, 3], UnispeechSAT, 200, 16, TrainerMultiCrit, 1e-5],
+        "mc_unispeechSAT_phrase_1+2+4": ["phrase", [1, 2, 4], UnispeechSAT, 200, 16, TrainerMultiCrit, 1e-5],
         "mc_unispeechSAT_phrase_0+1+2+3": ["phrase", [0, 1, 2, 3], UnispeechSAT, 200, 16, TrainerMultiCrit, 1e-5],
+        "mc_unispeechSAT_phrase_0+1+2+4": ["phrase", [0, 1, 2, 4], UnispeechSAT, 200, 16, TrainerMultiCrit, 1e-5],
+        "mc_unispeechSAT_phrase_0+1+2+3+4": ["phrase", [0, 1, 2, 3, 4], UnispeechSAT, 200, 16, TrainerMultiCrit, 1e-5],
     }
     # fmt: on
 
@@ -247,9 +278,8 @@ class Runner:
             else None
         )
         if isinstance(feature_function, OpenSmile):
-            max_diag_level = max(diag_levels)
             cache_path = Path(
-                f"{self.__cache_path}/.data_loader/{task_key}/{max_diag_level}/{feature_cls.__name__}"
+                f"{self.__cache_path}/.data_loader/{task_key}/{feature_cls.__name__}"
             )
             data_loader = CachedDataLoader(
                 random_seed=42,

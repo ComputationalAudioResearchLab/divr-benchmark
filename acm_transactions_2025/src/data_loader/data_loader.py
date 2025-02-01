@@ -18,7 +18,7 @@ class DataLoader(BaseDataLoader):
         device: torch.device,
         diag_levels: List[int],
         task,
-        feature_function: Feature,
+        feature_function: Feature | None,
         return_ids: bool,
     ) -> None:
         super().__init__(
@@ -110,8 +110,14 @@ class DataLoader(BaseDataLoader):
         audio_tensor = np.zeros((batch_len, max_num_audios, max_audio_len))
         audio_lens = np.zeros((batch_len, max_num_audios), dtype=int)
         for batch_idx, audios in enumerate(batch):
+            if len(audios) < 1:
+                print(batch)
+                raise ValueError(f"batch point {batch_idx} without audios")
             for audio_idx, audio in enumerate(audios):
                 audio_len = audio.shape[0]
+                if audio_len < 1:
+                    print(batch)
+                    raise ValueError("0 length audio detected")
                 audio_tensor[batch_idx, audio_idx, :audio_len] = audio
                 audio_lens[batch_idx, audio_idx] = audio_len
         return self.__feature_function((audio_tensor, audio_lens))

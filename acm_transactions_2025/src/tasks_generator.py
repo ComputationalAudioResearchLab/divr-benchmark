@@ -5,6 +5,7 @@ from pathlib import Path
 from divr_benchmark import Benchmark
 from divr_benchmark.task_generator import DatabaseFunc, Dataset
 from divr_benchmark.task_generator.task import Task
+from divr_benchmark.task_generator.databases import SVD
 from divr_diagnosis import diagnosis_maps
 
 
@@ -162,7 +163,7 @@ class TaskGenerator:
         return tasks
 
     async def __svd_data(self, database_func: DatabaseFunc, diag_level: int) -> Dataset:
-        db = await database_func(name="svd")
+        db = await database_func(name="svd", min_tasks=SVD.max_tasks)
         train_data = db.all_train(level=diag_level)
         val_data = db.all_val(level=diag_level)
         test_data = db.all_test(level=diag_level)
