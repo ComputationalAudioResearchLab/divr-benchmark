@@ -86,7 +86,9 @@ class MatchManual:
     }
 
     def __init__(self) -> None:
-        self.__auto_terms = self.__load_map(f"{self.__curdir}/output.yml")
+        self.__auto_terms = self.__load_map(
+            f"{self.__curdir}/../divr_diagnosis/diagnosis_maps/USVAC_2025.yml"
+        )
         self.__manual_terms = self.__load_map(f"{self.__curdir}/USVAC_2025.yml")
         self.__replace_manual_values()
 
@@ -110,7 +112,10 @@ class MatchManual:
 
     def __equals(self, key: str, M: Entry, A: Entry) -> bool:
         if A["level"] != M["level"]:
-            return False
+            if A["level"] == 4 and M["level"] == 3:
+                return True
+            else:
+                return False
         if "votes" in M:
             if A["votes"] != M["votes"]:
                 return False

@@ -169,7 +169,7 @@ def test_complex_genealogy(
 
 @pytest.mark.parametrize(
     "expected_parent, base_diagnosis_name",
-    [("organic_structural", "hyperkinetic_dysphonia_reinkes_edema")],
+    [("organic_structural_epithelial_propria", "hyperkinetic_dysphonia_reinkes_edema")],
 )
 def test_specific_examples(expected_parent: str, base_diagnosis_name: str):
     test_diagnosis = diagnosis_map.get(base_diagnosis_name)

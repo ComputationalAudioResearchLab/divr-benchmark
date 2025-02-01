@@ -17,23 +17,15 @@ from divr_diagnosis import diagnosis_maps
 diagnosis_map = diagnosis_maps.USVAC_2025()
 
 # get a specific diagnosis
-diagnosis = diagnosis_map.get("hypopharyngeal_tumor")
-
-# compare consensus in diagnosis. Here hypopharyngeal_tumor has more consensus than intubation_granuloma
-diag_1 = diagnosis_map.get("intubation_granuloma")
-diag_2 = diagnosis_map.get("hypopharyngeal_tumor")
-assert diag_1 < diag_2
-
-# For mapping any given diagnosis to a single parent we use the classification that had the max vote
-diag_dissensus = diagnosis_map.get("intubation_granuloma")
-assert diag_dissensus.best_parent_link.parent.name == "organic_trauma"
+diagnosis = diagnosis_map.get("laryngeal_tuberculosis")
 
 # check if diagnosis is of a type
 assert diagnosis.satisfies("pathological") == True
 assert diagnosis.satisfies("normal") == False
 
 # get diagnosis parents
-assert diagnosis.at_level(2) == "organic_structural"
+assert diagnosis.at_level(3) == "organic_inflammatory_infective"
+assert diagnosis.at_level(2) == "organic_inflammatory"
 assert diagnosis.at_level(1) == "organic"
 assert diagnosis.at_level(0) == "pathological"
 assert diagnosis.root == "pathological"
@@ -42,9 +34,22 @@ assert diagnosis.root == "pathological"
 diag_inc = diagnosis_map.get("internal_weakness")
 assert diag_inc.incompletely_classified == True
 
+# compare consensus in diagnosis. Here laryngeal_tuberculosis has more consensus than intubation_granuloma
+diag_1 = diagnosis_map.get("intubation_granuloma")
+diag_2 = diagnosis_map.get("laryngeal_tuberculosis")
+assert diag_1 < diag_2
+
+# For mapping any given diagnosis to a single parent we use the classification that had the max vote
+diag_dissensus = diagnosis_map.get("intubation_granuloma")
+assert diag_dissensus.best_parent_link.parent.name == "organic_trauma_internal"
+
 # Get all possible parents of a class, with their vote percentage
 diag_dissensus = diagnosis_map.get("intubation_granuloma")
-expected_parents = ["organic_inflammatory", "organic_structural", "organic_trauma"]
+expected_parents = [
+    "organic_inflammatory_non_infective",
+    "organic_structural_structural_abnormality",
+    "organic_trauma_internal"
+]
 expected_votes = [0.29, 0.29, 0.43]
 for parent_link in diag_dissensus.parents:
     assert parent_link.parent.name in expected_parents
@@ -52,13 +57,23 @@ for parent_link in diag_dissensus.parents:
 
 # Get all votes of different clinicians
 diag_dissensus = diagnosis_map.get("intubation_granuloma")
-assert diag_dissensus.votes["clinician 1"] == "organic > trauma"
-assert diag_dissensus.votes["clinician 2"] == "organic > trauma"
-assert diag_dissensus.votes["clinician 3"] == "organic > trauma"
-assert diag_dissensus.votes["clinician 4"] == "organic > inflammatory"
-assert diag_dissensus.votes["clinician 5"] == "organic > inflammatory"
-assert diag_dissensus.votes["clinician 6"] == "organic > structural"
-assert diag_dissensus.votes["clinician 7"] == "organic > structural"
+assert diag_dissensus.votes["clinician 1"] == "organic > trauma > internal"
+assert diag_dissensus.votes["clinician 2"] == "organic > trauma > internal"
+assert diag_dissensus.votes["clinician 3"] == "organic > trauma > internal"
+assert diag_dissensus.votes["clinician 4"] == "organic > inflammatory > non_infective"
+assert diag_dissensus.votes["clinician 5"] == "organic > inflammatory > non_infective"
+assert diag_dissensus.votes["clinician 6"] == "organic > structural > structural_abnormality"
+assert diag_dissensus.votes["clinician 7"] == "organic > structural > structural_abnormality"
+
+# List all pathologies under a parent
+expected_diags = [
+    "arytenoid_dislocation",
+    "laryngeal_trauma",
+    "laryngeal_trauma_blunt",
+    "organic_trauma_external",
+]
+for diag in diagnosis_map.find(name="organic_trauma_external"):
+    assert diag.name in expected_diags
 ```
 
 ## How was this created

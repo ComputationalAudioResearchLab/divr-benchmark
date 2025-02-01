@@ -1,7 +1,7 @@
 from __future__ import annotations
 import yaml
 from pathlib import Path
-from typing import Dict, List
+from typing import Dict, Set
 from .diagnosis import Diagnosis, DiagnosisLink
 
 
@@ -35,8 +35,8 @@ class DiagnosisMap:
             else:
                 raise err
 
-    def find(self, name: str) -> List[Diagnosis]:
-        return list(filter(lambda diag: diag.satisfies(name), self.__index.values()))
+    def find(self, name: str) -> Set[Diagnosis]:
+        return set(filter(lambda diag: diag.satisfies(name), self.__index.values()))
 
     def __load_map(self, diagnosis_map_file_path: Path) -> None:
         with open(diagnosis_map_file_path, "r") as diagnosis_map_file:

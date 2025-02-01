@@ -10,7 +10,7 @@ class Processor:
 
     curdir = Path(__file__).parent.resolve()
     input_data = f"{curdir}/List of diagnosis.xlsx"
-    output_file = f"{curdir}/output.yml"
+    output_file = f"{curdir}/../divr_diagnosis/diagnosis_maps/USVAC_2025.yml"
 
     vote_mapping = {
         # Invalid terms
@@ -62,7 +62,7 @@ class Processor:
         "hyperkinetic_dysphonia__nodule_": "hyperkinetic_dysphonia_nodule",
         "hyperkinetic_dysphonia__polyps_": "hyperkinetic_dysphonia_polyps",
         "hyperkinetic_dysphonia__prolapse_": "hyperkinetic_dysphonia_prolapse",
-        "hyperkinetic_dysphonia__reinke_s_edema_": "hyperkinetic_dysphonia_reinke_s_edema",
+        "hyperkinetic_dysphonia__reinke_s_edema_": "hyperkinetic_dysphonia_reinkes_edema",
         "hyperkinetic_dysphonia__vocal_fold_nodules_": "hyperkinetic_dysphonia_vocal_fold_nodules",
         "hyperkinetic_dysphonia__vocal_fold_paralysis_": "hyperkinetic_dysphonia_vocal_fold_paralysis",
         "hyperkinetic_dysphonia__vocal_fold_prolapse_": "hyperkinetic_dysphonia_vocal_fold_prolapse",
@@ -90,7 +90,7 @@ class Processor:
         "normal_voice___singing_training__": "singing_training",
         "pathological_voice__diagnosis_n_a": "pathological_voice_diagnosis_n_a",
         "pocket_wrinkled_voice": "pocket_fold_voice",
-        "polypoid_degeneration__reinke_s_": "polypoid_degeneration_reinke_s",
+        "polypoid_degeneration__reinke_s_": "polypoid_degeneration_reinkes",
         "post_intubation_submucosal_edema__mild_": "post_intubation_submucosal_edema_mild",
         "post_irradiation_also_post_radiated_larynx": "post_radiated_larynx",
         "post_surgery___removal_of_keratosis_with_atypia": "post_surgery_removal_of_keratosis_with_atypia",
@@ -188,14 +188,14 @@ class Processor:
                         elif num_splits == 3:
                             if vote_key not in level_3_votes:
                                 l1, l2, l3 = splits
+                                level_2_key = f"{l1}_{l2}"
                                 level_3_votes[vote_key] = {
                                     "level": 3,
                                     "alias": [],
                                     "parents": {
-                                        l2: 1.00,
+                                        level_2_key: 1.00,
                                     },
                                 }
-                                level_2_key = f"{l1}_{l2}"
                                 if level_2_key not in level_2_votes:
                                     level_2_votes[level_2_key] = {
                                         "level": 2,
