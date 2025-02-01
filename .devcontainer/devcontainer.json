@@ -6,12 +6,13 @@
   "customizations": {
     "vscode": {
       "extensions": [
+        "bierner.markdown-footnotes",
         "eamodio.gitlens",
         "esbenp.prettier-vscode",
+        "hediet.vscode-drawio",
         "ms-python.black-formatter",
         "ms-python.flake8",
-        "ms-python.python",
-        "hediet.vscode-drawio"
+        "ms-python.python"
       ]
     }
   },
