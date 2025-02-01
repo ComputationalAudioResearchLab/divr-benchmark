@@ -2,11 +2,14 @@ import pandas as pd
 from pathlib import Path
 from .base import BaseProcessor
 from .processed import ProcessedFile, ProcessedSession
+from ..diagnosis import DiagnosisMap
 
 
 class MEEI(BaseProcessor):
-    def __init__(self, audio_extraction_path: Path) -> None:
-        super().__init__()
+    def __init__(
+        self, audio_extraction_path: Path, diagnosis_map: DiagnosisMap
+    ) -> None:
+        super().__init__(diagnosis_map=diagnosis_map)
         self.audio_extraction_path = audio_extraction_path
 
     async def __call__(self, source_path: Path, output_path: Path) -> None:

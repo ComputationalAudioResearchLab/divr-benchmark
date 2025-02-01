@@ -8,6 +8,7 @@ from ....prepare_dataset.processed import (
     ProcessedSession,
     ProcessedFile,
 )
+from ....diagnosis import DiagnosisMap
 
 
 class Torgo(Base):
@@ -23,6 +24,7 @@ class Torgo(Base):
         source_path: Path,
         allow_incomplete_classification: bool,
         min_tasks: int | None,
+        diagnosis_map: DiagnosisMap,
     ) -> None:
         curdir = Path(__file__).parent.resolve()
         # only valid prompts that all speakers have spoken are selected
@@ -34,6 +36,7 @@ class Torgo(Base):
             source_path=source_path,
             allow_incomplete_classification=allow_incomplete_classification,
             min_tasks=min_tasks,
+            diagnosis_map=diagnosis_map,
         )
 
     async def prepare_dataset(

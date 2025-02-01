@@ -1,10 +1,10 @@
 import pytest
 from typing import Dict, List, Tuple
 from uuid import uuid4
-from divr_benchmark.diagnosis import Diagnosis, DiagnosisLink, DiagnosisMap
+from divr_benchmark.diagnosis import Diagnosis, DiagnosisLink, diagnosis_maps
 
 
-diagnosis_map = DiagnosisMap.v1()
+diagnosis_map = diagnosis_maps.USVAC_2025()
 
 
 @pytest.mark.parametrize(

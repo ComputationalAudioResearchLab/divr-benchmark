@@ -2,11 +2,12 @@ import pandas as pd
 from pathlib import Path
 from .base import BaseProcessor
 from .processed import ProcessedFile, ProcessedSession
+from ..diagnosis import DiagnosisMap
 
 
 class Voiced(BaseProcessor):
-    def __init__(self) -> None:
-        super().__init__()
+    def __init__(self, diagnosis_map: DiagnosisMap) -> None:
+        super().__init__(diagnosis_map=diagnosis_map)
 
     async def __call__(self, source_path: Path, output_path: Path) -> None:
         db_key = "voiced"

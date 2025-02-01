@@ -18,8 +18,9 @@ class Base:
         source_path: Path,
         allow_incomplete_classification: bool,
         min_tasks: int | None,
+        diagnosis_map: DiagnosisMap,
     ) -> None:
-        self.diagnosis_map = DiagnosisMap.v1()
+        self.diagnosis_map = diagnosis_map
         self.database_generator = DatabaseGenerator(
             diagnosis_map=self.diagnosis_map,
             train_split=0.7,

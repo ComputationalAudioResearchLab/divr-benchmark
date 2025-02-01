@@ -3,6 +3,7 @@ from typing import List
 from pathlib import Path
 from ..base import BaseProcessor
 from ..processed import ProcessedFile, ProcessedSession
+from ...diagnosis import DiagnosisMap
 
 
 class Torgo(BaseProcessor):
@@ -10,8 +11,8 @@ class Torgo(BaseProcessor):
         "FC01/Session1/wav_arrayMic/0256.wav",  # 0 length audio
     ]
 
-    def __init__(self) -> None:
-        super().__init__()
+    def __init__(self, diagnosis_map: DiagnosisMap) -> None:
+        super().__init__(diagnosis_map=diagnosis_map)
         curdir = Path(__file__).parent.resolve()
         # only valid prompts that all speakers have spoken are selected
         self.__selected_prompts: List[str] = pd.read_csv(

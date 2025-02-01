@@ -8,12 +8,12 @@ from .audio_loader import AudioLoader
 from .task import Task
 from ..logger import Logger
 from ..download import Download
-from ..diagnosis import DiagnosisMap
+from ..diagnosis import diagnosis_maps
 from ..task_generator import generator_map
 
 VERSIONS = Literal["v1"]
 versions = typing.get_args(VERSIONS)
-diagnosis_map_maps = {"v1": DiagnosisMap.v1}
+diagnosis_map_maps = {"v1": diagnosis_maps.USVAC_2025}
 task_generator_maps = {"v1": generator_map["v1"]}
 
 
@@ -50,6 +50,7 @@ class Benchmark:
             source_path=self.__data_path,
             filter_func=filter_func,
             task_path=task_path,
+            diagnosis_map=self.__diagnosis_map,
         )
 
     def load_task(self, task_path: Path, diag_level: int | None) -> Task:
@@ -90,6 +91,7 @@ class Benchmark:
             val=val_path,
             test=test_path,
             quiet=self.__quiet,
+            diag_level=None,
         )
 
     def __ensure_datasets(self, tasks_path: str) -> None:

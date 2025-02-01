@@ -9,23 +9,32 @@ from .torgo import Torgo
 from .voiced import Voiced
 from .avfad import AVFAD
 from .meei import MEEI
+from ..diagnosis import DiagnosisMap
 
 
 class PrepareDataset:
-    def __init__(self, database_path: Path, audio_extraction_path: Path) -> None:
+    def __init__(
+        self,
+        database_path: Path,
+        audio_extraction_path: Path,
+        diagnosis_map: DiagnosisMap,
+    ) -> None:
         self.database_path = database_path
         meei_extraction_path = Path(f"{audio_extraction_path}/meei")
         meei_extraction_path.mkdir(exist_ok=True, parents=True)
         voiced_extraction_path = Path(f"{audio_extraction_path}/voiced")
         voiced_extraction_path.mkdir(exist_ok=True, parents=True)
         self.processors: Dict[str, BaseProcessor] = {
-            "AVFAD": AVFAD(),
-            "MEEI": MEEI(audio_extraction_path=meei_extraction_path),
-            "svd": SVD(),
-            "torgo": Torgo(),
-            "voiced": Voiced(),
-            "UASpeech": UASpeech(),
-            "UncommonVoice": UncommonVoice(),
+            "AVFAD": AVFAD(diagnosis_map=diagnosis_map),
+            "MEEI": MEEI(
+                audio_extraction_path=meei_extraction_path,
+                diagnosis_map=diagnosis_map,
+            ),
+            "svd": SVD(diagnosis_map=diagnosis_map),
+            "torgo": Torgo(diagnosis_map=diagnosis_map),
+            "voiced": Voiced(diagnosis_map=diagnosis_map),
+            "UASpeech": UASpeech(diagnosis_map=diagnosis_map),
+            "UncommonVoice": UncommonVoice(diagnosis_map=diagnosis_map),
         }
 
     def ensure_path(self, prepared_data_path: Path) -> Path:

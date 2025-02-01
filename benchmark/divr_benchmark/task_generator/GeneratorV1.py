@@ -12,6 +12,7 @@ from .databases import (
     Base as Database,
 )
 from .databases.svd import VOWELS
+from ..diagnosis import DiagnosisMap
 
 
 class GeneratorV1(Generator):
@@ -21,6 +22,7 @@ class GeneratorV1(Generator):
         source_path: Path,
         filter_func: Callable[[DatabaseFunc], Awaitable[Dataset]],
         task_path: Path,
+        diagnosis_map: DiagnosisMap,
     ) -> None:
         async def __database(name: str) -> Database:
             name = name.lower()
@@ -29,42 +31,49 @@ class GeneratorV1(Generator):
                     source_path=source_path,
                     allow_incomplete_classification=False,
                     min_tasks=None,
+                    diagnosis_map=diagnosis_map,
                 )
             elif name == "meei":
                 db = MEEI(
                     source_path=source_path,
                     allow_incomplete_classification=False,
                     min_tasks=None,
+                    diagnosis_map=diagnosis_map,
                 )
             elif name == "svd":
                 db = SVD(
                     source_path=source_path,
                     allow_incomplete_classification=False,
                     min_tasks=SVD.max_tasks,
+                    diagnosis_map=diagnosis_map,
                 )
             elif name == "torgo":
                 db = Torgo(
                     source_path=source_path,
                     allow_incomplete_classification=True,
                     min_tasks=None,
+                    diagnosis_map=diagnosis_map,
                 )
             elif name == "uaspeech":
                 db = UASpeech(
                     source_path=source_path,
                     allow_incomplete_classification=False,
                     min_tasks=None,
+                    diagnosis_map=diagnosis_map,
                 )
             elif name == "uncommon_voice":
                 db = UncommonVoice(
                     source_path=source_path,
                     allow_incomplete_classification=False,
                     min_tasks=None,
+                    diagnosis_map=diagnosis_map,
                 )
             elif name == "voiced":
                 db = Voiced(
                     source_path=source_path,
                     allow_incomplete_classification=False,
                     min_tasks=None,
+                    diagnosis_map=diagnosis_map,
                 )
             else:
                 raise NotImplementedError(f"Unsupported database {name}")
@@ -76,23 +85,31 @@ class GeneratorV1(Generator):
         self.to_task_file(tasks=tasks.val, output_path=Path(f"{task_path}/val"))
         self.to_task_file(tasks=tasks.test, output_path=Path(f"{task_path}/test"))
 
-    def __call__(self, source_path: Path, tasks_path: Path) -> None:
+    def __call__(
+        self,
+        source_path: Path,
+        tasks_path: Path,
+        diagnosis_map: DiagnosisMap,
+    ) -> None:
         print("Generating benchmark v1 tasks")
         Path(f"{tasks_path}/streams").mkdir(exist_ok=True)
         svd = SVD(
             source_path=source_path,
             allow_incomplete_classification=False,
             min_tasks=SVD.max_tasks,
+            diagnosis_map=diagnosis_map,
         )
         torgo = Torgo(
             source_path=source_path,
             allow_incomplete_classification=True,
             min_tasks=None,
+            diagnosis_map=diagnosis_map,
         )
         voiced = Voiced(
             source_path=source_path,
             allow_incomplete_classification=False,
             min_tasks=None,
+            diagnosis_map=diagnosis_map,
         )
         self.__stream0(
             stream_path=Path(f"{tasks_path}/streams/0"),

@@ -1,5 +1,5 @@
 from uuid import uuid4
-from divr_benchmark.diagnosis import DiagnosisMap
+from divr_benchmark.diagnosis import diagnosis_maps
 from divr_benchmark.prepare_dataset.database_generator import DatabaseGenerator
 from divr_benchmark.prepare_dataset.processed import ProcessedSession
 from test.database_generator.count_sessions import count_sessions
@@ -10,7 +10,7 @@ from test.database_generator.assert_all_sessions_allocated import (
 train_split = 0.7
 test_split = 0.2
 random_seed = 42
-diagnosis_map = DiagnosisMap.v1()
+diagnosis_map = diagnosis_maps.USVAC_2025()
 database_generator = DatabaseGenerator(
     diagnosis_map=diagnosis_map,
     train_split=train_split,
@@ -33,10 +33,12 @@ def test_5():
     sessions = [
         ProcessedSession(
             id=str(uuid4()),
+            speaker_id=str(uuid4()),
             age=age,
             gender=gender,
             diagnosis=[diagnosis_map.get(diagnosis_key)],
             files=[],
+            num_files=0,
         )
         for diagnosis_key in diagnosis_keys
     ]
@@ -83,10 +85,12 @@ def test_10():
     sessions = [
         ProcessedSession(
             id=str(uuid4()),
+            speaker_id=str(uuid4()),
             age=age,
             gender=gender,
             diagnosis=[diagnosis_map.get(diagnosis_key)],
             files=[],
+            num_files=0,
         )
         for diagnosis_key in diagnosis_keys
     ]
@@ -143,10 +147,12 @@ def test_20():
     sessions = [
         ProcessedSession(
             id=str(uuid4()),
+            speaker_id=str(uuid4()),
             age=age,
             gender=gender,
             diagnosis=[diagnosis_map.get(diagnosis_key)],
             files=[],
+            num_files=0,
         )
         for diagnosis_key in diagnosis_keys
     ]

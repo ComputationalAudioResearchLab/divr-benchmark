@@ -4,6 +4,7 @@ from matplotlib import pyplot as plt
 import yaml
 import numpy as np
 from .diagnosis_map import DiagnosisMap, Diagnosis
+from . import diagnosis_maps
 
 
 def load_labels(input_path: Path):
@@ -120,7 +121,7 @@ def analysis(source_path: Path, output_confusion_path: Path):
 
 
 def reclassification_candidates(output_path: Path) -> None:
-    diagnosis_map = DiagnosisMap.v1()
+    diagnosis_map = diagnosis_maps.USVAC_2025()
     candidates: List[Diagnosis] = []
     candidates += diagnosis_map.find("unclassified")
     candidates += diagnosis_map.find("unclassified_pathology")
