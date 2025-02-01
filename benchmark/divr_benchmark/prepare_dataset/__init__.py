@@ -1,7 +1,9 @@
 import asyncio
 from pathlib import Path
-from .svd import SVD
 from typing import Dict, List
+from divr_diagnosis import DiagnosisMap
+
+from .svd import SVD
 from .base import BaseProcessor
 from .uncommon_voice import UncommonVoice
 from .uaspeech import UASpeech
@@ -9,7 +11,6 @@ from .torgo import Torgo
 from .voiced import Voiced
 from .avfad import AVFAD
 from .meei import MEEI
-from ..diagnosis import DiagnosisMap
 
 
 class PrepareDataset:

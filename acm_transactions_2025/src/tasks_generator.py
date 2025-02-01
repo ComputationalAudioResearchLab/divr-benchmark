@@ -22,7 +22,7 @@ class TaskGenerator:
 
     def load_task(self, task: TaskGenerator.TASKS, diag_level: int | None) -> Task:
         task_path = Path(f"{self.__tasks_path}/{task}")
-        diagnosis_map = diagnosis_maps.USVAC_2015()
+        diagnosis_map = diagnosis_maps.USVAC_2025()
         return self.__benchmark.load_task(
             task_path=task_path,
             diag_level=diag_level,
@@ -30,7 +30,7 @@ class TaskGenerator:
         )
 
     async def generate(self) -> None:
-        diagnosis_map = diagnosis_maps.USVAC_2015()
+        diagnosis_map = diagnosis_maps.USVAC_2025()
         coros = []
         coros += [
             self.__benchmark.generate_task(

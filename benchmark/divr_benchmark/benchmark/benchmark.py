@@ -3,12 +3,12 @@ import typing
 import asyncio
 from pathlib import Path
 from typing import Literal
+from divr_diagnosis import DiagnosisMap
 
 from .audio_loader import AudioLoader
 from .task import Task
 from ..logger import Logger
 from ..download import Download
-from ..diagnosis import DiagnosisMap
 from ..task_generator import generator_map
 
 VERSIONS = Literal["v1"]

@@ -2,8 +2,10 @@ import yaml
 import typing
 from pathlib import Path
 from typing import Literal
-from .GeneratorV1 import GeneratorV1
+from .generator import DatabaseFunc, Dataset
 from divr_diagnosis import DiagnosisMap
+
+from .GeneratorV1 import GeneratorV1
 
 VERSIONS = Literal["v1"]
 versions = typing.get_args(VERSIONS)
