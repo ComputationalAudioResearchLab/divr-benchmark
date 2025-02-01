@@ -1,22 +1,20 @@
 #### Level 0
 normal:
   alias:
-  - healthy
-  - normal
-  - normal voice
+    - healthy
+    - normal
+    - normal voice
   level: 0
 pathological:
   alias:
-  - pathological
-  - pathological
+    - pathological
   level: 0
 unclassified:
   alias:
-  - mixed
-  - not sure
-  - other
+    - mixed
+    - not sure
+    - other
   level: 0
-
 
 #### Level 1
 functional:
@@ -26,8 +24,8 @@ functional:
     pathological: 1.0
 muscle_tension:
   alias:
-  - 'muscle tension dysphonia  primary '
-  - muscle tension dysphonia (primary)
+    - muscle tension dysphonia
+    - muscle tension dysphonia (primary)
   level: 1
   parents:
     pathological: 1.0
@@ -41,14 +39,12 @@ organic:
   parents:
     pathological: 1.0
 
-
 #### Level 2
 functional_dysphonia:
   alias:
-  - functional dysphonia
-  - functional dysphonia  functional voice disorder
-  - functional voice disorder
-  - funktionelle dysphonie
+    - functional dysphonia
+    - functional voice disorder
+    - funktionelle dysphonie
   level: 2
   parents:
     functional: 1.0
@@ -59,14 +55,14 @@ functional_puberphonia:
     functional: 1.0
 metabolic:
   alias:
-  - endocrine
+    - endocrine
   level: 2
   parents:
     non_laryngeal: 1.0
 muscle_tension_adaptive:
   alias:
-  - 'muscle tension adaptive dysphonia  secondary '
-  - muscle tension/adaptive dysphonia (secondary)
+    - muscle tension adaptive dysphonia
+    - muscle tension/adaptive dysphonia (secondary)
   level: 2
   parents:
     muscle_tension: 1.0
@@ -92,7 +88,7 @@ organic_trauma:
     organic: 1.0
 psychiatric:
   alias:
-  - psychological
+    - psychological
   level: 2
   parents:
     non_laryngeal: 1.0
@@ -104,7 +100,6 @@ systemic:
   level: 2
   parents:
     non_laryngeal: 1.0
-
 
 #### Level 3
 organic_inflammatory_infective:
@@ -168,13 +163,12 @@ organic_trauma_internal:
   parents:
     organic_trauma: 1.0
 
-
 #### Level 4
 a_p_compression:
   alias:
-  - a-p compression
-  - a-p compression moderate
-  - a-p compression (moderate)
+    - a-p compression
+    - a-p compression moderate
+    - a-p compression (moderate)
   level: 4
   parents:
     muscle_tension: 0.43
@@ -189,10 +183,10 @@ a_p_compression:
     clinician 7: unclassified
 a_p_squeezing:
   alias:
-  - a-p squeezing
-  - a-p squeezing (mild)
-  - a-p squeezing (moderate)
-  - a-p squeezing (severe)
+    - a-p squeezing
+    - a-p squeezing (mild)
+    - a-p squeezing (moderate)
+    - a-p squeezing (severe)
   level: 4
   parents:
     muscle_tension: 0.17
@@ -207,7 +201,7 @@ a_p_squeezing:
     clinician 7: unclassified
 abductor_spasmodic_dysphonia:
   alias:
-  - abductor spasmodic dysphonia
+    - abductor spasmodic dysphonia
   level: 4
   parents:
     organic_neuro_muscular_movement_disorder: 1.0
@@ -221,7 +215,7 @@ abductor_spasmodic_dysphonia:
     clinician 7: organic > neuro_muscular > movement_disorder
 abnormal_vocal_process:
   alias:
-  - abnormal vocal process
+    - abnormal vocal process
   level: 4
   parents:
     organic_structural_structural_abnormality: 0.5
@@ -236,7 +230,7 @@ abnormal_vocal_process:
     clinician 7: unclassified
 acute_laryngitis:
   alias:
-  - acute laryngitis
+    - acute laryngitis
   level: 4
   parents:
     organic_inflammatory_infective: 0.83
@@ -251,7 +245,7 @@ acute_laryngitis:
     clinician 7: unclassified
 adductor_spasmodic_dysphonia:
   alias:
-  - adductor spasmodic dysphonia
+    - adductor spasmodic dysphonia
   level: 4
   parents:
     organic_neuro_muscular_movement_disorder: 1.0
@@ -265,7 +259,7 @@ adductor_spasmodic_dysphonia:
     clinician 7: organic > neuro_muscular > movement_disorder
 afrin_rhinitis:
   alias:
-  - afrin rhinitis
+    - afrin rhinitis
   level: 4
   parents:
     unclassified: 1.0
@@ -279,7 +273,8 @@ afrin_rhinitis:
     clinician 7: unclassified
 allergy_minor:
   alias:
-  - normal voice ( allergy minor )
+    - normal voice ( allergy minor )
+    - normal voice (allergy minor)
   level: 4
   parents:
     unclassified: 1.0
@@ -293,9 +288,9 @@ allergy_minor:
     clinician 7: unclassified
 amyotrophic_lateral_sclerosis:
   alias:
-  - amyotrophic lateral sclerosis
-  - amyotrophic lateral sclerosis (als; lou gehrig's disease)
-  - amyotrophe lateralsklerose
+    - amyotrophic lateral sclerosis
+    - amyotrophic lateral sclerosis (als; lou gehrig's disease)
+    - amyotrophe lateralsklerose
   level: 4
   parents:
     organic_neuro_muscular_central_nervous_disorder: 0.67
@@ -311,13 +306,13 @@ amyotrophic_lateral_sclerosis:
     clinician 7: organic > neuro_muscular > peripheral_nervous_disorder
 anterior_mass:
   alias:
-  - anterior mass
+    - anterior mass
   level: 4
   parents:
     unclassified: 1.0
 anterior_saccular_cyst:
   alias:
-  - anterior saccular cyst
+    - anterior saccular cyst
   level: 4
   parents:
     organic_structural_epithelial_propria: 0.33
@@ -332,7 +327,7 @@ anterior_saccular_cyst:
     clinician 7: organic > structural > epithelial_propria
 aryluxation:
   alias:
-  - aryluxation
+    - aryluxation
   level: 4
   parents:
     organic_structural_structural_abnormality: 0.29
@@ -348,7 +343,7 @@ aryluxation:
     clinician 7: organic > structural > structural_abnormality
 arytenoid:
   alias:
-  - arytenoid
+    - arytenoid
   level: 4
   parents:
     unclassified: 1.0
@@ -362,8 +357,8 @@ arytenoid:
     clinician 7: unclassified
 arytenoid_dislocation:
   alias:
-  - arytenoid dislocation
-  - dislocated left arytenoid
+    - arytenoid dislocation
+    - dislocated left arytenoid
   level: 4
   parents:
     organic_structural_structural_abnormality: 0.43
@@ -379,7 +374,7 @@ arytenoid_dislocation:
     clinician 7: organic > structural > structural_abnormality
 aspiration:
   alias:
-  - aspiration
+    - aspiration
   level: 4
   parents:
     unclassified: 1.0
@@ -393,7 +388,7 @@ aspiration:
     clinician 7: unclassified
 asymmetry_of_arytenoid_movement:
   alias:
-  - asymmetry of arytenoid movement
+    - asymmetry of arytenoid movement
   level: 4
   parents:
     organic_structural_structural_abnormality: 0.14
@@ -408,8 +403,8 @@ asymmetry_of_arytenoid_movement:
     clinician 7: unclassified
 athetoid:
   alias:
-  - athetoid
-  - athetoid (or mixed)
+    - athetoid
+    - athetoid (or mixed)
   level: 4
   parents:
     organic_neuro_muscular_central_nervous_disorder: 0.29
@@ -425,7 +420,7 @@ athetoid:
     clinician 7: unclassified
 atrophic_laryngitis:
   alias:
-  - atrophic laryngitis
+    - atrophic laryngitis
   level: 4
   parents:
     organic: 0.14
@@ -443,7 +438,7 @@ atrophic_laryngitis:
     clinician 7: unclassified
 atypical_paradoxical_vocal_fold_movement_of_unknown_etiology:
   alias:
-  - atypical paradoxical vocal fold movement of unknown etiology
+    - atypical paradoxical vocal fold movement of unknown etiology
   level: 4
   parents:
     functional_dysphonia: 0.29
@@ -460,7 +455,7 @@ atypical_paradoxical_vocal_fold_movement_of_unknown_etiology:
     clinician 7: unclassified
 balbuties:
   alias:
-  - balbuties
+    - balbuties
   level: 4
   parents:
     unclassified: 1.0
@@ -474,7 +469,7 @@ balbuties:
     clinician 7: unclassified
 bilateral_recurrent_laryngeal_nerve_rln_paralysis_peripheral:
   alias:
-  - bilateral recurrent laryngeal nerve (rln) paralysis-peripheral
+    - bilateral recurrent laryngeal nerve (rln) paralysis-peripheral
   level: 4
   parents:
     organic_neuro_muscular_central_nervous_disorder: 0.14
@@ -489,7 +484,7 @@ bilateral_recurrent_laryngeal_nerve_rln_paralysis_peripheral:
     clinician 7: organic > neuro_muscular > peripheral_nervous_disorder
 bleed:
   alias:
-  - bleed
+    - bleed
   level: 4
   parents:
     organic_structural_vascular: 0.71
@@ -504,7 +499,7 @@ bleed:
     clinician 7: organic > structural > vascular
 blunt_trauma:
   alias:
-  - blunt trauma
+    - blunt trauma
   level: 4
   parents:
     organic_trauma_external: 0.43
@@ -519,7 +514,7 @@ blunt_trauma:
     clinician 7: unclassified
 bowing:
   alias:
-  - bowing
+    - bowing
   level: 4
   parents:
     organic_structural_congenital: 0.29
@@ -535,8 +530,8 @@ bowing:
     clinician 7: unclassified
 bulbar_paralysis:
   alias:
-  - bulbar paralysis
-  - bulbärparalyse
+    - bulbar paralysis
+    - bulbärparalyse
   level: 4
   parents:
     organic: 0.14
@@ -552,7 +547,7 @@ bulbar_paralysis:
     clinician 7: organic > neuro_muscular > central_nervous_disorder
 carcinoma_in_situ:
   alias:
-  - carcinoma in situ
+    - carcinoma in situ
   level: 4
   parents:
     organic_structural_malignancy: 1.0
@@ -566,7 +561,7 @@ carcinoma_in_situ:
     clinician 7: organic > structural > malignancy
 caustic_trauma:
   alias:
-  - caustic trauma
+    - caustic trauma
   level: 4
   parents:
     organic_trauma_external: 0.17
@@ -582,8 +577,8 @@ caustic_trauma:
     clinician 7: unclassified
 central_laryngeal_movement_disorder:
   alias:
-  - central laryngeal movement disorder
-  - zentral-laryngale bewegungsstörung
+    - central laryngeal movement disorder
+    - zentral-laryngale bewegungsstörung
   level: 4
   parents:
     organic_neuro_muscular_central_nervous_disorder: 0.57
@@ -598,8 +593,8 @@ central_laryngeal_movement_disorder:
     clinician 7: organic > neuro_muscular > central_nervous_disorder
 chondroma:
   alias:
-  - chondroma
-  - chondrom
+    - chondroma
+    - chondrom
   level: 4
   parents:
     organic_structural_malignancy: 0.5
@@ -615,7 +610,7 @@ chondroma:
     clinician 7: organic > structural > structural_abnormality
 choreaic_movements:
   alias:
-  - choreaic movements
+    - choreaic movements
   level: 4
   parents:
     organic_neuro_muscular_central_nervous_disorder: 0.17
@@ -631,7 +626,7 @@ choreaic_movements:
     clinician 7: unclassified
 chronic_hemmorage:
   alias:
-  - chronic hemmorage
+    - chronic hemmorage
   level: 4
   parents:
     organic_structural_vascular: 1.0
@@ -645,7 +640,7 @@ chronic_hemmorage:
     clinician 7: organic > structural > vascular
 chronic_laryngitis:
   alias:
-  - chronic laryngitis
+    - chronic laryngitis
   level: 4
   parents:
     organic_inflammatory_infective: 0.17
@@ -661,7 +656,7 @@ chronic_laryngitis:
     clinician 7: unclassified
 clutter_syndrome:
   alias:
-  - clutter syndrome
+    - clutter syndrome
   level: 4
   parents:
     unclassified: 1.0
@@ -675,7 +670,8 @@ clutter_syndrome:
     clinician 7: unclassified
 cold_minor:
   alias:
-  - normal voice ( cold minor )
+    - normal voice ( cold minor )
+    - normal voice (cold minor)
   level: 4
   parents:
     unclassified: 1.0
@@ -689,7 +685,7 @@ cold_minor:
     clinician 7: unclassified
 contact_granuloma:
   alias:
-  - contact granuloma
+    - contact granuloma
   level: 4
   parents:
     muscle_tension: 0.17
@@ -706,8 +702,8 @@ contact_granuloma:
     clinician 7: organic > structural > epithelial_propria
 contact_pachyderma:
   alias:
-  - contact pachydermia
-  - kontaktpachydermie
+    - contact pachydermia
+    - kontaktpachydermie
   level: 4
   parents:
     organic_inflammatory_non_infective: 0.14
@@ -723,10 +719,8 @@ contact_pachyderma:
     clinician 7: organic > structural > epithelial_propria
 conversion_dysphonia:
   alias:
-  - conversion aphonia
-  - conversion dysphonia
-  - conversion aphonia
-  - conversion dysphonia
+    - conversion aphonia
+    - conversion dysphonia
   level: 4
   parents:
     functional_dysphonia: 1.0
@@ -740,9 +734,9 @@ conversion_dysphonia:
     clinician 7: functional > dysphonia
 cordectomy:
   alias:
-  - cordectomy
-  - chordectomy
-  - chordektomie
+    - cordectomy
+    - chordectomy
+    - chordektomie
   level: 4
   parents:
     organic: 0.14
@@ -758,7 +752,7 @@ cordectomy:
     clinician 7: unclassified
 cricoarytenoid_arthritis:
   alias:
-  - cricoarytenoid arthritis
+    - cricoarytenoid arthritis
   level: 4
   parents:
     organic_inflammatory_non_infective: 0.83
@@ -773,8 +767,7 @@ cricoarytenoid_arthritis:
     clinician 7: organic > inflammatory > non_infective
 cyst:
   alias:
-  - cyst
-  - cyste
+    - cyste
   level: 4
   parents:
     organic_structural_congenital: 0.17
@@ -789,7 +782,7 @@ cyst:
     clinician 7: organic > structural > epithelial_propria
 cystic_appearing_area:
   alias:
-  - cystic appearing area
+    - cystic appearing area
   level: 4
   parents:
     organic_structural_epithelial_propria: 0.17
@@ -804,7 +797,7 @@ cystic_appearing_area:
     clinician 7: unclassified
 diffuse_mild_irregularities_of_musculomembranous_vocal_folds:
   alias:
-  - diffuse mild irregularities of musculomembranous vocal folds
+    - diffuse mild irregularities of musculomembranous vocal folds
   level: 4
   parents:
     organic_structural_epithelial_propria: 0.33
@@ -820,7 +813,7 @@ diffuse_mild_irregularities_of_musculomembranous_vocal_folds:
     clinician 7: unclassified
 diplophony:
   alias:
-  - diplophonie
+    - diplophonie
   level: 4
   parents:
     unclassified: 1.0
@@ -834,7 +827,7 @@ diplophony:
     clinician 7: unclassified
 discoordinated_arytenoid_movement:
   alias:
-  - discoordinated arytenoid movement
+    - discoordinated arytenoid movement
   level: 4
   parents:
     organic_neuro_muscular_central_nervous_disorder: 0.17
@@ -849,7 +842,7 @@ discoordinated_arytenoid_movement:
     clinician 7: unclassified
 dish_syndrome:
   alias:
-  - dish-syndrom
+    - dish-syndrom
   level: 4
   parents:
     organic_inflammatory_non_infective: 0.17
@@ -865,8 +858,8 @@ dish_syndrome:
     clinician 7: unclassified
 downs_disease:
   alias:
-  - down's disease
-  - morbus down
+    - down's disease
+    - morbus down
   level: 4
   parents:
     organic_neuro_muscular_peripheral_nervous_disorder: 0.14
@@ -881,8 +874,8 @@ downs_disease:
     clinician 7: unclassified
 dysarthria:
   alias:
-  - dysarthria
-  - dysarthria characteristics (mild)
+    - dysarthria
+    - dysarthria characteristics (mild)
   level: 4
   parents:
     organic_neuro_muscular_central_nervous_disorder: 0.17
@@ -898,8 +891,7 @@ dysarthria:
     clinician 7: unclassified
 dysarthrophonia:
   alias:
-  - dysarthrophonia
-  - dysarthrophonie
+    - dysarthrophonie
   level: 4
   parents:
     organic_neuro_muscular_central_nervous_disorder: 0.17
@@ -914,7 +906,7 @@ dysarthrophonia:
     clinician 7: unclassified
 dyskinesia:
   alias:
-  - dyskinesia
+    - dyskinesia
   level: 4
   parents:
     organic_neuro_muscular_movement_disorder: 0.17
@@ -929,8 +921,7 @@ dyskinesia:
     clinician 7: unclassified
 dysody:
   alias:
-  - dysody
-  - dysodie
+    - dysodie
   level: 4
   parents:
     unclassified: 1.0
@@ -944,7 +935,7 @@ dysody:
     clinician 7: unclassified
 dysphagia:
   alias:
-  - dysphagia
+    - dysphagia
   level: 4
   parents:
     unclassified: 1.0
@@ -958,8 +949,7 @@ dysphagia:
     clinician 7: unclassified
 dysphonia:
   alias:
-  - dysphonia
-  - dysphonie
+    - dysphonie
   level: 4
   parents:
     muscle_tension: 0.17
@@ -974,8 +964,8 @@ dysphonia:
     clinician 7: unclassified
 dysplastic_dysphonia:
   alias:
-  - dysplastic dysphonia
-  - dysplastische dysphonie
+    - dysplastic dysphonia
+    - dysplastische dysphonie
   level: 4
   parents:
     organic_structural_epithelial_propria: 0.17
@@ -990,8 +980,8 @@ dysplastic_dysphonia:
     clinician 7: unclassified
 dysplastic_larynx:
   alias:
-  - dysplastic larynx
-  - dysplastischer kehlkopf
+    - dysplastic larynx
+    - dysplastischer kehlkopf
   level: 4
   parents:
     organic_structural_malignancy: 0.33
@@ -1007,8 +997,8 @@ dysplastic_larynx:
     clinician 7: unclassified
 epiglottic_carcinoma:
   alias:
-  - epiglottic carcinoma
-  - epiglottiskarzinom
+    - epiglottic carcinoma
+    - epiglottiskarzinom
   level: 4
   parents:
     organic_structural_malignancy: 0.83
@@ -1023,7 +1013,7 @@ epiglottic_carcinoma:
     clinician 7: organic > structural > malignancy
 episodic_functional_dysphonia:
   alias:
-  - episodic functional dysphonia
+    - episodic functional dysphonia
   level: 4
   parents:
     functional_dysphonia: 1.0
@@ -1037,7 +1027,7 @@ episodic_functional_dysphonia:
     clinician 7: functional > dysphonia
 erythema:
   alias:
-  - erythema
+    - erythema
   level: 4
   parents:
     organic_inflammatory_non_infective: 0.17
@@ -1053,7 +1043,7 @@ erythema:
     clinician 7: unclassified
 essential_tremor:
   alias:
-  - essential tremor
+    - essential tremor
   level: 4
   parents:
     organic_neuro_muscular_movement_disorder: 1.0
@@ -1067,7 +1057,7 @@ essential_tremor:
     clinician 7: organic > neuro_muscular > movement_disorder
 exudative_hyperkeratotic_lesions_of_epithelium:
   alias:
-  - exudative hyperkeratotic lesions of epithelium
+    - exudative hyperkeratotic lesions of epithelium
   level: 4
   parents:
     organic_structural_epithelial_propria: 1.0
@@ -1081,8 +1071,7 @@ exudative_hyperkeratotic_lesions_of_epithelium:
     clinician 7: organic > structural > epithelial_propria
 fibroma:
   alias:
-  - fibroma
-  - fibrom
+    - fibrom
   level: 4
   parents:
     organic_structural_epithelial_propria: 0.14
@@ -1098,7 +1087,7 @@ fibroma:
     clinician 7: organic > structural > structural_abnormality
 flu_minor_days_ago:
   alias:
-  - normal voice ( flu minor 2 days ago )
+    - normal voice ( flu minor 2 days ago )
   level: 4
   parents:
     unclassified: 1.0
@@ -1112,8 +1101,8 @@ flu_minor_days_ago:
     clinician 7: unclassified
 frontolateral_partial_resection:
   alias:
-  - frontolateral partial resection
-  - frontolaterale teilresektion
+    - frontolateral partial resection
+    - frontolaterale teilresektion
   level: 4
   parents:
     organic_structural_structural_abnormality: 0.14
@@ -1128,7 +1117,7 @@ frontolateral_partial_resection:
     clinician 7: unclassified
 functional_neurological_disorder:
   alias:
-  - functional neurological disorder
+    - functional neurological disorder
   level: 4
   parents:
     functional_dysphonia: 0.71
@@ -1143,7 +1132,7 @@ functional_neurological_disorder:
     clinician 7: functional > dysphonia
 fusiform_mass:
   alias:
-  - fusiform mass
+    - fusiform mass
   level: 4
   parents:
     organic_structural_epithelial_propria: 0.14
@@ -1159,7 +1148,7 @@ fusiform_mass:
     clinician 7: organic > structural > structural_abnormality
 generalized_edema_of_larynx:
   alias:
-  - generalized edema of larynx
+    - generalized edema of larynx
   level: 4
   parents:
     organic_inflammatory_non_infective: 0.29
@@ -1175,8 +1164,8 @@ generalized_edema_of_larynx:
     clinician 7: unclassified
 gerd:
   alias:
-  - gastric reflux
-  - gerd
+    - gastric reflux
+    - gerd
   level: 4
   parents:
     organic_inflammatory_non_infective: 0.29
@@ -1191,7 +1180,7 @@ gerd:
     clinician 7: unclassified
 glottal_ap_compression_mild:
   alias:
-  - glottal ap compression (mild)
+    - glottal ap compression (mild)
   level: 4
   parents:
     muscle_tension: 0.14
@@ -1207,7 +1196,7 @@ glottal_ap_compression_mild:
     clinician 7: unclassified
 granulation_tissue:
   alias:
-  - granulation tissue
+    - granulation tissue
   level: 4
   parents:
     organic_inflammatory_non_infective: 0.29
@@ -1224,8 +1213,7 @@ granulation_tissue:
     clinician 7: organic > structural > structural_abnormality
 granuloma:
   alias:
-  - granuloma
-  - granulom
+    - granulom
   level: 4
   parents:
     organic_inflammatory_non_infective: 0.43
@@ -1241,21 +1229,7 @@ granuloma:
     clinician 7: organic > structural > structural_abnormality
 head_trauma:
   alias:
-  - head trauma
-  level: 4
-  parents:
-    unclassified: 1.0
-  votes:
-    clinician 1: unclassified
-    clinician 2: unclassified
-    clinician 3: unclassified
-    clinician 4: unclassified
-    clinician 5: unclassified
-    clinician 6: unclassified
-    clinician 7: unclassified
-healthy:
-  alias:
-  - healthy
+    - head trauma
   level: 4
   parents:
     unclassified: 1.0
@@ -1268,8 +1242,6 @@ healthy:
     clinician 6: unclassified
     clinician 7: unclassified
 hematoma:
-  alias:
-  - hematoma
   level: 4
   parents:
     organic_structural_structural_abnormality: 0.14
@@ -1284,7 +1256,7 @@ hematoma:
     clinician 7: organic > structural > vascular
 hemmoragic_reinke_s_edema:
   alias:
-  - hemmoragic reinke's edema
+    - hemmoragic reinke's edema
   level: 4
   parents:
     organic_structural_epithelial_propria: 0.86
@@ -1298,8 +1270,6 @@ hemmoragic_reinke_s_edema:
     clinician 6: organic > structural > epithelial_propria
     clinician 7: organic > structural > epithelial_propria
 hemorrhage:
-  alias:
-  - hemorrhage
   level: 4
   parents:
     organic_structural_vascular: 1.0
@@ -1313,7 +1283,7 @@ hemorrhage:
     clinician 7: organic > structural > vascular
 hemorrhagic_polyp:
   alias:
-  - hemorrhagic polyp
+    - hemorrhagic polyp
   level: 4
   parents:
     organic_structural_epithelial_propria: 0.43
@@ -1328,7 +1298,7 @@ hemorrhagic_polyp:
     clinician 7: organic > structural > vascular
 hyperasthenia:
   alias:
-  - hyperasthenie
+    - hyperasthenie
   level: 4
   parents:
     unclassified: 1.0
@@ -1342,8 +1312,8 @@ hyperasthenia:
     clinician 7: unclassified
 hyperfunction:
   alias:
-  - hyperfunction
-  - hyperfunctional voice disorder
+    - hyperfunction
+    - hyperfunctional voice disorder
   level: 4
   parents:
     muscle_tension: 0.86
@@ -1358,7 +1328,8 @@ hyperfunction:
     clinician 7: muscle_tension
 hyperfunctional_dysphonia:
   alias:
-  - hyperfunktionelle dysphonie
+    - hyperfunctional dysphonia
+    - hyperfunktionelle dysphonie
   level: 4
   parents:
     muscle_tension: 0.71
@@ -1373,7 +1344,7 @@ hyperfunctional_dysphonia:
     clinician 7: muscle_tension
 hyperkinetic_dysphonia:
   alias:
-  - hyperkinetic dysphonia
+    - hyperkinetic dysphonia
   level: 4
   parents:
     muscle_tension: 0.57
@@ -1389,7 +1360,7 @@ hyperkinetic_dysphonia:
     clinician 7: muscle_tension
 hyperkinetic_dysphonia_adduction_deficit:
   alias:
-  - hyperkinetic dysphonia (adduction deficit)
+    - hyperkinetic dysphonia (adduction deficit)
   level: 4
   parents:
     muscle_tension: 0.29
@@ -1406,7 +1377,7 @@ hyperkinetic_dysphonia_adduction_deficit:
     clinician 7: muscle_tension > adaptive
 hyperkinetic_dysphonia_cordite:
   alias:
-  - hyperkinetic dysphonia (cordite)
+    - hyperkinetic dysphonia (cordite)
   level: 4
   parents:
     muscle_tension: 0.14
@@ -1421,7 +1392,7 @@ hyperkinetic_dysphonia_cordite:
     clinician 7: unclassified
 hyperkinetic_dysphonia_nodule:
   alias:
-  - hyperkinetic dysphonia (nodule)
+    - hyperkinetic dysphonia (nodule)
   level: 4
   parents:
     muscle_tension: 0.43
@@ -1437,7 +1408,7 @@ hyperkinetic_dysphonia_nodule:
     clinician 7: muscle_tension
 hyperkinetic_dysphonia_polyps:
   alias:
-  - hyperkinetic dysphonia (polyps)
+    - hyperkinetic dysphonia (polyps)
   level: 4
   parents:
     muscle_tension: 0.43
@@ -1454,7 +1425,7 @@ hyperkinetic_dysphonia_polyps:
     clinician 7: muscle_tension
 hyperkinetic_dysphonia_prolapse:
   alias:
-  - hyperkinetic dysphonia (prolapse)
+    - hyperkinetic dysphonia (prolapse)
   level: 4
   parents:
     muscle_tension_adaptive: 0.14
@@ -1469,7 +1440,7 @@ hyperkinetic_dysphonia_prolapse:
     clinician 7: unclassified
 hyperkinetic_dysphonia_reinkes_edema:
   alias:
-  - hyperkinetic dysphonia (reinke's edema)
+    - hyperkinetic dysphonia (reinke's edema)
   level: 4
   parents:
     muscle_tension: 0.14
@@ -1487,7 +1458,7 @@ hyperkinetic_dysphonia_reinkes_edema:
     clinician 7: muscle_tension
 hyperkinetic_dysphonia_rigid_vocal_fold:
   alias:
-  - hyperkinetic dysphonia  (rigid vocal fold)
+    - hyperkinetic dysphonia (rigid vocal fold)
   level: 4
   parents:
     muscle_tension: 0.29
@@ -1504,7 +1475,7 @@ hyperkinetic_dysphonia_rigid_vocal_fold:
     clinician 7: muscle_tension > adaptive
 hyperkinetic_dysphonia_vocal_fold_nodules:
   alias:
-  - hyperkinetic dysphonia (vocal fold nodules)
+    - hyperkinetic dysphonia (vocal fold nodules)
   level: 4
   parents:
     muscle_tension: 0.43
@@ -1520,7 +1491,7 @@ hyperkinetic_dysphonia_vocal_fold_nodules:
     clinician 7: muscle_tension
 hyperkinetic_dysphonia_vocal_fold_paralysis:
   alias:
-  - hyperkinetic dysphonia (vocal fold paralysis)
+    - hyperkinetic dysphonia (vocal fold paralysis)
   level: 4
   parents:
     muscle_tension_adaptive: 0.29
@@ -1538,7 +1509,7 @@ hyperkinetic_dysphonia_vocal_fold_paralysis:
     clinician 7: muscle_tension > adaptive
 hyperkinetic_dysphonia_vocal_fold_prolapse:
   alias:
-  - hyperkinetic dysphonia (vocal fold prolapse)
+    - hyperkinetic dysphonia (vocal fold prolapse)
   level: 4
   parents:
     muscle_tension_adaptive: 0.14
@@ -1554,7 +1525,7 @@ hyperkinetic_dysphonia_vocal_fold_prolapse:
     clinician 7: unclassified
 hypervascularization:
   alias:
-  - hypervascularization
+    - hypervascularization
   level: 4
   parents:
     organic_structural_vascular: 0.43
@@ -1569,8 +1540,8 @@ hypervascularization:
     clinician 7: unclassified
 hypofunctional_dysphonia:
   alias:
-  - hypofunctional dysphonia
-  - hypofunktionelle dysphonie
+    - hypofunctional dysphonia
+    - hypofunktionelle dysphonie
   level: 4
   parents:
     functional_dysphonia: 0.14
@@ -1588,7 +1559,7 @@ hypofunctional_dysphonia:
     clinician 7: muscle_tension
 hypokinetic_dysphonia:
   alias:
-  - hypokinetic dysphonia
+    - hypokinetic dysphonia
   level: 4
   parents:
     muscle_tension: 0.14
@@ -1605,7 +1576,7 @@ hypokinetic_dysphonia:
     clinician 7: muscle_tension
 hypokinetic_dysphonia_adduction_deficit:
   alias:
-  - hypokinetic dysphonia (adduction deficit)
+    - hypokinetic dysphonia (adduction deficit)
   level: 4
   parents:
     muscle_tension_adaptive: 0.14
@@ -1622,7 +1593,7 @@ hypokinetic_dysphonia_adduction_deficit:
     clinician 7: muscle_tension > adaptive
 hypokinetic_dysphonia_bilateral_vocal_fold:
   alias:
-  - hypokinetic dysphonia (bilateral vocal fold)
+    - hypokinetic dysphonia (bilateral vocal fold)
   level: 4
   parents:
     organic_neuro_muscular_central_nervous_disorder: 0.14
@@ -1639,7 +1610,7 @@ hypokinetic_dysphonia_bilateral_vocal_fold:
     clinician 7: unclassified
 hypokinetic_dysphonia_conversion_dysphonia:
   alias:
-  - hypokinetic dysphonia (conversion dysphonia)
+    - hypokinetic dysphonia (conversion dysphonia)
   level: 4
   parents:
     functional_dysphonia: 0.71
@@ -1654,7 +1625,7 @@ hypokinetic_dysphonia_conversion_dysphonia:
     clinician 7: unclassified
 hypokinetic_dysphonia_dysphonia_by_chordal_groove:
   alias:
-  - hypokinetic dysphonia (dysphonia by chordal groove)
+    - hypokinetic dysphonia (dysphonia by chordal groove)
   level: 4
   parents:
     muscle_tension_adaptive: 0.14
@@ -1671,13 +1642,13 @@ hypokinetic_dysphonia_dysphonia_by_chordal_groove:
     clinician 7: muscle_tension > adaptive
 hypokinetic_dysphonia_extraglottic_air_leak:
   alias:
-  - hypokinetic dysphonia (extraglottic air leak)
+    - hypokinetic dysphonia (extraglottic air leak)
   level: 4
   parents:
     unclassified: 1.0
 hypokinetic_dysphonia_glottic_insufficiency:
   alias:
-  - hypokinetic dysphonia (glottic insufficiency)
+    - hypokinetic dysphonia (glottic insufficiency)
   level: 4
   parents:
     muscle_tension_adaptive: 0.14
@@ -1695,7 +1666,7 @@ hypokinetic_dysphonia_glottic_insufficiency:
     clinician 7: muscle_tension > adaptive
 hypokinetic_dysphonia_laryngitis:
   alias:
-  - hypokinetic dysphonia (laryngitis)
+    - hypokinetic dysphonia (laryngitis)
   level: 4
   parents:
     organic_inflammatory_non_infective: 0.29
@@ -1711,7 +1682,7 @@ hypokinetic_dysphonia_laryngitis:
     clinician 7: unclassified
 hypokinetic_dysphonia_presbiphonia:
   alias:
-  - hypokinetic dysphonia (presbiphonia)
+    - hypokinetic dysphonia (presbiphonia)
   level: 4
   parents:
     muscle_tension: 0.14
@@ -1727,7 +1698,7 @@ hypokinetic_dysphonia_presbiphonia:
     clinician 7: muscle_tension
 hypokinetic_dysphonia_spasmodic_dysphonia:
   alias:
-  - hypokinetic dysphonia (spasmodic dysphonia)
+    - hypokinetic dysphonia (spasmodic dysphonia)
   level: 4
   parents:
     organic_neuro_muscular_movement_disorder: 0.71
@@ -1742,7 +1713,7 @@ hypokinetic_dysphonia_spasmodic_dysphonia:
     clinician 7: unclassified
 hypokinetic_dysphonia_vocal_fold_paralysis:
   alias:
-  - hypokinetic dysphonia (vocal fold paralysis)
+    - hypokinetic dysphonia (vocal fold paralysis)
   level: 4
   parents:
     organic: 0.14
@@ -1759,8 +1730,8 @@ hypokinetic_dysphonia_vocal_fold_paralysis:
     clinician 7: unclassified
 hypopharyngeal_tumor:
   alias:
-  - hypopharyngeal tumor
-  - hypopharynxtumor
+    - hypopharyngeal tumor
+    - hypopharynxtumor
   level: 4
   parents:
     organic_structural_malignancy: 0.57
@@ -1775,8 +1746,8 @@ hypopharyngeal_tumor:
     clinician 7: organic > structural > structural_abnormality
 hypotonic_dysphonia:
   alias:
-  - hypotonic dysphonia
-  - hypotone dysphonie
+    - hypotonic dysphonia
+    - hypotone dysphonie
   level: 4
   parents:
     organic_neuro_muscular_central_nervous_disorder: 0.14
@@ -1792,7 +1763,7 @@ hypotonic_dysphonia:
     clinician 7: organic > neuro_muscular > peripheral_nervous_disorder
 idiopathic_dysphonia:
   alias:
-  - idiopathic dysphonia
+    - idiopathic dysphonia
   level: 4
   parents:
     functional_dysphonia: 0.14
@@ -1807,7 +1778,7 @@ idiopathic_dysphonia:
     clinician 7: unclassified
 idiopathic_laryngeal_discoordination:
   alias:
-  - idiopathic laryngeal discoordination
+    - idiopathic laryngeal discoordination
   level: 4
   parents:
     functional_dysphonia: 0.14
@@ -1822,7 +1793,7 @@ idiopathic_laryngeal_discoordination:
     clinician 7: unclassified
 idiopathic_neuro_disorder:
   alias:
-  - idiopathic neuro. disorder
+    - idiopathic neuro. disorder
   level: 4
   parents:
     organic_neuro_muscular_central_nervous_disorder: 0.43
@@ -1837,7 +1808,7 @@ idiopathic_neuro_disorder:
     clinician 7: unclassified
 immediate_post_surgery:
   alias:
-  - immediate post surgery
+    - immediate post surgery
   level: 4
   parents:
     unclassified: 1.0
@@ -1851,7 +1822,7 @@ immediate_post_surgery:
     clinician 7: unclassified
 infection:
   alias:
-  - infection
+    - infection
   level: 4
   parents:
     organic_inflammatory_infective: 0.29
@@ -1866,7 +1837,7 @@ infection:
     clinician 7: unclassified
 inflamed_arytenoid:
   alias:
-  - inflamed arytenoid
+    - inflamed arytenoid
   level: 4
   parents:
     organic_inflammatory_non_infective: 0.71
@@ -1881,8 +1852,8 @@ inflamed_arytenoid:
     clinician 7: unclassified
 inflammation:
   alias:
-  - inflammation
-  - inflammed vocal folds
+    - inflammation
+    - inflammed vocal folds
   level: 4
   parents:
     organic_inflammatory_non_infective: 0.71
@@ -1897,7 +1868,7 @@ inflammation:
     clinician 7: organic > inflammatory > non_infective
 inflammatory_disease:
   alias:
-  - inflammatory disease
+    - inflammatory disease
   level: 4
   parents:
     organic_inflammatory_infective: 0.14
@@ -1913,7 +1884,7 @@ inflammatory_disease:
     clinician 7: unclassified
 interarytenoid_hyperplasia:
   alias:
-  - interarytenoid hyperplasia
+    - interarytenoid hyperplasia
   level: 4
   parents:
     organic_inflammatory_non_infective: 0.14
@@ -1929,8 +1900,8 @@ interarytenoid_hyperplasia:
     clinician 7: organic > structural > structural_abnormality
 internal_weakness:
   alias:
-  - internal weakness
-  - internusschwäche
+    - internal weakness
+    - internusschwäche
   level: 4
   parents:
     unclassified: 1.0
@@ -1944,7 +1915,7 @@ internal_weakness:
     clinician 7: unclassified
 intubation:
   alias:
-  - intubation
+    - intubation
   level: 4
   parents:
     unclassified: 1.0
@@ -1958,7 +1929,7 @@ intubation:
     clinician 7: unclassified
 intubation_damage:
   alias:
-  - intubation damage
+    - intubation damage
   level: 4
   parents:
     organic_trauma_internal: 0.71
@@ -1973,8 +1944,8 @@ intubation_damage:
     clinician 7: unclassified
 intubation_granuloma:
   alias:
-  - intubation granuloma
-  - intubationsgranulom
+    - intubation granuloma
+    - intubationsgranulom
   level: 4
   parents:
     organic_inflammatory_non_infective: 0.29
@@ -1990,8 +1961,8 @@ intubation_granuloma:
     clinician 7: organic > structural > structural_abnormality
 intubation_trauma:
   alias:
-  - intubation trauma
-  - intubationsschaden
+    - intubation trauma
+    - intubationsschaden
   level: 4
   parents:
     organic_trauma_external: 0.14
@@ -2007,7 +1978,7 @@ intubation_trauma:
     clinician 7: unclassified
 irregularity:
   alias:
-  - irregularity
+    - irregularity
   level: 4
   parents:
     unclassified: 1.0
@@ -2021,7 +1992,7 @@ irregularity:
     clinician 7: unclassified
 irritation:
   alias:
-  - irritation
+    - irritation
   level: 4
   parents:
     organic_inflammatory_non_infective: 0.14
@@ -2036,8 +2007,8 @@ irritation:
     clinician 7: unclassified
 juvenile_dysphonia:
   alias:
-  - juvenile dysphonia
-  - juvenile dysphonie
+    - juvenile dysphonia
+    - juvenile dysphonie
   level: 4
   parents:
     functional_puberphonia: 0.43
@@ -2052,7 +2023,7 @@ juvenile_dysphonia:
     clinician 7: unclassified
 keratotic_reaction_to_polyp:
   alias:
-  - keratotic reaction to polyp
+    - keratotic reaction to polyp
   level: 4
   parents:
     organic_structural_epithelial_propria: 0.57
@@ -2068,7 +2039,7 @@ keratotic_reaction_to_polyp:
     clinician 7: organic > structural > structural_abnormality
 laryngeal_mucosa_trauma_chemical_and_thermal:
   alias:
-  - laryngeal mucosa trauma (chemical and thermal)
+    - laryngeal mucosa trauma (chemical and thermal)
   level: 4
   parents:
     organic: 0.14
@@ -2083,7 +2054,7 @@ laryngeal_mucosa_trauma_chemical_and_thermal:
     clinician 7: organic > trauma > internal
 laryngeal_sensory_dysfunction:
   alias:
-  - laryngeal sensory dysfunction
+    - laryngeal sensory dysfunction
   level: 4
   parents:
     organic_neuro_muscular_central_nervous_disorder: 0.14
@@ -2099,7 +2070,7 @@ laryngeal_sensory_dysfunction:
     clinician 7: unclassified
 laryngeal_trauma:
   alias:
-  - laryngeal trauma
+    - laryngeal trauma
   level: 4
   parents:
     organic_trauma_external: 0.43
@@ -2115,7 +2086,7 @@ laryngeal_trauma:
     clinician 7: unclassified
 laryngeal_trauma_blunt:
   alias:
-  - laryngeal trauma - blunt
+    - laryngeal trauma - blunt
   level: 4
   parents:
     organic_trauma_external: 0.71
@@ -2130,7 +2101,7 @@ laryngeal_trauma_blunt:
     clinician 7: unclassified
 laryngeal_tuberculosis:
   alias:
-  - laryngeal tuberculosis
+    - laryngeal tuberculosis
   level: 4
   parents:
     organic_inflammatory_infective: 1.0
@@ -2144,8 +2115,8 @@ laryngeal_tuberculosis:
     clinician 7: organic > inflammatory > infective
 laryngeal_tumor:
   alias:
-  - laryngeal tumor
-  - kehlkopftumor
+    - laryngeal tumor
+    - kehlkopftumor
   level: 4
   parents:
     organic_structural_malignancy: 0.86
@@ -2160,7 +2131,7 @@ laryngeal_tumor:
     clinician 7: organic > structural > malignancy
 laryngeal_web:
   alias:
-  - laryngeal web
+    - laryngeal web
   level: 4
   parents:
     organic_structural_congenital: 0.14
@@ -2175,7 +2146,7 @@ laryngeal_web:
     clinician 7: organic > structural > structural_abnormality
 laryngitis:
   alias:
-  - laryngitis
+    - laryngitis
   level: 4
   parents:
     organic_inflammatory_infective: 0.71
@@ -2191,8 +2162,8 @@ laryngitis:
     clinician 7: unclassified
 laryngocele:
   alias:
-  - laryngocele
-  - laryngozele
+    - laryngocele
+    - laryngozele
   level: 4
   parents:
     organic_structural_congenital: 0.29
@@ -2207,7 +2178,7 @@ laryngocele:
     clinician 7: organic > structural > structural_abnormality
 laryngopharyngeal_reflux:
   alias:
-  - laryngopharyngeal reflux
+    - laryngopharyngeal reflux
   level: 4
   parents:
     organic_inflammatory_non_infective: 0.43
@@ -2222,7 +2193,7 @@ laryngopharyngeal_reflux:
     clinician 7: unclassified
 left_hemilaryngectomy:
   alias:
-  - left hemilaryngectomy
+    - left hemilaryngectomy
   level: 4
   parents:
     organic_structural_structural_abnormality: 0.57
@@ -2237,7 +2208,7 @@ left_hemilaryngectomy:
     clinician 7: organic > structural > structural_abnormality
 lesion:
   alias:
-  - lesions posterior left vocal fold
+    - lesions posterior left vocal fold
   level: 4
   parents:
     organic_structural_epithelial_propria: 0.29
@@ -2253,12 +2224,12 @@ lesion:
     clinician 7: organic > structural > epithelial_propria
 leukoplakia:
   alias:
-  - keratosis
-  - keratosis   leukoplakia
-  - keratosis (sometimes described as leukoplakia or erythroplasia)
-  - keratosis / leukoplakia
-  - leukoplakia
-  - leukoplakie
+    - keratosis
+    - keratosis   leukoplakia
+    - keratosis (sometimes described as leukoplakia or erythroplasia)
+    - keratosis / leukoplakia
+    - leukoplakia
+    - leukoplakie
   level: 4
   parents:
     organic_structural_epithelial_propria: 0.86
@@ -2273,7 +2244,7 @@ leukoplakia:
     clinician 7: organic > structural > epithelial_propria
 lymphode_hyperplasia:
   alias:
-  - lymphode hyperplasia
+    - lymphode hyperplasia
   level: 4
   parents:
     organic_inflammatory_infective: 0.14
@@ -2289,7 +2260,7 @@ lymphode_hyperplasia:
     clinician 7: unclassified
 major_depressive_disorder_recurrent:
   alias:
-  - major depressive disorder (recurrent)
+    - major depressive disorder (recurrent)
   level: 4
   parents:
     unclassified: 1.0
@@ -2303,7 +2274,7 @@ major_depressive_disorder_recurrent:
     clinician 7: unclassified
 malignant_tumor:
   alias:
-  - malignant tumor
+    - malignant tumor
   level: 4
   parents:
     organic_structural_malignancy: 1.0
@@ -2317,7 +2288,7 @@ malignant_tumor:
     clinician 7: organic > structural > malignancy
 mass:
   alias:
-  - mass
+    - mass
   level: 4
   parents:
     organic_structural_structural_abnormality: 0.29
@@ -2332,8 +2303,8 @@ mass:
     clinician 7: unclassified
 medial_cervical_cyst:
   alias:
-  - medial cervical cyst
-  - mediale halscyste
+    - medial cervical cyst
+    - mediale halscyste
   level: 4
   parents:
     organic_structural_structural_abnormality: 0.14
@@ -2348,8 +2319,8 @@ medial_cervical_cyst:
     clinician 7: unclassified
 mesopharyngeal_tumor:
   alias:
-  - mesopharyngeal tumor
-  - mesopharynxtumor
+    - mesopharyngeal tumor
+    - mesopharynxtumor
   level: 4
   parents:
     organic_structural_malignancy: 0.14
@@ -2365,7 +2336,7 @@ mesopharyngeal_tumor:
     clinician 7: unclassified
 micro_cyst:
   alias:
-  - micro-cyst
+    - micro-cyst
   level: 4
   parents:
     organic_structural_epithelial_propria: 0.57
@@ -2381,7 +2352,7 @@ micro_cyst:
     clinician 7: organic > structural > structural_abnormality
 microinvasive_lesion:
   alias:
-  - microinvasive lesion
+    - microinvasive lesion
   level: 4
   parents:
     organic_structural_malignancy: 0.57
@@ -2397,7 +2368,7 @@ microinvasive_lesion:
     clinician 7: unclassified
 mixed_adductor_abductor_spasmodic_dysphonia:
   alias:
-  - mixed adductor / abductor spasmodic dysphonia
+    - mixed adductor / abductor spasmodic dysphonia
   level: 4
   parents:
     organic_neuro_muscular_movement_disorder: 1.0
@@ -2411,7 +2382,7 @@ mixed_adductor_abductor_spasmodic_dysphonia:
     clinician 7: organic > neuro_muscular > movement_disorder
 monochorditis:
   alias:
-  - monochorditis
+    - monochorditis
   level: 4
   parents:
     organic_inflammatory_infective: 0.29
@@ -2428,7 +2399,7 @@ monochorditis:
     clinician 7: unclassified
 multi_loculated_polyp:
   alias:
-  - multi loculated polyp
+    - multi loculated polyp
   level: 4
   parents:
     organic_structural_epithelial_propria: 0.71
@@ -2444,7 +2415,7 @@ multi_loculated_polyp:
     clinician 7: organic > structural > structural_abnormality
 multiple_sclerosis:
   alias:
-  - multiple sclerosis
+    - multiple sclerosis
   level: 4
   parents:
     organic_neuro_muscular_central_nervous_disorder: 1.0
@@ -2458,7 +2429,7 @@ multiple_sclerosis:
     clinician 7: organic > neuro_muscular > central_nervous_disorder
 muscular_dystrophy:
   alias:
-  - muscular dystrophy
+    - muscular dystrophy
   level: 4
   parents:
     organic_neuro_muscular_central_nervous_disorder: 0.29
@@ -2474,8 +2445,8 @@ muscular_dystrophy:
     clinician 7: organic > neuro_muscular > central_nervous_disorder
 mutation:
   alias:
-  - mutation
-  - mutatio
+    - mutation
+    - mutatio
   level: 4
   parents:
     organic_structural_structural_abnormality: 0.14
@@ -2490,8 +2461,8 @@ mutation:
     clinician 7: unclassified
 mutation_fistula_voice:
   alias:
-  - mutation fistula voice
-  - mutationsfistelstimme
+    - mutation fistula voice
+    - mutationsfistelstimme
   level: 4
   parents:
     organic_structural_congenital: 0.14
@@ -2506,13 +2477,13 @@ mutation_fistula_voice:
     clinician 7: unclassified
 myasthenia:
   alias:
-  - phonasthenie
+    - phonasthenie
   level: 4
   parents:
     unclassified: 1.0
 neurasthenia:
   alias:
-  - neurasthenia
+    - neurasthenia
   level: 4
   parents:
     unclassified: 1.0
@@ -2526,7 +2497,7 @@ neurasthenia:
     clinician 7: unclassified
 nodular_swelling:
   alias:
-  - nodular swelling
+    - nodular swelling
   level: 4
   parents:
     organic_inflammatory_non_infective: 0.14
@@ -2542,7 +2513,7 @@ nodular_swelling:
     clinician 7: organic > structural > epithelial_propria
 non_fluency_syndrome:
   alias:
-  - non-fluency-syndrom
+    - non-fluency-syndrom
   level: 4
   parents:
     unclassified: 1.0
@@ -2556,7 +2527,7 @@ non_fluency_syndrome:
     clinician 7: unclassified
 non_intubation_related_vocal_fold_granuloma:
   alias:
-  - non-intubation related vocal fold granuloma
+    - non-intubation related vocal fold granuloma
   level: 4
   parents:
     organic_inflammatory_non_infective: 0.43
@@ -2573,8 +2544,8 @@ non_intubation_related_vocal_fold_granuloma:
     clinician 7: organic > structural > epithelial_propria
 orofacial_dyspraxia:
   alias:
-  - orofacial dyspraxia
-  - orofaciale dyspraxie
+    - orofacial dyspraxia
+    - orofaciale dyspraxie
   level: 4
   parents:
     functional: 0.14
@@ -2590,7 +2561,7 @@ orofacial_dyspraxia:
     clinician 7: unclassified
 pachydermia:
   alias:
-  - pachydermia
+    - pachydermia
   level: 4
   parents:
     organic_inflammatory_non_infective: 0.14
@@ -2606,7 +2577,7 @@ pachydermia:
     clinician 7: organic > structural > epithelial_propria
 papilamotosis:
   alias:
-  - papilamotosis
+    - papilamotosis
   level: 4
   parents:
     organic_inflammatory_infective: 0.14
@@ -2622,8 +2593,8 @@ papilamotosis:
     clinician 7: organic > structural > epithelial_propria
 papilloma:
   alias:
-  - papilloma
-  - papillom
+    - papilloma
+    - papillom
   level: 4
   parents:
     organic_inflammatory_infective: 0.14
@@ -2639,7 +2610,7 @@ papilloma:
     clinician 7: organic > structural > epithelial_propria
 paradoxical_vocal_fold_movement:
   alias:
-  - paradoxical vocal fold movement
+    - paradoxical vocal fold movement
   level: 4
   parents:
     functional_dysphonia: 0.29
@@ -2655,7 +2626,7 @@ paradoxical_vocal_fold_movement:
     clinician 7: unclassified
 paralysis:
   alias:
-  - paralysis
+    - paralysis
   level: 4
   parents:
     organic_neuro_muscular_central_nervous_disorder: 0.29
@@ -2670,7 +2641,7 @@ paralysis:
     clinician 7: organic > neuro_muscular > peripheral_nervous_disorder
 paresis:
   alias:
-  - paresis
+    - paresis
   level: 4
   parents:
     organic_neuro_muscular_central_nervous_disorder: 0.14
@@ -2685,9 +2656,9 @@ paresis:
     clinician 7: organic > neuro_muscular > peripheral_nervous_disorder
 parkinson_disease:
   alias:
-  - parkinson disease
-  - morbus parkinson
-  - parkinson's disease
+    - parkinson disease
+    - morbus parkinson
+    - parkinson's disease
   level: 4
   parents:
     organic_neuro_muscular_central_nervous_disorder: 0.29
@@ -2702,7 +2673,7 @@ parkinson_disease:
     clinician 7: organic > neuro_muscular > central_nervous_disorder
 partial_laryngectomy:
   alias:
-  - partial laryngectomy
+    - partial laryngectomy
   level: 4
   parents:
     organic_structural_structural_abnormality: 0.57
@@ -2717,7 +2688,7 @@ partial_laryngectomy:
     clinician 7: organic > structural > structural_abnormality
 pathological_voice_diagnosis_n_a:
   alias:
-  - pathological voice- diagnosis n/a
+    - pathological voice- diagnosis n/a
   level: 4
   parents:
     unclassified: 1.0
@@ -2731,8 +2702,8 @@ pathological_voice_diagnosis_n_a:
     clinician 7: unclassified
 phonation_nodules:
   alias:
-  - phonation nodules
-  - phonationsknötchen
+    - phonation nodules
+    - phonationsknötchen
   level: 4
   parents:
     muscle_tension: 0.14
@@ -2748,8 +2719,8 @@ phonation_nodules:
     clinician 7: unclassified
 pocket_fold_hyperplasia:
   alias:
-  - pocket fold hyperplasia
-  - taschenfaltenhyperplasie
+    - pocket fold hyperplasia
+    - taschenfaltenhyperplasie
   level: 4
   parents:
     organic_structural_epithelial_propria: 0.14
@@ -2764,8 +2735,8 @@ pocket_fold_hyperplasia:
     clinician 7: unclassified
 pocket_fold_voice:
   alias:
-  - pocket wrinkled voice
-  - taschenfaltenstimme
+    - pocket wrinkled voice
+    - taschenfaltenstimme
   level: 4
   parents:
     unclassified: 1.0
@@ -2779,14 +2750,14 @@ pocket_fold_voice:
     clinician 7: unclassified
 polters_syndrome:
   alias:
-  - polter's syndrome
-  - poltersyndrom
+    - polter's syndrome
+    - poltersyndrom
   level: 4
   parents:
     unclassified: 1.0
 polypoid_changes:
   alias:
-  - polypoid changes
+    - polypoid changes
   level: 4
   parents:
     organic_structural_epithelial_propria: 0.43
@@ -2801,7 +2772,7 @@ polypoid_changes:
     clinician 7: unclassified
 polypoid_degeneration_reinkes:
   alias:
-  - polypoid degeneration (reinke's)
+    - polypoid degeneration (reinke's)
   level: 4
   parents:
     organic_inflammatory_non_infective: 0.14
@@ -2817,7 +2788,7 @@ polypoid_degeneration_reinkes:
     clinician 7: unclassified
 possible_subglottal_mucous_collection:
   alias:
-  - possible subglottal mucous collection
+    - possible subglottal mucous collection
   level: 4
   parents:
     unclassified: 1.0
@@ -2831,7 +2802,7 @@ possible_subglottal_mucous_collection:
     clinician 7: unclassified
 post_arytenoid_adduction:
   alias:
-  - post arytenoid adduction
+    - post arytenoid adduction
   level: 4
   parents:
     unclassified: 1.0
@@ -2845,7 +2816,7 @@ post_arytenoid_adduction:
     clinician 7: unclassified
 post_biopsy:
   alias:
-  - post biopsy
+    - post biopsy
   level: 4
   parents:
     unclassified: 1.0
@@ -2859,7 +2830,7 @@ post_biopsy:
     clinician 7: unclassified
 post_botox_injection:
   alias:
-  - post botox injection
+    - post botox injection
   level: 4
   parents:
     unclassified: 1.0
@@ -2873,7 +2844,7 @@ post_botox_injection:
     clinician 7: unclassified
 post_cancer_surgery:
   alias:
-  - post cancer surgery
+    - post cancer surgery
   level: 4
   parents:
     unclassified: 1.0
@@ -2887,7 +2858,7 @@ post_cancer_surgery:
     clinician 7: unclassified
 post_cancer_surgery_of_the_hypopharynx:
   alias:
-  - post cancer surgery of the hypopharynx
+    - post cancer surgery of the hypopharynx
   level: 4
   parents:
     unclassified: 1.0
@@ -2901,7 +2872,7 @@ post_cancer_surgery_of_the_hypopharynx:
     clinician 7: unclassified
 post_cva_laryngeal_discoordination:
   alias:
-  - post cva laryngeal discoordination
+    - post cva laryngeal discoordination
   level: 4
   parents:
     organic_neuro_muscular_central_nervous_disorder: 0.57
@@ -2916,7 +2887,7 @@ post_cva_laryngeal_discoordination:
     clinician 7: organic > neuro_muscular > central_nervous_disorder
 post_fix_for_functional_problem:
   alias:
-  - post fix for functional problem
+    - post fix for functional problem
   level: 4
   parents:
     functional_dysphonia: 0.14
@@ -2931,7 +2902,7 @@ post_fix_for_functional_problem:
     clinician 7: unclassified
 post_intubation_for_seven_days:
   alias:
-  - post intubation for seven days
+    - post intubation for seven days
   level: 4
   parents:
     organic_trauma_internal: 0.14
@@ -2946,7 +2917,7 @@ post_intubation_for_seven_days:
     clinician 7: unclassified
 post_intubation_submucosal_edema_mild:
   alias:
-  - post-intubation submucosal edema (mild)
+    - post-intubation submucosal edema (mild)
   level: 4
   parents:
     organic_inflammatory_non_infective: 0.29
@@ -2963,7 +2934,7 @@ post_intubation_submucosal_edema_mild:
     clinician 7: organic > inflammatory > non_infective
 post_laryngoplasty:
   alias:
-  - post laryngoplasty
+    - post laryngoplasty
   level: 4
   parents:
     unclassified: 1.0
@@ -2977,7 +2948,7 @@ post_laryngoplasty:
     clinician 7: unclassified
 post_laser_removal_of_subglottic_web:
   alias:
-  - post laser removal of subglottic web
+    - post laser removal of subglottic web
   level: 4
   parents:
     organic_structural_structural_abnormality: 0.14
@@ -2992,7 +2963,7 @@ post_laser_removal_of_subglottic_web:
     clinician 7: unclassified
 post_microflap_resection:
   alias:
-  - post microflap resection
+    - post microflap resection
   level: 4
   parents:
     unclassified: 1.0
@@ -3006,7 +2977,7 @@ post_microflap_resection:
     clinician 7: unclassified
 post_microflap_surgery:
   alias:
-  - post microflap surgery
+    - post microflap surgery
   level: 4
   parents:
     unclassified: 1.0
@@ -3020,8 +2991,8 @@ post_microflap_surgery:
     clinician 7: unclassified
 post_radiated_larynx:
   alias:
-  - post irradiation
-  - post radiated larynx
+    - post irradiation
+    - post radiated larynx
   level: 4
   parents:
     organic_inflammatory_non_infective: 0.14
@@ -3038,7 +3009,7 @@ post_radiated_larynx:
     clinician 7: unclassified
 post_radiation_difuse_edema_of_entire_larynx:
   alias:
-  - post radiation difuse edema of entire larynx
+    - post radiation difuse edema of entire larynx
   level: 4
   parents:
     organic_inflammatory_non_infective: 0.29
@@ -3056,7 +3027,7 @@ post_radiation_difuse_edema_of_entire_larynx:
     clinician 7: organic > inflammatory > non_infective
 post_radiation_fibrosis:
   alias:
-  - post radiation fibrosis
+    - post radiation fibrosis
   level: 4
   parents:
     organic_inflammatory_non_infective: 0.14
@@ -3073,7 +3044,7 @@ post_radiation_fibrosis:
     clinician 7: unclassified
 post_removal_of_nodular_granuloma:
   alias:
-  - post removal of nodular granuloma
+    - post removal of nodular granuloma
   level: 4
   parents:
     unclassified: 1.0
@@ -3087,7 +3058,7 @@ post_removal_of_nodular_granuloma:
     clinician 7: unclassified
 post_surgery_cricoid_removal:
   alias:
-  - post-surgery -cricoid removal
+    - post-surgery -cricoid removal
   level: 4
   parents:
     organic_structural_structural_abnormality: 0.29
@@ -3102,7 +3073,7 @@ post_surgery_cricoid_removal:
     clinician 7: unclassified
 post_surgery_for_contact_granuloma:
   alias:
-  - post surgery for contact granuloma
+    - post surgery for contact granuloma
   level: 4
   parents:
     unclassified: 1.0
@@ -3116,7 +3087,7 @@ post_surgery_for_contact_granuloma:
     clinician 7: unclassified
 post_surgery_for_removal_of_teflon_granuloma:
   alias:
-  - post surgery for removal of teflon granuloma
+    - post surgery for removal of teflon granuloma
   level: 4
   parents:
     unclassified: 1.0
@@ -3130,7 +3101,7 @@ post_surgery_for_removal_of_teflon_granuloma:
     clinician 7: unclassified
 post_surgery_removal_of_keratosis_with_atypia:
   alias:
-  - post surgery - removal of keratosis with atypia
+    - post surgery - removal of keratosis with atypia
   level: 4
   parents:
     unclassified: 1.0
@@ -3144,8 +3115,8 @@ post_surgery_removal_of_keratosis_with_atypia:
     clinician 7: unclassified
 post_surgical_changes:
   alias:
-  - post surgery
-  - post surgical changes
+    - post surgery
+    - post surgical changes
   level: 4
   parents:
     unclassified: 1.0
@@ -3159,7 +3130,7 @@ post_surgical_changes:
     clinician 7: unclassified
 post_surgical_removal_of_granulation_tissue:
   alias:
-  - post surgical removal of granulation tissue
+    - post surgical removal of granulation tissue
   level: 4
   parents:
     unclassified: 1.0
@@ -3173,7 +3144,7 @@ post_surgical_removal_of_granulation_tissue:
     clinician 7: unclassified
 post_thyroplasty:
   alias:
-  - post thyroplasty
+    - post thyroplasty
   level: 4
   parents:
     unclassified: 1.0
@@ -3187,7 +3158,7 @@ post_thyroplasty:
     clinician 7: unclassified
 post_thyroplasty_and_cricopharyngeal_myotomy:
   alias:
-  - post thyroplasty and cricopharyngeal myotomy
+    - post thyroplasty and cricopharyngeal myotomy
   level: 4
   parents:
     unclassified: 1.0
@@ -3201,7 +3172,7 @@ post_thyroplasty_and_cricopharyngeal_myotomy:
     clinician 7: unclassified
 post_viral:
   alias:
-  - post viral
+    - post viral
   level: 4
   parents:
     unclassified: 1.0
@@ -3215,8 +3186,8 @@ post_viral:
     clinician 7: unclassified
 post_vocal_cord_stripping:
   alias:
-  - post vocal cord stripping
-  - post vocal fold stripping
+    - post vocal cord stripping
+    - post vocal fold stripping
   level: 4
   parents:
     organic_structural_structural_abnormality: 0.14
@@ -3231,7 +3202,7 @@ post_vocal_cord_stripping:
     clinician 7: unclassified
 posterior_arytenoid_lateralization_surgery:
   alias:
-  - posterior arytenoid lateralization surgery
+    - posterior arytenoid lateralization surgery
   level: 4
   parents:
     unclassified: 1.0
@@ -3245,7 +3216,7 @@ posterior_arytenoid_lateralization_surgery:
     clinician 7: unclassified
 postnasal:
   alias:
-  - postnasal
+    - postnasal
   level: 4
   parents:
     unclassified: 1.0
@@ -3259,7 +3230,7 @@ postnasal:
     clinician 7: unclassified
 pre_cricothyroid_approximation:
   alias:
-  - pre-cricothyroid approximation
+    - pre-cricothyroid approximation
   level: 4
   parents:
     unclassified: 1.0
@@ -3273,7 +3244,7 @@ pre_cricothyroid_approximation:
     clinician 7: unclassified
 pre_nodular_swellings:
   alias:
-  - pre-nodular swellings
+    - pre-nodular swellings
   level: 4
   parents:
     muscle_tension: 0.14
@@ -3289,7 +3260,7 @@ pre_nodular_swellings:
     clinician 7: organic > structural > epithelial_propria
 presbyphonia:
   alias:
-  - presbyphonia
+    - presbyphonia
   level: 4
   parents:
     organic_structural_congenital: 1.0
@@ -3303,7 +3274,7 @@ presbyphonia:
     clinician 7: organic > structural > congenital
 prominent_lingual_tonsils:
   alias:
-  - prominent lingual tonsils
+    - prominent lingual tonsils
   level: 4
   parents:
     unclassified: 1.0
@@ -3317,8 +3288,8 @@ prominent_lingual_tonsils:
     clinician 7: unclassified
 psychogenic_aphonia:
   alias:
-  - psychogenic aphonia
-  - psychogene aphonie
+    - psychogenic aphonia
+    - psychogene aphonie
   level: 4
   parents:
     functional_dysphonia: 1.0
@@ -3332,8 +3303,8 @@ psychogenic_aphonia:
     clinician 7: functional > dysphonia
 psychogenic_dysphonia:
   alias:
-  - psychogenic dysphonia
-  - psychogene dysphonie
+    - psychogenic dysphonia
+    - psychogene dysphonie
   level: 4
   parents:
     functional_dysphonia: 1.0
@@ -3347,8 +3318,8 @@ psychogenic_dysphonia:
     clinician 7: functional > dysphonia
 psychogenic_microphony:
   alias:
-  - psychogenic microphony
-  - psychogene mikrophonie
+    - psychogenic microphony
+    - psychogene mikrophonie
   level: 4
   parents:
     functional_dysphonia: 0.71
@@ -3363,7 +3334,7 @@ psychogenic_microphony:
     clinician 7: unclassified
 puberphonia:
   alias:
-  - puberphonia
+    - puberphonia
   level: 4
   parents:
     functional_puberphonia: 1.0
@@ -3377,7 +3348,7 @@ puberphonia:
     clinician 7: functional > puberphonia
 question_of_sln:
   alias:
-  - question of sln
+    - question of sln
   level: 4
   parents:
     unclassified: 1.0
@@ -3391,7 +3362,7 @@ question_of_sln:
     clinician 7: unclassified
 question_of_subglottic_masses:
   alias:
-  - question of subglottic masses
+    - question of subglottic masses
   level: 4
   parents:
     organic_structural_structural_abnormality: 0.14
@@ -3406,7 +3377,7 @@ question_of_subglottic_masses:
     clinician 7: unclassified
 question_of_unknown_neurological_disorder:
   alias:
-  - question of unknown neurological disorder
+    - question of unknown neurological disorder
   level: 4
   parents:
     organic_neuro_muscular_central_nervous_disorder: 0.14
@@ -3421,7 +3392,7 @@ question_of_unknown_neurological_disorder:
     clinician 7: unclassified
 question_of_unknown_psychiatric_disorder:
   alias:
-  - question of unknown psychiatric disorder
+    - question of unknown psychiatric disorder
   level: 4
   parents:
     functional_dysphonia: 0.14
@@ -3436,7 +3407,7 @@ question_of_unknown_psychiatric_disorder:
     clinician 7: unclassified
 reactive_vocal_fold_lesion:
   alias:
-  - reactive vocal fold lesion
+    - reactive vocal fold lesion
   level: 4
   parents:
     organic_structural_epithelial_propria: 1.0
@@ -3450,8 +3421,8 @@ reactive_vocal_fold_lesion:
     clinician 7: organic > structural > epithelial_propria
 recurrent_paralysis:
   alias:
-  - recurrent paralysis
-  - rekurrensparese
+    - recurrent paralysis
+    - rekurrensparese
   level: 4
   parents:
     organic_neuro_muscular_central_nervous_disorder: 0.29
@@ -3467,7 +3438,7 @@ recurrent_paralysis:
     clinician 7: unclassified
 redundant_arytenoid_mucosal_with_prolapsing_arytenoid:
   alias:
-  - redundant arytenoid mucosal with prolapsing arytenoid
+    - redundant arytenoid mucosal with prolapsing arytenoid
   level: 4
   parents:
     organic_structural_structural_abnormality: 0.57
@@ -3482,7 +3453,7 @@ redundant_arytenoid_mucosal_with_prolapsing_arytenoid:
     clinician 7: organic > structural > structural_abnormality
 reflux_laryngitis:
   alias:
-  - reflux laryngitis
+    - reflux laryngitis
   level: 4
   parents:
     organic_inflammatory_non_infective: 0.86
@@ -3497,9 +3468,9 @@ reflux_laryngitis:
     clinician 7: unclassified
 reinkes_edema:
   alias:
-  - reinke edema
-  - reinke's edema
-  - reinke ödem
+    - reinke edema
+    - reinke's edema
+    - reinke ödem
   level: 4
   parents:
     organic_inflammatory_non_infective: 0.14
@@ -3514,7 +3485,7 @@ reinkes_edema:
     clinician 7: organic > structural > epithelial_propria
 restriction_of_arytenoid_movement:
   alias:
-  - restriction of arytenoid movement
+    - restriction of arytenoid movement
   level: 4
   parents:
     organic_structural_structural_abnormality: 0.43
@@ -3529,7 +3500,7 @@ restriction_of_arytenoid_movement:
     clinician 7: organic > structural > structural_abnormality
 rhinophony_aperta:
   alias:
-  - rhinophonie aperta
+    - rhinophonie aperta
   level: 4
   parents:
     unclassified: 1.0
@@ -3543,7 +3514,7 @@ rhinophony_aperta:
     clinician 7: unclassified
 rhinophony_clausa:
   alias:
-  - rhinophonie clausa
+    - rhinophonie clausa
   level: 4
   parents:
     unclassified: 1.0
@@ -3557,7 +3528,7 @@ rhinophony_clausa:
     clinician 7: unclassified
 rhinophony_mixta:
   alias:
-  - rhinophonie mixta
+    - rhinophonie mixta
   level: 4
   parents:
     unclassified: 1.0
@@ -3571,7 +3542,7 @@ rhinophony_mixta:
     clinician 7: unclassified
 scarring:
   alias:
-  - scarring
+    - scarring
   level: 4
   parents:
     organic_structural_epithelial_propria: 0.86
@@ -3586,8 +3557,8 @@ scarring:
     clinician 7: organic > structural > epithelial_propria
 sigmatism:
   alias:
-  - sigmatism
-  - sigmatismus
+    - sigmatism
+    - sigmatismus
   level: 4
   parents:
     unclassified: 1.0
@@ -3601,12 +3572,13 @@ sigmatism:
     clinician 7: unclassified
 singing_voice:
   alias:
-  - normal voice ( singing training )
-  - singing training
-  - singing voice
-  - singer's voice
-  - sängerstimme
-  - gesangsstimme
+    - normal voice ( singing training )
+    - normal voice (singing training)
+    - singing training
+    - singing voice
+    - singer's voice
+    - sängerstimme
+    - gesangsstimme
   level: 4
   parents:
     unclassified: 1.0
@@ -3620,7 +3592,7 @@ singing_voice:
     clinician 7: unclassified
 smoke_inhalation:
   alias:
-  - smoke inhalation
+    - smoke inhalation
   level: 4
   parents:
     organic_trauma_internal: 0.14
@@ -3635,8 +3607,8 @@ smoke_inhalation:
     clinician 7: unclassified
 spasmodic_dysphonia:
   alias:
-  - spasmodic dysphonia
-  - spasmodische dysphonie
+    - spasmodic dysphonia
+    - spasmodische dysphonie
   level: 4
   parents:
     organic_neuro_muscular_central_nervous_disorder: 0.14
@@ -3651,7 +3623,7 @@ spasmodic_dysphonia:
     clinician 7: organic > neuro_muscular > central_nervous_disorder
 spastic:
   alias:
-  - spastic
+    - spastic
   level: 4
   parents:
     organic_neuro_muscular_central_nervous_disorder: 0.14
@@ -3666,7 +3638,7 @@ spastic:
     clinician 7: unclassified
 stiffness:
   alias:
-  - stiffness
+    - stiffness
   level: 4
   parents:
     organic_structural_epithelial_propria: 0.29
@@ -3681,7 +3653,7 @@ stiffness:
     clinician 7: unclassified
 subcordal_valley:
   alias:
-  - subcordal valley
+    - subcordal valley
   level: 4
   parents:
     organic_structural_epithelial_propria: 0.14
@@ -3696,7 +3668,7 @@ subcordal_valley:
     clinician 7: unclassified
 subglottal_anterior_web:
   alias:
-  - subglottal anterior web
+    - subglottal anterior web
   level: 4
   parents:
     organic_structural_structural_abnormality: 1.0
@@ -3710,7 +3682,7 @@ subglottal_anterior_web:
     clinician 7: organic > structural > structural_abnormality
 subglottal_mass:
   alias:
-  - subglottal mass
+    - subglottal mass
   level: 4
   parents:
     organic_structural_structural_abnormality: 0.86
@@ -3725,7 +3697,7 @@ subglottal_mass:
     clinician 7: organic > structural > structural_abnormality
 subglottis_stenosis:
   alias:
-  - subglottis stenosis
+    - subglottis stenosis
   level: 4
   parents:
     organic_structural_structural_abnormality: 1.0
@@ -3739,8 +3711,8 @@ subglottis_stenosis:
     clinician 7: organic > structural > structural_abnormality
 superior_laryngeal_nerve_lesion:
   alias:
-  - superior laryngeal nerve lesion
-  - n. laryngeus superior läsion
+    - superior laryngeal nerve lesion
+    - n. laryngeus superior läsion
   level: 4
   parents:
     organic_neuro_muscular_central_nervous_disorder: 0.14
@@ -3756,8 +3728,8 @@ superior_laryngeal_nerve_lesion:
     clinician 7: organic > neuro_muscular > peripheral_nervous_disorder
 superior_laryngeal_nerve_neuralgia:
   alias:
-  - superior laryngeal nerve neuralgia
-  - n. laryngeus superior neuralgie
+    - superior laryngeal nerve neuralgia
+    - n. laryngeus superior neuralgie
   level: 4
   parents:
     organic_neuro_muscular_central_nervous_disorder: 0.14
@@ -3773,7 +3745,7 @@ superior_laryngeal_nerve_neuralgia:
     clinician 7: organic > neuro_muscular > peripheral_nervous_disorder
 supraglottic:
   alias:
-  - supraglottic
+    - supraglottic
   level: 4
   parents:
     unclassified: 1.0
@@ -3787,10 +3759,8 @@ supraglottic:
     clinician 7: unclassified
 synechia:
   alias:
-  - synechia
-  - synechie
-  - synechie
-  - synechie
+    - synechia
+    - synechie
   level: 4
   parents:
     organic_structural_structural_abnormality: 0.43
@@ -3805,7 +3775,7 @@ synechia:
     clinician 7: unclassified
 teflon_granuloma:
   alias:
-  - teflon granuloma
+    - teflon granuloma
   level: 4
   parents:
     organic_inflammatory_non_infective: 0.57
@@ -3820,7 +3790,7 @@ teflon_granuloma:
     clinician 7: unclassified
 thick_mucous_and_mucous_stranding:
   alias:
-  - thick mucous and mucous stranding
+    - thick mucous and mucous stranding
   level: 4
   parents:
     unclassified: 1.0
@@ -3834,7 +3804,7 @@ thick_mucous_and_mucous_stranding:
     clinician 7: unclassified
 transsexual:
   alias:
-  - transsexual
+    - transsexual
   level: 4
   parents:
     unclassified: 1.0
@@ -3848,7 +3818,7 @@ transsexual:
     clinician 7: unclassified
 unilateral_or_bilateral_recurrent_laryngeal_nerve_rln_paresis:
   alias:
-  - unilateral or bilateral recurrent laryngeal nerve (rln) paresis
+    - unilateral or bilateral recurrent laryngeal nerve (rln) paresis
   level: 4
   parents:
     organic_neuro_muscular_central_nervous_disorder: 0.14
@@ -3863,7 +3833,7 @@ unilateral_or_bilateral_recurrent_laryngeal_nerve_rln_paresis:
     clinician 7: organic > neuro_muscular > peripheral_nervous_disorder
 unilateral_recurrent_laryngeal_nerve_rln_paralysis:
   alias:
-  - unilateral recurrent laryngeal nerve (rln) paralysis
+    - unilateral recurrent laryngeal nerve (rln) paralysis
   level: 4
   parents:
     organic_neuro_muscular_central_nervous_disorder: 0.14
@@ -3878,7 +3848,7 @@ unilateral_recurrent_laryngeal_nerve_rln_paralysis:
     clinician 7: organic > neuro_muscular > peripheral_nervous_disorder
 unknown_neurological_disorder:
   alias:
-  - unknown neurological disorder
+    - unknown neurological disorder
   level: 4
   parents:
     unclassified: 1.0
@@ -3892,7 +3862,7 @@ unknown_neurological_disorder:
     clinician 7: unclassified
 unusual_adduction_compression:
   alias:
-  - unusual adduction/compression
+    - unusual adduction/compression
   level: 4
   parents:
     unclassified: 1.0
@@ -3906,7 +3876,7 @@ unusual_adduction_compression:
     clinician 7: unclassified
 upper_respiratory_tract_infection:
   alias:
-  - upper respiratory tract infection
+    - upper respiratory tract infection
   level: 4
   parents:
     organic_inflammatory_infective: 0.43
@@ -3920,8 +3890,6 @@ upper_respiratory_tract_infection:
     clinician 6: unclassified
     clinician 7: unclassified
 valleculacyste:
-  alias:
-  - valleculacyste
   level: 4
   parents:
     organic_structural_structural_abnormality: 0.57
@@ -3935,8 +3903,6 @@ valleculacyste:
     clinician 6: unclassified
     clinician 7: organic > structural > structural_abnormality
 varix:
-  alias:
-  - varix
   level: 4
   parents:
     organic_structural_vascular: 0.86
@@ -3951,7 +3917,7 @@ varix:
     clinician 7: organic > structural > vascular
 varix_and_ectasia_of_the_vocal_fold:
   alias:
-  - varix and ectasia of the vocal fold
+    - varix and ectasia of the vocal fold
   level: 4
   parents:
     organic_structural_vascular: 1.0
@@ -3965,7 +3931,7 @@ varix_and_ectasia_of_the_vocal_fold:
     clinician 7: organic > structural > vascular
 vascular_injection:
   alias:
-  - vascular injection
+    - vascular injection
   level: 4
   parents:
     unclassified: 1.0
@@ -3979,8 +3945,7 @@ vascular_injection:
     clinician 7: unclassified
 velopharyngoplasty:
   alias:
-  - velopharyngoplasty
-  - velopharyngoplastik
+    - velopharyngoplastik
   level: 4
   parents:
     unclassified: 1.0
@@ -3994,12 +3959,12 @@ velopharyngoplasty:
     clinician 7: unclassified
 ventricular_compression:
   alias:
-  - ventricular compression
-  - ventricular compression (full)
-  - ventricular compression (mild)
-  - ventricular compression (moderate)
-  - ventricular compression (severe)
-  - ventricular compression (slight)
+    - ventricular compression
+    - ventricular compression (full)
+    - ventricular compression (mild)
+    - ventricular compression (moderate)
+    - ventricular compression (severe)
+    - ventricular compression (slight)
   level: 4
   parents:
     muscle_tension: 0.43
@@ -4014,7 +3979,7 @@ ventricular_compression:
     clinician 7: muscle_tension
 ventricular_dysphonia:
   alias:
-  - ventricular dysphonia
+    - ventricular dysphonia
   level: 4
   parents:
     muscle_tension: 0.57
@@ -4029,8 +3994,8 @@ ventricular_dysphonia:
     clinician 7: muscle_tension
 ventricular_fold:
   alias:
-  - ventricular fold
-  - ventricular vocal folds (mild)
+    - ventricular fold
+    - ventricular vocal folds (mild)
   level: 4
   parents:
     unclassified: 1.0
@@ -4044,7 +4009,7 @@ ventricular_fold:
     clinician 7: unclassified
 ventricular_mass_on_right:
   alias:
-  - ventricular mass on right
+    - ventricular mass on right
   level: 4
   parents:
     organic_structural_structural_abnormality: 0.43
@@ -4059,8 +4024,8 @@ ventricular_mass_on_right:
     clinician 7: unclassified
 ventricular_phonation:
   alias:
-  - ventricular phonation
-  - ventricular phonation (mild)
+    - ventricular phonation
+    - ventricular phonation (mild)
   level: 4
   parents:
     muscle_tension: 0.57
@@ -4074,8 +4039,6 @@ ventricular_phonation:
     clinician 6: unclassified
     clinician 7: muscle_tension
 veracosity:
-  alias:
-  - veracosity
   level: 4
   parents:
     organic_structural_vascular: 0.5
@@ -4090,7 +4053,7 @@ veracosity:
     clinician 7: organic > structural > vascular
 vocal_fatigue:
   alias:
-  - vocal fatigue
+    - vocal fatigue
   level: 4
   parents:
     muscle_tension: 0.14
@@ -4105,7 +4068,7 @@ vocal_fatigue:
     clinician 7: unclassified
 vocal_fold:
   alias:
-  - vocal fold
+    - vocal fold
   level: 4
   parents:
     unclassified: 1.0
@@ -4119,7 +4082,7 @@ vocal_fold:
     clinician 7: unclassified
 vocal_fold_atrophic:
   alias:
-  - vocal fold atrophic
+    - vocal fold atrophic
   level: 4
   parents:
     organic_neuro_muscular_peripheral_nervous_disorder: 0.14
@@ -4135,8 +4098,8 @@ vocal_fold_atrophic:
     clinician 7: organic > neuro_muscular > peripheral_nervous_disorder
 vocal_fold_carcinoma:
   alias:
-  - vocal fold carcinoma
-  - stimmlippenkarzinom
+    - vocal fold carcinoma
+    - stimmlippenkarzinom
   level: 4
   parents:
     organic_structural_malignancy: 1.0
@@ -4150,7 +4113,7 @@ vocal_fold_carcinoma:
     clinician 7: organic > structural > malignancy
 vocal_fold_cyst_sub_epithelial:
   alias:
-  - vocal fold cyst-sub-epithelial
+    - vocal fold cyst-sub-epithelial
   level: 4
   parents:
     organic_structural_epithelial_propria: 1.0
@@ -4164,7 +4127,7 @@ vocal_fold_cyst_sub_epithelial:
     clinician 7: organic > structural > epithelial_propria
 vocal_fold_edema:
   alias:
-  - vocal fold edema
+    - vocal fold edema
   level: 4
   parents:
     organic_inflammatory_infective: 0.14
@@ -4181,7 +4144,7 @@ vocal_fold_edema:
     clinician 7: organic > inflammatory > non_infective
 vocal_fold_hemorrhage:
   alias:
-  - vocal fold hemorrhage
+    - vocal fold hemorrhage
   level: 4
   parents:
     organic_structural_vascular: 1.0
@@ -4195,7 +4158,7 @@ vocal_fold_hemorrhage:
     clinician 7: organic > structural > vascular
 vocal_fold_lesion:
   alias:
-  - vocal fold lesion
+    - vocal fold lesion
   level: 4
   parents:
     organic_structural_epithelial_propria: 0.57
@@ -4210,8 +4173,8 @@ vocal_fold_lesion:
     clinician 7: organic > structural > epithelial_propria
 vocal_fold_nodules:
   alias:
-  - vocal fold nodules
-  - vocal nodules
+    - vocal fold nodules
+    - vocal nodules
   level: 4
   parents:
     organic_structural_epithelial_propria: 1.0
@@ -4225,10 +4188,10 @@ vocal_fold_nodules:
     clinician 7: organic > structural > epithelial_propria
 vocal_fold_polyp:
   alias:
-  - stimmlippenpolyp
-  - vocal fold polyp
-  - vocal fold polyp(s)
-  - vocal cord polyp
+    - stimmlippenpolyp
+    - vocal fold polyp
+    - vocal fold polyp(s)
+    - vocal cord polyp
   level: 4
   parents:
     organic_structural_epithelial_propria: 1.0
@@ -4242,7 +4205,7 @@ vocal_fold_polyp:
     clinician 7: organic > structural > epithelial_propria
 vocal_fold_scar:
   alias:
-  - vocal fold scar proper
+    - vocal fold scar proper
   level: 4
   parents:
     organic_structural_epithelial_propria: 1.0
@@ -4256,8 +4219,8 @@ vocal_fold_scar:
     clinician 7: organic > structural > epithelial_propria
 vocal_fold_sulcus:
   alias:
-  - sulcus vocalis
-  - vocal fold sulcus
+    - sulcus vocalis
+    - vocal fold sulcus
   level: 4
   parents:
     organic_structural_congenital: 0.14
@@ -4273,7 +4236,7 @@ vocal_fold_sulcus:
     clinician 7: organic > structural > epithelial_propria
 vocal_fold_thickening:
   alias:
-  - vocal fold thickening
+    - vocal fold thickening
   level: 4
   parents:
     organic_structural_epithelial_propria: 0.71
@@ -4288,7 +4251,7 @@ vocal_fold_thickening:
     clinician 7: organic > structural > epithelial_propria
 vocal_tremor:
   alias:
-  - vocal tremor
+    - vocal tremor
   level: 4
   parents:
     organic_neuro_muscular_movement_disorder: 1.0
@@ -4302,7 +4265,7 @@ vocal_tremor:
     clinician 7: organic > neuro_muscular > movement_disorder
 voice_disorders_undiagnosed:
   alias:
-  - 'voice disorders: undiagnosed or not otherwise specified (nos)'
+    - "voice disorders: undiagnosed or not otherwise specified (nos)"
   level: 4
   parents:
     unclassified: 1.0
@@ -4316,7 +4279,7 @@ voice_disorders_undiagnosed:
     clinician 7: unclassified
 vox_senilis:
   alias:
-  - vox senilis
+    - vox senilis
   level: 4
   parents:
     organic_structural_congenital: 0.29
@@ -4331,7 +4294,7 @@ vox_senilis:
     clinician 7: unclassified
 white_debris_patches:
   alias:
-  - white debris/patches
+    - white debris/patches
   level: 4
   parents:
     organic_structural_epithelial_propria: 0.14
@@ -4346,7 +4309,7 @@ white_debris_patches:
     clinician 7: unclassified
 without_dysarthria:
   alias:
-  - without dysarthria
+    - without dysarthria
   level: 4
   parents:
     normal: 1.0

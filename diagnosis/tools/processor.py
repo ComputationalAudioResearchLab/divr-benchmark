@@ -125,6 +125,7 @@ class Processor:
         [(4, "keratosis___leukoplakia"), (4, "leukoplakia")],
         [(4, "keratosis"), (4, "leukoplakia")],
         [(4, "normal___also_normal_voice_"), (0, "normal")],
+        [(4, "healthy"), (0, "normal")],
         [
             (4, "muscle_tension_adaptive_dysphonia__secondary_"),
             (2, "muscle_tension_adaptive"),
@@ -214,8 +215,6 @@ class Processor:
                 "vocal cord polyp",
             ],
         ],
-        [4, "synechia", ["synechie"]],
-        [4, "synechia", ["synechie"]],
         [4, "synechia", ["synechie"]],
         [4, "singing_voice", ["singer's voice", "sängerstimme", "gesangsstimme"]],
         [4, "pocket_fold_hyperplasia", ["taschenfaltenhyperplasie"]],
