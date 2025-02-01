@@ -1458,7 +1458,7 @@ hyperkinetic_dysphonia_reinkes_edema:
     clinician 7: muscle_tension
 hyperkinetic_dysphonia_rigid_vocal_fold:
   alias:
-    - hyperkinetic dysphonia (rigid vocal fold)
+    - hyperkinetic dysphonia  (rigid vocal fold)
   level: 4
   parents:
     muscle_tension: 0.29
