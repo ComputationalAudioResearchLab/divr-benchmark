@@ -5,6 +5,7 @@ from pathlib import Path
 from divr_benchmark import Benchmark
 from divr_benchmark.task_generator import DatabaseFunc, Dataset
 from divr_benchmark.task_generator.task import Task
+from divr_benchmark.diagnosis import diagnosis_maps
 
 
 class TaskGenerator:
@@ -21,9 +22,15 @@ class TaskGenerator:
 
     def load_task(self, task: TaskGenerator.TASKS, diag_level: int | None) -> Task:
         task_path = Path(f"{self.__tasks_path}/{task}")
-        return self.__benchmark.load_task(task_path=task_path, diag_level=diag_level)
+        diagnosis_map = diagnosis_maps.USVAC_2015()
+        return self.__benchmark.load_task(
+            task_path=task_path,
+            diag_level=diag_level,
+            diagnosis_map=diagnosis_map,
+        )
 
     async def generate(self) -> None:
+        diagnosis_map = diagnosis_maps.USVAC_2015()
         coros = []
         coros += [
             self.__benchmark.generate_task(
@@ -33,6 +40,7 @@ class TaskGenerator:
                     ]
                 ),
                 task_path=self.__ensure_path(f"{self.__tasks_path}/phrase"),
+                diagnosis_map=diagnosis_map,
             )
         ]
         coros += [
@@ -43,6 +51,7 @@ class TaskGenerator:
                     ]
                 ),
                 task_path=self.__ensure_path(f"{self.__tasks_path}/a_n"),
+                diagnosis_map=diagnosis_map,
             )
         ]
         coros += [
@@ -53,6 +62,7 @@ class TaskGenerator:
                     ]
                 ),
                 task_path=self.__ensure_path(f"{self.__tasks_path}/i_n"),
+                diagnosis_map=diagnosis_map,
             )
         ]
         coros += [
@@ -63,6 +73,7 @@ class TaskGenerator:
                     ]
                 ),
                 task_path=self.__ensure_path(f"{self.__tasks_path}/u_n"),
+                diagnosis_map=diagnosis_map,
             )
         ]
         coros += [
@@ -76,6 +87,7 @@ class TaskGenerator:
                     ]
                 ),
                 task_path=self.__ensure_path(f"{self.__tasks_path}/all"),
+                diagnosis_map=diagnosis_map,
             )
         ]
         cross_test_datasets = [
@@ -93,6 +105,7 @@ class TaskGenerator:
                     task_path=self.__ensure_path(
                         f"{self.__tasks_path}/cross_test_{db}"
                     ),
+                    diagnosis_map=diagnosis_map,
                 )
             ]
         await asyncio.gather(*coros)

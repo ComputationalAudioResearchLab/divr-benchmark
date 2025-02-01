@@ -8,12 +8,11 @@ from .audio_loader import AudioLoader
 from .task import Task
 from ..logger import Logger
 from ..download import Download
-from ..diagnosis import diagnosis_maps
+from ..diagnosis import DiagnosisMap
 from ..task_generator import generator_map
 
 VERSIONS = Literal["v1"]
 versions = typing.get_args(VERSIONS)
-diagnosis_map_maps = {"v1": diagnosis_maps.USVAC_2025}
 task_generator_maps = {"v1": generator_map["v1"]}
 
 
@@ -34,7 +33,6 @@ class Benchmark:
                 f"invalid version ({version}) selected. Choose from: {versions}"
             )
         module_path = Path(__file__).parent.parent.resolve()
-        self.__diagnosis_map = diagnosis_map_maps[version]()
         self.__logger = Logger(log_path=f"{storage_path}/logs", key=f"{version}")
         self.__data_path = Path(f"{storage_path}/data")
         self.__audio_loader = AudioLoader(version, self.__data_path)
@@ -45,19 +43,23 @@ class Benchmark:
         self.__task_generator = task_generator_maps[version]
         self.__ensure_datasets(tasks_path=self.__tasks_path)
 
-    async def generate_task(self, filter_func, task_path: Path) -> None:
+    async def generate_task(
+        self, filter_func, task_path: Path, diagnosis_map: DiagnosisMap
+    ) -> None:
         await self.__task_generator.generate_task(
             source_path=self.__data_path,
             filter_func=filter_func,
             task_path=task_path,
-            diagnosis_map=self.__diagnosis_map,
+            diagnosis_map=diagnosis_map,
         )
 
-    def load_task(self, task_path: Path, diag_level: int | None) -> Task:
+    def load_task(
+        self, task_path: Path, diag_level: int | None, diagnosis_map: DiagnosisMap
+    ) -> Task:
         if not task_path.is_dir():
             raise ValueError("Invalid task selected")
         return Task(
-            diagnosis_map=self.__diagnosis_map,
+            diagnosis_map=diagnosis_map,
             audio_loader=self.__audio_loader,
             train=Path(f"{task_path}/train.yml"),
             val=Path(f"{task_path}/val.yml"),
@@ -66,7 +68,7 @@ class Benchmark:
             diag_level=diag_level,
         )
 
-    def task(self, stream: int, task: int) -> Task:
+    def task(self, stream: int, task: int, diagnosis_map: DiagnosisMap) -> Task:
         stream_path = Path(f"{self.__tasks_path}/streams/{stream}/")
         if not stream_path.is_dir():
             raise ValueError("Invalid stream selected")
@@ -85,7 +87,7 @@ class Benchmark:
         test_path = Path(f"{task_path}/test.yml")
 
         return Task(
-            diagnosis_map=self.__diagnosis_map,
+            diagnosis_map=diagnosis_map,
             audio_loader=self.__audio_loader,
             train=train_path,
             val=val_path,

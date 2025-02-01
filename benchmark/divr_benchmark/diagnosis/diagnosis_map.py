@@ -9,14 +9,31 @@ class DiagnosisMap:
     __index: Dict[str, Diagnosis] = {}
     __curdir = Path(__file__).parent
     __diagnosis_maps_dir = Path(f"{__curdir}/diagnosis_maps")
+    __max_level = 0
+    __unclassified_link: DiagnosisLink
 
-    def __init__(self) -> None:
+    def __init__(self, allow_unmapped: bool = False) -> None:
         map_name = self.__class__.__name__
         map_file = Path(f"{self.__diagnosis_maps_dir}/{map_name}.yml")
+        self.__allow_unmapped = allow_unmapped
         self.__load_map(map_file)
 
     def get(self, name: str) -> Diagnosis:
-        return self.__index[name.lower()]
+        name = name.lower()
+        try:
+            return self.__index[name]
+        except KeyError as err:
+            if self.__allow_unmapped:
+                return Diagnosis(
+                    name=name,
+                    level=self.__max_level,
+                    alias=[],
+                    parents=[self.__unclassified_link],
+                    votes={},
+                )
+                pass
+            else:
+                raise err
 
     def find(self, name: str) -> List[Diagnosis]:
         return list(filter(lambda diag: diag.satisfies(name), self.__index.values()))
@@ -27,6 +44,14 @@ class DiagnosisMap:
         for key, value in data.items():
             diagnosis = self.__parse_yaml_diagnosis(key, value)
             self.__index_data(diagnosis)
+        if "unclassified" not in self.__index:
+            raise ValueError(
+                "Invalid map: class 'unclassified' must be present in diagnosis map"
+            )
+        self.__unclassified_link = DiagnosisLink(
+            parent=self.__index["unclassified"],
+            weight=1.00,
+        )
 
     def __index_data(self, diagnosis: Diagnosis) -> None:
         index_keys = [diagnosis.name] + diagnosis.alias
@@ -49,6 +74,9 @@ class DiagnosisMap:
         votes = {}
         if "votes" in data and data["votes"] is not None:
             votes = data["votes"]
+
+        if level > self.__max_level:
+            self.__max_level = level
 
         return Diagnosis(
             name=key,
