@@ -31,6 +31,7 @@ setup(
         "pandas>=2.0.1",
         "PyYAML>=6.0.1",
         "svd-downloader>=0.1.1",
+        "xlrd>=2.0.1",
         "wfdb>=4.1.2",
     ],
     classifiers=[

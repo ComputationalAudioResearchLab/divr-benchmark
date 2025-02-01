@@ -1,7 +1,7 @@
 from __future__ import annotations
 import random
 from typing import Dict, List, Tuple
-from ..diagnosis import DiagnosisMap, Diagnosis
+from ..diagnosis import Diagnosis
 from .processed import ProcessedSession, ProcessedDataset
 from .database_plan import BucketCollection
 
@@ -36,12 +36,10 @@ class DatabaseGenerator:
 
     def __init__(
         self,
-        diagnosis_map: DiagnosisMap,
         train_split: float,
         test_split: float,
         random_seed: float,
     ) -> None:
-        self.diagnosis_map = diagnosis_map
         self.train_split = train_split
         self.test_split = test_split
         self.val_split = 1 - train_split - test_split

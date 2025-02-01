@@ -1,24 +1,117 @@
 import json
 from pathlib import Path
-from typing import List, Literal
+from typing import List, Literal, Set
+
 from .Base import Base
 from .gender import Gender
 from ...prepare_dataset.processed import (
-    ProcessedDataset,
     ProcessedSession,
     ProcessedFile,
 )
+from ...diagnosis import DiagnosisMap
 
 
 VOWELS = Literal["a", "i", "u", ""]
 
 
 class SVD(Base):
+    DB_NAME = "svd"
     ignore_files = [
         "1405/713/713-iau.wav",  # invalid file
         "1405/713/713-i_n.wav",  # invalid file
     ]
     max_tasks = 14
+
+    async def _collect_diagnosis_terms(self, source_path: Path) -> Set[str]:
+        diags = set()
+        with open(f"{source_path}/data.json", "r") as inputfile:
+            for speaker_id, val in json.loads(inputfile.read()).items():
+                for session in val["sessions"]:
+                    classification = session["classification"]
+                    pathologies = session["pathologies"]
+                    diagnosis = pathologies if pathologies != "" else classification
+                    for x in diagnosis.split(","):
+                        diags.add(x.strip().lower())
+        return diags
+
+    async def prepare_dataset(
+        self,
+        source_path: Path,
+        allow_incomplete_classification: bool,
+        min_tasks: int | None,
+        diagnosis_map: DiagnosisMap,
+    ) -> List[ProcessedSession]:
+        sessions = []
+        with open(f"{source_path}/data.json", "r") as inputfile:
+            for speaker_id, val in json.loads(inputfile.read()).items():
+                gender = Gender.format(val["gender"])
+                for session in val["sessions"]:
+                    session = self.__process_session(
+                        speaker_id=speaker_id,
+                        gender=gender,
+                        source_path=source_path,
+                        session=session,
+                        allow_incomplete_classification=allow_incomplete_classification,
+                        diagnosis_map=diagnosis_map,
+                    )
+                    if (session is not None) and (
+                        min_tasks is None or session.num_files >= min_tasks
+                    ):
+                        sessions += [session]
+        return sessions
+
+    def __process_session(
+        self,
+        speaker_id,
+        gender,
+        source_path,
+        session,
+        allow_incomplete_classification: bool,
+        diagnosis_map: DiagnosisMap,
+    ):
+        session_id = session["session_id"]
+        age = int(session["age"])
+        classification = session["classification"]
+        pathologies = session["pathologies"]
+        files = session["files"]
+        diagnosis = pathologies if pathologies != "" else classification
+        files = []
+        for file in session["files"]:
+            path = Path(
+                f"{source_path}/{classification}/{gender}/{speaker_id}/{session_id}/{file.split('file=')[1]}.wav"
+            )
+            if self.__include(path):
+                files += [ProcessedFile(path=path)]
+        if len(files) == 0:
+            return None
+        diagnosis = [diagnosis_map.get(x.strip().lower()) for x in diagnosis.split(",")]
+        session = ProcessedSession(
+            id=f"svd_{speaker_id}_{session_id}",
+            speaker_id=speaker_id,
+            age=age,
+            gender=gender,
+            diagnosis=diagnosis,
+            files=files,
+            num_files=len(files),
+        )
+        if (
+            session.best_diagnosis.incompletely_classified
+            and not allow_incomplete_classification
+        ):
+            if session.id == "svd_2537_2403":
+                print(session.best_diagnosis.name)
+                # print([d.name for d in sorted_diagnosis])
+                # print([d.name for d in complete_diagnosis])
+                # print(complete_diagnosis[0].incompletely_classified)
+                exit()
+            return None
+        return session
+
+    def __include(self, path: Path):
+        for exclusion in self.ignore_files:
+            if exclusion in str(path):
+                return False
+        return True
 
     def train_set_multi_neutral_vowels(self, level: int, vowels: List[VOWELS]):
         return self.filtered_multi_file_tasks(
@@ -125,86 +218,3 @@ class SVD(Base):
             return list(filter(file_name_filter_func, files))
 
         return self.to_multi_file_tasks(sessions, level=level, file_filter=filter_func)
-
-    async def prepare_dataset(
-        self,
-        source_path: Path,
-        allow_incomplete_classification: bool,
-        min_tasks: int | None,
-    ) -> ProcessedDataset:
-        db_name = "svd"
-        db_path = f"{source_path}/{db_name}"
-        sessions = []
-        with open(f"{db_path}/data.json", "r") as inputfile:
-            for speaker_id, val in json.loads(inputfile.read()).items():
-                gender = Gender.format(val["gender"])
-                for session in val["sessions"]:
-                    session = self.__process_session(
-                        speaker_id=speaker_id,
-                        gender=gender,
-                        source_path=db_path,
-                        session=session,
-                        allow_incomplete_classification=allow_incomplete_classification,
-                    )
-                    if (session is not None) and (
-                        min_tasks is None or session.num_files >= min_tasks
-                    ):
-                        sessions += [session]
-        return self.database_generator.generate(
-            db_name=db_name,
-            sessions=sessions,
-        )
-
-    def __process_session(
-        self,
-        speaker_id,
-        gender,
-        source_path,
-        session,
-        allow_incomplete_classification: bool,
-    ):
-        session_id = session["session_id"]
-        age = int(session["age"])
-        classification = session["classification"]
-        pathologies = session["pathologies"]
-        files = session["files"]
-        diagnosis = pathologies if pathologies != "" else classification
-        files = []
-        for file in session["files"]:
-            path = Path(
-                f"{source_path}/{classification}/{gender}/{speaker_id}/{session_id}/{file.split('file=')[1]}.wav"
-            )
-            if self.__include(path):
-                files += [ProcessedFile(path=path)]
-        if len(files) == 0:
-            return None
-        diagnosis = [
-            self.diagnosis_map.get(x.strip().lower()) for x in diagnosis.split(",")
-        ]
-        session = ProcessedSession(
-            id=f"svd_{speaker_id}_{session_id}",
-            speaker_id=speaker_id,
-            age=age,
-            gender=gender,
-            diagnosis=diagnosis,
-            files=files,
-            num_files=len(files),
-        )
-        if (
-            session.best_diagnosis.incompletely_classified
-            and not allow_incomplete_classification
-        ):
-            if session.id == "svd_2537_2403":
-                print(session.best_diagnosis.name)
-                # print([d.name for d in sorted_diagnosis])
-                # print([d.name for d in complete_diagnosis])
-                # print(complete_diagnosis[0].incompletely_classified)
-                exit()
-            return None
-        return session
-
-    def __include(self, path: Path):
-        for exclusion in self.ignore_files:
-            if exclusion in str(path):
-                return False
-        return True

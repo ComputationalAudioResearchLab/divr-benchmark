@@ -1,49 +1,61 @@
-from typing import List, Callable
 from pathlib import Path
-from ...diagnosis import DiagnosisMap
+from typing import Callable, List, Set
+
 from ...prepare_dataset.database_generator import DatabaseGenerator
 from ...prepare_dataset.processed import (
-    ProcessedDataset,
     ProcessedFile,
     ProcessedSession,
 )
 from ..task import Task
+from ...diagnosis import DiagnosisMap
 
 FileFilter = Callable[[List[ProcessedFile]], List[ProcessedFile]]
 
 
 class Base:
+    DB_NAME: str
+
     def __init__(
         self,
         source_path: Path,
+    ) -> None:
+        self.__source_path = Path(f"{source_path}/{self.DB_NAME}")
+
+    async def init(
+        self,
+        diagnosis_map: DiagnosisMap,
         allow_incomplete_classification: bool,
         min_tasks: int | None,
-        diagnosis_map: DiagnosisMap,
-    ) -> None:
-        self.diagnosis_map = diagnosis_map
-        self.database_generator = DatabaseGenerator(
-            diagnosis_map=self.diagnosis_map,
+    ):
+        database_generator = DatabaseGenerator(
             train_split=0.7,
             test_split=0.2,
             random_seed=42,
         )
-        self.__source_path = source_path
-        self.__allow_incomplete_classification = allow_incomplete_classification
-        self.__min_tasks = min_tasks
-
-    async def init(self):
-        self.dataset = await self.prepare_dataset(
+        sessions = await self.prepare_dataset(
             source_path=self.__source_path,
-            allow_incomplete_classification=self.__allow_incomplete_classification,
-            min_tasks=self.__min_tasks,
+            allow_incomplete_classification=allow_incomplete_classification,
+            min_tasks=min_tasks,
+            diagnosis_map=diagnosis_map,
         )
+        self.dataset = database_generator.generate(
+            db_name=self.DB_NAME,
+            sessions=sessions,
+        )
+
+    async def collect_diagnosis_terms(self) -> Set[str]:
+        return await self._collect_diagnosis_terms(source_path=self.__source_path)
+
+    async def _collect_diagnosis_terms(self, source_path: Path) -> Set[str]:
+        raise NotImplementedError()
 
     async def prepare_dataset(
         self,
         source_path: Path,
         allow_incomplete_classification: bool,
         min_tasks: int | None,
-    ) -> ProcessedDataset:
+        diagnosis_map: DiagnosisMap,
+    ) -> List[ProcessedSession]:
         raise NotImplementedError()
 
     def to_audio_key(self, source_path: ProcessedFile) -> str:

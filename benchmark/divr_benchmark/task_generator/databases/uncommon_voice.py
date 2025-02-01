@@ -1,38 +1,39 @@
 import numpy as np
 import pandas as pd
 from pathlib import Path
+from typing import List, Set
 
 from .Base import Base
 from .gender import Gender
 from ...prepare_dataset.processed import (
-    ProcessedDataset,
     ProcessedSession,
     ProcessedFile,
 )
+from ...diagnosis import DiagnosisMap
 
 
 class UncommonVoice(Base):
+    DB_NAME = "uncommon_voice"
+
+    async def _collect_diagnosis_terms(self, source_path: Path) -> Set[str]:
+        _, df = self.__read_data(source_path=source_path)
+        return set(df["Voice Disorder"].tolist())
 
     async def prepare_dataset(
         self,
         source_path: Path,
         allow_incomplete_classification: bool,
         min_tasks: int | None,
-    ) -> ProcessedDataset:
-        db_name = "uncommon_voice"
-        db_path = f"{source_path}/{db_name}"
+        diagnosis_map: DiagnosisMap,
+    ) -> List[ProcessedSession]:
         sessions = []
-        data_path = f"{db_path}/UncommonVoice/UncommonVoice_final"
-        df = pd.read_csv(f"{db_path}/uncommonvoice_user_data.csv").replace(
-            {np.nan: None}
-        )
-        df = df[["new_ID", "Voice Disorder", "Gender"]]
+        data_path, df = self.__read_data(source_path)
         for row_idx, data in df.iterrows():
             speaker_id = data["new_ID"]
             if speaker_id is None:
                 speaker_id = str(row_idx)
-            diagnosis = "normal" if data["Voice Disorder"] == 0 else "pathological"
-            diagnosis = self.diagnosis_map.get(diagnosis)
+            diagnosis = data["Voice Disorder"]
+            diagnosis = diagnosis_map.get(diagnosis)
             if allow_incomplete_classification or not diagnosis.incompletely_classified:
                 age = None
                 gender = Gender.format(data["Gender"].strip())
@@ -49,7 +50,15 @@ class UncommonVoice(Base):
                         num_files=num_files,
                     )
                     sessions += [session]
-        return self.database_generator.generate(
-            db_name=db_name,
-            sessions=sessions,
+        return sessions
+
+    def __read_data(self, source_path):
+        data_path = f"{source_path}/UncommonVoice/UncommonVoice_final"
+        df = pd.read_csv(f"{source_path}/uncommonvoice_user_data.csv").replace(
+            {np.nan: None}
         )
+        df = df[["new_ID", "Voice Disorder", "Gender"]]
+        df["Voice Disorder"] = df["Voice Disorder"].apply(
+            lambda x: "normal" if x == 0 else "pathological"
+        )
+        return data_path, df

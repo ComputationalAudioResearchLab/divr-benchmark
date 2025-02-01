@@ -1,5 +1,7 @@
+import asyncio
 from pathlib import Path
-from typing import List, Callable, Awaitable
+from typing import Awaitable, Callable, Dict, List
+
 from .generator import Generator, DatabaseFunc, Dataset
 from .databases import (
     SVD,
@@ -17,67 +19,42 @@ from ..diagnosis import DiagnosisMap
 
 class GeneratorV1(Generator):
 
+    __db_map = {
+        AVFAD.DB_NAME: AVFAD,
+        MEEI.DB_NAME: MEEI,
+        SVD.DB_NAME: SVD,
+        Torgo.DB_NAME: Torgo,
+        UASpeech.DB_NAME: UASpeech,
+        UncommonVoice.DB_NAME: UncommonVoice,
+        Voiced.DB_NAME: Voiced,
+    }
+
+    async def collect_diagnosis_terms(self, source_path: Path) -> Dict[str, List[str]]:
+        dbs = [AVFAD, MEEI, SVD, Torgo, UASpeech, UncommonVoice, Voiced]
+        terms = {}
+        for db in dbs:
+            for term in await db(source_path=source_path).collect_diagnosis_terms():
+                if term not in terms:
+                    terms[term] = set()
+                terms[term].add(db.DB_NAME)
+        del terms[""]
+        return terms
+
     async def generate_task(
         self,
         source_path: Path,
         filter_func: Callable[[DatabaseFunc], Awaitable[Dataset]],
         task_path: Path,
         diagnosis_map: DiagnosisMap,
+        allow_incomplete_classification: bool = False,
     ) -> None:
-        async def __database(name: str) -> Database:
-            name = name.lower()
-            if name == "avfad":
-                db = AVFAD(
-                    source_path=source_path,
-                    allow_incomplete_classification=False,
-                    min_tasks=None,
-                    diagnosis_map=diagnosis_map,
-                )
-            elif name == "meei":
-                db = MEEI(
-                    source_path=source_path,
-                    allow_incomplete_classification=False,
-                    min_tasks=None,
-                    diagnosis_map=diagnosis_map,
-                )
-            elif name == "svd":
-                db = SVD(
-                    source_path=source_path,
-                    allow_incomplete_classification=False,
-                    min_tasks=SVD.max_tasks,
-                    diagnosis_map=diagnosis_map,
-                )
-            elif name == "torgo":
-                db = Torgo(
-                    source_path=source_path,
-                    allow_incomplete_classification=True,
-                    min_tasks=None,
-                    diagnosis_map=diagnosis_map,
-                )
-            elif name == "uaspeech":
-                db = UASpeech(
-                    source_path=source_path,
-                    allow_incomplete_classification=False,
-                    min_tasks=None,
-                    diagnosis_map=diagnosis_map,
-                )
-            elif name == "uncommon_voice":
-                db = UncommonVoice(
-                    source_path=source_path,
-                    allow_incomplete_classification=False,
-                    min_tasks=None,
-                    diagnosis_map=diagnosis_map,
-                )
-            elif name == "voiced":
-                db = Voiced(
-                    source_path=source_path,
-                    allow_incomplete_classification=False,
-                    min_tasks=None,
-                    diagnosis_map=diagnosis_map,
-                )
-            else:
-                raise NotImplementedError(f"Unsupported database {name}")
-            await db.init()
+        async def __database(name: str, min_tasks: int | None = None) -> Database:
+            db = self.__db_map[name.lower()](source_path=source_path)
+            await db.init(
+                diagnosis_map=diagnosis_map,
+                allow_incomplete_classification=allow_incomplete_classification,
+                min_tasks=min_tasks,
+            )
             return db
 
         tasks = await filter_func(__database)
@@ -85,7 +62,7 @@ class GeneratorV1(Generator):
         self.to_task_file(tasks=tasks.val, output_path=Path(f"{task_path}/val"))
         self.to_task_file(tasks=tasks.test, output_path=Path(f"{task_path}/test"))
 
-    def __call__(
+    async def __call__(
         self,
         source_path: Path,
         tasks_path: Path,
@@ -93,23 +70,25 @@ class GeneratorV1(Generator):
     ) -> None:
         print("Generating benchmark v1 tasks")
         Path(f"{tasks_path}/streams").mkdir(exist_ok=True)
-        svd = SVD(
-            source_path=source_path,
-            allow_incomplete_classification=False,
-            min_tasks=SVD.max_tasks,
-            diagnosis_map=diagnosis_map,
-        )
-        torgo = Torgo(
-            source_path=source_path,
-            allow_incomplete_classification=True,
-            min_tasks=None,
-            diagnosis_map=diagnosis_map,
-        )
-        voiced = Voiced(
-            source_path=source_path,
-            allow_incomplete_classification=False,
-            min_tasks=None,
-            diagnosis_map=diagnosis_map,
+        svd = SVD(source_path=source_path)
+        torgo = Torgo(source_path=source_path)
+        voiced = Voiced(source_path=source_path)
+        await asyncio.gather(
+            svd.init(
+                diagnosis_map=diagnosis_map,
+                allow_incomplete_classification=False,
+                min_tasks=SVD.max_tasks,
+            ),
+            torgo.init(
+                diagnosis_map=diagnosis_map,
+                allow_incomplete_classification=False,
+                min_tasks=None,
+            ),
+            voiced.init(
+                diagnosis_map=diagnosis_map,
+                allow_incomplete_classification=False,
+                min_tasks=None,
+            ),
         )
         self.__stream0(
             stream_path=Path(f"{tasks_path}/streams/0"),

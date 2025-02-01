@@ -1,28 +1,76 @@
-from pathlib import Path
 import pandas as pd
+from pathlib import Path
+from typing import List, Set
+
 from .Base import Base
 from .gender import Gender
 from ...prepare_dataset.processed import (
-    ProcessedDataset,
     ProcessedSession,
     ProcessedFile,
 )
+from ...diagnosis import DiagnosisMap
 
 
 class MEEI(Base):
+    DB_NAME = "meei"
+
+    async def _collect_diagnosis_terms(self, source_path: Path) -> Set[str]:
+        file_key, full_data = self.__read_data(source_path)
+        diags = full_data["DIAGNOSIS"].str.split(",").explode().str.lower().str.strip()
+        return set(diags)
 
     async def prepare_dataset(
         self,
         source_path: Path,
         allow_incomplete_classification: bool,
         min_tasks: int | None,
-    ) -> ProcessedDataset:
-        db_name = "meei"
-        db_path = Path(f"{source_path}/{db_name}")
+        diagnosis_map: DiagnosisMap,
+    ) -> List[ProcessedSession]:
         sessions = []
-        excel_path = f"{db_path}/kaylab/data/disorderedvoicedb/EXCEL50/KAYCD_DB.XLS"
-        audio_extraction_path = Path(f"{db_path}/.extracted")
+        audio_extraction_path = Path(f"{source_path}/.extracted")
         audio_extraction_path.mkdir(exist_ok=True)
+        file_key, full_data = self.__read_data(source_path)
+        for _, row in full_data.iterrows():
+            speaker_id = row[file_key][:5]
+            diagnosis = []
+            has_incomplete_diagnosis = False
+            for x in row["DIAGNOSIS"].split(","):
+                x = x.lower().strip()
+                if len(x) > 0:
+                    d = diagnosis_map.get(x)
+                    diagnosis += [d]
+                    if d.incompletely_classified:
+                        has_incomplete_diagnosis = True
+            if len(diagnosis) == 0:
+                diagnosis = [diagnosis_map.get("unknown")]
+                has_incomplete_diagnosis = True
+            if allow_incomplete_classification or not has_incomplete_diagnosis:
+                age = int(row["AGE"]) if row["AGE"] != "" else None
+                gender = Gender.format(row["SEX"].strip())
+                file_paths = list(Path(source_path).rglob(f"{speaker_id}*.NSP"))
+                num_files = len(file_paths)
+                if min_tasks is None or num_files >= min_tasks:
+                    sessions += [
+                        ProcessedSession(
+                            id=f"meei_{speaker_id}",
+                            speaker_id=speaker_id,
+                            age=age,
+                            gender=gender,
+                            diagnosis=diagnosis,
+                            files=[
+                                await ProcessedFile.from_nsp(
+                                    nsp_path=path,
+                                    extraction_path=audio_extraction_path,
+                                )
+                                for path in file_paths
+                            ],
+                            num_files=num_files,
+                        )
+                    ]
+        return sessions
+
+    def __read_data(self, source_path):
+        excel_path = f"{source_path}/kaylab/data/disorderedvoicedb/EXCEL50/KAYCD_DB.XLS"
         file_key = "FILE VOWEL 'AH'"
 
         df_path = self.__clean_white_spaces(
@@ -52,47 +100,7 @@ class MEEI(Base):
             file_key=file_key,
         )
         full_data = pd.concat([path_data, norm_data])
-        for _, row in full_data.iterrows():
-            speaker_id = row[file_key][:5]
-            diagnosis = []
-            has_incomplete_diagnosis = False
-            for x in row["DIAGNOSIS"].split(","):
-                x = x.lower().strip()
-                if len(x) > 0:
-                    d = self.diagnosis_map.get(x)
-                    diagnosis += [d]
-                    if d.incompletely_classified:
-                        has_incomplete_diagnosis = True
-            if len(diagnosis) == 0:
-                diagnosis = [self.diagnosis_map.get("unknown")]
-                has_incomplete_diagnosis = True
-            if allow_incomplete_classification or not has_incomplete_diagnosis:
-                age = int(row["AGE"]) if row["AGE"] != "" else None
-                gender = Gender.format(row["SEX"].strip())
-                file_paths = list(Path(db_path).rglob(f"{speaker_id}*.NSP"))
-                num_files = len(file_paths)
-                if min_tasks is None or num_files >= min_tasks:
-                    sessions += [
-                        ProcessedSession(
-                            id=f"meei_{speaker_id}",
-                            speaker_id=speaker_id,
-                            age=age,
-                            gender=gender,
-                            diagnosis=diagnosis,
-                            files=[
-                                await ProcessedFile.from_nsp(
-                                    nsp_path=path,
-                                    extraction_path=audio_extraction_path,
-                                )
-                                for path in file_paths
-                            ],
-                            num_files=num_files,
-                        )
-                    ]
-        return self.database_generator.generate(
-            db_name=db_name,
-            sessions=sessions,
-        )
+        return file_key, full_data
 
     def __collate_data(self, df: pd.DataFrame, is_pathological: bool, file_key: str):
         grouped = df.groupby(file_key)

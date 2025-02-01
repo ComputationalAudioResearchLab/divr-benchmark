@@ -7,10 +7,11 @@ from .diagnosis import (
     reclassification_candidates,
     level_3_confusion,
     Processor,
+    diagnosis_maps,
 )
 from .prepare_dataset import PrepareDataset
 from .logger import Logger
-from .task_generator import generate_tasks, VERSIONS
+from .task_generator import VERSIONS, collect_diagnosis_terms, generate_tasks
 
 
 class Main(ClassArgParser):
@@ -56,6 +57,7 @@ class Main(ClassArgParser):
         processor = PrepareDataset(
             database_path=database_path,
             audio_extraction_path=audio_extraction_path,
+            diagnosis_map=diagnosis_maps.USVAC_2025(),
         )
         if all:
             await processor.all(prepared_data_path)
@@ -67,11 +69,18 @@ class Main(ClassArgParser):
     def level_3_confusion(self):
         level_3_confusion()
 
-    def generate_tasks(self, data_store_path: Path, version: VERSIONS):
-        generate_tasks(version=version, source_path=data_store_path)
+    async def generate_tasks(self, data_store_path: Path, version: VERSIONS):
+        await generate_tasks(
+            version=version,
+            source_path=data_store_path,
+            diagnosis_map=diagnosis_maps.USVAC_2025(),
+        )
 
     def process_diagnosis_list(self):
         Processor().run()
+
+    async def collect_diagnosis_terms(self, version: VERSIONS, data_store_path: Path):
+        await collect_diagnosis_terms(version=version, source_path=data_store_path)
 
 
 if __name__ == "__main__":
