@@ -19,7 +19,8 @@ class Base:
         self,
         source_path: Path,
     ) -> None:
-        self.__source_path = Path(f"{source_path}/{self.DB_NAME}")
+        self.__source_path = source_path
+        self.__db_source_path = Path(f"{source_path}/{self.DB_NAME}")
 
     async def init(
         self,
@@ -33,7 +34,7 @@ class Base:
             random_seed=42,
         )
         sessions = await self.prepare_dataset(
-            source_path=self.__source_path,
+            source_path=self.__db_source_path,
             allow_incomplete_classification=allow_incomplete_classification,
             min_tasks=min_tasks,
             diagnosis_map=diagnosis_map,
@@ -44,7 +45,7 @@ class Base:
         )
 
     async def collect_diagnosis_terms(self) -> Set[str]:
-        return await self._collect_diagnosis_terms(source_path=self.__source_path)
+        return await self._collect_diagnosis_terms(source_path=self.__db_source_path)
 
     async def _collect_diagnosis_terms(self, source_path: Path) -> Set[str]:
         raise NotImplementedError()
