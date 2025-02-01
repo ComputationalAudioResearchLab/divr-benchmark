@@ -1,4 +1,3 @@
-from typing import Literal
 from .diagnosis_map import DiagnosisMap
 
 
