@@ -20,7 +20,12 @@ class Main(ClassArgParser):
         await TaskGenerator(research_data_path=env.RESEARCH_DATA_PATH).generate()
         print("Tasks generated")
 
-    def train(self, exp_key: Runner.EXP_KEYS, tboard_enabled: bool = True):
+    def train(
+        self,
+        exp_key: Runner.EXP_KEYS,
+        tboard_enabled: bool = True,
+        use_cache_loader: bool = True,
+    ):
         tasks_generator = TaskGenerator(
             research_data_path=env.RESEARCH_DATA_PATH,
         )
@@ -29,7 +34,11 @@ class Main(ClassArgParser):
             cache_path=env.CACHE_PATH,
             results_path=env.RESULTS_PATH,
         )
-        runner.train(exp_key=exp_key, tboard_enabled=tboard_enabled)
+        runner.train(
+            exp_key=exp_key,
+            tboard_enabled=tboard_enabled,
+            use_cache_loader=use_cache_loader,
+        )
 
     def eval(self, exp_key: Runner.EXP_KEYS, load_epoch: int):
         tasks_generator = TaskGenerator(

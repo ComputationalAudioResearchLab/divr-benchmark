@@ -257,7 +257,9 @@ class Runner:
         self.__cache_path = cache_path
         self.__results_path = results_path
 
-    def train(self, exp_key: Runner.EXP_KEYS, tboard_enabled: bool):
+    def train(
+        self, exp_key: Runner.EXP_KEYS, tboard_enabled: bool, use_cache_loader: bool
+    ):
         device = torch.device("cuda")
         (
             task_key,
@@ -277,7 +279,7 @@ class Runner:
             if feature_cls is not None
             else None
         )
-        if isinstance(feature_function, OpenSmile):
+        if use_cache_loader:
             cache_path = Path(
                 f"{self.__cache_path}/.data_loader/{task_key}/{feature_cls.__name__}"
             )
