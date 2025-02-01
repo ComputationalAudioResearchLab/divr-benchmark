@@ -19,6 +19,13 @@ diagnosis_map = diagnosis_maps.USVAC_2025()
 # get a specific diagnosis
 diagnosis = diagnosis_map.get("laryngeal_tuberculosis")
 
+# also supported dictionary syntax
+diagnosis = diagnosis_map["laryngeal_tuberculosis"]
+assert "laryngeal_tuberculosis" in diagnosis_map
+
+# allow fetching by aliases
+assert "laryngeal tuberculosis" in diagnosis_map
+
 # check if diagnosis is of a type
 assert diagnosis.satisfies("pathological") == True
 assert diagnosis.satisfies("normal") == False

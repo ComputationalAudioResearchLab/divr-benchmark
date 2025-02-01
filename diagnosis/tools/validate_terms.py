@@ -13,5 +13,7 @@ class ValidateTerms:
             self.__terms = yaml.full_load(terms_file)
 
     def run(self):
-        print(self.__diagnosis_map)
-        print(self.__terms)
+
+        for term in self.__terms:
+            print(term)
+            print(self.__diagnosis_map[term])

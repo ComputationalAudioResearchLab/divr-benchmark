@@ -18,6 +18,12 @@ class DiagnosisMap:
         self.__allow_unmapped = allow_unmapped
         self.__load_map(map_file)
 
+    def __contains__(self, name: str) -> bool:
+        return name.lower() in self.__index
+
+    def __getitem__(self, name: str) -> Diagnosis:
+        return self.get(name)
+
     def get(self, name: str) -> Diagnosis:
         name = name.lower()
         try:
@@ -31,7 +37,6 @@ class DiagnosisMap:
                     parents=[self.__unclassified_link],
                     votes={},
                 )
-                pass
             else:
                 raise err
 
