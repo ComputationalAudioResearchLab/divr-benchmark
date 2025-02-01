@@ -135,16 +135,142 @@ class Processor:
             (2, "functional_dysphonia"),
         ],
         [(4, "pathological"), (0, "pathological")],
+        [(4, "singing_training"), (4, "singing_voice")],
+    ]
+
+    extra_aliases = [
+        [4, "a_p_compression", ["a-p compression (moderate)"]],
+        [
+            4,
+            "a_p_squeezing",
+            [
+                "a-p squeezing (mild)",
+                "a-p squeezing (moderate)",
+                "a-p squeezing (severe)",
+            ],
+        ],
+        [
+            4,
+            "amyotrophic_lateral_sclerosis",
+            [
+                "amyotrophe lateralsklerose",
+            ],
+        ],
+        [4, "bulbar_paralysis", ["bulbärparalyse"]],
+        [4, "chondroma", ["chondrom"]],
+        [4, "cordectomy", ["chordectomy", "chordektomie"]],
+        [4, "conversion_dysphonia", ["conversion aphonia", "conversion dysphonia"]],
+        [4, "cyst", ["cyste"]],
+        [4, "dysarthrophonia", ["dysarthrophonie"]],
+        [4, "dysody", ["dysodie"]],
+        [4, "dysphonia", ["dysphonie"]],
+        [4, "dysplastic_dysphonia", ["dysplastische dysphonie"]],
+        [4, "dysplastic_larynx", ["dysplastischer kehlkopf"]],
+        [4, "epiglottic_carcinoma", ["epiglottiskarzinom"]],
+        [4, "fibroma", ["fibrom"]],
+        [4, "frontolateral_partial_resection", ["frontolaterale teilresektion"]],
+        [2, "functional_dysphonia", ["funktionelle dysphonie"]],
+        [4, "granuloma", ["granulom"]],
+        [4, "hypofunctional_dysphonia", ["hypofunktionelle dysphonie"]],
+        [4, "hypopharyngeal_tumor", ["hypopharynxtumor"]],
+        [4, "hypotonic_dysphonia", ["hypotone dysphonie"]],
+        [4, "internal_weakness", ["internusschwäche"]],
+        [4, "intubation_granuloma", ["intubationsgranulom"]],
+        [4, "intubation_trauma", ["intubationsschaden"]],
+        [4, "juvenile_dysphonia", ["juvenile dysphonie"]],
+        [4, "laryngeal_tumor", ["kehlkopftumor"]],
+        [4, "contact_pachyderma", ["kontaktpachydermie"]],
+        [4, "laryngocele", ["laryngozele"]],
+        [4, "lesion", ["lesions posterior left vocal fold"]],
+        [4, "leukoplakia", ["leukoplakie"]],
+        [4, "medial_cervical_cyst", ["mediale halscyste"]],
+        [4, "mesopharyngeal_tumor", ["mesopharynxtumor"]],
+        [4, "downs_disease", ["morbus down"]],
+        [4, "parkinson_disease", ["morbus parkinson", "parkinson's disease"]],
+        [4, "mutation", ["mutatio"]],
+        [4, "mutation_fistula_voice", ["mutationsfistelstimme"]],
+        [4, "superior_laryngeal_nerve_lesion", ["n. laryngeus superior läsion"]],
+        [4, "superior_laryngeal_nerve_neuralgia", ["n. laryngeus superior neuralgie"]],
+        [4, "orofacial_dyspraxia", ["orofaciale dyspraxie"]],
+        [4, "papilloma", ["papillom"]],
+        # [4, "myasthenia", ["phonasthenie"]],
+        [4, "phonation_nodules", ["phonationsknötchen"]],
+        # [4, "polters_syndrome", ["poltersyndrom"]],
+        [4, "psychogenic_aphonia", ["psychogene aphonie"]],
+        [4, "psychogenic_dysphonia", ["psychogene dysphonie"]],
+        [4, "psychogenic_microphony", ["psychogene mikrophonie"]],
+        [4, "reinkes_edema", ["reinke ödem"]],
+        [4, "recurrent_paralysis", ["rekurrensparese"]],
+        [4, "sigmatism", ["sigmatismus"]],
+        [4, "spasmodic_dysphonia", ["spasmodische dysphonie"]],
+        [4, "vocal_fold_carcinoma", ["stimmlippenkarzinom"]],
+        [
+            4,
+            "vocal_fold_polyp",
+            [
+                "stimmlippenpolyp",
+                "vocal fold polyp",
+                "vocal fold polyp(s)",
+                "vocal cord polyp",
+            ],
+        ],
+        [4, "synechia", ["synechie"]],
+        [4, "synechia", ["synechie"]],
+        [4, "synechia", ["synechie"]],
+        [4, "singing_voice", ["singer's voice", "sängerstimme", "gesangsstimme"]],
+        [4, "pocket_fold_hyperplasia", ["taschenfaltenhyperplasie"]],
+        [4, "pocket_fold_voice", ["taschenfaltenstimme"]],
+        [4, "velopharyngoplasty", ["velopharyngoplastik"]],
+        [4, "ventricular_fold", ["ventricular vocal folds (mild)"]],
+        [
+            4,
+            "ventricular_compression",
+            [
+                "ventricular compression",
+                "ventricular compression (full)",
+                "ventricular compression (mild)",
+                "ventricular compression (moderate)",
+                "ventricular compression (severe)",
+                "ventricular compression (slight)",
+            ],
+        ],
+        [
+            4,
+            "central_laryngeal_movement_disorder",
+            ["zentral-laryngale bewegungsstörung"],
+        ],
+        [
+            4,
+            "inflammation",
+            ["inflammation", "inflammed vocal folds"],
+        ],
     ]
 
     def run(self):
         df = pd.read_excel(self.input_data, sheet_name="Qualtrics Results")
         df = df.map(self.normalize_votes)
         num_cols = len(df.columns)
+        votes_map = self.__create_labels(df, num_cols)
+        self.__merge_classes(votes_map)
+        self.__fix_aliases(votes_map)
+
+        with open(self.output_file, "w") as output_file:
+            output_file.write("#### Level 0\n")
+            yaml.dump(votes_map[0], stream=output_file, allow_unicode=True)
+            output_file.write("\n\n#### Level 1\n")
+            yaml.dump(votes_map[1], stream=output_file, allow_unicode=True)
+            output_file.write("\n\n#### Level 2\n")
+            yaml.dump(votes_map[2], stream=output_file, allow_unicode=True)
+            output_file.write("\n\n#### Level 3\n")
+            yaml.dump(votes_map[3], stream=output_file, allow_unicode=True)
+            output_file.write("\n\n#### Level 4\n")
+            yaml.dump(votes_map[4], stream=output_file, allow_unicode=True)
+
+    def __create_labels(self, df, num_cols):
         level_0_votes = {
             "normal": {"level": 0, "alias": ["healthy"]},
             "pathological": {"level": 0, "alias": []},
-            "unclassified": {"level": 0, "alias": []},
+            "unclassified": {"level": 0, "alias": ["mixed", "not sure", "other"]},
         }
         level_1_votes = {
             "non_laryngeal": {"level": 1, "parents": {"pathological": 1.00}},
@@ -164,7 +290,29 @@ class Processor:
             "systemic": {"level": 2, "parents": {"non_laryngeal": 1.00}},
         }
         level_3_votes = {}
-        level_4_votes = {}
+        # These 4 labels were accidentally left out of being classified by the clinicians
+        level_4_votes = {
+            "anterior_mass": {
+                "level": 4,
+                "alias": ["anterior mass"],
+                "parents": {"unclassified": 1.00},
+            },
+            "hypokinetic_dysphonia_extraglottic_air_leak": {
+                "level": 4,
+                "alias": ["hypokinetic dysphonia (extraglottic air leak)"],
+                "parents": {"unclassified": 1.00},
+            },
+            "myasthenia": {
+                "level": 4,
+                "alias": ["phonasthenie"],
+                "parents": {"unclassified": 1.00},
+            },
+            "polters_syndrome": {
+                "level": 4,
+                "alias": ["polter's syndrome", "poltersyndrom"],
+                "parents": {"unclassified": 1.00},
+            },
+        }
         for i in tqdm(range(0, num_cols, 4)):
             k, v = self.process_group(group=df.iloc[0:8][df.columns[i : i + 4]])
             if k in self.overrides:
@@ -216,35 +364,36 @@ class Processor:
                                 "parents": {"pathological": 1.0},
                             }
             level_4_votes[k] = v
-
-        # merging data
-        votes_map = [
+        return [
             level_0_votes,
             level_1_votes,
             level_2_votes,
             level_3_votes,
             level_4_votes,
         ]
+
+    def __merge_classes(self, votes_map):
         for rep_from, rep_to in self.replacements:
             (rep_from_level, rep_from_key) = rep_from
             (rep_to_level, rep_to_key) = rep_to
             to_votes = votes_map[rep_to_level]
             from_votes = votes_map[rep_from_level]
             if rep_to_key in to_votes and rep_from_key in from_votes:
+                to_votes[rep_to_key]["alias"] += [rep_from_key.replace("_", " ")]
                 to_votes[rep_to_key]["alias"] += from_votes[rep_from_key]["alias"]
                 del from_votes[rep_from_key]
 
-        with open(self.output_file, "w") as output_file:
-            output_file.write("#### Level 0\n")
-            yaml.dump(level_0_votes, stream=output_file)
-            output_file.write("\n\n#### Level 1\n")
-            yaml.dump(level_1_votes, stream=output_file)
-            output_file.write("\n\n#### Level 2\n")
-            yaml.dump(level_2_votes, stream=output_file)
-            output_file.write("\n\n#### Level 3\n")
-            yaml.dump(level_3_votes, stream=output_file)
-            output_file.write("\n\n#### Level 4\n")
-            yaml.dump(level_4_votes, stream=output_file)
+    def __fix_aliases(self, votes_map):
+        for vm in votes_map:
+            for v in vm.values():
+                if "alias" in v:
+                    for i, a in enumerate(v["alias"]):
+                        if "also" in a:
+                            del v["alias"][i]
+                    v["alias"] = sorted(v["alias"])
+
+        for level, key, alias in self.extra_aliases:
+            votes_map[level][key]["alias"] += alias
 
     def normalize_votes(self, cell):
         if cell in self.vote_mapping:
@@ -287,7 +436,7 @@ class Processor:
             vote_count[str(k)] = round(float(v / total_votes), ndigits=2)
         result = {
             "level": 4,
-            "alias": [label],
+            "alias": self.__process_alias(label),
             "parents": vote_count,
             "votes": votes,
         }
@@ -295,3 +444,26 @@ class Processor:
         if label in self.label_mapping:
             label = self.label_mapping[label]
         return label, result
+
+    def __process_alias(self, label):
+        if "\n" not in label:
+            return [label]
+
+        alias = []
+        for lrow in label.split("\n"):
+            lrow: str = lrow.strip()
+            if len(lrow) > 0:
+                if lrow.startswith("( also "):
+                    lrow = lrow.replace("( also ", "")
+                if lrow.startswith("(also "):
+                    lrow = lrow.replace("(also ", "")
+                if lrow.startswith("also "):
+                    lrow = lrow.replace("also ", "")
+                if lrow.endswith("))"):
+                    lrow = lrow.replace("))", ")")
+                if lrow.endswith(")") and not ("(" in lrow):
+                    lrow = lrow[:-1]
+                if lrow.startswith("- "):
+                    lrow = lrow[2:]
+                alias += [lrow]
+        return alias
