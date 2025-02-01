@@ -1,0 +1,59 @@
+# [1] A. Benba, A. Jilbab, and A. Hammouch, “Detecting multiple system atrophy, Parkinson and other neurological disorders using voice analysis,” International Journal of Speech Technology, vol. 20, no. 2, pp. 281–288, 2017, doi: 10.1007/s10772-017-9404-6.
+#   Multiple System Atrophy - 9
+#   Parkinsons - 9
+#   Neurological Disorder - 9 (3 Functional Neurological Disorders, 1 Somatization, 1 Dystonia, 2 Cervical Dystonia, 1 Essential Tremors, 1 Generalized Paroxysmal Dystonia)
+#     Functional neurological disorder, somatization, dystonia, cervical dystonia, essential tremors, generalized paroxysmal dystonia
+
+### level 0
+pathological:
+  level: 0
+normal:
+  alias:
+    - healthy
+  level: 0
+unclassified:
+  level: 0
+  alias:
+    - not sure
+    - pathological voice- diagnosis n/a
+  level: 0
+
+### level 1
+neurological_disorder:
+  level: 1
+  parents:
+    pathological: 1.00
+
+### level 2
+cervical_dystonia:
+  level: 2
+  parents:
+    neurological_disorder: 1.00
+dystonia:
+  level: 2
+  parents:
+    neurological_disorder: 1.00
+essential_tremors:
+  level: 2
+  parents:
+    neurological_disorder: 1.00
+functional_neurological_disorder:
+  level: 2
+  parents:
+    neurological_disorder: 1.00
+generalized_paroxysmal_dystonia:
+  level: 2
+  parents:
+    neurological_disorder: 1.00
+multiple_system_atrophy:
+  level: 2
+  parents:
+    phonotrauma: 1.00
+parkinsons:
+  level: 2
+  parents:
+    pathological: 1.00
+somatization:
+  level: 2
+  parents:
+    neurological_disorder: 1.00

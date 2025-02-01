@@ -1,0 +1,54 @@
+# [1] H.-B. Kim, J. Song, S. Park, and Y. O. Lee, “Classification of laryngeal diseases including laryngeal cancer, benign mucosal disease, and vocal cord paralysis by artificial intelligence using voice analysis.,” Scientific reports, vol. 14, no. 1, p. 9297, 2024, doi: 10.1038/s41598-024-58817-x.
+#   Laryngeal cancer - 30
+#     Laryngeal cancer includes all malignant changes in the larynx.
+#   Vocal fold paralysis - 97
+#     Vocal cord paralysis includes decreased mobility of uni or bilateral vocal cords regardless of complete closure
+#   Benign mucosal disease - 81
+#     Vocal polyp, vocal nodule, granuloma, reinke's edema
+#   Healthy - 155
+
+### level 0
+pathological:
+  level: 0
+normal:
+  alias:
+    - healthy
+  level: 0
+unclassified:
+  level: 0
+  alias:
+    - not sure
+    - pathological voice- diagnosis n/a
+  level: 0
+
+### level 1
+benign_mucosal_disease:
+  level: 1
+  parents:
+    pathological: 1.0
+
+### level 2
+granuloma:
+  level: 2
+  parents:
+    benign_mucosal_disease: 1.00
+laryngeal_cancer:
+  level: 2
+  parents:
+    pathological: 1.00
+nodules:
+  level: 2
+  parents:
+    benign_mucosal_disease: 1.00
+polyps:
+  level: 2
+  parents:
+    benign_mucosal_disease: 1.00
+reinkes_edema:
+  level: 2
+  parents:
+    benign_mucosal_disease: 1.00
+vocal_fold_paralysis:
+  level: 2
+  parents:
+    pathological: 1.00

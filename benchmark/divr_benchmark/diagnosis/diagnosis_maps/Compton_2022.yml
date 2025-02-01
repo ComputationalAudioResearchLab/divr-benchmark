@@ -1,0 +1,102 @@
+# [1] E. Compton et al., “Developing an Artificial Intelligence Tool to Predict Vocal Cord Pathology in Primary Care Settings,” LARYNGOSCOPE, doi: 10.1002/lary.30432.
+#   Normal
+#   Inflammatory
+#     chronic laryngitis, reinke's edema
+#   Mass Lesions
+#     polyp, nodules, cancer, papilloma, granuloma, cysts
+#   Neurological and Muscular
+#     adductor spasmodic dysphonia, benign essential tremor, muscle tension dysphonia, Parkinson's disorder, unilateral paralysis, bilateral paralysis, idiopathic vocal cord bowing, presbylarynges
+
+### level 0
+pathological:
+  level: 0
+normal:
+  alias:
+    - healthy
+  level: 0
+unclassified:
+  level: 0
+  alias:
+    - not sure
+    - pathological voice- diagnosis n/a
+  level: 0
+
+### level 1
+inflammatory:
+  level: 1
+  parents:
+    pathological: 1.00
+mass_lesions:
+  level: 1
+  parents:
+    pathological: 1.00
+neuro_muscular:
+  level: 1
+  parents:
+    pathological: 1.00
+
+### level 2
+adductor_spasmodic_dysphonia:
+  level: 2
+  parents:
+    neuro_muscular: 1.00
+benign_essential_tremor:
+  level: 2
+  parents:
+    neuro_muscular: 1.00
+bilateral_paralysis:
+  level: 2
+  parents:
+    neuro_muscular: 1.00
+cancer:
+  level: 2
+  parents:
+    mass_lesions: 1.00
+chronic_laryngitis:
+  level: 2
+  parents:
+    inflammatory: 1.00
+cysts:
+  level: 2
+  parents:
+    mass_lesions: 1.00
+granuloma:
+  level: 2
+  parents:
+    mass_lesions: 1.00
+idiopathic_vocal cord bowing:
+  level: 2
+  parents:
+    neuro_muscular: 1.00
+muscle_tension_dysphonia:
+  level: 2
+  parents:
+    neuro_muscular: 1.00
+nodules:
+  level: 2
+  parents:
+    mass_lesions: 1.00
+papilloma:
+  level: 2
+  parents:
+    mass_lesions: 1.00
+parkinsons:
+  level: 2
+  parents:
+    neuro_muscular: 1.00
+polyp:
+  level: 2
+  parents:
+    mass_lesions: 1.00
+presbylarynges:
+  level: 2
+  parents:
+    neuro_muscular: 1.00
+reinkes_edema:
+  level: 2
+  parents:
+    inflammatory: 1.00
+unilateral_paralysis:
+  level: 2
+  parents:
+    neuro_muscular: 1.00

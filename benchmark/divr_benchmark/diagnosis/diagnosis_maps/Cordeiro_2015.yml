@@ -1,0 +1,44 @@
+# [1] H. Cordeiro, J. Fonseca, I. Guimarães, and C. Meneses, “Voice pathologies identification speech signals, features and classifiers evaluation,” presented at the 2015 Signal Processing: Algorithms, Architectures, Arrangements, and Applications (SPA), 2015, pp. 81–86. doi: 10.1109/SPA.2015.7365138.
+#   Physiological disorders - 59
+#     Vocal fold nodules, Vocal fold edema
+#   Neuromuscular disorders - 59
+#     Vocal fold unilateral paralysis
+#   Healthy - 36
+
+### level 0
+pathological:
+  level: 0
+normal:
+  alias:
+    - healthy
+  level: 0
+unclassified:
+  level: 0
+  alias:
+    - not sure
+    - pathological voice- diagnosis n/a
+  level: 0
+
+### level 1
+physiological:
+  level: 1
+  parents:
+    pathological: 1.00
+neuro_muscular:
+  level: 1
+  parents:
+    pathological: 1.00
+
+### level 2
+vocal_fold_edema:
+  level: 2
+  parents:
+    physiological: 1.00
+vocal_fold_nodules:
+  level: 2
+  parents:
+    physiological: 1.00
+vocal_fold_unilateral_paralysis:
+  level: 2
+  parents:
+    neuro_muscular: 1.00

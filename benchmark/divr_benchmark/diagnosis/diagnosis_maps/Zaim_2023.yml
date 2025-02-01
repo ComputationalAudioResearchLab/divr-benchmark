@@ -1,0 +1,128 @@
+# [1] N. Za’im, F. AL-Dhief, M. Azman, M. Alsemawi, N. Latiff, and M. Baki, “The accuracy of an Online Sequential Extreme Learning Machine in detecting voice pathology using the Malaysian Voice Pathology Database,” JOURNAL OF OTOLARYNGOLOGY-HEAD & NECK SURGERY, vol. 52, no. 1, 2023, doi: 10.1186/s40463-023-00661-6.
+#   Healthy - 252
+#   Structural Dysphonia - 112
+#     Malignant lesion, Premalignant lesion, Benign lesion, Vocal Fold cyst, vocal fold polyp, vocal fold nodule, laryngeal amyloidosis, recurrent respiratory papillomatosis, sulcus vocalis, inflammatory lesion, laryngopharyngeal reflux, tuberculosis laryngitis, funcal laryngitis, laryngitis, vocal fold edema, laryngeal perichondritis
+#   Non-Structural Dysphonia - 54
+#     Unilateral vocal fold palsy, spasmodic dysphonia, bilateral vocal fold palsy, voice tremor, presbylarynx, primary muscle tension dysphonia, puberphonia, psychogenic dysphonia
+
+### level 0
+pathological:
+  level: 0
+normal:
+  alias:
+    - healthy
+  level: 0
+unclassified:
+  level: 0
+  alias:
+    - not sure
+    - pathological voice- diagnosis n/a
+  level: 0
+
+### level 1
+non_structural_dysphonia:
+  level: 1
+  parents:
+    pathological: 1.00
+structural_dysphonia:
+  level: 1
+  parents:
+    pathological: 1.00
+
+### level 2
+benign_lesion:
+  level: 2
+  parents:
+    structural: 1.00
+bilateral_vocal_fold_palsy:
+  level: 2
+  parents:
+    non_structural: 1.00
+funcal_laryngitis:
+  level: 2
+  parents:
+    structural: 1.00
+inflammatory_lesion:
+  level: 2
+  parents:
+    structural: 1.00
+laryngeal_amyloidosis:
+  level: 2
+  parents:
+    structural: 1.00
+laryngeal_perichondritis:
+  level: 2
+  parents:
+    structural: 1.00
+laryngitis:
+  level: 2
+  parents:
+    structural: 1.00
+laryngopharyngeal_reflux:
+  level: 2
+  parents:
+    structural: 1.00
+malignant_lesion:
+  level: 2
+  parents:
+    structural: 1.00
+premalignant_lesion:
+  level: 2
+  parents:
+    structural: 1.00
+presbylarynx:
+  level: 2
+  parents:
+    non_structural: 1.00
+primary_muscle_tension_dysphonia:
+  level: 2
+  parents:
+    non_structural: 1.00
+psychogenic_dysphonia:
+  level: 2
+  parents:
+    non_structural: 1.00
+puberphonia:
+  level: 2
+  parents:
+    non_structural: 1.00
+recurrent_respiratory_papillomatosis:
+  level: 2
+  parents:
+    structural: 1.00
+spasmodic_dysphonia:
+  level: 2
+  parents:
+    non_structural: 1.00
+sulcus_vocalis:
+  level: 2
+  parents:
+    structural: 1.00
+tuberculosis_laryngitis:
+  level: 2
+  parents:
+    structural: 1.00
+unilateral_vocal_fold_palsy:
+  level: 2
+  parents:
+    non_structural: 1.00
+vocal_fold_cyst:
+  level: 2
+  parents:
+    structural: 1.00
+vocal_fold_edema:
+  level: 2
+  parents:
+    structural: 1.00
+vocal_fold_nodule:
+  level: 2
+  parents:
+    structural: 1.00
+vocal_fold_polyp:
+  level: 2
+  parents:
+    structural: 1.00
+voice_tremor:
+  level: 2
+  parents:
+    non_structural: 1.00

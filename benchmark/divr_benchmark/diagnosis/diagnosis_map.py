@@ -6,13 +6,13 @@ from .diagnosis import Diagnosis, DiagnosisLink
 
 
 class DiagnosisMap:
-    version: str
     __index: Dict[str, Diagnosis] = {}
     __curdir = Path(__file__).parent
     __diagnosis_maps_dir = Path(f"{__curdir}/diagnosis_maps")
 
     def __init__(self) -> None:
-        map_file = Path(f"{self.__diagnosis_maps_dir}/{self.version}.yml")
+        map_name = self.__class__.__name__
+        map_file = Path(f"{self.__diagnosis_maps_dir}/{map_name}.yml")
         self.__load_map(map_file)
 
     def get(self, name: str) -> Diagnosis:

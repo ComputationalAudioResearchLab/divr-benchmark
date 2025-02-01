@@ -1,0 +1,223 @@
+# [1] R. da Silva Moura, J. M. Maia, and M. E. Dajer, “Detection and Classification of Categories of Dysphonia Using Convolutional Neural Network,” presented at the IFMBE Proc., Springer Science and Business Media Deutschland GmbH, 2024, pp. 599–610. doi: 10.1007/978-3-031-49407-9_60.
+#   Functional - 414
+#     Dysphonia, Functional dysphonia, hyperfunctional dysphonia, hypofunctional dysphonia, hypotonic dysphonia, mutational falsetto, psychogenic dysphonia, psychogenic microphony, open rhinophonia, closed rhinophonia, mixed rhinophonia
+#   Organic - 459
+#     Vocal fold carcinoa, epiglottis carcinoa, carcinoma in situ, median cervical cyst, vallecular cyst, chondroma, cordectomy, laryngocele, monochroditis, papilloma, contact pachydermia, recurrent paralysis, hypopharyngeal tumor, laryngeal tumor, nasopharyngeal tumor, intubation granuloma, intubation damage, amyotrophic lateral sclerosis, bulbar paralysis, diffuse idiopathic skeletal hyperostosis, gastroesophagela reflux disease, down syndrome, Parkinson's syndrome, central laryngeal movement disorder, laryngitis, superior  laryngeal nerve injury, superior laryngeal nerve neuralgia, spasmodic dysphonia, synechia
+#   Organofunctional - 112
+#     Cyst, reinke's edema, granuloma, phonation nodule, vocal fold polyp, leukoplakia
+#   Healthy - 687
+#   (They group the pathologies from SVD into these)
+
+### level 0
+pathological:
+  level: 0
+normal:
+  alias:
+    - healthy
+  level: 0
+unclassified:
+  level: 0
+  alias:
+    - not sure
+    - pathological voice- diagnosis n/a
+  level: 0
+
+### level 1
+functional:
+  level: 1
+  parents:
+    pathological: 1.00
+organic:
+  level: 1
+  parents:
+    pathological: 1.00
+organofunctional:
+  level: 1
+  parents:
+    pathological: 1.00
+
+### level 2
+amyotrophic_lateral_sclerosis:
+  level: 2
+  parents:
+    organic: 1.00
+bulbar_paralysis:
+  level: 2
+  parents:
+    organic: 1.00
+carcinoma_in_situ:
+  level: 2
+  parents:
+    organic: 1.00
+central_laryngeal_movement_disorder:
+  level: 2
+  parents:
+    organic: 1.00
+chondroma:
+  level: 2
+  parents:
+    organic: 1.00
+closed_rhinophonia:
+  level: 2
+  parents:
+    functional: 1.00
+contact_pachydermia:
+  level: 2
+  parents:
+    organic: 1.00
+cordectomy:
+  level: 2
+  parents:
+    organic: 1.00
+cyst:
+  level: 2
+  parents:
+    organofunctional: 1.00
+diffuse_idiopathic_skeletal_hyperostosis:
+  level: 2
+  parents:
+    organic: 1.00
+down_syndrome:
+  level: 2
+  parents:
+    organic: 1.00
+dysphonia:
+  level: 2
+  parents:
+    functional: 1.00
+epiglottis_carcinoa:
+  level: 2
+  parents:
+    organic: 1.00
+functional_dysphonia:
+  level: 2
+  parents:
+    functional: 1.00
+gastroesophagela_reflux_disease:
+  level: 2
+  parents:
+    organic: 1.00
+granuloma:
+  level: 2
+  parents:
+    organofunctional: 1.00
+hyperfunctional_dysphonia:
+  level: 2
+  parents:
+    functional: 1.00
+hypofunctional_dysphonia:
+  level: 2
+  parents:
+    functional: 1.00
+hypopharyngeal_tumor:
+  level: 2
+  parents:
+    organic: 1.00
+hypotonic_dysphonia:
+  level: 2
+  parents:
+    functional: 1.00
+intubation_damage:
+  level: 2
+  parents:
+    organic: 1.00
+intubation_granuloma:
+  level: 2
+  parents:
+    organic: 1.00
+laryngeal_tumor:
+  level: 2
+  parents:
+    organic: 1.00
+laryngitis:
+  level: 2
+  parents:
+    organic: 1.00
+laryngocele:
+  level: 2
+  parents:
+    organic: 1.00
+leukoplakia:
+  level: 2
+  parents:
+    organofunctional: 1.00
+median_cervical_cyst:
+  level: 2
+  parents:
+    organic: 1.00
+mixed_rhinophonia:
+  level: 2
+  parents:
+    functional: 1.00
+monochroditis:
+  level: 2
+  parents:
+    organic: 1.00
+mutational_falsetto:
+  level: 2
+  parents:
+    functional: 1.00
+nasopharyngeal_tumor:
+  level: 2
+  parents:
+    organic: 1.00
+open_rhinophonia:
+  level: 2
+  parents:
+    functional: 1.00
+papilloma:
+  level: 2
+  parents:
+    organic: 1.00
+parkinson's_syndrome:
+  level: 2
+  parents:
+    organic: 1.00
+phonation_nodule:
+  level: 2
+  parents:
+    organofunctional: 1.00
+psychogenic_dysphonia:
+  level: 2
+  parents:
+    functional: 1.00
+psychogenic_microphony:
+  level: 2
+  parents:
+    functional: 1.00
+recurrent_paralysis:
+  level: 2
+  parents:
+    organic: 1.00
+reinke's_edema:
+  level: 2
+  parents:
+    organofunctional: 1.00
+spasmodic_dysphonia:
+  level: 2
+  parents:
+    organic: 1.00
+superior__laryngeal_nerve_injury:
+  level: 2
+  parents:
+    organic: 1.00
+superior_laryngeal_nerve_neuralgia:
+  level: 2
+  parents:
+    organic: 1.00
+synechia:
+  level: 2
+  parents:
+    organic: 1.00
+vallecular_cyst:
+  level: 2
+  parents:
+    organic: 1.00
+vocal_fold_carcinoa:
+  level: 2
+  parents:
+    organic: 1.00
+vocal_fold_polyp:
+  level: 2
+  parents:
+    organofunctional: 1.00

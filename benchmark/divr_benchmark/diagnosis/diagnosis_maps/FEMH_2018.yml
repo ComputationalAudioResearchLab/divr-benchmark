@@ -1,5 +1,6 @@
 ### level 0
 pathological:
+  level: 0
 normal:
   alias:
     - healthy
@@ -12,24 +13,29 @@ unclassified:
   level: 0
 
 ### level 1
-v_p_c:
-  # vocal fold, polyps, and cysts
-  alias:
-    - vocal fold
-    - polyps
-    - cysts
+phonotrauma:
   level: 1
   parents:
     pathological: 1.00
+
+### level 2
+cysts:
+  level: 2
+  parents:
+    phonotrauma: 1.00
 laryngeal_neoplasm:
-  level: 1
+  level: 2
   parents:
     pathological: 1.00
+nodules:
+  level: 2
+  parents:
+    phonotrauma: 1.00
+polyps:
+  level: 2
+  parents:
+    phonotrauma: 1.00
 unilateral_vocal_paralysis:
-  level: 1
+  level: 2
   parents:
     pathological: 1.00
-others:
-  level: 1
-  parents:
-    unclassified: 1.00

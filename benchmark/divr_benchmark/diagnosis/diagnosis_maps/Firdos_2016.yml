@@ -1,0 +1,68 @@
+# [1] S. Firdos and K. Umarani, “Disordered Voice Classification using SVM and Feature Selection using GA,” presented at the 2016 SECOND INTERNATIONAL CONFERENCE ON COGNITIVE COMPUTING AND INFORMATION PROCESSING (CCIP), 2016.
+#   Normal - 30
+#   Pathological disorders - 15 (swelling, inflammation, nodules, polyps, cysts, vocal cord paralysis)
+#     vocal cord injury, such as swelling, inflammation, nodules, polyps, cysts, vocal cord paralysis
+#   Neurological disorders - 15 (Parkinson's, trauma, brain tumors)
+#     Parkinson's trauma, brain tumors
+
+### level 0
+pathological:
+  level: 0
+normal:
+  alias:
+    - healthy
+  level: 0
+unclassified:
+  level: 0
+  alias:
+    - not sure
+    - pathological voice- diagnosis n/a
+  level: 0
+
+### level 1
+vocal_fold_pathology:
+  level: 1
+  parents:
+    pathological: 1.00
+neurological:
+  level: 1
+  parents:
+    pathological: 1.00
+
+### level 2
+brain_tumors:
+  level: 2
+  parents:
+    neurological: 1.00
+cysts:
+  level: 2
+  parents:
+    vocal_fold_pathology: 1.00
+inflammation:
+  level: 2
+  parents:
+    vocal_fold_pathology: 1.00
+nodules:
+  level: 2
+  parents:
+    vocal_fold_pathology: 1.00
+parkinsons_trauma:
+  level: 2
+  parents:
+    neurological: 1.00
+polyps:
+  level: 2
+  parents:
+    vocal_fold_pathology: 1.00
+swelling:
+  level: 2
+  parents:
+    vocal_fold_pathology: 1.00
+vocal_cord_injury:
+  level: 2
+  parents:
+    vocal_fold_pathology: 1.00
+vocal_cord_paralysis:
+  level: 2
+  parents:
+    vocal_fold_pathology: 1.00

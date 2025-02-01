@@ -1,0 +1,43 @@
+# [1] J. V. de Moraes Lima Marinus, J. M. F. R. de Araújo, H. M. Gomes, and S. C. Costa, “On the use of cepstral coefficients, multilayer perceptron networks and Gaussian mixture models for Vocal Fold Edema diagnosis,” presented at the 2013 ISSNIP Biosignals and Biorobotics Conference: Biosignals and Robotics for Better and Safer Living (BRC), 2013, pp. 1–6. doi: 10.1109/BRC.2013.6487543.
+#   Normal - 53
+#   Edema - 21
+#   Others (Nodules, Cysts, Vocal Fold Paralysis) - 21
+#     Nodules, Cysts, Vocal Fold Paralysis
+
+### level 0
+pathological:
+  level: 0
+normal:
+  alias:
+    - healthy
+  level: 0
+unclassified:
+  level: 0
+  alias:
+    - not sure
+    - pathological voice- diagnosis n/a
+  level: 0
+
+### level 1
+others:
+  level: 1
+  parents:
+    pathological: 1.00
+
+### level 2
+cysts:
+  level: 2
+  parents:
+    others: 1.00
+edema:
+  level: 2
+  parents:
+    pathological: 1.00
+nodules:
+  level: 2
+  parents:
+    others: 1.00
+vocal_fold_paralysis:
+  level: 2
+  parents:
+    others: 1.00
