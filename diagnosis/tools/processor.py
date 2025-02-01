@@ -24,19 +24,19 @@ class Processor:
         "Puberphonia": "puberphonia",
         # Organic
         "Organic voice disorder": "organic",
-        "Inflammatory - Infective": "inflammatory",
-        "Inflammatory - Non-Infective": "inflammatory",
-        "Neuro-muscular -Movement disorders": "neuro_muscular",
-        "Neuro-muscular - Central nervous system": "neuro_muscular",
-        "Neuro-muscular - Peripheral nervous system": "neuro_muscular",
-        "Structural - Structural abnormality": "structural",
-        "Structural - Epithelial/lamina propria": "structural",
-        "Structural - Congenital/maturational": "structural",
-        "Structural - Malignancy": "structural",
-        "Structural - Vascular": "structural",
-        "Trauma - External": "trauma",
-        "Trauma - Internal": "trauma",
-        "Trauma -Internal": "trauma",
+        "Inflammatory - Infective": "inflammatory > infective",
+        "Inflammatory - Non-Infective": "inflammatory > non_infective",
+        "Neuro-muscular -Movement disorders": "neuro_muscular > movement_disorder",
+        "Neuro-muscular - Central nervous system": "neuro_muscular > central_nervous_disorder",
+        "Neuro-muscular - Peripheral nervous system": "neuro_muscular > peripheral_nervous_disorder",
+        "Structural - Structural abnormality": "structural > structural_abnormality",
+        "Structural - Epithelial/lamina propria": "structural > epithelial_propria",
+        "Structural - Congenital/maturational": "structural > congenital",
+        "Structural - Malignancy": "structural > malignancy",
+        "Structural - Vascular": "structural > vascular",
+        "Trauma - External": "trauma > external",
+        "Trauma - Internal": "trauma > internal",
+        "Trauma -Internal": "trauma > internal",
     }
     label_mapping = {
         "a_p_compression___also_a_p_compression_moderate_": "a_p_compression",
@@ -45,6 +45,7 @@ class Processor:
         "athetoid___also_athetoid__or_mixed_": "athetoid",
         "bilateral_recurrent_laryngeal_nerve__rln__paralysis_peripheral": "bilateral_recurrent_laryngeal_nerve_rln_paralysis_peripheral",
         "conversion_aphonia__also_conversion_dysphonia_": "conversion_dysphonia",
+        "contact_pachydermia": "contact_pachyderma",
         "diplophonie": "diplophony",
         "dish_syndrom": "dish_syndrome",
         "down_syndrome": "downs_disease",
@@ -111,22 +112,29 @@ class Processor:
         "vocal_fold_polyp__also_vocal_fold_polyp_s___vocal_cord_polyp": "vocal_fold_polyp",
         "voice_disorders__undiagnosed_or_not_otherwise_specified__nos_": "voice_disorders_undiagnosed",
     }
+    overrides = {
+        "without_dysarthria": {
+            "level": 4,
+            "alias": ["without dysarthria"],
+            "parents": {"normal": 1.00},
+        }
+    }
 
     # [(from_level, from_key), (to_level, to_key)]
     replacements = [
-        [(3, "keratosis___leukoplakia"), (3, "leukoplakia")],
-        [(3, "keratosis"), (3, "leukoplakia")],
-        [(3, "normal___also_normal_voice_"), (0, "normal")],
+        [(4, "keratosis___leukoplakia"), (4, "leukoplakia")],
+        [(4, "keratosis"), (4, "leukoplakia")],
+        [(4, "normal___also_normal_voice_"), (0, "normal")],
         [
-            (3, "muscle_tension_adaptive_dysphonia__secondary_"),
+            (4, "muscle_tension_adaptive_dysphonia__secondary_"),
             (2, "muscle_tension_adaptive"),
         ],
-        [(3, "muscle_tension_dysphonia__primary_"), (1, "muscle_tension")],
+        [(4, "muscle_tension_dysphonia__primary_"), (1, "muscle_tension")],
         [
-            (3, "functional_dysphonia__functional_voice_disorder"),
+            (4, "functional_dysphonia__functional_voice_disorder"),
             (2, "functional_dysphonia"),
         ],
-        [(3, "pathological"), (0, "pathological")],
+        [(4, "pathological"), (0, "pathological")],
     ]
 
     def run(self):
@@ -138,34 +146,85 @@ class Processor:
             "pathological": {"level": 0, "alias": []},
             "unclassified": {"level": 0, "alias": []},
         }
-        level_1_votes = {}
-        level_2_votes = {}
+        level_1_votes = {
+            "non_laryngeal": {"level": 1, "parents": {"pathological": 1.00}},
+        }
+        level_2_votes = {
+            "metabolic": {
+                "level": 2,
+                "alias": ["endocrine"],
+                "parents": {"non_laryngeal": 1.00},
+            },
+            "psychiatric": {
+                "level": 2,
+                "alias": ["psychological"],
+                "parents": {"non_laryngeal": 1.00},
+            },
+            "respiratory": {"level": 2, "parents": {"organic": 1.00}},
+            "systemic": {"level": 2, "parents": {"non_laryngeal": 1.00}},
+        }
         level_3_votes = {}
+        level_4_votes = {}
         for i in tqdm(range(0, num_cols, 4)):
             k, v = self.process_group(group=df.iloc[0:8][df.columns[i : i + 4]])
-            for vote in v["votes"].values():
-                vote_key = vote.replace(" > ", "_")
-                if ">" in vote:
-                    if vote_key not in level_2_votes:
-                        l1, l2 = vote.split(" > ")
-                        level_2_votes[vote_key] = {
-                            "level": 2,
-                            "alias": [],
-                            "parents": {
-                                l1: 1.00,
-                            },
-                        }
-                elif vote_key not in level_1_votes:
-                    if vote_key not in ["na", "unclassified"]:
-                        level_1_votes[vote_key] = {
-                            "level": 1,
-                            "alias": [],
-                            "parents": {"pathological": 1.0},
-                        }
-            level_3_votes[k] = v
+            if k in self.overrides:
+                v = self.overrides[k]
+            else:
+                for vote in v["votes"].values():
+                    vote_key = vote.replace(" > ", "_")
+                    if ">" in vote:
+                        splits = vote.split(" > ")
+                        num_splits = len(splits)
+                        if num_splits == 2:
+                            if vote_key not in level_2_votes:
+                                l1, l2 = splits
+                                level_2_votes[vote_key] = {
+                                    "level": 2,
+                                    "alias": [],
+                                    "parents": {
+                                        l1: 1.00,
+                                    },
+                                }
+                        elif num_splits == 3:
+                            if vote_key not in level_3_votes:
+                                l1, l2, l3 = splits
+                                level_3_votes[vote_key] = {
+                                    "level": 3,
+                                    "alias": [],
+                                    "parents": {
+                                        l2: 1.00,
+                                    },
+                                }
+                                level_2_key = f"{l1}_{l2}"
+                                if level_2_key not in level_2_votes:
+                                    level_2_votes[level_2_key] = {
+                                        "level": 2,
+                                        "alias": [],
+                                        "parents": {
+                                            l1: 1.00,
+                                        },
+                                    }
+                        else:
+                            raise ValueError(
+                                f"unexpected number of splits in vote: {vote}"
+                            )
+                    elif vote_key not in level_1_votes:
+                        if vote_key not in ["na", "unclassified"]:
+                            level_1_votes[vote_key] = {
+                                "level": 1,
+                                "alias": [],
+                                "parents": {"pathological": 1.0},
+                            }
+            level_4_votes[k] = v
 
         # merging data
-        votes_map = [level_0_votes, level_1_votes, level_2_votes, level_3_votes]
+        votes_map = [
+            level_0_votes,
+            level_1_votes,
+            level_2_votes,
+            level_3_votes,
+            level_4_votes,
+        ]
         for rep_from, rep_to in self.replacements:
             (rep_from_level, rep_from_key) = rep_from
             (rep_to_level, rep_to_key) = rep_to
@@ -184,6 +243,8 @@ class Processor:
             yaml.dump(level_2_votes, stream=output_file)
             output_file.write("\n\n#### Level 3\n")
             yaml.dump(level_3_votes, stream=output_file)
+            output_file.write("\n\n#### Level 4\n")
+            yaml.dump(level_4_votes, stream=output_file)
 
     def normalize_votes(self, cell):
         if cell in self.vote_mapping:
@@ -225,7 +286,7 @@ class Processor:
         for k, v in zip(*np.unique(vote_list, return_counts=True)):
             vote_count[str(k)] = round(float(v / total_votes), ndigits=2)
         result = {
-            "level": 3,
+            "level": 4,
             "alias": [label],
             "parents": vote_count,
             "votes": votes,

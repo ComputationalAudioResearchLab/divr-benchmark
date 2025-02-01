@@ -34,7 +34,6 @@ class MatchManual:
         "carcinoma_in_situ",  # one extra vote
         "chondroma",  # difference in na vs not a diagnosis
         "chordectomy",  # present as cordectomy
-        "contact_pachyderma",  # present as contact_pachydermia in auto
         "cyst",  # one extra vote
         "dish_syndrome",  # difference in na vs not a diagnosis
         "diplophony",  # one extra vote
@@ -62,20 +61,15 @@ class MatchManual:
         "laryngeal_mucosa_trauma",  # present as laryngeal_mucosa_trauma_chemical_and_thermal
         "laryngopharyngeal_reflux",  # difference in na vs not a diagnosis
         "major_depressive_disorder",  # present as major_depressive_disorder_recurrent
-        "metabolic",  # not in the DBs, hence unmapped,
         "myasthenia",  # present nowhere, where did we get this?
-        "non_laryngeal",  # not in the DBs, hence unmapped,
         "papilloma",  # bad copy,
         "parkinsons",  # present as parkinson_disease
         "polters_syndrome",  # not classified, hence absent
-        "psychiatric",  # not in the DBs, hence unmapped,
         "psychogenic_aphonia",  # functional split
         "psychogenic_dysphonia",  # functional split
         "psychogenic_microphony",  # functional split
         "puberphonia",  # functional split
-        "respiratory",  # not in the DBs, hence unmapped,
         "singers_voice",  # present as singing_voice
-        "systemic",  # not in the DBs, hence unmapped,
         "unclassified_pathology",  # merged with unclassified
         "unilateral_or_bilateral_recurrent_laryngeal_nerve_(rln)_paresis",  # paranthesis difference
         "unilateral_recurrent_laryngeal_nerve_(rln)_paralysis",  # paranthesis difference
