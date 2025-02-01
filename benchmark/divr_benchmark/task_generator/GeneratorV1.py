@@ -1,5 +1,6 @@
 import asyncio
 from pathlib import Path
+from divr_diagnosis import DiagnosisMap
 from typing import Awaitable, Callable, Dict, List
 
 from .generator import Generator, DatabaseFunc, Dataset
@@ -14,7 +15,6 @@ from .databases import (
     Base as Database,
 )
 from .databases.svd import VOWELS
-from ..diagnosis import DiagnosisMap
 
 
 class GeneratorV1(Generator):

@@ -1,0 +1,8 @@
+{
+  "python.defaultInterpreterPath": "/root/.local/share/virtualenvs/divr-diagnosis/bin/python",
+  "python.testing.pytestArgs": ["test"],
+  "python.testing.unittestEnabled": false,
+  "python.testing.pytestEnabled": true,
+  "python.testing.cwd": "${workspaceFolder}",
+  "python.testing.autoTestDiscoverOnSaveEnabled": true
+}

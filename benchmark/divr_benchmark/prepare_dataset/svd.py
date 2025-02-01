@@ -50,6 +50,7 @@ class SVD(BaseProcessor):
                 self.diagnosis_map.get(x.strip().lower()) for x in diagnosis.split(",")
             ],
             files=files,
+            num_files=len(files),
         )
 
     def include(self, path: Path):

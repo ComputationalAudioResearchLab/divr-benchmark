@@ -26,6 +26,11 @@ class AVFAD(BaseProcessor):
             diagnosis = clean_diagnosis(row["CMVD-I Dimension 1 (word system)"])
             age = int(row["Age"])
             gender = row["Sex"].strip()
+            files = [
+                ProcessedFile(path=path)
+                for path in Path(source_path).rglob(f"{speaker_id}*.wav")
+                if self.include(path)
+            ]
             sessions += [
                 ProcessedSession(
                     id=speaker_id,
@@ -33,11 +38,8 @@ class AVFAD(BaseProcessor):
                     age=age,
                     gender=gender,
                     diagnosis=[self.diagnosis_map.get(diagnosis)],
-                    files=[
-                        ProcessedFile(path=path)
-                        for path in Path(source_path).rglob(f"{speaker_id}*.wav")
-                        if self.include(path)
-                    ],
+                    files=files,
+                    num_files=len(files),
                 )
             ]
         await self.process(output_path=output_path, db_name=db_key, sessions=sessions)

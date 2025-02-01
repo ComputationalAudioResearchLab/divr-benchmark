@@ -1,5 +1,6 @@
 {
   "files.exclude": {
+    "diagnosis": true,
     "benchmark": true,
     "baselines": true,
     "feature-toolkit": true,

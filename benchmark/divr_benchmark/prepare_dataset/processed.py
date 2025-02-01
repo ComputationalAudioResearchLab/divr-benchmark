@@ -2,10 +2,10 @@ from __future__ import annotations
 import wfdb
 import nspfile
 import soundfile
-from typing import List, Set
 from pathlib import Path
+from typing import List, Set
 from dataclasses import dataclass
-from ..diagnosis import Diagnosis
+from divr_diagnosis import Diagnosis
 
 
 @dataclass

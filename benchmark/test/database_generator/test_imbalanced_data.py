@@ -12,7 +12,6 @@ test_split = 0.2
 random_seed = 42
 diagnosis_map = diagnosis_maps.USVAC_2025()
 database_generator = DatabaseGenerator(
-    diagnosis_map=diagnosis_map,
     train_split=train_split,
     test_split=test_split,
     random_seed=random_seed,

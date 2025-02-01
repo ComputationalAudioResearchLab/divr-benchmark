@@ -3,7 +3,8 @@ import json
 import statistics
 from pathlib import Path
 from typing import List
-from ..diagnosis import DiagnosisMap
+from divr_diagnosis import DiagnosisMap
+
 from .processed import ProcessedDataset, ProcessedSession
 from .database_generator import DatabaseGenerator
 
@@ -12,7 +13,6 @@ class BaseProcessor:
     def __init__(self, diagnosis_map: DiagnosisMap) -> None:
         self.diagnosis_map = diagnosis_map
         self.database_generator = DatabaseGenerator(
-            diagnosis_map=self.diagnosis_map,
             train_split=0.7,
             test_split=0.2,
             random_seed=42,

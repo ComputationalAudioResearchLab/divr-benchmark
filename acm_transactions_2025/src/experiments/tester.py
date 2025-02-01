@@ -1,6 +1,5 @@
 import torch
 import torch.optim
-import numpy as np
 import pandas as pd
 import seaborn as sns
 from tqdm import tqdm
@@ -10,7 +9,7 @@ import matplotlib.pyplot as plt
 from sklearn.metrics import confusion_matrix
 
 from ..model import Normalized
-from ..data_loader import DataLoader
+from ..data_loader import BaseDataLoader
 
 ConfusionData = Dict[int, Dict[int, int]]
 
@@ -23,7 +22,7 @@ class Tester:
         cache_path: Path,
         results_path: Path,
         device: torch.device,
-        data_loader: DataLoader,
+        data_loader: BaseDataLoader,
         exp_key: str,
         load_epoch: int,
     ) -> None:
@@ -47,10 +46,14 @@ class Tester:
     def eval(self) -> None:
         results = []
         all_ids = []
-        for inputs, labels, ids in tqdm(
+        for batch in tqdm(
             self.__data_loader.eval(),
             desc="Validating",
         ):
+            if len(batch) == 2:
+                inputs, labels = batch
+            else:
+                inputs, labels, ids = batch
             labels = labels.squeeze(1)
             probabilities, _, _ = self.model(inputs)
             predicted_labels = probabilities.argmax(dim=1)

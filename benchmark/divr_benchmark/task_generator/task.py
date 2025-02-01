@@ -1,6 +1,6 @@
-from dataclasses import dataclass
 from typing import List
-from ..diagnosis import Diagnosis
+from dataclasses import dataclass
+from divr_diagnosis import Diagnosis
 
 
 @dataclass

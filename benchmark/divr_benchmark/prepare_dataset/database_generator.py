@@ -1,7 +1,8 @@
 from __future__ import annotations
 import random
 from typing import Dict, List, Tuple
-from ..diagnosis import Diagnosis
+from divr_diagnosis import Diagnosis
+
 from .processed import ProcessedSession, ProcessedDataset
 from .database_plan import BucketCollection
 

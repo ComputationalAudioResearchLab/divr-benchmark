@@ -1,0 +1,619 @@
+a-p compression (moderate):
+  - meei
+a-p squeezing:
+  - meei
+a-p squeezing (mild):
+  - meei
+a-p squeezing (moderate):
+  - meei
+a-p squeezing (severe):
+  - meei
+abductor spasmodic dysphonia:
+  - meei
+abnormal vocal process:
+  - meei
+acute laryngitis:
+  - avfad
+adductor spasmodic dysphonia:
+  - meei
+afrin rhinitis:
+  - meei
+amyotrophe lateralsklerose:
+  - svd
+amyotrophic lateral sclerosis (als; lou gehrig's disease):
+  - avfad
+anterior mass:
+  - meei
+anterior saccular cyst:
+  - meei
+aryluxation:
+  - svd
+arytenoid:
+  - meei
+arytenoid dislocation:
+  - meei
+aspiration:
+  - meei
+asymmetry of arytenoid movement:
+  - meei
+athetoid:
+  - uaspeech
+athetoid (or mixed):
+  - uaspeech
+atrophic laryngitis:
+  - meei
+atypical paradoxical vocal fold movement of unknown etiology:
+  - meei
+balbuties:
+  - svd
+bilateral recurrent laryngeal nerve (rln) paralysis-peripheral:
+  - avfad
+blunt trauma:
+  - meei
+bowing:
+  - meei
+bulbärparalyse:
+  - svd
+carcinoma in situ:
+  - svd
+caustic trauma:
+  - meei
+chondrom:
+  - svd
+chordektomie:
+  - svd
+choreaic movements:
+  - meei
+chronic hemmorage:
+  - meei
+chronic laryngitis:
+  - meei
+contact granuloma:
+  - meei
+conversion aphonia:
+  - meei
+conversion dysphonia:
+  - meei
+cordectomy:
+  - meei
+cricoarytenoid arthritis:
+  - meei
+cyst:
+  - meei
+cyste:
+  - svd
+cystic appearing area:
+  - meei
+diffuse mild irregularities of musculomembranous vocal folds:
+  - meei
+diplophonie:
+  - svd
+discoordinated arytenoid movement:
+  - meei
+dish-syndrom:
+  - svd
+dislocated left arytenoid:
+  - meei
+dysarthria:
+  - meei
+  - torgo
+dysarthria characteristics (mild):
+  - meei
+dysarthrophonie:
+  - svd
+dyskinesia:
+  - meei
+dysodie:
+  - svd
+dysphagia:
+  - meei
+dysphonie:
+  - svd
+dysplastische dysphonie:
+  - svd
+dysplastischer kehlkopf:
+  - svd
+epiglottiskarzinom:
+  - svd
+episodic functional dysphonia:
+  - meei
+erythema:
+  - meei
+essential tremor:
+  - meei
+exudative hyperkeratotic lesions of epithelium:
+  - meei
+fibrom:
+  - svd
+frontolaterale teilresektion:
+  - svd
+funktionelle dysphonie:
+  - svd
+fusiform mass:
+  - meei
+gastric reflux:
+  - meei
+generalized edema of larynx:
+  - meei
+gerd:
+  - svd
+gesangsstimme:
+  - svd
+glottal ap compression (mild):
+  - meei
+granulation tissue:
+  - meei
+granulom:
+  - svd
+head trauma:
+  - meei
+healthy:
+  - svd
+  - voiced
+hematoma:
+  - meei
+hemmoragic reinke's edema:
+  - meei
+hemorrhage:
+  - meei
+hemorrhagic polyp:
+  - meei
+hyperasthenie:
+  - svd
+hyperfunction:
+  - meei
+hyperfunktionelle dysphonie:
+  - svd
+hyperkinetic dysphonia:
+  - voiced
+hyperkinetic dysphonia  (rigid vocal fold):
+  - voiced
+hyperkinetic dysphonia (adduction deficit):
+  - voiced
+hyperkinetic dysphonia (cordite):
+  - voiced
+hyperkinetic dysphonia (nodule):
+  - voiced
+hyperkinetic dysphonia (polyps):
+  - voiced
+hyperkinetic dysphonia (prolapse):
+  - voiced
+hyperkinetic dysphonia (reinke's edema):
+  - voiced
+hyperkinetic dysphonia (vocal fold nodules):
+  - voiced
+hyperkinetic dysphonia (vocal fold paralysis):
+  - voiced
+hyperkinetic dysphonia (vocal fold prolapse):
+  - voiced
+hypervascularization:
+  - meei
+hypofunktionelle dysphonie:
+  - svd
+hypokinetic dysphonia:
+  - voiced
+hypokinetic dysphonia (adduction deficit):
+  - voiced
+hypokinetic dysphonia (bilateral vocal fold):
+  - voiced
+hypokinetic dysphonia (conversion dysphonia):
+  - voiced
+hypokinetic dysphonia (dysphonia by chordal groove):
+  - voiced
+hypokinetic dysphonia (extraglottic air leak):
+  - voiced
+hypokinetic dysphonia (glottic insufficiency):
+  - voiced
+hypokinetic dysphonia (laryngitis):
+  - voiced
+hypokinetic dysphonia (presbiphonia):
+  - voiced
+hypokinetic dysphonia (spasmodic dysphonia):
+  - voiced
+hypokinetic dysphonia (vocal fold paralysis):
+  - voiced
+hypopharynxtumor:
+  - svd
+hypotone dysphonie:
+  - svd
+idiopathic dysphonia:
+  - meei
+idiopathic laryngeal discoordination:
+  - meei
+idiopathic neuro. disorder:
+  - meei
+immediate post surgery:
+  - meei
+inflamed arytenoid:
+  - meei
+inflammatory disease:
+  - meei
+interarytenoid hyperplasia:
+  - meei
+internusschwäche:
+  - svd
+intubation:
+  - meei
+intubation trauma:
+  - meei
+intubationsgranulom:
+  - svd
+intubationsschaden:
+  - svd
+irregularity:
+  - meei
+irritation:
+  - meei
+juvenile dysphonie:
+  - svd
+kehlkopftumor:
+  - svd
+keratosis (sometimes described as leukoplakia or erythroplasia):
+  - avfad
+keratosis / leukoplakia:
+  - meei
+keratotic reaction to polyp:
+  - meei
+kontaktpachydermie:
+  - svd
+laryngeal mucosa trauma (chemical and thermal):
+  - avfad
+laryngeal trauma:
+  - meei
+laryngeal trauma - blunt:
+  - meei
+laryngeal tuberculosis:
+  - meei
+laryngeal web:
+  - meei
+laryngitis:
+  - svd
+laryngocele:
+  - meei
+laryngopharyngeal reflux:
+  - avfad
+laryngozele:
+  - svd
+left hemilaryngectomy:
+  - meei
+lesion:
+  - meei
+lesions posterior left vocal fold:
+  - meei
+leukoplakie:
+  - svd
+lymphode hyperplasia:
+  - meei
+major depressive disorder (recurrent):
+  - avfad
+malignant tumor:
+  - meei
+mass:
+  - meei
+mediale halscyste:
+  - svd
+mesopharynxtumor:
+  - svd
+micro-cyst:
+  - meei
+microinvasive lesion:
+  - meei
+mixed:
+  - uaspeech
+mixed adductor / abductor spasmodic dysphonia:
+  - meei
+monochorditis:
+  - svd
+morbus down:
+  - svd
+morbus parkinson:
+  - svd
+multi loculated polyp:
+  - meei
+multiple sclerosis:
+  - meei
+muscle tension dysphonia (primary):
+  - avfad
+muscle tension/adaptive dysphonia (secondary):
+  - avfad
+muscular dystrophy:
+  - meei
+mutatio:
+  - svd
+mutationsfistelstimme:
+  - svd
+n. laryngeus superior läsion:
+  - svd
+n. laryngeus superior neuralgie:
+  - svd
+nodular swelling:
+  - meei
+non-fluency-syndrom:
+  - svd
+non-intubation related vocal fold granuloma:
+  - avfad
+normal:
+  - uaspeech
+  - avfad
+  - meei
+  - uncommon_voice
+normal voice:
+  - meei
+normal voice ( allergy minor ):
+  - meei
+normal voice ( cold minor ):
+  - meei
+normal voice ( flu minor 2 days ago ):
+  - meei
+normal voice ( singing training ):
+  - meei
+not sure:
+  - uaspeech
+orofaciale dyspraxie:
+  - svd
+other:
+  - meei
+pachydermia:
+  - meei
+papillom:
+  - svd
+papilloma:
+  - meei
+paradoxical vocal fold movement:
+  - meei
+paralysis:
+  - meei
+paresis:
+  - meei
+parkinson disease:
+  - avfad
+parkinson's disease:
+  - meei
+partial laryngectomy:
+  - meei
+pathological:
+  - uncommon_voice
+pathological voice- diagnosis n/a:
+  - meei
+phonasthenie:
+  - svd
+phonationsknötchen:
+  - svd
+poltersyndrom:
+  - svd
+polypoid changes:
+  - meei
+polypoid degeneration (reinke's):
+  - meei
+possible subglottal mucous collection:
+  - meei
+post arytenoid adduction:
+  - meei
+post biopsy:
+  - meei
+post botox injection:
+  - meei
+post cancer surgery:
+  - meei
+post cancer surgery of the hypopharynx:
+  - meei
+post cva laryngeal discoordination:
+  - meei
+post fix for functional problem:
+  - meei
+post intubation for seven days:
+  - meei
+post irradiation:
+  - meei
+post laryngoplasty:
+  - meei
+post laser removal of subglottic web:
+  - meei
+post microflap resection:
+  - meei
+post microflap surgery:
+  - meei
+post radiated larynx:
+  - meei
+post radiation difuse edema of entire larynx:
+  - meei
+post radiation fibrosis:
+  - meei
+post removal of nodular granuloma:
+  - meei
+post surgery:
+  - meei
+post surgery - removal of keratosis with atypia:
+  - meei
+post surgery for contact granuloma:
+  - meei
+post surgery for removal of teflon granuloma:
+  - meei
+post surgical changes:
+  - meei
+post surgical removal of granulation tissue:
+  - meei
+post thyroplasty:
+  - meei
+post thyroplasty and cricopharyngeal myotomy:
+  - meei
+post vocal cord stripping:
+  - meei
+post vocal fold stripping:
+  - meei
+post-intubation submucosal edema (mild):
+  - meei
+post-surgery -cricoid removal:
+  - meei
+posterior arytenoid lateralization surgery:
+  - meei
+pre-cricothyroid approximation:
+  - meei
+pre-nodular swellings:
+  - meei
+presbyphonia:
+  - avfad
+  - meei
+prominent lingual tonsils:
+  - meei
+psychogene aphonie:
+  - svd
+psychogene dysphonie:
+  - svd
+psychogene mikrophonie:
+  - svd
+puberphonia:
+  - avfad
+  - meei
+question of sln:
+  - meei
+question of subglottic masses:
+  - meei
+question of unknown neurological disorder:
+  - meei
+question of unknown psychiatric disorder:
+  - meei
+reactive vocal fold lesion:
+  - avfad
+redundant arytenoid mucosal with prolapsing arytenoid:
+  - meei
+reflux laryngitis:
+  - voiced
+reinke ödem:
+  - svd
+reinke's edema:
+  - avfad
+rekurrensparese:
+  - svd
+restriction of arytenoid movement:
+  - meei
+rhinophonie aperta:
+  - svd
+rhinophonie clausa:
+  - svd
+rhinophonie mixta:
+  - svd
+scarring:
+  - meei
+sigmatismus:
+  - svd
+smoke inhalation:
+  - meei
+spasmodische dysphonie:
+  - svd
+spastic:
+  - uaspeech
+stimmlippenkarzinom:
+  - svd
+stimmlippenpolyp:
+  - svd
+subcordal valley:
+  - meei
+subglottal anterior web:
+  - meei
+subglottal mass:
+  - meei
+subglottis stenosis:
+  - meei
+sulcus vocalis:
+  - meei
+supraglottic:
+  - meei
+synechie:
+  - svd
+sängerstimme:
+  - svd
+taschenfaltenhyperplasie:
+  - svd
+taschenfaltenstimme:
+  - svd
+teflon granuloma:
+  - meei
+thick mucous and mucous stranding:
+  - meei
+transsexual:
+  - meei
+unilateral or bilateral recurrent laryngeal nerve (rln) paresis:
+  - avfad
+unilateral recurrent laryngeal nerve (rln) paralysis:
+  - avfad
+unknown neurological disorder:
+  - meei
+unusual adduction/compression:
+  - meei
+valleculacyste:
+  - svd
+varix:
+  - meei
+varix and ectasia of the vocal fold:
+  - avfad
+vascular injection:
+  - meei
+velopharyngoplastik:
+  - svd
+ventricular compression:
+  - meei
+ventricular compression (full):
+  - meei
+ventricular compression (mild):
+  - meei
+ventricular compression (moderate):
+  - meei
+ventricular compression (severe):
+  - meei
+ventricular compression (slight):
+  - meei
+ventricular dysphonia:
+  - avfad
+ventricular fold:
+  - meei
+ventricular mass on right:
+  - meei
+ventricular phonation:
+  - meei
+ventricular phonation (mild):
+  - meei
+ventricular vocal folds (mild):
+  - meei
+veracosity:
+  - meei
+vocal fatigue:
+  - meei
+vocal fold:
+  - meei
+vocal fold atrophic:
+  - meei
+vocal fold cyst-sub-epithelial:
+  - avfad
+vocal fold edema:
+  - meei
+vocal fold hemorrhage:
+  - avfad
+vocal fold lesion:
+  - meei
+vocal fold nodules:
+  - avfad
+vocal fold polyp:
+  - meei
+vocal fold polyp(s):
+  - avfad
+vocal fold scar proper:
+  - avfad
+vocal fold sulcus:
+  - avfad
+vocal fold thickening:
+  - meei
+vocal nodules:
+  - meei
+vocal tremor:
+  - meei
+'voice disorders: undiagnosed or not otherwise specified (nos)':
+  - avfad
+vox senilis:
+  - svd
+white debris/patches:
+  - meei
+without dysarthria:
+  - torgo
+zentral-laryngale bewegungsstörung:
+  - svd

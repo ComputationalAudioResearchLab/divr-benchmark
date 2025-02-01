@@ -1,5 +1,5 @@
 from .benchmark import Benchmark, Result, Task, TrainPoint, TestPoint
-from .diagnosis import Diagnosis, DiagnosisMap
+from divr_diagnosis import Diagnosis, DiagnosisMap
 
 __all__ = [
     "Benchmark",

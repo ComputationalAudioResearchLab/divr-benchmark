@@ -4,8 +4,8 @@ import shelve
 import numpy as np
 from tqdm import tqdm
 from pathlib import Path
+from divr_diagnosis import Diagnosis
 from typing import Tuple, List, Union, TypedDict
-from divr_benchmark.diagnosis import Diagnosis
 
 from .dtypes import AudioBatch, InputTensors, LabelTensor
 from .base_data_loader import BaseDataLoader

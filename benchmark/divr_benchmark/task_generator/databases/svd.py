@@ -1,6 +1,7 @@
 import json
 from pathlib import Path
 from typing import List, Literal, Set
+from divr_diagnosis import DiagnosisMap
 
 from .Base import Base
 from .gender import Gender
@@ -8,7 +9,6 @@ from ...prepare_dataset.processed import (
     ProcessedSession,
     ProcessedFile,
 )
-from ...diagnosis import DiagnosisMap
 
 
 VOWELS = Literal["a", "i", "u", ""]

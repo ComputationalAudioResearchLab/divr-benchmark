@@ -1,8 +1,9 @@
 import pandas as pd
 from pathlib import Path
+from divr_diagnosis import DiagnosisMap
+
 from .base import BaseProcessor
 from .processed import ProcessedFile, ProcessedSession
-from ..diagnosis import DiagnosisMap
 
 
 class Voiced(BaseProcessor):
@@ -32,6 +33,7 @@ class Voiced(BaseProcessor):
             diagnosis = row["Diagnosis"].lower().strip()
             age = int(row["Age"])
             gender = row["Gender"].strip()
+            files = [ProcessedFile(path=Path(f"{data_path}/{speaker_id}.wav"))]
             sessions += [
                 ProcessedSession(
                     id=f"voiced.{speaker_id}",
@@ -39,7 +41,8 @@ class Voiced(BaseProcessor):
                     age=age,
                     gender=gender,
                     diagnosis=[self.diagnosis_map.get(diagnosis)],
-                    files=[ProcessedFile(path=Path(f"{data_path}/{speaker_id}.wav"))],
+                    files=files,
+                    num_files=len(files),
                 )
             ]
         await self.process(output_path=output_path, db_name=db_key, sessions=sessions)

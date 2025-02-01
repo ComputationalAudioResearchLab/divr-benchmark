@@ -2,7 +2,7 @@ import itertools
 import numpy as np
 import pandas as pd
 from typing import Dict, List, Tuple
-from ..diagnosis import Diagnosis
+from divr_diagnosis import Diagnosis
 
 
 class Result:

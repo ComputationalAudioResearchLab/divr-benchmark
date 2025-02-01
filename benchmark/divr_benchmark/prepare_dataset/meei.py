@@ -1,8 +1,9 @@
 import pandas as pd
 from pathlib import Path
+from divr_diagnosis import DiagnosisMap
+
 from .base import BaseProcessor
 from .processed import ProcessedFile, ProcessedSession
-from ..diagnosis import DiagnosisMap
 
 
 class MEEI(BaseProcessor):
@@ -65,6 +66,12 @@ class MEEI(BaseProcessor):
                 diagnosis = [self.diagnosis_map.get("unknown")]
             age = int(row["AGE"]) if row["AGE"] != "" else None
             gender = row["SEX"].strip()
+            files = [
+                await ProcessedFile.from_nsp(
+                    nsp_path=path, extraction_path=self.audio_extraction_path
+                )
+                for path in Path(source_path).rglob(f"{speaker_id}*.NSP")
+            ]
             sessions += [
                 ProcessedSession(
                     id=speaker_id,
@@ -72,12 +79,8 @@ class MEEI(BaseProcessor):
                     age=age,
                     gender=gender,
                     diagnosis=diagnosis,
-                    files=[
-                        await ProcessedFile.from_nsp(
-                            nsp_path=path, extraction_path=self.audio_extraction_path
-                        )
-                        for path in Path(source_path).rglob(f"{speaker_id}*.NSP")
-                    ],
+                    files=files,
+                    num_files=len(files),
                 )
             ]
         await self.process(output_path=output_path, db_name=db_key, sessions=sessions)

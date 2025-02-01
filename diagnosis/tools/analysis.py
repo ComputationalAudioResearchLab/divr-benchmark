@@ -3,8 +3,7 @@ from typing import List
 from matplotlib import pyplot as plt
 import yaml
 import numpy as np
-from .diagnosis_map import DiagnosisMap, Diagnosis
-from . import diagnosis_maps
+from divr_diagnosis import Diagnosis, diagnosis_maps
 
 
 def load_labels(input_path: Path):

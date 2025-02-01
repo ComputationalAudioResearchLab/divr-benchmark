@@ -1,14 +1,9 @@
 from pathlib import Path
 from typing import List
 from class_argparse import ClassArgParser
+from divr_diagnosis import diagnosis_maps
+
 from .download import Download
-from .diagnosis import (
-    analysis as analyse_diagnosis,
-    reclassification_candidates,
-    level_3_confusion,
-    Processor,
-    diagnosis_maps,
-)
 from .prepare_dataset import PrepareDataset
 from .logger import Logger
 from .task_generator import VERSIONS, collect_diagnosis_terms, generate_tasks
@@ -18,19 +13,6 @@ class Main(ClassArgParser):
     def __init__(self) -> None:
         super().__init__(name="DiVR Benchmark")
         self.logger = Logger(log_path="/tmp/main.log", key="main")
-
-    def analyse_diagnosis_classifications(
-        self,
-        source_path: Path,
-        output_confusion_path: Path,
-    ):
-        analyse_diagnosis(
-            source_path=source_path,
-            output_confusion_path=output_confusion_path,
-        )
-
-    def reclassification_candidates(self, output_path: Path):
-        reclassification_candidates(output_path=output_path)
 
     async def download_openaccess(
         self,
@@ -66,18 +48,12 @@ class Main(ClassArgParser):
         else:
             print("Must specify either --all or --datasets")
 
-    def level_3_confusion(self):
-        level_3_confusion()
-
     async def generate_tasks(self, data_store_path: Path, version: VERSIONS):
         await generate_tasks(
             version=version,
             source_path=data_store_path,
             diagnosis_map=diagnosis_maps.USVAC_2025(),
         )
-
-    def process_diagnosis_list(self):
-        Processor().run()
 
     async def collect_diagnosis_terms(self, version: VERSIONS, data_store_path: Path):
         await collect_diagnosis_terms(version=version, source_path=data_store_path)

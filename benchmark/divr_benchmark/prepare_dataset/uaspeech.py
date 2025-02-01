@@ -51,17 +51,19 @@ class UASpeech(BaseProcessor):
             diagnosis = data["diagnosis"].lower()
             age = int(data["age"]) if data["age"] is not None else None
             gender = data["gender"].strip()
+            files = [
+                ProcessedFile(path=path)
+                for path in Path(f"{data_path}/{speaker_id}").glob("*.wav")
+                if not path.name.startswith(".")
+            ]
             session = ProcessedSession(
                 id=speaker_id,
                 speaker_id=speaker_id,
                 age=age,
                 gender=gender,
                 diagnosis=[self.diagnosis_map.get(diagnosis)],
-                files=[
-                    ProcessedFile(path=path)
-                    for path in Path(f"{data_path}/{speaker_id}").glob("*.wav")
-                    if not path.name.startswith(".")
-                ],
+                files=files,
+                num_files=len(files),
             )
             sessions += [session]
         await self.process(output_path=output_path, db_name=db_key, sessions=sessions)

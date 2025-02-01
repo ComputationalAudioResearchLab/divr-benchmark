@@ -5,13 +5,13 @@ with open("README.md", "r") as readme:
     long_description = readme.read()
 
 setup(
-    name="divr-benchmark",
-    packages=["divr_benchmark"],
+    name="divr-diagnosis",
+    packages=["divr_diagnosis"],
     version=os.environ["RELEASE_VERSION"],
     license="MIT",
-    description="Toolkit to extract features from disordered voice databases",
+    description="Toolkit to standardize voice disorder diagnostic labels",
     author="Computational Audio Research Lab",
-    url="https://github.com/ComputationalAudioResearchLab/divr-benchmark/benchmark",
+    url="https://github.com/ComputationalAudioResearchLab/divr-benchmark/diagnosis",
     keywords=[
         "ML Audio Features",
         "ML",
@@ -20,21 +20,7 @@ setup(
     ],
     long_description=long_description,
     long_description_content_type="text/markdown",
-    install_requires=[
-        "aiofiles>=23.1.0",
-        "aiohttp>=3.8.4",
-        "class-argparse>=0.1.3",
-        "divr-diagnosis>=0.0.0",
-        "librosa>=0.10.0.post2",
-        "matplotlib>=3.7.1",
-        "nspfile>=0.1.4",
-        "openpyxl>=3.1.2",
-        "pandas>=2.0.1",
-        "PyYAML>=6.0.1",
-        "svd-downloader>=0.1.1",
-        "wfdb>=4.1.2",
-        "xlrd>=2.0.1",
-    ],
+    install_requires=[],
     classifiers=[
         "Development Status :: 4 - Beta",
         "Intended Audience :: Researchers",

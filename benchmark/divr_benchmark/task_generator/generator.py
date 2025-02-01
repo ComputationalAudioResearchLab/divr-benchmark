@@ -1,8 +1,8 @@
-import statistics
 import yaml
+import statistics
 from pathlib import Path
-from typing import List, Callable, Awaitable
 from dataclasses import dataclass
+from typing import List, Callable, Awaitable
 
 from .task import Task
 from .databases import Base as Database

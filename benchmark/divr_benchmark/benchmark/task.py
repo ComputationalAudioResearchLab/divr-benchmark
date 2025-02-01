@@ -2,9 +2,10 @@ import yaml
 import numpy as np
 from tqdm import tqdm
 from pathlib import Path
-from typing import Dict, List, Tuple
 from dataclasses import dataclass
-from ..diagnosis import Diagnosis, DiagnosisMap
+from typing import Dict, List, Tuple
+from divr_diagnosis import Diagnosis, DiagnosisMap
+
 from .result import Result
 from .audio_loader import AudioLoader
 

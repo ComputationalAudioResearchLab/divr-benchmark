@@ -1,5 +1,6 @@
 from pathlib import Path
 from typing import Callable, List, Set
+from divr_diagnosis import DiagnosisMap
 
 from ...prepare_dataset.database_generator import DatabaseGenerator
 from ...prepare_dataset.processed import (
@@ -7,7 +8,6 @@ from ...prepare_dataset.processed import (
     ProcessedSession,
 )
 from ..task import Task
-from ...diagnosis import DiagnosisMap
 
 FileFilter = Callable[[List[ProcessedFile]], List[ProcessedFile]]
 

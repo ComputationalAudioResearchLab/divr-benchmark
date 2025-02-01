@@ -5,7 +5,7 @@ from pathlib import Path
 from divr_benchmark import Benchmark
 from divr_benchmark.task_generator import DatabaseFunc, Dataset
 from divr_benchmark.task_generator.task import Task
-from divr_benchmark.diagnosis import diagnosis_maps
+from divr_diagnosis import diagnosis_maps
 
 
 class TaskGenerator:

@@ -1,6 +1,7 @@
 from __future__ import annotations
-from typing import Dict, List, Literal, Tuple
 from dataclasses import dataclass
+from typing import Dict, List, Literal, Tuple
+
 from .processed import ProcessedSession, ProcessedDataset
 
 

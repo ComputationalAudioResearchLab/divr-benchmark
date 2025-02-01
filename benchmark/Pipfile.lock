@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "d0c3b80aa5ee5cc61c81dc4374e4bd9fbfccf73b47e57a51bee3af8484e25426"
+            "sha256": "dc90b5131ad7d8cfe0078728c2adcaab7ebbb6230c6d1eabc21f90c60c1138cb"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -442,6 +442,10 @@
             ],
             "markers": "python_version >= '3.5'",
             "version": "==5.1.1"
+        },
+        "divr-diagnosis": {
+            "editable": true,
+            "file": "../diagnosis"
         },
         "et-xmlfile": {
             "hashes": [

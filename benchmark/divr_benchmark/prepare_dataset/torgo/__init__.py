@@ -1,9 +1,10 @@
 import pandas as pd
 from typing import List
 from pathlib import Path
+from divr_diagnosis import DiagnosisMap
+
 from ..base import BaseProcessor
 from ..processed import ProcessedFile, ProcessedSession
-from ...diagnosis import DiagnosisMap
 
 
 class Torgo(BaseProcessor):
@@ -83,13 +84,16 @@ class Torgo(BaseProcessor):
             age = int(data["age"]) if data["age"] is not None else None
             gender = data["gender"].strip()
             for session in speaker_path.glob("Session*"):
+                files = self.__select_files(session=session)
                 sessions += [
                     ProcessedSession(
                         id=f"torgo.{speaker_id}.{session.name}",
+                        speaker_id=speaker_id,
                         age=age,
                         gender=gender,
                         diagnosis=[self.diagnosis_map.get(diagnosis)],
-                        files=self.__select_files(session=session),
+                        files=files,
+                        num_files=len(files),
                     )
                 ]
         await self.process(output_path=output_path, db_name=db_key, sessions=sessions)
