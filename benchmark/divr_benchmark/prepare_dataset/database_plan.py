@@ -98,8 +98,8 @@ class BucketCollection(Dict[str, Bucket]):
 
     def __add_diagnosis(self, diag_name: str, count: int) -> None:
         train_len = int(self.train_split * count)
-        test_len = int(self.test_split * count)
         val_len = int(self.val_split * count)
+        test_len = count - train_len - val_len
         self[diag_name] = Bucket(
             capacity=count,
             train=Cup(occupancy=train_len, sessions=[]),
