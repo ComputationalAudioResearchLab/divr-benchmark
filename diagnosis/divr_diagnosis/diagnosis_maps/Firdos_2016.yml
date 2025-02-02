@@ -21,6 +21,8 @@ unclassified:
 
 ### level 1
 vocal_fold_pathology:
+  alias:
+    - vocal fold pathology
   level: 1
   parents:
     pathological: 1.00
@@ -31,6 +33,8 @@ neurological:
 
 ### level 2
 brain_tumors:
+  alias:
+    - brain tumors
   level: 2
   parents:
     neurological: 1.00
@@ -47,6 +51,8 @@ nodules:
   parents:
     vocal_fold_pathology: 1.00
 parkinsons_trauma:
+  alias:
+    - parkinsons trauma
   level: 2
   parents:
     neurological: 1.00
@@ -59,10 +65,14 @@ swelling:
   parents:
     vocal_fold_pathology: 1.00
 vocal_cord_injury:
+  alias:
+    - vocal cord injury
   level: 2
   parents:
     vocal_fold_pathology: 1.00
 vocal_cord_paralysis:
+  alias:
+    - vocal cord paralysis
   level: 2
   parents:
     vocal_fold_pathology: 1.00

@@ -20,12 +20,16 @@ unclassified:
 
 ### level 1
 neurological_disorder:
+  alias:
+    - neurological disorder
   level: 1
   parents:
     pathological: 1.00
 
 ### level 2
 cervical_dystonia:
+  alias:
+    - cervical dystonia
   level: 2
   parents:
     neurological_disorder: 1.00
@@ -34,18 +38,26 @@ dystonia:
   parents:
     neurological_disorder: 1.00
 essential_tremors:
+  alias:
+    - essential tremors
   level: 2
   parents:
     neurological_disorder: 1.00
 functional_neurological_disorder:
+  alias:
+    - functional neurological disorder
   level: 2
   parents:
     neurological_disorder: 1.00
 generalized_paroxysmal_dystonia:
+  alias:
+    - generalized paroxysmal dystonia
   level: 2
   parents:
     neurological_disorder: 1.00
 multiple_system_atrophy:
+  alias:
+    - multiple system atrophy
   level: 2
   parents:
     pathological: 1.00

@@ -24,6 +24,8 @@ cysts:
   parents:
     phonotrauma: 1.00
 laryngeal_neoplasm:
+  alias:
+    - laryngeal neoplasm
   level: 2
   parents:
     pathological: 1.00
@@ -36,6 +38,8 @@ polyps:
   parents:
     phonotrauma: 1.00
 unilateral_vocal_paralysis:
+  alias:
+    - unilateral vocal paralysis
   level: 2
   parents:
     pathological: 1.00

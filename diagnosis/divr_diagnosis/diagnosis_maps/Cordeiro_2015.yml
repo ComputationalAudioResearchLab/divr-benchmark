@@ -25,20 +25,28 @@ physiological:
   parents:
     pathological: 1.00
 neuro_muscular:
+  alias:
+    - neuro muscular
   level: 1
   parents:
     pathological: 1.00
 
 ### level 2
 vocal_fold_edema:
+  alias:
+    - vocal fold edema
   level: 2
   parents:
     physiological: 1.00
 vocal_fold_nodules:
+  alias:
+    - vocal fold nodules
   level: 2
   parents:
     physiological: 1.00
 vocal_fold_unilateral_paralysis:
+  alias:
+    - vocal fold unilateral paralysis
   level: 2
   parents:
     neuro_muscular: 1.00

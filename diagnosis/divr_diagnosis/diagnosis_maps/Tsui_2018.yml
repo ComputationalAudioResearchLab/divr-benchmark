@@ -45,6 +45,8 @@ polyps:
   parents:
     phonotrauma: 1.00
 unilateral_vocal_palsy:
+  alias:
+    - unilateral vocal palsy
   level: 2
   parents:
     pathological: 1.00

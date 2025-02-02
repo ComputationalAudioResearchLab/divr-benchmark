@@ -38,6 +38,8 @@ nodules:
   parents:
     others: 1.00
 vocal_fold_paralysis:
+  alias:
+    - vocal fold paralysis
   level: 2
   parents:
     others: 1.00

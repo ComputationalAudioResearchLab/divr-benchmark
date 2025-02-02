@@ -24,16 +24,22 @@ unclassified:
 
 ### level 1
 morphological_alteration:
+  alias:
+    - morphological alteration
   level: 1
   parents:
     pathological: 1.0
 
 ### level 2
 chronical_inflammation_of_larynx:
+  alias:
+    - chronical inflammation of larynx
   level: 2
   parents:
     morphological_alteration: 1.0
 closure_insufficiency:
+  alias:
+    - closure insufficiency
   level: 2
   parents:
     morphological_alteration: 1.0
@@ -46,14 +52,20 @@ depression:
   parents:
     pathological: 1.0
 functional_dysphonia:
+  alias:
+    - functional dysphonia
   level: 2
   parents:
     pathological: 1.0
 gastroesophageal_reflux_disease:
+  alias:
+    - gastroesophageal reflux disease
   level: 2
   parents:
     morphological_alteration: 1.0
 laryngeal_paralysis:
+  alias:
+    - laryngeal paralysis
   level: 2
   parents:
     morphological_alteration: 1.0
@@ -66,18 +78,26 @@ parkinsons:
   parents:
     pathological: 1.0
 recurrent_paresis:
+  alias:
+    - recurrent paresis
   level: 2
   parents:
     pathological: 1.0
 tumors_at_different_points_of_vocal_tract:
+  alias:
+    - tumors at different points of vocal tract
   level: 2
   parents:
     morphological_alteration: 1.0
 tractional_stenosis:
+  alias:
+    - tractional stenosis
   level: 2
   parents:
     morphological_alteration: 1.0
 vocal_node:
+  alias:
+    - vocal node
   level: 2
   parents:
     morphological_alteration: 1.0

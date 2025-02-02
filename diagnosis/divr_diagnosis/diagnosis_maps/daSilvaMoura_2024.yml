@@ -38,18 +38,26 @@ organofunctional:
 
 ### level 2
 amyotrophic_lateral_sclerosis:
+  alias:
+    - amyotrophic lateral sclerosis
   level: 2
   parents:
     organic: 1.00
 bulbar_paralysis:
+  alias:
+    - bulbar paralysis
   level: 2
   parents:
     organic: 1.00
 carcinoma_in_situ:
+  alias:
+    - carcinoma in situ
   level: 2
   parents:
     organic: 1.00
 central_laryngeal_movement_disorder:
+  alias:
+    - central laryngeal movement disorder
   level: 2
   parents:
     organic: 1.00
@@ -58,10 +66,14 @@ chondroma:
   parents:
     organic: 1.00
 closed_rhinophonia:
+  alias:
+    - closed rhinophonia
   level: 2
   parents:
     functional: 1.00
 contact_pachydermia:
+  alias:
+    - contact pachydermia
   level: 2
   parents:
     organic: 1.00
@@ -74,10 +86,14 @@ cyst:
   parents:
     organofunctional: 1.00
 diffuse_idiopathic_skeletal_hyperostosis:
+  alias:
+    - diffuse idiopathic skeletal hyperostosis
   level: 2
   parents:
     organic: 1.00
 down_syndrome:
+  alias:
+    - down syndrome
   level: 2
   parents:
     organic: 1.00
@@ -86,14 +102,20 @@ dysphonia:
   parents:
     functional: 1.00
 epiglottis_carcinoa:
+  alias:
+    - epiglottis carcinoa
   level: 2
   parents:
     organic: 1.00
 functional_dysphonia:
+  alias:
+    - functional dysphonia
   level: 2
   parents:
     functional: 1.00
 gastroesophagela_reflux_disease:
+  alias:
+    - gastroesophagela reflux disease
   level: 2
   parents:
     organic: 1.00
@@ -102,30 +124,44 @@ granuloma:
   parents:
     organofunctional: 1.00
 hyperfunctional_dysphonia:
+  alias:
+    - hyperfunctional dysphonia
   level: 2
   parents:
     functional: 1.00
 hypofunctional_dysphonia:
+  alias:
+    - hypofunctional dysphonia
   level: 2
   parents:
     functional: 1.00
 hypopharyngeal_tumor:
+  alias:
+    - hypopharyngeal tumor
   level: 2
   parents:
     organic: 1.00
 hypotonic_dysphonia:
+  alias:
+    - hypotonic dysphonia
   level: 2
   parents:
     functional: 1.00
 intubation_damage:
+  alias:
+    - intubation damage
   level: 2
   parents:
     organic: 1.00
 intubation_granuloma:
+  alias:
+    - intubation granuloma
   level: 2
   parents:
     organic: 1.00
 laryngeal_tumor:
+  alias:
+    - laryngeal tumor
   level: 2
   parents:
     organic: 1.00
@@ -142,10 +178,14 @@ leukoplakia:
   parents:
     organofunctional: 1.00
 median_cervical_cyst:
+  alias:
+    - median cervical cyst
   level: 2
   parents:
     organic: 1.00
 mixed_rhinophonia:
+  alias:
+    - mixed rhinophonia
   level: 2
   parents:
     functional: 1.00
@@ -154,14 +194,20 @@ monochroditis:
   parents:
     organic: 1.00
 mutational_falsetto:
+  alias:
+    - mutational falsetto
   level: 2
   parents:
     functional: 1.00
 nasopharyngeal_tumor:
+  alias:
+    - nasopharyngeal tumor
   level: 2
   parents:
     organic: 1.00
 open_rhinophonia:
+  alias:
+    - open rhinophonia
   level: 2
   parents:
     functional: 1.00
@@ -169,39 +215,57 @@ papilloma:
   level: 2
   parents:
     organic: 1.00
-parkinson's_syndrome:
+parkinsons_syndrome:
+  alias:
+    - parkinsons syndrome
   level: 2
   parents:
     organic: 1.00
 phonation_nodule:
+  alias:
+    - phonation nodule
   level: 2
   parents:
     organofunctional: 1.00
 psychogenic_dysphonia:
+  alias:
+    - psychogenic dysphonia
   level: 2
   parents:
     functional: 1.00
 psychogenic_microphony:
+  alias:
+    - psychogenic microphony
   level: 2
   parents:
     functional: 1.00
 recurrent_paralysis:
+  alias:
+    - recurrent paralysis
   level: 2
   parents:
     organic: 1.00
-reinke's_edema:
+reinkes_edema:
+  alias:
+    - reinkes edema
   level: 2
   parents:
     organofunctional: 1.00
 spasmodic_dysphonia:
+  alias:
+    - spasmodic dysphonia
   level: 2
   parents:
     organic: 1.00
-superior__laryngeal_nerve_injury:
+superior_laryngeal_nerve_injury:
+  alias:
+    - superior laryngeal nerve injury
   level: 2
   parents:
     organic: 1.00
 superior_laryngeal_nerve_neuralgia:
+  alias:
+    - superior laryngeal nerve neuralgia
   level: 2
   parents:
     organic: 1.00
@@ -210,14 +274,20 @@ synechia:
   parents:
     organic: 1.00
 vallecular_cyst:
+  alias:
+    - vallecular cyst
   level: 2
   parents:
     organic: 1.00
 vocal_fold_carcinoa:
+  alias:
+    - vocal fold carcinoa
   level: 2
   parents:
     organic: 1.00
 vocal_fold_polyp:
+  alias:
+    - vocal fold polyp
   level: 2
   parents:
     organofunctional: 1.00

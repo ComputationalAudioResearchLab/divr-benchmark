@@ -27,24 +27,34 @@ inflammatory:
   parents:
     pathological: 1.00
 mass_lesions:
+  alias:
+    - mass lesions
   level: 1
   parents:
     pathological: 1.00
 neuro_muscular:
+  alias:
+    - neuro muscular
   level: 1
   parents:
     pathological: 1.00
 
 ### level 2
 adductor_spasmodic_dysphonia:
+  alias:
+    - adductor spasmodic dysphonia
   level: 2
   parents:
     neuro_muscular: 1.00
 benign_essential_tremor:
+  alias:
+    - benign essential tremor
   level: 2
   parents:
     neuro_muscular: 1.00
 bilateral_paralysis:
+  alias:
+    - bilateral paralysis
   level: 2
   parents:
     neuro_muscular: 1.00
@@ -53,6 +63,8 @@ cancer:
   parents:
     mass_lesions: 1.00
 chronic_laryngitis:
+  alias:
+    - chronic laryngitis
   level: 2
   parents:
     inflammatory: 1.00
@@ -64,11 +76,15 @@ granuloma:
   level: 2
   parents:
     mass_lesions: 1.00
-idiopathic_vocal cord bowing:
+idiopathic_vocal_cord_bowing:
+  alias:
+    - idiopathic vocal cord bowing
   level: 2
   parents:
     neuro_muscular: 1.00
 muscle_tension_dysphonia:
+  alias:
+    - muscle tension dysphonia
   level: 2
   parents:
     neuro_muscular: 1.00
@@ -93,10 +109,14 @@ presbylarynges:
   parents:
     neuro_muscular: 1.00
 reinkes_edema:
+  alias:
+    - reinkes edema
   level: 2
   parents:
     inflammatory: 1.00
 unilateral_paralysis:
+  alias:
+    - unilateral paralysis
   level: 2
   parents:
     neuro_muscular: 1.00
