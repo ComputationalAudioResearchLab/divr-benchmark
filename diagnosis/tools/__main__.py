@@ -8,9 +8,9 @@ from .analysis import (
 )
 from .level_3_confusion import level_3_confusion
 from .processor import Processor
-from .validate_terms import ValidateTerms
+from .validate_terms import ValidateTermsOthers, ValidateTermsUSVAC
 from .logger import Logger
-from .diag_maps import DIAGNOSIS_MAPS
+from .diag_maps import DIAGNOSIS_MAPS, diagnosis_maps
 from .match_manual import MatchManual
 
 
@@ -39,7 +39,11 @@ class Main(ClassArgParser):
         Processor().run()
 
     def validate_terms(self, map: Literal[tuple(DIAGNOSIS_MAPS.keys())]):  # type: ignore -- appease pylance
-        ValidateTerms(diagnosis_map=DIAGNOSIS_MAPS[map]()).run()
+        if map == diagnosis_maps.USVAC_2025.__name__:
+            validator = ValidateTermsUSVAC
+        else:
+            validator = ValidateTermsOthers
+        validator(diagnosis_map=DIAGNOSIS_MAPS[map]()).run()
 
     def match_manual(self):
         MatchManual().run()

@@ -484,8 +484,6 @@ bilateral_recurrent_laryngeal_nerve_rln_paralysis_peripheral:
     clinician 6: organic > neuro_muscular > peripheral_nervous_disorder
     clinician 7: organic > neuro_muscular > peripheral_nervous_disorder
 bleed:
-  alias:
-    - bleed
   level: 4
   parents:
     organic_structural_vascular: 0.71
@@ -514,8 +512,6 @@ blunt_trauma:
     clinician 6: unclassified
     clinician 7: unclassified
 bowing:
-  alias:
-    - bowing
   level: 4
   parents:
     organic_structural_congenital: 0.29
@@ -594,7 +590,6 @@ central_laryngeal_movement_disorder:
     clinician 7: organic > neuro_muscular > central_nervous_disorder
 chondroma:
   alias:
-    - chondroma
     - chondrom
   level: 4
   parents:
@@ -735,7 +730,6 @@ conversion_dysphonia:
     clinician 7: functional > dysphonia
 cordectomy:
   alias:
-    - cordectomy
     - chordectomy
     - chordektomie
   level: 4
@@ -906,8 +900,6 @@ dysarthrophonia:
     clinician 6: na
     clinician 7: unclassified
 dyskinesia:
-  alias:
-    - dyskinesia
   level: 4
   parents:
     organic_neuro_muscular_movement_disorder: 0.17
@@ -935,8 +927,6 @@ dysody:
     clinician 6: na
     clinician 7: unclassified
 dysphagia:
-  alias:
-    - dysphagia
   level: 4
   parents:
     unclassified: 1.0
@@ -1255,7 +1245,7 @@ hematoma:
     clinician 5: organic > structural > vascular
     clinician 6: organic > structural > structural_abnormality
     clinician 7: organic > structural > vascular
-hemmoragic_reinke_s_edema:
+hemmoragic_reinkes_edema:
   alias:
     - hemmoragic reinke's edema
   level: 4
@@ -1313,7 +1303,6 @@ hyperasthenia:
     clinician 7: unclassified
 hyperfunction:
   alias:
-    - hyperfunction
     - hyperfunctional voice disorder
   level: 4
   parents:
@@ -1525,8 +1514,6 @@ hyperkinetic_dysphonia_vocal_fold_prolapse:
     clinician 6: unclassified
     clinician 7: unclassified
 hypervascularization:
-  alias:
-    - hypervascularization
   level: 4
   parents:
     organic_structural_vascular: 0.43
@@ -1853,7 +1840,6 @@ inflamed_arytenoid:
     clinician 7: unclassified
 inflammation:
   alias:
-    - inflammation
     - inflammed vocal folds
   level: 4
   parents:
@@ -1978,8 +1964,6 @@ intubation_trauma:
     clinician 6: unclassified
     clinician 7: unclassified
 irregularity:
-  alias:
-    - irregularity
   level: 4
   parents:
     unclassified: 1.0
@@ -1992,8 +1976,6 @@ irregularity:
     clinician 6: unclassified
     clinician 7: unclassified
 irritation:
-  alias:
-    - irritation
   level: 4
   parents:
     organic_inflammatory_non_infective: 0.14
@@ -2163,7 +2145,6 @@ laryngitis:
     clinician 7: unclassified
 laryngocele:
   alias:
-    - laryngocele
     - laryngozele
   level: 4
   parents:
@@ -2446,7 +2427,6 @@ muscular_dystrophy:
     clinician 7: organic > neuro_muscular > central_nervous_disorder
 mutation:
   alias:
-    - mutation
     - mutatio
   level: 4
   parents:
@@ -2483,8 +2463,6 @@ myasthenia:
   parents:
     unclassified: 1.0
 neurasthenia:
-  alias:
-    - neurasthenia
   level: 4
   parents:
     unclassified: 1.0
@@ -2561,8 +2539,6 @@ orofacial_dyspraxia:
     clinician 6: functional
     clinician 7: unclassified
 pachydermia:
-  alias:
-    - pachydermia
   level: 4
   parents:
     organic_inflammatory_non_infective: 0.14
@@ -2577,8 +2553,6 @@ pachydermia:
     clinician 6: unclassified
     clinician 7: organic > structural > epithelial_propria
 papilamotosis:
-  alias:
-    - papilamotosis
   level: 4
   parents:
     organic_inflammatory_infective: 0.14
@@ -2594,7 +2568,6 @@ papilamotosis:
     clinician 7: organic > structural > epithelial_propria
 papilloma:
   alias:
-    - papilloma
     - papillom
   level: 4
   parents:
@@ -2626,8 +2599,6 @@ paradoxical_vocal_fold_movement:
     clinician 6: unclassified
     clinician 7: unclassified
 paralysis:
-  alias:
-    - paralysis
   level: 4
   parents:
     organic_neuro_muscular_central_nervous_disorder: 0.29
@@ -2641,8 +2612,6 @@ paralysis:
     clinician 6: organic > neuro_muscular > peripheral_nervous_disorder
     clinician 7: organic > neuro_muscular > peripheral_nervous_disorder
 paresis:
-  alias:
-    - paresis
   level: 4
   parents:
     organic_neuro_muscular_central_nervous_disorder: 0.14
@@ -3216,8 +3185,6 @@ posterior_arytenoid_lateralization_surgery:
     clinician 6: unclassified
     clinician 7: unclassified
 postnasal:
-  alias:
-    - postnasal
   level: 4
   parents:
     unclassified: 1.0
@@ -3260,8 +3227,6 @@ pre_nodular_swellings:
     clinician 6: unclassified
     clinician 7: organic > structural > epithelial_propria
 presbyphonia:
-  alias:
-    - presbyphonia
   level: 4
   parents:
     organic_structural_congenital: 1.0
@@ -3334,8 +3299,6 @@ psychogenic_microphony:
     clinician 6: unclassified
     clinician 7: unclassified
 puberphonia:
-  alias:
-    - puberphonia
   level: 4
   parents:
     functional_puberphonia: 1.0
@@ -3542,8 +3505,6 @@ rhinophony_mixta:
     clinician 6: unclassified
     clinician 7: unclassified
 scarring:
-  alias:
-    - scarring
   level: 4
   parents:
     organic_structural_epithelial_propria: 0.86
@@ -3558,7 +3519,6 @@ scarring:
     clinician 7: organic > structural > epithelial_propria
 sigmatism:
   alias:
-    - sigmatism
     - sigmatismus
   level: 4
   parents:
@@ -3623,8 +3583,6 @@ spasmodic_dysphonia:
     clinician 6: organic > neuro_muscular > movement_disorder
     clinician 7: organic > neuro_muscular > central_nervous_disorder
 spastic:
-  alias:
-    - spastic
   level: 4
   parents:
     organic_neuro_muscular_central_nervous_disorder: 0.14
@@ -3638,8 +3596,6 @@ spastic:
     clinician 6: unclassified
     clinician 7: unclassified
 stiffness:
-  alias:
-    - stiffness
   level: 4
   parents:
     organic_structural_epithelial_propria: 0.29
@@ -3745,8 +3701,6 @@ superior_laryngeal_nerve_neuralgia:
     clinician 6: unclassified
     clinician 7: organic > neuro_muscular > peripheral_nervous_disorder
 supraglottic:
-  alias:
-    - supraglottic
   level: 4
   parents:
     unclassified: 1.0
@@ -3760,7 +3714,6 @@ supraglottic:
     clinician 7: unclassified
 synechia:
   alias:
-    - synechia
     - synechie
   level: 4
   parents:
@@ -3804,8 +3757,6 @@ thick_mucous_and_mucous_stranding:
     clinician 6: unclassified
     clinician 7: unclassified
 transsexual:
-  alias:
-    - transsexual
   level: 4
   parents:
     unclassified: 1.0
