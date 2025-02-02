@@ -48,6 +48,7 @@
   - diplophonie
 - - downs_disease
   - down's disease
+  - down syndrome
   - morbus down
 - - dysarthria
   - dysarthria characteristics (mild)
@@ -65,6 +66,7 @@
   - dysplastischer kehlkopf
 - - epiglottic_carcinoma
   - epiglottic carcinoma
+  - epiglottis carcinoma
   - epiglottiskarzinom
 - - essential_tremors
   - essential tremors
@@ -76,6 +78,7 @@
   - frontolaterale teilresektion
 - - gerd
   - gastric reflux
+  - gastroesophagela reflux disease
 - - granuloma
   - granulom
 - - hyperasthenia
@@ -104,6 +107,7 @@
   - intubationsgranulom
 - - intubation_trauma
   - intubation trauma
+  - intubation damage
   - intubationsschaden
 - - juvenile_dysphonia
   - juvenile dysphonia
@@ -117,8 +121,10 @@
   - leukoplakie
 - - medial_cervical_cyst
   - medial cervical cyst
+  - median cervical cyst
   - mediale halscyste
 - - mesopharyngeal_tumor
+  - nasopharyngeal tumor
   - mesopharyngeal tumor
   - mesopharynxtumor
 - - mutation
@@ -138,8 +144,10 @@
   - parkinson_disease
   - parkinson disease
   - parkinson's disease
+  - parkinsons syndrome
 - - phonation_nodules
   - phonation nodules
+  - phonation nodule
   - phonationsknötchen
 - - pocket_fold_hyperplasia
   - pocket fold hyperplasia
@@ -177,6 +185,18 @@
   - reinke edema
   - reinke's edema
   - reinke ödem
+- - rhinophony_aperta
+  - rhinophonie aperta
+  - rhinophonia open
+  - open rhinophonia
+- - rhinophony_clausa
+  - rhinophonie clausa
+  - rhinophonia closed
+  - closed rhinophonia
+- - rhinophony_mixta
+  - rhinophonie mixta
+  - rhinophonia mixed
+  - mixed rhinophonia
 - - sigmatism
   - sigmatismus
 - - singing_voice
@@ -192,12 +212,15 @@
   - spasmodische dysphonie
 - - superior_laryngeal_nerve_lesion
   - superior laryngeal nerve lesion
+  - superior laryngeal nerve injury
   - n. laryngeus superior läsion
 - - superior_laryngeal_nerve_neuralgia
   - superior laryngeal nerve neuralgia
   - n. laryngeus superior neuralgie
 - - synechia
   - synechie
+- - valleculacyste
+  - vallecular cyst
 - - velopharyngoplasty
   - velopharyngoplastik
 - - ventricular_fold

@@ -2286,6 +2286,7 @@ mass:
 medial_cervical_cyst:
   alias:
     - medial cervical cyst
+    - median cervical cyst
     - mediale halscyste
   level: 4
   parents:
@@ -2302,6 +2303,7 @@ medial_cervical_cyst:
 mesopharyngeal_tumor:
   alias:
     - mesopharyngeal tumor
+    - nasopharyngeal tumor
     - mesopharynxtumor
   level: 4
   parents:
@@ -3465,6 +3467,8 @@ restriction_of_arytenoid_movement:
 rhinophony_aperta:
   alias:
     - rhinophonie aperta
+    - rhinophonia open
+    - open rhinophonia
   level: 4
   parents:
     unclassified: 1.0
@@ -3479,6 +3483,8 @@ rhinophony_aperta:
 rhinophony_clausa:
   alias:
     - rhinophonie clausa
+    - rhinophonia closed
+    - closed rhinophonia
   level: 4
   parents:
     unclassified: 1.0
@@ -3493,6 +3499,8 @@ rhinophony_clausa:
 rhinophony_mixta:
   alias:
     - rhinophonie mixta
+    - rhinophonia mixed
+    - mixed rhinophonia
   level: 4
   parents:
     unclassified: 1.0
@@ -3842,6 +3850,8 @@ upper_respiratory_tract_infection:
     clinician 6: unclassified
     clinician 7: unclassified
 valleculacyste:
+  alias:
+    - vallecular cyst
   level: 4
   parents:
     organic_structural_structural_abnormality: 0.57

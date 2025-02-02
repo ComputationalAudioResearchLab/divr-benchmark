@@ -2,7 +2,7 @@
 #   Functional - 414
 #     Dysphonia, Functional dysphonia, hyperfunctional dysphonia, hypofunctional dysphonia, hypotonic dysphonia, mutational falsetto, psychogenic dysphonia, psychogenic microphony, open rhinophonia, closed rhinophonia, mixed rhinophonia
 #   Organic - 459
-#     Vocal fold carcinoa, epiglottis carcinoa, carcinoma in situ, median cervical cyst, vallecular cyst, chondroma, cordectomy, laryngocele, monochroditis, papilloma, contact pachydermia, recurrent paralysis, hypopharyngeal tumor, laryngeal tumor, nasopharyngeal tumor, intubation granuloma, intubation damage, amyotrophic lateral sclerosis, bulbar paralysis, diffuse idiopathic skeletal hyperostosis, gastroesophagela reflux disease, down syndrome, Parkinson's syndrome, central laryngeal movement disorder, laryngitis, superior  laryngeal nerve injury, superior laryngeal nerve neuralgia, spasmodic dysphonia, synechia
+#     Vocal fold carcinoma, epiglottis carcinoma, carcinoma in situ, median cervical cyst, vallecular cyst, chondroma, cordectomy, laryngocele, monochorditis, papilloma, contact pachydermia, recurrent paralysis, hypopharyngeal tumor, laryngeal tumor, nasopharyngeal tumor, intubation granuloma, intubation damage, amyotrophic lateral sclerosis, bulbar paralysis, diffuse idiopathic skeletal hyperostosis, gastroesophagela reflux disease, down syndrome, Parkinson's syndrome, central laryngeal movement disorder, laryngitis, superior  laryngeal nerve injury, superior laryngeal nerve neuralgia, spasmodic dysphonia, synechia
 #   Organofunctional - 112
 #     Cyst, reinke's edema, granuloma, phonation nodule, vocal fold polyp, leukoplakia
 #   Healthy - 687
@@ -101,9 +101,9 @@ dysphonia:
   level: 2
   parents:
     functional: 1.00
-epiglottis_carcinoa:
+epiglottis_carcinoma:
   alias:
-    - epiglottis carcinoa
+    - epiglottis carcinoma
   level: 2
   parents:
     organic: 1.00
@@ -189,7 +189,7 @@ mixed_rhinophonia:
   level: 2
   parents:
     functional: 1.00
-monochroditis:
+monochorditis:
   level: 2
   parents:
     organic: 1.00
@@ -279,9 +279,9 @@ vallecular_cyst:
   level: 2
   parents:
     organic: 1.00
-vocal_fold_carcinoa:
+vocal_fold_carcinoma:
   alias:
-    - vocal fold carcinoa
+    - vocal fold carcinoma
   level: 2
   parents:
     organic: 1.00
