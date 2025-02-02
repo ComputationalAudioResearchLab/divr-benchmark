@@ -48,7 +48,7 @@ generalized_paroxysmal_dystonia:
 multiple_system_atrophy:
   level: 2
   parents:
-    phonotrauma: 1.00
+    pathological: 1.00
 parkinsons:
   level: 2
   parents:
