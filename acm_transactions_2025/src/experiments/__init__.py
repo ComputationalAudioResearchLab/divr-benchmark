@@ -45,6 +45,10 @@ class Runner:
         "compare2016_func_a_3": ["a_n", [3], Compare2016Functional, 2000, 16, Trainer, 1e-5],
         "compare2016_func_i_3": ["i_n", [3], Compare2016Functional, 2000, 16, Trainer, 1e-5],
         "compare2016_func_u_3": ["u_n", [3], Compare2016Functional, 2000, 16, Trainer, 1e-5],
+        "compare2016_func_phrase_4": ["phrase", [4], Compare2016Functional, 2000, 16, Trainer, 1e-5],
+        "compare2016_func_a_4": ["a_n", [4], Compare2016Functional, 2000, 16, Trainer, 1e-5],
+        "compare2016_func_i_4": ["i_n", [4], Compare2016Functional, 2000, 16, Trainer, 1e-5],
+        "compare2016_func_u_4": ["u_n", [4], Compare2016Functional, 2000, 16, Trainer, 1e-5],
         
         # Compare2016 LLD
         "compare2016_lld_phrase_0": ["phrase", [0], Compare2016LLD, 2000, 16, Trainer, 1e-5],
@@ -63,6 +67,10 @@ class Runner:
         "compare2016_lld_a_3": ["a_n", [3], Compare2016LLD, 2000, 16, Trainer, 1e-5],
         "compare2016_lld_i_3": ["i_n", [3], Compare2016LLD, 2000, 16, Trainer, 1e-5],
         "compare2016_lld_u_3": ["u_n", [3], Compare2016LLD, 2000, 16, Trainer, 1e-5],
+        "compare2016_lld_phrase_4": ["phrase", [4], Compare2016LLD, 2000, 16, Trainer, 1e-5],
+        "compare2016_lld_a_4": ["a_n", [4], Compare2016LLD, 2000, 16, Trainer, 1e-5],
+        "compare2016_lld_i_4": ["i_n", [4], Compare2016LLD, 2000, 16, Trainer, 1e-5],
+        "compare2016_lld_u_4": ["u_n", [4], Compare2016LLD, 2000, 16, Trainer, 1e-5],
         
         # Compare2016 LLD_DE
         "compare2016_lldde_phrase_0": ["phrase", [0], Compare2016LLDDE, 2000, 16, Trainer, 1e-5],
@@ -81,6 +89,10 @@ class Runner:
         "compare2016_lldde_a_3": ["a_n", [3], Compare2016LLDDE, 2000, 16, Trainer, 1e-5],
         "compare2016_lldde_i_3": ["i_n", [3], Compare2016LLDDE, 2000, 16, Trainer, 1e-5],
         "compare2016_lldde_u_3": ["u_n", [3], Compare2016LLDDE, 2000, 16, Trainer, 1e-5],
+        "compare2016_lldde_phrase_4": ["phrase", [4], Compare2016LLDDE, 2000, 16, Trainer, 1e-5],
+        "compare2016_lldde_a_4": ["a_n", [4], Compare2016LLDDE, 2000, 16, Trainer, 1e-5],
+        "compare2016_lldde_i_4": ["i_n", [4], Compare2016LLDDE, 2000, 16, Trainer, 1e-5],
+        "compare2016_lldde_u_4": ["u_n", [4], Compare2016LLDDE, 2000, 16, Trainer, 1e-5],
         
         # EGEMapsv2 Functional
         "egemapsv2_func_phrase_0": ["phrase", [0], EGEMapsv2Functional, 2000, 16, Trainer, 1e-5],
@@ -99,6 +111,10 @@ class Runner:
         "egemapsv2_func_a_3": ["a_n", [3], EGEMapsv2Functional, 2000, 16, Trainer, 1e-5],
         "egemapsv2_func_i_3": ["i_n", [3], EGEMapsv2Functional, 2000, 16, Trainer, 1e-5],
         "egemapsv2_func_u_3": ["u_n", [3], EGEMapsv2Functional, 2000, 16, Trainer, 1e-5],
+        "egemapsv2_func_phrase_4": ["phrase", [4], EGEMapsv2Functional, 2000, 16, Trainer, 1e-5],
+        "egemapsv2_func_a_4": ["a_n", [4], EGEMapsv2Functional, 2000, 16, Trainer, 1e-5],
+        "egemapsv2_func_i_4": ["i_n", [4], EGEMapsv2Functional, 2000, 16, Trainer, 1e-5],
+        "egemapsv2_func_u_4": ["u_n", [4], EGEMapsv2Functional, 2000, 16, Trainer, 1e-5],
         
         # EGEMapsv2 LLD
         "egemapsv2_lld_phrase_0": ["phrase", [0], EGEMapsv2LLD, 2000, 16, Trainer, 1e-5],
@@ -117,6 +133,10 @@ class Runner:
         "egemapsv2_lld_a_3": ["a_n", [3], EGEMapsv2LLD, 2000, 16, Trainer, 1e-5],
         "egemapsv2_lld_i_3": ["i_n", [3], EGEMapsv2LLD, 2000, 16, Trainer, 1e-5],
         "egemapsv2_lld_u_3": ["u_n", [3], EGEMapsv2LLD, 2000, 16, Trainer, 1e-5],
+        "egemapsv2_lld_phrase_4": ["phrase", [4], EGEMapsv2LLD, 2000, 16, Trainer, 1e-5],
+        "egemapsv2_lld_a_4": ["a_n", [4], EGEMapsv2LLD, 2000, 16, Trainer, 1e-5],
+        "egemapsv2_lld_i_4": ["i_n", [4], EGEMapsv2LLD, 2000, 16, Trainer, 1e-5],
+        "egemapsv2_lld_u_4": ["u_n", [4], EGEMapsv2LLD, 2000, 16, Trainer, 1e-5],
         
         # MFCC + Deltas
         "mfccdd_phrase_0": ["phrase", [0], MFCCDD, 2000, 16, Trainer, 1e-5],
@@ -139,7 +159,6 @@ class Runner:
         "mfccdd_a_4": ["a_n", [4], MFCCDD, 2000, 16, Trainer, 1e-5],
         "mfccdd_i_4": ["i_n", [4], MFCCDD, 2000, 16, Trainer, 1e-5],
         "mfccdd_u_4": ["u_n", [4], MFCCDD, 2000, 16, Trainer, 1e-5],
-        
         "mc_mfccdd_phrase_0+2": ["phrase", [0,2], MFCCDD, 2000, 16, TrainerMultiCrit, 1e-5],
         "mc_mfccdd_a_0+2": ["a_n", [0,2], MFCCDD, 2000, 16, TrainerMultiCrit, 1e-5],
         "mc_mfccdd_i_0+2": ["i_n", [0,2], MFCCDD, 2000, 16, TrainerMultiCrit, 1e-5],
@@ -148,6 +167,10 @@ class Runner:
         "mc_mfccdd_a_0+3": ["a_n", [0, 3], MFCCDD, 2000, 16, TrainerMultiCrit, 1e-5],
         "mc_mfccdd_i_0+3": ["i_n", [0, 3], MFCCDD, 2000, 16, TrainerMultiCrit, 1e-5],
         "mc_mfccdd_u_0+3": ["u_n", [0, 3], MFCCDD, 2000, 16, TrainerMultiCrit, 1e-5],
+        "mc_mfccdd_phrase_0+4": ["phrase", [0, 4], MFCCDD, 2000, 16, TrainerMultiCrit, 1e-5],
+        "mc_mfccdd_a_0+4": ["a_n", [0, 4], MFCCDD, 2000, 16, TrainerMultiCrit, 1e-5],
+        "mc_mfccdd_i_0+4": ["i_n", [0, 4], MFCCDD, 2000, 16, TrainerMultiCrit, 1e-5],
+        "mc_mfccdd_u_0+4": ["u_n", [0, 4], MFCCDD, 2000, 16, TrainerMultiCrit, 1e-5],
         
         # Wav2Vec
         "wav2vec_phrase_0": ["phrase", [0], Wav2Vec, 200, 16, Trainer, 1e-5],
@@ -179,6 +202,10 @@ class Runner:
         "mc_wav2vec_a_0+3": ["a_n", [0, 3], Wav2Vec, 200, 16, TrainerMultiCrit, 1e-5],
         "mc_wav2vec_i_0+3": ["i_n", [0, 3], Wav2Vec, 200, 16, TrainerMultiCrit, 1e-5],
         "mc_wav2vec_u_0+3": ["u_n", [0, 3], Wav2Vec, 200, 16, TrainerMultiCrit, 1e-5],
+        "mc_wav2vec_phrase_0+4": ["phrase", [0, 4], Wav2Vec, 200, 16, TrainerMultiCrit, 1e-5],
+        "mc_wav2vec_a_0+4": ["a_n", [0, 4], Wav2Vec, 200, 16, TrainerMultiCrit, 1e-5],
+        "mc_wav2vec_i_0+4": ["i_n", [0, 4], Wav2Vec, 200, 16, TrainerMultiCrit, 1e-5],
+        "mc_wav2vec_u_0+4": ["u_n", [0, 4], Wav2Vec, 200, 16, TrainerMultiCrit, 1e-5],
 
 
         # UnispeechSAT
