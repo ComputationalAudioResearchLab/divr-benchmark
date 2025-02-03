@@ -121,3 +121,27 @@ unilateral_paralysis:
   level: 2
   parents:
     neuro_muscular: 1.00
+
+### level 3
+### This is not in paper, I have added these to be able to classify diagnosis
+### that didn't fit as alias
+carcinoma_in_situ:
+  level: 3
+  alias:
+    - carcinoma in situ
+  parents:
+    cancer: 1.00
+epiglottic_carcinoma:
+  level: 3
+  alias:
+    - epiglottic carcinoma
+    - epiglottiskarzinom
+  parents:
+    cancer: 1.00
+vocal_fold_carcinoma:
+  level: 3
+  alias:
+    - vocal fold carcinoma
+    - stimmlippenkarzinom
+  parents:
+    cancer: 1.00

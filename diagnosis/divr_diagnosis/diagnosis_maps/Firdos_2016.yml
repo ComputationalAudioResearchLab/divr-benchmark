@@ -77,3 +77,19 @@ vocal_cord_paralysis:
   level: 2
   parents:
     vocal_fold_pathology: 1.00
+
+### level 3
+### This is not in paper, I have added these to be able to classify diagnosis
+### that didn't fit as alias
+hyperkinetic_dysphonia_vocal_fold_paralysis:
+  level: 3
+  alias:
+    - hyperkinetic dysphonia (vocal fold paralysis)
+  parents:
+    vocal_cord_paralysis: 1.00
+hypokinetic_dysphonia_vocal_fold_paralysis:
+  level: 3
+  alias:
+    - hypokinetic dysphonia (vocal fold paralysis)
+  parents:
+    vocal_cord_paralysis: 1.00

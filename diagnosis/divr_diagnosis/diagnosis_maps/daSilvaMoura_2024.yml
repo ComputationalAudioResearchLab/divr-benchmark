@@ -2,7 +2,7 @@
 #   Functional - 414
 #     Dysphonia, Functional dysphonia, hyperfunctional dysphonia, hypofunctional dysphonia, hypotonic dysphonia, mutational falsetto, psychogenic dysphonia, psychogenic microphony, open rhinophonia, closed rhinophonia, mixed rhinophonia
 #   Organic - 459
-#     Vocal fold carcinoma, epiglottis carcinoma, carcinoma in situ, median cervical cyst, vallecular cyst, chondroma, cordectomy, laryngocele, monochorditis, papilloma, contact pachydermia, recurrent paralysis, hypopharyngeal tumor, laryngeal tumor, nasopharyngeal tumor, intubation granuloma, intubation damage, amyotrophic lateral sclerosis, bulbar paralysis, diffuse idiopathic skeletal hyperostosis, gastroesophagela reflux disease, down syndrome, Parkinson's syndrome, central laryngeal movement disorder, laryngitis, superior  laryngeal nerve injury, superior laryngeal nerve neuralgia, spasmodic dysphonia, synechia
+#     Vocal fold carcinoma, epiglottis carcinoma, carcinoma in situ, median cervical cyst, vallecular cyst, chondroma, cordectomy, laryngocele, monochorditis, papilloma, contact pachydermia, recurrent paralysis, hypopharyngeal tumor, laryngeal tumor, nasopharyngeal tumor, intubation granuloma, intubation damage, amyotrophic lateral sclerosis, bulbar paralysis, diffuse idiopathic skeletal hyperostosis, gastroesophageal reflux disease, down syndrome, Parkinson's syndrome, central laryngeal movement disorder, laryngitis, superior  laryngeal nerve injury, superior laryngeal nerve neuralgia, spasmodic dysphonia, synechia
 #   Organofunctional - 112
 #     Cyst, reinke's edema, granuloma, phonation nodule, vocal fold polyp, leukoplakia
 #   Healthy - 687
@@ -114,9 +114,9 @@ functional_dysphonia:
   level: 2
   parents:
     functional: 1.00
-gastroesophagela_reflux_disease:
+gastroesophageal_reflux_disease:
   alias:
-    - gastroesophagela reflux disease
+    - gastroesophageal reflux disease
   level: 2
   parents:
     organic: 1.00

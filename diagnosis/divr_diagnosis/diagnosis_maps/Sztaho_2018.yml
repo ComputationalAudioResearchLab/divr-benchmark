@@ -81,6 +81,7 @@ parkinsons:
 recurrent_paresis:
   alias:
     - recurrent paresis
+    - paresis
   level: 2
   parents:
     pathological: 1.0
@@ -103,3 +104,38 @@ vocal_node:
   parents:
     morphological_alteration: 1.0
 
+
+### level 3
+### This is not in paper, I have added these to be able to classify diagnosis
+### that didn't fit as alias
+bilateral_recurrent_laryngeal_nerve_(rln)_paralysis_peripheral:
+  level: 3
+  alias:
+    - bilateral recurrent laryngeal nerve (rln) paralysis-peripheral
+  parents:
+    laryngeal_paralysis: 1.00
+hyperkinetic_dysphonia_vocal_fold_paralysis:
+  level: 3
+  alias:
+    - hyperkinetic dysphonia (vocal fold paralysis)
+  parents:
+    laryngeal_paralysis: 1.00
+hypokinetic_dysphonia_vocal_fold_paralysis:
+  level: 3
+  alias:
+    - hypokinetic dysphonia (vocal fold paralysis)
+  parents:
+    laryngeal_paralysis: 1.00
+unilateral_or_bilateral_recurrent_laryngeal_nerve_(rln)_paresis:
+  level: 3
+  alias:
+    - unilateral or bilateral recurrent laryngeal nerve (rln) paresis
+  parents:
+    recurrent_paresis: 1.00
+unilateral_recurrent_laryngeal_nerve_(rln)_paralysis:
+  level: 3
+  alias:
+    - unilateral recurrent laryngeal nerve (rln) paralysis
+  parents:
+    laryngeal_paralysis: 1.00
+  

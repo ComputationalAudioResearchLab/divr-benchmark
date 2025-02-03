@@ -177,6 +177,7 @@ We duplicated terms based on typographical variations (e.g. cyst vs cysts, reink
                 diagnosis_maps.daSilvaMoura_2024,
                 diagnosis_maps.deMoraesLimaMarinus_2013,
                 diagnosis_maps.FEMH_2018,
+                diagnosis_maps.Firdos_2016,
                 diagnosis_maps.Kim_2024,
                 diagnosis_maps.Sztaho_2018,
                 diagnosis_maps.Tsui_2018,
@@ -194,7 +195,6 @@ We duplicated terms based on typographical variations (e.g. cyst vs cysts, reink
         )
         absent_count = self.count_terms(absent_terms)
         present_count = self.count_terms(present_terms)
-        print(self.db_terms.total_terms_deduplicated, present_count, absent_count)
         assert (absent_count + present_count) == self.db_terms.total_terms_deduplicated
         return f"""### {diagnosis_map.__class__.__name__}
 ```
