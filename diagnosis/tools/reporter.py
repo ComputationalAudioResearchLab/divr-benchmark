@@ -189,22 +189,34 @@ We duplicated terms based on typographical variations (e.g. cyst vs cysts, reink
                 report_file.write("\n")
 
     def report_db(self, diagnosis_map: DiagnosisMap):
-        absent_counts, present_counts, missing_aliases_for_terms = (
+        absent_terms, present_terms, missing_aliases_for_terms = (
             self.db_terms.match_terms(diagnosis_map)
         )
+        absent_count = self.count_terms(absent_terms)
+        present_count = self.count_terms(present_terms)
+        print(self.db_terms.total_terms_deduplicated, present_count, absent_count)
+        assert (absent_count + present_count) == self.db_terms.total_terms_deduplicated
         return f"""### {diagnosis_map.__class__.__name__}
 ```
 {self.tree_repr(diagnosis_map.tree, indent=1)}```
 
+In total {present_count} terms from DBs were automatically classified, while {absent_count} were left unclassified.
+
 The diagnostic terms were allocated as following:
-{self.present_terms_repr(diagnosis_map, present_counts, indent=0)}
+{self.present_terms_repr(diagnosis_map, present_terms, indent=0)}
 
 The following aliases were missing:
 {self.missing_alias_repr(missing_aliases_for_terms, indent=0)}
 
 And the following number of terms were left unmatched across the different databases:
-{self.absent_terms_repr(absent_counts, indent=0)}
+{self.absent_terms_repr(absent_terms, indent=0)}
 """
+
+    def count_terms(self, absent_terms):
+        total_terms = set()
+        for terms in absent_terms.values():
+            total_terms = total_terms.union(terms)
+        return len(total_terms)
 
     def missing_alias_repr(self, terms: dict[str, list[str]], indent: int):
         indentation = "\t" * indent
@@ -214,20 +226,20 @@ And the following number of terms were left unmatched across the different datab
             lines += [f"{indentation}- **{key}({len(val)}):** {val}"]
         return "\n".join(lines)
 
-    def absent_terms_repr(self, counts: dict[str, list[str]], indent: int):
+    def absent_terms_repr(self, terms: dict[str, list[str]], indent: int):
         indentation = "\t" * indent
         lines = []
-        absent_counts = dict(sorted(counts.items(), key=lambda x: x[0], reverse=False))
+        absent_counts = dict(sorted(terms.items(), key=lambda x: x[0], reverse=False))
         for key, val in absent_counts.items():
             lines += [f"{indentation}- **{key}({len(val)}):** {val}"]
         return "\n".join(lines)
 
     def present_terms_repr(
-        self, diagnosis_map: DiagnosisMap, counts: dict[str, list[str]], indent: int
+        self, diagnosis_map: DiagnosisMap, terms: dict[str, list[str]], indent: int
     ):
         indentation = "\t" * indent
         lines = []
-        absent_counts = dict(sorted(counts.items(), key=lambda x: x[0], reverse=False))
+        absent_counts = dict(sorted(terms.items(), key=lambda x: x[0], reverse=False))
         for key, vals in absent_counts.items():
             lines += [f"{indentation}- **{key}({len(vals)}):**"]
             for val in vals:

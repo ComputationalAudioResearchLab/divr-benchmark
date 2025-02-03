@@ -3,7 +3,7 @@
 ## Counting terms across DBs
 7 databases were used in this study, namely ['avfad', 'meei', 'svd', 'torgo', 'uaspeech', 'uncommon_voice', 'voiced'].
 These DBs in total had 306 diagnostic terms.
-We duplicated terms based on typographical variations (e.g. cyst vs cysts, reinke's edema vs reinke edema), translations (e.g. leukoplakia vs leukoplakie), and synonymous terms (e.g. not sure vs unknown, functional voice disorder vs functional dysphonia). After deduplication wer have 276 diagnostic terms across the 7 databases. The different DBs had the following number of diagnostic terms: {'meei': 170, 'svd': 71, 'avfad': 27, 'voiced': 24, 'uaspeech': 4, 'torgo': 2, 'uncommon_voice': 2}.
+We duplicated terms based on typographical variations (e.g. cyst vs cysts, reinke's edema vs reinke edema), translations (e.g. leukoplakia vs leukoplakie), and synonymous terms (e.g. not sure vs unknown, functional voice disorder vs functional dysphonia). After deduplication wer have 276 diagnostic terms across the 7 databases. The different DBs had the following number of diagnostic terms: {'meei': 170, 'svd': 71, 'avfad': 27, 'voiced': 24, 'uaspeech': 4, 'uncommon_voice': 2, 'torgo': 2}.
 
 ## Categorisation of DB terms under different classification systems
 ### Benba_2017
@@ -21,6 +21,8 @@ We duplicated terms based on typographical variations (e.g. cyst vs cysts, reink
 	normal(2)
 	unclassified(1)
 ```
+
+In total 7 terms from DBs were automatically classified, while 269 were left unclassified.
 
 The diagnostic terms were allocated as following:
 - **avfad(2):**
@@ -87,6 +89,8 @@ And the following number of terms were left unmatched across the different datab
 	unclassified(1)
 ```
 
+In total 13 terms from DBs were automatically classified, while 263 were left unclassified.
+
 The diagnostic terms were allocated as following:
 - **avfad(3):**
 	- **morbus parkinson:** parkinsons
@@ -150,6 +154,8 @@ And the following number of terms were left unmatched across the different datab
 	normal(2)
 	unclassified(1)
 ```
+
+In total 7 terms from DBs were automatically classified, while 269 were left unclassified.
 
 The diagnostic terms were allocated as following:
 - **avfad(2):**
@@ -243,6 +249,8 @@ And the following number of terms were left unmatched across the different datab
 	normal(2)
 	unclassified(1)
 ```
+
+In total 48 terms from DBs were automatically classified, while 228 were left unclassified.
 
 The diagnostic terms were allocated as following:
 - **avfad(5):**
@@ -383,6 +391,8 @@ And the following number of terms were left unmatched across the different datab
 	unclassified(1)
 ```
 
+In total 6 terms from DBs were automatically classified, while 270 were left unclassified.
+
 The diagnostic terms were allocated as following:
 - **avfad(1):**
 	- **normal:** normal
@@ -431,6 +441,8 @@ And the following number of terms were left unmatched across the different datab
 	normal(2)
 	unclassified(1)
 ```
+
+In total 6 terms from DBs were automatically classified, while 270 were left unclassified.
 
 The diagnostic terms were allocated as following:
 - **avfad(1):**
@@ -481,6 +493,8 @@ And the following number of terms were left unmatched across the different datab
 	normal(2)
 	unclassified(1)
 ```
+
+In total 7 terms from DBs were automatically classified, while 269 were left unclassified.
 
 The diagnostic terms were allocated as following:
 - **avfad(2):**
@@ -540,6 +554,8 @@ And the following number of terms were left unmatched across the different datab
 	normal(2)
 	unclassified(1)
 ```
+
+In total 11 terms from DBs were automatically classified, while 265 were left unclassified.
 
 The diagnostic terms were allocated as following:
 - **avfad(3):**
@@ -602,6 +618,8 @@ And the following number of terms were left unmatched across the different datab
 	normal(2)
 	unclassified(1)
 ```
+
+In total 6 terms from DBs were automatically classified, while 270 were left unclassified.
 
 The diagnostic terms were allocated as following:
 - **avfad(1):**
@@ -944,6 +962,8 @@ And the following number of terms were left unmatched across the different datab
 		vocal_fold(1)
 		voice_disorders_undiagnosed(1)
 ```
+
+In total 276 terms from DBs were automatically classified, while 0 were left unclassified.
 
 The diagnostic terms were allocated as following:
 - **avfad(27):**
@@ -1311,6 +1331,8 @@ And the following number of terms were left unmatched across the different datab
 	normal(2)
 	unclassified(1)
 ```
+
+In total 13 terms from DBs were automatically classified, while 263 were left unclassified.
 
 The diagnostic terms were allocated as following:
 - **avfad(5):**
