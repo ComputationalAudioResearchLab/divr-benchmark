@@ -6,13 +6,15 @@ from .diagnosis import Diagnosis, DiagnosisLink
 
 
 class DiagnosisMap:
-    __index: Dict[str, Diagnosis] = {}
+    __index: Dict[str, Diagnosis]
     __curdir = Path(__file__).parent
     __diagnosis_maps_dir = Path(f"{__curdir}/diagnosis_maps")
-    __max_level = 0
+    __max_level: int
     __unclassified_link: DiagnosisLink
 
     def __init__(self, allow_unmapped: bool = False) -> None:
+        self.__index = {}
+        self.__max_level = 0
         map_name = self.__class__.__name__
         map_file = Path(f"{self.__diagnosis_maps_dir}/{map_name}.yml")
         self.__allow_unmapped = allow_unmapped
@@ -42,6 +44,27 @@ class DiagnosisMap:
 
     def find(self, name: str) -> Set[Diagnosis]:
         return set(filter(lambda diag: diag.satisfies(name), self.__index.values()))
+
+    def unique_diags(self) -> Set[Diagnosis]:
+        return set([diag for diag in self.__index.values()])
+
+    @property
+    def tree(self):
+        tree = {}
+        for diag in self.__index.values():
+            branch = tree
+            for level in range(diag.level + 1):
+                diag_at_level = diag.at_level(level)
+                if diag_at_level.level == level:
+                    # because values from the root of the tree propage to leaves
+                    if diag_at_level not in branch:
+                        branch[diag_at_level] = {}
+                    branch = branch[diag_at_level]
+        return tree
+
+    @property
+    def max_diag_level(self) -> int:
+        return self.__max_level
 
     def __load_map(self, diagnosis_map_file_path: Path) -> None:
         with open(diagnosis_map_file_path, "r") as diagnosis_map_file:

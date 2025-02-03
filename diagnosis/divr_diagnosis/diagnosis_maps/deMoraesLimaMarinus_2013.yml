@@ -7,6 +7,8 @@
 ### level 0
 pathological:
   level: 0
+  alias:
+    - pathological voice- diagnosis n/a
 normal:
   alias:
     - healthy
@@ -15,7 +17,6 @@ unclassified:
   level: 0
   alias:
     - not sure
-    - pathological voice- diagnosis n/a
   level: 0
 
 ### level 1

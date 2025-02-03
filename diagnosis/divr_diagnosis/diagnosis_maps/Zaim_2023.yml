@@ -8,6 +8,8 @@
 ### level 0
 pathological:
   level: 0
+  alias:
+    - pathological voice- diagnosis n/a
 normal:
   alias:
     - healthy
@@ -16,7 +18,6 @@ unclassified:
   level: 0
   alias:
     - not sure
-    - pathological voice- diagnosis n/a
   level: 0
 
 ### level 1
@@ -39,136 +40,136 @@ benign_lesion:
     - benign lesion
   level: 2
   parents:
-    structural: 1.00
+    structural_dysphonia: 1.00
 bilateral_vocal_fold_palsy:
   alias:
     - bilateral vocal fold palsy
   level: 2
   parents:
-    non_structural: 1.00
+    non_structural_dysphonia: 1.00
 funcal_laryngitis:
   alias:
     - funcal laryngitis
   level: 2
   parents:
-    structural: 1.00
+    structural_dysphonia: 1.00
 inflammatory_lesion:
   alias:
     - inflammatory lesion
   level: 2
   parents:
-    structural: 1.00
+    structural_dysphonia: 1.00
 laryngeal_amyloidosis:
   alias:
     - laryngeal amyloidosis
   level: 2
   parents:
-    structural: 1.00
+    structural_dysphonia: 1.00
 laryngeal_perichondritis:
   alias:
     - laryngeal perichondritis
   level: 2
   parents:
-    structural: 1.00
+    structural_dysphonia: 1.00
 laryngitis:
   level: 2
   parents:
-    structural: 1.00
+    structural_dysphonia: 1.00
 laryngopharyngeal_reflux:
   alias:
     - laryngopharyngeal reflux
   level: 2
   parents:
-    structural: 1.00
+    structural_dysphonia: 1.00
 malignant_lesion:
   alias:
     - malignant lesion
   level: 2
   parents:
-    structural: 1.00
+    structural_dysphonia: 1.00
 premalignant_lesion:
   alias:
     - premalignant lesion
   level: 2
   parents:
-    structural: 1.00
+    structural_dysphonia: 1.00
 presbylarynx:
   level: 2
   parents:
-    non_structural: 1.00
+    non_structural_dysphonia: 1.00
 primary_muscle_tension_dysphonia:
   alias:
     - primary muscle tension dysphonia
   level: 2
   parents:
-    non_structural: 1.00
+    non_structural_dysphonia: 1.00
 psychogenic_dysphonia:
   alias:
     - psychogenic dysphonia
   level: 2
   parents:
-    non_structural: 1.00
+    non_structural_dysphonia: 1.00
 puberphonia:
   level: 2
   parents:
-    non_structural: 1.00
+    non_structural_dysphonia: 1.00
 recurrent_respiratory_papillomatosis:
   alias:
     - recurrent respiratory papillomatosis
   level: 2
   parents:
-    structural: 1.00
+    structural_dysphonia: 1.00
 spasmodic_dysphonia:
   alias:
     - spasmodic dysphonia
   level: 2
   parents:
-    non_structural: 1.00
+    non_structural_dysphonia: 1.00
 sulcus_vocalis:
   alias:
     - sulcus vocalis
   level: 2
   parents:
-    structural: 1.00
+    structural_dysphonia: 1.00
 tuberculosis_laryngitis:
   alias:
     - tuberculosis laryngitis
   level: 2
   parents:
-    structural: 1.00
+    structural_dysphonia: 1.00
 unilateral_vocal_fold_palsy:
   alias:
     - unilateral vocal fold palsy
   level: 2
   parents:
-    non_structural: 1.00
+    non_structural_dysphonia: 1.00
 vocal_fold_cyst:
   alias:
     - vocal fold cyst
   level: 2
   parents:
-    structural: 1.00
+    structural_dysphonia: 1.00
 vocal_fold_edema:
   alias:
     - vocal fold edema
   level: 2
   parents:
-    structural: 1.00
+    structural_dysphonia: 1.00
 vocal_fold_nodule:
   alias:
     - vocal fold nodule
   level: 2
   parents:
-    structural: 1.00
+    structural_dysphonia: 1.00
 vocal_fold_polyp:
   alias:
     - vocal fold polyp
   level: 2
   parents:
-    structural: 1.00
+    structural_dysphonia: 1.00
 voice_tremor:
   alias:
     - voice tremor
   level: 2
   parents:
-    non_structural: 1.00
+    non_structural_dysphonia: 1.00

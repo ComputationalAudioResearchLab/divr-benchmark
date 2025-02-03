@@ -2,6 +2,7 @@
   - mixed
   - not sure
   - other
+  - others
   - unknown
 - - functional_dysphonia
   - functional dysphonia
@@ -44,6 +45,7 @@
   - chordektomie
 - - cyst
   - cyste
+  - cysts
 - - diplophony
   - diplophonie
 - - downs_disease
@@ -70,6 +72,8 @@
   - epiglottiskarzinom
 - - essential_tremors
   - essential tremors
+  - benign essential tremor
+  - benign essential tremors
   - essential tremor
 - - fibroma
   - fibrom
@@ -78,7 +82,7 @@
   - frontolaterale teilresektion
 - - gerd
   - gastric reflux
-  - gastroesophagela reflux disease
+  - gastroesophageal reflux disease
 - - granuloma
   - granulom
 - - hyperasthenia
@@ -235,6 +239,7 @@
 - - vocal_fold_nodules
   - vocal fold nodules
   - vocal nodules
+  - vocal node
 - - vocal_fold_polyp
   - stimmlippenpolyp
   - vocal fold polyp
@@ -243,3 +248,5 @@
 - - vocal_fold_sulcus
   - sulcus vocalis
   - vocal fold sulcus
+- - without dysarthria
+  - normal

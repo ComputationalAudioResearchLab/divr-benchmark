@@ -12,6 +12,7 @@ from .validate_terms import ValidateTermsOthers, ValidateTermsUSVAC
 from .logger import Logger
 from .diag_maps import DIAGNOSIS_MAPS, diagnosis_maps
 from .match_manual import MatchManual
+from .reporter import Reporter
 
 
 class Main(ClassArgParser):
@@ -47,6 +48,9 @@ class Main(ClassArgParser):
 
     def match_manual(self):
         MatchManual().run()
+
+    def reporter(self):
+        Reporter().run()
 
 
 if __name__ == "__main__":

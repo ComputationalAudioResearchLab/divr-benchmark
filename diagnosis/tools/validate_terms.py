@@ -1,6 +1,6 @@
 import yaml
 from pathlib import Path
-from divr_diagnosis import DiagnosisMap
+from divr_diagnosis import Diagnosis, DiagnosisMap
 
 
 class AliasDict:
@@ -45,9 +45,38 @@ class ValidateTermsOthers:
         self.__alias = AliasDict(diagnosis_map)
         with open(self.__terms_file, "r") as terms_file:
             terms = yaml.full_load(terms_file)
+            self.__all_terms = set(terms.keys())
             self.__terms = self.__coalesce_by_alias(terms)
 
     def run(self):
+        # self.from_db_to_diag_map()
+        self.from_diag_map_to_db()
+
+    def from_diag_map_to_db(self):
+        present_terms = []
+        absent_terms = []
+        for diag in self.__diagnosis_map.unique_diags():
+            if diag.level == self.__diagnosis_map.max_diag_level:
+                if self.__diag_in_terms(diag):
+                    present_terms += [diag.name]
+                else:
+                    absent_terms += [diag.name]
+        print(f"{len(present_terms)} Terms found: ", present_terms)
+        print(f"{len(absent_terms)} Terms absent: ", absent_terms)
+
+    def __diag_in_terms(self, diag: Diagnosis) -> bool:
+        possible_aliases = diag.alias + [diag.name]
+        additional_aliases = []
+        for al in possible_aliases:
+            if al in self.__alias.all_terms:
+                additional_aliases += self.__alias.all_terms[al]
+        diag_aliases = possible_aliases + additional_aliases
+        for al in diag_aliases:
+            if al in self.__terms:
+                return True
+        return False
+
+    def from_db_to_diag_map(self):
         present_terms = []
         absent_terms = {}
         terms_to_alias = {}

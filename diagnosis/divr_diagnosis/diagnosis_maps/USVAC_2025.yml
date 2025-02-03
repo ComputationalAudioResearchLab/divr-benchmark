@@ -8,6 +8,7 @@ normal:
 pathological:
   alias:
     - pathological
+    - pathological voice- diagnosis n/a
   level: 0
 unclassified:
   alias:
@@ -2658,20 +2659,6 @@ partial_laryngectomy:
     clinician 5: unclassified
     clinician 6: unclassified
     clinician 7: organic > structural > structural_abnormality
-pathological_voice_diagnosis_n_a:
-  alias:
-    - pathological voice- diagnosis n/a
-  level: 4
-  parents:
-    unclassified: 1.0
-  votes:
-    clinician 1: unclassified
-    clinician 2: unclassified
-    clinician 3: unclassified
-    clinician 4: unclassified
-    clinician 5: unclassified
-    clinician 6: unclassified
-    clinician 7: unclassified
 phonation_nodules:
   alias:
     - phonation nodules
