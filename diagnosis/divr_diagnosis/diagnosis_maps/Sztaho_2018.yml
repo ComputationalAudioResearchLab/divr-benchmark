@@ -16,11 +16,16 @@ pathological:
 normal:
   alias:
     - healthy
+    - without dysarthria
   level: 0
 unclassified:
   level: 0
   alias:
     - not sure
+    - mixed
+    - other
+    - others
+    - unknown
   level: 0
 
 ### level 1
@@ -45,6 +50,10 @@ closure_insufficiency:
   parents:
     morphological_alteration: 1.0
 cysts:
+  alias:
+    - cyst
+    - cyste
+    - vocal fold cyst
   level: 2
   parents:
     morphological_alteration: 1.0
@@ -55,12 +64,16 @@ depression:
 functional_dysphonia:
   alias:
     - functional dysphonia
+    - funktionelle dysphonie
+    - functional voice disorder
   level: 2
   parents:
     pathological: 1.0
 gastroesophageal_reflux_disease:
   alias:
     - gastroesophageal reflux disease
+    - gastric reflux
+    - gerd
   level: 2
   parents:
     morphological_alteration: 1.0
@@ -75,6 +88,13 @@ laryngitis:
   parents:
     morphological_alteration: 1.0
 parkinsons:
+  alias:
+    - morbus parkinson
+    - parkinson_disease
+    - parkinson disease
+    - parkinson's disease
+    - parkinsons syndrome
+    - parkinsons trauma
   level: 2
   parents:
     pathological: 1.0
@@ -100,6 +120,13 @@ tractional_stenosis:
 vocal_node:
   alias:
     - vocal node
+    - nodular swelling
+    - vocal_fold_nodules
+    - vocal fold nodules
+    - vocal fold nodule
+    - vocal nodules
+    - nodules
+    - nodule
   level: 2
   parents:
     morphological_alteration: 1.0
@@ -112,6 +139,7 @@ bilateral_recurrent_laryngeal_nerve_(rln)_paralysis_peripheral:
   level: 3
   alias:
     - bilateral recurrent laryngeal nerve (rln) paralysis-peripheral
+    - bilateral paralysis
   parents:
     laryngeal_paralysis: 1.00
 hyperkinetic_dysphonia_vocal_fold_paralysis:
@@ -136,6 +164,9 @@ unilateral_recurrent_laryngeal_nerve_(rln)_paralysis:
   level: 3
   alias:
     - unilateral recurrent laryngeal nerve (rln) paralysis
+    - unilateral paralysis
+    - vocal fold unilateral paralysis
+    - unilateral vocal paralysis
   parents:
     laryngeal_paralysis: 1.00
   

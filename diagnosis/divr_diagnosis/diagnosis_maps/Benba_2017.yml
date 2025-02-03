@@ -12,11 +12,16 @@ pathological:
 normal:
   alias:
     - healthy
+    - without dysarthria
   level: 0
 unclassified:
-  level: 0
   alias:
+    - mixed
     - not sure
+    - other
+    - others
+    - unknown
+  level: 0
   level: 0
 
 ### level 1
@@ -41,6 +46,10 @@ dystonia:
 essential_tremors:
   alias:
     - essential tremors
+    - essential tremor
+    - benign essential tremor
+    - benign essential tremors
+    - voice tremor
   level: 2
   parents:
     neurological_disorder: 1.00
@@ -63,6 +72,13 @@ multiple_system_atrophy:
   parents:
     pathological: 1.00
 parkinsons:
+  alias: 
+    - morbus parkinson
+    - parkinson_disease
+    - parkinson disease
+    - parkinson's disease
+    - parkinsons syndrome
+    - parkinsons trauma
   level: 2
   parents:
     pathological: 1.00

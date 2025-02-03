@@ -15,11 +15,16 @@ pathological:
 normal:
   alias:
     - healthy
+    - without dysarthria
   level: 0
 unclassified:
   level: 0
   alias:
     - not sure
+    - mixed
+    - other
+    - others
+    - unknown
   level: 0
 
 ### level 1
@@ -50,12 +55,18 @@ adductor_spasmodic_dysphonia:
 benign_essential_tremor:
   alias:
     - benign essential tremor
+    - essential tremor
+    - essential_tremors
+    - essential tremors
+    - benign essential tremors
+    - voice tremor
   level: 2
   parents:
     neuro_muscular: 1.00
 bilateral_paralysis:
   alias:
     - bilateral paralysis
+    - bilateral recurrent laryngeal nerve (rln) paralysis-peripheral
   level: 2
   parents:
     neuro_muscular: 1.00
@@ -70,10 +81,16 @@ chronic_laryngitis:
   parents:
     inflammatory: 1.00
 cysts:
+  alias:
+    - cyst
+    - cyste
+    - vocal fold cyst
   level: 2
   parents:
     mass_lesions: 1.00
 granuloma:
+  alias:
+    - granulom
   level: 2
   parents:
     mass_lesions: 1.00
@@ -90,18 +107,42 @@ muscle_tension_dysphonia:
   parents:
     neuro_muscular: 1.00
 nodules:
+  alias:
+    - nodular swelling
+    - vocal_fold_nodules
+    - vocal fold nodules
+    - vocal fold nodule
+    - vocal nodules
+    - vocal node
+    - nodule
   level: 2
   parents:
     mass_lesions: 1.00
 papilloma:
+  alias:
+    - papillom
   level: 2
   parents:
     mass_lesions: 1.00
 parkinsons:
+  alias:
+    - morbus parkinson
+    - parkinson_disease
+    - parkinson disease
+    - parkinson's disease
+    - parkinsons syndrome
+    - parkinsons trauma
   level: 2
   parents:
     neuro_muscular: 1.00
 polyp:
+  alias:
+    - stimmlippenpolyp
+    - vocal_fold_polyp
+    - vocal fold polyp
+    - vocal fold polyp(s)
+    - vocal cord polyp
+    - polyps
   level: 2
   parents:
     mass_lesions: 1.00
@@ -112,12 +153,19 @@ presbylarynges:
 reinkes_edema:
   alias:
     - reinkes edema
+    - hemmoragic reinke's edema
+    - reinke edema
+    - reinke's edema
+    - reinke ödem
   level: 2
   parents:
     inflammatory: 1.00
 unilateral_paralysis:
   alias:
     - unilateral paralysis
+    - unilateral recurrent laryngeal nerve (rln) paralysis
+    - vocal fold unilateral paralysis
+    - unilateral vocal paralysis
   level: 2
   parents:
     neuro_muscular: 1.00
@@ -136,6 +184,7 @@ epiglottic_carcinoma:
   alias:
     - epiglottic carcinoma
     - epiglottiskarzinom
+    - epiglottis carcinoma
   parents:
     cancer: 1.00
 vocal_fold_carcinoma:

@@ -6,11 +6,16 @@ pathological:
 normal:
   alias:
     - healthy
+    - without dysarthria
   level: 0
 unclassified:
   level: 0
   alias:
     - not sure
+    - mixed
+    - other
+    - others
+    - unknown
   level: 0
 
 ### level 1
@@ -21,6 +26,10 @@ phonotrauma:
 
 ### level 2
 cysts:
+  alias:
+    - cyst
+    - cyste
+    - vocal fold cyst
   level: 2
   parents:
     phonotrauma: 1.00
@@ -31,16 +40,34 @@ laryngeal_neoplasm:
   parents:
     pathological: 1.00
 nodules:
+  alias:
+    - nodular swelling
+    - vocal_fold_nodules
+    - vocal fold nodules
+    - vocal fold nodule
+    - vocal nodules
+    - vocal node
+    - nodule
   level: 2
   parents:
     phonotrauma: 1.00
 polyps:
+  alias:
+    - stimmlippenpolyp
+    - vocal_fold_polyp
+    - vocal fold polyp
+    - vocal fold polyp(s)
+    - vocal cord polyp
+    - polyp
   level: 2
   parents:
     phonotrauma: 1.00
 unilateral_vocal_paralysis:
   alias:
     - unilateral vocal paralysis
+    - unilateral recurrent laryngeal nerve (rln) paralysis
+    - unilateral paralysis
+    - vocal fold unilateral paralysis
   level: 2
   parents:
     pathological: 1.00

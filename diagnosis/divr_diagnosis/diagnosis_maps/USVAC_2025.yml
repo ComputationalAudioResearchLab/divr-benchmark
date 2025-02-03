@@ -16,6 +16,7 @@ unclassified:
     - not sure
     - other
     - unknown
+    - others
   level: 0
 
 #### Level 1
@@ -472,6 +473,7 @@ balbuties:
 bilateral_recurrent_laryngeal_nerve_rln_paralysis_peripheral:
   alias:
     - bilateral recurrent laryngeal nerve (rln) paralysis-peripheral
+    - bilateral paralysis
   level: 4
   parents:
     organic_neuro_muscular_central_nervous_disorder: 0.14
@@ -764,6 +766,8 @@ cricoarytenoid_arthritis:
 cyst:
   alias:
     - cyste
+    - cysts
+    - vocal fold cyst
   level: 4
   parents:
     organic_structural_congenital: 0.17
@@ -856,6 +860,7 @@ downs_disease:
   alias:
     - down's disease
     - morbus down
+    - down syndrome
   level: 4
   parents:
     organic_neuro_muscular_peripheral_nervous_disorder: 0.14
@@ -991,6 +996,7 @@ epiglottic_carcinoma:
   alias:
     - epiglottic carcinoma
     - epiglottiskarzinom
+    - epiglottis carcinoma
   level: 4
   parents:
     organic_structural_malignancy: 0.83
@@ -1036,6 +1042,11 @@ erythema:
 essential_tremor:
   alias:
     - essential tremor
+    - essential_tremors
+    - essential tremors
+    - benign essential tremor
+    - benign essential tremors
+    - voice tremor
   level: 4
   parents:
     organic_neuro_muscular_movement_disorder: 1.0
@@ -1141,6 +1152,7 @@ fusiform_mass:
 generalized_edema_of_larynx:
   alias:
     - generalized edema of larynx
+    - edema
   level: 4
   parents:
     organic_inflammatory_non_infective: 0.29
@@ -1156,6 +1168,7 @@ generalized_edema_of_larynx:
     clinician 7: unclassified
 gerd:
   alias:
+    - gastroesophageal reflux disease
     - gastric reflux
     - gerd
   level: 4
@@ -2086,6 +2099,7 @@ laryngeal_trauma_blunt:
 laryngeal_tuberculosis:
   alias:
     - laryngeal tuberculosis
+    - tuberculosis laryngitis
   level: 4
   parents:
     organic_inflammatory_infective: 1.0
@@ -2192,6 +2206,7 @@ left_hemilaryngectomy:
 lesion:
   alias:
     - lesions posterior left vocal fold
+    - benign lesion
   level: 4
   parents:
     organic_structural_epithelial_propria: 0.29
@@ -2632,6 +2647,9 @@ parkinson_disease:
     - parkinson disease
     - morbus parkinson
     - parkinson's disease
+    - parkinsons
+    - parkinsons syndrome
+    - parkinsons trauma
   level: 4
   parents:
     organic_neuro_muscular_central_nervous_disorder: 0.29
@@ -2663,6 +2681,7 @@ phonation_nodules:
   alias:
     - phonation nodules
     - phonationsknötchen
+    - phonation nodule
   level: 4
   parents:
     muscle_tension: 0.14
@@ -2696,6 +2715,7 @@ pocket_fold_voice:
   alias:
     - pocket wrinkled voice
     - taschenfaltenstimme
+    - pocket fold voice
   level: 4
   parents:
     unclassified: 1.0
@@ -2711,6 +2731,7 @@ polters_syndrome:
   alias:
     - polter's syndrome
     - poltersyndrom
+    - polters syndrome
   level: 4
   parents:
     unclassified: 1.0
@@ -3424,6 +3445,7 @@ reinkes_edema:
     - reinke edema
     - reinke's edema
     - reinke ödem
+    - reinkes edema
   level: 4
   parents:
     organic_inflammatory_non_infective: 0.14
@@ -3665,6 +3687,7 @@ superior_laryngeal_nerve_lesion:
   alias:
     - superior laryngeal nerve lesion
     - n. laryngeus superior läsion
+    - superior laryngeal nerve injury
   level: 4
   parents:
     organic_neuro_muscular_central_nervous_disorder: 0.14
@@ -3781,6 +3804,9 @@ unilateral_or_bilateral_recurrent_laryngeal_nerve_rln_paresis:
 unilateral_recurrent_laryngeal_nerve_rln_paralysis:
   alias:
     - unilateral recurrent laryngeal nerve (rln) paralysis
+    - unilateral paralysis
+    - vocal fold unilateral paralysis
+    - unilateral vocal paralysis
   level: 4
   parents:
     organic_neuro_muscular_central_nervous_disorder: 0.14
@@ -4124,6 +4150,10 @@ vocal_fold_nodules:
   alias:
     - vocal fold nodules
     - vocal nodules
+    - vocal fold nodule
+    - vocal node
+    - nodules
+    - nodule
   level: 4
   parents:
     organic_structural_epithelial_propria: 1.0
@@ -4141,6 +4171,8 @@ vocal_fold_polyp:
     - vocal fold polyp
     - vocal fold polyp(s)
     - vocal cord polyp
+    - polyps
+    - polyp
   level: 4
   parents:
     organic_structural_epithelial_propria: 1.0

@@ -13,11 +13,16 @@ pathological:
 normal:
   alias:
     - healthy
+    - without dysarthria
   level: 0
 unclassified:
   level: 0
   alias:
     - not sure
+    - mixed
+    - other
+    - others
+    - unknown
   level: 0
 
 ### level 1
@@ -40,24 +45,52 @@ brain_tumors:
   parents:
     neurological: 1.00
 cysts:
+  alias:
+    - cyst
+    - cyste
+    - vocal fold cyst
   level: 2
   parents:
     vocal_fold_pathology: 1.00
 inflammation:
+  alias:
+    - inflammatory disease
+    - inflammed vocal folds
   level: 2
   parents:
     vocal_fold_pathology: 1.00
 nodules:
+  alias:
+    - nodular swelling
+    - vocal_fold_nodules
+    - vocal fold nodules
+    - vocal fold nodule
+    - vocal nodules
+    - vocal node
+    - nodule
   level: 2
   parents:
     vocal_fold_pathology: 1.00
 parkinsons_trauma:
   alias:
     - parkinsons trauma
+    - morbus parkinson
+    - parkinsons
+    - parkinson_disease
+    - parkinson disease
+    - parkinson's disease
+    - parkinsons syndrome
   level: 2
   parents:
     neurological: 1.00
 polyps:
+  alias:
+    - stimmlippenpolyp
+    - vocal_fold_polyp
+    - vocal fold polyp
+    - vocal fold polyp(s)
+    - vocal cord polyp
+    - polyp
   level: 2
   parents:
     vocal_fold_pathology: 1.00

@@ -13,11 +13,16 @@ pathological:
 normal:
   alias:
     - healthy
+    - without dysarthria
   level: 0
 unclassified:
   level: 0
   alias:
     - not sure
+    - mixed
+    - other
+    - others
+    - unknown
   level: 0
 
 ### level 1
@@ -38,6 +43,7 @@ structural_dysphonia:
 benign_lesion:
   alias:
     - benign lesion
+    - lesion
   level: 2
   parents:
     structural_dysphonia: 1.00
@@ -100,12 +106,14 @@ presbylarynx:
 primary_muscle_tension_dysphonia:
   alias:
     - primary muscle tension dysphonia
+    - muscle tension dysphonia (primary)
   level: 2
   parents:
     non_structural_dysphonia: 1.00
 psychogenic_dysphonia:
   alias:
     - psychogenic dysphonia
+    - psychogene dysphonie
   level: 2
   parents:
     non_structural_dysphonia: 1.00
@@ -122,18 +130,22 @@ recurrent_respiratory_papillomatosis:
 spasmodic_dysphonia:
   alias:
     - spasmodic dysphonia
+    - spasmodische dysphonie
   level: 2
   parents:
     non_structural_dysphonia: 1.00
 sulcus_vocalis:
   alias:
     - sulcus vocalis
+    - vocal_fold_sulcus
+    - vocal fold sulcus
   level: 2
   parents:
     structural_dysphonia: 1.00
 tuberculosis_laryngitis:
   alias:
     - tuberculosis laryngitis
+    - laryngeal tuberculosis
   level: 2
   parents:
     structural_dysphonia: 1.00
@@ -146,6 +158,9 @@ unilateral_vocal_fold_palsy:
 vocal_fold_cyst:
   alias:
     - vocal fold cyst
+    - cyst
+    - cyste
+    - cysts
   level: 2
   parents:
     structural_dysphonia: 1.00
@@ -158,18 +173,35 @@ vocal_fold_edema:
 vocal_fold_nodule:
   alias:
     - vocal fold nodule
+    - nodular swelling
+    - vocal_fold_nodules
+    - vocal fold nodules
+    - vocal nodules
+    - vocal node
+    - nodules
+    - nodule
   level: 2
   parents:
     structural_dysphonia: 1.00
 vocal_fold_polyp:
   alias:
     - vocal fold polyp
+    - stimmlippenpolyp
+    - vocal fold polyp(s)
+    - vocal cord polyp
+    - polyps
+    - polyp
   level: 2
   parents:
     structural_dysphonia: 1.00
 voice_tremor:
   alias:
     - voice tremor
+    - essential tremor
+    - essential_tremors
+    - essential tremors
+    - benign essential tremor
+    - benign essential tremors
   level: 2
   parents:
     non_structural_dysphonia: 1.00

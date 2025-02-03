@@ -196,7 +196,7 @@ We duplicated terms based on typographical variations (e.g. cyst vs cysts, reink
         absent_count = self.count_terms(absent_terms)
         present_count = self.count_terms(present_terms)
         assert (absent_count + present_count) == self.db_terms.total_terms_deduplicated
-        return f"""### {diagnosis_map.__class__.__name__}
+        block = f"""### {diagnosis_map.__class__.__name__}
 ```
 {self.tree_repr(diagnosis_map.tree, indent=1)}```
 
@@ -204,13 +204,17 @@ In total {present_count} terms from DBs were automatically classified, while {ab
 
 The diagnostic terms were allocated as following:
 {self.present_terms_repr(diagnosis_map, present_terms, indent=0)}
-
+"""
+        if len(missing_aliases_for_terms) > 0:
+            block += f"""
 The following aliases were missing:
 {self.missing_alias_repr(missing_aliases_for_terms, indent=0)}
-
+"""
+        block += f"""
 And the following number of terms were left unmatched across the different databases:
 {self.absent_terms_repr(absent_terms, indent=0)}
 """
+        return block
 
     def count_terms(self, absent_terms):
         total_terms = set()

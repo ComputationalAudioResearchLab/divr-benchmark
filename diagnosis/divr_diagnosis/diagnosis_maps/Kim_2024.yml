@@ -15,11 +15,16 @@ pathological:
 normal:
   alias:
     - healthy
+    - without dysarthria
   level: 0
 unclassified:
   level: 0
   alias:
     - not sure
+    - mixed
+    - other
+    - others
+    - unknown
   level: 0
 
 ### level 1
@@ -32,6 +37,8 @@ benign_mucosal_disease:
 
 ### level 2
 granuloma:
+  alias:
+    - granulom
   level: 2
   parents:
     benign_mucosal_disease: 1.00
@@ -42,16 +49,35 @@ laryngeal_cancer:
   parents:
     pathological: 1.00
 nodules:
+  alias:
+    - nodular swelling
+    - vocal_fold_nodules
+    - vocal fold nodules
+    - vocal fold nodule
+    - vocal nodules
+    - vocal node
+    - nodule
   level: 2
   parents:
     benign_mucosal_disease: 1.00
 polyps:
+  alias:
+    - stimmlippenpolyp
+    - vocal_fold_polyp
+    - vocal fold polyp
+    - vocal fold polyp(s)
+    - vocal cord polyp
+    - polyp
   level: 2
   parents:
     benign_mucosal_disease: 1.00
 reinkes_edema:
   alias:
     - reinkes edema
+    - hemmoragic reinke's edema
+    - reinke edema
+    - reinke's edema
+    - reinke ödem
   level: 2
   parents:
     benign_mucosal_disease: 1.00
@@ -76,6 +102,7 @@ epiglottic_carcinoma:
   alias:
     - epiglottic carcinoma
     - epiglottiskarzinom
+    - epiglottis carcinoma
   parents:
     laryngeal_cancer: 1.00
 hyperkinetic_dysphonia_vocal_fold_paralysis:

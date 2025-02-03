@@ -13,11 +13,16 @@ pathological:
 normal:
   alias:
     - healthy
+    - without dysarthria
   level: 0
 unclassified:
   level: 0
   alias:
     - not sure
+    - mixed
+    - other
+    - others
+    - unknown
   level: 0
 
 ### level 1
@@ -42,12 +47,21 @@ vocal_fold_edema:
 vocal_fold_nodules:
   alias:
     - vocal fold nodules
+    - nodular swelling
+    - vocal fold nodule
+    - vocal nodules
+    - vocal node
+    - nodules
+    - nodule
   level: 2
   parents:
     physiological: 1.00
 vocal_fold_unilateral_paralysis:
   alias:
     - vocal fold unilateral paralysis
+    - unilateral recurrent laryngeal nerve (rln) paralysis
+    - unilateral paralysis
+    - unilateral vocal paralysis
   level: 2
   parents:
     neuro_muscular: 1.00

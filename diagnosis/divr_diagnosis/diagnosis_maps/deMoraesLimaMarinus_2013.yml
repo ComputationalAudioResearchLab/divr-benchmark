@@ -12,11 +12,15 @@ pathological:
 normal:
   alias:
     - healthy
+    - without dysarthria
   level: 0
 unclassified:
   level: 0
   alias:
     - not sure
+    - mixed
+    - other
+    - unknown
   level: 0
 
 ### level 1
@@ -27,14 +31,28 @@ others:
 
 ### level 2
 cysts:
+  alias:
+    - cyst
+    - cyste
+    - vocal fold cyst
   level: 2
   parents:
     others: 1.00
 edema:
+  alias:
+    - generalized edema of larynx
   level: 2
   parents:
     pathological: 1.00
 nodules:
+  alias:
+    - nodular swelling
+    - vocal_fold_nodules
+    - vocal fold nodules
+    - vocal fold nodule
+    - vocal nodules
+    - vocal node
+    - nodule
   level: 2
   parents:
     others: 1.00
