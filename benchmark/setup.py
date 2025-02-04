@@ -9,7 +9,7 @@ setup(
     packages=["divr_benchmark"],
     version=os.environ["RELEASE_VERSION"],
     license="MIT",
-    description="Toolkit to extract features from disordered voice databases",
+    description="Toolkit to work with disordered voice databases",
     author="Computational Audio Research Lab",
     url="https://github.com/ComputationalAudioResearchLab/divr-benchmark/benchmark",
     keywords=[

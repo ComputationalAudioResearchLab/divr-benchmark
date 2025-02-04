@@ -101,7 +101,11 @@ class Torgo(Base):
         for data in self.__df:
             speaker_id = data["id"]
             diagnosis = data["diagnosis"].lower()
-            diagnosis = diagnosis_map.get(diagnosis)
+            diagnosis = (
+                diagnosis_map[diagnosis]
+                if diagnosis in diagnosis_map
+                else diagnosis_map.unclassified
+            )
             speaker_path = Path(f"{source_path}/{speaker_id}")
             age = int(data["age"]) if data["age"] is not None else None
             gender = Gender.format(data["gender"])

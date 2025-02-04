@@ -37,7 +37,11 @@ class MEEI(Base):
             for x in row["DIAGNOSIS"].split(","):
                 x = x.lower().strip()
                 if len(x) > 0:
-                    d = diagnosis_map.get(x)
+                    d = (
+                        diagnosis_map[x]
+                        if x in diagnosis_map
+                        else diagnosis_map.unclassified
+                    )
                     diagnosis += [d]
                     if d.incompletely_classified:
                         has_incomplete_diagnosis = True

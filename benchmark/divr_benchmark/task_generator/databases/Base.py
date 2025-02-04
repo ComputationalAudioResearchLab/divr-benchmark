@@ -1,6 +1,6 @@
 from pathlib import Path
-from typing import Callable, List, Set
-from divr_diagnosis import DiagnosisMap
+from typing import Callable, Dict, List, Set
+from divr_diagnosis import Diagnosis, DiagnosisMap
 
 from ...prepare_dataset.database_generator import DatabaseGenerator
 from ...prepare_dataset.processed import (
@@ -85,6 +85,15 @@ class Base:
         return self.to_individual_file_tasks(
             sessions=self.dataset.all_sessions, level=level, file_filter=None
         )
+
+    def count_per_diag(self, level: int) -> Dict[Diagnosis, int]:
+        counts = {}
+        for session in self.dataset.all_sessions:
+            root_diagnosis = session.best_diagnosis.at_level(level)
+            if root_diagnosis not in counts:
+                counts[root_diagnosis] = 0
+            counts[root_diagnosis] += 1
+        return counts
 
     def to_individual_file_tasks(
         self,

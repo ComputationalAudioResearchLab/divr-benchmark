@@ -150,7 +150,7 @@ class DBDiagnosticTerms:
 class Reporter:
 
     __curdir = Path(__file__).parent.resolve()
-    __reports_file = f"{__curdir}/../docs/Diagnostic Terms Usage.md"
+    __reports_file = f"{__curdir}/../.docs/Diagnostic Terms Usage.md"
 
     def __init__(self):
         alias_dict = AliasDict()
@@ -196,7 +196,7 @@ We duplicated terms based on typographical variations (e.g. cyst vs cysts, reink
         absent_count = self.count_terms(absent_terms)
         present_count = self.count_terms(present_terms)
         assert (absent_count + present_count) == self.db_terms.total_terms_deduplicated
-        block = f"""### {diagnosis_map.__class__.__name__}
+        block = f"""### {diagnosis_map.name}
 ```
 {self.tree_repr(diagnosis_map.tree, indent=1)}```
 

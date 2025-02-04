@@ -33,7 +33,11 @@ class UncommonVoice(Base):
             if speaker_id is None:
                 speaker_id = str(row_idx)
             diagnosis = data["Voice Disorder"]
-            diagnosis = diagnosis_map.get(diagnosis)
+            diagnosis = (
+                diagnosis_map[diagnosis]
+                if diagnosis in diagnosis_map
+                else diagnosis_map.unclassified
+            )
             if allow_incomplete_classification or not diagnosis.incompletely_classified:
                 age = None
                 gender = Gender.format(data["Gender"].strip())

@@ -4,6 +4,7 @@ val_map = {
     "female": "female",
     "male": "male",
     "unknown": "unknown",
+    "": "unknown",
 }
 
 

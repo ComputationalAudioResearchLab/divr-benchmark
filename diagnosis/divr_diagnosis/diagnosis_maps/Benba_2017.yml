@@ -13,6 +13,11 @@ normal:
   alias:
     - healthy
     - without dysarthria
+    - normal voice
+    - normal voice ( allergy minor )
+    - normal voice ( cold minor )
+    - normal voice ( flu minor 2 days ago )
+    - normal voice ( singing training )
   level: 0
 unclassified:
   alias:

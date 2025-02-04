@@ -31,7 +31,11 @@ class Voiced(Base):
         for _, row in all_data.iterrows():
             speaker_id = row["ID"]
             diagnosis = row["Diagnosis"]
-            diagnosis = diagnosis_map.get(diagnosis)
+            diagnosis = (
+                diagnosis_map[diagnosis]
+                if diagnosis in diagnosis_map
+                else diagnosis_map.unclassified
+            )
             age = int(row["Age"])
             gender = Gender.format(row["Gender"])
             if allow_incomplete_classification or not diagnosis.incompletely_classified:

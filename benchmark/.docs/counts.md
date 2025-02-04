@@ -1,0 +1,1609 @@
+# DB Sessions per classification system
+Count of sessions for different databases for different classification systems at all available levels of classification in the classification system.
+## Benba_2017
+### avfad
+* **Level 0:**
+	 * **normal:** 363
+	 * **unclassified:** 343
+	 * **pathological:** 3
+* **Level 1:**
+	 * **normal:** 363
+	 * **unclassified:** 343
+	 * **pathological:** 3
+* **Level 2:**
+	 * **normal:** 363
+	 * **unclassified:** 343
+	 * **parkinsons:** 3
+### meei
+* **Level 0:**
+	 * **unclassified:** 400
+	 * **normal:** 55
+	 * **pathological:** 251
+* **Level 1:**
+	 * **unclassified:** 400
+	 * **normal:** 55
+	 * **pathological:** 250
+	 * **neurological_disorder:** 1
+* **Level 2:**
+	 * **unclassified:** 400
+	 * **normal:** 55
+	 * **parkinsons:** 3
+	 * **essential_tremors:** 1
+	 * **pathological:** 247
+### svd
+* **Level 0:**
+	 * **unclassified:** 1354
+	 * **pathological:** 1
+	 * **normal:** 687
+* **Level 1:**
+	 * **unclassified:** 1354
+	 * **pathological:** 1
+	 * **normal:** 687
+* **Level 2:**
+	 * **unclassified:** 1354
+	 * **parkinsons:** 1
+	 * **normal:** 687
+### torgo
+* **Level 0:**
+	 * **normal:** 15
+	 * **unclassified:** 15
+* **Level 1:**
+	 * **normal:** 15
+	 * **unclassified:** 15
+* **Level 2:**
+	 * **normal:** 15
+	 * **unclassified:** 15
+### uaspeech
+* **Level 0:**
+	 * **unclassified:** 17
+	 * **normal:** 13
+* **Level 1:**
+	 * **unclassified:** 17
+	 * **normal:** 13
+* **Level 2:**
+	 * **unclassified:** 17
+	 * **normal:** 13
+### uncommon_voice
+* **Level 0:**
+	 * **pathological:** 43
+	 * **normal:** 9
+* **Level 1:**
+	 * **pathological:** 43
+	 * **normal:** 9
+* **Level 2:**
+	 * **pathological:** 43
+	 * **normal:** 9
+### voiced
+* **Level 0:**
+	 * **unclassified:** 151
+	 * **normal:** 57
+* **Level 1:**
+	 * **unclassified:** 151
+	 * **normal:** 57
+* **Level 2:**
+	 * **unclassified:** 151
+	 * **normal:** 57
+## Compton_2022
+### avfad
+* **Level 0:**
+	 * **normal:** 363
+	 * **unclassified:** 228
+	 * **pathological:** 118
+* **Level 1:**
+	 * **normal:** 363
+	 * **unclassified:** 228
+	 * **mass_lesions:** 55
+	 * **neuro_muscular:** 33
+	 * **inflammatory:** 30
+* **Level 2:**
+	 * **normal:** 363
+	 * **unclassified:** 228
+	 * **nodules:** 28
+	 * **polyp:** 27
+	 * **unilateral_paralysis:** 26
+	 * **bilateral_paralysis:** 4
+	 * **parkinsons:** 3
+	 * **reinkes_edema:** 30
+* **Level 3:**
+	 * **normal:** 363
+	 * **unclassified:** 228
+	 * **nodules:** 28
+	 * **polyp:** 27
+	 * **unilateral_paralysis:** 26
+	 * **bilateral_paralysis:** 4
+	 * **parkinsons:** 3
+	 * **reinkes_edema:** 30
+### meei
+* **Level 0:**
+	 * **unclassified:** 326
+	 * **normal:** 55
+	 * **pathological:** 325
+* **Level 1:**
+	 * **unclassified:** 326
+	 * **normal:** 55
+	 * **neuro_muscular:** 23
+	 * **mass_lesions:** 52
+	 * **inflammatory:** 3
+	 * **pathological:** 247
+* **Level 2:**
+	 * **unclassified:** 326
+	 * **normal:** 55
+	 * **adductor_spasmodic_dysphonia:** 19
+	 * **nodules:** 23
+	 * **polyp:** 20
+	 * **cysts:** 5
+	 * **parkinsons:** 3
+	 * **benign_essential_tremor:** 1
+	 * **papilloma:** 4
+	 * **chronic_laryngitis:** 2
+	 * **pathological:** 247
+	 * **reinkes_edema:** 1
+* **Level 3:**
+	 * **unclassified:** 326
+	 * **normal:** 55
+	 * **adductor_spasmodic_dysphonia:** 19
+	 * **nodules:** 23
+	 * **polyp:** 20
+	 * **cysts:** 5
+	 * **parkinsons:** 3
+	 * **benign_essential_tremor:** 1
+	 * **papilloma:** 4
+	 * **chronic_laryngitis:** 2
+	 * **pathological:** 247
+	 * **reinkes_edema:** 1
+### svd
+* **Level 0:**
+	 * **unclassified:** 1212
+	 * **pathological:** 143
+	 * **normal:** 687
+* **Level 1:**
+	 * **unclassified:** 1212
+	 * **inflammatory:** 67
+	 * **mass_lesions:** 75
+	 * **normal:** 687
+	 * **neuro_muscular:** 1
+* **Level 2:**
+	 * **unclassified:** 1212
+	 * **reinkes_edema:** 67
+	 * **polyp:** 42
+	 * **cancer:** 24
+	 * **cysts:** 6
+	 * **normal:** 687
+	 * **granuloma:** 2
+	 * **parkinsons:** 1
+	 * **papilloma:** 1
+* **Level 3:**
+	 * **unclassified:** 1212
+	 * **reinkes_edema:** 67
+	 * **polyp:** 42
+	 * **vocal_fold_carcinoma:** 22
+	 * **carcinoma_in_situ:** 1
+	 * **cysts:** 6
+	 * **normal:** 687
+	 * **granuloma:** 2
+	 * **epiglottic_carcinoma:** 1
+	 * **parkinsons:** 1
+	 * **papilloma:** 1
+### torgo
+* **Level 0:**
+	 * **normal:** 15
+	 * **unclassified:** 15
+* **Level 1:**
+	 * **normal:** 15
+	 * **unclassified:** 15
+* **Level 2:**
+	 * **normal:** 15
+	 * **unclassified:** 15
+* **Level 3:**
+	 * **normal:** 15
+	 * **unclassified:** 15
+### uaspeech
+* **Level 0:**
+	 * **unclassified:** 17
+	 * **normal:** 13
+* **Level 1:**
+	 * **unclassified:** 17
+	 * **normal:** 13
+* **Level 2:**
+	 * **unclassified:** 17
+	 * **normal:** 13
+* **Level 3:**
+	 * **unclassified:** 17
+	 * **normal:** 13
+### uncommon_voice
+* **Level 0:**
+	 * **pathological:** 43
+	 * **normal:** 9
+* **Level 1:**
+	 * **pathological:** 43
+	 * **normal:** 9
+* **Level 2:**
+	 * **pathological:** 43
+	 * **normal:** 9
+* **Level 3:**
+	 * **pathological:** 43
+	 * **normal:** 9
+### voiced
+* **Level 0:**
+	 * **unclassified:** 151
+	 * **normal:** 57
+* **Level 1:**
+	 * **unclassified:** 151
+	 * **normal:** 57
+* **Level 2:**
+	 * **unclassified:** 151
+	 * **normal:** 57
+* **Level 3:**
+	 * **unclassified:** 151
+	 * **normal:** 57
+## Cordeiro_2015
+### avfad
+* **Level 0:**
+	 * **normal:** 363
+	 * **unclassified:** 292
+	 * **pathological:** 54
+* **Level 1:**
+	 * **normal:** 363
+	 * **unclassified:** 292
+	 * **physiological:** 28
+	 * **neuro_muscular:** 26
+* **Level 2:**
+	 * **normal:** 363
+	 * **unclassified:** 292
+	 * **vocal_fold_nodules:** 28
+	 * **vocal_fold_unilateral_paralysis:** 26
+### meei
+* **Level 0:**
+	 * **unclassified:** 342
+	 * **pathological:** 309
+	 * **normal:** 55
+* **Level 1:**
+	 * **unclassified:** 342
+	 * **physiological:** 62
+	 * **normal:** 55
+	 * **pathological:** 247
+* **Level 2:**
+	 * **unclassified:** 342
+	 * **vocal_fold_edema:** 43
+	 * **normal:** 55
+	 * **vocal_fold_nodules:** 19
+	 * **pathological:** 247
+### svd
+* **Level 0:**
+	 * **unclassified:** 1355
+	 * **normal:** 687
+* **Level 1:**
+	 * **unclassified:** 1355
+	 * **normal:** 687
+* **Level 2:**
+	 * **unclassified:** 1355
+	 * **normal:** 687
+### torgo
+* **Level 0:**
+	 * **normal:** 15
+	 * **unclassified:** 15
+* **Level 1:**
+	 * **normal:** 15
+	 * **unclassified:** 15
+* **Level 2:**
+	 * **normal:** 15
+	 * **unclassified:** 15
+### uaspeech
+* **Level 0:**
+	 * **unclassified:** 17
+	 * **normal:** 13
+* **Level 1:**
+	 * **unclassified:** 17
+	 * **normal:** 13
+* **Level 2:**
+	 * **unclassified:** 17
+	 * **normal:** 13
+### uncommon_voice
+* **Level 0:**
+	 * **pathological:** 43
+	 * **normal:** 9
+* **Level 1:**
+	 * **pathological:** 43
+	 * **normal:** 9
+* **Level 2:**
+	 * **pathological:** 43
+	 * **normal:** 9
+### voiced
+* **Level 0:**
+	 * **unclassified:** 151
+	 * **normal:** 57
+* **Level 1:**
+	 * **unclassified:** 151
+	 * **normal:** 57
+* **Level 2:**
+	 * **unclassified:** 151
+	 * **normal:** 57
+## daSilvaMoura_2024
+### avfad
+* **Level 0:**
+	 * **normal:** 363
+	 * **unclassified:** 282
+	 * **pathological:** 64
+* **Level 1:**
+	 * **normal:** 363
+	 * **unclassified:** 282
+	 * **organofunctional:** 57
+	 * **organic:** 7
+* **Level 2:**
+	 * **normal:** 363
+	 * **unclassified:** 282
+	 * **reinkes_edema:** 30
+	 * **vocal_fold_polyp:** 27
+	 * **amyotrophic_lateral_sclerosis:** 4
+	 * **parkinsons_syndrome:** 3
+### meei
+* **Level 0:**
+	 * **pathological:** 329
+	 * **unclassified:** 322
+	 * **normal:** 55
+* **Level 1:**
+	 * **organic:** 56
+	 * **unclassified:** 322
+	 * **normal:** 55
+	 * **organofunctional:** 26
+	 * **pathological:** 247
+* **Level 2:**
+	 * **gastroesophageal_reflux_disease:** 43
+	 * **unclassified:** 322
+	 * **normal:** 55
+	 * **vocal_fold_polyp:** 18
+	 * **laryngocele:** 4
+	 * **cordectomy:** 3
+	 * **cyst:** 7
+	 * **parkinsons_syndrome:** 2
+	 * **intubation_damage:** 1
+	 * **papilloma:** 3
+	 * **pathological:** 247
+	 * **reinkes_edema:** 1
+### svd
+* **Level 0:**
+	 * **pathological:** 1185
+	 * **normal:** 687
+	 * **unclassified:** 170
+* **Level 1:**
+	 * **organic:** 567
+	 * **organofunctional:** 102
+	 * **functional:** 516
+	 * **normal:** 687
+	 * **unclassified:** 170
+* **Level 2:**
+	 * **recurrent_paralysis:** 203
+	 * **reinkes_edema:** 44
+	 * **dysphonia:** 99
+	 * **laryngitis:** 122
+	 * **contact_pachydermia:** 48
+	 * **epiglottis_carcinoma:** 1
+	 * **carcinoma_in_situ:** 1
+	 * **spasmodic_dysphonia:** 62
+	 * **hyperfunctional_dysphonia:** 213
+	 * **gastroesophageal_reflux_disease:** 3
+	 * **cordectomy:** 59
+	 * **hypofunctional_dysphonia:** 15
+	 * **vocal_fold_carcinoma:** 20
+	 * **central_laryngeal_movement_disorder:** 13
+	 * **hypopharyngeal_tumor:** 6
+	 * **laryngeal_tumor:** 4
+	 * **intubation_granuloma:** 4
+	 * **intubation_damage:** 3
+	 * **superior_laryngeal_nerve_injury:** 3
+	 * **laryngocele:** 3
+	 * **bulbar_paralysis:** 2
+	 * **functional_dysphonia:** 112
+	 * **psychogenic_dysphonia:** 54
+	 * **cyst:** 6
+	 * **superior_laryngeal_nerve_neuralgia:** 2
+	 * **hypotonic_dysphonia:** 5
+	 * **open_rhinophonia:** 16
+	 * **vocal_fold_polyp:** 29
+	 * **leukoplakia:** 16
+	 * **phonation_nodule:** 5
+	 * **granuloma:** 2
+	 * **normal:** 687
+	 * **unclassified:** 170
+	 * **chondroma:** 1
+	 * **amyotrophic_lateral_sclerosis:** 2
+	 * **vallecular_cyst:** 1
+	 * **papilloma:** 1
+	 * **median_cervical_cyst:** 1
+	 * **nasopharyngeal_tumor:** 1
+	 * **psychogenic_microphony:** 1
+	 * **mixed_rhinophonia:** 1
+	 * **synechia:** 1
+### torgo
+* **Level 0:**
+	 * **normal:** 15
+	 * **unclassified:** 15
+* **Level 1:**
+	 * **normal:** 15
+	 * **unclassified:** 15
+* **Level 2:**
+	 * **normal:** 15
+	 * **unclassified:** 15
+### uaspeech
+* **Level 0:**
+	 * **unclassified:** 17
+	 * **normal:** 13
+* **Level 1:**
+	 * **unclassified:** 17
+	 * **normal:** 13
+* **Level 2:**
+	 * **unclassified:** 17
+	 * **normal:** 13
+### uncommon_voice
+* **Level 0:**
+	 * **pathological:** 43
+	 * **normal:** 9
+* **Level 1:**
+	 * **pathological:** 43
+	 * **normal:** 9
+* **Level 2:**
+	 * **pathological:** 43
+	 * **normal:** 9
+### voiced
+* **Level 0:**
+	 * **unclassified:** 151
+	 * **normal:** 57
+* **Level 1:**
+	 * **unclassified:** 151
+	 * **normal:** 57
+* **Level 2:**
+	 * **unclassified:** 151
+	 * **normal:** 57
+## deMoraesLimaMarinus_2013
+### avfad
+* **Level 0:**
+	 * **normal:** 363
+	 * **unclassified:** 318
+	 * **pathological:** 28
+* **Level 1:**
+	 * **normal:** 363
+	 * **unclassified:** 318
+	 * **others:** 28
+* **Level 2:**
+	 * **normal:** 363
+	 * **unclassified:** 318
+	 * **nodules:** 28
+* **Level 3:**
+	 * **normal:** 363
+	 * **unclassified:** 318
+	 * **nodules:** 28
+### meei
+* **Level 0:**
+	 * **unclassified:** 307
+	 * **normal:** 55
+	 * **pathological:** 344
+* **Level 1:**
+	 * **unclassified:** 307
+	 * **normal:** 55
+	 * **others:** 96
+	 * **pathological:** 248
+* **Level 2:**
+	 * **unclassified:** 307
+	 * **normal:** 55
+	 * **vocal_fold_paralysis:** 67
+	 * **nodules:** 24
+	 * **pathological:** 247
+	 * **cysts:** 5
+	 * **edema:** 1
+* **Level 3:**
+	 * **unclassified:** 307
+	 * **normal:** 55
+	 * **vocal_fold_paralysis:** 67
+	 * **nodules:** 24
+	 * **pathological:** 247
+	 * **cysts:** 5
+	 * **edema:** 1
+### svd
+* **Level 0:**
+	 * **unclassified:** 1349
+	 * **pathological:** 6
+	 * **normal:** 687
+* **Level 1:**
+	 * **unclassified:** 1349
+	 * **others:** 6
+	 * **normal:** 687
+* **Level 2:**
+	 * **unclassified:** 1349
+	 * **cysts:** 6
+	 * **normal:** 687
+* **Level 3:**
+	 * **unclassified:** 1349
+	 * **cysts:** 6
+	 * **normal:** 687
+### torgo
+* **Level 0:**
+	 * **normal:** 15
+	 * **unclassified:** 15
+* **Level 1:**
+	 * **normal:** 15
+	 * **unclassified:** 15
+* **Level 2:**
+	 * **normal:** 15
+	 * **unclassified:** 15
+* **Level 3:**
+	 * **normal:** 15
+	 * **unclassified:** 15
+### uaspeech
+* **Level 0:**
+	 * **unclassified:** 17
+	 * **normal:** 13
+* **Level 1:**
+	 * **unclassified:** 17
+	 * **normal:** 13
+* **Level 2:**
+	 * **unclassified:** 17
+	 * **normal:** 13
+* **Level 3:**
+	 * **unclassified:** 17
+	 * **normal:** 13
+### uncommon_voice
+* **Level 0:**
+	 * **pathological:** 43
+	 * **normal:** 9
+* **Level 1:**
+	 * **pathological:** 43
+	 * **normal:** 9
+* **Level 2:**
+	 * **pathological:** 43
+	 * **normal:** 9
+* **Level 3:**
+	 * **pathological:** 43
+	 * **normal:** 9
+### voiced
+* **Level 0:**
+	 * **unclassified:** 146
+	 * **normal:** 57
+	 * **pathological:** 5
+* **Level 1:**
+	 * **unclassified:** 146
+	 * **normal:** 57
+	 * **others:** 5
+* **Level 2:**
+	 * **unclassified:** 146
+	 * **normal:** 57
+	 * **vocal_fold_paralysis:** 5
+* **Level 3:**
+	 * **unclassified:** 146
+	 * **normal:** 57
+	 * **hypokinetic_dysphonia_vocal_fold_paralysis:** 4
+	 * **hyperkinetic_dysphonia_vocal_fold_paralysis:** 1
+## FEMH_2018
+### avfad
+* **Level 0:**
+	 * **normal:** 363
+	 * **unclassified:** 265
+	 * **pathological:** 81
+* **Level 1:**
+	 * **normal:** 363
+	 * **unclassified:** 265
+	 * **phonotrauma:** 55
+	 * **pathological:** 26
+* **Level 2:**
+	 * **normal:** 363
+	 * **unclassified:** 265
+	 * **nodules:** 28
+	 * **polyps:** 27
+	 * **unilateral_vocal_paralysis:** 26
+### meei
+* **Level 0:**
+	 * **unclassified:** 356
+	 * **normal:** 55
+	 * **pathological:** 295
+* **Level 1:**
+	 * **unclassified:** 356
+	 * **normal:** 55
+	 * **phonotrauma:** 48
+	 * **pathological:** 247
+* **Level 2:**
+	 * **unclassified:** 356
+	 * **normal:** 55
+	 * **nodules:** 23
+	 * **polyps:** 20
+	 * **cysts:** 5
+	 * **pathological:** 247
+### svd
+* **Level 0:**
+	 * **unclassified:** 1304
+	 * **pathological:** 51
+	 * **normal:** 687
+* **Level 1:**
+	 * **unclassified:** 1304
+	 * **phonotrauma:** 51
+	 * **normal:** 687
+* **Level 2:**
+	 * **unclassified:** 1304
+	 * **polyps:** 45
+	 * **cysts:** 6
+	 * **normal:** 687
+### torgo
+* **Level 0:**
+	 * **normal:** 15
+	 * **unclassified:** 15
+* **Level 1:**
+	 * **normal:** 15
+	 * **unclassified:** 15
+* **Level 2:**
+	 * **normal:** 15
+	 * **unclassified:** 15
+### uaspeech
+* **Level 0:**
+	 * **unclassified:** 17
+	 * **normal:** 13
+* **Level 1:**
+	 * **unclassified:** 17
+	 * **normal:** 13
+* **Level 2:**
+	 * **unclassified:** 17
+	 * **normal:** 13
+### uncommon_voice
+* **Level 0:**
+	 * **pathological:** 43
+	 * **normal:** 9
+* **Level 1:**
+	 * **pathological:** 43
+	 * **normal:** 9
+* **Level 2:**
+	 * **pathological:** 43
+	 * **normal:** 9
+### voiced
+* **Level 0:**
+	 * **unclassified:** 151
+	 * **normal:** 57
+* **Level 1:**
+	 * **unclassified:** 151
+	 * **normal:** 57
+* **Level 2:**
+	 * **unclassified:** 151
+	 * **normal:** 57
+## Firdos_2016
+### avfad
+* **Level 0:**
+	 * **normal:** 363
+	 * **unclassified:** 288
+	 * **pathological:** 58
+* **Level 1:**
+	 * **normal:** 363
+	 * **unclassified:** 288
+	 * **vocal_fold_pathology:** 55
+	 * **neurological:** 3
+* **Level 2:**
+	 * **normal:** 363
+	 * **unclassified:** 288
+	 * **nodules:** 28
+	 * **polyps:** 27
+	 * **parkinsons_trauma:** 3
+* **Level 3:**
+	 * **normal:** 363
+	 * **unclassified:** 288
+	 * **nodules:** 28
+	 * **polyps:** 27
+	 * **parkinsons_trauma:** 3
+### meei
+* **Level 0:**
+	 * **unclassified:** 352
+	 * **normal:** 55
+	 * **pathological:** 299
+* **Level 1:**
+	 * **unclassified:** 352
+	 * **normal:** 55
+	 * **vocal_fold_pathology:** 49
+	 * **neurological:** 3
+	 * **pathological:** 247
+* **Level 2:**
+	 * **unclassified:** 352
+	 * **normal:** 55
+	 * **nodules:** 23
+	 * **polyps:** 20
+	 * **cysts:** 5
+	 * **parkinsons_trauma:** 3
+	 * **inflammation:** 1
+	 * **pathological:** 247
+* **Level 3:**
+	 * **unclassified:** 352
+	 * **normal:** 55
+	 * **nodules:** 23
+	 * **polyps:** 20
+	 * **cysts:** 5
+	 * **parkinsons_trauma:** 3
+	 * **inflammation:** 1
+	 * **pathological:** 247
+### svd
+* **Level 0:**
+	 * **unclassified:** 1303
+	 * **pathological:** 52
+	 * **normal:** 687
+* **Level 1:**
+	 * **unclassified:** 1303
+	 * **vocal_fold_pathology:** 51
+	 * **normal:** 687
+	 * **neurological:** 1
+* **Level 2:**
+	 * **unclassified:** 1303
+	 * **polyps:** 45
+	 * **cysts:** 6
+	 * **normal:** 687
+	 * **parkinsons_trauma:** 1
+* **Level 3:**
+	 * **unclassified:** 1303
+	 * **polyps:** 45
+	 * **cysts:** 6
+	 * **normal:** 687
+	 * **parkinsons_trauma:** 1
+### torgo
+* **Level 0:**
+	 * **normal:** 15
+	 * **unclassified:** 15
+* **Level 1:**
+	 * **normal:** 15
+	 * **unclassified:** 15
+* **Level 2:**
+	 * **normal:** 15
+	 * **unclassified:** 15
+* **Level 3:**
+	 * **normal:** 15
+	 * **unclassified:** 15
+### uaspeech
+* **Level 0:**
+	 * **unclassified:** 17
+	 * **normal:** 13
+* **Level 1:**
+	 * **unclassified:** 17
+	 * **normal:** 13
+* **Level 2:**
+	 * **unclassified:** 17
+	 * **normal:** 13
+* **Level 3:**
+	 * **unclassified:** 17
+	 * **normal:** 13
+### uncommon_voice
+* **Level 0:**
+	 * **pathological:** 43
+	 * **normal:** 9
+* **Level 1:**
+	 * **pathological:** 43
+	 * **normal:** 9
+* **Level 2:**
+	 * **pathological:** 43
+	 * **normal:** 9
+* **Level 3:**
+	 * **pathological:** 43
+	 * **normal:** 9
+### voiced
+* **Level 0:**
+	 * **unclassified:** 146
+	 * **normal:** 57
+	 * **pathological:** 5
+* **Level 1:**
+	 * **unclassified:** 146
+	 * **normal:** 57
+	 * **vocal_fold_pathology:** 5
+* **Level 2:**
+	 * **unclassified:** 146
+	 * **normal:** 57
+	 * **vocal_cord_paralysis:** 5
+* **Level 3:**
+	 * **unclassified:** 146
+	 * **normal:** 57
+	 * **hypokinetic_dysphonia_vocal_fold_paralysis:** 4
+	 * **hyperkinetic_dysphonia_vocal_fold_paralysis:** 1
+## Kim_2024
+### avfad
+* **Level 0:**
+	 * **normal:** 363
+	 * **unclassified:** 261
+	 * **pathological:** 85
+* **Level 1:**
+	 * **normal:** 363
+	 * **unclassified:** 261
+	 * **benign_mucosal_disease:** 85
+* **Level 2:**
+	 * **normal:** 363
+	 * **unclassified:** 261
+	 * **reinkes_edema:** 30
+	 * **nodules:** 28
+	 * **polyps:** 27
+* **Level 3:**
+	 * **normal:** 363
+	 * **unclassified:** 261
+	 * **reinkes_edema:** 30
+	 * **nodules:** 28
+	 * **polyps:** 27
+### meei
+* **Level 0:**
+	 * **unclassified:** 360
+	 * **normal:** 55
+	 * **pathological:** 291
+* **Level 1:**
+	 * **unclassified:** 360
+	 * **normal:** 55
+	 * **benign_mucosal_disease:** 44
+	 * **pathological:** 247
+* **Level 2:**
+	 * **unclassified:** 360
+	 * **normal:** 55
+	 * **nodules:** 23
+	 * **polyps:** 20
+	 * **pathological:** 247
+	 * **reinkes_edema:** 1
+* **Level 3:**
+	 * **unclassified:** 360
+	 * **normal:** 55
+	 * **nodules:** 23
+	 * **polyps:** 20
+	 * **pathological:** 247
+	 * **reinkes_edema:** 1
+### svd
+* **Level 0:**
+	 * **unclassified:** 1219
+	 * **pathological:** 136
+	 * **normal:** 687
+* **Level 1:**
+	 * **unclassified:** 1219
+	 * **benign_mucosal_disease:** 112
+	 * **pathological:** 24
+	 * **normal:** 687
+* **Level 2:**
+	 * **unclassified:** 1219
+	 * **reinkes_edema:** 68
+	 * **polyps:** 42
+	 * **laryngeal_cancer:** 24
+	 * **normal:** 687
+	 * **granuloma:** 2
+* **Level 3:**
+	 * **unclassified:** 1219
+	 * **reinkes_edema:** 68
+	 * **polyps:** 42
+	 * **epiglottic_carcinoma:** 1
+	 * **vocal_fold_carcinoma:** 22
+	 * **carcinoma_in_situ:** 1
+	 * **normal:** 687
+	 * **granuloma:** 2
+### torgo
+* **Level 0:**
+	 * **normal:** 15
+	 * **unclassified:** 15
+* **Level 1:**
+	 * **normal:** 15
+	 * **unclassified:** 15
+* **Level 2:**
+	 * **normal:** 15
+	 * **unclassified:** 15
+* **Level 3:**
+	 * **normal:** 15
+	 * **unclassified:** 15
+### uaspeech
+* **Level 0:**
+	 * **unclassified:** 17
+	 * **normal:** 13
+* **Level 1:**
+	 * **unclassified:** 17
+	 * **normal:** 13
+* **Level 2:**
+	 * **unclassified:** 17
+	 * **normal:** 13
+* **Level 3:**
+	 * **unclassified:** 17
+	 * **normal:** 13
+### uncommon_voice
+* **Level 0:**
+	 * **pathological:** 43
+	 * **normal:** 9
+* **Level 1:**
+	 * **pathological:** 43
+	 * **normal:** 9
+* **Level 2:**
+	 * **pathological:** 43
+	 * **normal:** 9
+* **Level 3:**
+	 * **pathological:** 43
+	 * **normal:** 9
+### voiced
+* **Level 0:**
+	 * **unclassified:** 146
+	 * **normal:** 57
+	 * **pathological:** 5
+* **Level 1:**
+	 * **unclassified:** 146
+	 * **normal:** 57
+	 * **pathological:** 5
+* **Level 2:**
+	 * **unclassified:** 146
+	 * **normal:** 57
+	 * **vocal_fold_paralysis:** 5
+* **Level 3:**
+	 * **unclassified:** 146
+	 * **normal:** 57
+	 * **hypokinetic_dysphonia_vocal_fold_paralysis:** 4
+	 * **hyperkinetic_dysphonia_vocal_fold_paralysis:** 1
+## Sztaho_2018
+### avfad
+* **Level 0:**
+	 * **normal:** 363
+	 * **unclassified:** 282
+	 * **pathological:** 64
+* **Level 1:**
+	 * **normal:** 363
+	 * **unclassified:** 282
+	 * **morphological_alteration:** 58
+	 * **pathological:** 6
+* **Level 2:**
+	 * **normal:** 363
+	 * **unclassified:** 282
+	 * **laryngeal_paralysis:** 30
+	 * **vocal_node:** 28
+	 * **parkinsons:** 3
+	 * **recurrent_paresis:** 3
+* **Level 3:**
+	 * **normal:** 363
+	 * **unclassified:** 282
+	 * **unilateral_recurrent_laryngeal_nerve_(rln)_paralysis:** 26
+	 * **bilateral_recurrent_laryngeal_nerve_(rln)_paralysis_peripheral:** 4
+	 * **vocal_node:** 28
+	 * **parkinsons:** 3
+	 * **unilateral_or_bilateral_recurrent_laryngeal_nerve_(rln)_paresis:** 3
+### meei
+* **Level 0:**
+	 * **pathological:** 341
+	 * **unclassified:** 310
+	 * **normal:** 55
+* **Level 1:**
+	 * **morphological_alteration:** 75
+	 * **unclassified:** 310
+	 * **pathological:** 266
+	 * **normal:** 55
+* **Level 2:**
+	 * **gastroesophageal_reflux_disease:** 47
+	 * **unclassified:** 310
+	 * **vocal_node:** 23
+	 * **recurrent_paresis:** 17
+	 * **parkinsons:** 2
+	 * **pathological:** 247
+	 * **cysts:** 5
+	 * **normal:** 55
+* **Level 3:**
+	 * **gastroesophageal_reflux_disease:** 47
+	 * **unclassified:** 310
+	 * **vocal_node:** 23
+	 * **recurrent_paresis:** 17
+	 * **parkinsons:** 2
+	 * **pathological:** 247
+	 * **cysts:** 5
+	 * **normal:** 55
+### svd
+* **Level 0:**
+	 * **unclassified:** 1093
+	 * **pathological:** 262
+	 * **normal:** 687
+* **Level 1:**
+	 * **unclassified:** 1093
+	 * **morphological_alteration:** 149
+	 * **pathological:** 113
+	 * **normal:** 687
+* **Level 2:**
+	 * **unclassified:** 1093
+	 * **laryngitis:** 140
+	 * **functional_dysphonia:** 112
+	 * **gastroesophageal_reflux_disease:** 3
+	 * **normal:** 687
+	 * **cysts:** 6
+	 * **parkinsons:** 1
+* **Level 3:**
+	 * **unclassified:** 1093
+	 * **laryngitis:** 140
+	 * **functional_dysphonia:** 112
+	 * **gastroesophageal_reflux_disease:** 3
+	 * **normal:** 687
+	 * **cysts:** 6
+	 * **parkinsons:** 1
+### torgo
+* **Level 0:**
+	 * **normal:** 15
+	 * **unclassified:** 15
+* **Level 1:**
+	 * **normal:** 15
+	 * **unclassified:** 15
+* **Level 2:**
+	 * **normal:** 15
+	 * **unclassified:** 15
+* **Level 3:**
+	 * **normal:** 15
+	 * **unclassified:** 15
+### uaspeech
+* **Level 0:**
+	 * **unclassified:** 17
+	 * **normal:** 13
+* **Level 1:**
+	 * **unclassified:** 17
+	 * **normal:** 13
+* **Level 2:**
+	 * **unclassified:** 17
+	 * **normal:** 13
+* **Level 3:**
+	 * **unclassified:** 17
+	 * **normal:** 13
+### uncommon_voice
+* **Level 0:**
+	 * **pathological:** 43
+	 * **normal:** 9
+* **Level 1:**
+	 * **pathological:** 43
+	 * **normal:** 9
+* **Level 2:**
+	 * **pathological:** 43
+	 * **normal:** 9
+* **Level 3:**
+	 * **pathological:** 43
+	 * **normal:** 9
+### voiced
+* **Level 0:**
+	 * **unclassified:** 146
+	 * **normal:** 57
+	 * **pathological:** 5
+* **Level 1:**
+	 * **unclassified:** 146
+	 * **normal:** 57
+	 * **morphological_alteration:** 5
+* **Level 2:**
+	 * **unclassified:** 146
+	 * **normal:** 57
+	 * **laryngeal_paralysis:** 5
+* **Level 3:**
+	 * **unclassified:** 146
+	 * **normal:** 57
+	 * **hypokinetic_dysphonia_vocal_fold_paralysis:** 4
+	 * **hyperkinetic_dysphonia_vocal_fold_paralysis:** 1
+## Tsui_2018
+### avfad
+* **Level 0:**
+	 * **normal:** 363
+	 * **unclassified:** 291
+	 * **pathological:** 55
+* **Level 1:**
+	 * **normal:** 363
+	 * **unclassified:** 291
+	 * **phonotrauma:** 55
+* **Level 2:**
+	 * **normal:** 363
+	 * **unclassified:** 291
+	 * **nodules:** 28
+	 * **polyps:** 27
+### meei
+* **Level 0:**
+	 * **unclassified:** 356
+	 * **normal:** 55
+	 * **pathological:** 295
+* **Level 1:**
+	 * **unclassified:** 356
+	 * **normal:** 55
+	 * **phonotrauma:** 48
+	 * **pathological:** 247
+* **Level 2:**
+	 * **unclassified:** 356
+	 * **normal:** 55
+	 * **nodules:** 23
+	 * **polyps:** 20
+	 * **cysts:** 5
+	 * **pathological:** 247
+### svd
+* **Level 0:**
+	 * **unclassified:** 1304
+	 * **pathological:** 51
+	 * **normal:** 687
+* **Level 1:**
+	 * **unclassified:** 1304
+	 * **phonotrauma:** 51
+	 * **normal:** 687
+* **Level 2:**
+	 * **unclassified:** 1304
+	 * **polyps:** 45
+	 * **cysts:** 6
+	 * **normal:** 687
+### torgo
+* **Level 0:**
+	 * **normal:** 15
+	 * **unclassified:** 15
+* **Level 1:**
+	 * **normal:** 15
+	 * **unclassified:** 15
+* **Level 2:**
+	 * **normal:** 15
+	 * **unclassified:** 15
+### uaspeech
+* **Level 0:**
+	 * **unclassified:** 17
+	 * **normal:** 13
+* **Level 1:**
+	 * **unclassified:** 17
+	 * **normal:** 13
+* **Level 2:**
+	 * **unclassified:** 17
+	 * **normal:** 13
+### uncommon_voice
+* **Level 0:**
+	 * **pathological:** 43
+	 * **normal:** 9
+* **Level 1:**
+	 * **pathological:** 43
+	 * **normal:** 9
+* **Level 2:**
+	 * **pathological:** 43
+	 * **normal:** 9
+### voiced
+* **Level 0:**
+	 * **unclassified:** 151
+	 * **normal:** 57
+* **Level 1:**
+	 * **unclassified:** 151
+	 * **normal:** 57
+* **Level 2:**
+	 * **unclassified:** 151
+	 * **normal:** 57
+## USVAC_2025
+### avfad
+* **Level 0:**
+	 * **normal:** 363
+	 * **pathological:** 240
+	 * **unclassified:** 106
+* **Level 1:**
+	 * **normal:** 363
+	 * **organic:** 222
+	 * **muscle_tension:** 17
+	 * **unclassified:** 106
+	 * **functional:** 1
+* **Level 2:**
+	 * **normal:** 363
+	 * **organic_structural:** 161
+	 * **organic_neuro_muscular:** 40
+	 * **organic_trauma:** 11
+	 * **organic_inflammatory:** 10
+	 * **muscle_tension:** 13
+	 * **muscle_tension_adaptive:** 4
+	 * **unclassified:** 106
+	 * **functional_puberphonia:** 1
+* **Level 3:**
+	 * **normal:** 363
+	 * **organic_structural_epithelial_propria:** 128
+	 * **organic_structural_vascular:** 22
+	 * **organic_structural_congenital:** 11
+	 * **organic_neuro_muscular_peripheral_nervous_disorder:** 33
+	 * **organic_neuro_muscular_central_nervous_disorder:** 4
+	 * **organic_neuro_muscular_movement_disorder:** 3
+	 * **organic_trauma_internal:** 11
+	 * **organic_inflammatory_non_infective:** 6
+	 * **organic_inflammatory_infective:** 4
+	 * **muscle_tension:** 13
+	 * **muscle_tension_adaptive:** 4
+	 * **unclassified:** 106
+	 * **functional_puberphonia:** 1
+* **Level 4:**
+	 * **normal:** 363
+	 * **reinkes_edema:** 30
+	 * **vocal_fold_nodules:** 28
+	 * **vocal_fold_polyp:** 27
+	 * **vocal_fold_cyst_sub_epithelial:** 23
+	 * **vocal_fold_scar:** 13
+	 * **leukoplakia:** 4
+	 * **vocal_fold_sulcus:** 2
+	 * **varix_and_ectasia_of_the_vocal_fold:** 13
+	 * **vocal_fold_hemorrhage:** 9
+	 * **presbyphonia:** 11
+	 * **unilateral_recurrent_laryngeal_nerve_rln_paralysis:** 26
+	 * **bilateral_recurrent_laryngeal_nerve_rln_paralysis_peripheral:** 4
+	 * **unilateral_or_bilateral_recurrent_laryngeal_nerve_rln_paresis:** 3
+	 * **amyotrophic_lateral_sclerosis:** 4
+	 * **parkinson_disease:** 3
+	 * **laryngeal_mucosa_trauma_chemical_and_thermal:** 11
+	 * **non_intubation_related_vocal_fold_granuloma:** 6
+	 * **acute_laryngitis:** 4
+	 * **muscle_tension:** 7
+	 * **ventricular_dysphonia:** 6
+	 * **muscle_tension_adaptive:** 4
+	 * **laryngopharyngeal_reflux:** 100
+	 * **major_depressive_disorder_recurrent:** 3
+	 * **voice_disorders_undiagnosed:** 3
+	 * **reactive_vocal_fold_lesion:** 1
+	 * **puberphonia:** 1
+### meei
+* **Level 0:**
+	 * **pathological:** 585
+	 * **unclassified:** 71
+	 * **normal:** 50
+* **Level 1:**
+	 * **muscle_tension:** 148
+	 * **organic:** 176
+	 * **functional:** 14
+	 * **pathological:** 247
+	 * **unclassified:** 71
+	 * **normal:** 50
+* **Level 2:**
+	 * **muscle_tension:** 148
+	 * **organic_structural:** 109
+	 * **organic_neuro_muscular:** 65
+	 * **functional_dysphonia:** 13
+	 * **functional_puberphonia:** 1
+	 * **pathological:** 247
+	 * **unclassified:** 71
+	 * **normal:** 50
+	 * **organic_inflammatory:** 2
+* **Level 3:**
+	 * **muscle_tension:** 148
+	 * **organic_structural_vascular:** 6
+	 * **organic_structural_epithelial_propria:** 84
+	 * **organic_neuro_muscular_movement_disorder:** 29
+	 * **functional_dysphonia:** 13
+	 * **organic_neuro_muscular_peripheral_nervous_disorder:** 35
+	 * **organic_structural_congenital:** 11
+	 * **organic_structural_structural_abnormality:** 7
+	 * **functional_puberphonia:** 1
+	 * **pathological:** 247
+	 * **unclassified:** 71
+	 * **normal:** 50
+	 * **organic_inflammatory_infective:** 1
+	 * **organic_neuro_muscular_central_nervous_disorder:** 1
+	 * **organic_inflammatory_non_infective:** 1
+	 * **organic_structural_malignancy:** 1
+* **Level 4:**
+	 * **hyperfunction:** 147
+	 * **chronic_hemmorage:** 1
+	 * **leukoplakia:** 20
+	 * **scarring:** 12
+	 * **hemorrhage:** 2
+	 * **vocal_fold_polyp:** 20
+	 * **adductor_spasmodic_dysphonia:** 16
+	 * **vocal_tremor:** 9
+	 * **conversion_dysphonia:** 12
+	 * **paresis:** 16
+	 * **mixed_adductor_abductor_spasmodic_dysphonia:** 1
+	 * **vocal_fold_nodules:** 18
+	 * **presbyphonia:** 11
+	 * **laryngeal_web:** 3
+	 * **puberphonia:** 1
+	 * **essential_tremor:** 1
+	 * **pathological:** 247
+	 * **paralysis:** 19
+	 * **polypoid_degeneration_reinkes:** 7
+	 * **vocal_fold_edema:** 2
+	 * **parkinson_disease:** 1
+	 * **unclassified:** 59
+	 * **vocal_fold_thickening:** 1
+	 * **immediate_post_surgery:** 1
+	 * **white_debris_patches:** 1
+	 * **left_hemilaryngectomy:** 1
+	 * **vocal_fold_sulcus:** 1
+	 * **idiopathic_dysphonia:** 2
+	 * **allergy_minor:** 2
+	 * **normal:** 50
+	 * **exudative_hyperkeratotic_lesions_of_epithelium:** 1
+	 * **varix:** 3
+	 * **subglottal_anterior_web:** 1
+	 * **laryngeal_tuberculosis:** 1
+	 * **episodic_functional_dysphonia:** 1
+	 * **ventricular_phonation:** 1
+	 * **multiple_sclerosis:** 1
+	 * **subglottis_stenosis:** 1
+	 * **abductor_spasmodic_dysphonia:** 1
+	 * **post_intubation_submucosal_edema_mild:** 1
+	 * **hemmoragic_reinkes_edema:** 1
+	 * **malignant_tumor:** 1
+	 * **cyst:** 1
+	 * **a_p_squeezing:** 1
+	 * **thick_mucous_and_mucous_stranding:** 1
+	 * **singing_voice:** 1
+	 * **granulation_tissue:** 1
+	 * **cold_minor:** 1
+	 * **flu_minor_days_ago:** 1
+	 * **post_surgery_cricoid_removal:** 1
+### svd
+* **Level 0:**
+	 * **pathological:** 989
+	 * **normal:** 687
+	 * **unclassified:** 366
+* **Level 1:**
+	 * **organic:** 616
+	 * **muscle_tension:** 182
+	 * **functional:** 191
+	 * **normal:** 687
+	 * **unclassified:** 366
+* **Level 2:**
+	 * **organic_neuro_muscular:** 305
+	 * **organic_structural:** 205
+	 * **organic_inflammatory:** 99
+	 * **muscle_tension:** 182
+	 * **organic_trauma:** 7
+	 * **functional_dysphonia:** 191
+	 * **normal:** 687
+	 * **unclassified:** 366
+* **Level 3:**
+	 * **organic_neuro_muscular_peripheral_nervous_disorder:** 208
+	 * **organic_structural_epithelial_propria:** 157
+	 * **organic_inflammatory_infective:** 99
+	 * **organic_neuro_muscular_movement_disorder:** 80
+	 * **organic_neuro_muscular_central_nervous_disorder:** 17
+	 * **organic_structural_malignancy:** 36
+	 * **organic_structural_structural_abnormality:** 12
+	 * **muscle_tension:** 182
+	 * **organic_trauma_internal:** 7
+	 * **functional_dysphonia:** 191
+	 * **normal:** 687
+	 * **unclassified:** 366
+* **Level 4:**
+	 * **recurrent_paralysis:** 204
+	 * **vocal_fold_polyp:** 44
+	 * **laryngitis:** 97
+	 * **reinkes_edema:** 64
+	 * **superior_laryngeal_nerve_lesion:** 3
+	 * **spasmodic_dysphonia:** 63
+	 * **hypofunctional_dysphonia:** 16
+	 * **central_laryngeal_movement_disorder:** 13
+	 * **bulbar_paralysis:** 2
+	 * **leukoplakia:** 41
+	 * **cyst:** 3
+	 * **phonation_nodules:** 4
+	 * **vocal_fold_carcinoma:** 22
+	 * **hypopharyngeal_tumor:** 6
+	 * **laryngeal_tumor:** 5
+	 * **aryluxation:** 4
+	 * **laryngocele:** 3
+	 * **granuloma:** 2
+	 * **epiglottic_carcinoma:** 1
+	 * **hyperfunctional_dysphonia:** 182
+	 * **carcinoma_in_situ:** 1
+	 * **intubation_granuloma:** 4
+	 * **intubation_trauma:** 3
+	 * **psychogenic_dysphonia:** 77
+	 * **fibroma:** 2
+	 * **functional_dysphonia:** 112
+	 * **normal:** 687
+	 * **dysphonia:** 79
+	 * **mutation:** 2
+	 * **frontolateral_partial_resection:** 33
+	 * **myasthenia:** 8
+	 * **parkinson_disease:** 1
+	 * **cordectomy:** 42
+	 * **pocket_fold_voice:** 10
+	 * **contact_pachyderma:** 32
+	 * **vox_senilis:** 24
+	 * **hypotonic_dysphonia:** 3
+	 * **diplophony:** 2
+	 * **monochorditis:** 2
+	 * **dysody:** 33
+	 * **gerd:** 2
+	 * **singing_voice:** 18
+	 * **balbuties:** 19
+	 * **amyotrophic_lateral_sclerosis:** 2
+	 * **dysarthrophonia:** 16
+	 * **rhinophony_aperta:** 17
+	 * **mutation_fistula_voice:** 9
+	 * **polters_syndrome:** 3
+	 * **sigmatism:** 2
+	 * **non_fluency_syndrome:** 2
+	 * **superior_laryngeal_nerve_neuralgia:** 1
+	 * **papilloma:** 1
+	 * **valleculacyste:** 1
+	 * **psychogenic_microphony:** 1
+	 * **psychogenic_aphonia:** 1
+	 * **downs_disease:** 1
+	 * **chondroma:** 1
+	 * **dish_syndrome:** 1
+	 * **juvenile_dysphonia:** 1
+	 * **rhinophony_mixta:** 1
+	 * **internal_weakness:** 1
+	 * **medial_cervical_cyst:** 1
+	 * **dysplastic_larynx:** 1
+	 * **orofacial_dyspraxia:** 1
+	 * **mesopharyngeal_tumor:** 1
+	 * **velopharyngoplasty:** 1
+### torgo
+* **Level 0:**
+	 * **normal:** 15
+	 * **unclassified:** 15
+* **Level 1:**
+	 * **normal:** 15
+	 * **unclassified:** 15
+* **Level 2:**
+	 * **normal:** 15
+	 * **unclassified:** 15
+* **Level 3:**
+	 * **normal:** 15
+	 * **unclassified:** 15
+* **Level 4:**
+	 * **without_dysarthria:** 15
+	 * **dysarthria:** 15
+### uaspeech
+* **Level 0:**
+	 * **unclassified:** 17
+	 * **normal:** 13
+* **Level 1:**
+	 * **unclassified:** 17
+	 * **normal:** 13
+* **Level 2:**
+	 * **unclassified:** 17
+	 * **normal:** 13
+* **Level 3:**
+	 * **unclassified:** 17
+	 * **normal:** 13
+* **Level 4:**
+	 * **spastic:** 13
+	 * **unclassified:** 2
+	 * **athetoid:** 2
+	 * **normal:** 13
+### uncommon_voice
+* **Level 0:**
+	 * **pathological:** 43
+	 * **normal:** 9
+* **Level 1:**
+	 * **pathological:** 43
+	 * **normal:** 9
+* **Level 2:**
+	 * **pathological:** 43
+	 * **normal:** 9
+* **Level 3:**
+	 * **pathological:** 43
+	 * **normal:** 9
+* **Level 4:**
+	 * **pathological:** 43
+	 * **normal:** 9
+### voiced
+* **Level 0:**
+	 * **pathological:** 136
+	 * **normal:** 57
+	 * **unclassified:** 15
+* **Level 1:**
+	 * **organic:** 78
+	 * **muscle_tension:** 57
+	 * **normal:** 57
+	 * **unclassified:** 15
+	 * **functional:** 1
+* **Level 2:**
+	 * **organic_inflammatory:** 38
+	 * **organic_neuro_muscular:** 29
+	 * **organic_structural:** 11
+	 * **muscle_tension:** 55
+	 * **normal:** 57
+	 * **unclassified:** 15
+	 * **muscle_tension_adaptive:** 2
+	 * **functional_dysphonia:** 1
+* **Level 3:**
+	 * **organic_inflammatory_non_infective:** 38
+	 * **organic_neuro_muscular_movement_disorder:** 24
+	 * **organic_neuro_muscular_central_nervous_disorder:** 5
+	 * **organic_structural_structural_abnormality:** 7
+	 * **organic_structural_epithelial_propria:** 3
+	 * **muscle_tension:** 55
+	 * **normal:** 57
+	 * **unclassified:** 15
+	 * **organic_structural_congenital:** 1
+	 * **muscle_tension_adaptive:** 2
+	 * **functional_dysphonia:** 1
+* **Level 4:**
+	 * **reflux_laryngitis:** 38
+	 * **hypokinetic_dysphonia:** 22
+	 * **hypokinetic_dysphonia_vocal_fold_paralysis:** 4
+	 * **hypokinetic_dysphonia_glottic_insufficiency:** 7
+	 * **hyperkinetic_dysphonia_reinkes_edema:** 3
+	 * **hyperkinetic_dysphonia:** 43
+	 * **hyperkinetic_dysphonia_polyps:** 6
+	 * **hyperkinetic_dysphonia_nodule:** 5
+	 * **normal:** 57
+	 * **hyperkinetic_dysphonia_prolapse:** 9
+	 * **hypokinetic_dysphonia_spasmodic_dysphonia:** 1
+	 * **hypokinetic_dysphonia_adduction_deficit:** 1
+	 * **hyperkinetic_dysphonia_vocal_fold_paralysis:** 1
+	 * **hypokinetic_dysphonia_presbiphonia:** 1
+	 * **hyperkinetic_dysphonia_vocal_fold_nodules:** 1
+	 * **hyperkinetic_dysphonia_adduction_deficit:** 1
+	 * **hyperkinetic_dysphonia_rigid_vocal_fold:** 1
+	 * **hypokinetic_dysphonia_conversion_dysphonia:** 1
+	 * **hypokinetic_dysphonia_laryngitis:** 1
+	 * **hypokinetic_dysphonia_bilateral_vocal_fold:** 1
+	 * **hypokinetic_dysphonia_dysphonia_by_chordal_groove:** 1
+	 * **hyperkinetic_dysphonia_cordite:** 1
+	 * **hyperkinetic_dysphonia_vocal_fold_prolapse:** 1
+	 * **hypokinetic_dysphonia_extraglottic_air_leak:** 1
+## Zaim_2023
+### avfad
+* **Level 0:**
+	 * **normal:** 363
+	 * **unclassified:** 181
+	 * **pathological:** 165
+* **Level 1:**
+	 * **normal:** 363
+	 * **unclassified:** 181
+	 * **structural_dysphonia:** 157
+	 * **non_structural_dysphonia:** 8
+* **Level 2:**
+	 * **normal:** 363
+	 * **unclassified:** 181
+	 * **laryngopharyngeal_reflux:** 100
+	 * **vocal_fold_nodule:** 28
+	 * **vocal_fold_polyp:** 27
+	 * **sulcus_vocalis:** 2
+	 * **primary_muscle_tension_dysphonia:** 7
+	 * **puberphonia:** 1
+### meei
+* **Level 0:**
+	 * **unclassified:** 314
+	 * **pathological:** 337
+	 * **normal:** 55
+* **Level 1:**
+	 * **unclassified:** 314
+	 * **structural_dysphonia:** 88
+	 * **normal:** 55
+	 * **non_structural_dysphonia:** 2
+	 * **pathological:** 247
+* **Level 2:**
+	 * **unclassified:** 314
+	 * **vocal_fold_edema:** 40
+	 * **normal:** 55
+	 * **vocal_fold_nodule:** 18
+	 * **vocal_fold_polyp:** 20
+	 * **sulcus_vocalis:** 3
+	 * **vocal_fold_cyst:** 5
+	 * **voice_tremor:** 1
+	 * **puberphonia:** 1
+	 * **tuberculosis_laryngitis:** 1
+	 * **pathological:** 247
+	 * **benign_lesion:** 1
+### svd
+* **Level 0:**
+	 * **unclassified:** 1013
+	 * **pathological:** 342
+	 * **normal:** 687
+* **Level 1:**
+	 * **unclassified:** 1013
+	 * **non_structural_dysphonia:** 153
+	 * **structural_dysphonia:** 189
+	 * **normal:** 687
+* **Level 2:**
+	 * **unclassified:** 1013
+	 * **psychogenic_dysphonia:** 89
+	 * **laryngitis:** 140
+	 * **vocal_fold_polyp:** 43
+	 * **spasmodic_dysphonia:** 64
+	 * **vocal_fold_cyst:** 6
+	 * **normal:** 687
+### torgo
+* **Level 0:**
+	 * **normal:** 15
+	 * **unclassified:** 15
+* **Level 1:**
+	 * **normal:** 15
+	 * **unclassified:** 15
+* **Level 2:**
+	 * **normal:** 15
+	 * **unclassified:** 15
+### uaspeech
+* **Level 0:**
+	 * **unclassified:** 17
+	 * **normal:** 13
+* **Level 1:**
+	 * **unclassified:** 17
+	 * **normal:** 13
+* **Level 2:**
+	 * **unclassified:** 17
+	 * **normal:** 13
+### uncommon_voice
+* **Level 0:**
+	 * **pathological:** 43
+	 * **normal:** 9
+* **Level 1:**
+	 * **pathological:** 43
+	 * **normal:** 9
+* **Level 2:**
+	 * **pathological:** 43
+	 * **normal:** 9
+### voiced
+* **Level 0:**
+	 * **unclassified:** 151
+	 * **normal:** 57
+* **Level 1:**
+	 * **unclassified:** 151
+	 * **normal:** 57
+* **Level 2:**
+	 * **unclassified:** 151
+	 * **normal:** 57

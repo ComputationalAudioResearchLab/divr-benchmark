@@ -34,7 +34,12 @@ class AVFAD(Base):
             speaker_id = row["File ID"]
             age = int(row["Age"])
             gender = Gender.format(row["Sex"].strip())
-            diagnosis = diagnosis_map.get(row["CMVD-I Dimension 1 (word system)"])
+            diag_term = row["CMVD-I Dimension 1 (word system)"]
+            diagnosis = (
+                diagnosis_map[diag_term]
+                if diag_term in diagnosis_map
+                else diagnosis_map.unclassified
+            )
             if allow_incomplete_classification or not diagnosis.incompletely_classified:
                 file_paths = [
                     path

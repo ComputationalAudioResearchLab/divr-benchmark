@@ -7,6 +7,7 @@ from .download import Download
 from .prepare_dataset import PrepareDataset
 from .logger import Logger
 from .task_generator import VERSIONS, collect_diagnosis_terms, generate_tasks
+from .data_counter import data_counter
 
 
 class Main(ClassArgParser):
@@ -57,6 +58,15 @@ class Main(ClassArgParser):
 
     async def collect_diagnosis_terms(self, version: VERSIONS, data_store_path: Path):
         await collect_diagnosis_terms(version=version, source_path=data_store_path)
+
+    async def count_per_db_and_diag_map(
+        self, version: VERSIONS, data_store_path: Path, output_path: Path
+    ):
+        await data_counter(
+            version=version,
+            data_store_path=data_store_path,
+            output_path=output_path,
+        )
 
 
 if __name__ == "__main__":

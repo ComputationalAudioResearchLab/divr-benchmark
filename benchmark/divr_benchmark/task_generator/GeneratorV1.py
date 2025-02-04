@@ -40,6 +40,17 @@ class GeneratorV1(Generator):
         del terms[""]
         return terms
 
+    async def count_for_diag_map(
+        self, db_name: str, source_path: Path, diag_map: DiagnosisMap
+    ) -> Database:
+        db = self.__db_map[db_name](source_path=source_path)
+        await db.init(
+            diagnosis_map=diag_map,
+            allow_incomplete_classification=True,
+            min_tasks=None,
+        )
+        return db
+
     async def generate_task(
         self,
         source_path: Path,

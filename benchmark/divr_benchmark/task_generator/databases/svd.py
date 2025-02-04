@@ -74,7 +74,7 @@ class SVD(Base):
         classification = session["classification"]
         pathologies = session["pathologies"]
         files = session["files"]
-        diagnosis = pathologies if pathologies != "" else classification
+        input_diagnosis = pathologies if pathologies != "" else classification
         files = []
         for file in session["files"]:
             path = Path(
@@ -84,7 +84,13 @@ class SVD(Base):
                 files += [ProcessedFile(path=path)]
         if len(files) == 0:
             return None
-        diagnosis = [diagnosis_map.get(x.strip().lower()) for x in diagnosis.split(",")]
+        diagnosis = []
+        for x in input_diagnosis.split(","):
+            x = x.strip().lower()
+            if x in diagnosis_map:
+                diagnosis += [diagnosis_map[x]]
+            else:
+                diagnosis += [diagnosis_map.unclassified]
         session = ProcessedSession(
             id=f"svd_{speaker_id}_{session_id}",
             speaker_id=speaker_id,

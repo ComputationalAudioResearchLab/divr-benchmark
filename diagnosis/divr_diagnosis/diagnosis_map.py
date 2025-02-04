@@ -63,6 +63,14 @@ class DiagnosisMap:
         return tree
 
     @property
+    def name(self) -> str:
+        return self.__class__.__name__
+
+    @property
+    def unclassified(self) -> Diagnosis:
+        return self.__index["unclassified"]
+
+    @property
     def max_diag_level(self) -> int:
         return self.__max_level
 
