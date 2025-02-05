@@ -1,18 +1,3 @@
-unclassified:
-  male:
-    total: 74
-    age_stats:
-      mean: 56.91891891891892
-      std: 11.505515957374124
-      min: 31
-      max: 76
-  female:
-    total: 102
-    age_stats:
-      mean: 46.80392156862745
-      std: 13.369863566834473
-      min: 20
-      max: 78
 psychogenic_dysphonia:
   male:
     total: 3

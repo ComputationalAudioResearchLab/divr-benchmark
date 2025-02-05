@@ -1,18 +1,3 @@
-unclassified:
-  male:
-    total: 274
-    age_stats:
-      mean: 49.605839416058394
-      std: 17.67652264886404
-      min: 6
-      max: 89
-  female:
-    total: 323
-    age_stats:
-      mean: 47.92879256965944
-      std: 17.605702265581243
-      min: 9
-      max: 94
 laryngitis:
   female:
     total: 42

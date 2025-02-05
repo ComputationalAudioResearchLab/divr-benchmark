@@ -6975,13 +6975,6 @@ svd_1093_1860_0:
   label: normal
   audio_keys:
   - svd/healthy/female/1093/1860/1860-phrase.wav
-svd_1594_1197_0:
-  speaker_id: '1594'
-  age: 69
-  gender: male
-  label: unclassified
-  audio_keys:
-  - svd/pathological/male/1594/1197/1197-phrase.wav
 svd_2608_2474_0:
   speaker_id: '2608'
   age: 61
@@ -7003,27 +6996,6 @@ svd_1768_1487_0:
   label: cordectomy
   audio_keys:
   - svd/pathological/male/1768/1487/1487-phrase.wav
-svd_2128_1905_0:
-  speaker_id: '2128'
-  age: 36
-  gender: female
-  label: unclassified
-  audio_keys:
-  - svd/pathological/female/2128/1905/1905-phrase.wav
-svd_1399_672_0:
-  speaker_id: '1399'
-  age: 27
-  gender: male
-  label: unclassified
-  audio_keys:
-  - svd/pathological/male/1399/672/672-phrase.wav
-svd_2342_2145_0:
-  speaker_id: '2342'
-  age: 39
-  gender: male
-  label: unclassified
-  audio_keys:
-  - svd/pathological/male/2342/2145/2145-phrase.wav
 svd_2313_2124_0:
   speaker_id: '2313'
   age: 64
@@ -7031,73 +7003,6 @@ svd_2313_2124_0:
   label: hyperfunctional_dysphonia
   audio_keys:
   - svd/pathological/female/2313/2124/2124-phrase.wav
-svd_1726_1378_0:
-  speaker_id: '1726'
-  age: 22
-  gender: female
-  label: unclassified
-  audio_keys:
-  - svd/pathological/female/1726/1378/1378-phrase.wav
-svd_1432_907_0:
-  speaker_id: '1432'
-  age: 69
-  gender: male
-  label: unclassified
-  audio_keys:
-  - svd/pathological/male/1432/907/907-phrase.wav
-svd_1600_1203_0:
-  speaker_id: '1600'
-  age: 61
-  gender: female
-  label: unclassified
-  audio_keys:
-  - svd/pathological/female/1600/1203/1203-phrase.wav
-svd_1597_1201_0:
-  speaker_id: '1597'
-  age: 35
-  gender: female
-  label: unclassified
-  audio_keys:
-  - svd/pathological/female/1597/1201/1201-phrase.wav
-  - svd/pathological/female/1597/1894/1894-phrase.wav
-svd_1857_1550_0:
-  speaker_id: '1857'
-  age: 26
-  gender: male
-  label: unclassified
-  audio_keys:
-  - svd/pathological/male/1857/1550/1550-phrase.wav
-svd_1682_1297_0:
-  speaker_id: '1682'
-  age: 35
-  gender: male
-  label: unclassified
-  audio_keys:
-  - svd/pathological/male/1682/1297/1297-phrase.wav
-svd_1662_1275_0:
-  speaker_id: '1662'
-  age: 28
-  gender: female
-  label: unclassified
-  audio_keys:
-  - svd/pathological/female/1662/1275/1275-phrase.wav
-svd_1868_2383_0:
-  speaker_id: '1868'
-  age: 52
-  gender: male
-  label: unclassified
-  audio_keys:
-  - svd/pathological/male/1868/2383/2383-phrase.wav
-  - svd/pathological/male/1868/1949/1949-phrase.wav
-  - svd/pathological/male/1868/1561/1561-phrase.wav
-  - svd/pathological/male/1868/1634/1634-phrase.wav
-svd_1347_360_0:
-  speaker_id: '1347'
-  age: 75
-  gender: female
-  label: unclassified
-  audio_keys:
-  - svd/pathological/female/1347/360/360-phrase.wav
 svd_2304_2114_0:
   speaker_id: '2304'
   age: 38
@@ -7105,13 +7010,6 @@ svd_2304_2114_0:
   label: hyperfunctional_dysphonia
   audio_keys:
   - svd/pathological/female/2304/2114/2114-phrase.wav
-svd_1915_1615_0:
-  speaker_id: '1915'
-  age: 39
-  gender: male
-  label: unclassified
-  audio_keys:
-  - svd/pathological/male/1915/1615/1615-phrase.wav
 svd_1522_930_0:
   speaker_id: '1522'
   age: 22
@@ -7119,20 +7017,6 @@ svd_1522_930_0:
   label: laryngitis
   audio_keys:
   - svd/pathological/male/1522/930/930-phrase.wav
-svd_1901_1600_0:
-  speaker_id: '1901'
-  age: 23
-  gender: female
-  label: unclassified
-  audio_keys:
-  - svd/pathological/female/1901/1600/1600-phrase.wav
-svd_2240_2032_0:
-  speaker_id: '2240'
-  age: 60
-  gender: male
-  label: unclassified
-  audio_keys:
-  - svd/pathological/male/2240/2032/2032-phrase.wav
 svd_1411_1084_0:
   speaker_id: '1411'
   age: 49
@@ -7141,20 +7025,6 @@ svd_1411_1084_0:
   audio_keys:
   - svd/pathological/male/1411/1084/1084-phrase.wav
   - svd/pathological/male/1411/719/719-phrase.wav
-svd_2488_2354_0:
-  speaker_id: '2488'
-  age: 40
-  gender: female
-  label: unclassified
-  audio_keys:
-  - svd/pathological/female/2488/2354/2354-phrase.wav
-svd_1486_892_0:
-  speaker_id: '1486'
-  age: 23
-  gender: male
-  label: unclassified
-  audio_keys:
-  - svd/pathological/male/1486/892/892-phrase.wav
 svd_1402_692_0:
   speaker_id: '1402'
   age: 29
@@ -7162,49 +7032,6 @@ svd_1402_692_0:
   label: hyperfunctional_dysphonia
   audio_keys:
   - svd/pathological/female/1402/692/692-phrase.wav
-svd_2057_1793_0:
-  speaker_id: '2057'
-  age: 35
-  gender: male
-  label: unclassified
-  audio_keys:
-  - svd/pathological/male/2057/1793/1793-phrase.wav
-svd_2062_1799_0:
-  speaker_id: '2062'
-  age: 68
-  gender: female
-  label: unclassified
-  audio_keys:
-  - svd/pathological/female/2062/1799/1799-phrase.wav
-svd_2520_2386_0:
-  speaker_id: '2520'
-  age: 67
-  gender: male
-  label: unclassified
-  audio_keys:
-  - svd/pathological/male/2520/2386/2386-phrase.wav
-svd_1387_612_0:
-  speaker_id: '1387'
-  age: 76
-  gender: female
-  label: unclassified
-  audio_keys:
-  - svd/pathological/female/1387/612/612-phrase.wav
-svd_1513_1199_0:
-  speaker_id: '1513'
-  age: 41
-  gender: male
-  label: unclassified
-  audio_keys:
-  - svd/pathological/male/1513/1199/1199-phrase.wav
-  - svd/pathological/male/1513/921/921-phrase.wav
-svd_1608_1220_0:
-  speaker_id: '1608'
-  age: 76
-  gender: male
-  label: unclassified
-  audio_keys:
-  - svd/pathological/male/1608/1220/1220-phrase.wav
 svd_2424_2290_0:
   speaker_id: '2424'
   age: 47
@@ -7212,42 +7039,6 @@ svd_2424_2290_0:
   label: functional_dysphonia
   audio_keys:
   - svd/pathological/female/2424/2290/2290-phrase.wav
-svd_2285_2094_0:
-  speaker_id: '2285'
-  age: 29
-  gender: female
-  label: unclassified
-  audio_keys:
-  - svd/pathological/female/2285/2094/2094-phrase.wav
-svd_2340_2143_0:
-  speaker_id: '2340'
-  age: 38
-  gender: female
-  label: unclassified
-  audio_keys:
-  - svd/pathological/female/2340/2143/2143-phrase.wav
-svd_1598_1202_0:
-  speaker_id: '1598'
-  age: 28
-  gender: male
-  label: unclassified
-  audio_keys:
-  - svd/pathological/male/1598/1202/1202-phrase.wav
-svd_1683_1556_0:
-  speaker_id: '1683'
-  age: 34
-  gender: male
-  label: unclassified
-  audio_keys:
-  - svd/pathological/male/1683/1556/1556-phrase.wav
-  - svd/pathological/male/1683/1411/1411-phrase.wav
-svd_2643_2509_0:
-  speaker_id: '2643'
-  age: 63
-  gender: female
-  label: unclassified
-  audio_keys:
-  - svd/pathological/female/2643/2509/2509-phrase.wav
 svd_2461_2327_0:
   speaker_id: '2461'
   age: 60
@@ -7255,13 +7046,6 @@ svd_2461_2327_0:
   label: functional_dysphonia
   audio_keys:
   - svd/pathological/male/2461/2327/2327-phrase.wav
-svd_1428_816_0:
-  speaker_id: '1428'
-  age: 70
-  gender: female
-  label: unclassified
-  audio_keys:
-  - svd/pathological/female/1428/816/816-phrase.wav
 svd_2534_2400_0:
   speaker_id: '2534'
   age: 65
@@ -7276,34 +7060,6 @@ svd_1826_1478_0:
   label: recurrent_paralysis
   audio_keys:
   - svd/pathological/male/1826/1478/1478-phrase.wav
-svd_2045_1781_0:
-  speaker_id: '2045'
-  age: 46
-  gender: female
-  label: unclassified
-  audio_keys:
-  - svd/pathological/female/2045/1781/1781-phrase.wav
-svd_1848_1501_0:
-  speaker_id: '1848'
-  age: 21
-  gender: female
-  label: unclassified
-  audio_keys:
-  - svd/pathological/female/1848/1501/1501-phrase.wav
-svd_1986_1687_0:
-  speaker_id: '1986'
-  age: 43
-  gender: male
-  label: unclassified
-  audio_keys:
-  - svd/pathological/male/1986/1687/1687-phrase.wav
-svd_2688_2554_0:
-  speaker_id: '2688'
-  age: 23
-  gender: male
-  label: unclassified
-  audio_keys:
-  - svd/pathological/male/2688/2554/2554-phrase.wav
 svd_1734_1386_0:
   speaker_id: '1734'
   age: 68
@@ -7311,13 +7067,6 @@ svd_1734_1386_0:
   label: vocal_fold_polyp
   audio_keys:
   - svd/pathological/male/1734/1386/1386-phrase.wav
-svd_2171_1962_0:
-  speaker_id: '2171'
-  age: 30
-  gender: male
-  label: unclassified
-  audio_keys:
-  - svd/pathological/male/2171/1962/1962-phrase.wav
 svd_1430_818_0:
   speaker_id: '1430'
   age: 72
@@ -7325,63 +7074,6 @@ svd_1430_818_0:
   label: laryngitis
   audio_keys:
   - svd/pathological/male/1430/818/818-phrase.wav
-svd_1581_1467_0:
-  speaker_id: '1581'
-  age: 55
-  gender: female
-  label: unclassified
-  audio_keys:
-  - svd/pathological/female/1581/1467/1467-phrase.wav
-svd_2456_2322_0:
-  speaker_id: '2456'
-  age: 45
-  gender: female
-  label: unclassified
-  audio_keys:
-  - svd/pathological/female/2456/2322/2322-phrase.wav
-  - svd/pathological/female/2456/2371/2371-phrase.wav
-svd_1334_154_0:
-  speaker_id: '1334'
-  age: 20
-  gender: female
-  label: unclassified
-  audio_keys:
-  - svd/pathological/female/1334/154/154-phrase.wav
-svd_2649_2515_0:
-  speaker_id: '2649'
-  age: 75
-  gender: female
-  label: unclassified
-  audio_keys:
-  - svd/pathological/female/2649/2515/2515-phrase.wav
-svd_2423_2289_0:
-  speaker_id: '2423'
-  age: 47
-  gender: male
-  label: unclassified
-  audio_keys:
-  - svd/pathological/male/2423/2289/2289-phrase.wav
-svd_1769_1417_0:
-  speaker_id: '1769'
-  age: 27
-  gender: male
-  label: unclassified
-  audio_keys:
-  - svd/pathological/male/1769/1417/1417-phrase.wav
-svd_2010_2334_0:
-  speaker_id: '2010'
-  age: 65
-  gender: male
-  label: unclassified
-  audio_keys:
-  - svd/pathological/male/2010/2334/2334-phrase.wav
-svd_1674_1286_0:
-  speaker_id: '1674'
-  age: 61
-  gender: female
-  label: unclassified
-  audio_keys:
-  - svd/pathological/female/1674/1286/1286-phrase.wav
 svd_2067_1802_0:
   speaker_id: '2067'
   age: 57
@@ -7389,13 +7081,6 @@ svd_2067_1802_0:
   label: hyperfunctional_dysphonia
   audio_keys:
   - svd/pathological/female/2067/1802/1802-phrase.wav
-svd_2524_2390_0:
-  speaker_id: '2524'
-  age: 72
-  gender: male
-  label: unclassified
-  audio_keys:
-  - svd/pathological/male/2524/2390/2390-phrase.wav
 svd_1694_1309_0:
   speaker_id: '1694'
   age: 42
@@ -7403,13 +7088,6 @@ svd_1694_1309_0:
   label: functional_dysphonia
   audio_keys:
   - svd/pathological/female/1694/1309/1309-phrase.wav
-svd_2469_2335_0:
-  speaker_id: '2469'
-  age: 24
-  gender: female
-  label: unclassified
-  audio_keys:
-  - svd/pathological/female/2469/2335/2335-phrase.wav
 svd_1936_1636_0:
   speaker_id: '1936'
   age: 73
@@ -7417,13 +7095,6 @@ svd_1936_1636_0:
   label: dysphonia
   audio_keys:
   - svd/pathological/female/1936/1636/1636-phrase.wav
-svd_1834_1488_0:
-  speaker_id: '1834'
-  age: 47
-  gender: male
-  label: unclassified
-  audio_keys:
-  - svd/pathological/male/1834/1488/1488-phrase.wav
 svd_2278_2089_0:
   speaker_id: '2278'
   age: 63
@@ -7431,13 +7102,6 @@ svd_2278_2089_0:
   label: reinkes_edema
   audio_keys:
   - svd/pathological/male/2278/2089/2089-phrase.wav
-svd_2384_2223_0:
-  speaker_id: '2384'
-  age: 60
-  gender: female
-  label: unclassified
-  audio_keys:
-  - svd/pathological/female/2384/2223/2223-phrase.wav
 svd_2111_1887_0:
   speaker_id: '2111'
   age: 31
@@ -7459,13 +7123,6 @@ svd_2080_1813_0:
   label: hyperfunctional_dysphonia
   audio_keys:
   - svd/pathological/female/2080/1813/1813-phrase.wav
-svd_1534_1038_0:
-  speaker_id: '1534'
-  age: 43
-  gender: female
-  label: unclassified
-  audio_keys:
-  - svd/pathological/female/1534/1038/1038-phrase.wav
 svd_2299_2110_0:
   speaker_id: '2299'
   age: 77
@@ -7473,20 +7130,6 @@ svd_2299_2110_0:
   label: laryngitis
   audio_keys:
   - svd/pathological/female/2299/2110/2110-phrase.wav
-svd_939_1491_0:
-  speaker_id: '939'
-  age: 20
-  gender: female
-  label: unclassified
-  audio_keys:
-  - svd/pathological/female/939/1491/1491-phrase.wav
-svd_2318_2129_0:
-  speaker_id: '2318'
-  age: 45
-  gender: male
-  label: unclassified
-  audio_keys:
-  - svd/pathological/male/2318/2129/2129-phrase.wav
 svd_1586_1193_0:
   speaker_id: '1586'
   age: 63
@@ -7494,76 +7137,6 @@ svd_1586_1193_0:
   label: functional_dysphonia
   audio_keys:
   - svd/pathological/female/1586/1193/1193-phrase.wav
-svd_2604_2470_0:
-  speaker_id: '2604'
-  age: 28
-  gender: male
-  label: unclassified
-  audio_keys:
-  - svd/pathological/male/2604/2470/2470-phrase.wav
-svd_1395_668_0:
-  speaker_id: '1395'
-  age: 36
-  gender: female
-  label: unclassified
-  audio_keys:
-  - svd/pathological/female/1395/668/668-phrase.wav
-svd_2429_2295_0:
-  speaker_id: '2429'
-  age: 66
-  gender: male
-  label: unclassified
-  audio_keys:
-  - svd/pathological/male/2429/2295/2295-phrase.wav
-svd_1656_1268_0:
-  speaker_id: '1656'
-  age: 83
-  gender: male
-  label: unclassified
-  audio_keys:
-  - svd/pathological/male/1656/1268/1268-phrase.wav
-svd_2319_2130_0:
-  speaker_id: '2319'
-  age: 52
-  gender: female
-  label: unclassified
-  audio_keys:
-  - svd/pathological/female/2319/2130/2130-phrase.wav
-svd_1795_1445_0:
-  speaker_id: '1795'
-  age: 14
-  gender: male
-  label: unclassified
-  audio_keys:
-  - svd/pathological/male/1795/1445/1445-phrase.wav
-svd_2036_1772_0:
-  speaker_id: '2036'
-  age: 77
-  gender: female
-  label: unclassified
-  audio_keys:
-  - svd/pathological/female/2036/1772/1772-phrase.wav
-svd_1406_714_0:
-  speaker_id: '1406'
-  age: 71
-  gender: male
-  label: unclassified
-  audio_keys:
-  - svd/pathological/male/1406/714/714-phrase.wav
-svd_2023_1759_0:
-  speaker_id: '2023'
-  age: 28
-  gender: female
-  label: unclassified
-  audio_keys:
-  - svd/pathological/female/2023/1759/1759-phrase.wav
-svd_2684_2550_0:
-  speaker_id: '2684'
-  age: 64
-  gender: female
-  label: unclassified
-  audio_keys:
-  - svd/pathological/female/2684/2550/2550-phrase.wav
 svd_1940_1640_0:
   speaker_id: '1940'
   age: 36
@@ -7571,34 +7144,6 @@ svd_1940_1640_0:
   label: functional_dysphonia
   audio_keys:
   - svd/pathological/female/1940/1640/1640-phrase.wav
-svd_2686_2552_0:
-  speaker_id: '2686'
-  age: 23
-  gender: male
-  label: unclassified
-  audio_keys:
-  - svd/pathological/male/2686/2552/2552-phrase.wav
-svd_2620_2486_0:
-  speaker_id: '2620'
-  age: 50
-  gender: female
-  label: unclassified
-  audio_keys:
-  - svd/pathological/female/2620/2486/2486-phrase.wav
-svd_1337_349_0:
-  speaker_id: '1337'
-  age: 16
-  gender: male
-  label: unclassified
-  audio_keys:
-  - svd/pathological/male/1337/349/349-phrase.wav
-svd_2499_2364_0:
-  speaker_id: '2499'
-  age: 19
-  gender: female
-  label: unclassified
-  audio_keys:
-  - svd/pathological/female/2499/2364/2364-phrase.wav
 svd_2129_1906_0:
   speaker_id: '2129'
   age: 45
@@ -7613,62 +7158,6 @@ svd_2234_2025_0:
   label: psychogenic_dysphonia
   audio_keys:
   - svd/pathological/female/2234/2025/2025-phrase.wav
-svd_2463_2329_0:
-  speaker_id: '2463'
-  age: 75
-  gender: male
-  label: unclassified
-  audio_keys:
-  - svd/pathological/male/2463/2329/2329-phrase.wav
-svd_1977_1678_0:
-  speaker_id: '1977'
-  age: 37
-  gender: female
-  label: unclassified
-  audio_keys:
-  - svd/pathological/female/1977/1678/1678-phrase.wav
-svd_2159_1948_0:
-  speaker_id: '2159'
-  age: 55
-  gender: male
-  label: unclassified
-  audio_keys:
-  - svd/pathological/male/2159/1948/1948-phrase.wav
-svd_1438_826_0:
-  speaker_id: '1438'
-  age: 78
-  gender: female
-  label: unclassified
-  audio_keys:
-  - svd/pathological/female/1438/826/826-phrase.wav
-svd_1497_1243_0:
-  speaker_id: '1497'
-  age: 62
-  gender: male
-  label: unclassified
-  audio_keys:
-  - svd/pathological/male/1497/1243/1243-phrase.wav
-svd_2346_2149_0:
-  speaker_id: '2346'
-  age: 28
-  gender: male
-  label: unclassified
-  audio_keys:
-  - svd/pathological/male/2346/2149/2149-phrase.wav
-svd_1531_939_0:
-  speaker_id: '1531'
-  age: 39
-  gender: male
-  label: unclassified
-  audio_keys:
-  - svd/pathological/male/1531/939/939-phrase.wav
-svd_2244_2055_0:
-  speaker_id: '2244'
-  age: 81
-  gender: male
-  label: unclassified
-  audio_keys:
-  - svd/pathological/male/2244/2055/2055-phrase.wav
 svd_1790_1443_0:
   speaker_id: '1790'
   age: 53
@@ -7676,13 +7165,6 @@ svd_1790_1443_0:
   label: hyperfunctional_dysphonia
   audio_keys:
   - svd/pathological/female/1790/1443/1443-phrase.wav
-svd_2555_2421_0:
-  speaker_id: '2555'
-  age: 87
-  gender: female
-  label: unclassified
-  audio_keys:
-  - svd/pathological/female/2555/2421/2421-phrase.wav
 svd_2361_2184_0:
   speaker_id: '2361'
   age: 18
@@ -7690,20 +7172,6 @@ svd_2361_2184_0:
   label: hyperfunctional_dysphonia
   audio_keys:
   - svd/pathological/female/2361/2184/2184-phrase.wav
-svd_2119_1896_0:
-  speaker_id: '2119'
-  age: 46
-  gender: female
-  label: unclassified
-  audio_keys:
-  - svd/pathological/female/2119/1896/1896-phrase.wav
-svd_1327_149_0:
-  speaker_id: '1327'
-  age: 22
-  gender: female
-  label: unclassified
-  audio_keys:
-  - svd/pathological/female/1327/149/149-phrase.wav
 svd_1998_1720_0:
   speaker_id: '1998'
   age: 48
@@ -7718,41 +7186,6 @@ svd_2212_2003_0:
   label: laryngitis
   audio_keys:
   - svd/pathological/male/2212/2003/2003-phrase.wav
-svd_1949_1650_0:
-  speaker_id: '1949'
-  age: 19
-  gender: male
-  label: unclassified
-  audio_keys:
-  - svd/pathological/male/1949/1650/1650-phrase.wav
-svd_2180_1971_0:
-  speaker_id: '2180'
-  age: 77
-  gender: female
-  label: unclassified
-  audio_keys:
-  - svd/pathological/female/2180/1971/1971-phrase.wav
-svd_2602_2468_0:
-  speaker_id: '2602'
-  age: 21
-  gender: male
-  label: unclassified
-  audio_keys:
-  - svd/pathological/male/2602/2468/2468-phrase.wav
-svd_2302_2113_0:
-  speaker_id: '2302'
-  age: 51
-  gender: male
-  label: unclassified
-  audio_keys:
-  - svd/pathological/male/2302/2113/2113-phrase.wav
-svd_1880_1574_0:
-  speaker_id: '1880'
-  age: 35
-  gender: female
-  label: unclassified
-  audio_keys:
-  - svd/pathological/female/1880/1574/1574-phrase.wav
 svd_2532_2398_0:
   speaker_id: '2532'
   age: 94
@@ -7760,101 +7193,3 @@ svd_2532_2398_0:
   label: hyperfunctional_dysphonia
   audio_keys:
   - svd/pathological/female/2532/2398/2398-phrase.wav
-svd_1308_111_0:
-  speaker_id: '1308'
-  age: 9
-  gender: female
-  label: unclassified
-  audio_keys:
-  - svd/pathological/female/1308/111/111-phrase.wav
-svd_1491_899_0:
-  speaker_id: '1491'
-  age: 85
-  gender: male
-  label: unclassified
-  audio_keys:
-  - svd/pathological/male/1491/899/899-phrase.wav
-svd_2656_2522_0:
-  speaker_id: '2656'
-  age: 84
-  gender: female
-  label: unclassified
-  audio_keys:
-  - svd/pathological/female/2656/2522/2522-phrase.wav
-svd_1394_667_0:
-  speaker_id: '1394'
-  age: 6
-  gender: male
-  label: unclassified
-  audio_keys:
-  - svd/pathological/male/1394/667/667-phrase.wav
-svd_1352_367_0:
-  speaker_id: '1352'
-  age: 23
-  gender: female
-  label: unclassified
-  audio_keys:
-  - svd/pathological/female/1352/367/367-phrase.wav
-svd_1535_1039_0:
-  speaker_id: '1535'
-  age: 75
-  gender: male
-  label: unclassified
-  audio_keys:
-  - svd/pathological/male/1535/1039/1039-phrase.wav
-svd_2382_2222_0:
-  speaker_id: '2382'
-  age: 50
-  gender: female
-  label: unclassified
-  audio_keys:
-  - svd/pathological/female/2382/2222/2222-phrase.wav
-svd_1529_937_0:
-  speaker_id: '1529'
-  age: 14
-  gender: female
-  label: unclassified
-  audio_keys:
-  - svd/pathological/female/1529/937/937-phrase.wav
-svd_1367_496_0:
-  speaker_id: '1367'
-  age: 43
-  gender: female
-  label: unclassified
-  audio_keys:
-  - svd/pathological/female/1367/496/496-phrase.wav
-svd_1829_1483_0:
-  speaker_id: '1829'
-  age: 17
-  gender: male
-  label: unclassified
-  audio_keys:
-  - svd/pathological/male/1829/1483/1483-phrase.wav
-svd_1525_933_0:
-  speaker_id: '1525'
-  age: 79
-  gender: female
-  label: unclassified
-  audio_keys:
-  - svd/pathological/female/1525/933/933-phrase.wav
-svd_2030_1766_0:
-  speaker_id: '2030'
-  age: 30
-  gender: female
-  label: unclassified
-  audio_keys:
-  - svd/pathological/female/2030/1766/1766-phrase.wav
-svd_1802_1454_0:
-  speaker_id: '1802'
-  age: 62
-  gender: female
-  label: unclassified
-  audio_keys:
-  - svd/pathological/female/1802/1454/1454-phrase.wav
-svd_2398_2236_0:
-  speaker_id: '2398'
-  age: 61
-  gender: male
-  label: unclassified
-  audio_keys:
-  - svd/pathological/male/2398/2236/2236-phrase.wav

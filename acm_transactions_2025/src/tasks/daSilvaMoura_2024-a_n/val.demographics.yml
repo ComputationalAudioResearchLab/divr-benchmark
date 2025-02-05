@@ -128,18 +128,3 @@ normal:
       std: 3.0785179433085537
       min: 20
       max: 29
-unclassified:
-  male:
-    total: 11
-    age_stats:
-      mean: 47.18181818181818
-      std: 16.473118598602888
-      min: 22
-      max: 67
-  female:
-    total: 6
-    age_stats:
-      mean: 49.166666666666664
-      std: 22.25683415642635
-      min: 23
-      max: 73

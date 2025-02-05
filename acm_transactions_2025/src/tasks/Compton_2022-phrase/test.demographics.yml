@@ -1,18 +1,3 @@
-unclassified:
-  female:
-    total: 115
-    age_stats:
-      mean: 47.93043478260869
-      std: 13.679105425717808
-      min: 20
-      max: 69
-  male:
-    total: 88
-    age_stats:
-      mean: 56.61363636363637
-      std: 11.276495561215407
-      min: 31
-      max: 78
 reinkes_edema:
   female:
     total: 12
