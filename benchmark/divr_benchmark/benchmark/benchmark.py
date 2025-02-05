@@ -44,13 +44,18 @@ class Benchmark:
         self.__ensure_datasets(tasks_path=self.__tasks_path)
 
     async def generate_task(
-        self, filter_func, task_path: Path, diagnosis_map: DiagnosisMap
+        self,
+        filter_func,
+        task_path: Path,
+        diagnosis_map: DiagnosisMap,
+        allow_incomplete_classification: bool,
     ) -> None:
         await self.__task_generator.generate_task(
             source_path=self.__data_path,
             filter_func=filter_func,
             task_path=task_path,
             diagnosis_map=diagnosis_map,
+            allow_incomplete_classification=allow_incomplete_classification,
         )
 
     def load_task(

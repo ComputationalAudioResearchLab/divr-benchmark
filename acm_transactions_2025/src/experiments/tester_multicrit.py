@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 from sklearn.metrics import confusion_matrix
 
 from ..model import NormalizedMultiCrit
-from ..data_loader import DataLoader
+from ..data_loader import BaseDataLoader
 
 ConfusionData = Dict[int, Dict[int, int]]
 
@@ -22,7 +22,7 @@ class TesterMultiCrit:
         cache_path: Path,
         results_path: Path,
         device: torch.device,
-        data_loader: DataLoader,
+        data_loader: BaseDataLoader,
         exp_key: str,
         load_epoch: int,
     ) -> None:
@@ -43,13 +43,17 @@ class TesterMultiCrit:
         self.model = model
 
     @torch.no_grad()
-    def eval(self) -> None:
+    def test(self) -> None:
         all_results = []
         all_ids = []
-        for inputs, labels, ids in tqdm(
-            self.__data_loader.eval(),
-            desc="Validating",
+        for batch in tqdm(
+            self.__data_loader.test(),
+            desc="Testing",
         ):
+            if len(batch) == 2:
+                inputs, labels = batch
+            else:
+                inputs, labels, ids = batch
             labels = labels.squeeze(1)
             probabilities, _, _ = self.model(inputs)
             data_at_level = []

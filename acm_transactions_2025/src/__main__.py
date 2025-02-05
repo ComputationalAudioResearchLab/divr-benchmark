@@ -40,42 +40,42 @@ class Main(ClassArgParser):
             use_cache_loader=use_cache_loader,
         )
 
-    def eval(self, exp_key: Runner.EXP_KEYS, load_epoch: int):
+    def test(self, exp_key: Runner.EXP_KEYS, load_epoch: int):
         tasks_generator = TaskGenerator(
             research_data_path=env.RESEARCH_DATA_PATH,
         )
         runner = Runner(
             tasks_generator=tasks_generator,
             cache_path=env.CACHE_PATH,
-            results_path=Path(f"{env.RESULTS_PATH}/eval"),
+            results_path=Path(f"{env.RESULTS_PATH}/test"),
         )
-        runner.eval(exp_key=exp_key, load_epoch=load_epoch)
+        runner.test(exp_key=exp_key, load_epoch=load_epoch)
 
-    def eval_all(self):
+    def test_all(self):
         tasks_generator = TaskGenerator(
             research_data_path=env.RESEARCH_DATA_PATH,
         )
         runner = Runner(
             tasks_generator=tasks_generator,
             cache_path=env.CACHE_PATH,
-            results_path=Path(f"{env.RESULTS_PATH}/eval"),
+            results_path=Path(f"{env.RESULTS_PATH}/test"),
         )
 
         checkpoints_path = Path(f"{env.CACHE_PATH}/checkpoints")
         checkpoints = sorted(list(checkpoints_path.rglob("*.h5")))
-        pbar = tqdm(checkpoints, desc="evaluating")
+        pbar = tqdm(checkpoints, desc="testing")
         for checkpoint in pbar:
             exp_key = checkpoint.parent.stem
             epoch = int(checkpoint.stem)
             pbar.set_postfix({"exp_key": exp_key, "epoch": epoch})
             results_path = Path(
-                f"{env.RESULTS_PATH}/eval/{exp_key}/{epoch}/results.csv"
+                f"{env.RESULTS_PATH}/test/{exp_key}/{epoch}/results.csv"
             )
             if not results_path.is_file():
-                runner.eval(exp_key=exp_key, load_epoch=epoch)
+                runner.test(exp_key=exp_key, load_epoch=epoch)
 
-    def collate_eval_results(self):
-        results_path = Path(f"{env.RESULTS_PATH}/eval")
+    def collate_test_results(self):
+        results_path = Path(f"{env.RESULTS_PATH}/test")
         results = sorted(list(results_path.rglob("results.csv")))
         all_results = []
 

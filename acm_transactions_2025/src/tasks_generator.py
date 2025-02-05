@@ -11,7 +11,12 @@ from divr_diagnosis import diagnosis_maps
 
 class TaskGenerator:
 
-    TASKS = Literal["phrase", "a_n", "i_n", "u_n"]
+    __diagnosis_maps = {
+        "Compton_2022": diagnosis_maps.Compton_2022,
+        "daSilvaMoura_2024": diagnosis_maps.daSilvaMoura_2024,
+        "Sztaho_2018": diagnosis_maps.Sztaho_2018,
+        "Zaim_2023": diagnosis_maps.Zaim_2023,
+    }
 
     def __init__(self, research_data_path: Path) -> None:
         self.__benchmark = Benchmark(
@@ -21,9 +26,14 @@ class TaskGenerator:
         cur_path = Path(__file__).parent.resolve()
         self.__tasks_path = self.__ensure_path(f"{cur_path}/tasks")
 
-    def load_task(self, task: TaskGenerator.TASKS, diag_level: int | None) -> Task:
+    def load_task(self, task: str, diag_level: int | None) -> Task:
+        if "-" in task:
+            # specified diagnosis map
+            diagnosis_map_key = task.split("-", maxsplit=1)[0]
+            diagnosis_map = self.__diagnosis_maps[diagnosis_map_key]()
+        else:
+            diagnosis_map = diagnosis_maps.USVAC_2025()
         task_path = Path(f"{self.__tasks_path}/{task}")
-        diagnosis_map = diagnosis_maps.USVAC_2025()
         return self.__benchmark.load_task(
             task_path=task_path,
             diag_level=diag_level,
@@ -32,7 +42,7 @@ class TaskGenerator:
 
     async def generate(self) -> None:
         diagnosis_map = diagnosis_maps.USVAC_2025()
-        diag_level = 4
+        diag_level = diagnosis_map.max_diag_level
         coros = []
         coros += [
             self.__benchmark.generate_task(
@@ -109,7 +119,7 @@ class TaskGenerator:
             coros += [
                 self.__benchmark.generate_task(
                     filter_func=self.__cross_test_filter_func(
-                        databse_name=db,
+                        database_name=db,
                         diag_level=diag_level,
                     ),
                     task_path=self.__ensure_path(
@@ -118,11 +128,41 @@ class TaskGenerator:
                     diagnosis_map=diagnosis_map,
                 )
             ]
+
+        # Other classification map tasks
+        maps = [
+            diagnosis_maps.Compton_2022(),
+            diagnosis_maps.daSilvaMoura_2024(),
+            diagnosis_maps.Sztaho_2018(),
+            diagnosis_maps.Zaim_2023(),
+        ]
+        suffixes = {
+            "phrase": ["-phrase.wav"],
+            "a_n": ["-a_n.wav"],
+            "i_n": ["-i_n.wav"],
+            "u_n": ["-u_n.wav"],
+            "all": ["-phrase.wav", "-a_n.wav", "-i_n.wav", "-u_n.wav"],
+        }
+        for diagnosis_map in maps:
+            for suffix_key, suffix_set in suffixes.items():
+                coros += [
+                    self.__benchmark.generate_task(
+                        filter_func=self.__filter_func(
+                            allowed_suffixes=suffix_set,
+                            diag_level=diagnosis_map.max_diag_level,
+                        ),
+                        task_path=self.__ensure_path(
+                            f"{self.__tasks_path}/{diagnosis_map.name}-{suffix_key}"
+                        ),
+                        diagnosis_map=diagnosis_map,
+                        allow_incomplete_classification=True,
+                    )
+                ]
         await asyncio.gather(*coros)
 
-    def __cross_test_filter_func(self, databse_name: str, diag_level: int):
+    def __cross_test_filter_func(self, database_name: str, diag_level: int):
         async def filter_func(database_func: DatabaseFunc) -> DatabaseFunc:
-            db = await database_func(name=databse_name)
+            db = await database_func(name=database_name)
             return Dataset(
                 train=[],
                 val=[],

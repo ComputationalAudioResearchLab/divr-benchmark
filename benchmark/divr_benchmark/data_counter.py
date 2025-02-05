@@ -54,5 +54,6 @@ async def data_counter(
                 for level in range(diag_map.max_diag_level + 1):
                     counts = db.count_per_diag(level=level)
                     output_file.write(f"* **Level {level}:**\n")
-                    for diag, count in counts.items():
+                    for diag, speaker_ids in counts.items():
+                        count = len(speaker_ids)
                         output_file.write(f"\t * **{diag.name}:** {count}\n")

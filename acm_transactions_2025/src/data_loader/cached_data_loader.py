@@ -124,6 +124,12 @@ class CachedDataLoader(BaseDataLoader):
         self._data_len = self._num_batches(len(self.__points))
         return self
 
+    def test(self) -> CachedDataLoader:
+        self.__points = self.__test_points
+        self.__cache_key = self.__cache_key_test
+        self._data_len = self._num_batches(len(self.__points))
+        return self
+
     def collate_function(self, batch: AudioBatch) -> InputTensors:
         batch_len = len(batch)
         max_num_features = 0

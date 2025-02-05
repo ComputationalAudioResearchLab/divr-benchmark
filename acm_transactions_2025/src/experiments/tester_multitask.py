@@ -41,11 +41,11 @@ class TesterMultiTask:
         self.model = model
 
     @torch.no_grad()
-    def eval(self) -> None:
+    def test(self) -> None:
         all_results = []
         all_ids = []
         for batch in tqdm(
-            self.__data_loader.eval(),
+            self.__data_loader.test(),
             desc="Validating",
         ):
             if len(batch) == 2:

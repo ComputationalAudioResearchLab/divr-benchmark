@@ -64,6 +64,9 @@ class BaseDataLoader:
     def eval(self) -> Iterable[DataPoint]:
         raise NotImplementedError()
 
+    def test(self) -> Iterable[DataPoint]:
+        raise NotImplementedError()
+
     def collate_function(self, batch: AudioBatch) -> InputTensors:
         raise NotImplementedError()
 

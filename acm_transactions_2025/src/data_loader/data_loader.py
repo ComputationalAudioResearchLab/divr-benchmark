@@ -95,6 +95,12 @@ class DataLoader(BaseDataLoader):
         self._data_len = self._num_batches(len(self.__indices))
         return self
 
+    def test(self) -> DataLoader:
+        self.__indices = self.__test_indices
+        self._points = self.__test_points
+        self._data_len = self._num_batches(len(self.__indices))
+        return self
+
     def collate_function(self, batch: AudioBatch) -> InputTensors:
         batch_len = len(batch)
         max_num_audios = 0

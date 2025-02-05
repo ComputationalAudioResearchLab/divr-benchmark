@@ -1,0 +1,60 @@
+unclassified:
+  female:
+    total: 365
+    age_stats:
+      mean: 47.23835616438356
+      std: 17.18773705240712
+      min: 9
+      max: 94
+  male:
+    total: 326
+    age_stats:
+      mean: 48.874233128834355
+      std: 17.29222533690811
+      min: 6
+      max: 89
+reinkes_edema:
+  female:
+    total: 32
+    age_stats:
+      mean: 51.78125
+      std: 12.52799284956332
+      min: 31
+      max: 77
+  male:
+    total: 4
+    age_stats:
+      mean: 58.5
+      std: 5.686240703077327
+      min: 52
+      max: 65
+polyp:
+  female:
+    total: 7
+    age_stats:
+      mean: 47.142857142857146
+      std: 11.036735197037384
+      min: 28
+      max: 63
+  male:
+    total: 14
+    age_stats:
+      mean: 51.642857142857146
+      std: 16.588258789587584
+      min: 29
+      max: 78
+normal:
+  female:
+    total: 232
+    age_stats:
+      mean: 27.150862068965516
+      std: 13.072180537902799
+      min: 9
+      max: 84
+  male:
+    total: 196
+    age_stats:
+      mean: 33.40816326530612
+      std: 12.590461782284098
+      min: 16
+      max: 69

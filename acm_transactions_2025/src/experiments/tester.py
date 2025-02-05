@@ -43,12 +43,12 @@ class Tester:
         self.model = model
 
     @torch.no_grad()
-    def eval(self) -> None:
+    def test(self) -> None:
         results = []
         all_ids = []
         for batch in tqdm(
-            self.__data_loader.eval(),
-            desc="Validating",
+            self.__data_loader.test(),
+            desc="Testing",
         ):
             if len(batch) == 2:
                 inputs, labels = batch

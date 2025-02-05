@@ -1,0 +1,75 @@
+unclassified:
+  male:
+    total: 74
+    age_stats:
+      mean: 56.91891891891892
+      std: 11.505515957374124
+      min: 31
+      max: 76
+  female:
+    total: 102
+    age_stats:
+      mean: 46.80392156862745
+      std: 13.369863566834473
+      min: 20
+      max: 78
+psychogenic_dysphonia:
+  male:
+    total: 3
+    age_stats:
+      mean: 52
+      std: 7.937253933193772
+      min: 43
+      max: 58
+  female:
+    total: 15
+    age_stats:
+      mean: 48.8
+      std: 11.947504222341047
+      min: 29
+      max: 67
+laryngitis:
+  female:
+    total: 9
+    age_stats:
+      mean: 47.77777777777778
+      std: 12.01850425154663
+      min: 26
+      max: 62
+  male:
+    total: 20
+    age_stats:
+      mean: 54
+      std: 12.004385163676428
+      min: 33
+      max: 72
+vocal_fold_polyp:
+  female:
+    total: 6
+    age_stats:
+      mean: 46.833333333333336
+      std: 16.363577440971355
+      min: 32
+      max: 79
+  male:
+    total: 8
+    age_stats:
+      mean: 54.5
+      std: 15.137465347370977
+      min: 30
+      max: 78
+normal:
+  female:
+    total: 87
+    age_stats:
+      mean: 21.35632183908046
+      std: 2.505700530995102
+      min: 17
+      max: 29
+  male:
+    total: 41
+    age_stats:
+      mean: 24.902439024390244
+      std: 4.831174174301629
+      min: 20
+      max: 37

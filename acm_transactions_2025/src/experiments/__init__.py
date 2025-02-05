@@ -13,7 +13,6 @@ from ..model import (
     EGEMapsv2Functional,
     EGEMapsv2LLD,
 )
-from ..model.feature import OpenSmile
 from ..tasks_generator import TaskGenerator
 from ..data_loader import CachedDataLoader, DataLoader
 from .trainer import Trainer
@@ -49,7 +48,7 @@ class Runner:
         "compare2016_func_a_4": ["a_n", [4], Compare2016Functional, 2000, 16, Trainer, 1e-5],
         "compare2016_func_i_4": ["i_n", [4], Compare2016Functional, 2000, 16, Trainer, 1e-5],
         "compare2016_func_u_4": ["u_n", [4], Compare2016Functional, 2000, 16, Trainer, 1e-5],
-        
+
         # Compare2016 LLD
         "compare2016_lld_phrase_0": ["phrase", [0], Compare2016LLD, 2000, 16, Trainer, 1e-5],
         "compare2016_lld_a_0": ["a_n", [0], Compare2016LLD, 2000, 16, Trainer, 1e-5],
@@ -71,7 +70,7 @@ class Runner:
         "compare2016_lld_a_4": ["a_n", [4], Compare2016LLD, 2000, 16, Trainer, 1e-5],
         "compare2016_lld_i_4": ["i_n", [4], Compare2016LLD, 2000, 16, Trainer, 1e-5],
         "compare2016_lld_u_4": ["u_n", [4], Compare2016LLD, 2000, 16, Trainer, 1e-5],
-        
+
         # Compare2016 LLD_DE
         "compare2016_lldde_phrase_0": ["phrase", [0], Compare2016LLDDE, 2000, 16, Trainer, 1e-5],
         "compare2016_lldde_a_0": ["a_n", [0], Compare2016LLDDE, 2000, 16, Trainer, 1e-5],
@@ -93,7 +92,7 @@ class Runner:
         "compare2016_lldde_a_4": ["a_n", [4], Compare2016LLDDE, 2000, 16, Trainer, 1e-5],
         "compare2016_lldde_i_4": ["i_n", [4], Compare2016LLDDE, 2000, 16, Trainer, 1e-5],
         "compare2016_lldde_u_4": ["u_n", [4], Compare2016LLDDE, 2000, 16, Trainer, 1e-5],
-        
+
         # EGEMapsv2 Functional
         "egemapsv2_func_phrase_0": ["phrase", [0], EGEMapsv2Functional, 2000, 16, Trainer, 1e-5],
         "egemapsv2_func_a_0": ["a_n", [0], EGEMapsv2Functional, 2000, 16, Trainer, 1e-5],
@@ -115,7 +114,7 @@ class Runner:
         "egemapsv2_func_a_4": ["a_n", [4], EGEMapsv2Functional, 2000, 16, Trainer, 1e-5],
         "egemapsv2_func_i_4": ["i_n", [4], EGEMapsv2Functional, 2000, 16, Trainer, 1e-5],
         "egemapsv2_func_u_4": ["u_n", [4], EGEMapsv2Functional, 2000, 16, Trainer, 1e-5],
-        
+
         # EGEMapsv2 LLD
         "egemapsv2_lld_phrase_0": ["phrase", [0], EGEMapsv2LLD, 2000, 16, Trainer, 1e-5],
         "egemapsv2_lld_a_0": ["a_n", [0], EGEMapsv2LLD, 2000, 16, Trainer, 1e-5],
@@ -137,7 +136,7 @@ class Runner:
         "egemapsv2_lld_a_4": ["a_n", [4], EGEMapsv2LLD, 2000, 16, Trainer, 1e-5],
         "egemapsv2_lld_i_4": ["i_n", [4], EGEMapsv2LLD, 2000, 16, Trainer, 1e-5],
         "egemapsv2_lld_u_4": ["u_n", [4], EGEMapsv2LLD, 2000, 16, Trainer, 1e-5],
-        
+
         # MFCC + Deltas
         "mfccdd_phrase_0": ["phrase", [0], MFCCDD, 2000, 16, Trainer, 1e-5],
         "mfccdd_a_0": ["a_n", [0], MFCCDD, 2000, 16, Trainer, 1e-5],
@@ -159,10 +158,15 @@ class Runner:
         "mfccdd_a_4": ["a_n", [4], MFCCDD, 2000, 16, Trainer, 1e-5],
         "mfccdd_i_4": ["i_n", [4], MFCCDD, 2000, 16, Trainer, 1e-5],
         "mfccdd_u_4": ["u_n", [4], MFCCDD, 2000, 16, Trainer, 1e-5],
-        "mc_mfccdd_phrase_0+2": ["phrase", [0,2], MFCCDD, 2000, 16, TrainerMultiCrit, 1e-5],
-        "mc_mfccdd_a_0+2": ["a_n", [0,2], MFCCDD, 2000, 16, TrainerMultiCrit, 1e-5],
-        "mc_mfccdd_i_0+2": ["i_n", [0,2], MFCCDD, 2000, 16, TrainerMultiCrit, 1e-5],
-        "mc_mfccdd_u_0+2": ["u_n", [0,2], MFCCDD, 2000, 16, TrainerMultiCrit, 1e-5],
+        "mfccdd_all_0": ["all", [0], MFCCDD, 2000, 16, Trainer, 1e-5],
+        "mfccdd_all_1": ["all", [1], MFCCDD, 2000, 16, Trainer, 1e-5],
+        "mfccdd_all_2": ["all", [2], MFCCDD, 2000, 16, Trainer, 1e-5],
+        "mfccdd_all_3": ["all", [3], MFCCDD, 2000, 16, Trainer, 1e-5],
+        "mfccdd_all_4": ["all", [4], MFCCDD, 2000, 16, Trainer, 1e-5],
+        "mc_mfccdd_phrase_0+2": ["phrase", [0, 2], MFCCDD, 2000, 16, TrainerMultiCrit, 1e-5],
+        "mc_mfccdd_a_0+2": ["a_n", [0, 2], MFCCDD, 2000, 16, TrainerMultiCrit, 1e-5],
+        "mc_mfccdd_i_0+2": ["i_n", [0, 2], MFCCDD, 2000, 16, TrainerMultiCrit, 1e-5],
+        "mc_mfccdd_u_0+2": ["u_n", [0, 2], MFCCDD, 2000, 16, TrainerMultiCrit, 1e-5],
         "mc_mfccdd_phrase_0+3": ["phrase", [0, 3], MFCCDD, 2000, 16, TrainerMultiCrit, 1e-5],
         "mc_mfccdd_a_0+3": ["a_n", [0, 3], MFCCDD, 2000, 16, TrainerMultiCrit, 1e-5],
         "mc_mfccdd_i_0+3": ["i_n", [0, 3], MFCCDD, 2000, 16, TrainerMultiCrit, 1e-5],
@@ -171,7 +175,7 @@ class Runner:
         "mc_mfccdd_a_0+4": ["a_n", [0, 4], MFCCDD, 2000, 16, TrainerMultiCrit, 1e-5],
         "mc_mfccdd_i_0+4": ["i_n", [0, 4], MFCCDD, 2000, 16, TrainerMultiCrit, 1e-5],
         "mc_mfccdd_u_0+4": ["u_n", [0, 4], MFCCDD, 2000, 16, TrainerMultiCrit, 1e-5],
-        
+
         # Wav2Vec
         "wav2vec_phrase_0": ["phrase", [0], Wav2Vec, 200, 16, Trainer, 1e-5],
         "wav2vec_a_0": ["a_n", [0], Wav2Vec, 200, 16, Trainer, 1e-5],
@@ -193,11 +197,16 @@ class Runner:
         "wav2vec_a_4": ["a_n", [4], Wav2Vec, 200, 16, Trainer, 1e-5],
         "wav2vec_i_4": ["i_n", [4], Wav2Vec, 200, 16, Trainer, 1e-5],
         "wav2vec_u_4": ["u_n", [4], Wav2Vec, 200, 16, Trainer, 1e-5],
-        
-        "mc_wav2vec_phrase_0+2": ["phrase", [0,2], Wav2Vec, 200, 16, TrainerMultiCrit, 1e-5],
-        "mc_wav2vec_a_0+2": ["a_n", [0,2], Wav2Vec, 200, 16, TrainerMultiCrit, 1e-5],
-        "mc_wav2vec_i_0+2": ["i_n", [0,2], Wav2Vec, 200, 16, TrainerMultiCrit, 1e-5],
-        "mc_wav2vec_u_0+2": ["u_n", [0,2], Wav2Vec, 200, 16, TrainerMultiCrit, 1e-5],
+        "wav2vec_all_0": ["all", [0], Wav2Vec, 200, 16, Trainer, 1e-5],
+        "wav2vec_all_1": ["all", [1], Wav2Vec, 200, 16, Trainer, 1e-5],
+        "wav2vec_all_2": ["all", [2], Wav2Vec, 200, 16, Trainer, 1e-5],
+        "wav2vec_all_3": ["all", [3], Wav2Vec, 200, 16, Trainer, 1e-5],
+        "wav2vec_all_4": ["all", [4], Wav2Vec, 200, 16, Trainer, 1e-5],
+
+        "mc_wav2vec_phrase_0+2": ["phrase", [0, 2], Wav2Vec, 200, 16, TrainerMultiCrit, 1e-5],
+        "mc_wav2vec_a_0+2": ["a_n", [0, 2], Wav2Vec, 200, 16, TrainerMultiCrit, 1e-5],
+        "mc_wav2vec_i_0+2": ["i_n", [0, 2], Wav2Vec, 200, 16, TrainerMultiCrit, 1e-5],
+        "mc_wav2vec_u_0+2": ["u_n", [0, 2], Wav2Vec, 200, 16, TrainerMultiCrit, 1e-5],
         "mc_wav2vec_phrase_0+3": ["phrase", [0, 3], Wav2Vec, 200, 16, TrainerMultiCrit, 1e-5],
         "mc_wav2vec_a_0+3": ["a_n", [0, 3], Wav2Vec, 200, 16, TrainerMultiCrit, 1e-5],
         "mc_wav2vec_i_0+3": ["i_n", [0, 3], Wav2Vec, 200, 16, TrainerMultiCrit, 1e-5],
@@ -229,6 +238,11 @@ class Runner:
         "unispeechSAT_a_4": ["a_n", [4], UnispeechSAT, 200, 16, Trainer, 1e-5],
         "unispeechSAT_i_4": ["i_n", [4], UnispeechSAT, 200, 16, Trainer, 1e-5],
         "unispeechSAT_u_4": ["u_n", [4], UnispeechSAT, 200, 16, Trainer, 1e-5],
+        "unispeechSAT_all_0": ["all", [0], UnispeechSAT, 200, 16, Trainer, 1e-5],
+        "unispeechSAT_all_1": ["all", [1], UnispeechSAT, 200, 16, Trainer, 1e-5],
+        "unispeechSAT_all_2": ["all", [2], UnispeechSAT, 200, 16, Trainer, 1e-5],
+        "unispeechSAT_all_3": ["all", [3], UnispeechSAT, 200, 16, Trainer, 1e-5],
+        "unispeechSAT_all_4": ["all", [4], UnispeechSAT, 200, 16, Trainer, 1e-5],
         # Multitask experiments
         "unispeechSAT_phrase_0+1": ["phrase", [0, 1], UnispeechSAT, 200, 16, TrainerMultiTask, 1e-5],
         "unispeechSAT_phrase_0+2": ["phrase", [0, 2], UnispeechSAT, 200, 16, TrainerMultiTask, 1e-5],
@@ -285,7 +299,7 @@ class Runner:
         self.__results_path = results_path
 
     def train(
-        self, exp_key: Runner.EXP_KEYS, tboard_enabled: bool, use_cache_loader: bool
+        self, exp_key: Runner.EXP_KEYS, tboard_enabled: bool, use_cache_loader: bool  # type: ignore
     ):
         device = torch.device("cuda")
         (
@@ -366,7 +380,7 @@ class Runner:
             raise ValueError(f"Unsupported trainer type: {trainer_cls}")
         trainer.run()
 
-    def eval(self, exp_key: Runner.EXP_KEYS, load_epoch: int):
+    def test(self, exp_key: Runner.EXP_KEYS, load_epoch: int):  # type: ignore
         device = torch.device("cuda")
         (
             task_key,
@@ -375,13 +389,16 @@ class Runner:
             num_epochs,
             batch_size,
             trainer_cls,
+            lr,
         ) = self.__exp[exp_key]
         task = self.__tasks_generator.load_task(
             task=task_key,
             diag_level=max(diag_levels),
         )
         feature_function = (
-            feature_cls(device=device) if feature_cls is not None else None
+            feature_cls(device=device, sampling_rate=task.sample_rate)
+            if feature_cls is not None
+            else None
         )
         data_loader = DataLoader(
             random_seed=42,
@@ -422,4 +439,4 @@ class Runner:
             )
         else:
             raise ValueError(f"Unsupported trainer type: {trainer_cls}")
-        tester.eval()
+        tester.test()

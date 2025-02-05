@@ -86,13 +86,13 @@ class Base:
             sessions=self.dataset.all_sessions, level=level, file_filter=None
         )
 
-    def count_per_diag(self, level: int) -> Dict[Diagnosis, int]:
-        counts = {}
+    def count_per_diag(self, level: int) -> Dict[Diagnosis, set[str]]:
+        counts: dict[Diagnosis, set[str]] = {}
         for session in self.dataset.all_sessions:
             root_diagnosis = session.best_diagnosis.at_level(level)
             if root_diagnosis not in counts:
-                counts[root_diagnosis] = 0
-            counts[root_diagnosis] += 1
+                counts[root_diagnosis] = set()
+            counts[root_diagnosis].add(session.speaker_id)
         return counts
 
     def to_individual_file_tasks(
