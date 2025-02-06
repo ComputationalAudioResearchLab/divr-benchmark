@@ -336,7 +336,7 @@ class Runner:
         "daSilvaMoura_2024-mc_wav2vec_i_n_0+1+2": ["daSilvaMoura_2024-i_n", [0, 1, 2], Wav2Vec, 200, 16, TrainerMultiCrit, 1e-5],
         "daSilvaMoura_2024-wav2vec_phrase_1": ["daSilvaMoura_2024-phrase", [1], Wav2Vec, 200, 16, Trainer, 1e-5],
         "daSilvaMoura_2024-wav2vec_phrase_2": ["daSilvaMoura_2024-phrase", [2], Wav2Vec, 200, 16, Trainer, 1e-5],
-        "daSilvaMoura_2024-mc_wav2vec_phrase_0+1+2": ["daSilvaMoura_2024-phrase", [0, 1, 3], Wav2Vec, 200, 16, TrainerMultiCrit, 1e-5],
+        "daSilvaMoura_2024-mc_wav2vec_phrase_0+1+2": ["daSilvaMoura_2024-phrase", [0, 1, 2], Wav2Vec, 200, 16, TrainerMultiCrit, 1e-5],
         "daSilvaMoura_2024-wav2vec_u_n_1": ["daSilvaMoura_2024-u_n", [1], Wav2Vec, 200, 16, Trainer, 1e-5],
         "daSilvaMoura_2024-wav2vec_u_n_2": ["daSilvaMoura_2024-u_n", [2], Wav2Vec, 200, 16, Trainer, 1e-5],
         "daSilvaMoura_2024-mc_wav2vec_u_n_0+1+2": ["daSilvaMoura_2024-u_n", [0, 1, 2], Wav2Vec, 200, 16, TrainerMultiCrit, 1e-5],
