@@ -66,9 +66,6 @@ class TesterMultiCrit:
                     labels[:, idx : idx + 1],
                     labels_at_level[:, None],
                 ]
-            print(torch.cat(data_at_level, dim=1))
-            print(self.__data_loader.unique_diagnosis)
-            exit()
             all_ids += ids
             data = torch.cat(data_at_level + [probabilities], dim=1)
             all_results += [data]

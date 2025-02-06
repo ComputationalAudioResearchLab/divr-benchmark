@@ -22,7 +22,7 @@ class Main(ClassArgParser):
 
     def train(
         self,
-        exp_key: Runner.EXP_KEYS,
+        exp_key: Runner.EXP_KEYS,  # type: ignore
         tboard_enabled: bool = True,
         use_cache_loader: bool = True,
     ):
@@ -40,7 +40,7 @@ class Main(ClassArgParser):
             use_cache_loader=use_cache_loader,
         )
 
-    def test(self, exp_key: Runner.EXP_KEYS, load_epoch: int):
+    def test(self, exp_key: Runner.EXP_KEYS, load_epoch: int):  # type: ignore
         tasks_generator = TaskGenerator(
             research_data_path=env.RESEARCH_DATA_PATH,
         )
@@ -64,6 +64,16 @@ class Main(ClassArgParser):
         checkpoints_path = Path(f"{env.CACHE_PATH}/checkpoints")
         checkpoints = sorted(list(checkpoints_path.rglob("*.h5")))
         pbar = tqdm(checkpoints, desc="testing")
+        ignored_keys = [
+            "Compton_2022-mfccdd_phrase_1",
+            "Compton_2022-mfccdd_a_n_1",
+            "Compton_2022-mfccdd_i_n_1",
+            "Compton_2022-mfccdd_u_n_1",
+            "Sztaho_2018-mfccdd_phrase_1",
+            "Sztaho_2018-mfccdd_a_n_1",
+            "Sztaho_2018-mfccdd_i_n_1",
+            "Sztaho_2018-mfccdd_u_n_1",
+        ]
         for checkpoint in pbar:
             exp_key = checkpoint.parent.stem
             epoch = int(checkpoint.stem)
@@ -71,7 +81,7 @@ class Main(ClassArgParser):
             results_path = Path(
                 f"{env.RESULTS_PATH}/test/{exp_key}/{epoch}/results.csv"
             )
-            if not results_path.is_file():
+            if not results_path.is_file() and exp_key not in ignored_keys:
                 runner.test(exp_key=exp_key, load_epoch=epoch)
 
     def collate_test_results(self):

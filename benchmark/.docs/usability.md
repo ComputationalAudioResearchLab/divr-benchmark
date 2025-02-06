@@ -21,7 +21,8 @@ Maps with at least 50 sessions in at least 3 distinct classes excluding unclassi
 - Kim_2024
   - unusable
 - Sztaho_2018
-  - svd: level 2, level 3
+  - svd: level 2
+    level 3 is duplicated because there are no pathologies at level 3 were available, and level 2 was extended to level 3 automatically
 - Tsui_2018
   - unusable
 - USVAC_2025
@@ -52,7 +53,8 @@ Maps with at least 50 distinct speakers in at least 3 distinct classes excluding
 - Kim_2024
   - unusable
 - Sztaho_2018
-  - svd: level 2, level 3
+  - svd: level 2
+    level 3 is duplicated because there are no pathologies at level 3 were available, and level 2 was extended to level 3 automatically
 - Tsui_2018
   - unusable
 - USVAC_2025
