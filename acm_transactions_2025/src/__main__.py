@@ -64,16 +64,6 @@ class Main(ClassArgParser):
         checkpoints_path = Path(f"{env.CACHE_PATH}/checkpoints")
         checkpoints = sorted(list(checkpoints_path.rglob("*.h5")))
         pbar = tqdm(checkpoints, desc="testing")
-        ignored_keys = [
-            "Compton_2022-mfccdd_phrase_1",
-            "Compton_2022-mfccdd_a_n_1",
-            "Compton_2022-mfccdd_i_n_1",
-            "Compton_2022-mfccdd_u_n_1",
-            "Sztaho_2018-mfccdd_phrase_1",
-            "Sztaho_2018-mfccdd_a_n_1",
-            "Sztaho_2018-mfccdd_i_n_1",
-            "Sztaho_2018-mfccdd_u_n_1",
-        ]
         for checkpoint in pbar:
             exp_key = checkpoint.parent.stem
             epoch = int(checkpoint.stem)
@@ -81,7 +71,7 @@ class Main(ClassArgParser):
             results_path = Path(
                 f"{env.RESULTS_PATH}/test/{exp_key}/{epoch}/results.csv"
             )
-            if not results_path.is_file() and exp_key not in ignored_keys:
+            if not results_path.is_file() and exp_key:
                 runner.test(exp_key=exp_key, load_epoch=epoch)
 
     def collate_test_results(self):
