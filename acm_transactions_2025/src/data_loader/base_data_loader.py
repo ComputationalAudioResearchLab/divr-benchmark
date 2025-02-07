@@ -48,6 +48,10 @@ class BaseDataLoader:
         self.__batch_size = batch_size
         self.__task = task
 
+    @property
+    def num_classes(self):
+        return self.num_unique_diagnosis[self.max_diag_level]
+
     def idx_to_diag_name(self, idx: int, level: int) -> str:
         return self.__task.index_to_diag(idx, level).name
 

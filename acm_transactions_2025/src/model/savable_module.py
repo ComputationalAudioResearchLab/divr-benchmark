@@ -21,6 +21,9 @@ class SavableModule(nn.Module):
             print(f"Failed to load checkpoint: {ckpt}")
             raise err
 
+    def load_checkpoint(self, checkpoint: Path):
+        self.load_state_dict(torch.load(checkpoint, map_location=self.device))
+
     def __weight_file_name(self, epoch):
         return f"{self.checkpoint_path}/{epoch}.h5"
 

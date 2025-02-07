@@ -169,7 +169,7 @@ class Task:
             data = yaml.load(df, Loader=yaml.FullLoader)
         dataset: List[DataPoint] = []
         if not quiet:
-            iterator = tqdm(data.items(), desc=f"Loading {key} files", leave=True)
+            iterator = tqdm(data.items(), desc=f"Loading {key} files", leave=False)
         else:
             iterator = data.items()
         for key, val in iterator:
