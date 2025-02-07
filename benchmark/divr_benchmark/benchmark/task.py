@@ -92,6 +92,7 @@ class Task:
         self.audio_sample_rate = audio_loader.sample_rate
         self.__diagnosis_indices = self.__count_diagnosis()
         self.__max_diag_level = list(self.__diagnosis_indices.keys())[-1]
+        self.__normal = diagnosis_map.get("normal")
 
     @property
     def max_diag_level(self) -> int:
@@ -100,6 +101,10 @@ class Task:
     @property
     def sample_rate(self) -> int:
         return self.__audio_loader.sample_rate
+
+    def normal_index(self, level) -> int:
+        _, diag_indices_reversed = self.__diagnosis_indices[level]
+        return diag_indices_reversed[self.__normal.name]
 
     def unique_diagnosis(self, level: int | None = None) -> List[str]:
         if level is None:
