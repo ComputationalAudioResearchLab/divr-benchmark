@@ -31,7 +31,7 @@ class TestAll:
         "unispeechSAT_all_3",
         "unispeechSAT_all_4",
     ]
-    __device = torch.device("cuda")
+    __device = torch.device("cpu")
     __sampling_rate = 16000
     __random_seed = 42
     __batch_size = 16
@@ -114,11 +114,25 @@ class TestAll:
                         if model_cache_key in model_cache:
                             model = model_cache[model_cache_key]
                         else:
-                            model = model_cls(
-                                input_size=input_size,
-                                num_classes=num_classes,
-                                checkpoint_path=Path("/tmp"),
-                            )
+                            if model_cls == Normalized:
+                                model = model_cls(
+                                    input_size=input_size,
+                                    num_classes=num_classes,
+                                    checkpoint_path=Path("/tmp"),
+                                )
+                            elif model_cls == NormalizedMultiCrit:
+                                model = model_cls(
+                                    input_size=input_size,
+                                    num_classes=num_classes,
+                                    checkpoint_path=Path("/tmp"),
+                                    levels_map=data_loader.levels_map,
+                                )
+                            elif model_cls == NormalizedMultitask:
+                                model = model_cls(
+                                    input_size=input_size,
+                                    num_classes=data_loader.num_unique_diagnosis,
+                                    checkpoint_path=Path("/tmp"),
+                                )
                             model_cache[model_cache_key] = model.cpu()
                         model = model.to(self.__device)
                         model = model.eval()
