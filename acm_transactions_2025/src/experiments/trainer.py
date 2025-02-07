@@ -104,7 +104,7 @@ class Trainer:
         confusion = np.zeros((num_unique_diagnosis, num_unique_diagnosis))
 
         for batch in tqdm(
-            self.__data_loader.test(),
+            self.__data_loader.eval(),
             desc="Validating",
         ):
             if len(batch) == 2:

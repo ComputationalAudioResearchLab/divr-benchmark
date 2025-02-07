@@ -128,7 +128,7 @@ class TrainerMultiCrit:
         )
 
         for batch in tqdm(
-            self.__data_loader.test(),
+            self.__data_loader.eval(),
             desc="Validating",
         ):
             if len(batch) == 2:

@@ -14,7 +14,6 @@ from ..model import (
     NormalizedMultiCrit,
     NormalizedMultitask,
     Feature,
-    BaseModel,
 )
 
 
@@ -31,9 +30,8 @@ class TestAll:
         "unispeechSAT_all_2",
         "unispeechSAT_all_3",
         "unispeechSAT_all_4",
-        "daSilvaMoura_2024-mc_unispeechSAT_phrase_0+1+2",  # Need to do this one
     ]
-    __device = torch.device("cpu")
+    __device = torch.device("cuda")
     __sampling_rate = 16000
     __random_seed = 42
     __batch_size = 16
@@ -90,7 +88,7 @@ class TestAll:
 
         total_exps = len(Runner._exp) - len(self.__ignored_exp)
         pbar_top = tqdm(desc="Testing models", total=total_exps)
-
+        exit()
         model_cache = {}
 
         for feature_cls, feature_tests in tests.items():
@@ -146,7 +144,7 @@ class TestAll:
     def __test_single(
         self,
         data_loader: BaseDataLoader,
-        model: BaseModel,
+        model: Normalized,
         diag_levels: list[int],
     ) -> pd.DataFrame:
         assert len(diag_levels) == 1
@@ -186,19 +184,104 @@ class TestAll:
     def __test_multi_crit(
         self,
         data_loader: BaseDataLoader,
-        model: BaseModel,
+        model: NormalizedMultiCrit,
         diag_levels: list[int],
     ) -> pd.DataFrame:
-        raise NotImplementedError()
+        all_results = []
+        all_ids = []
+        for batch in tqdm(
+            data_loader.test(),
+            desc="Testing",
+        ):
+            if len(batch) == 2:
+                inputs, labels = batch
+            else:
+                inputs, labels, ids = batch
+            labels = labels.squeeze(1)
+            probabilities, _, _ = model(inputs)
+            data_at_level = []
+            data = []
+            for idx, key in enumerate(data_loader.unique_diagnosis):
+                labels_at_level = model.labels_at_level(
+                    probabilities, level=key
+                ).argmax(dim=1)
+                data_at_level += [
+                    labels[:, idx : idx + 1],
+                    labels_at_level[:, None],
+                ]
+            all_ids += ids
+            data = torch.cat(data_at_level + [probabilities], dim=1)
+            all_results += [data]
+        all_results = torch.cat(all_results, dim=0).round(decimals=2)
+        column_names: list[str] = []
+        for key, val in data_loader.unique_diagnosis.items():
+            column_names += [f"actual_{key}", f"predicted_{key}"]
+        column_names += val
+        all_results = pd.DataFrame(
+            data=all_results.cpu().numpy(),
+            columns=column_names,
+        )
+        all_results["id"] = all_ids
+        all_results = all_results[["id"] + column_names]
+        for cname in column_names:
+            if cname.startswith("actual") or cname.startswith("predicted"):
+                prefix, suffix = cname.split("_")
+                level = int(suffix)
+                all_results[cname] = all_results[cname].apply(
+                    lambda idx: data_loader.idx_to_diag_name(int(idx), level)
+                )
+        return all_results
 
     @torch.no_grad()
     def __test_multi_task(
         self,
         data_loader: BaseDataLoader,
-        model: BaseModel,
+        model: NormalizedMultitask,
         diag_levels: list[int],
     ) -> pd.DataFrame:
-        raise NotImplementedError()
+        all_results = []
+        all_ids = []
+        for batch in tqdm(
+            data_loader.test(),
+            desc="Validating",
+        ):
+            if len(batch) == 2:
+                inputs, labels = batch
+            else:
+                inputs, labels, ids = batch
+            labels = labels.squeeze(1)
+            results = model(inputs)
+            data_at_level = []
+            data = []
+            for i, result in enumerate(results):
+                probabilities, _, _ = result
+                predicted_labels = probabilities.argmax(dim=1)
+                data_at_level += [
+                    labels[:, i : i + 1],
+                    predicted_labels[:, None],
+                    probabilities,
+                ]
+            all_ids += ids
+            data = torch.cat(data_at_level, dim=1)
+            all_results += [data]
+        all_results = torch.cat(all_results, dim=0).round(decimals=2)
+        column_names: list[str] = []
+        for key, val in data_loader.unique_diagnosis.items():
+            column_names += [f"actual_{key}", f"predicted_{key}"] + val
+        all_results = pd.DataFrame(
+            data=all_results.cpu().numpy(),
+            columns=column_names,
+        )
+        all_results["id"] = all_ids
+        all_results = all_results[["id"] + column_names]
+        for cname in column_names:
+            if cname.startswith("actual") or cname.startswith("predicted"):
+                prefix, suffix = cname.split("_")
+                level = int(suffix)
+                all_results[cname] = all_results[cname].apply(
+                    lambda idx: data_loader.idx_to_diag_name(int(idx), level)
+                )
+        return all_results
 
     def __get_cached_data_loader(
         self,
