@@ -88,7 +88,6 @@ class TestAll:
 
         total_exps = len(Runner._exp) - len(self.__ignored_exp)
         pbar_top = tqdm(desc="Testing models", total=total_exps)
-        exit()
         model_cache = {}
 
         for feature_cls, feature_tests in tests.items():
