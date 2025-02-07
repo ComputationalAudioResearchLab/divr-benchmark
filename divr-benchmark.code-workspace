@@ -13,12 +13,6 @@
       "path": "acm_transactions_2025"
     },
     {
-      "path": "baselines"
-    },
-    {
-      "path": "icassp_2025"
-    },
-    {
       "path": "../storage"
     }
   ],
