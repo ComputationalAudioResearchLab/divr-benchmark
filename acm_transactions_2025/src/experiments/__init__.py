@@ -26,7 +26,7 @@ from .tester_multicrit import TesterMultiCrit
 class Runner:
 
     # fmt: off
-    __exp = {
+    _exp = {
         # Compare2016 Functional
         "compare2016_func_phrase_0": ["phrase", [0], Compare2016Functional, 2000, 16, Trainer, 1e-5],
         "compare2016_func_a_0": ["a_n", [0], Compare2016Functional, 2000, 16, Trainer, 1e-5],
@@ -349,7 +349,7 @@ class Runner:
         "daSilvaMoura_2024-mc_unispeechSAT_i_n_0+1+2": ["daSilvaMoura_2024-i_n", [0, 1, 2], UnispeechSAT, 200, 16, TrainerMultiCrit, 1e-5],
         "daSilvaMoura_2024-unispeechSAT_phrase_1": ["daSilvaMoura_2024-phrase", [1], UnispeechSAT, 200, 16, Trainer, 1e-5],
         "daSilvaMoura_2024-unispeechSAT_phrase_2": ["daSilvaMoura_2024-phrase", [2], UnispeechSAT, 200, 16, Trainer, 1e-5],
-        "daSilvaMoura_2024-mc_unispeechSAT_phrase_0+1+2": ["daSilvaMoura_2024-phrase", [0, 1, 3], UnispeechSAT, 200, 16, TrainerMultiCrit, 1e-5],
+        "daSilvaMoura_2024-mc_unispeechSAT_phrase_0+1+2": ["daSilvaMoura_2024-phrase", [0, 1, 2], UnispeechSAT, 200, 16, TrainerMultiCrit, 1e-5],
         "daSilvaMoura_2024-unispeechSAT_u_n_1": ["daSilvaMoura_2024-u_n", [1], UnispeechSAT, 200, 16, Trainer, 1e-5],
         "daSilvaMoura_2024-unispeechSAT_u_n_2": ["daSilvaMoura_2024-u_n", [2], UnispeechSAT, 200, 16, Trainer, 1e-5],
         "daSilvaMoura_2024-mc_unispeechSAT_u_n_0+1+2": ["daSilvaMoura_2024-u_n", [0, 1, 2], UnispeechSAT, 200, 16, TrainerMultiCrit, 1e-5],
@@ -385,46 +385,46 @@ class Runner:
         ## Zaim_2023
         "Zaim_2023-mfccdd_a_n_1": ["Zaim_2023-a_n", [1], MFCCDD, 2000, 16, Trainer, 1e-5],
         "Zaim_2023-mfccdd_a_n_2": ["Zaim_2023-a_n", [2], MFCCDD, 2000, 16, Trainer, 1e-5],
-        "Zaim_2023-mc_mfccdd_a_n_0+1+2": ["Zaim_2023-a_n", [0, 1, 2], MFCCDD, 2000, 16, Trainer, 1e-5],
+        "Zaim_2023-mc_mfccdd_a_n_0+1+2": ["Zaim_2023-a_n", [0, 1, 2], MFCCDD, 2000, 16, TrainerMultiCrit, 1e-5],
         "Zaim_2023-mfccdd_i_n_1": ["Zaim_2023-i_n", [1], MFCCDD, 2000, 16, Trainer, 1e-5],
         "Zaim_2023-mfccdd_i_n_2": ["Zaim_2023-i_n", [2], MFCCDD, 2000, 16, Trainer, 1e-5],
-        "Zaim_2023-mc_mfccdd_i_n_0+1+2": ["Zaim_2023-i_n", [0, 1, 2], MFCCDD, 2000, 16, Trainer, 1e-5],
+        "Zaim_2023-mc_mfccdd_i_n_0+1+2": ["Zaim_2023-i_n", [0, 1, 2], MFCCDD, 2000, 16, TrainerMultiCrit, 1e-5],
         "Zaim_2023-mfccdd_phrase_1": ["Zaim_2023-phrase", [1], MFCCDD, 2000, 16, Trainer, 1e-5],
         "Zaim_2023-mfccdd_phrase_2": ["Zaim_2023-phrase", [2], MFCCDD, 2000, 16, Trainer, 1e-5],
-        "Zaim_2023-mc_mfccdd_phrase_0+1+2": ["Zaim_2023-phrase", [0, 1, 3], MFCCDD, 2000, 16, Trainer, 1e-5],
+        "Zaim_2023-mc_mfccdd_phrase_0+1+2": ["Zaim_2023-phrase", [0, 1, 2], MFCCDD, 2000, 16, TrainerMultiCrit, 1e-5],
         "Zaim_2023-mfccdd_u_n_1": ["Zaim_2023-u_n", [1], MFCCDD, 2000, 16, Trainer, 1e-5],
         "Zaim_2023-mfccdd_u_n_2": ["Zaim_2023-u_n", [2], MFCCDD, 2000, 16, Trainer, 1e-5],
-        "Zaim_2023-mc_mfccdd_u_n_0+1+2": ["Zaim_2023-u_n", [0, 1, 2], MFCCDD, 2000, 16, Trainer, 1e-5],
+        "Zaim_2023-mc_mfccdd_u_n_0+1+2": ["Zaim_2023-u_n", [0, 1, 2], MFCCDD, 2000, 16, TrainerMultiCrit, 1e-5],
 
         "Zaim_2023-wav2vec_a_n_1": ["Zaim_2023-a_n", [1], Wav2Vec, 200, 16, Trainer, 1e-5],
         "Zaim_2023-wav2vec_a_n_2": ["Zaim_2023-a_n", [2], Wav2Vec, 200, 16, Trainer, 1e-5],
-        "Zaim_2023-mc_wav2vec_a_n_0+1+2": ["Zaim_2023-a_n", [0, 1, 2], Wav2Vec, 200, 16, Trainer, 1e-5],
+        "Zaim_2023-mc_wav2vec_a_n_0+1+2": ["Zaim_2023-a_n", [0, 1, 2], Wav2Vec, 200, 16, TrainerMultiCrit, 1e-5],
         "Zaim_2023-wav2vec_i_n_1": ["Zaim_2023-i_n", [1], Wav2Vec, 200, 16, Trainer, 1e-5],
         "Zaim_2023-wav2vec_i_n_2": ["Zaim_2023-i_n", [2], Wav2Vec, 200, 16, Trainer, 1e-5],
-        "Zaim_2023-mc_wav2vec_i_n_0+1+2": ["Zaim_2023-i_n", [0, 1, 2], Wav2Vec, 200, 16, Trainer, 1e-5],
+        "Zaim_2023-mc_wav2vec_i_n_0+1+2": ["Zaim_2023-i_n", [0, 1, 2], Wav2Vec, 200, 16, TrainerMultiCrit, 1e-5],
         "Zaim_2023-wav2vec_phrase_1": ["Zaim_2023-phrase", [1], Wav2Vec, 200, 16, Trainer, 1e-5],
         "Zaim_2023-wav2vec_phrase_2": ["Zaim_2023-phrase", [2], Wav2Vec, 200, 16, Trainer, 1e-5],
-        "Zaim_2023-mc_wav2vec_phrase_0+1+2": ["Zaim_2023-phrase", [0, 1, 3], Wav2Vec, 200, 16, Trainer, 1e-5],
+        "Zaim_2023-mc_wav2vec_phrase_0+1+2": ["Zaim_2023-phrase", [0, 1, 2], Wav2Vec, 200, 16, TrainerMultiCrit, 1e-5],
         "Zaim_2023-wav2vec_u_n_1": ["Zaim_2023-u_n", [1], Wav2Vec, 200, 16, Trainer, 1e-5],
         "Zaim_2023-wav2vec_u_n_2": ["Zaim_2023-u_n", [2], Wav2Vec, 200, 16, Trainer, 1e-5],
-        "Zaim_2023-mc_wav2vec_u_n_0+1+2": ["Zaim_2023-u_n", [0, 1, 2], Wav2Vec, 200, 16, Trainer, 1e-5],
+        "Zaim_2023-mc_wav2vec_u_n_0+1+2": ["Zaim_2023-u_n", [0, 1, 2], Wav2Vec, 200, 16, TrainerMultiCrit, 1e-5],
 
         "Zaim_2023-unispeechSAT_a_n_1": ["Zaim_2023-a_n", [1], UnispeechSAT, 200, 16, Trainer, 1e-5],
         "Zaim_2023-unispeechSAT_a_n_2": ["Zaim_2023-a_n", [2], UnispeechSAT, 200, 16, Trainer, 1e-5],
-        "Zaim_2023-mc_unispeechSAT_a_n_0+1+2": ["Zaim_2023-a_n", [0, 1, 2], UnispeechSAT, 200, 16, Trainer, 1e-5],
+        "Zaim_2023-mc_unispeechSAT_a_n_0+1+2": ["Zaim_2023-a_n", [0, 1, 2], UnispeechSAT, 200, 16, TrainerMultiCrit, 1e-5],
         "Zaim_2023-unispeechSAT_i_n_1": ["Zaim_2023-i_n", [1], UnispeechSAT, 200, 16, Trainer, 1e-5],
         "Zaim_2023-unispeechSAT_i_n_2": ["Zaim_2023-i_n", [2], UnispeechSAT, 200, 16, Trainer, 1e-5],
-        "Zaim_2023-mc_unispeechSAT_i_n_0+1+2": ["Zaim_2023-i_n", [0, 1, 2], UnispeechSAT, 200, 16, Trainer, 1e-5],
+        "Zaim_2023-mc_unispeechSAT_i_n_0+1+2": ["Zaim_2023-i_n", [0, 1, 2], UnispeechSAT, 200, 16, TrainerMultiCrit, 1e-5],
         "Zaim_2023-unispeechSAT_phrase_1": ["Zaim_2023-phrase", [1], UnispeechSAT, 200, 16, Trainer, 1e-5],
         "Zaim_2023-unispeechSAT_phrase_2": ["Zaim_2023-phrase", [2], UnispeechSAT, 200, 16, Trainer, 1e-5],
-        "Zaim_2023-mc_unispeechSAT_phrase_0+1+2": ["Zaim_2023-phrase", [0, 1, 3], UnispeechSAT, 200, 16, Trainer, 1e-5],
+        "Zaim_2023-mc_unispeechSAT_phrase_0+1+2": ["Zaim_2023-phrase", [0, 1, 2], UnispeechSAT, 200, 16, TrainerMultiCrit, 1e-5],
         "Zaim_2023-unispeechSAT_u_n_1": ["Zaim_2023-u_n", [1], UnispeechSAT, 200, 16, Trainer, 1e-5],
         "Zaim_2023-unispeechSAT_u_n_2": ["Zaim_2023-u_n", [2], UnispeechSAT, 200, 16, Trainer, 1e-5],
-        "Zaim_2023-mc_unispeechSAT_u_n_0+1+2": ["Zaim_2023-u_n", [0, 1, 2], UnispeechSAT, 200, 16, Trainer, 1e-5],
+        "Zaim_2023-mc_unispeechSAT_u_n_0+1+2": ["Zaim_2023-u_n", [0, 1, 2], UnispeechSAT, 200, 16, TrainerMultiCrit, 1e-5],
     }
     # fmt: on
 
-    EXP_KEYS = Literal[tuple(__exp.keys())]
+    EXP_KEYS = Literal[tuple(_exp.keys())]
 
     def __init__(
         self,
@@ -448,7 +448,7 @@ class Runner:
             batch_size,
             trainer_cls,
             lr,
-        ) = self.__exp[exp_key]
+        ) = self._exp[exp_key]
         task = self.__tasks_generator.load_task(
             task=task_key,
             diag_level=max(diag_levels),
@@ -528,7 +528,7 @@ class Runner:
             batch_size,
             trainer_cls,
             lr,
-        ) = self.__exp[exp_key]
+        ) = self._exp[exp_key]
         task = self.__tasks_generator.load_task(
             task=task_key,
             diag_level=max(diag_levels),
