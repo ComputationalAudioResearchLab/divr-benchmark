@@ -109,17 +109,18 @@ class TestAll:
                         input_size = feature_function.feature_size
                         num_classes = data_loader.num_classes
                         model_cache_key = (
-                            f"{model_cls.__class__.__name__}.{input_size}.{num_classes}"
+                            f"{model_cls.__name__}.{input_size}.{num_classes}"
                         )
                         if model_cache_key in model_cache:
-                            model = model_cache[model_cache_key].to(self.__device)
+                            model = model_cache[model_cache_key]
                         else:
                             model = model_cls(
                                 input_size=input_size,
                                 num_classes=num_classes,
                                 checkpoint_path=Path("/tmp"),
-                            ).to(self.__device)
+                            )
                             model_cache[model_cache_key] = model.cpu()
+                        model = model.to(self.__device)
                         model = model.eval()
                         test_func = self.__test_func_map[model_cls]
                         for model_key, model_key_tests in model_tests.items():
