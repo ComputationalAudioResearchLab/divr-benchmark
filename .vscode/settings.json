@@ -2,6 +2,7 @@
   "files.exclude": {
     "diagnosis": true,
     "benchmark": true,
-    "acm_transactions_2025": true
+    "acm_transactions_2025": true,
+    "interspeech_2025": true
   }
 }

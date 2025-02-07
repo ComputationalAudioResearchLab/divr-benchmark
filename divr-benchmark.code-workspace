@@ -13,6 +13,9 @@
       "path": "acm_transactions_2025"
     },
     {
+      "path": "interspeech_2025"
+    },
+    {
       "path": "../storage"
     }
   ],
