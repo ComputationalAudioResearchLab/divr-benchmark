@@ -44,90 +44,90 @@ class TaskGenerator:
         diagnosis_map = diagnosis_maps.USVAC_2025()
         diag_level = diagnosis_map.max_diag_level
         coros = []
-        # coros += [
-        #     self.__benchmark.generate_task(
-        #         filter_func=self.__filter_func(
-        #             allowed_suffixes=[
-        #                 "-phrase.wav",
-        #             ],
-        #             diag_level=diag_level,
-        #         ),
-        #         task_path=self.__ensure_path(f"{self.__tasks_path}/phrase"),
-        #         diagnosis_map=diagnosis_map,
-        #     )
-        # ]
-        # coros += [
-        #     self.__benchmark.generate_task(
-        #         filter_func=self.__filter_func(
-        #             allowed_suffixes=[
-        #                 "-a_n.wav",
-        #             ],
-        #             diag_level=diag_level,
-        #         ),
-        #         task_path=self.__ensure_path(f"{self.__tasks_path}/a_n"),
-        #         diagnosis_map=diagnosis_map,
-        #     )
-        # ]
-        # coros += [
-        #     self.__benchmark.generate_task(
-        #         filter_func=self.__filter_func(
-        #             allowed_suffixes=[
-        #                 "-i_n.wav",
-        #             ],
-        #             diag_level=diag_level,
-        #         ),
-        #         task_path=self.__ensure_path(f"{self.__tasks_path}/i_n"),
-        #         diagnosis_map=diagnosis_map,
-        #     )
-        # ]
-        # coros += [
-        #     self.__benchmark.generate_task(
-        #         filter_func=self.__filter_func(
-        #             allowed_suffixes=[
-        #                 "-u_n.wav",
-        #             ],
-        #             diag_level=diag_level,
-        #         ),
-        #         task_path=self.__ensure_path(f"{self.__tasks_path}/u_n"),
-        #         diagnosis_map=diagnosis_map,
-        #     )
-        # ]
-        # coros += [
-        #     self.__benchmark.generate_task(
-        #         filter_func=self.__filter_func(
-        #             allowed_suffixes=[
-        #                 "-phrase.wav",
-        #                 "-a_n.wav",
-        #                 "-i_n.wav",
-        #                 "-u_n.wav",
-        #             ],
-        #             diag_level=diag_level,
-        #         ),
-        #         task_path=self.__ensure_path(f"{self.__tasks_path}/all"),
-        #         diagnosis_map=diagnosis_map,
-        #     )
-        # ]
-        # cross_test_datasets = [
-        #     "avfad",
-        #     "meei",
-        #     "torgo",
-        #     "uaspeech",
-        #     "uncommon_voice",
-        #     "voiced",
-        # ]
-        # for db in cross_test_datasets:
-        #     coros += [
-        #         self.__benchmark.generate_task(
-        #             filter_func=self.__cross_test_filter_func(
-        #                 database_name=db,
-        #                 diag_level=diag_level,
-        #             ),
-        #             task_path=self.__ensure_path(
-        #                 f"{self.__tasks_path}/cross_test_{db}"
-        #             ),
-        #             diagnosis_map=diagnosis_map,
-        #         )
-        #     ]
+        coros += [
+            self.__benchmark.generate_task(
+                filter_func=self.__filter_func(
+                    allowed_suffixes=[
+                        "-phrase.wav",
+                    ],
+                    diag_level=diag_level,
+                ),
+                task_path=self.__ensure_path(f"{self.__tasks_path}/phrase"),
+                diagnosis_map=diagnosis_map,
+            )
+        ]
+        coros += [
+            self.__benchmark.generate_task(
+                filter_func=self.__filter_func(
+                    allowed_suffixes=[
+                        "-a_n.wav",
+                    ],
+                    diag_level=diag_level,
+                ),
+                task_path=self.__ensure_path(f"{self.__tasks_path}/a_n"),
+                diagnosis_map=diagnosis_map,
+            )
+        ]
+        coros += [
+            self.__benchmark.generate_task(
+                filter_func=self.__filter_func(
+                    allowed_suffixes=[
+                        "-i_n.wav",
+                    ],
+                    diag_level=diag_level,
+                ),
+                task_path=self.__ensure_path(f"{self.__tasks_path}/i_n"),
+                diagnosis_map=diagnosis_map,
+            )
+        ]
+        coros += [
+            self.__benchmark.generate_task(
+                filter_func=self.__filter_func(
+                    allowed_suffixes=[
+                        "-u_n.wav",
+                    ],
+                    diag_level=diag_level,
+                ),
+                task_path=self.__ensure_path(f"{self.__tasks_path}/u_n"),
+                diagnosis_map=diagnosis_map,
+            )
+        ]
+        coros += [
+            self.__benchmark.generate_task(
+                filter_func=self.__filter_func(
+                    allowed_suffixes=[
+                        "-phrase.wav",
+                        "-a_n.wav",
+                        "-i_n.wav",
+                        "-u_n.wav",
+                    ],
+                    diag_level=diag_level,
+                ),
+                task_path=self.__ensure_path(f"{self.__tasks_path}/all"),
+                diagnosis_map=diagnosis_map,
+            )
+        ]
+        cross_test_datasets = [
+            "avfad",
+            "meei",
+            "torgo",
+            "uaspeech",
+            "uncommon_voice",
+            "voiced",
+        ]
+        for db in cross_test_datasets:
+            coros += [
+                self.__benchmark.generate_task(
+                    filter_func=self.__cross_test_filter_func(
+                        database_name=db,
+                        diag_level=diag_level,
+                    ),
+                    task_path=self.__ensure_path(
+                        f"{self.__tasks_path}/cross_test_{db}"
+                    ),
+                    diagnosis_map=diagnosis_map,
+                )
+            ]
 
         # Other classification map tasks
         maps = [

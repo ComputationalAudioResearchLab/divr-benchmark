@@ -1,5 +1,10 @@
 from .savable_module import SavableModule
-from .output import Normalized, NormalizedMultitask, NormalizedMultiCrit
+from .output import (
+    Normalized,
+    NormalizedMultitask,
+    NormalizedMultiCrit,
+    Base as BaseModel,
+)
 from .feature import (
     Feature,
     Data2Vec,
@@ -15,6 +20,7 @@ from .feature import (
 )
 
 __all__ = [
+    "BaseModel",
     "Feature",
     "SavableModule",
     "Normalized",

@@ -35,6 +35,7 @@ class CachedDataLoader(BaseDataLoader):
         feature_function: Feature | None,
         return_ids: bool,
         cache_path: Path,
+        cache_for_test: bool = False,
     ) -> None:
         super().__init__(
             random_seed=random_seed,
@@ -56,9 +57,11 @@ class CachedDataLoader(BaseDataLoader):
             self.feature_size = feature_function.feature_size
         self.__shuffle_train = shuffle_train
         self.__return_ids = return_ids
-        self.__create_cache(task.train, self.__cache_key_train)
-        self.__create_cache(task.val, self.__cache_key_val)
-        self.__create_cache(task.test, self.__cache_key_test)
+        if not cache_for_test:
+            self.__create_cache(task.train, self.__cache_key_train)
+            self.__create_cache(task.val, self.__cache_key_val)
+        else:
+            self.__create_cache(task.test, self.__cache_key_test)
         self.__train_points = self.__prepare_points_for_indexing(task.train)
         self.__val_points = self.__prepare_points_for_indexing(task.val)
         self.__test_points = self.__prepare_points_for_indexing(task.test)
