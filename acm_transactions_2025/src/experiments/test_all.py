@@ -53,6 +53,7 @@ class TestAll:
     def self_test(self):
         tests = {}
         completed_keys = self.__get_completed_tests()
+        completed_keys = ["unispeechSAT_all_4"]
         total_exps = 0
         for key, items in Runner._exp.items():
             if key in completed_keys:
@@ -215,10 +216,7 @@ class TestAll:
     ) -> pd.DataFrame:
         all_results = []
         all_ids = []
-        for batch in tqdm(
-            data_loader.test(),
-            desc="Testing",
-        ):
+        for batch in tqdm(data_loader.test(), desc="Testing", leave=False):
             if len(batch) == 2:
                 inputs, labels = batch
             else:
@@ -267,10 +265,7 @@ class TestAll:
     ) -> pd.DataFrame:
         all_results = []
         all_ids = []
-        for batch in tqdm(
-            data_loader.test(),
-            desc="Validating",
-        ):
+        for batch in tqdm(data_loader.test(), desc="Testing", leave=False):
             if len(batch) == 2:
                 inputs, labels = batch
             else:
