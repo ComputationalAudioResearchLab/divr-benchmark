@@ -130,6 +130,9 @@ class TestAll:
                                     checkpoint_path=Path("/tmp"),
                                 )
                             model_cache[model_cache_key] = model.cpu()
+                        if model_cls == NormalizedMultiCrit:
+                            # otherwise this can be different in the cache
+                            model.set_levels_map(levels_map=data_loader.levels_map)
                         model = model.to(self.__device)
                         model = model.eval()
                         test_func = self.__test_func_map[model_cls]
