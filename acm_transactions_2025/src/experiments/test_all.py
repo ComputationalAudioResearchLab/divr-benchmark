@@ -24,13 +24,6 @@ class TestAll:
         TrainerMultiCrit: NormalizedMultiCrit,
         TrainerMultiTask: NormalizedMultitask,
     }
-    __ignored_exp = [
-        "unispeechSAT_all_0",
-        "unispeechSAT_all_1",
-        "unispeechSAT_all_2",
-        "unispeechSAT_all_3",
-        "unispeechSAT_all_4",
-    ]
     __device = torch.device("cpu")
     __sampling_rate = 16000
     __random_seed = 42
@@ -46,6 +39,7 @@ class TestAll:
         self.__cache_path = cache_path
         self.__ckpt_path = Path(f"{cache_path}/checkpoints")
         self.__results_path = results_path
+        self.__results_path.mkdir(parents=True, exist_ok=True)
         self.__task_generator = TaskGenerator(
             research_data_path=self.__research_data_path
         )
@@ -58,8 +52,10 @@ class TestAll:
     @torch.no_grad()
     def self_test(self):
         tests = {}
+        completed_keys = self.__get_completed_tests()
+        total_exps = 0
         for key, items in Runner._exp.items():
-            if key in self.__ignored_exp:
+            if key in completed_keys:
                 continue
             (
                 task_key,
@@ -85,8 +81,8 @@ class TestAll:
                 task_diag_tests[model_cls] = {}
             model_tests = task_diag_tests[model_cls]
             model_tests[key] = self.__find_checkpoints(key)
+            total_exps += 1
 
-        total_exps = len(Runner._exp) - len(self.__ignored_exp)
         pbar_top = tqdm(desc="Testing models", total=total_exps)
         model_cache = {}
 
@@ -153,6 +149,19 @@ class TestAll:
                                     f"{results_path}/{epoch}.csv", index=False
                                 )
                             pbar_top.update(1)
+
+    def __get_completed_tests(self):
+        completed_keys = []
+        for key in Runner._exp:
+            completed = True
+            ckpts = list(sorted(Path(f"{self.__ckpt_path}/{key}").glob("*.h5")))
+            for ckpt in ckpts:
+                epoch = ckpt.stem
+                if not Path(f"{self.__results_path}/{key}/{epoch}.csv").is_file():
+                    completed = False
+            if completed:
+                completed_keys += [key]
+        return completed_keys
 
     @torch.no_grad()
     def __test_single(
