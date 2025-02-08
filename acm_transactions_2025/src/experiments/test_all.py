@@ -62,7 +62,7 @@ class ModelCache:
                 )
             self.__cache[model_cache_key] = model.cpu()
 
-        if model_cls == NormalizedMultiCrit:
+        if isinstance(model, NormalizedMultiCrit):
             # otherwise this can be different in the cache
             model.set_levels_map(levels_map=data_loader.levels_map)
         model.to(self.__device)
