@@ -17,6 +17,59 @@ from ..model import (
 )
 
 
+class ModelCache:
+
+    def __init__(self, device: torch.device) -> None:
+        self.__cache: dict[
+            str, Normalized | NormalizedMultiCrit | NormalizedMultitask
+        ] = {}
+        self.__tmp_path = Path("/tmp")
+        self.__device = device
+
+    def get_model(
+        self, data_loader: BaseDataLoader, model_cls
+    ) -> Normalized | NormalizedMultiCrit | NormalizedMultitask:
+        input_size = data_loader.feature_size
+        num_classes = data_loader.num_classes
+        if model_cls == NormalizedMultitask:
+            all_num_classes = ",".join(
+                map(str, data_loader.num_unique_diagnosis.values())
+            )
+            model_cache_key = f"{model_cls.__name__}.{input_size}.{all_num_classes}"
+        else:
+            model_cache_key = f"{model_cls.__name__}.{input_size}.{num_classes}"
+        if model_cache_key in self.__cache:
+            model = self.__cache[model_cache_key]
+        else:
+            if model_cls == Normalized:
+                model = model_cls(
+                    input_size=input_size,
+                    num_classes=data_loader.num_classes,
+                    checkpoint_path=self.__tmp_path,
+                )
+            elif model_cls == NormalizedMultiCrit:
+                model = model_cls(
+                    input_size=input_size,
+                    num_classes=data_loader.num_classes,
+                    checkpoint_path=self.__tmp_path,
+                    levels_map=data_loader.levels_map,
+                )
+            elif model_cls == NormalizedMultitask:
+                model = model_cls(
+                    input_size=input_size,
+                    num_classes=data_loader.num_unique_diagnosis,
+                    checkpoint_path=self.__tmp_path,
+                )
+            self.__cache[model_cache_key] = model.cpu()
+
+        if model_cls == NormalizedMultiCrit:
+            # otherwise this can be different in the cache
+            model.set_levels_map(levels_map=data_loader.levels_map)
+        model.to(self.__device)
+        model.eval()
+        return model
+
+
 class TestAll:
 
     __model_map = {
@@ -53,7 +106,6 @@ class TestAll:
     def self_test(self):
         tests = {}
         completed_keys = self.__get_completed_tests()
-        completed_keys = ["unispeechSAT_all_4"]
         total_exps = 0
         for key, items in Runner._exp.items():
             if key in completed_keys:
@@ -85,7 +137,7 @@ class TestAll:
             total_exps += 1
 
         pbar_top = tqdm(desc="Testing models", total=total_exps)
-        model_cache = {}
+        model_cache = ModelCache(device=self.__device)
 
         for feature_cls, feature_tests in tests.items():
             feature_function: Feature = feature_cls(
@@ -103,39 +155,10 @@ class TestAll:
                         ),
                     )
                     for model_cls, model_tests in task_diag_tests.items():
-                        input_size = feature_function.feature_size
-                        num_classes = data_loader.num_classes
-                        model_cache_key = (
-                            f"{model_cls.__name__}.{input_size}.{num_classes}"
+                        model = model_cache.get_model(
+                            data_loader=data_loader,
+                            model_cls=model_cls,
                         )
-                        if model_cache_key in model_cache:
-                            model = model_cache[model_cache_key]
-                        else:
-                            if model_cls == Normalized:
-                                model = model_cls(
-                                    input_size=input_size,
-                                    num_classes=num_classes,
-                                    checkpoint_path=Path("/tmp"),
-                                )
-                            elif model_cls == NormalizedMultiCrit:
-                                model = model_cls(
-                                    input_size=input_size,
-                                    num_classes=num_classes,
-                                    checkpoint_path=Path("/tmp"),
-                                    levels_map=data_loader.levels_map,
-                                )
-                            elif model_cls == NormalizedMultitask:
-                                model = model_cls(
-                                    input_size=input_size,
-                                    num_classes=data_loader.num_unique_diagnosis,
-                                    checkpoint_path=Path("/tmp"),
-                                )
-                            model_cache[model_cache_key] = model.cpu()
-                        if model_cls == NormalizedMultiCrit:
-                            # otherwise this can be different in the cache
-                            model.set_levels_map(levels_map=data_loader.levels_map)
-                        model = model.to(self.__device)
-                        model = model.eval()
                         test_func = self.__test_func_map[model_cls]
                         for model_key, model_key_tests in model_tests.items():
                             pbar_top.set_postfix({"model": model_key})
