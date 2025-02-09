@@ -3,9 +3,7 @@ import torch
 from pathlib import Path
 from typing import Literal
 
-from ..model import (
-    MFCCDD,
-)
+from ..model import MFCCDD, Wav2Vec
 from ..tasks_generator import TaskGenerator
 from ..data_loader import (
     CachedDataLoader,
@@ -67,6 +65,45 @@ class Runner:
         "mfccdd_a_4_25_librispeech": ["a_n", [4], MFCCDD, 2000, Trainer, 25, LibrispeechDevClean],
         "mfccdd_a_4_50_librispeech": ["a_n", [4], MFCCDD, 2000, Trainer, 50, LibrispeechDevClean],
 
+        # Wav2Vec
+        "wav2vec_phrase_0_25_emodb": ["phrase", [0], Wav2Vec, 200, Trainer, 25, EmoDB],
+        "wav2vec_phrase_0_50_emodb": ["phrase", [0], Wav2Vec, 200, Trainer, 50, EmoDB],
+        "wav2vec_phrase_1_25_emodb": ["phrase", [1], Wav2Vec, 200, Trainer, 25, EmoDB],
+        "wav2vec_phrase_1_50_emodb": ["phrase", [1], Wav2Vec, 200, Trainer, 50, EmoDB],
+        "wav2vec_phrase_4_25_emodb": ["phrase", [4], Wav2Vec, 200, Trainer, 25, EmoDB],
+        "wav2vec_phrase_4_50_emodb": ["phrase", [4], Wav2Vec, 200, Trainer, 50, EmoDB],
+        "wav2vec_phrase_0_25_commonvoice": ["phrase", [0], Wav2Vec, 200, Trainer, 25, CommonVoiceDeltaSegment20],
+        "wav2vec_phrase_0_50_commonvoice": ["phrase", [0], Wav2Vec, 200, Trainer, 50, CommonVoiceDeltaSegment20],
+        "wav2vec_phrase_1_25_commonvoice": ["phrase", [1], Wav2Vec, 200, Trainer, 25, CommonVoiceDeltaSegment20],
+        "wav2vec_phrase_1_50_commonvoice": ["phrase", [1], Wav2Vec, 200, Trainer, 50, CommonVoiceDeltaSegment20],
+        "wav2vec_phrase_4_25_commonvoice": ["phrase", [4], Wav2Vec, 200, Trainer, 25, CommonVoiceDeltaSegment20],
+        "wav2vec_phrase_4_50_commonvoice": ["phrase", [4], Wav2Vec, 200, Trainer, 50, CommonVoiceDeltaSegment20],
+        "wav2vec_phrase_0_25_librispeech": ["phrase", [0], Wav2Vec, 200, Trainer, 25, LibrispeechDevClean],
+        "wav2vec_phrase_0_50_librispeech": ["phrase", [0], Wav2Vec, 200, Trainer, 50, LibrispeechDevClean],
+        "wav2vec_phrase_1_25_librispeech": ["phrase", [1], Wav2Vec, 200, Trainer, 25, LibrispeechDevClean],
+        "wav2vec_phrase_1_50_librispeech": ["phrase", [1], Wav2Vec, 200, Trainer, 50, LibrispeechDevClean],
+        "wav2vec_phrase_4_25_librispeech": ["phrase", [4], Wav2Vec, 200, Trainer, 25, LibrispeechDevClean],
+        "wav2vec_phrase_4_50_librispeech": ["phrase", [4], Wav2Vec, 200, Trainer, 50, LibrispeechDevClean],
+
+        "wav2vec_a_0_25_emodb": ["a_n", [0], Wav2Vec, 200, Trainer, 25, EmoDB],
+        "wav2vec_a_0_50_emodb": ["a_n", [0], Wav2Vec, 200, Trainer, 50, EmoDB],
+        "wav2vec_a_1_25_emodb": ["a_n", [1], Wav2Vec, 200, Trainer, 25, EmoDB],
+        "wav2vec_a_1_50_emodb": ["a_n", [1], Wav2Vec, 200, Trainer, 50, EmoDB],
+        "wav2vec_a_4_25_emodb": ["a_n", [4], Wav2Vec, 200, Trainer, 25, EmoDB],
+        "wav2vec_a_4_50_emodb": ["a_n", [4], Wav2Vec, 200, Trainer, 50, EmoDB],
+        "wav2vec_a_0_25_commonvoice": ["a_n", [0], Wav2Vec, 200, Trainer, 25, CommonVoiceDeltaSegment20],
+        "wav2vec_a_0_50_commonvoice": ["a_n", [0], Wav2Vec, 200, Trainer, 50, CommonVoiceDeltaSegment20],
+        "wav2vec_a_1_25_commonvoice": ["a_n", [1], Wav2Vec, 200, Trainer, 25, CommonVoiceDeltaSegment20],
+        "wav2vec_a_1_50_commonvoice": ["a_n", [1], Wav2Vec, 200, Trainer, 50, CommonVoiceDeltaSegment20],
+        "wav2vec_a_4_25_commonvoice": ["a_n", [4], Wav2Vec, 200, Trainer, 25, CommonVoiceDeltaSegment20],
+        "wav2vec_a_4_50_commonvoice": ["a_n", [4], Wav2Vec, 200, Trainer, 50, CommonVoiceDeltaSegment20],
+        "wav2vec_a_0_25_librispeech": ["a_n", [0], Wav2Vec, 200, Trainer, 25, LibrispeechDevClean],
+        "wav2vec_a_0_50_librispeech": ["a_n", [0], Wav2Vec, 200, Trainer, 50, LibrispeechDevClean],
+        "wav2vec_a_1_25_librispeech": ["a_n", [1], Wav2Vec, 200, Trainer, 25, LibrispeechDevClean],
+        "wav2vec_a_1_50_librispeech": ["a_n", [1], Wav2Vec, 200, Trainer, 50, LibrispeechDevClean],
+        "wav2vec_a_4_25_librispeech": ["a_n", [4], Wav2Vec, 200, Trainer, 25, LibrispeechDevClean],
+        "wav2vec_a_4_50_librispeech": ["a_n", [4], Wav2Vec, 200, Trainer, 50, LibrispeechDevClean],
+
     }
     # fmt: on
 
@@ -89,6 +126,7 @@ class Runner:
         exp_key: Runner.EXP_KEYS,  # type: ignore
         tboard_enabled: bool,
         use_cache_loader: bool,
+        limit_vram: float | None,
     ):
         device = torch.device("cuda")
         (
@@ -102,6 +140,9 @@ class Runner:
         ) = self.__exp[exp_key]
         batch_size = 16
         lr = 1e-5
+        if limit_vram is not None:
+            torch.cuda.set_per_process_memory_fraction(limit_vram, device=None)
+            torch.cuda.empty_cache()
 
         task = self.__tasks_generator.load_task(
             task=task_key,

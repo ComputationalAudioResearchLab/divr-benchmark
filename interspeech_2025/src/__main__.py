@@ -20,6 +20,7 @@ class Main(ClassArgParser):
         exp_key: Runner.EXP_KEYS,  # type: ignore
         tboard_enabled: bool = True,
         use_cache_loader: bool = False,
+        limit_vram: float = None,
     ):
         tasks_generator = TaskGenerator(
             research_data_path=env.RESEARCH_DATA_PATH,
@@ -35,6 +36,7 @@ class Main(ClassArgParser):
             exp_key=exp_key,
             tboard_enabled=tboard_enabled,
             use_cache_loader=use_cache_loader,
+            limit_vram=limit_vram,
         )
 
     def test(self, exp_key: Runner.EXP_KEYS, load_epoch: int):  # type: ignore
