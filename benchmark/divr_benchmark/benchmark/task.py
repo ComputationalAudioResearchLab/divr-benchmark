@@ -94,6 +94,10 @@ class Task:
         self.__max_diag_level = list(self.__diagnosis_indices.keys())[-1]
 
     @property
+    def max_diag_level(self) -> int:
+        return self.__max_diag_level
+
+    @property
     def sample_rate(self) -> int:
         return self.__audio_loader.sample_rate
 

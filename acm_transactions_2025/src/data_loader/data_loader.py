@@ -21,6 +21,7 @@ class DataLoader(BaseDataLoader):
         feature_function: Feature | None,
         return_ids: bool,
         test_only: bool,
+        allow_inter_level_comparison: bool,
     ) -> None:
         super().__init__(
             random_seed=random_seed,
@@ -28,6 +29,7 @@ class DataLoader(BaseDataLoader):
             task=task,
             batch_size=batch_size,
             test_only=test_only,
+            allow_inter_level_comparison=allow_inter_level_comparison,
         )
         self.__train_points = np.array(task.train)
         self.__val_points = np.array(task.val)
@@ -35,7 +37,6 @@ class DataLoader(BaseDataLoader):
         self.__train_indices = np.arange(len(self.__train_points))
         self.__test_indices = np.arange(len(self.__test_points))
         self.__val_indices = np.arange(len(self.__val_points))
-        self.__diag_levels = diag_levels
         self.__batch_size = batch_size
         self.__task = task
         self.__device = device
@@ -64,7 +65,7 @@ class DataLoader(BaseDataLoader):
             [
                 [
                     self.__task.diag_to_index(b.label, level)
-                    for level in self.__diag_levels
+                    for level in self.diag_levels
                 ]
                 for b in batch
             ],

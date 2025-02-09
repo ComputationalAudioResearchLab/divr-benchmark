@@ -473,6 +473,7 @@ class Runner:
                 return_ids=False,
                 cache_path=cache_path,
                 test_only=False,
+                allow_inter_level_comparison=False,
             )
         else:
             data_loader = DataLoader(
@@ -485,6 +486,7 @@ class Runner:
                 diag_levels=diag_levels,
                 return_ids=False,
                 test_only=False,
+                allow_inter_level_comparison=False,
             )
         if trainer_cls == Trainer:
             trainer = Trainer(
@@ -549,7 +551,8 @@ class Runner:
             feature_function=feature_function,
             diag_levels=diag_levels,
             return_ids=True,
-            test_only=False,
+            test_only=True,
+            allow_inter_level_comparison=False,
         )
         if trainer_cls == Trainer:
             tester = Tester(

@@ -26,6 +26,7 @@ class BaseDataLoader:
         batch_size: int,
         task,
         test_only: bool,
+        allow_inter_level_comparison: bool,
     ) -> None:
         self.unique_diagnosis = {}
         self.num_unique_diagnosis = {}
@@ -33,6 +34,16 @@ class BaseDataLoader:
         self.train_class_weights = {}
         np.random.seed(random_seed)
         max_diag_level = max(diag_levels)
+        task_max_diag_level = task.max_diag_level
+        if not allow_inter_level_comparison and (max_diag_level > task_max_diag_level):
+            raise ValueError(
+                f"Invalid task and diag level. {{task.max_diag_level: {task_max_diag_level}, diag_levels: {diag_levels}}}"
+            )
+        else:
+            max_diag_level = task_max_diag_level
+            diag_levels = [d for d in diag_levels if d <= max_diag_level]
+            if len(diag_levels) < 1:
+                diag_levels = [task_max_diag_level]
         max_level_diags = task.unique_diagnosis()
         for diag_level in diag_levels:
             cur_level_diags = task.unique_diagnosis(level=diag_level)
@@ -53,12 +64,20 @@ class BaseDataLoader:
         self.max_diag_level = max_diag_level
         self.__batch_size = batch_size
         self.__task = task
+        self.__diag_levels = diag_levels
+
+    @property
+    def diag_levels(self):
+        return self.__diag_levels
 
     @property
     def num_classes(self):
         return self.num_unique_diagnosis[self.max_diag_level]
 
     def idx_to_diag_name(self, idx: int, level: int) -> str:
+        # either max diag level is higher than the level
+        # or we allow multi level comparisons
+        level = min(level, self.max_diag_level)
         return self.__task.index_to_diag(idx, level).name
 
     def __len__(self) -> int:

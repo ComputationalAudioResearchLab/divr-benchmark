@@ -85,7 +85,7 @@ class TestAllCross:
             )
             for ctk in self.__cross_test_tasks:
                 pbar.write(f"fc: {feature_cls.__name__}, ctk: {ctk}")
-                data_loader = self.__get_cached_data_loader(
+                data_loader = self.__get_cached_cross_data_loader(
                     task_key=ctk,
                     diag_levels=diag_levels,
                     feature_function=feature_function,
@@ -141,7 +141,7 @@ class TestAllCross:
             for task_key, task_tests in feature_tests.items():
                 for diag_levels_str, task_diag_tests in task_tests.items():
                     diag_levels = [int(x) for x in diag_levels_str.split(",")]
-                    data_loader = self.__get_data_loader(
+                    data_loader = self.__get_model_data_loader(
                         task_key=task_key,
                         diag_levels=diag_levels,
                         feature_function=feature_function,
@@ -150,7 +150,7 @@ class TestAllCross:
                         task=task_key
                     )
                     cross_data_loaders = {
-                        ctk: self.__get_cached_data_loader(
+                        ctk: self.__get_cached_cross_data_loader(
                             task_key=ctk,
                             diag_levels=diag_levels,
                             feature_function=feature_function,
@@ -249,11 +249,14 @@ class TestAllCross:
         )
         results["id"] = all_ids
 
-        def diag_map(idx):
+        def model_diag_map(idx):
             return data_loader.idx_to_diag_name(int(idx), diag_level)
 
-        results["actual"] = results["actual"].apply(diag_map)
-        results["predicted"] = results["predicted"].apply(diag_map)
+        def test_diag_map(idx):
+            return cross_dl.idx_to_diag_name(int(idx), diag_level)
+
+        results["actual"] = results["actual"].apply(test_diag_map)
+        results["predicted"] = results["predicted"].apply(model_diag_map)
         return results
 
     @torch.no_grad()
@@ -298,7 +301,13 @@ class TestAllCross:
         all_results["id"] = all_ids
         all_results = all_results[["id"] + column_names]
         for cname in column_names:
-            if cname.startswith("actual") or cname.startswith("predicted"):
+            if cname.startswith("actual"):
+                prefix, suffix = cname.split("_")
+                level = int(suffix)
+                all_results[cname] = all_results[cname].apply(
+                    lambda idx: cross_dl.idx_to_diag_name(int(idx), level)
+                )
+            elif cname.startswith("predicted"):
                 prefix, suffix = cname.split("_")
                 level = int(suffix)
                 all_results[cname] = all_results[cname].apply(
@@ -347,7 +356,13 @@ class TestAllCross:
         all_results["id"] = all_ids
         all_results = all_results[["id"] + column_names]
         for cname in column_names:
-            if cname.startswith("actual") or cname.startswith("predicted"):
+            if cname.startswith("actual"):
+                prefix, suffix = cname.split("_")
+                level = int(suffix)
+                all_results[cname] = all_results[cname].apply(
+                    lambda idx: cross_dl.idx_to_diag_name(int(idx), level)
+                )
+            elif cname.startswith("predicted"):
                 prefix, suffix = cname.split("_")
                 level = int(suffix)
                 all_results[cname] = all_results[cname].apply(
@@ -355,7 +370,7 @@ class TestAllCross:
                 )
         return all_results
 
-    def __get_cached_data_loader(
+    def __get_cached_cross_data_loader(
         self,
         task_key: str,
         diag_levels: list[int],
@@ -383,9 +398,10 @@ class TestAllCross:
             return_ids=True,
             cache_path=cache_path,
             test_only=True,
+            allow_inter_level_comparison=True,
         )
 
-    def __get_data_loader(
+    def __get_model_data_loader(
         self,
         task_key: str,
         diag_levels: list[int],
@@ -405,6 +421,7 @@ class TestAllCross:
             feature_function=feature_function,
             return_ids=True,
             test_only=True,
+            allow_inter_level_comparison=False,
         )
 
     def __find_checkpoints(self, exp_key: str) -> list[Path]:

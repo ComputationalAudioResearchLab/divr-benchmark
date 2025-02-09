@@ -298,6 +298,7 @@ class TestAllSelf:
             return_ids=True,
             cache_path=cache_path,
             test_only=True,
+            allow_inter_level_comparison=False,
         )
 
     def __get_data_loader(
@@ -320,6 +321,7 @@ class TestAllSelf:
             feature_function=feature_function,
             return_ids=True,
             test_only=True,
+            allow_inter_level_comparison=False,
         )
 
     def __find_checkpoints(self, exp_key: str) -> list[Path]:

@@ -36,6 +36,7 @@ class CachedDataLoader(BaseDataLoader):
         return_ids: bool,
         cache_path: Path,
         test_only: bool,
+        allow_inter_level_comparison: bool,
     ) -> None:
         super().__init__(
             random_seed=random_seed,
@@ -43,10 +44,10 @@ class CachedDataLoader(BaseDataLoader):
             task=task,
             batch_size=batch_size,
             test_only=test_only,
+            allow_inter_level_comparison=allow_inter_level_comparison,
         )
         cache_path.mkdir(parents=True, exist_ok=True)
         self.__cache = shelve.open(str(cache_path))
-        self.__diag_levels = diag_levels
         self.__batch_size = batch_size
         self.__task = task
         self.__device = device
@@ -96,7 +97,7 @@ class CachedDataLoader(BaseDataLoader):
             [
                 [
                     self.__task.diag_to_index(b["label"], level)
-                    for level in self.__diag_levels
+                    for level in self.diag_levels
                 ]
                 for b in batch
             ],
