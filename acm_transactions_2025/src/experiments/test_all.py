@@ -91,8 +91,10 @@ class TestAll:
         self.__research_data_path = research_data_path
         self.__cache_path = cache_path
         self.__ckpt_path = Path(f"{cache_path}/checkpoints")
-        self.__results_path = results_path
-        self.__results_path.mkdir(parents=True, exist_ok=True)
+        self.__self_results_path = Path(f"{results_path}/self")
+        self.__cross_results_path = Path(f"{results_path}/cross")
+        self.__self_results_path.mkdir(parents=True, exist_ok=True)
+        self.__cross_results_path.mkdir(parents=True, exist_ok=True)
         self.__task_generator = TaskGenerator(
             research_data_path=self.__research_data_path
         )
@@ -105,7 +107,7 @@ class TestAll:
     @torch.no_grad()
     def self_test(self):
         tests = {}
-        completed_keys = self.__get_completed_tests()
+        completed_keys = self.__get_completed_self_tests()
         total_exps = 0
         for key, items in Runner._exp.items():
             if key in completed_keys:
@@ -162,7 +164,9 @@ class TestAll:
                         test_func = self.__test_func_map[model_cls]
                         for model_key, model_key_tests in model_tests.items():
                             pbar_top.set_postfix({"model": model_key})
-                            results_path = Path(f"{self.__results_path}/{model_key}")
+                            results_path = Path(
+                                f"{self.__self_results_path}/{model_key}"
+                            )
                             results_path.mkdir(exist_ok=True)
                             for epoch_ckpt in model_key_tests:
                                 epoch = epoch_ckpt.stem
@@ -177,14 +181,14 @@ class TestAll:
                                 )
                             pbar_top.update(1)
 
-    def __get_completed_tests(self):
+    def __get_completed_self_tests(self):
         completed_keys = []
         for key in Runner._exp:
             completed = True
             ckpts = list(sorted(Path(f"{self.__ckpt_path}/{key}").glob("*.h5")))
             for ckpt in ckpts:
                 epoch = ckpt.stem
-                if not Path(f"{self.__results_path}/{key}/{epoch}.csv").is_file():
+                if not Path(f"{self.__self_results_path}/{key}/{epoch}.csv").is_file():
                     completed = False
             if completed:
                 completed_keys += [key]
