@@ -2,14 +2,16 @@ import torch
 import pandas as pd
 from tqdm import tqdm
 from pathlib import Path
+from divr_diagnosis import DiagnosisMap
 
-from . import Runner
-from .trainer import Trainer
-from ..data_loader import BaseDataLoader, DataLoader, CachedDataLoader
-from ..tasks_generator import TaskGenerator
-from .trainer_multicrit import TrainerMultiCrit
-from .trainer_multitask import TrainerMultiTask
-from ..model import (
+from .model_cache import ModelCache
+from .. import Runner
+from ..trainer import Trainer
+from ...data_loader import BaseDataLoader, DataLoader, CachedDataLoader
+from ...tasks_generator import TaskGenerator
+from ..trainer_multicrit import TrainerMultiCrit
+from ..trainer_multitask import TrainerMultiTask
+from ...model import (
     Normalized,
     NormalizedMultiCrit,
     NormalizedMultitask,
@@ -17,60 +19,7 @@ from ..model import (
 )
 
 
-class ModelCache:
-
-    def __init__(self, device: torch.device) -> None:
-        self.__cache: dict[
-            str, Normalized | NormalizedMultiCrit | NormalizedMultitask
-        ] = {}
-        self.__tmp_path = Path("/tmp")
-        self.__device = device
-
-    def get_model(
-        self, data_loader: BaseDataLoader, model_cls
-    ) -> Normalized | NormalizedMultiCrit | NormalizedMultitask:
-        input_size = data_loader.feature_size
-        num_classes = data_loader.num_classes
-        if model_cls == NormalizedMultitask:
-            all_num_classes = ",".join(
-                map(str, data_loader.num_unique_diagnosis.values())
-            )
-            model_cache_key = f"{model_cls.__name__}.{input_size}.{all_num_classes}"
-        else:
-            model_cache_key = f"{model_cls.__name__}.{input_size}.{num_classes}"
-        if model_cache_key in self.__cache:
-            model = self.__cache[model_cache_key]
-        else:
-            if model_cls == Normalized:
-                model = model_cls(
-                    input_size=input_size,
-                    num_classes=data_loader.num_classes,
-                    checkpoint_path=self.__tmp_path,
-                )
-            elif model_cls == NormalizedMultiCrit:
-                model = model_cls(
-                    input_size=input_size,
-                    num_classes=data_loader.num_classes,
-                    checkpoint_path=self.__tmp_path,
-                    levels_map=data_loader.levels_map,
-                )
-            elif model_cls == NormalizedMultitask:
-                model = model_cls(
-                    input_size=input_size,
-                    num_classes=data_loader.num_unique_diagnosis,
-                    checkpoint_path=self.__tmp_path,
-                )
-            self.__cache[model_cache_key] = model.cpu()
-
-        if isinstance(model, NormalizedMultiCrit):
-            # otherwise this can be different in the cache
-            model.set_levels_map(levels_map=data_loader.levels_map)
-        model.to(self.__device)
-        model.eval()
-        return model
-
-
-class TestAll:
+class TestAllCross:
 
     __model_map = {
         Trainer: Normalized,
@@ -81,6 +30,14 @@ class TestAll:
     __sampling_rate = 16000
     __random_seed = 42
     __batch_size = 16
+    __cross_test_tasks = [
+        "cross_test_avfad",
+        "cross_test_meei",
+        "cross_test_torgo",
+        "cross_test_uaspeech",
+        "cross_test_uncommon_voice",
+        "cross_test_voiced",
+    ]
 
     def __init__(
         self,
@@ -91,10 +48,8 @@ class TestAll:
         self.__research_data_path = research_data_path
         self.__cache_path = cache_path
         self.__ckpt_path = Path(f"{cache_path}/checkpoints")
-        self.__self_results_path = Path(f"{results_path}/self")
-        self.__cross_results_path = Path(f"{results_path}/cross")
-        self.__self_results_path.mkdir(parents=True, exist_ok=True)
-        self.__cross_results_path.mkdir(parents=True, exist_ok=True)
+        self.__results_path = Path(f"{results_path}/cross")
+        self.__results_path.mkdir(parents=True, exist_ok=True)
         self.__task_generator = TaskGenerator(
             research_data_path=self.__research_data_path
         )
@@ -104,10 +59,48 @@ class TestAll:
             NormalizedMultitask: self.__test_multi_task,
         }
 
+    def cache_tasks(self):
+        feature_classes = set()
+        for key, items in Runner._exp.items():
+            (
+                task_key,
+                diag_levels,
+                feature_cls,
+                num_epochs,
+                batch_size,
+                trainer_cls,
+                lr,
+            ) = items
+            feature_classes.add(feature_cls)
+        feature_classes = sorted(feature_classes, key=lambda x: x.__name__)
+        diagnosis_map = self.__task_generator.get_diagnosis_map(task="all")
+        pbar = tqdm(
+            desc="Caching tasks",
+            total=len(feature_classes) * len(self.__cross_test_tasks),
+        )
+        diag_levels = [0]
+        for feature_cls in feature_classes:
+            feature_function: Feature = feature_cls(
+                device=self.__device, sampling_rate=self.__sampling_rate
+            )
+            for ctk in self.__cross_test_tasks:
+                pbar.write(f"fc: {feature_cls.__name__}, ctk: {ctk}")
+                data_loader = self.__get_cached_data_loader(
+                    task_key=ctk,
+                    diag_levels=diag_levels,
+                    feature_function=feature_function,
+                    cache_path=Path(
+                        f"{self.__cache_path}/.data_loader/{ctk}/{feature_cls.__name__}"
+                    ),
+                    diagnosis_map=diagnosis_map,
+                )
+                del data_loader
+                pbar.update(1)
+
     @torch.no_grad()
-    def self_test(self):
+    def run(self):
         tests = {}
-        completed_keys = self.__get_completed_self_tests()
+        completed_keys = self.__get_completed_tests()
         total_exps = 0
         for key, items in Runner._exp.items():
             if key in completed_keys:
@@ -148,14 +141,30 @@ class TestAll:
             for task_key, task_tests in feature_tests.items():
                 for diag_levels_str, task_diag_tests in task_tests.items():
                     diag_levels = [int(x) for x in diag_levels_str.split(",")]
-                    data_loader = self.__get_cached_data_loader(
+                    data_loader = self.__get_data_loader(
                         task_key=task_key,
                         diag_levels=diag_levels,
                         feature_function=feature_function,
-                        cache_path=Path(
-                            f"{self.__cache_path}/.data_loader/{task_key}/{feature_cls.__name__}"
-                        ),
                     )
+                    diagnosis_map = self.__task_generator.get_diagnosis_map(
+                        task=task_key
+                    )
+                    cross_data_loaders = {
+                        ctk: self.__get_cached_data_loader(
+                            task_key=ctk,
+                            diag_levels=diag_levels,
+                            feature_function=feature_function,
+                            cache_path=Path(
+                                f"{self.__cache_path}/.data_loader/{ctk}/{feature_cls.__name__}"
+                            ),
+                            diagnosis_map=diagnosis_map,
+                        )
+                        for ctk in tqdm(
+                            self.__cross_test_tasks,
+                            desc="Loading cross test data loaders",
+                            leave=False,
+                        )
+                    }
                     for model_cls, model_tests in task_diag_tests.items():
                         model = model_cache.get_model(
                             data_loader=data_loader,
@@ -164,32 +173,44 @@ class TestAll:
                         test_func = self.__test_func_map[model_cls]
                         for model_key, model_key_tests in model_tests.items():
                             pbar_top.set_postfix({"model": model_key})
-                            results_path = Path(
-                                f"{self.__self_results_path}/{model_key}"
+                            model_results_path = Path(
+                                f"{self.__results_path}/{model_key}"
                             )
-                            results_path.mkdir(exist_ok=True)
+                            model_results_path.mkdir(exist_ok=True)
                             for epoch_ckpt in model_key_tests:
                                 epoch = epoch_ckpt.stem
                                 model.load_checkpoint(epoch_ckpt)
-                                result = test_func(
-                                    data_loader=data_loader,
-                                    model=model,
-                                    diag_levels=diag_levels,
-                                )
-                                result.to_csv(
-                                    f"{results_path}/{epoch}.csv", index=False
-                                )
+                                for ctk, cross_dl in cross_data_loaders.items():
+                                    ctk_results_path = Path(
+                                        f"{model_results_path}/{ctk}"
+                                    )
+                                    ctk_results_path.mkdir(exist_ok=True)
+                                    result = test_func(
+                                        cross_dl=cross_dl,
+                                        data_loader=data_loader,
+                                        model=model,
+                                        diag_levels=diag_levels,
+                                    )
+                                    result.to_csv(
+                                        f"{ctk_results_path}/{epoch}.csv", index=False
+                                    )
                             pbar_top.update(1)
 
-    def __get_completed_self_tests(self):
+            # for cdl in cross_data_loaders.values():
+            #     cdl.empty_cache()
+
+    def __get_completed_tests(self):
         completed_keys = []
         for key in Runner._exp:
             completed = True
             ckpts = list(sorted(Path(f"{self.__ckpt_path}/{key}").glob("*.h5")))
-            for ckpt in ckpts:
-                epoch = ckpt.stem
-                if not Path(f"{self.__self_results_path}/{key}/{epoch}.csv").is_file():
-                    completed = False
+            for ctk in self.__cross_test_tasks:
+                for ckpt in ckpts:
+                    epoch = ckpt.stem
+                    if not Path(
+                        f"{self.__results_path}/{key}/{ctk}/{epoch}.csv"
+                    ).is_file():
+                        completed = False
             if completed:
                 completed_keys += [key]
         return completed_keys
@@ -197,6 +218,7 @@ class TestAll:
     @torch.no_grad()
     def __test_single(
         self,
+        cross_dl: BaseDataLoader,
         data_loader: BaseDataLoader,
         model: Normalized,
         diag_levels: list[int],
@@ -205,7 +227,7 @@ class TestAll:
         diag_level = diag_levels[0]
         results = []
         all_ids = []
-        for batch in tqdm(data_loader.test(), desc="Testing", leave=False):
+        for batch in tqdm(cross_dl.test(), desc="Testing", leave=False):
             if len(batch) == 2:
                 inputs, labels = batch
             else:
@@ -237,13 +259,14 @@ class TestAll:
     @torch.no_grad()
     def __test_multi_crit(
         self,
+        cross_dl: BaseDataLoader,
         data_loader: BaseDataLoader,
         model: NormalizedMultiCrit,
         diag_levels: list[int],
     ) -> pd.DataFrame:
         all_results = []
         all_ids = []
-        for batch in tqdm(data_loader.test(), desc="Testing", leave=False):
+        for batch in tqdm(cross_dl.test(), desc="Testing", leave=False):
             if len(batch) == 2:
                 inputs, labels = batch
             else:
@@ -286,13 +309,14 @@ class TestAll:
     @torch.no_grad()
     def __test_multi_task(
         self,
+        cross_dl: BaseDataLoader,
         data_loader: BaseDataLoader,
         model: NormalizedMultitask,
         diag_levels: list[int],
     ) -> pd.DataFrame:
         all_results = []
         all_ids = []
-        for batch in tqdm(data_loader.test(), desc="Testing", leave=False):
+        for batch in tqdm(cross_dl.test(), desc="Testing", leave=False):
             if len(batch) == 2:
                 inputs, labels = batch
             else:
@@ -337,10 +361,16 @@ class TestAll:
         diag_levels: list[int],
         feature_function: Feature,
         cache_path: Path,
-    ) -> BaseDataLoader:
+        diagnosis_map: DiagnosisMap,
+    ) -> CachedDataLoader:
         task = self.__task_generator.load_task(
             task=task_key,
             diag_level=max(diag_levels),
+            diagnosis_map=diagnosis_map,
+            # This is a heurestic of checking for existence of cache
+            # it's posisble cache was incomplete, in which case the folder will
+            # need to be deleted for audios to load again
+            load_audios=not cache_path.is_dir(),
         )
         return CachedDataLoader(
             random_seed=self.__random_seed,
@@ -352,7 +382,7 @@ class TestAll:
             feature_function=feature_function,
             return_ids=True,
             cache_path=cache_path,
-            cache_for_test=True,
+            test_only=True,
         )
 
     def __get_data_loader(
@@ -374,6 +404,7 @@ class TestAll:
             task=task,
             feature_function=feature_function,
             return_ids=True,
+            test_only=True,
         )
 
     def __find_checkpoints(self, exp_key: str) -> list[Path]:

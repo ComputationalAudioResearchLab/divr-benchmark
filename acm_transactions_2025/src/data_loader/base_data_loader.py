@@ -25,6 +25,7 @@ class BaseDataLoader:
         diag_levels: List[int],
         batch_size: int,
         task,
+        test_only: bool,
     ) -> None:
         self.unique_diagnosis = {}
         self.num_unique_diagnosis = {}
@@ -45,9 +46,10 @@ class BaseDataLoader:
             self.levels_map[diag_level] = level_map
             self.unique_diagnosis[diag_level] = cur_level_diags
             self.num_unique_diagnosis[diag_level] = len(cur_level_diags)
-            self.train_class_weights[diag_level] = task.train_class_weights(
-                level=diag_level
-            )
+            if not test_only:
+                self.train_class_weights[diag_level] = task.train_class_weights(
+                    level=diag_level
+                )
         self.max_diag_level = max_diag_level
         self.__batch_size = batch_size
         self.__task = task

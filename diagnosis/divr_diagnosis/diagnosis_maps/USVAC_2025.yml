@@ -1262,6 +1262,7 @@ hematoma:
 hemmoragic_reinkes_edema:
   alias:
     - hemmoragic reinke's edema
+    - hemmoragic_reinke_s_edema
   level: 4
   parents:
     organic_structural_epithelial_propria: 0.86

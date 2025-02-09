@@ -8,8 +8,8 @@ from pathlib import Path
 import matplotlib.pyplot as plt
 from sklearn.metrics import confusion_matrix
 
-from ..model import NormalizedMultitask
-from ..data_loader import BaseDataLoader
+from ...model import NormalizedMultitask
+from ...data_loader import BaseDataLoader
 
 ConfusionData = Dict[int, Dict[int, int]]
 

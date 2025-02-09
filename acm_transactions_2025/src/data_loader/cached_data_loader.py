@@ -35,13 +35,14 @@ class CachedDataLoader(BaseDataLoader):
         feature_function: Feature | None,
         return_ids: bool,
         cache_path: Path,
-        cache_for_test: bool = False,
+        test_only: bool,
     ) -> None:
         super().__init__(
             random_seed=random_seed,
             diag_levels=diag_levels,
             task=task,
             batch_size=batch_size,
+            test_only=test_only,
         )
         cache_path.mkdir(parents=True, exist_ok=True)
         self.__cache = shelve.open(str(cache_path))
@@ -57,7 +58,7 @@ class CachedDataLoader(BaseDataLoader):
             self.feature_size = feature_function.feature_size
         self.__shuffle_train = shuffle_train
         self.__return_ids = return_ids
-        if not cache_for_test:
+        if not test_only:
             self.__create_cache(task.train, self.__cache_key_train)
             self.__create_cache(task.val, self.__cache_key_val)
         else:
@@ -65,6 +66,13 @@ class CachedDataLoader(BaseDataLoader):
         self.__train_points = self.__prepare_points_for_indexing(task.train)
         self.__val_points = self.__prepare_points_for_indexing(task.val)
         self.__test_points = self.__prepare_points_for_indexing(task.test)
+
+    # def empty_cache(self):
+    #     """
+    #     Force empty cache to reclaim disk space
+    #     """
+    #     self.__cache.clear()
+    #     self.__cache.close()
 
     def __prepare_points_for_indexing(self, points: list) -> np.ndarray:
         return np.array([{"id": point.id, "label": point.label} for point in points])

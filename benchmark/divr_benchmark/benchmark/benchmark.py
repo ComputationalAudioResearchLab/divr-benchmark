@@ -59,7 +59,11 @@ class Benchmark:
         )
 
     def load_task(
-        self, task_path: Path, diag_level: int | None, diagnosis_map: DiagnosisMap
+        self,
+        task_path: Path,
+        diag_level: int | None,
+        diagnosis_map: DiagnosisMap,
+        load_audios: bool = True,
     ) -> Task:
         if not task_path.is_dir():
             raise ValueError("Invalid task selected")
@@ -71,9 +75,16 @@ class Benchmark:
             test=Path(f"{task_path}/test.yml"),
             quiet=self.__quiet,
             diag_level=diag_level,
+            load_audios=load_audios,
         )
 
-    def task(self, stream: int, task: int, diagnosis_map: DiagnosisMap) -> Task:
+    def task(
+        self,
+        stream: int,
+        task: int,
+        diagnosis_map: DiagnosisMap,
+        load_audios: bool = True,
+    ) -> Task:
         stream_path = Path(f"{self.__tasks_path}/streams/{stream}/")
         if not stream_path.is_dir():
             raise ValueError("Invalid stream selected")
@@ -99,6 +110,7 @@ class Benchmark:
             test=test_path,
             quiet=self.__quiet,
             diag_level=None,
+            load_audios=load_audios,
         )
 
     def __ensure_datasets(self, tasks_path: str) -> None:

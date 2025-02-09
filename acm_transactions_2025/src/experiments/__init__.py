@@ -18,9 +18,9 @@ from ..data_loader import CachedDataLoader, DataLoader
 from .trainer import Trainer
 from .trainer_multitask import TrainerMultiTask
 from .trainer_multicrit import TrainerMultiCrit
-from .tester import Tester
-from .tester_multitask import TesterMultiTask
-from .tester_multicrit import TesterMultiCrit
+from .testers.tester import Tester
+from .testers.tester_multitask import TesterMultiTask
+from .testers.tester_multicrit import TesterMultiCrit
 
 
 class Runner:
@@ -472,6 +472,7 @@ class Runner:
                 diag_levels=diag_levels,
                 return_ids=False,
                 cache_path=cache_path,
+                test_only=False,
             )
         else:
             data_loader = DataLoader(
@@ -483,6 +484,7 @@ class Runner:
                 feature_function=feature_function,
                 diag_levels=diag_levels,
                 return_ids=False,
+                test_only=False,
             )
         if trainer_cls == Trainer:
             trainer = Trainer(
@@ -547,6 +549,7 @@ class Runner:
             feature_function=feature_function,
             diag_levels=diag_levels,
             return_ids=True,
+            test_only=False,
         )
         if trainer_cls == Trainer:
             tester = Tester(

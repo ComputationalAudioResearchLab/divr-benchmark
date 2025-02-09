@@ -59,6 +59,7 @@ class Task:
         test: Path,
         quiet: bool,
         diag_level: int | None,
+        load_audios: bool,
     ) -> None:
         self.__diagnosis_map = diagnosis_map
         self.__audio_loader = audio_loader
@@ -67,12 +68,14 @@ class Task:
             key="train",
             quiet=quiet,
             diag_level=diag_level,
+            load_audios=load_audios,
         )
         self.__val = self.__load_file(
             data_file=val,
             key="val",
             quiet=quiet,
             diag_level=diag_level,
+            load_audios=load_audios,
         )
         self.__test = dict(
             [
@@ -82,6 +85,7 @@ class Task:
                     key="test",
                     quiet=quiet,
                     diag_level=diag_level,
+                    load_audios=load_audios,
                 )
             ]
         )
@@ -164,6 +168,7 @@ class Task:
         key: str,
         quiet: bool,
         diag_level: int | None,
+        load_audios: bool,
     ) -> List[DataPoint]:
         with open(data_file, "r") as df:
             data = yaml.load(df, Loader=yaml.FullLoader)
@@ -176,9 +181,12 @@ class Task:
             label = self.__diagnosis_map.get(val["label"])
             if diag_level is not None:
                 label = label.at_level(diag_level)
-            audio = self.__audio_loader(val["audio_keys"])
-            if len(audio) < 1:
-                raise ValueError(f"Invalid data point (no audio): {key}")
+            if load_audios:
+                audio = self.__audio_loader(val["audio_keys"])
+                if len(audio) < 1:
+                    raise ValueError(f"Invalid data point (no audio): {key}")
+            else:
+                audio = []
             dataset.append(DataPoint(id=key, audio=audio, label=label))
         return dataset
 

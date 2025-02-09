@@ -20,12 +20,14 @@ class DataLoader(BaseDataLoader):
         task,
         feature_function: Feature | None,
         return_ids: bool,
+        test_only: bool,
     ) -> None:
         super().__init__(
             random_seed=random_seed,
             diag_levels=diag_levels,
             task=task,
             batch_size=batch_size,
+            test_only=test_only,
         )
         self.__train_points = np.array(task.train)
         self.__val_points = np.array(task.val)

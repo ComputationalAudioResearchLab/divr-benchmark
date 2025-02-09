@@ -6,7 +6,7 @@ from divr_benchmark import Benchmark
 from divr_benchmark.task_generator import DatabaseFunc, Dataset
 from divr_benchmark.task_generator.task import Task
 from divr_benchmark.task_generator.databases import SVD
-from divr_diagnosis import diagnosis_maps
+from divr_diagnosis import diagnosis_maps, DiagnosisMap
 
 
 class TaskGenerator:
@@ -26,19 +26,30 @@ class TaskGenerator:
         cur_path = Path(__file__).parent.resolve()
         self.__tasks_path = self.__ensure_path(f"{cur_path}/tasks")
 
-    def load_task(self, task: str, diag_level: int | None) -> Task:
-        if "-" in task:
-            # specified diagnosis map
-            diagnosis_map_key = task.split("-", maxsplit=1)[0]
-            diagnosis_map = self.__diagnosis_maps[diagnosis_map_key]()
-        else:
-            diagnosis_map = diagnosis_maps.USVAC_2025()
+    def load_task(
+        self,
+        task: str,
+        diag_level: int | None,
+        diagnosis_map: DiagnosisMap | None = None,
+        load_audios: bool = True,
+    ) -> Task:
+        if diagnosis_map is None:
+            diagnosis_map = self.get_diagnosis_map(task)
         task_path = Path(f"{self.__tasks_path}/{task}")
         return self.__benchmark.load_task(
             task_path=task_path,
             diag_level=diag_level,
             diagnosis_map=diagnosis_map,
+            load_audios=load_audios,
         )
+
+    def get_diagnosis_map(self, task):
+        if "-" in task:
+            # specified diagnosis map
+            diagnosis_map_key = task.split("-", maxsplit=1)[0]
+            return self.__diagnosis_maps[diagnosis_map_key]()
+        else:
+            return diagnosis_maps.USVAC_2025()
 
     async def generate(self) -> None:
         diagnosis_map = diagnosis_maps.USVAC_2025()

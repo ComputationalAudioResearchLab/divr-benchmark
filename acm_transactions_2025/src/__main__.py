@@ -7,7 +7,8 @@ from sklearn.metrics import confusion_matrix
 from . import env
 from .tasks_generator import TaskGenerator
 from .experiments import Runner
-from .experiments.test_all import TestAll
+from .experiments.testers.all_cross import TestAllCross
+from .experiments.testers.all_self import TestAllSelf
 
 
 class Main(ClassArgParser):
@@ -51,13 +52,29 @@ class Main(ClassArgParser):
         )
         runner.test(exp_key=exp_key, load_epoch=load_epoch)
 
-    async def test_all_self(self):
-        tester = TestAll(
+    async def test_all_cross(self):
+        tester = TestAllCross(
             research_data_path=env.RESEARCH_DATA_PATH,
             cache_path=env.CACHE_PATH,
             results_path=env.RESULTS_PATH,
         )
-        tester.self_test()
+        tester.run()
+
+    async def cache_all_cross_tests(self):
+        tester = TestAllCross(
+            research_data_path=env.RESEARCH_DATA_PATH,
+            cache_path=env.CACHE_PATH,
+            results_path=env.RESULTS_PATH,
+        )
+        tester.cache_tasks()
+
+    async def test_all_self(self):
+        tester = TestAllSelf(
+            research_data_path=env.RESEARCH_DATA_PATH,
+            cache_path=env.CACHE_PATH,
+            results_path=env.RESULTS_PATH,
+        )
+        tester.run()
 
     def collate_test_results(self):
         results_path = Path(f"{env.RESULTS_PATH}/test")
