@@ -3,7 +3,7 @@ import torch
 from pathlib import Path
 from typing import Literal
 
-from ..model import MFCCDD, Wav2Vec
+from ..model import MFCCDD, Wav2Vec, UnispeechSAT
 from ..tasks_generator import TaskGenerator
 from ..data_loader import (
     CachedDataLoader,
@@ -104,6 +104,44 @@ class Runner:
         "wav2vec_a_4_25_librispeech": ["a_n", [4], Wav2Vec, 200, Trainer, 25, LibrispeechDevClean],
         "wav2vec_a_4_50_librispeech": ["a_n", [4], Wav2Vec, 200, Trainer, 50, LibrispeechDevClean],
 
+        # UnispeechSAT
+        "unispeechSAT_phrase_0_25_emodb": ["phrase", [0], UnispeechSAT, 200, Trainer, 25, EmoDB],
+        "unispeechSAT_phrase_0_50_emodb": ["phrase", [0], UnispeechSAT, 200, Trainer, 50, EmoDB],
+        "unispeechSAT_phrase_1_25_emodb": ["phrase", [1], UnispeechSAT, 200, Trainer, 25, EmoDB],
+        "unispeechSAT_phrase_1_50_emodb": ["phrase", [1], UnispeechSAT, 200, Trainer, 50, EmoDB],
+        "unispeechSAT_phrase_4_25_emodb": ["phrase", [4], UnispeechSAT, 200, Trainer, 25, EmoDB],
+        "unispeechSAT_phrase_4_50_emodb": ["phrase", [4], UnispeechSAT, 200, Trainer, 50, EmoDB],
+        "unispeechSAT_phrase_0_25_commonvoice": ["phrase", [0], UnispeechSAT, 200, Trainer, 25, CommonVoiceDeltaSegment20],
+        "unispeechSAT_phrase_0_50_commonvoice": ["phrase", [0], UnispeechSAT, 200, Trainer, 50, CommonVoiceDeltaSegment20],
+        "unispeechSAT_phrase_1_25_commonvoice": ["phrase", [1], UnispeechSAT, 200, Trainer, 25, CommonVoiceDeltaSegment20],
+        "unispeechSAT_phrase_1_50_commonvoice": ["phrase", [1], UnispeechSAT, 200, Trainer, 50, CommonVoiceDeltaSegment20],
+        "unispeechSAT_phrase_4_25_commonvoice": ["phrase", [4], UnispeechSAT, 200, Trainer, 25, CommonVoiceDeltaSegment20],
+        "unispeechSAT_phrase_4_50_commonvoice": ["phrase", [4], UnispeechSAT, 200, Trainer, 50, CommonVoiceDeltaSegment20],
+        "unispeechSAT_phrase_0_25_librispeech": ["phrase", [0], UnispeechSAT, 200, Trainer, 25, LibrispeechDevClean],
+        "unispeechSAT_phrase_0_50_librispeech": ["phrase", [0], UnispeechSAT, 200, Trainer, 50, LibrispeechDevClean],
+        "unispeechSAT_phrase_1_25_librispeech": ["phrase", [1], UnispeechSAT, 200, Trainer, 25, LibrispeechDevClean],
+        "unispeechSAT_phrase_1_50_librispeech": ["phrase", [1], UnispeechSAT, 200, Trainer, 50, LibrispeechDevClean],
+        "unispeechSAT_phrase_4_25_librispeech": ["phrase", [4], UnispeechSAT, 200, Trainer, 25, LibrispeechDevClean],
+        "unispeechSAT_phrase_4_50_librispeech": ["phrase", [4], UnispeechSAT, 200, Trainer, 50, LibrispeechDevClean],
+
+        "unispeechSAT_a_0_25_emodb": ["a_n", [0], UnispeechSAT, 200, Trainer, 25, EmoDB],
+        "unispeechSAT_a_0_50_emodb": ["a_n", [0], UnispeechSAT, 200, Trainer, 50, EmoDB],
+        "unispeechSAT_a_1_25_emodb": ["a_n", [1], UnispeechSAT, 200, Trainer, 25, EmoDB],
+        "unispeechSAT_a_1_50_emodb": ["a_n", [1], UnispeechSAT, 200, Trainer, 50, EmoDB],
+        "unispeechSAT_a_4_25_emodb": ["a_n", [4], UnispeechSAT, 200, Trainer, 25, EmoDB],
+        "unispeechSAT_a_4_50_emodb": ["a_n", [4], UnispeechSAT, 200, Trainer, 50, EmoDB],
+        "unispeechSAT_a_0_25_commonvoice": ["a_n", [0], UnispeechSAT, 200, Trainer, 25, CommonVoiceDeltaSegment20],
+        "unispeechSAT_a_0_50_commonvoice": ["a_n", [0], UnispeechSAT, 200, Trainer, 50, CommonVoiceDeltaSegment20],
+        "unispeechSAT_a_1_25_commonvoice": ["a_n", [1], UnispeechSAT, 200, Trainer, 25, CommonVoiceDeltaSegment20],
+        "unispeechSAT_a_1_50_commonvoice": ["a_n", [1], UnispeechSAT, 200, Trainer, 50, CommonVoiceDeltaSegment20],
+        "unispeechSAT_a_4_25_commonvoice": ["a_n", [4], UnispeechSAT, 200, Trainer, 25, CommonVoiceDeltaSegment20],
+        "unispeechSAT_a_4_50_commonvoice": ["a_n", [4], UnispeechSAT, 200, Trainer, 50, CommonVoiceDeltaSegment20],
+        "unispeechSAT_a_0_25_librispeech": ["a_n", [0], UnispeechSAT, 200, Trainer, 25, LibrispeechDevClean],
+        "unispeechSAT_a_0_50_librispeech": ["a_n", [0], UnispeechSAT, 200, Trainer, 50, LibrispeechDevClean],
+        "unispeechSAT_a_1_25_librispeech": ["a_n", [1], UnispeechSAT, 200, Trainer, 25, LibrispeechDevClean],
+        "unispeechSAT_a_1_50_librispeech": ["a_n", [1], UnispeechSAT, 200, Trainer, 50, LibrispeechDevClean],
+        "unispeechSAT_a_4_25_librispeech": ["a_n", [4], UnispeechSAT, 200, Trainer, 25, LibrispeechDevClean],
+        "unispeechSAT_a_4_50_librispeech": ["a_n", [4], UnispeechSAT, 200, Trainer, 50, LibrispeechDevClean],
     }
     # fmt: on
 
