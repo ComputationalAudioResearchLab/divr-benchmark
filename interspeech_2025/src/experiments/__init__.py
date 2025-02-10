@@ -14,8 +14,8 @@ from ..data_loader import (
 )
 from .trainer import Trainer
 from .trainer_multicrit import TrainerMultiCrit
-from .tester import Tester
-from .tester_multicrit import TesterMultiCrit
+from .testers.tester import Tester
+from .testers.tester_multicrit import TesterMultiCrit
 
 
 class Runner:
@@ -25,7 +25,7 @@ class Runner:
     random_seed = 42
 
     # fmt: off
-    __exp = {
+    _exp = {
         # MFCC + Deltas
         "mfccdd_phrase_0_25_emodb": ["phrase", [0], MFCCDD, 2000, Trainer, 25, EmoDB],
         "mfccdd_phrase_0_50_emodb": ["phrase", [0], MFCCDD, 2000, Trainer, 50, EmoDB],
@@ -145,7 +145,7 @@ class Runner:
     }
     # fmt: on
 
-    EXP_KEYS = Literal[tuple(__exp.keys())]
+    EXP_KEYS = Literal[tuple(_exp.keys())]
 
     def __init__(
         self,
@@ -175,7 +175,7 @@ class Runner:
             trainer_cls,
             percent_injection,
             extra_db_cls,
-        ) = self.__exp[exp_key]
+        ) = self._exp[exp_key]
         batch_size = 16
         lr = 1e-5
         if limit_vram is not None:
@@ -214,6 +214,8 @@ class Runner:
                 diag_levels=diag_levels,
                 return_ids=False,
                 cache_path=cache_path,
+                test_only=False,
+                allow_inter_level_comparison=False,
             )
         else:
             data_loader = DataLoader(
@@ -227,6 +229,8 @@ class Runner:
                 feature_function=feature_function,
                 diag_levels=diag_levels,
                 return_ids=False,
+                test_only=False,
+                allow_inter_level_comparison=False,
             )
         if trainer_cls == Trainer:
             trainer = Trainer(
@@ -261,7 +265,7 @@ class Runner:
             trainer_cls,
             percent_injection,
             extra_db_cls,
-        ) = self.__exp[exp_key]
+        ) = self._exp[exp_key]
         batch_size = 16
         task = self.__tasks_generator.load_task(
             task=task_key,
@@ -290,6 +294,8 @@ class Runner:
             feature_function=feature_function,
             diag_levels=diag_levels,
             return_ids=True,
+            test_only=False,
+            allow_inter_level_comparison=False,
         )
         if trainer_cls == Trainer:
             tester = Tester(

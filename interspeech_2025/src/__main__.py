@@ -8,6 +8,7 @@ from sklearn.metrics import confusion_matrix
 from . import env
 from .tasks_generator import TaskGenerator
 from .experiments import Runner
+from .experiments.testers.all_self import TestAllSelf
 
 
 class Main(ClassArgParser):
@@ -52,30 +53,14 @@ class Main(ClassArgParser):
         )
         runner.test(exp_key=exp_key, load_epoch=load_epoch)
 
-    def test_all(self):
-        tasks_generator = TaskGenerator(
+    async def test_all_self(self):
+        tester = TestAllSelf(
             research_data_path=env.RESEARCH_DATA_PATH,
+            cache_path=env.CACHE_PATH,
+            results_path=env.RESULTS_PATH,
             tasks_path=env.TASKS_PATH,
         )
-        runner = Runner(
-            tasks_generator=tasks_generator,
-            cache_path=env.CACHE_PATH,
-            results_path=Path(f"{env.RESULTS_PATH}/test"),
-            research_data_path=env.RESEARCH_DATA_PATH,
-        )
-
-        checkpoints_path = Path(f"{env.CACHE_PATH}/checkpoints")
-        checkpoints = sorted(list(checkpoints_path.rglob("*.h5")))
-        pbar = tqdm(checkpoints, desc="testing")
-        for checkpoint in pbar:
-            exp_key = checkpoint.parent.stem
-            epoch = int(checkpoint.stem)
-            pbar.set_postfix({"exp_key": exp_key, "epoch": epoch})
-            results_path = Path(
-                f"{env.RESULTS_PATH}/test/{exp_key}/{epoch}/results.csv"
-            )
-            if not results_path.is_file():
-                runner.test(exp_key=exp_key, load_epoch=epoch)
+        tester.run()
 
     def collate_test_results(self):
         results_path = Path(f"{env.RESULTS_PATH}/test")

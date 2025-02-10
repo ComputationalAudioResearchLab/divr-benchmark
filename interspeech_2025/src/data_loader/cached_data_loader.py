@@ -36,8 +36,10 @@ class CachedDataLoader(BaseDataLoader):
         feature_function: Feature | None,
         return_ids: bool,
         cache_path: Path,
-        extra_db: ExtraDB,
+        extra_db: ExtraDB | None,
         percent_injection: int,
+        test_only: bool,
+        allow_inter_level_comparison: bool,
     ) -> None:
         super().__init__(
             random_seed=random_seed,
@@ -46,6 +48,8 @@ class CachedDataLoader(BaseDataLoader):
             batch_size=batch_size,
             extra_db=extra_db,
             percent_injection=percent_injection,
+            test_only=test_only,
+            allow_inter_level_comparison=allow_inter_level_comparison,
         )
         cache_path.mkdir(parents=True, exist_ok=True)
         self.__cache = shelve.open(str(cache_path))
@@ -61,9 +65,11 @@ class CachedDataLoader(BaseDataLoader):
             self.feature_size = feature_function.feature_size
         self.__shuffle_train = shuffle_train
         self.__return_ids = return_ids
-        self.__create_cache(task.train, self.__cache_key_train)
-        self.__create_cache(task.val, self.__cache_key_val)
-        self.__create_cache(task.test, self.__cache_key_test)
+        if not test_only:
+            self.__create_cache(task.train, self.__cache_key_train)
+            self.__create_cache(task.val, self.__cache_key_val)
+        else:
+            self.__create_cache(task.test, self.__cache_key_test)
         self.__train_points = self.__prepare_points_for_indexing(task.train)
         self.__val_points = self.__prepare_points_for_indexing(task.val)
         self.__test_points = self.__prepare_points_for_indexing(task.test)

@@ -21,8 +21,10 @@ class DataLoader(BaseDataLoader):
         task,
         feature_function: Feature | None,
         return_ids: bool,
-        extra_db: ExtraDB,
+        extra_db: ExtraDB | None,
         percent_injection: int,
+        test_only: bool,
+        allow_inter_level_comparison: bool,
     ) -> None:
         super().__init__(
             random_seed=random_seed,
@@ -31,6 +33,8 @@ class DataLoader(BaseDataLoader):
             batch_size=batch_size,
             extra_db=extra_db,
             percent_injection=percent_injection,
+            test_only=test_only,
+            allow_inter_level_comparison=allow_inter_level_comparison,
         )
         self.__train_points = np.array(task.train)
         self.__val_points = np.array(task.val)

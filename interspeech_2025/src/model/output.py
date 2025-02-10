@@ -128,6 +128,9 @@ class NormalizedMultiCrit(Base):
         self.init_orthogonal_weights()
         self.__levels_map = levels_map
 
+    def set_levels_map(self, levels_map: Dict[int, List[List[int]]]):
+        self.__levels_map = levels_map
+
     def forward(self, inputs: InputTensors):
         input_audios, input_lens = inputs
         per_frame_labels = self.model(input_audios)

@@ -26,12 +26,24 @@ class BaseDataLoader:
         diag_levels: List[int],
         batch_size: int,
         task,
-        extra_db: ExtraDB,
+        extra_db: ExtraDB | None,
         percent_injection: int,
+        test_only: bool,
+        allow_inter_level_comparison: bool,
     ) -> None:
         np.random.seed(random_seed)
         max_diag_level = max(diag_levels)
         max_level_diags = task.unique_diagnosis()
+        task_max_diag_level = task.max_diag_level
+        if not allow_inter_level_comparison and (max_diag_level > task_max_diag_level):
+            raise ValueError(
+                f"Invalid task and diag level. {{task.max_diag_level: {task_max_diag_level}, diag_levels: {diag_levels}}}"
+            )
+        else:
+            max_diag_level = task_max_diag_level
+            diag_levels = [d for d in diag_levels if d <= max_diag_level]
+            if len(diag_levels) < 1:
+                diag_levels = [task_max_diag_level]
         for diag_level in diag_levels:
             cur_level_diags = task.unique_diagnosis(level=diag_level)
             level_map = [[] for _ in range(len(cur_level_diags))]
@@ -44,9 +56,10 @@ class BaseDataLoader:
             self.levels_map[diag_level] = level_map
             self.unique_diagnosis[diag_level] = cur_level_diags
             self.num_unique_diagnosis[diag_level] = len(cur_level_diags)
-            self.train_class_weights[diag_level] = task.train_class_weights(
-                level=diag_level
-            )
+            if not test_only:
+                self.train_class_weights[diag_level] = task.train_class_weights(
+                    level=diag_level
+                )
         self.max_diag_level = max_diag_level
         self.__batch_size = batch_size
         self.__task = task
@@ -55,6 +68,8 @@ class BaseDataLoader:
         self.__diag_levels = diag_levels
 
     def get_injection_data(self, current_batch_size: int):
+        if self.__extra_db is None:
+            raise ValueError("Asking for injection data when extra db is None")
         num_extra_audios = int(current_batch_size * self.__percent_injection / 100)
         if num_extra_audios < 1:
             return 0, [], []
@@ -66,7 +81,18 @@ class BaseDataLoader:
         ]
         return num_extra_audios, extra_audios, extra_labels
 
+    @property
+    def diag_levels(self):
+        return self.__diag_levels
+
+    @property
+    def num_classes(self):
+        return self.num_unique_diagnosis[self.max_diag_level]
+
     def idx_to_diag_name(self, idx: int, level: int) -> str:
+        # either max diag level is higher than the level
+        # or we allow multi level comparisons
+        level = min(level, self.max_diag_level)
         return self.__task.index_to_diag(idx, level).name
 
     def __len__(self) -> int:
