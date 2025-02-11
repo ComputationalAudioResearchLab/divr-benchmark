@@ -54,6 +54,7 @@ class DataLoader(BaseDataLoader):
             self.feature_size = feature_function.feature_size
         self.__shuffle_train = shuffle_train
         self.__return_ids = return_ids
+        self.__disable_injection_in_test = extra_db is None
 
     def __len__(self) -> int:
         return self._data_len
@@ -124,6 +125,9 @@ class DataLoader(BaseDataLoader):
         self.__indices = self.__test_indices
         self._points = self.__test_points
         self._data_len = self._num_batches(len(self.__indices))
+        # disable injection since we are testing
+        if self.__disable_injection_in_test:
+            self.get_injection_data = lambda current_batch_size: (0, [], [])
         return self
 
     def collate_function(self, batch: AudioBatch) -> InputTensors:

@@ -15,10 +15,10 @@ DataPoint = Union[
 
 class BaseDataLoader:
     feature_size: int
-    unique_diagnosis: Dict[int, List[str]] = {}
-    num_unique_diagnosis: Dict[int, int] = {}
-    levels_map: Dict[int, List[List[int]]] = {}
-    train_class_weights: Dict[int, int] = {}
+    unique_diagnosis: Dict[int, List[str]]
+    num_unique_diagnosis: Dict[int, int]
+    levels_map: Dict[int, List[List[int]]]
+    train_class_weights: Dict[int, int]
 
     def __init__(
         self,
@@ -31,6 +31,10 @@ class BaseDataLoader:
         test_only: bool,
         allow_inter_level_comparison: bool,
     ) -> None:
+        self.unique_diagnosis = {}
+        self.num_unique_diagnosis = {}
+        self.levels_map = {}
+        self.train_class_weights = {}
         np.random.seed(random_seed)
         max_diag_level = max(diag_levels)
         max_level_diags = task.unique_diagnosis()
