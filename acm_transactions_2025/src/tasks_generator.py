@@ -43,13 +43,15 @@ class TaskGenerator:
             load_audios=load_audios,
         )
 
-    def get_diagnosis_map(self, task):
+    def get_diagnosis_map(self, task, allow_unmapped: bool = False):
         if "-" in task:
             # specified diagnosis map
             diagnosis_map_key = task.split("-", maxsplit=1)[0]
-            return self.__diagnosis_maps[diagnosis_map_key]()
+            return self.__diagnosis_maps[diagnosis_map_key](
+                allow_unmapped=allow_unmapped
+            )
         else:
-            return diagnosis_maps.USVAC_2025()
+            return diagnosis_maps.USVAC_2025(allow_unmapped=allow_unmapped)
 
     async def generate(self) -> None:
         diagnosis_map = diagnosis_maps.USVAC_2025()

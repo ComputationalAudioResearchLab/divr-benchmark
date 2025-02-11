@@ -12,7 +12,8 @@
         "hediet.vscode-drawio",
         "ms-python.black-formatter",
         "ms-python.flake8",
-        "ms-python.python"
+        "ms-python.python",
+        "janisdd.vscode-edit-csv"
       ]
     }
   },
