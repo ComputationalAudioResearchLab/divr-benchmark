@@ -535,6 +535,33 @@ class Runner:
         "USVAC-Zaim_2023-unispeechSAT_phrase_2": ["Zaim_2023-phrase", [2], UnispeechSAT, 200, 16, Trainer, 1e-5],
         "USVAC-Zaim_2023-unispeechSAT_u_n_1": ["Zaim_2023-u_n", [1], UnispeechSAT, 200, 16, Trainer, 1e-5],
         "USVAC-Zaim_2023-unispeechSAT_u_n_2": ["Zaim_2023-u_n", [2], UnispeechSAT, 200, 16, Trainer, 1e-5],
+        
+        "daSilvaMoura-Zaim_2023-mfccdd_a_n_1": ["Zaim_2023-a_n", [1], MFCCDD, 2000, 16, Trainer, 1e-5],
+        "daSilvaMoura-Zaim_2023-mfccdd_a_n_2": ["Zaim_2023-a_n", [2], MFCCDD, 2000, 16, Trainer, 1e-5],
+        "daSilvaMoura-Zaim_2023-mfccdd_i_n_1": ["Zaim_2023-i_n", [1], MFCCDD, 2000, 16, Trainer, 1e-5],
+        "daSilvaMoura-Zaim_2023-mfccdd_i_n_2": ["Zaim_2023-i_n", [2], MFCCDD, 2000, 16, Trainer, 1e-5],
+        "daSilvaMoura-Zaim_2023-mfccdd_phrase_1": ["Zaim_2023-phrase", [1], MFCCDD, 2000, 16, Trainer, 1e-5],
+        "daSilvaMoura-Zaim_2023-mfccdd_phrase_2": ["Zaim_2023-phrase", [2], MFCCDD, 2000, 16, Trainer, 1e-5],
+        "daSilvaMoura-Zaim_2023-mfccdd_u_n_1": ["Zaim_2023-u_n", [1], MFCCDD, 2000, 16, Trainer, 1e-5],
+        "daSilvaMoura-Zaim_2023-mfccdd_u_n_2": ["Zaim_2023-u_n", [2], MFCCDD, 2000, 16, Trainer, 1e-5],
+
+        "daSilvaMoura-Zaim_2023-wav2vec_a_n_1": ["Zaim_2023-a_n", [1], Wav2Vec, 200, 16, Trainer, 1e-5],
+        "daSilvaMoura-Zaim_2023-wav2vec_a_n_2": ["Zaim_2023-a_n", [2], Wav2Vec, 200, 16, Trainer, 1e-5],
+        "daSilvaMoura-Zaim_2023-wav2vec_i_n_1": ["Zaim_2023-i_n", [1], Wav2Vec, 200, 16, Trainer, 1e-5],
+        "daSilvaMoura-Zaim_2023-wav2vec_i_n_2": ["Zaim_2023-i_n", [2], Wav2Vec, 200, 16, Trainer, 1e-5],
+        "daSilvaMoura-Zaim_2023-wav2vec_phrase_1": ["Zaim_2023-phrase", [1], Wav2Vec, 200, 16, Trainer, 1e-5],
+        "daSilvaMoura-Zaim_2023-wav2vec_phrase_2": ["Zaim_2023-phrase", [2], Wav2Vec, 200, 16, Trainer, 1e-5],
+        "daSilvaMoura-Zaim_2023-wav2vec_u_n_1": ["Zaim_2023-u_n", [1], Wav2Vec, 200, 16, Trainer, 1e-5],
+        "daSilvaMoura-Zaim_2023-wav2vec_u_n_2": ["Zaim_2023-u_n", [2], Wav2Vec, 200, 16, Trainer, 1e-5],
+
+        "daSilvaMoura-Zaim_2023-unispeechSAT_a_n_1": ["Zaim_2023-a_n", [1], UnispeechSAT, 200, 16, Trainer, 1e-5],
+        "daSilvaMoura-Zaim_2023-unispeechSAT_a_n_2": ["Zaim_2023-a_n", [2], UnispeechSAT, 200, 16, Trainer, 1e-5],
+        "daSilvaMoura-Zaim_2023-unispeechSAT_i_n_1": ["Zaim_2023-i_n", [1], UnispeechSAT, 200, 16, Trainer, 1e-5],
+        "daSilvaMoura-Zaim_2023-unispeechSAT_i_n_2": ["Zaim_2023-i_n", [2], UnispeechSAT, 200, 16, Trainer, 1e-5],
+        "daSilvaMoura-Zaim_2023-unispeechSAT_phrase_1": ["Zaim_2023-phrase", [1], UnispeechSAT, 200, 16, Trainer, 1e-5],
+        "daSilvaMoura-Zaim_2023-unispeechSAT_phrase_2": ["Zaim_2023-phrase", [2], UnispeechSAT, 200, 16, Trainer, 1e-5],
+        "daSilvaMoura-Zaim_2023-unispeechSAT_u_n_1": ["Zaim_2023-u_n", [1], UnispeechSAT, 200, 16, Trainer, 1e-5],
+        "daSilvaMoura-Zaim_2023-unispeechSAT_u_n_2": ["Zaim_2023-u_n", [2], UnispeechSAT, 200, 16, Trainer, 1e-5],
     }
     # fmt: on
 
@@ -565,6 +592,10 @@ class Runner:
         ) = self._exp[exp_key]
         if exp_key.startswith("USVAC-"):
             diagnosis_map = self.__tasks_generator.get_diagnosis_map("USVAC")
+        elif exp_key.startswith("daSilvaMoura-"):
+            diagnosis_map = self.__tasks_generator.get_diagnosis_map("daSilvaMoura")
+        else:
+            diagnosis_map = None
         task = self.__tasks_generator.load_task(
             task=task_key,
             diag_level=max(diag_levels),

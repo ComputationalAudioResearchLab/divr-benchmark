@@ -2,7 +2,7 @@ import torch
 import pandas as pd
 from tqdm import tqdm
 from pathlib import Path
-
+from divr_diagnosis import DiagnosisMap
 
 from .model_cache import ModelCache
 from .. import Runner
@@ -26,10 +26,10 @@ class TestAllSelf:
         TrainerMultiCrit: NormalizedMultiCrit,
         TrainerMultiTask: NormalizedMultitask,
     }
-    __device = torch.device("cpu")
+    __device = torch.device("cuda")
     __sampling_rate = 16000
     __random_seed = 42
-    __batch_size = 16
+    __batch_size = 1
 
     def __init__(
         self,
@@ -68,6 +68,10 @@ class TestAllSelf:
                 trainer_cls,
                 lr,
             ) = items
+            if key.startswith("USVAC-"):
+                task_key = f"USVAC-{task_key}"
+            elif key.startswith("daSilvaMoura-"):
+                task_key = f"daSilvaMoura-{task_key}"
             model_cls = self.__model_map[trainer_cls]
             diag_levels = ",".join(map(str, diag_levels))
             if feature_cls not in tests:
@@ -84,7 +88,6 @@ class TestAllSelf:
             model_tests = task_diag_tests[model_cls]
             model_tests[key] = self.__find_checkpoints(key)
             total_exps += 1
-
         pbar_top = tqdm(desc="Testing models", total=total_exps)
         model_cache = ModelCache(device=self.__device)
 
@@ -95,12 +98,23 @@ class TestAllSelf:
             for task_key, task_tests in feature_tests.items():
                 for diag_levels_str, task_diag_tests in task_tests.items():
                     diag_levels = [int(x) for x in diag_levels_str.split(",")]
-                    data_loader = self.__get_cached_data_loader(
-                        task_key=task_key,
+                    if task_key.startswith("USVAC-") or task_key.startswith(
+                        "daSilvaMoura-"
+                    ):
+                        dmap_key, d_task_key = task_key.split("-", maxsplit=1)
+                        diagnosis_map = self.__task_generator.get_diagnosis_map(
+                            task=dmap_key, allow_unmapped=False
+                        )
+                    else:
+                        diagnosis_map = None
+                        d_task_key = task_key
+                    data_loader = self.__get_data_loader(
+                        task_key=d_task_key,
                         diag_levels=diag_levels,
+                        diagnosis_map=diagnosis_map,
                         feature_function=feature_function,
                         cache_path=Path(
-                            f"{self.__cache_path}/.data_loader/{task_key}/{feature_cls.__name__}"
+                            f"{self.__cache_path}/.data_loader/{d_task_key}/{feature_cls.__name__}"
                         ),
                     )
                     for model_cls, model_tests in task_diag_tests.items():
@@ -305,10 +319,13 @@ class TestAllSelf:
         self,
         task_key: str,
         diag_levels: list[int],
+        diagnosis_map: DiagnosisMap | None,
         feature_function: Feature,
+        cache_path: Path,
     ) -> BaseDataLoader:
         task = self.__task_generator.load_task(
             task=task_key,
+            diagnosis_map=diagnosis_map,
             diag_level=max(diag_levels),
         )
         return DataLoader(

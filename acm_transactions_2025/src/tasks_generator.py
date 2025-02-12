@@ -44,7 +44,11 @@ class TaskGenerator:
         )
 
     def get_diagnosis_map(self, task, allow_unmapped: bool = False):
-        if "-" in task:
+        if task == "daSilvaMoura":
+            return self.__diagnosis_maps["daSilvaMoura_2024"](
+                allow_unmapped=allow_unmapped
+            )
+        elif "-" in task:
             # specified diagnosis map
             diagnosis_map_key = task.split("-", maxsplit=1)[0]
             return self.__diagnosis_maps[diagnosis_map_key](
