@@ -703,6 +703,7 @@ contact_pachyderma:
   alias:
     - contact pachydermia
     - kontaktpachydermie
+    - contact_pachydermia
   level: 4
   parents:
     organic_inflammatory_non_infective: 0.14
