@@ -15,7 +15,80 @@ class Analyser:
         self.__collated_self_path = f"{results_path}/collated_results_self.csv"
         self.__collated_cross_path = f"{results_path}/collated_results_cross.csv"
 
-    def plot_results(self):
+    def plot_results_self(self):
+        acm_path = (
+            "/home/storage/acm_transactions_2025/results/collated_results_self.csv"
+        )
+        int_path = "/home/storage/interspeech_2025/results/collated_results_self.csv"
+        df_acm = pd.read_csv(acm_path)
+        df_int = pd.read_csv(int_path)
+        print(df_acm)
+        print(df_int)
+
+        df = pd.concat([df_acm, df_int]).reset_index()
+        print(df)
+        num_diags_selection = df["num_diags"] == 1
+        diag_level_selection = df["max_diag_level"].isin([0, 1, 4])
+        feature_selection = df["feature"].isin(["MFCCDD", "Wav2Vec", "UnispeechSAT"])
+        input_task_selection = df["task_key"].isin(["a_n", "phrase"])
+        selection = (
+            num_diags_selection
+            & diag_level_selection
+            & feature_selection
+            & input_task_selection
+        )
+        selected_df = df[selection]
+        print(selected_df)
+        selected_df["injection"] = (
+            df[["extra_db", "percent_injection"]]
+            .fillna("")
+            .astype(str)
+            .agg("-".join, axis=1)
+        )
+        selected_df["accuracy"] = (
+            selected_df["0_acc_balanced"]
+            .combine_first(selected_df["1_acc_balanced"])
+            .combine_first(selected_df["2_acc_balanced"])
+            .combine_first(selected_df["3_acc_balanced"])
+            .combine_first(selected_df["4_acc_balanced"])
+        )
+        grouping = ["max_diag_level", "task_key", "feature"]
+        selected_df = (
+            selected_df.sort_values(by=["accuracy"])
+            .groupby(by=grouping + ["injection"])
+            .head(n=1)
+        )
+        G = selected_df.sort_values(by=["injection"]).groupby(by=grouping)[
+            ["injection", "accuracy"]
+        ]
+        selected_df.sort_values(by=grouping + ["accuracy"], ascending=False)[
+            grouping + ["injection", "epoch", "accuracy"]
+        ].to_csv(
+            f"{self.__results_path}/self_results.csv",
+            index=False,
+        )
+        total_groups = len(G)
+        fig, ax = plt.subplots(
+            total_groups,
+            1,
+            figsize=(10, total_groups * 3),
+            constrained_layout=True,
+            sharex="col",
+        )
+        for idx, (g_idx, group) in enumerate(G):
+            sns.barplot(data=group, x="injection", y="accuracy", ax=ax[idx])
+            ax[idx].set_ylabel(g_idx)
+
+            print(
+                g_idx,
+                group.sort_values(by="accuracy", ascending=False)
+                .head(n=1)[["injection", "accuracy"]]
+                .to_dict(),
+            )
+        ax[idx].set_xticklabels(ax[idx].get_xticklabels(), rotation=90)
+        fig.savefig(f"{self.__results_path}/result_self.png")
+
+    def plot_results_cross(self):
         acm_path = (
             "/home/storage/acm_transactions_2025/results/collated_results_cross.csv"
         )
@@ -72,7 +145,7 @@ class Analyser:
 
             print(
                 g_idx,
-                group.sort_values(by="accuracy")
+                group.sort_values(by="accuracy", ascending=False)
                 .head(n=1)[["injection", "accuracy"]]
                 .to_dict(),
             )

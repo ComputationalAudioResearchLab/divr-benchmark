@@ -81,8 +81,11 @@ class Main(ClassArgParser):
     def collate_cross_results(self):
         Analyser(results_path=env.RESULTS_PATH).collate_cross()
 
-    def plot_results(self):
-        Analyser(results_path=env.RESULTS_PATH).plot_results()
+    def plot_results_self(self):
+        Analyser(results_path=env.RESULTS_PATH).plot_results_self()
+
+    def plot_results_cross(self):
+        Analyser(results_path=env.RESULTS_PATH).plot_results_cross()
 
 
 if __name__ == "__main__":
