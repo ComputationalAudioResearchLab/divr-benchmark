@@ -166,6 +166,17 @@ class Reporter:
         classification systems.
         """
         df = pd.read_csv(f"{self.__results_path}/collated_results_self.csv")
+        def categorize(exp_key: str):
+            if exp_key.startswith('superset-CaRLab_2025'):
+                return 'CaRLab_2025'
+            if exp_key.startswith('superset-daSilvaMoura_2024'):
+                return 'daSilvaMoura_2024'
+            if exp_key.endswith('_1'):
+                return 'USVAC_2025_1'
+            if exp_key.endswith('_2'):
+                return 'USVAC_2025_2'
+            raise ValueError(f"Unexpted exp_key: {exp_key}")
+        
         df["accuracy"] = (
             df["0_acc_balanced"]
             .combine_first(df["1_acc_balanced"])
@@ -183,16 +194,22 @@ class Reporter:
         num_diag_levels_mask = df["num_diag_levels"] == 1
         max_diag_level_mask = df["max_diag_level"].isin([1, 2])
         df = df[mask_features & mask_tasks & num_diag_levels_mask & max_diag_level_mask & mask_cross_sys]
+        df['category'] = df['exp_key'].apply(categorize)
         df = df.sort_values(by=["exp_key", "accuracy"], ascending=False)
         df = df.groupby(by=["exp_key"]).head(1)
         df = df.sort_values(
             by=["task_key", "feature", "accuracy", "max_diag_level"], ascending=False
-        ).reset_index(drop=True)
+        ).reset_index(drop=True).set_index(keys=['exp_key'])
+        def accuracy_delta(group: pd.DataFrame):
+            carlab_result = group[group.index.str.startswith('superset-CaRLab_2025')].iloc[0]
+            return group - carlab_result
+        df['accuracy_delta'] = df.groupby(by=['task_key', 'feature'])['accuracy'].apply(accuracy_delta).reset_index().set_index(keys=['exp_key'])['accuracy']
         leading_cols = [
-            "exp_key",
+            "category",
             "task_key",
             "feature",
             "accuracy",
+            "accuracy_delta",
             "epoch",
             "max_diag_level",
             "num_diag_levels",
@@ -206,10 +223,9 @@ class Reporter:
         for col_name in leading_cols:
             col_names.remove(col_name)
         all_results = df[leading_cols + col_names]
-        print(all_results)
+        
         all_results.to_csv(
             f"{self.__results_path}/report_superset.csv",
-            index=False,
         )
         groups = df.groupby(by=["task_key", "max_diag_level", "feature"], sort=False)
         results = {}
@@ -223,7 +239,7 @@ class Reporter:
                 load_audios=False,
             )
             for row_idx, row in group.iterrows():
-                exp_key = row["exp_key"]
+                exp_key = row_idx
                 epoch = row["epoch"]
                 task_key = row['task_key']
                 data_path = f"{self.__results_path}/self/{exp_key}/{epoch}.csv"
@@ -233,10 +249,16 @@ class Reporter:
                 res = df.groupby(by=['diag'])['correct'].apply(lambda x: (x==True).sum()/len(x))
                 results[exp_key] = res.to_dict()
         results = pd.DataFrame.from_records(data=results).T
-        results = results.reindex(all_results['exp_key'])
-        # results = results.sort_values(by=list(results.columns), ascending=False)
+        results = results.reindex(all_results.index)
+        results['task_key'] = all_results['task_key']
+        results['feature'] = all_results['feature']
         print(results.round(decimals=2).to_string())
         results.to_csv(f"{self.__results_path}/report_superset_analysis.csv")
+        def recall_delta(group: pd.DataFrame):
+            carlab_result = group[group.index.str.startswith('superset-CaRLab_2025')].iloc[0]
+            return group - carlab_result
+        delta_results = results.groupby(by=['task_key', 'feature']).apply(recall_delta).reset_index().set_index(keys=['exp_key'])
+        delta_results.to_csv(f"{self.__results_path}/report_superset_delta_analysis.csv")
 
     def report_input_tasks(self) -> None:
         # single task models here
