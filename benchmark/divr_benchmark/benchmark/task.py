@@ -155,6 +155,9 @@ class Task:
     def test(self) -> List[DataPoint]:
         return list(self.__test.values())
 
+    def test_label(self, id: str) -> Diagnosis:
+        return self.__test[id].label
+
     def score(self, predictions: Dict[str, int]) -> Result:
         """
         predictions: Dict[test_id, index_of_diag]

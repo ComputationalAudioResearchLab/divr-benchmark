@@ -31,10 +31,10 @@ class TestAllCross:
     __random_seed = 42
     __batch_size = 1
     __cross_test_tasks = [
-        # "cross_test_avfad",
+        "cross_test_avfad",
         "cross_test_meei",
         # "cross_test_torgo",
-        # "cross_test_uaspeech",
+        "cross_test_uaspeech",
         # "cross_test_uncommon_voice",
         "cross_test_voiced",
     ]
@@ -44,6 +44,7 @@ class TestAllCross:
         research_data_path: Path,
         cache_path: Path,
         results_path: Path,
+        tasks_path: Path,
     ):
         self.__research_data_path = research_data_path
         self.__cache_path = cache_path
@@ -51,7 +52,8 @@ class TestAllCross:
         self.__results_path = Path(f"{results_path}/cross")
         self.__results_path.mkdir(parents=True, exist_ok=True)
         self.__task_generator = TaskGenerator(
-            research_data_path=self.__research_data_path
+            research_data_path=self.__research_data_path,
+            tasks_path=tasks_path,
         )
         self.__test_func_map = {
             Normalized: self.__test_single,

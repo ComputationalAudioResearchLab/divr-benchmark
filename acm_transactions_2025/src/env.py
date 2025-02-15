@@ -14,3 +14,4 @@ def load_path(key):
 RESEARCH_DATA_PATH = load_path("RESEARCH_DATA_PATH")
 CACHE_PATH = load_path("CACHE_PATH")
 RESULTS_PATH = load_path("RESULTS_PATH")
+TASKS_PATH = load_path("TASKS_PATH")

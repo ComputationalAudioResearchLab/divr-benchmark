@@ -1,0 +1,161 @@
+# Auto estimated classification system based on confusion between classes on direct classification
+# Distance matrix
+#                          from                     to  mean_dist  dist_upper_bound  std_dist  min_dist  max_dist
+# 0   hyperfunctional_dysphonia   functional_dysphonia   0.144444          0.403155  0.258711  0.000000  0.833333
+# 1                  laryngitis            leukoplakia   0.188889          0.469666  0.280777  0.000000  0.833333
+# 2            vocal_fold_polyp            leukoplakia   0.200000          0.356854  0.156854  0.000000  0.500000
+# 3        functional_dysphonia  psychogenic_dysphonia   0.211111          0.394408  0.183297  0.000000  0.666667
+# 4        functional_dysphonia       vocal_fold_polyp   0.255556          0.432239  0.176683  0.000000  0.666667
+# 5        functional_dysphonia            leukoplakia   0.300000          0.469031  0.169031  0.166667  0.666667
+# 6         recurrent_paralysis          reinkes_edema   0.300000          0.596808  0.296808  0.000000  0.833333
+# 7   hyperfunctional_dysphonia  psychogenic_dysphonia   0.311111          0.553999  0.242888  0.000000  0.833333
+# 8               reinkes_edema  psychogenic_dysphonia   0.322222          0.494355  0.172133  0.000000  0.666667
+# 9                  laryngitis       vocal_fold_polyp   0.322222          0.592926  0.270704  0.000000  1.000000
+# 10              reinkes_edema             laryngitis   0.333333          0.593065  0.259731  0.000000  0.833333
+# 11        recurrent_paralysis  psychogenic_dysphonia   0.333333          0.577308  0.243975  0.000000  0.666667
+# 12      psychogenic_dysphonia       vocal_fold_polyp   0.355556          0.532239  0.176683  0.166667  0.666667
+# 13  hyperfunctional_dysphonia       vocal_fold_polyp   0.355556          0.543133  0.187577  0.166667  0.666667
+# 14      psychogenic_dysphonia            leukoplakia   0.355556          0.508135  0.152579  0.166667  0.666667
+# 15                 laryngitis  psychogenic_dysphonia   0.366667          0.567854  0.201187  0.166667  0.666667
+# 16              reinkes_edema       vocal_fold_polyp   0.366667          0.595536  0.228869  0.000000  0.666667
+# 17       functional_dysphonia             laryngitis   0.377778          0.608947  0.231169  0.166667  1.000000
+# 18  hyperfunctional_dysphonia            leukoplakia   0.400000          0.665772  0.265772  0.166667  1.000000
+# 19        recurrent_paralysis       vocal_fold_polyp   0.400000          0.650397  0.250397  0.000000  0.833333
+# 20       functional_dysphonia          reinkes_edema   0.400000          0.586871  0.186871  0.166667  0.666667
+# 21  hyperfunctional_dysphonia          reinkes_edema   0.411111          0.587794  0.176683  0.166667  0.666667
+# 22  hyperfunctional_dysphonia             laryngitis   0.433333          0.683730  0.250397  0.166667  1.000000
+# 23              reinkes_edema            leukoplakia   0.433333          0.667346  0.234013  0.166667  0.833333
+# 24        recurrent_paralysis            leukoplakia   0.444444          0.640301  0.195857  0.000000  0.666667
+# 25  hyperfunctional_dysphonia    recurrent_paralysis   0.444444          0.693782  0.249338  0.166667  1.000000
+# 26        recurrent_paralysis             laryngitis   0.455556          0.677976  0.222421  0.166667  0.833333
+# 27        recurrent_paralysis   functional_dysphonia   0.477778          0.728702  0.250924  0.166667  1.000000
+#
+# We add a "from" call if it hasn't already appeared in the list, and add the "to" class that is closest to it
+# 5 top relations (by mean_dist)
+# hyperfunctional_dysphonia - functional_dysphonia
+# laryngitis - leukoplakia
+# vocal_fold_polyp - leukoplakia
+# functional_dysphonia - psychogenic_dysphonia
+# recurrent_paralysis - reinkes_edema
+# auto assigned classes:
+#     A: hyperfunctional_dysphonia - functional_dysphonia - psychogenic_dysphonia
+#     B: laryngitis - leukoplakia - vocal_fold_polyp
+#     C: recurrent_paralysis - reinkes_edema
+# 
+# 6 top relations (by dist_upper_bound)
+# vocal_fold_polyp - leukoplakia
+# functional_dysphonia - psychogenic_dysphonia
+# hyperfunctional_dysphonia - functional_dysphonia
+# laryngitis - leukoplakia
+# reinkes_edema - psychogenic_dysphonia
+# recurrent_paralysis - psychogenic_dysphonia
+#
+# vocal_fold_polyp - leukoplakia - laryngitis
+# functional_dysphonia - psychogenic_dysphonia - hyperfunctional_dysphonia - reinkes_edema - recurrent_paralysis
+
+
+### level 0
+pathological:
+  level: 0
+  alias:
+    - pathological voice- diagnosis n/a
+normal:
+  alias:
+    - healthy
+    - without dysarthria
+    - normal voice
+    - normal voice ( allergy minor )
+    - normal voice ( cold minor )
+    - normal voice ( flu minor 2 days ago )
+    - normal voice ( singing training )
+  level: 0
+unclassified:
+  level: 0
+  alias:
+    - not sure
+    - mixed
+    - other
+    - others
+    - unknown
+  level: 0
+
+### level 1
+auto_a:
+  level: 1
+  parents:
+    pathological: 1.00
+auto_b:
+  level: 1
+  parents:
+    pathological: 1.00
+auto_c:
+  level: 1
+  parents:
+    pathological: 1.00
+
+### level 2
+hyperfunctional_dysphonia:
+  alias:
+    - hyperfunctional dysphonia
+    - hyperfunktionelle dysphonie
+  level: 2
+  parents:
+    auto_a: 1.00
+functional_dysphonia:
+  alias:
+    - functional dysphonia
+    - funktionelle dysphonie
+    - functional voice disorder
+  level: 2
+  parents:
+    auto_a: 1.00
+psychogenic_dysphonia:
+  alias:
+    - psychogenic dysphonia
+    - psychogene dysphonie
+  level: 2
+  parents:
+    auto_a: 1.00
+laryngitis:
+  level: 2
+  parents:
+    auto_b: 1.00
+leukoplakia:
+  alias:
+    - keratosis
+    - keratosis   leukoplakia
+    - keratosis (sometimes described as leukoplakia or erythroplasia)
+    - keratosis / leukoplakia
+    - leukoplakia
+    - leukoplakie
+  level: 2
+  parents:
+    auto_b: 1.00
+vocal_fold_polyp:
+  alias:
+    - vocal fold polyp
+    - stimmlippenpolyp
+    - vocal fold polyp(s)
+    - vocal cord polyp
+    - polyps
+    - polyp
+  level: 2
+  parents:
+    auto_b: 1.00
+recurrent_paralysis:
+  alias:
+    - recurrent paralysis
+    - rekurrensparese
+  level: 2
+  parents:
+    auto_c: 1.00
+reinkes_edema:
+  alias:
+    - reinkes edema
+    - hemmoragic reinke's edema
+    - reinke edema
+    - reinke's edema
+    - reinke ödem
+  level: 2
+  parents:
+    auto_c: 1.00

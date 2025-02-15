@@ -1,0 +1,7860 @@
+svd_2697_2563_0:
+  speaker_id: '2697'
+  age: 62
+  gender: female
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/female/2697/2563/2563-phrase.wav
+svd_1331_152_0:
+  speaker_id: '1331'
+  age: 68
+  gender: female
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/female/1331/152/152-phrase.wav
+svd_1818_1470_0:
+  speaker_id: '1818'
+  age: 60
+  gender: female
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/female/1818/1470/1470-phrase.wav
+  - svd/pathological/female/1818/1676/1676-phrase.wav
+  - svd/pathological/female/1818/2536/2536-phrase.wav
+svd_2211_2002_0:
+  speaker_id: '2211'
+  age: 60
+  gender: female
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/female/2211/2002/2002-phrase.wav
+  - svd/pathological/female/2211/2155/2155-phrase.wav
+svd_2091_1826_0:
+  speaker_id: '2091'
+  age: 57
+  gender: female
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/female/2091/1826/1826-phrase.wav
+  - svd/pathological/female/2091/1835/1835-phrase.wav
+svd_1863_1626_0:
+  speaker_id: '1863'
+  age: 52
+  gender: female
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/female/1863/1626/1626-phrase.wav
+  - svd/pathological/female/1863/1553/1553-phrase.wav
+svd_1678_1390_0:
+  speaker_id: '1678'
+  age: 64
+  gender: female
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/female/1678/1390/1390-phrase.wav
+  - svd/pathological/female/1678/1293/1293-phrase.wav
+svd_2357_2430_0:
+  speaker_id: '2357'
+  age: 41
+  gender: female
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/female/2357/2430/2430-phrase.wav
+svd_2594_2460_0:
+  speaker_id: '2594'
+  age: 57
+  gender: female
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/female/2594/2460/2460-phrase.wav
+svd_2630_2496_0:
+  speaker_id: '2630'
+  age: 61
+  gender: female
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/female/2630/2496/2496-phrase.wav
+svd_1614_1262_0:
+  speaker_id: '1614'
+  age: 42
+  gender: female
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/female/1614/1262/1262-phrase.wav
+  - svd/pathological/female/1614/1292/1292-phrase.wav
+  - svd/pathological/female/1614/1402/1402-phrase.wav
+  - svd/pathological/female/1614/2469/2469-phrase.wav
+svd_1473_880_0:
+  speaker_id: '1473'
+  age: 56
+  gender: female
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/female/1473/880/880-phrase.wav
+svd_1716_1713_0:
+  speaker_id: '1716'
+  age: 60
+  gender: female
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/female/1716/1713/1713-phrase.wav
+  - svd/pathological/female/1716/1664/1664-phrase.wav
+  - svd/pathological/female/1716/1330/1330-phrase.wav
+svd_1642_1256_0:
+  speaker_id: '1642'
+  age: 40
+  gender: female
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/female/1642/1256/1256-phrase.wav
+svd_2007_1863_0:
+  speaker_id: '2007'
+  age: 58
+  gender: female
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/female/2007/1863/1863-phrase.wav
+  - svd/pathological/female/2007/1743/1743-phrase.wav
+  - svd/pathological/female/2007/2564/2564-phrase.wav
+svd_2527_2393_0:
+  speaker_id: '2527'
+  age: 63
+  gender: male
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/male/2527/2393/2393-phrase.wav
+svd_1364_492_0:
+  speaker_id: '1364'
+  age: 73
+  gender: male
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/male/1364/492/492-phrase.wav
+svd_2305_2115_0:
+  speaker_id: '2305'
+  age: 66
+  gender: female
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/female/2305/2115/2115-phrase.wav
+svd_74_929_0:
+  speaker_id: '74'
+  age: 54
+  gender: female
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/female/74/929/929-phrase.wav
+  - svd/healthy/female/74/71/71-phrase.wav
+svd_1559_1755_0:
+  speaker_id: '1559'
+  age: 75
+  gender: male
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/male/1559/1755/1755-phrase.wav
+  - svd/pathological/male/1559/1086/1086-phrase.wav
+svd_2661_2527_0:
+  speaker_id: '2661'
+  age: 60
+  gender: male
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/male/2661/2527/2527-phrase.wav
+svd_1470_874_0:
+  speaker_id: '1470'
+  age: 50
+  gender: female
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/female/1470/874/874-phrase.wav
+svd_1786_1437_0:
+  speaker_id: '1786'
+  age: 79
+  gender: female
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/female/1786/1437/1437-phrase.wav
+svd_1477_912_0:
+  speaker_id: '1477'
+  age: 65
+  gender: male
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/male/1477/912/912-phrase.wav
+  - svd/pathological/male/1477/883/883-phrase.wav
+svd_1397_1314_0:
+  speaker_id: '1397'
+  age: 77
+  gender: male
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/male/1397/1314/1314-phrase.wav
+  - svd/pathological/male/1397/1564/1564-phrase.wav
+  - svd/pathological/male/1397/670/670-phrase.wav
+svd_2699_2565_0:
+  speaker_id: '2699'
+  age: 66
+  gender: female
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/female/2699/2565/2565-phrase.wav
+svd_1516_924_0:
+  speaker_id: '1516'
+  age: 73
+  gender: female
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/female/1516/924/924-phrase.wav
+svd_1641_1289_0:
+  speaker_id: '1641'
+  age: 60
+  gender: male
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/male/1641/1289/1289-phrase.wav
+  - svd/pathological/male/1641/1277/1277-phrase.wav
+  - svd/pathological/male/1641/1270/1270-phrase.wav
+  - svd/pathological/male/1641/1261/1261-phrase.wav
+  - svd/pathological/male/1641/1255/1255-phrase.wav
+svd_2548_2414_0:
+  speaker_id: '2548'
+  age: 48
+  gender: female
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/female/2548/2414/2414-phrase.wav
+svd_1448_1548_0:
+  speaker_id: '1448'
+  age: 75
+  gender: male
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/male/1448/1548/1548-phrase.wav
+  - svd/pathological/male/1448/849/849-phrase.wav
+  - svd/pathological/male/1448/2088/2088-phrase.wav
+  - svd/pathological/male/1448/2455/2455-phrase.wav
+svd_1419_1604_0:
+  speaker_id: '1419'
+  age: 67
+  gender: female
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/female/1419/1604/1604-phrase.wav
+  - svd/pathological/female/1419/1901/1901-phrase.wav
+svd_1990_2083_0:
+  speaker_id: '1990'
+  age: 58
+  gender: female
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/female/1990/2083/2083-phrase.wav
+  - svd/pathological/female/1990/2190/2190-phrase.wav
+svd_2108_1970_0:
+  speaker_id: '2108'
+  age: 74
+  gender: female
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/female/2108/1970/1970-phrase.wav
+  - svd/pathological/female/2108/1867/1867-phrase.wav
+svd_1772_1424_0:
+  speaker_id: '1772'
+  age: 62
+  gender: male
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/male/1772/1424/1424-phrase.wav
+svd_1341_352_0:
+  speaker_id: '1341'
+  age: 74
+  gender: male
+  label: contact_pachydermia
+  audio_keys:
+  - svd/pathological/male/1341/352/352-phrase.wav
+svd_1398_879_0:
+  speaker_id: '1398'
+  age: 66
+  gender: female
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/female/1398/879/879-phrase.wav
+svd_2396_2235_0:
+  speaker_id: '2396'
+  age: 58
+  gender: male
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/male/2396/2235/2235-phrase.wav
+svd_2103_1836_0:
+  speaker_id: '2103'
+  age: 57
+  gender: female
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/female/2103/1836/1836-phrase.wav
+svd_1385_1271_0:
+  speaker_id: '1385'
+  age: 51
+  gender: male
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/male/1385/1271/1271-phrase.wav
+  - svd/pathological/male/1385/908/908-phrase.wav
+  - svd/pathological/male/1385/629/629-phrase.wav
+svd_2150_1939_0:
+  speaker_id: '2150'
+  age: 75
+  gender: female
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/female/2150/1939/1939-phrase.wav
+svd_1404_712_0:
+  speaker_id: '1404'
+  age: 42
+  gender: female
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/female/1404/712/712-phrase.wav
+svd_1420_726_0:
+  speaker_id: '1420'
+  age: 66
+  gender: male
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/male/1420/726/726-phrase.wav
+svd_1751_1399_0:
+  speaker_id: '1751'
+  age: 72
+  gender: male
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/male/1751/1399/1399-phrase.wav
+svd_2053_1788_0:
+  speaker_id: '2053'
+  age: 59
+  gender: female
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/female/2053/1788/1788-phrase.wav
+svd_2627_2493_0:
+  speaker_id: '2627'
+  age: 62
+  gender: female
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/female/2627/2493/2493-phrase.wav
+svd_2480_2346_0:
+  speaker_id: '2480'
+  age: 46
+  gender: male
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/male/2480/2346/2346-phrase.wav
+svd_1902_1662_0:
+  speaker_id: '1902'
+  age: 56
+  gender: male
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/male/1902/1662/1662-phrase.wav
+  - svd/pathological/male/1902/1601/1601-phrase.wav
+svd_1302_105_0:
+  speaker_id: '1302'
+  age: 74
+  gender: female
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/female/1302/105/105-phrase.wav
+svd_2418_2274_0:
+  speaker_id: '2418'
+  age: 47
+  gender: female
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/female/2418/2274/2274-phrase.wav
+svd_1389_632_0:
+  speaker_id: '1389'
+  age: 56
+  gender: female
+  label: reinkes_edema
+  audio_keys:
+  - svd/pathological/female/1389/632/632-phrase.wav
+svd_1462_869_0:
+  speaker_id: '1462'
+  age: 67
+  gender: female
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/female/1462/869/869-phrase.wav
+svd_2289_2100_0:
+  speaker_id: '2289'
+  age: 43
+  gender: male
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/male/2289/2100/2100-phrase.wav
+svd_2349_2152_0:
+  speaker_id: '2349'
+  age: 51
+  gender: male
+  label: dysphonia
+  audio_keys:
+  - svd/pathological/male/2349/2152/2152-phrase.wav
+svd_1819_1722_0:
+  speaker_id: '1819'
+  age: 74
+  gender: female
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/female/1819/1722/1722-phrase.wav
+  - svd/pathological/female/1819/1644/1644-phrase.wav
+svd_1350_1120_0:
+  speaker_id: '1350'
+  age: 65
+  gender: male
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/male/1350/1120/1120-phrase.wav
+svd_2359_2182_0:
+  speaker_id: '2359'
+  age: 70
+  gender: male
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/male/2359/2182/2182-phrase.wav
+svd_1733_1382_0:
+  speaker_id: '1733'
+  age: 48
+  gender: female
+  label: reinkes_edema
+  audio_keys:
+  - svd/pathological/female/1733/1382/1382-phrase.wav
+  - svd/pathological/female/1733/1563/1563-phrase.wav
+svd_1856_1549_0:
+  speaker_id: '1856'
+  age: 42
+  gender: male
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/male/1856/1549/1549-phrase.wav
+svd_1453_855_0:
+  speaker_id: '1453'
+  age: 72
+  gender: female
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/female/1453/855/855-phrase.wav
+svd_1344_358_0:
+  speaker_id: '1344'
+  age: 69
+  gender: male
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/male/1344/358/358-phrase.wav
+svd_1312_120_0:
+  speaker_id: '1312'
+  age: 49
+  gender: female
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/female/1312/120/120-phrase.wav
+svd_1488_893_0:
+  speaker_id: '1488'
+  age: 50
+  gender: female
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/female/1488/893/893-phrase.wav
+svd_2641_2507_0:
+  speaker_id: '2641'
+  age: 38
+  gender: female
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/female/2641/2507/2507-phrase.wav
+svd_2584_2450_0:
+  speaker_id: '2584'
+  age: 49
+  gender: male
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/male/2584/2450/2450-phrase.wav
+svd_2552_2418_0:
+  speaker_id: '2552'
+  age: 59
+  gender: male
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/male/2552/2418/2418-phrase.wav
+svd_2069_1803_0:
+  speaker_id: '2069'
+  age: 71
+  gender: female
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/female/2069/1803/1803-phrase.wav
+svd_2219_2009_0:
+  speaker_id: '2219'
+  age: 63
+  gender: male
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/male/2219/2009/2009-phrase.wav
+svd_2715_2581_0:
+  speaker_id: '2715'
+  age: 41
+  gender: female
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/female/2715/2581/2581-phrase.wav
+svd_2673_2539_0:
+  speaker_id: '2673'
+  age: 70
+  gender: male
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/male/2673/2539/2539-phrase.wav
+svd_2265_2073_0:
+  speaker_id: '2265'
+  age: 64
+  gender: female
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/female/2265/2073/2073-phrase.wav
+svd_1518_926_0:
+  speaker_id: '1518'
+  age: 21
+  gender: female
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/female/1518/926/926-phrase.wav
+svd_1611_1223_0:
+  speaker_id: '1611'
+  age: 36
+  gender: male
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/male/1611/1223/1223-phrase.wav
+  - svd/pathological/male/1611/1325/1325-phrase.wav
+svd_1635_1263_0:
+  speaker_id: '1635'
+  age: 33
+  gender: female
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/female/1635/1263/1263-phrase.wav
+  - svd/pathological/female/1635/1249/1249-phrase.wav
+svd_1313_364_0:
+  speaker_id: '1313'
+  age: 47
+  gender: male
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/male/1313/364/364-phrase.wav
+  - svd/pathological/male/1313/128/128-phrase.wav
+  - svd/pathological/male/1313/914/914-phrase.wav
+svd_1932_1638_0:
+  speaker_id: '1932'
+  age: 56
+  gender: male
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/male/1932/1638/1638-phrase.wav
+svd_1383_627_0:
+  speaker_id: '1383'
+  age: 45
+  gender: female
+  label: reinkes_edema
+  audio_keys:
+  - svd/pathological/female/1383/627/627-phrase.wav
+svd_1321_142_0:
+  speaker_id: '1321'
+  age: 62
+  gender: female
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/female/1321/142/142-phrase.wav
+svd_2642_2508_0:
+  speaker_id: '2642'
+  age: 48
+  gender: male
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/male/2642/2508/2508-phrase.wav
+svd_1357_448_0:
+  speaker_id: '1357'
+  age: 34
+  gender: female
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/female/1357/448/448-phrase.wav
+  - svd/pathological/female/1357/2412/2412-phrase.wav
+svd_1521_928_0:
+  speaker_id: '1521'
+  age: 25
+  gender: female
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/female/1521/928/928-phrase.wav
+svd_1689_1466_0:
+  speaker_id: '1689'
+  age: 61
+  gender: male
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/male/1689/1466/1466-phrase.wav
+svd_1923_1624_0:
+  speaker_id: '1923'
+  age: 47
+  gender: female
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/female/1923/1624/1624-phrase.wav
+svd_1781_1683_0:
+  speaker_id: '1781'
+  age: 71
+  gender: male
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/male/1781/1683/1683-phrase.wav
+svd_2233_2024_0:
+  speaker_id: '2233'
+  age: 71
+  gender: female
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/female/2233/2024/2024-phrase.wav
+svd_2350_2330_0:
+  speaker_id: '2350'
+  age: 53
+  gender: female
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/female/2350/2330/2330-phrase.wav
+svd_1747_1397_0:
+  speaker_id: '1747'
+  age: 67
+  gender: female
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/female/1747/1397/1397-phrase.wav
+  - svd/pathological/female/1747/1448/1448-phrase.wav
+svd_2246_2341_0:
+  speaker_id: '2246'
+  age: 26
+  gender: male
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/male/2246/2341/2341-phrase.wav
+  - svd/pathological/male/2246/2057/2057-phrase.wav
+svd_1970_2078_0:
+  speaker_id: '1970'
+  age: 32
+  gender: male
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/male/1970/2078/2078-phrase.wav
+  - svd/pathological/male/1970/1671/1671-phrase.wav
+  - svd/pathological/male/1970/2243/2243-phrase.wav
+svd_1335_155_0:
+  speaker_id: '1335'
+  age: 44
+  gender: male
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/male/1335/155/155-phrase.wav
+svd_1835_1489_0:
+  speaker_id: '1835'
+  age: 33
+  gender: female
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/female/1835/1489/1489-phrase.wav
+svd_1552_1054_0:
+  speaker_id: '1552'
+  age: 24
+  gender: female
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/female/1552/1054/1054-phrase.wav
+svd_2704_2570_0:
+  speaker_id: '2704'
+  age: 54
+  gender: male
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/male/2704/2570/2570-phrase.wav
+svd_2095_1829_0:
+  speaker_id: '2095'
+  age: 41
+  gender: female
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/female/2095/1829/1829-phrase.wav
+svd_2222_2014_0:
+  speaker_id: '2222'
+  age: 52
+  gender: female
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/female/2222/2014/2014-phrase.wav
+svd_1456_864_0:
+  speaker_id: '1456'
+  age: 27
+  gender: female
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/female/1456/864/864-phrase.wav
+svd_2476_2342_0:
+  speaker_id: '2476'
+  age: 65
+  gender: male
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/male/2476/2342/2342-phrase.wav
+svd_2247_2058_0:
+  speaker_id: '2247'
+  age: 25
+  gender: male
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/male/2247/2058/2058-phrase.wav
+svd_2275_2086_0:
+  speaker_id: '2275'
+  age: 75
+  gender: female
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/female/2275/2086/2086-phrase.wav
+svd_1929_1630_0:
+  speaker_id: '1929'
+  age: 75
+  gender: male
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/male/1929/1630/1630-phrase.wav
+svd_1437_825_0:
+  speaker_id: '1437'
+  age: 49
+  gender: female
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/female/1437/825/825-phrase.wav
+svd_1484_897_0:
+  speaker_id: '1484'
+  age: 81
+  gender: male
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/male/1484/897/897-phrase.wav
+svd_2377_2216_0:
+  speaker_id: '2377'
+  age: 36
+  gender: female
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/female/2377/2216/2216-phrase.wav
+svd_2083_1818_0:
+  speaker_id: '2083'
+  age: 59
+  gender: male
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/male/2083/1818/1818-phrase.wav
+svd_2528_2394_0:
+  speaker_id: '2528'
+  age: 72
+  gender: female
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/female/2528/2394/2394-phrase.wav
+svd_1658_1272_0:
+  speaker_id: '1658'
+  age: 27
+  gender: female
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/female/1658/1272/1272-phrase.wav
+svd_2345_2148_0:
+  speaker_id: '2345'
+  age: 23
+  gender: male
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/male/2345/2148/2148-phrase.wav
+svd_2397_2237_0:
+  speaker_id: '2397'
+  age: 45
+  gender: female
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/female/2397/2237/2237-phrase.wav
+svd_1382_565_0:
+  speaker_id: '1382'
+  age: 54
+  gender: female
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/female/1382/565/565-phrase.wav
+svd_2100_1832_0:
+  speaker_id: '2100'
+  age: 62
+  gender: male
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/male/2100/1832/1832-phrase.wav
+svd_2264_2072_0:
+  speaker_id: '2264'
+  age: 14
+  gender: male
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/male/2264/2072/2072-phrase.wav
+svd_1305_362_0:
+  speaker_id: '1305'
+  age: 65
+  gender: female
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/female/1305/362/362-phrase.wav
+svd_2691_2555_0:
+  speaker_id: '2691'
+  age: 52
+  gender: male
+  label: contact_pachydermia
+  audio_keys:
+  - svd/pathological/male/2691/2555/2555-phrase.wav
+svd_2708_2574_0:
+  speaker_id: '2708'
+  age: 69
+  gender: male
+  label: laryngitis
+  audio_keys:
+  - svd/pathological/male/2708/2574/2574-phrase.wav
+svd_2569_2435_0:
+  speaker_id: '2569'
+  age: 56
+  gender: male
+  label: laryngitis
+  audio_keys:
+  - svd/pathological/male/2569/2435/2435-phrase.wav
+svd_2439_2305_0:
+  speaker_id: '2439'
+  age: 66
+  gender: male
+  label: laryngitis
+  audio_keys:
+  - svd/pathological/male/2439/2305/2305-phrase.wav
+svd_2183_1973_0:
+  speaker_id: '2183'
+  age: 59
+  gender: male
+  label: laryngitis
+  audio_keys:
+  - svd/pathological/male/2183/1973/1973-phrase.wav
+svd_1495_1163_0:
+  speaker_id: '1495'
+  age: 69
+  gender: male
+  label: laryngitis
+  audio_keys:
+  - svd/pathological/male/1495/1163/1163-phrase.wav
+  - svd/pathological/male/1495/902/902-phrase.wav
+svd_1755_1404_0:
+  speaker_id: '1755'
+  age: 59
+  gender: female
+  label: laryngitis
+  audio_keys:
+  - svd/pathological/female/1755/1404/1404-phrase.wav
+svd_1621_1246_0:
+  speaker_id: '1621'
+  age: 53
+  gender: male
+  label: laryngitis
+  audio_keys:
+  - svd/pathological/male/1621/1246/1246-phrase.wav
+svd_1320_141_0:
+  speaker_id: '1320'
+  age: 41
+  gender: male
+  label: laryngitis
+  audio_keys:
+  - svd/pathological/male/1320/141/141-phrase.wav
+svd_1756_1405_0:
+  speaker_id: '1756'
+  age: 36
+  gender: female
+  label: laryngitis
+  audio_keys:
+  - svd/pathological/female/1756/1405/1405-phrase.wav
+svd_2716_2582_0:
+  speaker_id: '2716'
+  age: 62
+  gender: male
+  label: laryngitis
+  audio_keys:
+  - svd/pathological/male/2716/2582/2582-phrase.wav
+svd_2368_2191_0:
+  speaker_id: '2368'
+  age: 38
+  gender: male
+  label: laryngitis
+  audio_keys:
+  - svd/pathological/male/2368/2191/2191-phrase.wav
+svd_1480_886_0:
+  speaker_id: '1480'
+  age: 50
+  gender: female
+  label: laryngitis
+  audio_keys:
+  - svd/pathological/female/1480/886/886-phrase.wav
+svd_2577_2443_0:
+  speaker_id: '2577'
+  age: 50
+  gender: male
+  label: laryngitis
+  audio_keys:
+  - svd/pathological/male/2577/2443/2443-phrase.wav
+svd_2648_2514_0:
+  speaker_id: '2648'
+  age: 49
+  gender: female
+  label: laryngitis
+  audio_keys:
+  - svd/pathological/female/2648/2514/2514-phrase.wav
+svd_1645_1259_0:
+  speaker_id: '1645'
+  age: 47
+  gender: male
+  label: laryngitis
+  audio_keys:
+  - svd/pathological/male/1645/1259/1259-phrase.wav
+svd_1649_1260_0:
+  speaker_id: '1649'
+  age: 30
+  gender: female
+  label: laryngitis
+  audio_keys:
+  - svd/pathological/female/1649/1260/1260-phrase.wav
+svd_1365_493_0:
+  speaker_id: '1365'
+  age: 37
+  gender: male
+  label: laryngitis
+  audio_keys:
+  - svd/pathological/male/1365/493/493-phrase.wav
+svd_1379_568_0:
+  speaker_id: '1379'
+  age: 59
+  gender: female
+  label: laryngitis
+  audio_keys:
+  - svd/pathological/female/1379/568/568-phrase.wav
+svd_2267_2075_0:
+  speaker_id: '2267'
+  age: 54
+  gender: male
+  label: laryngitis
+  audio_keys:
+  - svd/pathological/male/2267/2075/2075-phrase.wav
+svd_1680_1295_0:
+  speaker_id: '1680'
+  age: 41
+  gender: female
+  label: laryngitis
+  audio_keys:
+  - svd/pathological/female/1680/1295/1295-phrase.wav
+svd_2449_2315_0:
+  speaker_id: '2449'
+  age: 69
+  gender: female
+  label: laryngitis
+  audio_keys:
+  - svd/pathological/female/2449/2315/2315-phrase.wav
+svd_2435_2301_0:
+  speaker_id: '2435'
+  age: 47
+  gender: male
+  label: laryngitis
+  audio_keys:
+  - svd/pathological/male/2435/2301/2301-phrase.wav
+svd_1646_1264_0:
+  speaker_id: '1646'
+  age: 65
+  gender: male
+  label: laryngitis
+  audio_keys:
+  - svd/pathological/male/1646/1264/1264-phrase.wav
+svd_1617_1274_0:
+  speaker_id: '1617'
+  age: 37
+  gender: female
+  label: laryngitis
+  audio_keys:
+  - svd/pathological/female/1617/1274/1274-phrase.wav
+  - svd/pathological/female/1617/1447/1447-phrase.wav
+svd_2236_2028_0:
+  speaker_id: '2236'
+  age: 36
+  gender: male
+  label: dysphonia
+  audio_keys:
+  - svd/pathological/male/2236/2028/2028-phrase.wav
+svd_2558_2424_0:
+  speaker_id: '2558'
+  age: 50
+  gender: male
+  label: laryngitis
+  audio_keys:
+  - svd/pathological/male/2558/2424/2424-phrase.wav
+svd_1369_498_0:
+  speaker_id: '1369'
+  age: 26
+  gender: female
+  label: laryngitis
+  audio_keys:
+  - svd/pathological/female/1369/498/498-phrase.wav
+svd_2712_2578_0:
+  speaker_id: '2712'
+  age: 44
+  gender: female
+  label: laryngitis
+  audio_keys:
+  - svd/pathological/female/2712/2578/2578-phrase.wav
+svd_2650_2516_0:
+  speaker_id: '2650'
+  age: 54
+  gender: female
+  label: laryngitis
+  audio_keys:
+  - svd/pathological/female/2650/2516/2516-phrase.wav
+svd_2059_1795_0:
+  speaker_id: '2059'
+  age: 34
+  gender: male
+  label: laryngitis
+  audio_keys:
+  - svd/pathological/male/2059/1795/1795-phrase.wav
+svd_1570_1192_0:
+  speaker_id: '1570'
+  age: 62
+  gender: female
+  label: laryngitis
+  audio_keys:
+  - svd/pathological/female/1570/1192/1192-phrase.wav
+  - svd/pathological/female/1570/1119/1119-phrase.wav
+svd_1928_1629_0:
+  speaker_id: '1928'
+  age: 51
+  gender: male
+  label: laryngitis
+  audio_keys:
+  - svd/pathological/male/1928/1629/1629-phrase.wav
+svd_1502_910_0:
+  speaker_id: '1502'
+  age: 40
+  gender: male
+  label: contact_pachydermia
+  audio_keys:
+  - svd/pathological/male/1502/910/910-phrase.wav
+svd_2675_2541_0:
+  speaker_id: '2675'
+  age: 62
+  gender: male
+  label: laryngitis
+  audio_keys:
+  - svd/pathological/male/2675/2541/2541-phrase.wav
+svd_2701_2567_0:
+  speaker_id: '2701'
+  age: 70
+  gender: male
+  label: laryngitis
+  audio_keys:
+  - svd/pathological/male/2701/2567/2567-phrase.wav
+svd_2272_2079_0:
+  speaker_id: '2272'
+  age: 26
+  gender: female
+  label: laryngitis
+  audio_keys:
+  - svd/pathological/female/2272/2079/2079-phrase.wav
+svd_1542_1046_0:
+  speaker_id: '1542'
+  age: 47
+  gender: female
+  label: laryngitis
+  audio_keys:
+  - svd/pathological/female/1542/1046/1046-phrase.wav
+svd_2317_2128_0:
+  speaker_id: '2317'
+  age: 63
+  gender: female
+  label: laryngitis
+  audio_keys:
+  - svd/pathological/female/2317/2128/2128-phrase.wav
+svd_2197_1987_0:
+  speaker_id: '2197'
+  age: 48
+  gender: male
+  label: laryngitis
+  audio_keys:
+  - svd/pathological/male/2197/1987/1987-phrase.wav
+svd_1311_2296_0:
+  speaker_id: '1311'
+  age: 61
+  gender: male
+  label: laryngitis
+  audio_keys:
+  - svd/pathological/male/1311/2296/2296-phrase.wav
+  - svd/pathological/male/1311/119/119-phrase.wav
+svd_1527_935_0:
+  speaker_id: '1527'
+  age: 32
+  gender: male
+  label: laryngitis
+  audio_keys:
+  - svd/pathological/male/1527/935/935-phrase.wav
+svd_1693_1315_0:
+  speaker_id: '1693'
+  age: 57
+  gender: male
+  label: laryngitis
+  audio_keys:
+  - svd/pathological/male/1693/1315/1315-phrase.wav
+svd_1550_1221_0:
+  speaker_id: '1550'
+  age: 32
+  gender: female
+  label: laryngitis
+  audio_keys:
+  - svd/pathological/female/1550/1221/1221-phrase.wav
+  - svd/pathological/female/1550/1164/1164-phrase.wav
+svd_2152_1940_0:
+  speaker_id: '2152'
+  age: 55
+  gender: female
+  label: laryngitis
+  audio_keys:
+  - svd/pathological/female/2152/1940/1940-phrase.wav
+svd_1811_1463_0:
+  speaker_id: '1811'
+  age: 71
+  gender: male
+  label: laryngitis
+  audio_keys:
+  - svd/pathological/male/1811/1463/1463-phrase.wav
+svd_1378_563_0:
+  speaker_id: '1378'
+  age: 28
+  gender: male
+  label: laryngitis
+  audio_keys:
+  - svd/pathological/male/1378/563/563-phrase.wav
+svd_2072_1806_0:
+  speaker_id: '2072'
+  age: 27
+  gender: female
+  label: laryngitis
+  audio_keys:
+  - svd/pathological/female/2072/1806/1806-phrase.wav
+svd_1616_1228_0:
+  speaker_id: '1616'
+  age: 47
+  gender: female
+  label: laryngitis
+  audio_keys:
+  - svd/pathological/female/1616/1228/1228-phrase.wav
+svd_1498_904_0:
+  speaker_id: '1498'
+  age: 48
+  gender: male
+  label: laryngitis
+  audio_keys:
+  - svd/pathological/male/1498/904/904-phrase.wav
+svd_1304_107_0:
+  speaker_id: '1304'
+  age: 60
+  gender: male
+  label: laryngitis
+  audio_keys:
+  - svd/pathological/male/1304/107/107-phrase.wav
+svd_1685_1300_0:
+  speaker_id: '1685'
+  age: 30
+  gender: female
+  label: laryngitis
+  audio_keys:
+  - svd/pathological/female/1685/1300/1300-phrase.wav
+svd_2175_1965_0:
+  speaker_id: '2175'
+  age: 68
+  gender: female
+  label: laryngitis
+  audio_keys:
+  - svd/pathological/female/2175/1965/1965-phrase.wav
+svd_1899_1599_0:
+  speaker_id: '1899'
+  age: 32
+  gender: male
+  label: laryngitis
+  audio_keys:
+  - svd/pathological/male/1899/1599/1599-phrase.wav
+svd_1467_871_0:
+  speaker_id: '1467'
+  age: 59
+  gender: female
+  label: laryngitis
+  audio_keys:
+  - svd/pathological/female/1467/871/871-phrase.wav
+svd_2731_2605_0:
+  speaker_id: '2731'
+  age: 59
+  gender: male
+  label: laryngitis
+  audio_keys:
+  - svd/pathological/male/2731/2605/2605-phrase.wav
+svd_2420_2276_0:
+  speaker_id: '2420'
+  age: 73
+  gender: female
+  label: laryngitis
+  audio_keys:
+  - svd/pathological/female/2420/2276/2276-phrase.wav
+  - svd/pathological/female/2420/2358/2358-phrase.wav
+  - svd/pathological/female/2420/2303/2303-phrase.wav
+svd_1804_1456_0:
+  speaker_id: '1804'
+  age: 22
+  gender: male
+  label: laryngitis
+  audio_keys:
+  - svd/pathological/male/1804/1456/1456-phrase.wav
+svd_1318_139_0:
+  speaker_id: '1318'
+  age: 18
+  gender: male
+  label: laryngitis
+  audio_keys:
+  - svd/pathological/male/1318/139/139-phrase.wav
+svd_1587_1188_0:
+  speaker_id: '1587'
+  age: 28
+  gender: female
+  label: laryngitis
+  audio_keys:
+  - svd/pathological/female/1587/1188/1188-phrase.wav
+svd_1478_884_0:
+  speaker_id: '1478'
+  age: 71
+  gender: male
+  label: laryngitis
+  audio_keys:
+  - svd/pathological/male/1478/884/884-phrase.wav
+svd_1776_1426_0:
+  speaker_id: '1776'
+  age: 46
+  gender: male
+  label: laryngitis
+  audio_keys:
+  - svd/pathological/male/1776/1426/1426-phrase.wav
+svd_2462_2328_0:
+  speaker_id: '2462'
+  age: 64
+  gender: male
+  label: laryngitis
+  audio_keys:
+  - svd/pathological/male/2462/2328/2328-phrase.wav
+svd_1643_1257_0:
+  speaker_id: '1643'
+  age: 32
+  gender: female
+  label: laryngitis
+  audio_keys:
+  - svd/pathological/female/1643/1257/1257-phrase.wav
+svd_2728_2602_0:
+  speaker_id: '2728'
+  age: 60
+  gender: female
+  label: laryngitis
+  audio_keys:
+  - svd/pathological/female/2728/2602/2602-phrase.wav
+svd_2722_2588_0:
+  speaker_id: '2722'
+  age: 45
+  gender: female
+  label: laryngitis
+  audio_keys:
+  - svd/pathological/female/2722/2588/2588-phrase.wav
+svd_2353_2156_0:
+  speaker_id: '2353'
+  age: 33
+  gender: male
+  label: laryngitis
+  audio_keys:
+  - svd/pathological/male/2353/2156/2156-phrase.wav
+svd_1523_931_0:
+  speaker_id: '1523'
+  age: 52
+  gender: female
+  label: laryngitis
+  audio_keys:
+  - svd/pathological/female/1523/931/931-phrase.wav
+svd_2538_2404_0:
+  speaker_id: '2538'
+  age: 52
+  gender: male
+  label: laryngitis
+  audio_keys:
+  - svd/pathological/male/2538/2404/2404-phrase.wav
+svd_2163_1953_0:
+  speaker_id: '2163'
+  age: 27
+  gender: male
+  label: laryngitis
+  audio_keys:
+  - svd/pathological/male/2163/1953/1953-phrase.wav
+svd_2736_2610_0:
+  speaker_id: '2736'
+  age: 73
+  gender: female
+  label: laryngitis
+  audio_keys:
+  - svd/pathological/female/2736/2610/2610-phrase.wav
+svd_2659_2525_0:
+  speaker_id: '2659'
+  age: 70
+  gender: male
+  label: laryngitis
+  audio_keys:
+  - svd/pathological/male/2659/2525/2525-phrase.wav
+svd_1511_919_0:
+  speaker_id: '1511'
+  age: 25
+  gender: female
+  label: laryngitis
+  audio_keys:
+  - svd/pathological/female/1511/919/919-phrase.wav
+svd_1436_824_0:
+  speaker_id: '1436'
+  age: 16
+  gender: male
+  label: laryngitis
+  audio_keys:
+  - svd/pathological/male/1436/824/824-phrase.wav
+  - svd/pathological/male/1436/1231/1231-phrase.wav
+svd_2074_1809_0:
+  speaker_id: '2074'
+  age: 31
+  gender: female
+  label: laryngitis
+  audio_keys:
+  - svd/pathological/female/2074/1809/1809-phrase.wav
+svd_2726_2600_0:
+  speaker_id: '2726'
+  age: 43
+  gender: male
+  label: laryngitis
+  audio_keys:
+  - svd/pathological/male/2726/2600/2600-phrase.wav
+svd_1443_844_0:
+  speaker_id: '1443'
+  age: 12
+  gender: female
+  label: laryngitis
+  audio_keys:
+  - svd/pathological/female/1443/844/844-phrase.wav
+svd_1619_1233_0:
+  speaker_id: '1619'
+  age: 43
+  gender: female
+  label: laryngitis
+  audio_keys:
+  - svd/pathological/female/1619/1233/1233-phrase.wav
+svd_1669_1283_0:
+  speaker_id: '1669'
+  age: 36
+  gender: male
+  label: laryngitis
+  audio_keys:
+  - svd/pathological/male/1669/1283/1283-phrase.wav
+svd_1765_1414_0:
+  speaker_id: '1765'
+  age: 60
+  gender: male
+  label: laryngitis
+  audio_keys:
+  - svd/pathological/male/1765/1414/1414-phrase.wav
+svd_1739_1388_0:
+  speaker_id: '1739'
+  age: 56
+  gender: female
+  label: laryngitis
+  audio_keys:
+  - svd/pathological/female/1739/1388/1388-phrase.wav
+svd_1844_1567_0:
+  speaker_id: '1844'
+  age: 51
+  gender: male
+  label: laryngitis
+  audio_keys:
+  - svd/pathological/male/1844/1567/1567-phrase.wav
+svd_1392_665_0:
+  speaker_id: '1392'
+  age: 68
+  gender: female
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/female/1392/665/665-phrase.wav
+svd_1494_901_0:
+  speaker_id: '1494'
+  age: 47
+  gender: female
+  label: reinkes_edema
+  audio_keys:
+  - svd/pathological/female/1494/901/901-phrase.wav
+svd_2000_2458_0:
+  speaker_id: '2000'
+  age: 59
+  gender: male
+  label: cordectomy
+  audio_keys:
+  - svd/pathological/male/2000/2458/2458-phrase.wav
+  - svd/pathological/male/2000/2131/2131-phrase.wav
+  - svd/pathological/male/2000/1716/1716-phrase.wav
+  - svd/pathological/male/2000/1913/1913-phrase.wav
+svd_1444_2029_0:
+  speaker_id: '1444'
+  age: 65
+  gender: male
+  label: cordectomy
+  audio_keys:
+  - svd/pathological/male/1444/2029/2029-phrase.wav
+  - svd/pathological/male/1444/845/845-phrase.wav
+svd_1620_1412_0:
+  speaker_id: '1620'
+  age: 59
+  gender: male
+  label: cordectomy
+  audio_keys:
+  - svd/pathological/male/1620/1412/1412-phrase.wav
+  - svd/pathological/male/1620/1376/1376-phrase.wav
+  - svd/pathological/male/1620/1401/1401-phrase.wav
+  - svd/pathological/male/1620/1932/1932-phrase.wav
+  - svd/pathological/male/1620/1339/1339-phrase.wav
+  - svd/pathological/male/1620/1313/1313-phrase.wav
+  - svd/pathological/male/1620/1429/1429-phrase.wav
+svd_1446_1606_0:
+  speaker_id: '1446'
+  age: 67
+  gender: male
+  label: cordectomy
+  audio_keys:
+  - svd/pathological/male/1446/1606/1606-phrase.wav
+  - svd/pathological/male/1446/847/847-phrase.wav
+  - svd/pathological/male/1446/2362/2362-phrase.wav
+svd_1659_1410_0:
+  speaker_id: '1659'
+  age: 64
+  gender: male
+  label: cordectomy
+  audio_keys:
+  - svd/pathological/male/1659/1410/1410-phrase.wav
+  - svd/pathological/male/1659/1403/1403-phrase.wav
+  - svd/pathological/male/1659/1383/1383-phrase.wav
+  - svd/pathological/male/1659/1273/1273-phrase.wav
+  - svd/pathological/male/1659/1465/1465-phrase.wav
+  - svd/pathological/male/1659/1428/1428-phrase.wav
+svd_2387_2291_0:
+  speaker_id: '2387'
+  age: 72
+  gender: male
+  label: cordectomy
+  audio_keys:
+  - svd/pathological/male/2387/2291/2291-phrase.wav
+  - svd/pathological/male/2387/2226/2226-phrase.wav
+svd_2535_2484_0:
+  speaker_id: '2535'
+  age: 50
+  gender: male
+  label: cordectomy
+  audio_keys:
+  - svd/pathological/male/2535/2484/2484-phrase.wav
+svd_1363_504_0:
+  speaker_id: '1363'
+  age: 78
+  gender: male
+  label: cordectomy
+  audio_keys:
+  - svd/pathological/male/1363/504/504-phrase.wav
+  - svd/pathological/male/1363/1450/1450-phrase.wav
+  - svd/pathological/male/1363/491/491-phrase.wav
+  - svd/pathological/male/1363/1503/1503-phrase.wav
+svd_1427_920_0:
+  speaker_id: '1427'
+  age: 57
+  gender: male
+  label: cordectomy
+  audio_keys:
+  - svd/pathological/male/1427/920/920-phrase.wav
+  - svd/pathological/male/1427/1635/1635-phrase.wav
+  - svd/pathological/male/1427/815/815-phrase.wav
+  - svd/pathological/male/1427/1446/1446-phrase.wav
+svd_1485_1089_0:
+  speaker_id: '1485'
+  age: 67
+  gender: male
+  label: cordectomy
+  audio_keys:
+  - svd/pathological/male/1485/1089/1089-phrase.wav
+  - svd/pathological/male/1485/891/891-phrase.wav
+  - svd/pathological/male/1485/1191/1191-phrase.wav
+svd_1469_1771_0:
+  speaker_id: '1469'
+  age: 54
+  gender: male
+  label: cordectomy
+  audio_keys:
+  - svd/pathological/male/1469/1771/1771-phrase.wav
+  - svd/pathological/male/1469/873/873-phrase.wav
+svd_1603_2189_0:
+  speaker_id: '1603'
+  age: 70
+  gender: male
+  label: cordectomy
+  audio_keys:
+  - svd/pathological/male/1603/2189/2189-phrase.wav
+  - svd/pathological/male/1603/1217/1217-phrase.wav
+  - svd/pathological/male/1603/2548/2548-phrase.wav
+svd_1992_1693_0:
+  speaker_id: '1992'
+  age: 71
+  gender: male
+  label: cordectomy
+  audio_keys:
+  - svd/pathological/male/1992/1693/1693-phrase.wav
+svd_1951_1651_0:
+  speaker_id: '1951'
+  age: 57
+  gender: male
+  label: cordectomy
+  audio_keys:
+  - svd/pathological/male/1951/1651/1651-phrase.wav
+svd_1995_2064_0:
+  speaker_id: '1995'
+  age: 52
+  gender: female
+  label: cordectomy
+  audio_keys:
+  - svd/pathological/female/1995/2064/2064-phrase.wav
+  - svd/pathological/female/1995/1774/1774-phrase.wav
+  - svd/pathological/female/1995/1714/1714-phrase.wav
+svd_2360_2183_0:
+  speaker_id: '2360'
+  age: 45
+  gender: male
+  label: cordectomy
+  audio_keys:
+  - svd/pathological/male/2360/2183/2183-phrase.wav
+  - svd/pathological/male/2360/2494/2494-phrase.wav
+svd_1634_2490_0:
+  speaker_id: '1634'
+  age: 64
+  gender: female
+  label: cordectomy
+  audio_keys:
+  - svd/pathological/female/1634/2490/2490-phrase.wav
+svd_1384_628_0:
+  speaker_id: '1384'
+  age: 60
+  gender: male
+  label: cordectomy
+  audio_keys:
+  - svd/pathological/male/1384/628/628-phrase.wav
+svd_1515_1646_0:
+  speaker_id: '1515'
+  age: 63
+  gender: male
+  label: contact_pachydermia
+  audio_keys:
+  - svd/pathological/male/1515/1646/1646-phrase.wav
+svd_2381_2220_0:
+  speaker_id: '2381'
+  age: 67
+  gender: male
+  label: contact_pachydermia
+  audio_keys:
+  - svd/pathological/male/2381/2220/2220-phrase.wav
+  - svd/pathological/male/2381/2543/2543-phrase.wav
+svd_1591_1195_0:
+  speaker_id: '1591'
+  age: 59
+  gender: male
+  label: contact_pachydermia
+  audio_keys:
+  - svd/pathological/male/1591/1195/1195-phrase.wav
+svd_1690_1305_0:
+  speaker_id: '1690'
+  age: 65
+  gender: male
+  label: contact_pachydermia
+  audio_keys:
+  - svd/pathological/male/1690/1305/1305-phrase.wav
+svd_2208_1999_0:
+  speaker_id: '2208'
+  age: 47
+  gender: male
+  label: contact_pachydermia
+  audio_keys:
+  - svd/pathological/male/2208/1999/1999-phrase.wav
+svd_1314_503_0:
+  speaker_id: '1314'
+  age: 54
+  gender: male
+  label: contact_pachydermia
+  audio_keys:
+  - svd/pathological/male/1314/503/503-phrase.wav
+  - svd/pathological/male/1314/129/129-phrase.wav
+  - svd/pathological/male/1314/159/159-phrase.wav
+  - svd/pathological/male/1314/2413/2413-phrase.wav
+svd_1941_1647_0:
+  speaker_id: '1941'
+  age: 65
+  gender: male
+  label: contact_pachydermia
+  audio_keys:
+  - svd/pathological/male/1941/1647/1647-phrase.wav
+svd_2237_2027_0:
+  speaker_id: '2237'
+  age: 70
+  gender: male
+  label: contact_pachydermia
+  audio_keys:
+  - svd/pathological/male/2237/2027/2027-phrase.wav
+svd_1454_1190_0:
+  speaker_id: '1454'
+  age: 31
+  gender: male
+  label: contact_pachydermia
+  audio_keys:
+  - svd/pathological/male/1454/1190/1190-phrase.wav
+  - svd/pathological/male/1454/895/895-phrase.wav
+svd_2714_2580_0:
+  speaker_id: '2714'
+  age: 39
+  gender: male
+  label: contact_pachydermia
+  audio_keys:
+  - svd/pathological/male/2714/2580/2580-phrase.wav
+svd_1850_1525_0:
+  speaker_id: '1850'
+  age: 48
+  gender: male
+  label: contact_pachydermia
+  audio_keys:
+  - svd/pathological/male/1850/1525/1525-phrase.wav
+svd_2135_1912_0:
+  speaker_id: '2135'
+  age: 50
+  gender: male
+  label: contact_pachydermia
+  audio_keys:
+  - svd/pathological/male/2135/1912/1912-phrase.wav
+svd_2216_2439_0:
+  speaker_id: '2216'
+  age: 71
+  gender: male
+  label: contact_pachydermia
+  audio_keys:
+  - svd/pathological/male/2216/2439/2439-phrase.wav
+  - svd/pathological/male/2216/2091/2091-phrase.wav
+svd_2402_2385_0:
+  speaker_id: '2402'
+  age: 63
+  gender: male
+  label: contact_pachydermia
+  audio_keys:
+  - svd/pathological/male/2402/2385/2385-phrase.wav
+  - svd/pathological/male/2402/2241/2241-phrase.wav
+  - svd/pathological/male/2402/2483/2483-phrase.wav
+svd_1410_1481_0:
+  speaker_id: '1410'
+  age: 55
+  gender: male
+  label: contact_pachydermia
+  audio_keys:
+  - svd/pathological/male/1410/1481/1481-phrase.wav
+  - svd/pathological/male/1410/718/718-phrase.wav
+svd_2343_2146_0:
+  speaker_id: '2343'
+  age: 76
+  gender: male
+  label: contact_pachydermia
+  audio_keys:
+  - svd/pathological/male/2343/2146/2146-phrase.wav
+svd_1637_1251_0:
+  speaker_id: '1637'
+  age: 69
+  gender: male
+  label: contact_pachydermia
+  audio_keys:
+  - svd/pathological/male/1637/1251/1251-phrase.wav
+svd_1413_721_0:
+  speaker_id: '1413'
+  age: 61
+  gender: female
+  label: contact_pachydermia
+  audio_keys:
+  - svd/pathological/female/1413/721/721-phrase.wav
+svd_2120_1897_0:
+  speaker_id: '2120'
+  age: 31
+  gender: male
+  label: contact_pachydermia
+  audio_keys:
+  - svd/pathological/male/2120/1897/1897-phrase.wav
+  - svd/pathological/male/2120/2186/2186-phrase.wav
+svd_2632_2498_0:
+  speaker_id: '2632'
+  age: 29
+  gender: male
+  label: contact_pachydermia
+  audio_keys:
+  - svd/pathological/male/2632/2498/2498-phrase.wav
+svd_2665_2531_0:
+  speaker_id: '2665'
+  age: 46
+  gender: male
+  label: contact_pachydermia
+  audio_keys:
+  - svd/pathological/male/2665/2531/2531-phrase.wav
+svd_2537_2403_0:
+  speaker_id: '2537'
+  age: 70
+  gender: male
+  label: contact_pachydermia
+  audio_keys:
+  - svd/pathological/male/2537/2403/2403-phrase.wav
+svd_2176_1986_0:
+  speaker_id: '2176'
+  age: 58
+  gender: male
+  label: contact_pachydermia
+  audio_keys:
+  - svd/pathological/male/2176/1986/1986-phrase.wav
+svd_2282_2092_0:
+  speaker_id: '2282'
+  age: 60
+  gender: male
+  label: contact_pachydermia
+  audio_keys:
+  - svd/pathological/male/2282/2092/2092-phrase.wav
+svd_2098_1831_0:
+  speaker_id: '2098'
+  age: 55
+  gender: female
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/female/2098/1831/1831-phrase.wav
+svd_1319_140_0:
+  speaker_id: '1319'
+  age: 44
+  gender: female
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/female/1319/140/140-phrase.wav
+svd_2711_2577_0:
+  speaker_id: '2711'
+  age: 47
+  gender: female
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/female/2711/2577/2577-phrase.wav
+svd_2725_2591_0:
+  speaker_id: '2725'
+  age: 41
+  gender: female
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/female/2725/2591/2591-phrase.wav
+svd_2383_2221_0:
+  speaker_id: '2383'
+  age: 29
+  gender: female
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/female/2383/2221/2221-phrase.wav
+svd_1729_1380_0:
+  speaker_id: '1729'
+  age: 48
+  gender: female
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/female/1729/1380/1380-phrase.wav
+  - svd/pathological/female/1729/1435/1435-phrase.wav
+svd_2385_2224_0:
+  speaker_id: '2385'
+  age: 27
+  gender: female
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/female/2385/2224/2224-phrase.wav
+svd_2614_2480_0:
+  speaker_id: '2614'
+  age: 46
+  gender: female
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/female/2614/2480/2480-phrase.wav
+svd_2116_1891_0:
+  speaker_id: '2116'
+  age: 39
+  gender: female
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/female/2116/1891/1891-phrase.wav
+svd_1981_1682_0:
+  speaker_id: '1981'
+  age: 21
+  gender: female
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/female/1981/1682/1682-phrase.wav
+  - svd/pathological/female/1981/1742/1742-phrase.wav
+svd_2687_2553_0:
+  speaker_id: '2687'
+  age: 42
+  gender: female
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/female/2687/2553/2553-phrase.wav
+svd_2386_2225_0:
+  speaker_id: '2386'
+  age: 50
+  gender: female
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/female/2386/2225/2225-phrase.wav
+svd_2192_1982_0:
+  speaker_id: '2192'
+  age: 36
+  gender: female
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/female/2192/1982/1982-phrase.wav
+svd_2060_1794_0:
+  speaker_id: '2060'
+  age: 22
+  gender: female
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/female/2060/1794/1794-phrase.wav
+svd_1878_1571_0:
+  speaker_id: '1878'
+  age: 47
+  gender: female
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/female/1878/1571/1571-phrase.wav
+svd_2050_1786_0:
+  speaker_id: '2050'
+  age: 56
+  gender: female
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/female/2050/1786/1786-phrase.wav
+svd_1727_1379_0:
+  speaker_id: '1727'
+  age: 38
+  gender: female
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/female/1727/1379/1379-phrase.wav
+  - svd/pathological/female/1727/1608/1608-phrase.wav
+svd_2723_2589_0:
+  speaker_id: '2723'
+  age: 21
+  gender: female
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/female/2723/2589/2589-phrase.wav
+svd_2161_1952_0:
+  speaker_id: '2161'
+  age: 45
+  gender: female
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/female/2161/1952/1952-phrase.wav
+svd_1714_1566_0:
+  speaker_id: '1714'
+  age: 52
+  gender: female
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/female/1714/1566/1566-phrase.wav
+  - svd/pathological/female/1714/1329/1329-phrase.wav
+svd_1679_1294_0:
+  speaker_id: '1679'
+  age: 39
+  gender: female
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/female/1679/1294/1294-phrase.wav
+svd_2086_1822_0:
+  speaker_id: '2086'
+  age: 26
+  gender: female
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/female/2086/1822/1822-phrase.wav
+svd_2508_2374_0:
+  speaker_id: '2508'
+  age: 40
+  gender: female
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/female/2508/2374/2374-phrase.wav
+svd_2451_2317_0:
+  speaker_id: '2451'
+  age: 54
+  gender: female
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/female/2451/2317/2317-phrase.wav
+svd_1779_1431_0:
+  speaker_id: '1779'
+  age: 35
+  gender: female
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/female/1779/1431/1431-phrase.wav
+svd_1526_934_0:
+  speaker_id: '1526'
+  age: 26
+  gender: female
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/female/1526/934/934-phrase.wav
+svd_2600_2466_0:
+  speaker_id: '2600'
+  age: 45
+  gender: female
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/female/2600/2466/2466-phrase.wav
+svd_2256_2067_0:
+  speaker_id: '2256'
+  age: 56
+  gender: female
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/female/2256/2067/2067-phrase.wav
+svd_1601_1607_0:
+  speaker_id: '1601'
+  age: 30
+  gender: female
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/female/1601/1607/1607-phrase.wav
+  - svd/pathological/female/1601/2363/2363-phrase.wav
+svd_1348_363_0:
+  speaker_id: '1348'
+  age: 29
+  gender: female
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/female/1348/363/363-phrase.wav
+svd_2199_1989_0:
+  speaker_id: '2199'
+  age: 46
+  gender: female
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/female/2199/1989/1989-phrase.wav
+svd_1505_1468_0:
+  speaker_id: '1505'
+  age: 39
+  gender: female
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/female/1505/1468/1468-phrase.wav
+  - svd/pathological/female/1505/913/913-phrase.wav
+svd_1985_1686_0:
+  speaker_id: '1985'
+  age: 58
+  gender: female
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/female/1985/1686/1686-phrase.wav
+svd_1490_898_0:
+  speaker_id: '1490'
+  age: 28
+  gender: female
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/female/1490/898/898-phrase.wav
+svd_2730_2604_0:
+  speaker_id: '2730'
+  age: 40
+  gender: female
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/female/2730/2604/2604-phrase.wav
+svd_2201_1990_0:
+  speaker_id: '2201'
+  age: 60
+  gender: female
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/female/2201/1990/1990-phrase.wav
+svd_2145_1934_0:
+  speaker_id: '2145'
+  age: 50
+  gender: male
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/male/2145/1934/1934-phrase.wav
+svd_1966_1778_0:
+  speaker_id: '1966'
+  age: 53
+  gender: female
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/female/1966/1778/1778-phrase.wav
+svd_2401_2240_0:
+  speaker_id: '2401'
+  age: 47
+  gender: male
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/male/2401/2240/2240-phrase.wav
+svd_1588_1189_0:
+  speaker_id: '1588'
+  age: 25
+  gender: female
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/female/1588/1189/1189-phrase.wav
+svd_1417_724_0:
+  speaker_id: '1417'
+  age: 45
+  gender: female
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/female/1417/724/724-phrase.wav
+svd_2651_2517_0:
+  speaker_id: '2651'
+  age: 66
+  gender: female
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/female/2651/2517/2517-phrase.wav
+svd_2655_2521_0:
+  speaker_id: '2655'
+  age: 51
+  gender: male
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/male/2655/2521/2521-phrase.wav
+svd_2291_2102_0:
+  speaker_id: '2291'
+  age: 54
+  gender: female
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/female/2291/2102/2102-phrase.wav
+svd_1960_1660_0:
+  speaker_id: '1960'
+  age: 33
+  gender: female
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/female/1960/1660/1660-phrase.wav
+svd_2220_2012_0:
+  speaker_id: '2220'
+  age: 49
+  gender: female
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/female/2220/2012/2012-phrase.wav
+svd_2679_2545_0:
+  speaker_id: '2679'
+  age: 66
+  gender: female
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/female/2679/2545/2545-phrase.wav
+svd_1673_1285_0:
+  speaker_id: '1673'
+  age: 64
+  gender: male
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/male/1673/1285/1285-phrase.wav
+svd_1336_348_0:
+  speaker_id: '1336'
+  age: 59
+  gender: male
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/male/1336/348/348-phrase.wav
+svd_1668_1282_0:
+  speaker_id: '1668'
+  age: 40
+  gender: male
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/male/1668/1282/1282-phrase.wav
+svd_2193_1983_0:
+  speaker_id: '2193'
+  age: 57
+  gender: female
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/female/2193/1983/1983-phrase.wav
+svd_2065_1929_0:
+  speaker_id: '2065'
+  age: 23
+  gender: female
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/female/2065/1929/1929-phrase.wav
+  - svd/pathological/female/2065/1800/1800-phrase.wav
+svd_1540_1044_0:
+  speaker_id: '1540'
+  age: 31
+  gender: female
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/female/1540/1044/1044-phrase.wav
+svd_2088_2482_0:
+  speaker_id: '2088'
+  age: 49
+  gender: female
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/female/2088/2482/2482-phrase.wav
+  - svd/pathological/female/2088/1823/1823-phrase.wav
+svd_2104_1861_0:
+  speaker_id: '2104'
+  age: 26
+  gender: male
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/male/2104/1861/1861-phrase.wav
+svd_1876_1569_0:
+  speaker_id: '1876'
+  age: 31
+  gender: male
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/male/1876/1569/1569-phrase.wav
+svd_2310_2121_0:
+  speaker_id: '2310'
+  age: 69
+  gender: female
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/female/2310/2121/2121-phrase.wav
+svd_1953_1653_0:
+  speaker_id: '1953'
+  age: 56
+  gender: male
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/male/1953/1653/1653-phrase.wav
+svd_2324_2135_0:
+  speaker_id: '2324'
+  age: 63
+  gender: male
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/male/2324/2135/2135-phrase.wav
+svd_1838_1492_0:
+  speaker_id: '1838'
+  age: 41
+  gender: male
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/male/1838/1492/1492-phrase.wav
+svd_2022_1758_0:
+  speaker_id: '2022'
+  age: 56
+  gender: female
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/female/2022/1758/1758-phrase.wav
+  - svd/pathological/female/2022/1866/1866-phrase.wav
+svd_2465_2331_0:
+  speaker_id: '2465'
+  age: 23
+  gender: female
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/female/2465/2331/2331-phrase.wav
+svd_2426_2292_0:
+  speaker_id: '2426'
+  age: 35
+  gender: female
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/female/2426/2292/2292-phrase.wav
+svd_1401_1331_0:
+  speaker_id: '1401'
+  age: 42
+  gender: female
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/female/1401/1331/1331-phrase.wav
+svd_2126_1903_0:
+  speaker_id: '2126'
+  age: 22
+  gender: male
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/male/2126/1903/1903-phrase.wav
+  - svd/healthy/male/2126/1841/1841-phrase.wav
+svd_2583_2449_0:
+  speaker_id: '2583'
+  age: 65
+  gender: female
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/female/2583/2449/2449-phrase.wav
+svd_1555_1083_0:
+  speaker_id: '1555'
+  age: 50
+  gender: male
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/male/1555/1083/1083-phrase.wav
+  - svd/pathological/male/1555/1649/1649-phrase.wav
+svd_2626_2492_0:
+  speaker_id: '2626'
+  age: 34
+  gender: male
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/male/2626/2492/2492-phrase.wav
+svd_2005_1741_0:
+  speaker_id: '2005'
+  age: 61
+  gender: male
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/male/2005/1741/1741-phrase.wav
+svd_1539_1043_0:
+  speaker_id: '1539'
+  age: 42
+  gender: male
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/male/1539/1043/1043-phrase.wav
+svd_1340_1090_0:
+  speaker_id: '1340'
+  age: 59
+  gender: female
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/female/1340/1090/1090-phrase.wav
+svd_2132_1910_0:
+  speaker_id: '2132'
+  age: 26
+  gender: female
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/female/2132/1910/1910-phrase.wav
+svd_2390_2228_0:
+  speaker_id: '2390'
+  age: 36
+  gender: female
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/female/2390/2228/2228-phrase.wav
+svd_1708_1324_0:
+  speaker_id: '1708'
+  age: 47
+  gender: female
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/female/1708/1324/1324-phrase.wav
+svd_1907_1602_0:
+  speaker_id: '1907'
+  age: 29
+  gender: male
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/male/1907/1602/1602-phrase.wav
+svd_1474_881_0:
+  speaker_id: '1474'
+  age: 17
+  gender: female
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/female/1474/881/881-phrase.wav
+svd_2406_2245_0:
+  speaker_id: '2406'
+  age: 62
+  gender: female
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/female/2406/2245/2245-phrase.wav
+svd_1514_922_0:
+  speaker_id: '1514'
+  age: 61
+  gender: male
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/male/1514/922/922-phrase.wav
+svd_2414_2270_0:
+  speaker_id: '2414'
+  age: 45
+  gender: male
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/male/2414/2270/2270-phrase.wav
+svd_1499_1459_0:
+  speaker_id: '1499'
+  age: 50
+  gender: female
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/female/1499/1459/1459-phrase.wav
+svd_1947_1648_0:
+  speaker_id: '1947'
+  age: 36
+  gender: female
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/female/1947/1648/1648-phrase.wav
+  - svd/pathological/female/1947/2355/2355-phrase.wav
+svd_1501_909_0:
+  speaker_id: '1501'
+  age: 49
+  gender: female
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/female/1501/909/909-phrase.wav
+svd_1452_854_0:
+  speaker_id: '1452'
+  age: 23
+  gender: male
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/male/1452/854/854-phrase.wav
+svd_1684_1299_0:
+  speaker_id: '1684'
+  age: 17
+  gender: female
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/female/1684/1299/1299-phrase.wav
+svd_1441_829_0:
+  speaker_id: '1441'
+  age: 71
+  gender: female
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/female/1441/829/829-phrase.wav
+svd_2392_2230_0:
+  speaker_id: '2392'
+  age: 53
+  gender: male
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/male/2392/2230/2230-phrase.wav
+svd_2597_2463_0:
+  speaker_id: '2597'
+  age: 38
+  gender: male
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/male/2597/2463/2463-phrase.wav
+svd_2263_2071_0:
+  speaker_id: '2263'
+  age: 60
+  gender: female
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/female/2263/2071/2071-phrase.wav
+svd_2674_2540_0:
+  speaker_id: '2674'
+  age: 56
+  gender: female
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/female/2674/2540/2540-phrase.wav
+svd_2251_2062_0:
+  speaker_id: '2251'
+  age: 28
+  gender: female
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/female/2251/2062/2062-phrase.wav
+svd_1415_1394_0:
+  speaker_id: '1415'
+  age: 37
+  gender: female
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/female/1415/1394/1394-phrase.wav
+svd_1557_1085_0:
+  speaker_id: '1557'
+  age: 43
+  gender: male
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/male/1557/1085/1085-phrase.wav
+svd_120_890_0:
+  speaker_id: '120'
+  age: 49
+  gender: female
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/female/120/890/890-phrase.wav
+  - svd/pathological/female/120/355/355-phrase.wav
+  - svd/healthy/female/120/104/104-phrase.wav
+svd_2268_2081_0:
+  speaker_id: '2268'
+  age: 28
+  gender: male
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/male/2268/2081/2081-phrase.wav
+svd_2441_2307_0:
+  speaker_id: '2441'
+  age: 75
+  gender: female
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/female/2441/2307/2307-phrase.wav
+svd_2138_1927_0:
+  speaker_id: '2138'
+  age: 19
+  gender: female
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/female/2138/1927/1927-phrase.wav
+svd_2327_2138_0:
+  speaker_id: '2327'
+  age: 61
+  gender: female
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/female/2327/2138/2138-phrase.wav
+svd_2189_1978_0:
+  speaker_id: '2189'
+  age: 52
+  gender: male
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/male/2189/1978/1978-phrase.wav
+svd_1449_850_0:
+  speaker_id: '1449'
+  age: 62
+  gender: male
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/male/1449/850/850-phrase.wav
+svd_2395_2233_0:
+  speaker_id: '2395'
+  age: 35
+  gender: male
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/male/2395/2233/2233-phrase.wav
+svd_2019_1754_0:
+  speaker_id: '2019'
+  age: 59
+  gender: female
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/female/2019/1754/1754-phrase.wav
+  - svd/pathological/female/2019/2151/2151-phrase.wav
+  - svd/pathological/female/2019/2366/2366-phrase.wav
+svd_1546_1050_0:
+  speaker_id: '1546'
+  age: 36
+  gender: female
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/female/1546/1050/1050-phrase.wav
+svd_1569_1118_0:
+  speaker_id: '1569'
+  age: 21
+  gender: female
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/female/1569/1118/1118-phrase.wav
+svd_1937_1637_0:
+  speaker_id: '1937'
+  age: 45
+  gender: male
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/male/1937/1637/1637-phrase.wav
+  - svd/pathological/male/1937/2326/2326-phrase.wav
+svd_1457_857_0:
+  speaker_id: '1457'
+  age: 41
+  gender: female
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/female/1457/857/857-phrase.wav
+svd_2621_2487_0:
+  speaker_id: '2621'
+  age: 70
+  gender: male
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/male/2621/2487/2487-phrase.wav
+svd_2225_2034_0:
+  speaker_id: '2225'
+  age: 29
+  gender: male
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/male/2225/2034/2034-phrase.wav
+  - svd/pathological/male/2225/2017/2017-phrase.wav
+svd_2079_1812_0:
+  speaker_id: '2079'
+  age: 58
+  gender: male
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/male/2079/1812/1812-phrase.wav
+svd_2018_1753_0:
+  speaker_id: '2018'
+  age: 13
+  gender: female
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/female/2018/1753/1753-phrase.wav
+svd_2554_2420_0:
+  speaker_id: '2554'
+  age: 36
+  gender: male
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/male/2554/2420/2420-phrase.wav
+svd_2187_1976_0:
+  speaker_id: '2187'
+  age: 73
+  gender: female
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/female/2187/1976/1976-phrase.wav
+svd_2588_2454_0:
+  speaker_id: '2588'
+  age: 64
+  gender: male
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/male/2588/2454/2454-phrase.wav
+svd_2581_2447_0:
+  speaker_id: '2581'
+  age: 52
+  gender: female
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/female/2581/2447/2447-phrase.wav
+svd_1757_1406_0:
+  speaker_id: '1757'
+  age: 31
+  gender: female
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/female/1757/1406/1406-phrase.wav
+svd_1946_1643_0:
+  speaker_id: '1946'
+  age: 40
+  gender: male
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/male/1946/1643/1643-phrase.wav
+svd_2056_1792_0:
+  speaker_id: '2056'
+  age: 29
+  gender: female
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/female/2056/1792/1792-phrase.wav
+svd_936_1280_0:
+  speaker_id: '936'
+  age: 19
+  gender: female
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/female/936/1280/1280-phrase.wav
+  - svd/healthy/female/936/1207/1207-phrase.wav
+svd_1846_1500_0:
+  speaker_id: '1846'
+  age: 73
+  gender: female
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/female/1846/1500/1500-phrase.wav
+svd_2389_2232_0:
+  speaker_id: '2389'
+  age: 52
+  gender: male
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/male/2389/2232/2232-phrase.wav
+svd_1489_894_0:
+  speaker_id: '1489'
+  age: 73
+  gender: male
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/male/1489/894/894-phrase.wav
+svd_1695_1310_0:
+  speaker_id: '1695'
+  age: 26
+  gender: male
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/male/1695/1310/1310-phrase.wav
+  - svd/healthy/male/1695/2576/2576-phrase.wav
+  - svd/pathological/male/1695/2558/2558-phrase.wav
+svd_1894_1594_0:
+  speaker_id: '1894'
+  age: 64
+  gender: female
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/female/1894/1594/1594-phrase.wav
+svd_1533_1037_0:
+  speaker_id: '1533'
+  age: 50
+  gender: female
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/female/1533/1037/1037-phrase.wav
+svd_1333_160_0:
+  speaker_id: '1333'
+  age: 42
+  gender: male
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/male/1333/160/160-phrase.wav
+svd_2362_2185_0:
+  speaker_id: '2362'
+  age: 61
+  gender: male
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/male/2362/2185/2185-phrase.wav
+svd_2706_2572_0:
+  speaker_id: '2706'
+  age: 38
+  gender: male
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/male/2706/2572/2572-phrase.wav
+svd_2472_2338_0:
+  speaker_id: '2472'
+  age: 24
+  gender: female
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/female/2472/2338/2338-phrase.wav
+svd_2593_2459_0:
+  speaker_id: '2593'
+  age: 56
+  gender: female
+  label: functional_dysphonia
+  audio_keys:
+  - svd/pathological/female/2593/2459/2459-phrase.wav
+svd_2582_2448_0:
+  speaker_id: '2582'
+  age: 57
+  gender: female
+  label: functional_dysphonia
+  audio_keys:
+  - svd/pathological/female/2582/2448/2448-phrase.wav
+  - svd/pathological/female/2582/2537/2537-phrase.wav
+svd_1450_851_0:
+  speaker_id: '1450'
+  age: 53
+  gender: female
+  label: functional_dysphonia
+  audio_keys:
+  - svd/pathological/female/1450/851/851-phrase.wav
+svd_2442_2308_0:
+  speaker_id: '2442'
+  age: 35
+  gender: female
+  label: functional_dysphonia
+  audio_keys:
+  - svd/pathological/female/2442/2308/2308-phrase.wav
+svd_1414_722_0:
+  speaker_id: '1414'
+  age: 58
+  gender: female
+  label: functional_dysphonia
+  audio_keys:
+  - svd/pathological/female/1414/722/722-phrase.wav
+  - svd/pathological/female/1414/877/877-phrase.wav
+svd_2444_2310_0:
+  speaker_id: '2444'
+  age: 46
+  gender: female
+  label: functional_dysphonia
+  audio_keys:
+  - svd/pathological/female/2444/2310/2310-phrase.wav
+svd_2409_2265_0:
+  speaker_id: '2409'
+  age: 68
+  gender: male
+  label: functional_dysphonia
+  audio_keys:
+  - svd/pathological/male/2409/2265/2265-phrase.wav
+svd_1593_1244_0:
+  speaker_id: '1593'
+  age: 39
+  gender: female
+  label: functional_dysphonia
+  audio_keys:
+  - svd/pathological/female/1593/1244/1244-phrase.wav
+  - svd/pathological/female/1593/1254/1254-phrase.wav
+  - svd/pathological/female/1593/1196/1196-phrase.wav
+svd_2032_1798_0:
+  speaker_id: '2032'
+  age: 57
+  gender: female
+  label: functional_dysphonia
+  audio_keys:
+  - svd/pathological/female/2032/1798/1798-phrase.wav
+  - svd/pathological/female/2032/1767/1767-phrase.wav
+svd_2633_2499_0:
+  speaker_id: '2633'
+  age: 49
+  gender: female
+  label: functional_dysphonia
+  audio_keys:
+  - svd/pathological/female/2633/2499/2499-phrase.wav
+svd_1466_870_0:
+  speaker_id: '1466'
+  age: 28
+  gender: female
+  label: functional_dysphonia
+  audio_keys:
+  - svd/pathological/female/1466/870/870-phrase.wav
+svd_2591_2457_0:
+  speaker_id: '2591'
+  age: 61
+  gender: female
+  label: functional_dysphonia
+  audio_keys:
+  - svd/pathological/female/2591/2457/2457-phrase.wav
+svd_2639_2505_0:
+  speaker_id: '2639'
+  age: 48
+  gender: female
+  label: functional_dysphonia
+  audio_keys:
+  - svd/pathological/female/2639/2505/2505-phrase.wav
+svd_2565_2431_0:
+  speaker_id: '2565'
+  age: 32
+  gender: female
+  label: functional_dysphonia
+  audio_keys:
+  - svd/pathological/female/2565/2431/2431-phrase.wav
+svd_1710_1326_0:
+  speaker_id: '1710'
+  age: 56
+  gender: female
+  label: functional_dysphonia
+  audio_keys:
+  - svd/pathological/female/1710/1326/1326-phrase.wav
+svd_1644_1258_0:
+  speaker_id: '1644'
+  age: 35
+  gender: male
+  label: functional_dysphonia
+  audio_keys:
+  - svd/pathological/male/1644/1258/1258-phrase.wav
+svd_2123_1899_0:
+  speaker_id: '2123'
+  age: 20
+  gender: female
+  label: functional_dysphonia
+  audio_keys:
+  - svd/pathological/female/2123/1899/1899-phrase.wav
+svd_1944_1642_0:
+  speaker_id: '1944'
+  age: 21
+  gender: male
+  label: functional_dysphonia
+  audio_keys:
+  - svd/pathological/male/1944/1642/1642-phrase.wav
+  - svd/healthy/male/1944/1532/1532-phrase.wav
+svd_2561_2427_0:
+  speaker_id: '2561'
+  age: 62
+  gender: female
+  label: functional_dysphonia
+  audio_keys:
+  - svd/pathological/female/2561/2427/2427-phrase.wav
+svd_2447_2314_0:
+  speaker_id: '2447'
+  age: 56
+  gender: male
+  label: functional_dysphonia
+  audio_keys:
+  - svd/pathological/male/2447/2314/2314-phrase.wav
+svd_1596_1200_0:
+  speaker_id: '1596'
+  age: 44
+  gender: female
+  label: functional_dysphonia
+  audio_keys:
+  - svd/pathological/female/1596/1200/1200-phrase.wav
+svd_2553_2419_0:
+  speaker_id: '2553'
+  age: 65
+  gender: male
+  label: functional_dysphonia
+  audio_keys:
+  - svd/pathological/male/2553/2419/2419-phrase.wav
+svd_2467_2504_0:
+  speaker_id: '2467'
+  age: 32
+  gender: female
+  label: functional_dysphonia
+  audio_keys:
+  - svd/pathological/female/2467/2504/2504-phrase.wav
+svd_1984_1685_0:
+  speaker_id: '1984'
+  age: 51
+  gender: female
+  label: functional_dysphonia
+  audio_keys:
+  - svd/pathological/female/1984/1685/1685-phrase.wav
+svd_2093_1827_0:
+  speaker_id: '2093'
+  age: 36
+  gender: male
+  label: functional_dysphonia
+  audio_keys:
+  - svd/pathological/male/2093/1827/1827-phrase.wav
+svd_1391_634_0:
+  speaker_id: '1391'
+  age: 49
+  gender: male
+  label: functional_dysphonia
+  audio_keys:
+  - svd/pathological/male/1391/634/634-phrase.wav
+svd_2493_2359_0:
+  speaker_id: '2493'
+  age: 49
+  gender: female
+  label: functional_dysphonia
+  audio_keys:
+  - svd/pathological/female/2493/2359/2359-phrase.wav
+svd_2066_1801_0:
+  speaker_id: '2066'
+  age: 59
+  gender: male
+  label: functional_dysphonia
+  audio_keys:
+  - svd/pathological/male/2066/1801/1801-phrase.wav
+svd_2640_2506_0:
+  speaker_id: '2640'
+  age: 66
+  gender: male
+  label: functional_dysphonia
+  audio_keys:
+  - svd/pathological/male/2640/2506/2506-phrase.wav
+svd_2089_1824_0:
+  speaker_id: '2089'
+  age: 57
+  gender: female
+  label: functional_dysphonia
+  audio_keys:
+  - svd/pathological/female/2089/1824/1824-phrase.wav
+svd_1416_723_0:
+  speaker_id: '1416'
+  age: 37
+  gender: male
+  label: functional_dysphonia
+  audio_keys:
+  - svd/pathological/male/1416/723/723-phrase.wav
+svd_2411_2267_0:
+  speaker_id: '2411'
+  age: 65
+  gender: female
+  label: functional_dysphonia
+  audio_keys:
+  - svd/pathological/female/2411/2267/2267-phrase.wav
+svd_2500_2365_0:
+  speaker_id: '2500'
+  age: 49
+  gender: male
+  label: functional_dysphonia
+  audio_keys:
+  - svd/pathological/male/2500/2365/2365-phrase.wav
+svd_2470_2336_0:
+  speaker_id: '2470'
+  age: 44
+  gender: female
+  label: functional_dysphonia
+  audio_keys:
+  - svd/pathological/female/2470/2336/2336-phrase.wav
+svd_1909_1609_0:
+  speaker_id: '1909'
+  age: 32
+  gender: female
+  label: functional_dysphonia
+  audio_keys:
+  - svd/pathological/female/1909/1609/1609-phrase.wav
+svd_714_2360_0:
+  speaker_id: '714'
+  age: 22
+  gender: male
+  label: functional_dysphonia
+  audio_keys:
+  - svd/pathological/male/714/2360/2360-phrase.wav
+  - svd/healthy/male/714/810/810-phrase.wav
+svd_2550_2416_0:
+  speaker_id: '2550'
+  age: 63
+  gender: male
+  label: functional_dysphonia
+  audio_keys:
+  - svd/pathological/male/2550/2416/2416-phrase.wav
+svd_1_1862_0:
+  speaker_id: '1'
+  age: 23
+  gender: female
+  label: functional_dysphonia
+  audio_keys:
+  - svd/pathological/female/1/1862/1862-phrase.wav
+  - svd/healthy/female/1/1/1-phrase.wav
+svd_1926_1627_0:
+  speaker_id: '1926'
+  age: 55
+  gender: female
+  label: functional_dysphonia
+  audio_keys:
+  - svd/pathological/female/1926/1627/1627-phrase.wav
+svd_1702_1318_0:
+  speaker_id: '1702'
+  age: 40
+  gender: male
+  label: functional_dysphonia
+  audio_keys:
+  - svd/pathological/male/1702/1318/1318-phrase.wav
+svd_2474_2340_0:
+  speaker_id: '2474'
+  age: 54
+  gender: male
+  label: functional_dysphonia
+  audio_keys:
+  - svd/pathological/male/2474/2340/2340-phrase.wav
+svd_2491_2357_0:
+  speaker_id: '2491'
+  age: 41
+  gender: female
+  label: functional_dysphonia
+  audio_keys:
+  - svd/pathological/female/2491/2357/2357-phrase.wav
+svd_1713_1328_0:
+  speaker_id: '1713'
+  age: 32
+  gender: male
+  label: functional_dysphonia
+  audio_keys:
+  - svd/pathological/male/1713/1328/1328-phrase.wav
+svd_2580_2446_0:
+  speaker_id: '2580'
+  age: 63
+  gender: female
+  label: functional_dysphonia
+  audio_keys:
+  - svd/pathological/female/2580/2446/2446-phrase.wav
+svd_2215_2006_0:
+  speaker_id: '2215'
+  age: 29
+  gender: male
+  label: functional_dysphonia
+  audio_keys:
+  - svd/pathological/male/2215/2006/2006-phrase.wav
+svd_1422_730_0:
+  speaker_id: '1422'
+  age: 60
+  gender: male
+  label: functional_dysphonia
+  audio_keys:
+  - svd/pathological/male/1422/730/730-phrase.wav
+svd_1766_1415_0:
+  speaker_id: '1766'
+  age: 55
+  gender: female
+  label: functional_dysphonia
+  audio_keys:
+  - svd/pathological/female/1766/1415/1415-phrase.wav
+svd_1861_1552_0:
+  speaker_id: '1861'
+  age: 29
+  gender: female
+  label: functional_dysphonia
+  audio_keys:
+  - svd/pathological/female/1861/1552/1552-phrase.wav
+svd_1979_1680_0:
+  speaker_id: '1979'
+  age: 16
+  gender: female
+  label: functional_dysphonia
+  audio_keys:
+  - svd/pathological/female/1979/1680/1680-phrase.wav
+svd_2497_2367_0:
+  speaker_id: '2497'
+  age: 74
+  gender: female
+  label: functional_dysphonia
+  audio_keys:
+  - svd/pathological/female/2497/2367/2367-phrase.wav
+svd_2578_2444_0:
+  speaker_id: '2578'
+  age: 71
+  gender: male
+  label: functional_dysphonia
+  audio_keys:
+  - svd/pathological/male/2578/2444/2444-phrase.wav
+svd_1618_1230_0:
+  speaker_id: '1618'
+  age: 49
+  gender: male
+  label: functional_dysphonia
+  audio_keys:
+  - svd/pathological/male/1618/1230/1230-phrase.wav
+svd_2662_2528_0:
+  speaker_id: '2662'
+  age: 67
+  gender: female
+  label: functional_dysphonia
+  audio_keys:
+  - svd/pathological/female/2662/2528/2528-phrase.wav
+svd_2563_2429_0:
+  speaker_id: '2563'
+  age: 20
+  gender: male
+  label: functional_dysphonia
+  audio_keys:
+  - svd/pathological/male/2563/2429/2429-phrase.wav
+svd_2521_2442_0:
+  speaker_id: '2521'
+  age: 32
+  gender: male
+  label: functional_dysphonia
+  audio_keys:
+  - svd/pathological/male/2521/2442/2442-phrase.wav
+  - svd/pathological/male/2521/2387/2387-phrase.wav
+svd_47_1645_0:
+  speaker_id: '47'
+  age: 35
+  gender: female
+  label: functional_dysphonia
+  audio_keys:
+  - svd/pathological/female/47/1645/1645-phrase.wav
+  - svd/healthy/female/47/47/47-phrase.wav
+svd_2636_2502_0:
+  speaker_id: '2636'
+  age: 56
+  gender: female
+  label: functional_dysphonia
+  audio_keys:
+  - svd/pathological/female/2636/2502/2502-phrase.wav
+svd_2452_2318_0:
+  speaker_id: '2452'
+  age: 61
+  gender: male
+  label: functional_dysphonia
+  audio_keys:
+  - svd/pathological/male/2452/2318/2318-phrase.wav
+svd_1663_1281_0:
+  speaker_id: '1663'
+  age: 22
+  gender: female
+  label: functional_dysphonia
+  audio_keys:
+  - svd/pathological/female/1663/1281/1281-phrase.wav
+svd_2287_2096_0:
+  speaker_id: '2287'
+  age: 53
+  gender: female
+  label: dysphonia
+  audio_keys:
+  - svd/pathological/female/2287/2096/2096-phrase.wav
+svd_2410_2266_0:
+  speaker_id: '2410'
+  age: 47
+  gender: female
+  label: dysphonia
+  audio_keys:
+  - svd/pathological/female/2410/2266/2266-phrase.wav
+svd_1736_1387_0:
+  speaker_id: '1736'
+  age: 47
+  gender: male
+  label: dysphonia
+  audio_keys:
+  - svd/pathological/male/1736/1387/1387-phrase.wav
+svd_2570_2436_0:
+  speaker_id: '2570'
+  age: 75
+  gender: male
+  label: dysphonia
+  audio_keys:
+  - svd/pathological/male/2570/2436/2436-phrase.wav
+svd_1358_449_0:
+  speaker_id: '1358'
+  age: 58
+  gender: female
+  label: dysphonia
+  audio_keys:
+  - svd/pathological/female/1358/449/449-phrase.wav
+svd_1805_2384_0:
+  speaker_id: '1805'
+  age: 53
+  gender: male
+  label: dysphonia
+  audio_keys:
+  - svd/pathological/male/1805/2384/2384-phrase.wav
+  - svd/pathological/male/1805/1457/1457-phrase.wav
+svd_2295_2106_0:
+  speaker_id: '2295'
+  age: 46
+  gender: female
+  label: dysphonia
+  audio_keys:
+  - svd/pathological/female/2295/2106/2106-phrase.wav
+svd_2316_2127_0:
+  speaker_id: '2316'
+  age: 27
+  gender: female
+  label: dysphonia
+  audio_keys:
+  - svd/pathological/female/2316/2127/2127-phrase.wav
+svd_2490_2356_0:
+  speaker_id: '2490'
+  age: 41
+  gender: male
+  label: dysphonia
+  audio_keys:
+  - svd/pathological/male/2490/2356/2356-phrase.wav
+svd_1849_1502_0:
+  speaker_id: '1849'
+  age: 34
+  gender: female
+  label: dysphonia
+  audio_keys:
+  - svd/pathological/female/1849/1502/1502-phrase.wav
+svd_1887_1580_0:
+  speaker_id: '1887'
+  age: 75
+  gender: male
+  label: dysphonia
+  audio_keys:
+  - svd/pathological/male/1887/1580/1580-phrase.wav
+svd_2595_2461_0:
+  speaker_id: '2595'
+  age: 37
+  gender: male
+  label: dysphonia
+  audio_keys:
+  - svd/pathological/male/2595/2461/2461-phrase.wav
+svd_1360_451_0:
+  speaker_id: '1360'
+  age: 56
+  gender: female
+  label: dysphonia
+  audio_keys:
+  - svd/pathological/female/1360/451/451-phrase.wav
+svd_2457_2323_0:
+  speaker_id: '2457'
+  age: 59
+  gender: male
+  label: dysphonia
+  audio_keys:
+  - svd/pathological/male/2457/2323/2323-phrase.wav
+svd_2266_2087_0:
+  speaker_id: '2266'
+  age: 62
+  gender: female
+  label: dysphonia
+  audio_keys:
+  - svd/pathological/female/2266/2087/2087-phrase.wav
+  - svd/pathological/female/2266/2074/2074-phrase.wav
+svd_2484_2350_0:
+  speaker_id: '2484'
+  age: 34
+  gender: female
+  label: dysphonia
+  audio_keys:
+  - svd/pathological/female/2484/2350/2350-phrase.wav
+svd_1376_561_0:
+  speaker_id: '1376'
+  age: 46
+  gender: female
+  label: dysphonia
+  audio_keys:
+  - svd/pathological/female/1376/561/561-phrase.wav
+svd_1425_742_0:
+  speaker_id: '1425'
+  age: 43
+  gender: male
+  label: dysphonia
+  audio_keys:
+  - svd/pathological/male/1425/742/742-phrase.wav
+svd_2562_2428_0:
+  speaker_id: '2562'
+  age: 28
+  gender: female
+  label: dysphonia
+  audio_keys:
+  - svd/pathological/female/2562/2428/2428-phrase.wav
+svd_142_495_0:
+  speaker_id: '142'
+  age: 54
+  gender: female
+  label: dysphonia
+  audio_keys:
+  - svd/pathological/female/142/495/495-phrase.wav
+  - svd/healthy/female/142/157/157-phrase.wav
+svd_1606_1219_0:
+  speaker_id: '1606'
+  age: 37
+  gender: male
+  label: dysphonia
+  audio_keys:
+  - svd/pathological/male/1606/1219/1219-phrase.wav
+svd_2459_2325_0:
+  speaker_id: '2459'
+  age: 71
+  gender: male
+  label: dysphonia
+  audio_keys:
+  - svd/pathological/male/2459/2325/2325-phrase.wav
+svd_1372_1276_0:
+  speaker_id: '1372'
+  age: 29
+  gender: female
+  label: dysphonia
+  audio_keys:
+  - svd/pathological/female/1372/1276/1276-phrase.wav
+svd_2693_2559_0:
+  speaker_id: '2693'
+  age: 36
+  gender: male
+  label: dysphonia
+  audio_keys:
+  - svd/pathological/male/2693/2559/2559-phrase.wav
+svd_2303_2118_0:
+  speaker_id: '2303'
+  age: 44
+  gender: female
+  label: dysphonia
+  audio_keys:
+  - svd/pathological/female/2303/2118/2118-phrase.wav
+svd_2351_2154_0:
+  speaker_id: '2351'
+  age: 48
+  gender: male
+  label: dysphonia
+  audio_keys:
+  - svd/pathological/male/2351/2154/2154-phrase.wav
+svd_732_1057_0:
+  speaker_id: '732'
+  age: 63
+  gender: female
+  label: dysphonia
+  audio_keys:
+  - svd/pathological/female/732/1057/1057-phrase.wav
+  - svd/healthy/female/732/852/852-phrase.wav
+svd_2717_2583_0:
+  speaker_id: '2717'
+  age: 36
+  gender: female
+  label: dysphonia
+  audio_keys:
+  - svd/pathological/female/2717/2583/2583-phrase.wav
+svd_1803_1455_0:
+  speaker_id: '1803'
+  age: 51
+  gender: male
+  label: dysphonia
+  audio_keys:
+  - svd/pathological/male/1803/1455/1455-phrase.wav
+svd_1897_1597_0:
+  speaker_id: '1897'
+  age: 28
+  gender: male
+  label: dysphonia
+  audio_keys:
+  - svd/pathological/male/1897/1597/1597-phrase.wav
+svd_2015_1751_0:
+  speaker_id: '2015'
+  age: 16
+  gender: male
+  label: dysphonia
+  audio_keys:
+  - svd/pathological/male/2015/1751/1751-phrase.wav
+svd_2255_2066_0:
+  speaker_id: '2255'
+  age: 69
+  gender: male
+  label: dysphonia
+  audio_keys:
+  - svd/pathological/male/2255/2066/2066-phrase.wav
+svd_2213_2119_0:
+  speaker_id: '2213'
+  age: 70
+  gender: female
+  label: dysphonia
+  audio_keys:
+  - svd/pathological/female/2213/2119/2119-phrase.wav
+  - svd/pathological/female/2213/2005/2005-phrase.wav
+svd_1354_445_0:
+  speaker_id: '1354'
+  age: 27
+  gender: female
+  label: dysphonia
+  audio_keys:
+  - svd/pathological/female/1354/445/445-phrase.wav
+svd_2307_2117_0:
+  speaker_id: '2307'
+  age: 51
+  gender: female
+  label: dysphonia
+  audio_keys:
+  - svd/pathological/female/2307/2117/2117-phrase.wav
+svd_1468_872_0:
+  speaker_id: '1468'
+  age: 40
+  gender: female
+  label: dysphonia
+  audio_keys:
+  - svd/pathological/female/1468/872/872-phrase.wav
+svd_2525_2391_0:
+  speaker_id: '2525'
+  age: 66
+  gender: female
+  label: dysphonia
+  audio_keys:
+  - svd/pathological/female/2525/2391/2391-phrase.wav
+svd_2399_2422_0:
+  speaker_id: '2399'
+  age: 31
+  gender: female
+  label: dysphonia
+  audio_keys:
+  - svd/pathological/female/2399/2422/2422-phrase.wav
+svd_2622_2488_0:
+  speaker_id: '2622'
+  age: 54
+  gender: male
+  label: dysphonia
+  audio_keys:
+  - svd/pathological/male/2622/2488/2488-phrase.wav
+svd_1585_1187_0:
+  speaker_id: '1585'
+  age: 18
+  gender: female
+  label: dysphonia
+  audio_keys:
+  - svd/pathological/female/1585/1187/1187-phrase.wav
+svd_1590_1194_0:
+  speaker_id: '1590'
+  age: 21
+  gender: male
+  label: dysphonia
+  audio_keys:
+  - svd/pathological/male/1590/1194/1194-phrase.wav
+svd_2002_1718_0:
+  speaker_id: '2002'
+  age: 60
+  gender: male
+  label: dysphonia
+  audio_keys:
+  - svd/pathological/male/2002/1718/1718-phrase.wav
+svd_2226_2019_0:
+  speaker_id: '2226'
+  age: 23
+  gender: female
+  label: dysphonia
+  audio_keys:
+  - svd/pathological/female/2226/2019/2019-phrase.wav
+svd_2664_2530_0:
+  speaker_id: '2664'
+  age: 11
+  gender: male
+  label: dysphonia
+  audio_keys:
+  - svd/pathological/male/2664/2530/2530-phrase.wav
+svd_2734_2608_0:
+  speaker_id: '2734'
+  age: 36
+  gender: male
+  label: dysphonia
+  audio_keys:
+  - svd/pathological/male/2734/2608/2608-phrase.wav
+svd_2102_1833_0:
+  speaker_id: '2102'
+  age: 53
+  gender: female
+  label: dysphonia
+  audio_keys:
+  - svd/pathological/female/2102/1833/1833-phrase.wav
+svd_2526_2392_0:
+  speaker_id: '2526'
+  age: 73
+  gender: female
+  label: dysphonia
+  audio_keys:
+  - svd/pathological/female/2526/2392/2392-phrase.wav
+svd_2482_2348_0:
+  speaker_id: '2482'
+  age: 44
+  gender: male
+  label: dysphonia
+  audio_keys:
+  - svd/pathological/male/2482/2348/2348-phrase.wav
+svd_2194_1984_0:
+  speaker_id: '2194'
+  age: 71
+  gender: male
+  label: dysphonia
+  audio_keys:
+  - svd/pathological/male/2194/1984/1984-phrase.wav
+svd_2378_2217_0:
+  speaker_id: '2378'
+  age: 40
+  gender: female
+  label: dysphonia
+  audio_keys:
+  - svd/pathological/female/2378/2217/2217-phrase.wav
+svd_1366_494_0:
+  speaker_id: '1366'
+  age: 30
+  gender: female
+  label: dysphonia
+  audio_keys:
+  - svd/pathological/female/1366/494/494-phrase.wav
+svd_1879_1657_0:
+  speaker_id: '1879'
+  age: 58
+  gender: male
+  label: dysphonia
+  audio_keys:
+  - svd/pathological/male/1879/1657/1657-phrase.wav
+  - svd/pathological/male/1879/1572/1572-phrase.wav
+svd_2503_2369_0:
+  speaker_id: '2503'
+  age: 65
+  gender: female
+  label: dysphonia
+  audio_keys:
+  - svd/pathological/female/2503/2369/2369-phrase.wav
+svd_1479_885_0:
+  speaker_id: '1479'
+  age: 53
+  gender: female
+  label: psychogenic_dysphonia
+  audio_keys:
+  - svd/pathological/female/1479/885/885-phrase.wav
+svd_1351_366_0:
+  speaker_id: '1351'
+  age: 51
+  gender: female
+  label: psychogenic_dysphonia
+  audio_keys:
+  - svd/pathological/female/1351/366/366-phrase.wav
+svd_2541_2433_0:
+  speaker_id: '2541'
+  age: 63
+  gender: female
+  label: psychogenic_dysphonia
+  audio_keys:
+  - svd/pathological/female/2541/2433/2433-phrase.wav
+  - svd/healthy/female/2541/2407/2407-phrase.wav
+svd_1691_1306_0:
+  speaker_id: '1691'
+  age: 48
+  gender: female
+  label: psychogenic_dysphonia
+  audio_keys:
+  - svd/pathological/female/1691/1306/1306-phrase.wav
+svd_2654_2520_0:
+  speaker_id: '2654'
+  age: 55
+  gender: male
+  label: psychogenic_dysphonia
+  audio_keys:
+  - svd/pathological/male/2654/2520/2520-phrase.wav
+svd_2669_2535_0:
+  speaker_id: '2669'
+  age: 64
+  gender: female
+  label: psychogenic_dysphonia
+  audio_keys:
+  - svd/pathological/female/2669/2535/2535-phrase.wav
+svd_1705_1319_0:
+  speaker_id: '1705'
+  age: 39
+  gender: female
+  label: psychogenic_dysphonia
+  audio_keys:
+  - svd/pathological/female/1705/1319/1319-phrase.wav
+svd_1773_1425_0:
+  speaker_id: '1773'
+  age: 57
+  gender: male
+  label: psychogenic_dysphonia
+  audio_keys:
+  - svd/pathological/male/1773/1425/1425-phrase.wav
+svd_1538_1042_0:
+  speaker_id: '1538'
+  age: 47
+  gender: male
+  label: psychogenic_dysphonia
+  audio_keys:
+  - svd/pathological/male/1538/1042/1042-phrase.wav
+svd_2169_1959_0:
+  speaker_id: '2169'
+  age: 41
+  gender: female
+  label: psychogenic_dysphonia
+  audio_keys:
+  - svd/pathological/female/2169/1959/1959-phrase.wav
+svd_1447_848_0:
+  speaker_id: '1447'
+  age: 50
+  gender: female
+  label: psychogenic_dysphonia
+  audio_keys:
+  - svd/pathological/female/1447/848/848-phrase.wav
+svd_1827_1479_0:
+  speaker_id: '1827'
+  age: 33
+  gender: female
+  label: psychogenic_dysphonia
+  audio_keys:
+  - svd/pathological/female/1827/1479/1479-phrase.wav
+svd_2052_1787_0:
+  speaker_id: '2052'
+  age: 47
+  gender: female
+  label: psychogenic_dysphonia
+  audio_keys:
+  - svd/pathological/female/2052/1787/1787-phrase.wav
+svd_2668_2534_0:
+  speaker_id: '2668'
+  age: 62
+  gender: female
+  label: psychogenic_dysphonia
+  audio_keys:
+  - svd/pathological/female/2668/2534/2534-phrase.wav
+svd_1965_1663_0:
+  speaker_id: '1965'
+  age: 39
+  gender: female
+  label: psychogenic_dysphonia
+  audio_keys:
+  - svd/pathological/female/1965/1663/1663-phrase.wav
+svd_2623_2489_0:
+  speaker_id: '2623'
+  age: 55
+  gender: male
+  label: contact_pachydermia
+  audio_keys:
+  - svd/pathological/male/2623/2489/2489-phrase.wav
+svd_1435_823_0:
+  speaker_id: '1435'
+  age: 49
+  gender: male
+  label: psychogenic_dysphonia
+  audio_keys:
+  - svd/pathological/male/1435/823/823-phrase.wav
+svd_1722_1337_0:
+  speaker_id: '1722'
+  age: 41
+  gender: female
+  label: psychogenic_dysphonia
+  audio_keys:
+  - svd/pathological/female/1722/1337/1337-phrase.wav
+svd_1893_1593_0:
+  speaker_id: '1893'
+  age: 60
+  gender: female
+  label: psychogenic_dysphonia
+  audio_keys:
+  - svd/pathological/female/1893/1593/1593-phrase.wav
+svd_2419_2275_0:
+  speaker_id: '2419'
+  age: 50
+  gender: female
+  label: psychogenic_dysphonia
+  audio_keys:
+  - svd/pathological/female/2419/2275/2275-phrase.wav
+svd_2471_2337_0:
+  speaker_id: '2471'
+  age: 61
+  gender: male
+  label: psychogenic_dysphonia
+  audio_keys:
+  - svd/pathological/male/2471/2337/2337-phrase.wav
+svd_1551_1053_0:
+  speaker_id: '1551'
+  age: 37
+  gender: female
+  label: psychogenic_dysphonia
+  audio_keys:
+  - svd/pathological/female/1551/1053/1053-phrase.wav
+svd_2660_2526_0:
+  speaker_id: '2660'
+  age: 62
+  gender: female
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/female/2660/2526/2526-phrase.wav
+svd_2473_2339_0:
+  speaker_id: '2473'
+  age: 58
+  gender: male
+  label: psychogenic_dysphonia
+  audio_keys:
+  - svd/pathological/male/2473/2339/2339-phrase.wav
+svd_1973_1673_0:
+  speaker_id: '1973'
+  age: 49
+  gender: female
+  label: psychogenic_dysphonia
+  audio_keys:
+  - svd/pathological/female/1973/1673/1673-phrase.wav
+svd_1825_1477_0:
+  speaker_id: '1825'
+  age: 45
+  gender: male
+  label: psychogenic_dysphonia
+  audio_keys:
+  - svd/pathological/male/1825/1477/1477-phrase.wav
+svd_2323_2134_0:
+  speaker_id: '2323'
+  age: 27
+  gender: female
+  label: psychogenic_dysphonia
+  audio_keys:
+  - svd/pathological/female/2323/2134/2134-phrase.wav
+svd_2312_2123_0:
+  speaker_id: '2312'
+  age: 18
+  gender: female
+  label: functional_dysphonia
+  audio_keys:
+  - svd/pathological/female/2312/2123/2123-phrase.wav
+svd_1503_911_0:
+  speaker_id: '1503'
+  age: 28
+  gender: male
+  label: psychogenic_dysphonia
+  audio_keys:
+  - svd/pathological/male/1503/911/911-phrase.wav
+svd_2450_2316_0:
+  speaker_id: '2450'
+  age: 63
+  gender: male
+  label: psychogenic_dysphonia
+  audio_keys:
+  - svd/pathological/male/2450/2316/2316-phrase.wav
+svd_2336_2533_0:
+  speaker_id: '2336'
+  age: 63
+  gender: female
+  label: psychogenic_dysphonia
+  audio_keys:
+  - svd/pathological/female/2336/2533/2533-phrase.wav
+svd_1961_1661_0:
+  speaker_id: '1961'
+  age: 56
+  gender: female
+  label: psychogenic_dysphonia
+  audio_keys:
+  - svd/pathological/female/1961/1661/1661-phrase.wav
+svd_1613_1225_0:
+  speaker_id: '1613'
+  age: 59
+  gender: male
+  label: psychogenic_dysphonia
+  audio_keys:
+  - svd/pathological/male/1613/1225/1225-phrase.wav
+svd_2109_1868_0:
+  speaker_id: '2109'
+  age: 48
+  gender: female
+  label: psychogenic_dysphonia
+  audio_keys:
+  - svd/pathological/female/2109/1868/1868-phrase.wav
+svd_2560_2426_0:
+  speaker_id: '2560'
+  age: 45
+  gender: female
+  label: reinkes_edema
+  audio_keys:
+  - svd/pathological/female/2560/2426/2426-phrase.wav
+svd_1381_564_0:
+  speaker_id: '1381'
+  age: 46
+  gender: female
+  label: reinkes_edema
+  audio_keys:
+  - svd/pathological/female/1381/564/564-phrase.wav
+svd_1785_1436_0:
+  speaker_id: '1785'
+  age: 65
+  gender: female
+  label: laryngitis
+  audio_keys:
+  - svd/pathological/female/1785/1436/1436-phrase.wav
+svd_2358_2188_0:
+  speaker_id: '2358'
+  age: 42
+  gender: female
+  label: reinkes_edema
+  audio_keys:
+  - svd/pathological/female/2358/2188/2188-phrase.wav
+svd_2545_2411_0:
+  speaker_id: '2545'
+  age: 59
+  gender: female
+  label: reinkes_edema
+  audio_keys:
+  - svd/pathological/female/2545/2411/2411-phrase.wav
+svd_2078_2271_0:
+  speaker_id: '2078'
+  age: 73
+  gender: female
+  label: reinkes_edema
+  audio_keys:
+  - svd/pathological/female/2078/2271/2271-phrase.wav
+  - svd/pathological/female/2078/2031/2031-phrase.wav
+  - svd/pathological/female/2078/1828/1828-phrase.wav
+  - svd/pathological/female/2078/1946/1946-phrase.wav
+svd_2478_2344_0:
+  speaker_id: '2478'
+  age: 52
+  gender: male
+  label: reinkes_edema
+  audio_keys:
+  - svd/pathological/male/2478/2344/2344-phrase.wav
+svd_2371_2193_0:
+  speaker_id: '2371'
+  age: 53
+  gender: female
+  label: reinkes_edema
+  audio_keys:
+  - svd/pathological/female/2371/2193/2193-phrase.wav
+svd_2281_2098_0:
+  speaker_id: '2281'
+  age: 61
+  gender: female
+  label: reinkes_edema
+  audio_keys:
+  - svd/pathological/female/2281/2098/2098-phrase.wav
+svd_2515_2381_0:
+  speaker_id: '2515'
+  age: 47
+  gender: female
+  label: reinkes_edema
+  audio_keys:
+  - svd/pathological/female/2515/2381/2381-phrase.wav
+svd_2172_1963_0:
+  speaker_id: '2172'
+  age: 65
+  gender: male
+  label: reinkes_edema
+  audio_keys:
+  - svd/pathological/male/2172/1963/1963-phrase.wav
+svd_1541_1045_0:
+  speaker_id: '1541'
+  age: 34
+  gender: female
+  label: reinkes_edema
+  audio_keys:
+  - svd/pathological/female/1541/1045/1045-phrase.wav
+  - svd/pathological/female/1541/1056/1056-phrase.wav
+svd_1475_1721_0:
+  speaker_id: '1475'
+  age: 58
+  gender: female
+  label: reinkes_edema
+  audio_keys:
+  - svd/pathological/female/1475/1721/1721-phrase.wav
+svd_2707_2573_0:
+  speaker_id: '2707'
+  age: 62
+  gender: female
+  label: reinkes_edema
+  audio_keys:
+  - svd/pathological/female/2707/2573/2573-phrase.wav
+svd_2479_2345_0:
+  speaker_id: '2479'
+  age: 45
+  gender: female
+  label: reinkes_edema
+  audio_keys:
+  - svd/pathological/female/2479/2345/2345-phrase.wav
+svd_1433_821_0:
+  speaker_id: '1433'
+  age: 56
+  gender: male
+  label: reinkes_edema
+  audio_keys:
+  - svd/pathological/male/1433/821/821-phrase.wav
+svd_2333_2594_0:
+  speaker_id: '2333'
+  age: 61
+  gender: male
+  label: reinkes_edema
+  audio_keys:
+  - svd/pathological/male/2333/2594/2594-phrase.wav
+svd_2509_2375_0:
+  speaker_id: '2509'
+  age: 52
+  gender: female
+  label: reinkes_edema
+  audio_keys:
+  - svd/pathological/female/2509/2375/2375-phrase.wav
+svd_2001_1717_0:
+  speaker_id: '2001'
+  age: 61
+  gender: female
+  label: reinkes_edema
+  audio_keys:
+  - svd/pathological/female/2001/1717/1717-phrase.wav
+svd_2335_2595_0:
+  speaker_id: '2335'
+  age: 43
+  gender: female
+  label: reinkes_edema
+  audio_keys:
+  - svd/pathological/female/2335/2595/2595-phrase.wav
+svd_1717_1334_0:
+  speaker_id: '1717'
+  age: 56
+  gender: male
+  label: vocal_fold_polyp
+  audio_keys:
+  - svd/pathological/male/1717/1334/1334-phrase.wav
+svd_1306_109_0:
+  speaker_id: '1306'
+  age: 50
+  gender: male
+  label: vocal_fold_polyp
+  audio_keys:
+  - svd/pathological/male/1306/109/109-phrase.wav
+svd_2690_2557_0:
+  speaker_id: '2690'
+  age: 43
+  gender: male
+  label: vocal_fold_polyp
+  audio_keys:
+  - svd/pathological/male/2690/2557/2557-phrase.wav
+svd_1459_859_0:
+  speaker_id: '1459'
+  age: 53
+  gender: female
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/female/1459/859/859-phrase.wav
+svd_1574_1157_0:
+  speaker_id: '1574'
+  age: 60
+  gender: male
+  label: vocal_fold_polyp
+  audio_keys:
+  - svd/pathological/male/1574/1157/1157-phrase.wav
+svd_2044_1779_0:
+  speaker_id: '2044'
+  age: 79
+  gender: female
+  label: vocal_fold_polyp
+  audio_keys:
+  - svd/pathological/female/2044/1779/1779-phrase.wav
+svd_2167_1957_0:
+  speaker_id: '2167'
+  age: 42
+  gender: female
+  label: vocal_fold_polyp
+  audio_keys:
+  - svd/pathological/female/2167/1957/1957-phrase.wav
+svd_2434_2300_0:
+  speaker_id: '2434'
+  age: 63
+  gender: female
+  label: vocal_fold_polyp
+  audio_keys:
+  - svd/pathological/female/2434/2300/2300-phrase.wav
+svd_2288_2099_0:
+  speaker_id: '2288'
+  age: 36
+  gender: male
+  label: vocal_fold_polyp
+  audio_keys:
+  - svd/pathological/male/2288/2099/2099-phrase.wav
+svd_1882_1576_0:
+  speaker_id: '1882'
+  age: 57
+  gender: male
+  label: vocal_fold_polyp
+  audio_keys:
+  - svd/pathological/male/1882/1576/1576-phrase.wav
+svd_2028_1764_0:
+  speaker_id: '2028'
+  age: 78
+  gender: male
+  label: vocal_fold_polyp
+  audio_keys:
+  - svd/pathological/male/2028/1764/1764-phrase.wav
+svd_1524_932_0:
+  speaker_id: '1524'
+  age: 61
+  gender: female
+  label: vocal_fold_polyp
+  audio_keys:
+  - svd/pathological/female/1524/932/932-phrase.wav
+  - svd/healthy/female/1524/1969/1969-phrase.wav
+svd_1377_562_0:
+  speaker_id: '1377'
+  age: 54
+  gender: female
+  label: vocal_fold_polyp
+  audio_keys:
+  - svd/pathological/female/1377/562/562-phrase.wav
+svd_1938_1639_0:
+  speaker_id: '1938'
+  age: 29
+  gender: male
+  label: vocal_fold_polyp
+  audio_keys:
+  - svd/pathological/male/1938/1639/1639-phrase.wav
+svd_1741_1389_0:
+  speaker_id: '1741'
+  age: 57
+  gender: male
+  label: vocal_fold_polyp
+  audio_keys:
+  - svd/pathological/male/1741/1389/1389-phrase.wav
+svd_2332_2592_0:
+  speaker_id: '2332'
+  age: 60
+  gender: male
+  label: vocal_fold_polyp
+  audio_keys:
+  - svd/pathological/male/2332/2592/2592-phrase.wav
+svd_2721_2587_0:
+  speaker_id: '2721'
+  age: 47
+  gender: female
+  label: vocal_fold_polyp
+  audio_keys:
+  - svd/pathological/female/2721/2587/2587-phrase.wav
+svd_2004_1719_0:
+  speaker_id: '2004'
+  age: 30
+  gender: male
+  label: vocal_fold_polyp
+  audio_keys:
+  - svd/pathological/male/2004/1719/1719-phrase.wav
+svd_2049_1783_0:
+  speaker_id: '2049'
+  age: 55
+  gender: male
+  label: laryngitis
+  audio_keys:
+  - svd/pathological/male/2049/1783/1783-phrase.wav
+svd_1105_1880_0:
+  speaker_id: '1105'
+  age: 20
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/1105/1880/1880-phrase.wav
+svd_866_1110_0:
+  speaker_id: '866'
+  age: 20
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/866/1110/1110-phrase.wav
+svd_882_1121_0:
+  speaker_id: '882'
+  age: 25
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/882/1121/1121-phrase.wav
+svd_1121_1924_0:
+  speaker_id: '1121'
+  age: 23
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/1121/1924/1924-phrase.wav
+svd_23_1359_0:
+  speaker_id: '23'
+  age: 23
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/23/1359/1359-phrase.wav
+  - svd/healthy/female/23/22/22-phrase.wav
+svd_1098_1873_0:
+  speaker_id: '1098'
+  age: 20
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/1098/1873/1873-phrase.wav
+svd_892_1130_0:
+  speaker_id: '892'
+  age: 22
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/892/1130/1130-phrase.wav
+svd_912_1148_0:
+  speaker_id: '912'
+  age: 23
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/912/1148/1148-phrase.wav
+svd_643_738_0:
+  speaker_id: '643'
+  age: 20
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/643/738/738-phrase.wav
+svd_928_1177_0:
+  speaker_id: '928'
+  age: 27
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/928/1177/1177-phrase.wav
+svd_627_702_0:
+  speaker_id: '627'
+  age: 22
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/627/702/702-phrase.wav
+svd_883_1122_0:
+  speaker_id: '883'
+  age: 20
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/883/1122/1122-phrase.wav
+svd_49_49_0:
+  speaker_id: '49'
+  age: 20
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/49/49/49-phrase.wav
+svd_900_1139_0:
+  speaker_id: '900'
+  age: 25
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/900/1139/1139-phrase.wav
+svd_1104_1879_0:
+  speaker_id: '1104'
+  age: 23
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/1104/1879/1879-phrase.wav
+svd_8_27_0:
+  speaker_id: '8'
+  age: 20
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/8/27/27-phrase.wav
+svd_966_1355_0:
+  speaker_id: '966'
+  age: 21
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/966/1355/1355-phrase.wav
+svd_35_35_0:
+  speaker_id: '35'
+  age: 22
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/35/35/35-phrase.wav
+svd_942_1211_0:
+  speaker_id: '942'
+  age: 20
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/942/1211/1211-phrase.wav
+svd_911_1147_0:
+  speaker_id: '911'
+  age: 25
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/911/1147/1147-phrase.wav
+svd_992_1510_0:
+  speaker_id: '992'
+  age: 22
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/992/1510/1510-phrase.wav
+svd_1206_2284_0:
+  speaker_id: '1206'
+  age: 20
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/1206/2284/2284-phrase.wav
+svd_1085_1852_0:
+  speaker_id: '1085'
+  age: 20
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/1085/1852/1852-phrase.wav
+svd_36_36_0:
+  speaker_id: '36'
+  age: 21
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/36/36/36-phrase.wav
+svd_21_20_0:
+  speaker_id: '21'
+  age: 21
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/21/20/20-phrase.wav
+svd_967_1342_0:
+  speaker_id: '967'
+  age: 22
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/967/1342/1342-phrase.wav
+svd_620_695_0:
+  speaker_id: '620'
+  age: 21
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/620/695/695-phrase.wav
+svd_621_696_0:
+  speaker_id: '621'
+  age: 20
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/621/696/696-phrase.wav
+svd_619_691_0:
+  speaker_id: '619'
+  age: 20
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/619/691/691-phrase.wav
+svd_27_25_0:
+  speaker_id: '27'
+  age: 27
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/27/25/25-phrase.wav
+svd_968_1363_0:
+  speaker_id: '968'
+  age: 20
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/968/1363/1363-phrase.wav
+svd_1025_1544_0:
+  speaker_id: '1025'
+  age: 23
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/1025/1544/1544-phrase.wav
+svd_1021_1540_0:
+  speaker_id: '1021'
+  age: 25
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/1021/1540/1540-phrase.wav
+svd_958_1349_0:
+  speaker_id: '958'
+  age: 22
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/958/1349/1349-phrase.wav
+svd_1079_1846_0:
+  speaker_id: '1079'
+  age: 20
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/1079/1846/1846-phrase.wav
+svd_867_1096_0:
+  speaker_id: '867'
+  age: 21
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/867/1096/1096-phrase.wav
+svd_1060_1729_0:
+  speaker_id: '1060'
+  age: 21
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/1060/1729/1729-phrase.wav
+svd_52_52_0:
+  speaker_id: '52'
+  age: 24
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/52/52/52-phrase.wav
+svd_12_10_0:
+  speaker_id: '12'
+  age: 22
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/12/10/10-phrase.wav
+svd_881_1108_0:
+  speaker_id: '881'
+  age: 24
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/881/1108/1108-phrase.wav
+svd_998_1514_0:
+  speaker_id: '998'
+  age: 22
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/998/1514/1514-phrase.wav
+svd_776_972_0:
+  speaker_id: '776'
+  age: 27
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/776/972/972-phrase.wav
+svd_617_689_0:
+  speaker_id: '617'
+  age: 22
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/617/689/689-phrase.wav
+svd_5_5_0:
+  speaker_id: '5'
+  age: 22
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/5/5/5-phrase.wav
+svd_1116_1919_0:
+  speaker_id: '1116'
+  age: 23
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/1116/1919/1919-phrase.wav
+svd_1912_1529_0:
+  speaker_id: '1912'
+  age: 22
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/1912/1529/1529-phrase.wav
+svd_951_1345_0:
+  speaker_id: '951'
+  age: 20
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/951/1345/1345-phrase.wav
+svd_1049_1708_0:
+  speaker_id: '1049'
+  age: 22
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/1049/1708/1708-phrase.wav
+svd_1061_1730_0:
+  speaker_id: '1061'
+  age: 22
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/1061/1730/1730-phrase.wav
+svd_1036_1696_0:
+  speaker_id: '1036'
+  age: 21
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/1036/1696/1696-phrase.wav
+svd_119_103_0:
+  speaker_id: '119'
+  age: 21
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/119/103/103-phrase.wav
+svd_1065_1734_0:
+  speaker_id: '1065'
+  age: 24
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/1065/1734/1734-phrase.wav
+svd_1196_2261_0:
+  speaker_id: '1196'
+  age: 20
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/1196/2261/2261-phrase.wav
+svd_1080_1847_0:
+  speaker_id: '1080'
+  age: 25
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/1080/1847/1847-phrase.wav
+svd_1113_1916_0:
+  speaker_id: '1113'
+  age: 21
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/1113/1916/1916-phrase.wav
+svd_898_1138_0:
+  speaker_id: '898'
+  age: 20
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/898/1138/1138-phrase.wav
+svd_1015_1534_0:
+  speaker_id: '1015'
+  age: 21
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/1015/1534/1534-phrase.wav
+svd_1047_1706_0:
+  speaker_id: '1047'
+  age: 24
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/1047/1706/1706-phrase.wav
+svd_1190_2255_0:
+  speaker_id: '1190'
+  age: 20
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/1190/2255/2255-phrase.wav
+svd_646_740_0:
+  speaker_id: '646'
+  age: 22
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/646/740/740-phrase.wav
+svd_864_1095_0:
+  speaker_id: '864'
+  age: 21
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/864/1095/1095-phrase.wav
+svd_1004_1520_0:
+  speaker_id: '1004'
+  age: 21
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/1004/1520/1520-phrase.wav
+svd_1186_2251_0:
+  speaker_id: '1186'
+  age: 20
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/1186/2251/2251-phrase.wav
+svd_899_1137_0:
+  speaker_id: '899'
+  age: 25
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/899/1137/1137-phrase.wav
+svd_819_1020_0:
+  speaker_id: '819'
+  age: 25
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/819/1020/1020-phrase.wav
+svd_613_685_0:
+  speaker_id: '613'
+  age: 20
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/613/685/685-phrase.wav
+svd_634_708_0:
+  speaker_id: '634'
+  age: 21
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/634/708/708-phrase.wav
+svd_42_42_0:
+  speaker_id: '42'
+  age: 20
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/42/42/42-phrase.wav
+svd_927_1185_0:
+  speaker_id: '927'
+  age: 19
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/927/1185/1185-phrase.wav
+svd_1045_1704_0:
+  speaker_id: '1045'
+  age: 28
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/1045/1704/1704-phrase.wav
+svd_642_737_0:
+  speaker_id: '642'
+  age: 20
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/642/737/737-phrase.wav
+svd_1077_1844_0:
+  speaker_id: '1077'
+  age: 19
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/1077/1844/1844-phrase.wav
+svd_923_1173_0:
+  speaker_id: '923'
+  age: 22
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/923/1173/1173-phrase.wav
+svd_1194_2259_0:
+  speaker_id: '1194'
+  age: 20
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/1194/2259/2259-phrase.wav
+svd_876_1112_0:
+  speaker_id: '876'
+  age: 19
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/876/1112/1112-phrase.wav
+svd_1084_1851_0:
+  speaker_id: '1084'
+  age: 20
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/1084/1851/1851-phrase.wav
+svd_1068_1737_0:
+  speaker_id: '1068'
+  age: 20
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/1068/1737/1737-phrase.wav
+svd_123_113_0:
+  speaker_id: '123'
+  age: 18
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/123/113/113-phrase.wav
+svd_623_698_0:
+  speaker_id: '623'
+  age: 20
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/623/698/698-phrase.wav
+svd_10_8_0:
+  speaker_id: '10'
+  age: 19
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/10/8/8-phrase.wav
+svd_60_60_0:
+  speaker_id: '60'
+  age: 24
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/60/60/60-phrase.wav
+svd_837_1060_0:
+  speaker_id: '837'
+  age: 21
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/837/1060/1060-phrase.wav
+svd_728_840_0:
+  speaker_id: '728'
+  age: 17
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/728/840/840-phrase.wav
+svd_947_1308_0:
+  speaker_id: '947'
+  age: 28
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/947/1308/1308-phrase.wav
+svd_959_1350_0:
+  speaker_id: '959'
+  age: 20
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/959/1350/1350-phrase.wav
+svd_1011_1530_0:
+  speaker_id: '1011'
+  age: 19
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/1011/1530/1530-phrase.wav
+svd_1092_1859_0:
+  speaker_id: '1092'
+  age: 25
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/1092/1859/1859-phrase.wav
+svd_614_686_0:
+  speaker_id: '614'
+  age: 20
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/614/686/686-phrase.wav
+svd_1103_1878_0:
+  speaker_id: '1103'
+  age: 19
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/1103/1878/1878-phrase.wav
+svd_53_53_0:
+  speaker_id: '53'
+  age: 21
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/53/53/53-phrase.wav
+svd_953_1347_0:
+  speaker_id: '953'
+  age: 20
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/953/1347/1347-phrase.wav
+svd_797_997_0:
+  speaker_id: '797'
+  age: 38
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/797/997/997-phrase.wav
+svd_1179_2207_0:
+  speaker_id: '1179'
+  age: 19
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/1179/2207/2207-phrase.wav
+svd_886_1125_0:
+  speaker_id: '886'
+  age: 22
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/886/1125/1125-phrase.wav
+svd_1183_2248_0:
+  speaker_id: '1183'
+  age: 22
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/1183/2248/2248-phrase.wav
+svd_777_973_0:
+  speaker_id: '777'
+  age: 35
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/777/973/973-phrase.wav
+svd_930_1178_0:
+  speaker_id: '930'
+  age: 18
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/930/1178/1178-phrase.wav
+svd_114_98_0:
+  speaker_id: '114'
+  age: 27
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/114/98/98-phrase.wav
+svd_933_1180_0:
+  speaker_id: '933'
+  age: 28
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/933/1180/1180-phrase.wav
+svd_810_1010_0:
+  speaker_id: '810'
+  age: 31
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/810/1010/1010-phrase.wav
+svd_1204_2282_0:
+  speaker_id: '1204'
+  age: 19
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/1204/2282/2282-phrase.wav
+svd_794_994_0:
+  speaker_id: '794'
+  age: 28
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/794/994/994-phrase.wav
+svd_62_62_0:
+  speaker_id: '62'
+  age: 22
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/62/62/62-phrase.wav
+svd_786_988_0:
+  speaker_id: '786'
+  age: 34
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/786/988/988-phrase.wav
+svd_9_17_0:
+  speaker_id: '9'
+  age: 19
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/9/17/17-phrase.wav
+svd_618_690_0:
+  speaker_id: '618'
+  age: 21
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/618/690/690-phrase.wav
+svd_57_57_0:
+  speaker_id: '57'
+  age: 21
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/57/57/57-phrase.wav
+svd_817_999_0:
+  speaker_id: '817'
+  age: 34
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/817/999/999-phrase.wav
+svd_975_1369_0:
+  speaker_id: '975'
+  age: 19
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/975/1369/1369-phrase.wav
+svd_1032_1586_0:
+  speaker_id: '1032'
+  age: 25
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/1032/1586/1586-phrase.wav
+svd_1002_1518_0:
+  speaker_id: '1002'
+  age: 22
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/1002/1518/1518-phrase.wav
+svd_769_986_0:
+  speaker_id: '769'
+  age: 32
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/769/986/986-phrase.wav
+svd_877_1104_0:
+  speaker_id: '877'
+  age: 18
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/877/1104/1104-phrase.wav
+svd_607_679_0:
+  speaker_id: '607'
+  age: 29
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/607/679/679-phrase.wav
+svd_131_124_0:
+  speaker_id: '131'
+  age: 20
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/131/124/124-phrase.wav
+svd_762_961_0:
+  speaker_id: '762'
+  age: 36
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/762/961/961-phrase.wav
+svd_872_1101_0:
+  speaker_id: '872'
+  age: 18
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/872/1101/1101-phrase.wav
+svd_632_694_0:
+  speaker_id: '632'
+  age: 21
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/632/694/694-phrase.wav
+svd_1193_2258_0:
+  speaker_id: '1193'
+  age: 21
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/1193/2258/2258-phrase.wav
+svd_860_1091_0:
+  speaker_id: '860'
+  age: 34
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/860/1091/1091-phrase.wav
+svd_1114_1917_0:
+  speaker_id: '1114'
+  age: 21
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/1114/1917/1917-phrase.wav
+svd_612_684_0:
+  speaker_id: '612'
+  age: 21
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/612/684/684-phrase.wav
+svd_853_1073_0:
+  speaker_id: '853'
+  age: 37
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/853/1073/1073-phrase.wav
+svd_1192_2257_0:
+  speaker_id: '1192'
+  age: 19
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/1192/2257/2257-phrase.wav
+svd_4_4_0:
+  speaker_id: '4'
+  age: 22
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/4/4/4-phrase.wav
+svd_636_710_0:
+  speaker_id: '636'
+  age: 21
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/636/710/710-phrase.wav
+svd_134_132_0:
+  speaker_id: '134'
+  age: 24
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/134/132/132-phrase.wav
+svd_908_1144_0:
+  speaker_id: '908'
+  age: 23
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/908/1144/1144-phrase.wav
+svd_803_1004_0:
+  speaker_id: '803'
+  age: 33
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/803/1004/1004-phrase.wav
+svd_723_836_0:
+  speaker_id: '723'
+  age: 17
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/723/836/836-phrase.wav
+svd_793_993_0:
+  speaker_id: '793'
+  age: 23
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/793/993/993-phrase.wav
+svd_979_1371_0:
+  speaker_id: '979'
+  age: 21
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/979/1371/1371-phrase.wav
+svd_818_1016_0:
+  speaker_id: '818'
+  age: 38
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/818/1016/1016-phrase.wav
+svd_133_126_0:
+  speaker_id: '133'
+  age: 19
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/133/126/126-phrase.wav
+svd_61_61_0:
+  speaker_id: '61'
+  age: 21
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/61/61/61-phrase.wav
+svd_969_1361_0:
+  speaker_id: '969'
+  age: 20
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/969/1361/1361-phrase.wav
+svd_1191_2256_0:
+  speaker_id: '1191'
+  age: 19
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/1191/2256/2256-phrase.wav
+svd_957_1348_0:
+  speaker_id: '957'
+  age: 23
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/957/1348/1348-phrase.wav
+svd_615_687_0:
+  speaker_id: '615'
+  age: 20
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/615/687/687-phrase.wav
+svd_855_1075_0:
+  speaker_id: '855'
+  age: 30
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/855/1075/1075-phrase.wav
+svd_920_1167_0:
+  speaker_id: '920'
+  age: 18
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/920/1167/1167-phrase.wav
+svd_862_1093_0:
+  speaker_id: '862'
+  age: 28
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/862/1093/1093-phrase.wav
+svd_943_1212_0:
+  speaker_id: '943'
+  age: 22
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/943/1212/1212-phrase.wav
+svd_852_1080_0:
+  speaker_id: '852'
+  age: 32
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/852/1080/1080-phrase.wav
+svd_917_1169_0:
+  speaker_id: '917'
+  age: 18
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/917/1169/1169-phrase.wav
+svd_609_681_0:
+  speaker_id: '609'
+  age: 21
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/609/681/681-phrase.wav
+svd_1022_1541_0:
+  speaker_id: '1022'
+  age: 24
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/1022/1541/1541-phrase.wav
+svd_31_32_0:
+  speaker_id: '31'
+  age: 45
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/31/32/32-phrase.wav
+svd_761_985_0:
+  speaker_id: '761'
+  age: 38
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/761/985/985-phrase.wav
+svd_736_865_0:
+  speaker_id: '736'
+  age: 18
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/736/865/865-phrase.wav
+svd_1020_1539_0:
+  speaker_id: '1020'
+  age: 21
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/1020/1539/1539-phrase.wav
+svd_1059_1728_0:
+  speaker_id: '1059'
+  age: 20
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/1059/1728/1728-phrase.wav
+svd_787_989_0:
+  speaker_id: '787'
+  age: 40
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/787/989/989-phrase.wav
+svd_755_949_0:
+  speaker_id: '755'
+  age: 39
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/755/949/949-phrase.wav
+svd_48_48_0:
+  speaker_id: '48'
+  age: 19
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/48/48/48-phrase.wav
+svd_847_1069_0:
+  speaker_id: '847'
+  age: 27
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/847/1069/1069-phrase.wav
+svd_628_703_0:
+  speaker_id: '628'
+  age: 22
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/628/703/703-phrase.wav
+svd_789_991_0:
+  speaker_id: '789'
+  age: 40
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/789/991/991-phrase.wav
+svd_859_1082_0:
+  speaker_id: '859'
+  age: 33
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/859/1082/1082-phrase.wav
+svd_2629_2495_0:
+  speaker_id: '2629'
+  age: 17
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/2629/2495/2495-phrase.wav
+svd_1184_2249_0:
+  speaker_id: '1184'
+  age: 24
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/1184/2249/2249-phrase.wav
+svd_845_1068_0:
+  speaker_id: '845'
+  age: 20
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/845/1068/1068-phrase.wav
+svd_84_81_0:
+  speaker_id: '84'
+  age: 42
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/84/81/81-phrase.wav
+svd_801_1018_0:
+  speaker_id: '801'
+  age: 39
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/801/1018/1018-phrase.wav
+svd_1086_1853_0:
+  speaker_id: '1086'
+  age: 19
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/1086/1853/1853-phrase.wav
+svd_1042_1701_0:
+  speaker_id: '1042'
+  age: 22
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/1042/1701/1701-phrase.wav
+svd_1189_2254_0:
+  speaker_id: '1189'
+  age: 21
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/1189/2254/2254-phrase.wav
+svd_815_1014_0:
+  speaker_id: '815'
+  age: 40
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/815/1014/1014-phrase.wav
+svd_1097_1872_0:
+  speaker_id: '1097'
+  age: 19
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/1097/1872/1872-phrase.wav
+svd_849_1079_0:
+  speaker_id: '849'
+  age: 35
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/849/1079/1079-phrase.wav
+svd_1033_1587_0:
+  speaker_id: '1033'
+  age: 23
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/1033/1587/1587-phrase.wav
+svd_1185_2250_0:
+  speaker_id: '1185'
+  age: 29
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/1185/2250/2250-phrase.wav
+svd_814_1013_0:
+  speaker_id: '814'
+  age: 44
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/814/1013/1013-phrase.wav
+svd_796_996_0:
+  speaker_id: '796'
+  age: 31
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/796/996/996-phrase.wav
+svd_924_1174_0:
+  speaker_id: '924'
+  age: 17
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/924/1174/1174-phrase.wav
+svd_956_1358_0:
+  speaker_id: '956'
+  age: 23
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/956/1358/1358-phrase.wav
+svd_1095_1870_0:
+  speaker_id: '1095'
+  age: 25
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/1095/1870/1870-phrase.wav
+svd_63_63_0:
+  speaker_id: '63'
+  age: 44
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/63/63/63-phrase.wav
+svd_771_968_0:
+  speaker_id: '771'
+  age: 36
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/771/968/968-phrase.wav
+svd_871_1100_0:
+  speaker_id: '871'
+  age: 19
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/871/1100/1100-phrase.wav
+svd_994_1512_0:
+  speaker_id: '994'
+  age: 23
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/994/1512/1512-phrase.wav
+svd_1030_1583_0:
+  speaker_id: '1030'
+  age: 20
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/1030/1583/1583-phrase.wav
+svd_804_1005_0:
+  speaker_id: '804'
+  age: 43
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/804/1005/1005-phrase.wav
+svd_739_955_0:
+  speaker_id: '739'
+  age: 36
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/739/955/955-phrase.wav
+svd_1188_2253_0:
+  speaker_id: '1188'
+  age: 19
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/1188/2253/2253-phrase.wav
+svd_1082_1849_0:
+  speaker_id: '1082'
+  age: 24
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/1082/1849/1849-phrase.wav
+svd_137_135_0:
+  speaker_id: '137'
+  age: 21
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/137/135/135-phrase.wav
+svd_765_964_0:
+  speaker_id: '765'
+  age: 40
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/765/964/964-phrase.wav
+svd_783_979_0:
+  speaker_id: '783'
+  age: 30
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/783/979/979-phrase.wav
+svd_1198_2263_0:
+  speaker_id: '1198'
+  age: 19
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/1198/2263/2263-phrase.wav
+svd_874_1111_0:
+  speaker_id: '874'
+  age: 20
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/874/1111/1111-phrase.wav
+svd_1016_1535_0:
+  speaker_id: '1016'
+  age: 22
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/1016/1535/1535-phrase.wav
+svd_760_980_0:
+  speaker_id: '760'
+  age: 41
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/760/980/980-phrase.wav
+svd_934_1181_0:
+  speaker_id: '934'
+  age: 32
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/934/1181/1181-phrase.wav
+svd_731_843_0:
+  speaker_id: '731'
+  age: 18
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/731/843/843-phrase.wav
+svd_631_706_0:
+  speaker_id: '631'
+  age: 27
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/631/706/706-phrase.wav
+svd_1034_1623_0:
+  speaker_id: '1034'
+  age: 23
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/1034/1623/1623-phrase.wav
+svd_747_943_0:
+  speaker_id: '747'
+  age: 45
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/747/943/943-phrase.wav
+svd_840_1063_0:
+  speaker_id: '840'
+  age: 34
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/840/1063/1063-phrase.wav
+svd_7_7_0:
+  speaker_id: '7'
+  age: 19
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/7/7/7-phrase.wav
+svd_629_704_0:
+  speaker_id: '629'
+  age: 21
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/629/704/704-phrase.wav
+svd_973_1367_0:
+  speaker_id: '973'
+  age: 20
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/973/1367/1367-phrase.wav
+svd_824_1025_0:
+  speaker_id: '824'
+  age: 42
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/824/1025/1025-phrase.wav
+svd_790_984_0:
+  speaker_id: '790'
+  age: 32
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/790/984/984-phrase.wav
+svd_129_122_0:
+  speaker_id: '129'
+  age: 19
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/129/122/122-phrase.wav
+svd_964_1354_0:
+  speaker_id: '964'
+  age: 21
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/964/1354/1354-phrase.wav
+svd_640_735_0:
+  speaker_id: '640'
+  age: 21
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/640/735/735-phrase.wav
+svd_938_1214_0:
+  speaker_id: '938'
+  age: 31
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/938/1214/1214-phrase.wav
+svd_830_1031_0:
+  speaker_id: '830'
+  age: 44
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/830/1031/1031-phrase.wav
+svd_740_956_0:
+  speaker_id: '740'
+  age: 34
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/740/956/956-phrase.wav
+svd_918_1170_0:
+  speaker_id: '918'
+  age: 18
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/918/1170/1170-phrase.wav
+svd_850_1071_0:
+  speaker_id: '850'
+  age: 29
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/850/1071/1071-phrase.wav
+svd_1205_2283_0:
+  speaker_id: '1205'
+  age: 21
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/1205/2283/2283-phrase.wav
+svd_878_1105_0:
+  speaker_id: '878'
+  age: 37
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/878/1105/1105-phrase.wav
+svd_806_1007_0:
+  speaker_id: '806'
+  age: 42
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/806/1007/1007-phrase.wav
+svd_798_1000_0:
+  speaker_id: '798'
+  age: 31
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/798/1000/1000-phrase.wav
+svd_914_1150_0:
+  speaker_id: '914'
+  age: 19
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/914/1150/1150-phrase.wav
+svd_13_11_0:
+  speaker_id: '13'
+  age: 23
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/13/11/11-phrase.wav
+svd_981_1373_0:
+  speaker_id: '981'
+  age: 26
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/981/1373/1373-phrase.wav
+svd_946_1278_0:
+  speaker_id: '946'
+  age: 34
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/946/1278/1278-phrase.wav
+svd_752_947_0:
+  speaker_id: '752'
+  age: 42
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/752/947/947-phrase.wav
+svd_791_992_0:
+  speaker_id: '791'
+  age: 34
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/791/992/992-phrase.wav
+svd_738_867_0:
+  speaker_id: '738'
+  age: 18
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/738/867/867-phrase.wav
+svd_976_1377_0:
+  speaker_id: '976'
+  age: 23
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/976/1377/1377-phrase.wav
+svd_980_1372_0:
+  speaker_id: '980'
+  age: 21
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/980/1372/1372-phrase.wav
+svd_2596_2462_0:
+  speaker_id: '2596'
+  age: 30
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/2596/2462/2462-phrase.wav
+svd_764_963_0:
+  speaker_id: '764'
+  age: 44
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/764/963/963-phrase.wav
+svd_768_981_0:
+  speaker_id: '768'
+  age: 31
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/768/981/981-phrase.wav
+svd_1078_1845_0:
+  speaker_id: '1078'
+  age: 19
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/1078/1845/1845-phrase.wav
+svd_1001_1517_0:
+  speaker_id: '1001'
+  age: 23
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/1001/1517/1517-phrase.wav
+svd_1063_1732_0:
+  speaker_id: '1063'
+  age: 21
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/1063/1732/1732-phrase.wav
+svd_46_1605_0:
+  speaker_id: '46'
+  age: 30
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/46/1605/1605-phrase.wav
+  - svd/healthy/female/46/1579/1579-phrase.wav
+svd_834_1033_0:
+  speaker_id: '834'
+  age: 45
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/834/1033/1033-phrase.wav
+svd_861_1092_0:
+  speaker_id: '861'
+  age: 31
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/861/1092/1092-phrase.wav
+svd_727_839_0:
+  speaker_id: '727'
+  age: 17
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/727/839/839-phrase.wav
+svd_645_739_0:
+  speaker_id: '645'
+  age: 21
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/645/739/739-phrase.wav
+svd_127_117_0:
+  speaker_id: '127'
+  age: 21
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/127/117/117-phrase.wav
+svd_122_112_0:
+  speaker_id: '122'
+  age: 31
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/122/112/112-phrase.wav
+svd_826_1027_0:
+  speaker_id: '826'
+  age: 48
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/826/1027/1027-phrase.wav
+svd_751_946_0:
+  speaker_id: '751'
+  age: 37
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/751/946/946-phrase.wav
+svd_919_1171_0:
+  speaker_id: '919'
+  age: 17
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/919/1171/1171-phrase.wav
+svd_1029_1585_0:
+  speaker_id: '1029'
+  age: 21
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/1029/1585/1585-phrase.wav
+svd_970_1364_0:
+  speaker_id: '970'
+  age: 20
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/970/1364/1364-phrase.wav
+svd_1207_2285_0:
+  speaker_id: '1207'
+  age: 32
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/1207/2285/2285-phrase.wav
+svd_825_1026_0:
+  speaker_id: '825'
+  age: 42
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/825/1026/1026-phrase.wav
+svd_854_1074_0:
+  speaker_id: '854'
+  age: 32
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/854/1074/1074-phrase.wav
+svd_2025_2084_0:
+  speaker_id: '2025'
+  age: 19
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/2025/2084/2084-phrase.wav
+  - svd/pathological/female/2025/1761/1761-phrase.wav
+svd_1046_1705_0:
+  speaker_id: '1046'
+  age: 21
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/1046/1705/1705-phrase.wav
+svd_1009_1528_0:
+  speaker_id: '1009'
+  age: 25
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/1009/1528/1528-phrase.wav
+svd_139_137_0:
+  speaker_id: '139'
+  age: 38
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/139/137/137-phrase.wav
+svd_743_959_0:
+  speaker_id: '743'
+  age: 40
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/743/959/959-phrase.wav
+svd_756_952_0:
+  speaker_id: '756'
+  age: 32
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/756/952/952-phrase.wav
+svd_925_1175_0:
+  speaker_id: '925'
+  age: 19
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/925/1175/1175-phrase.wav
+svd_1050_1709_0:
+  speaker_id: '1050'
+  age: 26
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/1050/1709/1709-phrase.wav
+svd_1039_1712_0:
+  speaker_id: '1039'
+  age: 21
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/1039/1712/1712-phrase.wav
+svd_630_705_0:
+  speaker_id: '630'
+  age: 39
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/630/705/705-phrase.wav
+svd_742_958_0:
+  speaker_id: '742'
+  age: 42
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/742/958/958-phrase.wav
+svd_1067_1736_0:
+  speaker_id: '1067'
+  age: 34
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/1067/1736/1736-phrase.wav
+svd_873_1102_0:
+  speaker_id: '873'
+  age: 18
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/873/1102/1102-phrase.wav
+svd_733_860_0:
+  speaker_id: '733'
+  age: 26
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/733/860/860-phrase.wav
+svd_1014_1533_0:
+  speaker_id: '1014'
+  age: 21
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/1014/1533/1533-phrase.wav
+svd_118_102_0:
+  speaker_id: '118'
+  age: 39
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/118/102/102-phrase.wav
+svd_827_1028_0:
+  speaker_id: '827'
+  age: 41
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/827/1028/1028-phrase.wav
+svd_858_1077_0:
+  speaker_id: '858'
+  age: 33
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/858/1077/1077-phrase.wav
+svd_1110_1885_0:
+  speaker_id: '1110'
+  age: 19
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/1110/1885/1885-phrase.wav
+svd_950_1344_0:
+  speaker_id: '950'
+  age: 22
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/950/1344/1344-phrase.wav
+svd_606_678_0:
+  speaker_id: '606'
+  age: 20
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/606/678/678-phrase.wav
+svd_32_28_0:
+  speaker_id: '32'
+  age: 38
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/32/28/28-phrase.wav
+svd_829_1030_0:
+  speaker_id: '829'
+  age: 49
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/829/1030/1030-phrase.wav
+svd_857_1081_0:
+  speaker_id: '857'
+  age: 32
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/857/1081/1081-phrase.wav
+svd_1177_2205_0:
+  speaker_id: '1177'
+  age: 19
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/1177/2205/2205-phrase.wav
+svd_838_1061_0:
+  speaker_id: '838'
+  age: 24
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/838/1061/1061-phrase.wav
+svd_14_12_0:
+  speaker_id: '14'
+  age: 22
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/14/12/12-phrase.wav
+svd_821_1022_0:
+  speaker_id: '821'
+  age: 45
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/821/1022/1022-phrase.wav
+svd_1181_2209_0:
+  speaker_id: '1181'
+  age: 32
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/1181/2209/2209-phrase.wav
+svd_811_1019_0:
+  speaker_id: '811'
+  age: 48
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/811/1019/1019-phrase.wav
+svd_839_1062_0:
+  speaker_id: '839'
+  age: 31
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/839/1062/1062-phrase.wav
+svd_890_1128_0:
+  speaker_id: '890'
+  age: 19
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/890/1128/1128-phrase.wav
+svd_989_1507_0:
+  speaker_id: '989'
+  age: 23
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/989/1507/1507-phrase.wav
+svd_128_121_0:
+  speaker_id: '128'
+  age: 21
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/128/121/121-phrase.wav
+svd_828_1029_0:
+  speaker_id: '828'
+  age: 41
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/828/1029/1029-phrase.wav
+svd_1044_1703_0:
+  speaker_id: '1044'
+  age: 36
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/1044/1703/1703-phrase.wav
+svd_744_960_0:
+  speaker_id: '744'
+  age: 49
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/744/960/960-phrase.wav
+svd_757_953_0:
+  speaker_id: '757'
+  age: 37
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/757/953/953-phrase.wav
+svd_948_1320_0:
+  speaker_id: '948'
+  age: 19
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/948/1320/1320-phrase.wav
+svd_40_40_0:
+  speaker_id: '40'
+  age: 20
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/40/40/40-phrase.wav
+svd_38_38_0:
+  speaker_id: '38'
+  age: 23
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/38/38/38-phrase.wav
+svd_30_31_0:
+  speaker_id: '30'
+  age: 40
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/30/31/31-phrase.wav
+svd_785_983_0:
+  speaker_id: '785'
+  age: 44
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/785/983/983-phrase.wav
+svd_772_982_0:
+  speaker_id: '772'
+  age: 34
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/772/982/982-phrase.wav
+svd_865_1109_0:
+  speaker_id: '865'
+  age: 19
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/865/1109/1109-phrase.wav
+svd_832_1035_0:
+  speaker_id: '832'
+  age: 24
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/832/1035/1035-phrase.wav
+svd_124_114_0:
+  speaker_id: '124'
+  age: 20
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/124/114/114-phrase.wav
+svd_709_805_0:
+  speaker_id: '709'
+  age: 19
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/709/805/805-phrase.wav
+svd_1051_1710_0:
+  speaker_id: '1051'
+  age: 50
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/1051/1710/1710-phrase.wav
+svd_1000_1523_0:
+  speaker_id: '1000'
+  age: 42
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/1000/1523/1523-phrase.wav
+svd_962_1352_0:
+  speaker_id: '962'
+  age: 35
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/962/1352/1352-phrase.wav
+svd_807_1021_0:
+  speaker_id: '807'
+  age: 41
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/807/1021/1021-phrase.wav
+svd_779_975_0:
+  speaker_id: '779'
+  age: 35
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/779/975/975-phrase.wav
+svd_724_837_0:
+  speaker_id: '724'
+  age: 17
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/724/837/837-phrase.wav
+svd_1005_1521_0:
+  speaker_id: '1005'
+  age: 21
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/1005/1521/1521-phrase.wav
+svd_1175_2203_0:
+  speaker_id: '1175'
+  age: 26
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/1175/2203/2203-phrase.wav
+svd_717_812_0:
+  speaker_id: '717'
+  age: 19
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/717/812/812-phrase.wav
+svd_108_92_0:
+  speaker_id: '108'
+  age: 68
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/108/92/92-phrase.wav
+svd_111_95_0:
+  speaker_id: '111'
+  age: 51
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/111/95/95-phrase.wav
+svd_109_93_0:
+  speaker_id: '109'
+  age: 42
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/109/93/93-phrase.wav
+svd_993_1511_0:
+  speaker_id: '993'
+  age: 38
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/993/1511/1511-phrase.wav
+svd_778_974_0:
+  speaker_id: '778'
+  age: 41
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/778/974/974-phrase.wav
+svd_802_1003_0:
+  speaker_id: '802'
+  age: 35
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/802/1003/1003-phrase.wav
+svd_729_841_0:
+  speaker_id: '729'
+  age: 19
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/729/841/841-phrase.wav
+svd_1038_1698_0:
+  speaker_id: '1038'
+  age: 22
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/1038/1698/1698-phrase.wav
+svd_982_1375_0:
+  speaker_id: '982'
+  age: 24
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/982/1375/1375-phrase.wav
+svd_94_86_0:
+  speaker_id: '94'
+  age: 61
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/94/86/86-phrase.wav
+svd_710_806_0:
+  speaker_id: '710'
+  age: 19
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/710/806/806-phrase.wav
+svd_2166_1956_0:
+  speaker_id: '2166'
+  age: 60
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/2166/1956/1956-phrase.wav
+svd_1094_1865_0:
+  speaker_id: '1094'
+  age: 48
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/1094/1865/1865-phrase.wav
+svd_1070_1837_0:
+  speaker_id: '1070'
+  age: 33
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/1070/1837/1837-phrase.wav
+svd_809_1009_0:
+  speaker_id: '809'
+  age: 40
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/809/1009/1009-phrase.wav
+svd_766_965_0:
+  speaker_id: '766'
+  age: 38
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/766/965/965-phrase.wav
+svd_932_1184_0:
+  speaker_id: '932'
+  age: 17
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/932/1184/1184-phrase.wav
+svd_11_9_0:
+  speaker_id: '11'
+  age: 25
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/11/9/9-phrase.wav
+svd_868_1097_0:
+  speaker_id: '868'
+  age: 24
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/868/1097/1097-phrase.wav
+svd_72_69_0:
+  speaker_id: '72'
+  age: 50
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/72/69/69-phrase.wav
+svd_105_91_0:
+  speaker_id: '105'
+  age: 65
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/105/91/91-phrase.wav
+svd_2405_2244_0:
+  speaker_id: '2405'
+  age: 66
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/2405/2244/2244-phrase.wav
+svd_2082_1815_0:
+  speaker_id: '2082'
+  age: 56
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/2082/1815/1815-phrase.wav
+svd_715_782_0:
+  speaker_id: '715'
+  age: 18
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/715/782/782-phrase.wav
+svd_1119_1922_0:
+  speaker_id: '1119'
+  age: 41
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/1119/1922/1922-phrase.wav
+svd_750_945_0:
+  speaker_id: '750'
+  age: 48
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/750/945/945-phrase.wav
+svd_844_1067_0:
+  speaker_id: '844'
+  age: 33
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/844/1067/1067-phrase.wav
+svd_784_987_0:
+  speaker_id: '784'
+  age: 34
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/784/987/987-phrase.wav
+svd_725_832_0:
+  speaker_id: '725'
+  age: 17
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/725/832/832-phrase.wav
+svd_22_21_0:
+  speaker_id: '22'
+  age: 20
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/22/21/21-phrase.wav
+svd_64_64_0:
+  speaker_id: '64'
+  age: 65
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/64/64/64-phrase.wav
+svd_110_94_0:
+  speaker_id: '110'
+  age: 55
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/110/94/94-phrase.wav
+svd_97_87_0:
+  speaker_id: '97'
+  age: 68
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/97/87/87-phrase.wav
+svd_28_29_0:
+  speaker_id: '28'
+  age: 58
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/28/29/29-phrase.wav
+svd_1200_2278_0:
+  speaker_id: '1200'
+  age: 47
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/1200/2278/2278-phrase.wav
+svd_820_1017_0:
+  speaker_id: '820'
+  age: 40
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/820/1017/1017-phrase.wav
+svd_647_743_0:
+  speaker_id: '647'
+  age: 31
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/647/743/743-phrase.wav
+svd_1087_1854_0:
+  speaker_id: '1087'
+  age: 20
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/1087/1854/1854-phrase.wav
+svd_758_950_0:
+  speaker_id: '758'
+  age: 34
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/758/950/950-phrase.wav
+svd_616_688_0:
+  speaker_id: '616'
+  age: 19
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/616/688/688-phrase.wav
+svd_651_747_0:
+  speaker_id: '651'
+  age: 26
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/651/747/747-phrase.wav
+svd_808_1008_0:
+  speaker_id: '808'
+  age: 50
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/808/1008/1008-phrase.wav
+svd_712_808_0:
+  speaker_id: '712'
+  age: 16
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/712/808/808-phrase.wav
+svd_1898_1598_0:
+  speaker_id: '1898'
+  age: 55
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/1898/1598/1598-phrase.wav
+svd_117_100_0:
+  speaker_id: '117'
+  age: 66
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/117/100/100-phrase.wav
+svd_83_80_0:
+  speaker_id: '83'
+  age: 49
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/83/80/80-phrase.wav
+svd_823_1024_0:
+  speaker_id: '823'
+  age: 37
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/823/1024/1024-phrase.wav
+svd_774_970_0:
+  speaker_id: '774'
+  age: 41
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/774/970/970-phrase.wav
+svd_905_1142_0:
+  speaker_id: '905'
+  age: 21
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/905/1142/1142-phrase.wav
+svd_721_834_0:
+  speaker_id: '721'
+  age: 19
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/721/834/834-phrase.wav
+svd_780_976_0:
+  speaker_id: '780'
+  age: 37
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/780/976/976-phrase.wav
+svd_54_54_0:
+  speaker_id: '54'
+  age: 22
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/54/54/54-phrase.wav
+svd_1332_153_0:
+  speaker_id: '1332'
+  age: 60
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/1332/153/153-phrase.wav
+svd_69_67_0:
+  speaker_id: '69'
+  age: 59
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/69/67/67-phrase.wav
+svd_1058_1738_0:
+  speaker_id: '1058'
+  age: 19
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/1058/1738/1738-phrase.wav
+svd_101_89_0:
+  speaker_id: '101'
+  age: 53
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/101/89/89-phrase.wav
+svd_2184_1974_0:
+  speaker_id: '2184'
+  age: 63
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/2184/1974/1974-phrase.wav
+svd_126_116_0:
+  speaker_id: '126'
+  age: 40
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/126/116/116-phrase.wav
+svd_763_962_0:
+  speaker_id: '763'
+  age: 30
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/763/962/962-phrase.wav
+svd_2331_2142_0:
+  speaker_id: '2331'
+  age: 45
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/2331/2142/2142-phrase.wav
+svd_1037_1697_0:
+  speaker_id: '1037'
+  age: 25
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/1037/1697/1697-phrase.wav
+svd_722_835_0:
+  speaker_id: '722'
+  age: 16
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/722/835/835-phrase.wav
+svd_851_1072_0:
+  speaker_id: '851'
+  age: 32
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/851/1072/1072-phrase.wav
+svd_977_1370_0:
+  speaker_id: '977'
+  age: 22
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/977/1370/1370-phrase.wav
+svd_82_77_0:
+  speaker_id: '82'
+  age: 63
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/82/77/77-phrase.wav
+svd_1883_1577_0:
+  speaker_id: '1883'
+  age: 57
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/1883/1577/1577-phrase.wav
+svd_75_72_0:
+  speaker_id: '75'
+  age: 58
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/75/72/72-phrase.wav
+svd_71_68_0:
+  speaker_id: '71'
+  age: 65
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/71/68/68-phrase.wav
+svd_708_804_0:
+  speaker_id: '708'
+  age: 17
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/708/804/804-phrase.wav
+svd_100_88_0:
+  speaker_id: '100'
+  age: 45
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/100/88/88-phrase.wav
+svd_45_45_0:
+  speaker_id: '45'
+  age: 37
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/45/45/45-phrase.wav
+svd_1719_1336_0:
+  speaker_id: '1719'
+  age: 49
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/1719/1336/1336-phrase.wav
+svd_816_1015_0:
+  speaker_id: '816'
+  age: 37
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/816/1015/1015-phrase.wav
+svd_603_675_0:
+  speaker_id: '603'
+  age: 21
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/603/675/675-phrase.wav
+svd_842_1065_0:
+  speaker_id: '842'
+  age: 19
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/842/1065/1065-phrase.wav
+svd_879_1106_0:
+  speaker_id: '879'
+  age: 20
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/879/1106/1106-phrase.wav
+svd_112_96_0:
+  speaker_id: '112'
+  age: 69
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/112/96/96-phrase.wav
+svd_29_30_0:
+  speaker_id: '29'
+  age: 56
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/29/30/30-phrase.wav
+svd_2612_2478_0:
+  speaker_id: '2612'
+  age: 55
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/2612/2478/2478-phrase.wav
+svd_88_83_0:
+  speaker_id: '88'
+  age: 46
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/88/83/83-phrase.wav
+svd_711_807_0:
+  speaker_id: '711'
+  age: 16
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/711/807/807-phrase.wav
+svd_805_1006_0:
+  speaker_id: '805'
+  age: 32
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/805/1006/1006-phrase.wav
+svd_759_954_0:
+  speaker_id: '759'
+  age: 49
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/759/954/954-phrase.wav
+svd_972_1366_0:
+  speaker_id: '972'
+  age: 19
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/972/1366/1366-phrase.wav
+svd_831_1036_0:
+  speaker_id: '831'
+  age: 39
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/831/1036/1036-phrase.wav
+svd_906_1143_0:
+  speaker_id: '906'
+  age: 25
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/906/1143/1143-phrase.wav
+svd_34_34_0:
+  speaker_id: '34'
+  age: 20
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/34/34/34-phrase.wav
+svd_73_70_0:
+  speaker_id: '73'
+  age: 73
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/73/70/70-phrase.wav
+svd_79_78_0:
+  speaker_id: '79'
+  age: 62
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/79/78/78-phrase.wav
+svd_141_156_0:
+  speaker_id: '141'
+  age: 65
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/141/156/156-phrase.wav
+svd_2297_2108_0:
+  speaker_id: '2297'
+  age: 59
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/2297/2108/2108-phrase.wav
+svd_713_809_0:
+  speaker_id: '713'
+  age: 17
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/713/809/809-phrase.wav
+svd_87_82_0:
+  speaker_id: '87'
+  age: 49
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/87/82/82-phrase.wav
+svd_77_74_0:
+  speaker_id: '77'
+  age: 57
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/77/74/74-phrase.wav
+svd_1187_2252_0:
+  speaker_id: '1187'
+  age: 30
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/1187/2252/2252-phrase.wav
+svd_782_978_0:
+  speaker_id: '782'
+  age: 40
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/782/978/978-phrase.wav
+svd_730_842_0:
+  speaker_id: '730'
+  age: 19
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/730/842/842-phrase.wav
+svd_754_951_0:
+  speaker_id: '754'
+  age: 32
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/754/951/951-phrase.wav
+svd_626_701_0:
+  speaker_id: '626'
+  age: 21
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/626/701/701-phrase.wav
+svd_130_123_0:
+  speaker_id: '130'
+  age: 20
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/130/123/123-phrase.wav
+svd_104_90_0:
+  speaker_id: '104'
+  age: 75
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/104/90/90-phrase.wav
+svd_719_831_0:
+  speaker_id: '719'
+  age: 57
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/719/831/831-phrase.wav
+svd_89_84_0:
+  speaker_id: '89'
+  age: 60
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/89/84/84-phrase.wav
+svd_143_158_0:
+  speaker_id: '143'
+  age: 33
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/143/158/158-phrase.wav
+svd_707_803_0:
+  speaker_id: '707'
+  age: 16
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/707/803/803-phrase.wav
+svd_985_1460_0:
+  speaker_id: '985'
+  age: 49
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/985/1460/1460-phrase.wav
+svd_726_838_0:
+  speaker_id: '726'
+  age: 18
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/726/838/838-phrase.wav
+svd_1027_1573_0:
+  speaker_id: '1027'
+  age: 21
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/1027/1573/1573-phrase.wav
+svd_856_1076_0:
+  speaker_id: '856'
+  age: 36
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/856/1076/1076-phrase.wav
+svd_92_85_0:
+  speaker_id: '92'
+  age: 59
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/92/85/85-phrase.wav
+svd_610_682_0:
+  speaker_id: '610'
+  age: 21
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/610/682/682-phrase.wav
+svd_1024_1543_0:
+  speaker_id: '1024'
+  age: 9
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/1024/1543/1543-phrase.wav
+svd_2695_2561_0:
+  speaker_id: '2695'
+  age: 50
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/2695/2561/2561-phrase.wav
+svd_65_65_0:
+  speaker_id: '65'
+  age: 73
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/65/65/65-phrase.wav
+svd_66_66_0:
+  speaker_id: '66'
+  age: 61
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/66/66/66-phrase.wav
+svd_115_99_0:
+  speaker_id: '115'
+  age: 84
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/115/99/99-phrase.wav
+svd_81_79_0:
+  speaker_id: '81'
+  age: 60
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/81/79/79-phrase.wav
+svd_718_813_0:
+  speaker_id: '718'
+  age: 18
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/718/813/813-phrase.wav
+svd_822_1023_0:
+  speaker_id: '822'
+  age: 41
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/822/1023/1023-phrase.wav
+svd_846_1078_0:
+  speaker_id: '846'
+  age: 31
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/846/1078/1078-phrase.wav
+svd_913_1149_0:
+  speaker_id: '913'
+  age: 19
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/913/1149/1149-phrase.wav
+svd_770_967_0:
+  speaker_id: '770'
+  age: 28
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/770/967/967-phrase.wav
+svd_745_941_0:
+  speaker_id: '745'
+  age: 50
+  gender: male
+  label: normal
+  audio_keys:
+  - svd/healthy/male/745/941/941-phrase.wav
+svd_58_58_0:
+  speaker_id: '58'
+  age: 25
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/58/58/58-phrase.wav
+svd_1093_1860_0:
+  speaker_id: '1093'
+  age: 44
+  gender: female
+  label: normal
+  audio_keys:
+  - svd/healthy/female/1093/1860/1860-phrase.wav
+svd_1594_1197_0:
+  speaker_id: '1594'
+  age: 69
+  gender: male
+  label: unclassified
+  audio_keys:
+  - svd/pathological/male/1594/1197/1197-phrase.wav
+svd_2608_2474_0:
+  speaker_id: '2608'
+  age: 61
+  gender: male
+  label: contact_pachydermia
+  audio_keys:
+  - svd/pathological/male/2608/2474/2474-phrase.wav
+svd_1924_1625_0:
+  speaker_id: '1924'
+  age: 63
+  gender: male
+  label: cordectomy
+  audio_keys:
+  - svd/pathological/male/1924/1625/1625-phrase.wav
+svd_1768_1487_0:
+  speaker_id: '1768'
+  age: 59
+  gender: male
+  label: cordectomy
+  audio_keys:
+  - svd/pathological/male/1768/1487/1487-phrase.wav
+svd_2128_1905_0:
+  speaker_id: '2128'
+  age: 36
+  gender: female
+  label: unclassified
+  audio_keys:
+  - svd/pathological/female/2128/1905/1905-phrase.wav
+svd_1399_672_0:
+  speaker_id: '1399'
+  age: 27
+  gender: male
+  label: unclassified
+  audio_keys:
+  - svd/pathological/male/1399/672/672-phrase.wav
+svd_2342_2145_0:
+  speaker_id: '2342'
+  age: 39
+  gender: male
+  label: unclassified
+  audio_keys:
+  - svd/pathological/male/2342/2145/2145-phrase.wav
+svd_2313_2124_0:
+  speaker_id: '2313'
+  age: 64
+  gender: female
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/female/2313/2124/2124-phrase.wav
+svd_1726_1378_0:
+  speaker_id: '1726'
+  age: 22
+  gender: female
+  label: unclassified
+  audio_keys:
+  - svd/pathological/female/1726/1378/1378-phrase.wav
+svd_1432_907_0:
+  speaker_id: '1432'
+  age: 69
+  gender: male
+  label: unclassified
+  audio_keys:
+  - svd/pathological/male/1432/907/907-phrase.wav
+svd_1600_1203_0:
+  speaker_id: '1600'
+  age: 61
+  gender: female
+  label: unclassified
+  audio_keys:
+  - svd/pathological/female/1600/1203/1203-phrase.wav
+svd_1597_1201_0:
+  speaker_id: '1597'
+  age: 35
+  gender: female
+  label: unclassified
+  audio_keys:
+  - svd/pathological/female/1597/1201/1201-phrase.wav
+  - svd/pathological/female/1597/1894/1894-phrase.wav
+svd_1857_1550_0:
+  speaker_id: '1857'
+  age: 26
+  gender: male
+  label: unclassified
+  audio_keys:
+  - svd/pathological/male/1857/1550/1550-phrase.wav
+svd_1682_1297_0:
+  speaker_id: '1682'
+  age: 35
+  gender: male
+  label: unclassified
+  audio_keys:
+  - svd/pathological/male/1682/1297/1297-phrase.wav
+svd_1662_1275_0:
+  speaker_id: '1662'
+  age: 28
+  gender: female
+  label: unclassified
+  audio_keys:
+  - svd/pathological/female/1662/1275/1275-phrase.wav
+svd_1868_2383_0:
+  speaker_id: '1868'
+  age: 52
+  gender: male
+  label: unclassified
+  audio_keys:
+  - svd/pathological/male/1868/2383/2383-phrase.wav
+  - svd/pathological/male/1868/1949/1949-phrase.wav
+  - svd/pathological/male/1868/1561/1561-phrase.wav
+  - svd/pathological/male/1868/1634/1634-phrase.wav
+svd_1347_360_0:
+  speaker_id: '1347'
+  age: 75
+  gender: female
+  label: unclassified
+  audio_keys:
+  - svd/pathological/female/1347/360/360-phrase.wav
+svd_2304_2114_0:
+  speaker_id: '2304'
+  age: 38
+  gender: female
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/female/2304/2114/2114-phrase.wav
+svd_1915_1615_0:
+  speaker_id: '1915'
+  age: 39
+  gender: male
+  label: unclassified
+  audio_keys:
+  - svd/pathological/male/1915/1615/1615-phrase.wav
+svd_1522_930_0:
+  speaker_id: '1522'
+  age: 22
+  gender: male
+  label: laryngitis
+  audio_keys:
+  - svd/pathological/male/1522/930/930-phrase.wav
+svd_1901_1600_0:
+  speaker_id: '1901'
+  age: 23
+  gender: female
+  label: unclassified
+  audio_keys:
+  - svd/pathological/female/1901/1600/1600-phrase.wav
+svd_2240_2032_0:
+  speaker_id: '2240'
+  age: 60
+  gender: male
+  label: unclassified
+  audio_keys:
+  - svd/pathological/male/2240/2032/2032-phrase.wav
+svd_1411_1084_0:
+  speaker_id: '1411'
+  age: 49
+  gender: male
+  label: cordectomy
+  audio_keys:
+  - svd/pathological/male/1411/1084/1084-phrase.wav
+  - svd/pathological/male/1411/719/719-phrase.wav
+svd_2488_2354_0:
+  speaker_id: '2488'
+  age: 40
+  gender: female
+  label: unclassified
+  audio_keys:
+  - svd/pathological/female/2488/2354/2354-phrase.wav
+svd_1486_892_0:
+  speaker_id: '1486'
+  age: 23
+  gender: male
+  label: unclassified
+  audio_keys:
+  - svd/pathological/male/1486/892/892-phrase.wav
+svd_1402_692_0:
+  speaker_id: '1402'
+  age: 29
+  gender: female
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/female/1402/692/692-phrase.wav
+svd_2057_1793_0:
+  speaker_id: '2057'
+  age: 35
+  gender: male
+  label: unclassified
+  audio_keys:
+  - svd/pathological/male/2057/1793/1793-phrase.wav
+svd_2062_1799_0:
+  speaker_id: '2062'
+  age: 68
+  gender: female
+  label: unclassified
+  audio_keys:
+  - svd/pathological/female/2062/1799/1799-phrase.wav
+svd_2520_2386_0:
+  speaker_id: '2520'
+  age: 67
+  gender: male
+  label: unclassified
+  audio_keys:
+  - svd/pathological/male/2520/2386/2386-phrase.wav
+svd_1387_612_0:
+  speaker_id: '1387'
+  age: 76
+  gender: female
+  label: unclassified
+  audio_keys:
+  - svd/pathological/female/1387/612/612-phrase.wav
+svd_1513_1199_0:
+  speaker_id: '1513'
+  age: 41
+  gender: male
+  label: unclassified
+  audio_keys:
+  - svd/pathological/male/1513/1199/1199-phrase.wav
+  - svd/pathological/male/1513/921/921-phrase.wav
+svd_1608_1220_0:
+  speaker_id: '1608'
+  age: 76
+  gender: male
+  label: unclassified
+  audio_keys:
+  - svd/pathological/male/1608/1220/1220-phrase.wav
+svd_2424_2290_0:
+  speaker_id: '2424'
+  age: 47
+  gender: female
+  label: functional_dysphonia
+  audio_keys:
+  - svd/pathological/female/2424/2290/2290-phrase.wav
+svd_2285_2094_0:
+  speaker_id: '2285'
+  age: 29
+  gender: female
+  label: unclassified
+  audio_keys:
+  - svd/pathological/female/2285/2094/2094-phrase.wav
+svd_2340_2143_0:
+  speaker_id: '2340'
+  age: 38
+  gender: female
+  label: unclassified
+  audio_keys:
+  - svd/pathological/female/2340/2143/2143-phrase.wav
+svd_1598_1202_0:
+  speaker_id: '1598'
+  age: 28
+  gender: male
+  label: unclassified
+  audio_keys:
+  - svd/pathological/male/1598/1202/1202-phrase.wav
+svd_1683_1556_0:
+  speaker_id: '1683'
+  age: 34
+  gender: male
+  label: unclassified
+  audio_keys:
+  - svd/pathological/male/1683/1556/1556-phrase.wav
+  - svd/pathological/male/1683/1411/1411-phrase.wav
+svd_2643_2509_0:
+  speaker_id: '2643'
+  age: 63
+  gender: female
+  label: unclassified
+  audio_keys:
+  - svd/pathological/female/2643/2509/2509-phrase.wav
+svd_2461_2327_0:
+  speaker_id: '2461'
+  age: 60
+  gender: male
+  label: functional_dysphonia
+  audio_keys:
+  - svd/pathological/male/2461/2327/2327-phrase.wav
+svd_1428_816_0:
+  speaker_id: '1428'
+  age: 70
+  gender: female
+  label: unclassified
+  audio_keys:
+  - svd/pathological/female/1428/816/816-phrase.wav
+svd_2534_2400_0:
+  speaker_id: '2534'
+  age: 65
+  gender: male
+  label: cordectomy
+  audio_keys:
+  - svd/pathological/male/2534/2400/2400-phrase.wav
+svd_1826_1478_0:
+  speaker_id: '1826'
+  age: 77
+  gender: male
+  label: recurrent_paralysis
+  audio_keys:
+  - svd/pathological/male/1826/1478/1478-phrase.wav
+svd_2045_1781_0:
+  speaker_id: '2045'
+  age: 46
+  gender: female
+  label: unclassified
+  audio_keys:
+  - svd/pathological/female/2045/1781/1781-phrase.wav
+svd_1848_1501_0:
+  speaker_id: '1848'
+  age: 21
+  gender: female
+  label: unclassified
+  audio_keys:
+  - svd/pathological/female/1848/1501/1501-phrase.wav
+svd_1986_1687_0:
+  speaker_id: '1986'
+  age: 43
+  gender: male
+  label: unclassified
+  audio_keys:
+  - svd/pathological/male/1986/1687/1687-phrase.wav
+svd_2688_2554_0:
+  speaker_id: '2688'
+  age: 23
+  gender: male
+  label: unclassified
+  audio_keys:
+  - svd/pathological/male/2688/2554/2554-phrase.wav
+svd_1734_1386_0:
+  speaker_id: '1734'
+  age: 68
+  gender: male
+  label: vocal_fold_polyp
+  audio_keys:
+  - svd/pathological/male/1734/1386/1386-phrase.wav
+svd_2171_1962_0:
+  speaker_id: '2171'
+  age: 30
+  gender: male
+  label: unclassified
+  audio_keys:
+  - svd/pathological/male/2171/1962/1962-phrase.wav
+svd_1430_818_0:
+  speaker_id: '1430'
+  age: 72
+  gender: male
+  label: laryngitis
+  audio_keys:
+  - svd/pathological/male/1430/818/818-phrase.wav
+svd_1581_1467_0:
+  speaker_id: '1581'
+  age: 55
+  gender: female
+  label: unclassified
+  audio_keys:
+  - svd/pathological/female/1581/1467/1467-phrase.wav
+svd_2456_2322_0:
+  speaker_id: '2456'
+  age: 45
+  gender: female
+  label: unclassified
+  audio_keys:
+  - svd/pathological/female/2456/2322/2322-phrase.wav
+  - svd/pathological/female/2456/2371/2371-phrase.wav
+svd_1334_154_0:
+  speaker_id: '1334'
+  age: 20
+  gender: female
+  label: unclassified
+  audio_keys:
+  - svd/pathological/female/1334/154/154-phrase.wav
+svd_2649_2515_0:
+  speaker_id: '2649'
+  age: 75
+  gender: female
+  label: unclassified
+  audio_keys:
+  - svd/pathological/female/2649/2515/2515-phrase.wav
+svd_2423_2289_0:
+  speaker_id: '2423'
+  age: 47
+  gender: male
+  label: unclassified
+  audio_keys:
+  - svd/pathological/male/2423/2289/2289-phrase.wav
+svd_1769_1417_0:
+  speaker_id: '1769'
+  age: 27
+  gender: male
+  label: unclassified
+  audio_keys:
+  - svd/pathological/male/1769/1417/1417-phrase.wav
+svd_2010_2334_0:
+  speaker_id: '2010'
+  age: 65
+  gender: male
+  label: unclassified
+  audio_keys:
+  - svd/pathological/male/2010/2334/2334-phrase.wav
+svd_1674_1286_0:
+  speaker_id: '1674'
+  age: 61
+  gender: female
+  label: unclassified
+  audio_keys:
+  - svd/pathological/female/1674/1286/1286-phrase.wav
+svd_2067_1802_0:
+  speaker_id: '2067'
+  age: 57
+  gender: female
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/female/2067/1802/1802-phrase.wav
+svd_2524_2390_0:
+  speaker_id: '2524'
+  age: 72
+  gender: male
+  label: unclassified
+  audio_keys:
+  - svd/pathological/male/2524/2390/2390-phrase.wav
+svd_1694_1309_0:
+  speaker_id: '1694'
+  age: 42
+  gender: female
+  label: functional_dysphonia
+  audio_keys:
+  - svd/pathological/female/1694/1309/1309-phrase.wav
+svd_2469_2335_0:
+  speaker_id: '2469'
+  age: 24
+  gender: female
+  label: unclassified
+  audio_keys:
+  - svd/pathological/female/2469/2335/2335-phrase.wav
+svd_1936_1636_0:
+  speaker_id: '1936'
+  age: 73
+  gender: female
+  label: dysphonia
+  audio_keys:
+  - svd/pathological/female/1936/1636/1636-phrase.wav
+svd_1834_1488_0:
+  speaker_id: '1834'
+  age: 47
+  gender: male
+  label: unclassified
+  audio_keys:
+  - svd/pathological/male/1834/1488/1488-phrase.wav
+svd_2278_2089_0:
+  speaker_id: '2278'
+  age: 63
+  gender: male
+  label: reinkes_edema
+  audio_keys:
+  - svd/pathological/male/2278/2089/2089-phrase.wav
+svd_2384_2223_0:
+  speaker_id: '2384'
+  age: 60
+  gender: female
+  label: unclassified
+  audio_keys:
+  - svd/pathological/female/2384/2223/2223-phrase.wav
+svd_2111_1887_0:
+  speaker_id: '2111'
+  age: 31
+  gender: female
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/female/2111/1887/1887-phrase.wav
+svd_2448_2313_0:
+  speaker_id: '2448'
+  age: 33
+  gender: male
+  label: functional_dysphonia
+  audio_keys:
+  - svd/pathological/male/2448/2313/2313-phrase.wav
+svd_2080_1813_0:
+  speaker_id: '2080'
+  age: 59
+  gender: female
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/female/2080/1813/1813-phrase.wav
+svd_1534_1038_0:
+  speaker_id: '1534'
+  age: 43
+  gender: female
+  label: unclassified
+  audio_keys:
+  - svd/pathological/female/1534/1038/1038-phrase.wav
+svd_2299_2110_0:
+  speaker_id: '2299'
+  age: 77
+  gender: female
+  label: laryngitis
+  audio_keys:
+  - svd/pathological/female/2299/2110/2110-phrase.wav
+svd_939_1491_0:
+  speaker_id: '939'
+  age: 20
+  gender: female
+  label: unclassified
+  audio_keys:
+  - svd/pathological/female/939/1491/1491-phrase.wav
+svd_2318_2129_0:
+  speaker_id: '2318'
+  age: 45
+  gender: male
+  label: unclassified
+  audio_keys:
+  - svd/pathological/male/2318/2129/2129-phrase.wav
+svd_1586_1193_0:
+  speaker_id: '1586'
+  age: 63
+  gender: female
+  label: functional_dysphonia
+  audio_keys:
+  - svd/pathological/female/1586/1193/1193-phrase.wav
+svd_2604_2470_0:
+  speaker_id: '2604'
+  age: 28
+  gender: male
+  label: unclassified
+  audio_keys:
+  - svd/pathological/male/2604/2470/2470-phrase.wav
+svd_1395_668_0:
+  speaker_id: '1395'
+  age: 36
+  gender: female
+  label: unclassified
+  audio_keys:
+  - svd/pathological/female/1395/668/668-phrase.wav
+svd_2429_2295_0:
+  speaker_id: '2429'
+  age: 66
+  gender: male
+  label: unclassified
+  audio_keys:
+  - svd/pathological/male/2429/2295/2295-phrase.wav
+svd_1656_1268_0:
+  speaker_id: '1656'
+  age: 83
+  gender: male
+  label: unclassified
+  audio_keys:
+  - svd/pathological/male/1656/1268/1268-phrase.wav
+svd_2319_2130_0:
+  speaker_id: '2319'
+  age: 52
+  gender: female
+  label: unclassified
+  audio_keys:
+  - svd/pathological/female/2319/2130/2130-phrase.wav
+svd_1795_1445_0:
+  speaker_id: '1795'
+  age: 14
+  gender: male
+  label: unclassified
+  audio_keys:
+  - svd/pathological/male/1795/1445/1445-phrase.wav
+svd_2036_1772_0:
+  speaker_id: '2036'
+  age: 77
+  gender: female
+  label: unclassified
+  audio_keys:
+  - svd/pathological/female/2036/1772/1772-phrase.wav
+svd_1406_714_0:
+  speaker_id: '1406'
+  age: 71
+  gender: male
+  label: unclassified
+  audio_keys:
+  - svd/pathological/male/1406/714/714-phrase.wav
+svd_2023_1759_0:
+  speaker_id: '2023'
+  age: 28
+  gender: female
+  label: unclassified
+  audio_keys:
+  - svd/pathological/female/2023/1759/1759-phrase.wav
+svd_2684_2550_0:
+  speaker_id: '2684'
+  age: 64
+  gender: female
+  label: unclassified
+  audio_keys:
+  - svd/pathological/female/2684/2550/2550-phrase.wav
+svd_1940_1640_0:
+  speaker_id: '1940'
+  age: 36
+  gender: female
+  label: functional_dysphonia
+  audio_keys:
+  - svd/pathological/female/1940/1640/1640-phrase.wav
+svd_2686_2552_0:
+  speaker_id: '2686'
+  age: 23
+  gender: male
+  label: unclassified
+  audio_keys:
+  - svd/pathological/male/2686/2552/2552-phrase.wav
+svd_2620_2486_0:
+  speaker_id: '2620'
+  age: 50
+  gender: female
+  label: unclassified
+  audio_keys:
+  - svd/pathological/female/2620/2486/2486-phrase.wav
+svd_1337_349_0:
+  speaker_id: '1337'
+  age: 16
+  gender: male
+  label: unclassified
+  audio_keys:
+  - svd/pathological/male/1337/349/349-phrase.wav
+svd_2499_2364_0:
+  speaker_id: '2499'
+  age: 19
+  gender: female
+  label: unclassified
+  audio_keys:
+  - svd/pathological/female/2499/2364/2364-phrase.wav
+svd_2129_1906_0:
+  speaker_id: '2129'
+  age: 45
+  gender: female
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/female/2129/1906/1906-phrase.wav
+svd_2234_2025_0:
+  speaker_id: '2234'
+  age: 60
+  gender: female
+  label: psychogenic_dysphonia
+  audio_keys:
+  - svd/pathological/female/2234/2025/2025-phrase.wav
+svd_2463_2329_0:
+  speaker_id: '2463'
+  age: 75
+  gender: male
+  label: unclassified
+  audio_keys:
+  - svd/pathological/male/2463/2329/2329-phrase.wav
+svd_1977_1678_0:
+  speaker_id: '1977'
+  age: 37
+  gender: female
+  label: unclassified
+  audio_keys:
+  - svd/pathological/female/1977/1678/1678-phrase.wav
+svd_2159_1948_0:
+  speaker_id: '2159'
+  age: 55
+  gender: male
+  label: unclassified
+  audio_keys:
+  - svd/pathological/male/2159/1948/1948-phrase.wav
+svd_1438_826_0:
+  speaker_id: '1438'
+  age: 78
+  gender: female
+  label: unclassified
+  audio_keys:
+  - svd/pathological/female/1438/826/826-phrase.wav
+svd_1497_1243_0:
+  speaker_id: '1497'
+  age: 62
+  gender: male
+  label: unclassified
+  audio_keys:
+  - svd/pathological/male/1497/1243/1243-phrase.wav
+svd_2346_2149_0:
+  speaker_id: '2346'
+  age: 28
+  gender: male
+  label: unclassified
+  audio_keys:
+  - svd/pathological/male/2346/2149/2149-phrase.wav
+svd_1531_939_0:
+  speaker_id: '1531'
+  age: 39
+  gender: male
+  label: unclassified
+  audio_keys:
+  - svd/pathological/male/1531/939/939-phrase.wav
+svd_2244_2055_0:
+  speaker_id: '2244'
+  age: 81
+  gender: male
+  label: unclassified
+  audio_keys:
+  - svd/pathological/male/2244/2055/2055-phrase.wav
+svd_1790_1443_0:
+  speaker_id: '1790'
+  age: 53
+  gender: female
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/female/1790/1443/1443-phrase.wav
+svd_2555_2421_0:
+  speaker_id: '2555'
+  age: 87
+  gender: female
+  label: unclassified
+  audio_keys:
+  - svd/pathological/female/2555/2421/2421-phrase.wav
+svd_2361_2184_0:
+  speaker_id: '2361'
+  age: 18
+  gender: female
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/female/2361/2184/2184-phrase.wav
+svd_2119_1896_0:
+  speaker_id: '2119'
+  age: 46
+  gender: female
+  label: unclassified
+  audio_keys:
+  - svd/pathological/female/2119/1896/1896-phrase.wav
+svd_1327_149_0:
+  speaker_id: '1327'
+  age: 22
+  gender: female
+  label: unclassified
+  audio_keys:
+  - svd/pathological/female/1327/149/149-phrase.wav
+svd_1998_1720_0:
+  speaker_id: '1998'
+  age: 48
+  gender: male
+  label: cordectomy
+  audio_keys:
+  - svd/pathological/male/1998/1720/1720-phrase.wav
+svd_2212_2003_0:
+  speaker_id: '2212'
+  age: 77
+  gender: male
+  label: laryngitis
+  audio_keys:
+  - svd/pathological/male/2212/2003/2003-phrase.wav
+svd_1949_1650_0:
+  speaker_id: '1949'
+  age: 19
+  gender: male
+  label: unclassified
+  audio_keys:
+  - svd/pathological/male/1949/1650/1650-phrase.wav
+svd_2180_1971_0:
+  speaker_id: '2180'
+  age: 77
+  gender: female
+  label: unclassified
+  audio_keys:
+  - svd/pathological/female/2180/1971/1971-phrase.wav
+svd_2602_2468_0:
+  speaker_id: '2602'
+  age: 21
+  gender: male
+  label: unclassified
+  audio_keys:
+  - svd/pathological/male/2602/2468/2468-phrase.wav
+svd_2302_2113_0:
+  speaker_id: '2302'
+  age: 51
+  gender: male
+  label: unclassified
+  audio_keys:
+  - svd/pathological/male/2302/2113/2113-phrase.wav
+svd_1880_1574_0:
+  speaker_id: '1880'
+  age: 35
+  gender: female
+  label: unclassified
+  audio_keys:
+  - svd/pathological/female/1880/1574/1574-phrase.wav
+svd_2532_2398_0:
+  speaker_id: '2532'
+  age: 94
+  gender: female
+  label: hyperfunctional_dysphonia
+  audio_keys:
+  - svd/pathological/female/2532/2398/2398-phrase.wav
+svd_1308_111_0:
+  speaker_id: '1308'
+  age: 9
+  gender: female
+  label: unclassified
+  audio_keys:
+  - svd/pathological/female/1308/111/111-phrase.wav
+svd_1491_899_0:
+  speaker_id: '1491'
+  age: 85
+  gender: male
+  label: unclassified
+  audio_keys:
+  - svd/pathological/male/1491/899/899-phrase.wav
+svd_2656_2522_0:
+  speaker_id: '2656'
+  age: 84
+  gender: female
+  label: unclassified
+  audio_keys:
+  - svd/pathological/female/2656/2522/2522-phrase.wav
+svd_1394_667_0:
+  speaker_id: '1394'
+  age: 6
+  gender: male
+  label: unclassified
+  audio_keys:
+  - svd/pathological/male/1394/667/667-phrase.wav
+svd_1352_367_0:
+  speaker_id: '1352'
+  age: 23
+  gender: female
+  label: unclassified
+  audio_keys:
+  - svd/pathological/female/1352/367/367-phrase.wav
+svd_1535_1039_0:
+  speaker_id: '1535'
+  age: 75
+  gender: male
+  label: unclassified
+  audio_keys:
+  - svd/pathological/male/1535/1039/1039-phrase.wav
+svd_2382_2222_0:
+  speaker_id: '2382'
+  age: 50
+  gender: female
+  label: unclassified
+  audio_keys:
+  - svd/pathological/female/2382/2222/2222-phrase.wav
+svd_1529_937_0:
+  speaker_id: '1529'
+  age: 14
+  gender: female
+  label: unclassified
+  audio_keys:
+  - svd/pathological/female/1529/937/937-phrase.wav
+svd_1367_496_0:
+  speaker_id: '1367'
+  age: 43
+  gender: female
+  label: unclassified
+  audio_keys:
+  - svd/pathological/female/1367/496/496-phrase.wav
+svd_1829_1483_0:
+  speaker_id: '1829'
+  age: 17
+  gender: male
+  label: unclassified
+  audio_keys:
+  - svd/pathological/male/1829/1483/1483-phrase.wav
+svd_1525_933_0:
+  speaker_id: '1525'
+  age: 79
+  gender: female
+  label: unclassified
+  audio_keys:
+  - svd/pathological/female/1525/933/933-phrase.wav
+svd_2030_1766_0:
+  speaker_id: '2030'
+  age: 30
+  gender: female
+  label: unclassified
+  audio_keys:
+  - svd/pathological/female/2030/1766/1766-phrase.wav
+svd_1802_1454_0:
+  speaker_id: '1802'
+  age: 62
+  gender: female
+  label: unclassified
+  audio_keys:
+  - svd/pathological/female/1802/1454/1454-phrase.wav
+svd_2398_2236_0:
+  speaker_id: '2398'
+  age: 61
+  gender: male
+  label: unclassified
+  audio_keys:
+  - svd/pathological/male/2398/2236/2236-phrase.wav

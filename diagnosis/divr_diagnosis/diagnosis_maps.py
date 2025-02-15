@@ -5,6 +5,10 @@ class Benba_2017(DiagnosisMap):
     pass
 
 
+class CaRLab_2025(DiagnosisMap):
+    pass
+
+
 class Compton_2022(DiagnosisMap):
     pass
 

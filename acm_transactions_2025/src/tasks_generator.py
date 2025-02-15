@@ -16,25 +16,25 @@ class TaskGenerator:
         "daSilvaMoura_2024": diagnosis_maps.daSilvaMoura_2024,
         "Sztaho_2018": diagnosis_maps.Sztaho_2018,
         "Zaim_2023": diagnosis_maps.Zaim_2023,
+        "CaRLab_2025": diagnosis_maps.CaRLab_2025,
+        "USVAC_2025": diagnosis_maps.USVAC_2025,
     }
 
-    def __init__(self, research_data_path: Path) -> None:
+    def __init__(self, research_data_path: Path, tasks_path: Path) -> None:
         self.__benchmark = Benchmark(
             storage_path=research_data_path,
             version="v1",
         )
         cur_path = Path(__file__).parent.resolve()
-        self.__tasks_path = self.__ensure_path(f"{cur_path}/tasks")
+        self.__tasks_path = self.__ensure_path(tasks_path)
 
     def load_task(
         self,
         task: str,
         diag_level: int | None,
-        diagnosis_map: DiagnosisMap | None = None,
+        diagnosis_map: DiagnosisMap,
         load_audios: bool = True,
     ) -> Task:
-        if diagnosis_map is None:
-            diagnosis_map = self.get_diagnosis_map(task)
         task_path = Path(f"{self.__tasks_path}/{task}")
         return self.__benchmark.load_task(
             task_path=task_path,
@@ -43,19 +43,28 @@ class TaskGenerator:
             load_audios=load_audios,
         )
 
-    def get_diagnosis_map(self, task, allow_unmapped: bool = False):
-        if task == "daSilvaMoura":
-            return self.__diagnosis_maps["daSilvaMoura_2024"](
-                allow_unmapped=allow_unmapped
-            )
-        elif "-" in task:
+    def exp_key_to_diag_map(self, exp_key: str):
+        if exp_key.startswith("USVAC-"):
+            diagnosis_map_key = "USVAC_2025"
+            allow_unmapped = False
+        elif exp_key.startswith("daSilvaMoura-"):
+            diagnosis_map_key = "daSilvaMoura_2024"
+            allow_unmapped = False
+        elif exp_key.startswith("superset-"):
+            diag_map_key = exp_key.split("-")[1]
+            diagnosis_map_key = diag_map_key
+            allow_unmapped = True
+        elif "-" in exp_key:
             # specified diagnosis map
-            diagnosis_map_key = task.split("-", maxsplit=1)[0]
-            return self.__diagnosis_maps[diagnosis_map_key](
-                allow_unmapped=allow_unmapped
-            )
+            diagnosis_map_key = exp_key.split("-", maxsplit=1)[0]
+            allow_unmapped = False
         else:
-            return diagnosis_maps.USVAC_2025(allow_unmapped=allow_unmapped)
+            diagnosis_map_key = "USVAC_2025"
+            allow_unmapped = False
+        return self.__diagnosis_maps[diagnosis_map_key](allow_unmapped=allow_unmapped)
+
+    def get_diagnosis_map(self, task_key, allow_unmapped: bool = False):
+        return self.__diagnosis_maps[task_key](allow_unmapped=allow_unmapped)
 
     async def generate(self) -> None:
         diagnosis_map = diagnosis_maps.USVAC_2025()
@@ -171,6 +180,33 @@ class TaskGenerator:
                         ),
                         task_path=self.__ensure_path(
                             f"{self.__tasks_path}/{diagnosis_map.name}-{suffix_key}"
+                        ),
+                        diagnosis_map=diagnosis_map,
+                        allow_incomplete_classification=True,
+                    )
+                ]
+
+        # Other classification map tasks
+        maps = [
+            diagnosis_maps.Compton_2022(),
+            diagnosis_maps.daSilvaMoura_2024(),
+            diagnosis_maps.Sztaho_2018(),
+            diagnosis_maps.Zaim_2023(),
+        ]
+        suffixes = {
+            "phrase": ["-phrase.wav"],
+        }
+        for diagnosis_map in maps:
+            for suffix_key, suffix_set in suffixes.items():
+                coros += [
+                    self.__benchmark.generate_task(
+                        filter_func=self.__filter_func(
+                            allowed_suffixes=suffix_set,
+                            diag_level=diagnosis_map.max_diag_level,
+                            remove_unclassified=False,
+                        ),
+                        task_path=self.__ensure_path(
+                            f"{self.__tasks_path}/{diagnosis_map.name}-{suffix_key}-with-unclassified"
                         ),
                         diagnosis_map=diagnosis_map,
                         allow_incomplete_classification=True,
@@ -293,7 +329,7 @@ class TaskGenerator:
                 labels[task_label] += 1
         return labels
 
-    def __ensure_path(self, path: str) -> Path:
+    def __ensure_path(self, path: str|Path) -> Path:
         _path = Path(path)
         _path.mkdir(exist_ok=True, parents=True)
         return _path

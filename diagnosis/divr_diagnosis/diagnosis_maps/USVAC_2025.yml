@@ -2145,8 +2145,6 @@ laryngeal_web:
     clinician 6: organic > structural > structural_abnormality
     clinician 7: organic > structural > structural_abnormality
 laryngitis:
-  alias:
-    - laryngitis
   level: 4
   parents:
     organic_inflammatory_infective: 0.71

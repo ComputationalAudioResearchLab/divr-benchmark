@@ -82,6 +82,7 @@ cancer:
 chronic_laryngitis:
   alias:
     - chronic laryngitis
+    - laryngitis
   level: 2
   parents:
     inflammatory: 1.00

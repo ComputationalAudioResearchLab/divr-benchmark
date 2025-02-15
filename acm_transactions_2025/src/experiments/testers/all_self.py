@@ -36,6 +36,7 @@ class TestAllSelf:
         research_data_path: Path,
         cache_path: Path,
         results_path: Path,
+        tasks_path: Path,
     ):
         self.__research_data_path = research_data_path
         self.__cache_path = cache_path
@@ -43,7 +44,8 @@ class TestAllSelf:
         self.__results_path = Path(f"{results_path}/self")
         self.__results_path.mkdir(parents=True, exist_ok=True)
         self.__task_generator = TaskGenerator(
-            research_data_path=self.__research_data_path
+            research_data_path=self.__research_data_path,
+            tasks_path=tasks_path,
         )
         self.__test_func_map = {
             Normalized: self.__test_single,
@@ -72,6 +74,9 @@ class TestAllSelf:
                 task_key = f"USVAC-{task_key}"
             elif key.startswith("daSilvaMoura-"):
                 task_key = f"daSilvaMoura-{task_key}"
+            elif key.startswith("superset-"):
+                diag_map_key = key.split("-")[1]
+                task_key = f"superset-{diag_map_key}-{task_key}"
             model_cls = self.__model_map[trainer_cls]
             diag_levels = ",".join(map(str, diag_levels))
             if feature_cls not in tests:
@@ -103,10 +108,17 @@ class TestAllSelf:
                     ):
                         dmap_key, d_task_key = task_key.split("-", maxsplit=1)
                         diagnosis_map = self.__task_generator.get_diagnosis_map(
-                            task=dmap_key, allow_unmapped=False
+                            task_key=dmap_key, allow_unmapped=False
+                        )
+                    elif task_key.startswith("superset-"):
+                        prefix, dmap_key, d_task_key = task_key.split("-")
+                        diagnosis_map = self.__task_generator.get_diagnosis_map(
+                            task_key=dmap_key, allow_unmapped=True
                         )
                     else:
-                        diagnosis_map = None
+                        diagnosis_map = self.__task_generator.get_diagnosis_map(
+                            task_key="USVAC_2025", allow_unmapped=False
+                        )
                         d_task_key = task_key
                     data_loader = self.__get_data_loader(
                         task_key=d_task_key,
@@ -294,11 +306,13 @@ class TestAllSelf:
         self,
         task_key: str,
         diag_levels: list[int],
+        diagnosis_map: DiagnosisMap,
         feature_function: Feature,
         cache_path: Path,
     ) -> BaseDataLoader:
         task = self.__task_generator.load_task(
             task=task_key,
+            diagnosis_map=diagnosis_map,
             diag_level=max(diag_levels),
         )
         return CachedDataLoader(
@@ -319,7 +333,7 @@ class TestAllSelf:
         self,
         task_key: str,
         diag_levels: list[int],
-        diagnosis_map: DiagnosisMap | None,
+        diagnosis_map: DiagnosisMap,
         feature_function: Feature,
         cache_path: Path,
     ) -> BaseDataLoader:

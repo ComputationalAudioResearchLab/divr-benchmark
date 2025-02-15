@@ -422,6 +422,33 @@ class Runner:
         "Zaim_2023-unispeechSAT_u_n_2": ["Zaim_2023-u_n", [2], UnispeechSAT, 200, 16, Trainer, 1e-5],
         "Zaim_2023-mc_unispeechSAT_u_n_0+1+2": ["Zaim_2023-u_n", [0, 1, 2], UnispeechSAT, 200, 16, TrainerMultiCrit, 1e-5],
 
+
+        # Other diagnostic maps experiments with unclassified
+        ## Compton_2022
+        "Compton_2022-mfccdd_phrase_2-with-unclassified": ["Compton_2022-phrase-with-unclassified", [2], MFCCDD, 2000, 16, Trainer, 1e-5],
+        "Compton_2022-wav2vec_phrase_2-with-unclassified": ["Compton_2022-phrase-with-unclassified", [2], Wav2Vec, 200, 16, Trainer, 1e-5],
+        "Compton_2022-unispeechSAT_phrase_2-with-unclassified": ["Compton_2022-phrase-with-unclassified", [2], UnispeechSAT, 200, 16, Trainer, 1e-5],
+
+        ## daSilvaMoura_2024
+        "daSilvaMoura_2024-mfccdd_phrase_1-with-unclassified": ["daSilvaMoura_2024-phrase-with-unclassified", [1], MFCCDD, 2000, 16, Trainer, 1e-5],
+        "daSilvaMoura_2024-mfccdd_phrase_2-with-unclassified": ["daSilvaMoura_2024-phrase-with-unclassified", [2], MFCCDD, 2000, 16, Trainer, 1e-5],
+        "daSilvaMoura_2024-wav2vec_phrase_1-with-unclassified": ["daSilvaMoura_2024-phrase-with-unclassified", [1], Wav2Vec, 200, 16, Trainer, 1e-5],
+        "daSilvaMoura_2024-wav2vec_phrase_2-with-unclassified": ["daSilvaMoura_2024-phrase-with-unclassified", [2], Wav2Vec, 200, 16, Trainer, 1e-5],
+        "daSilvaMoura_2024-unispeechSAT_phrase_1-with-unclassified": ["daSilvaMoura_2024-phrase-with-unclassified", [1], UnispeechSAT, 200, 16, Trainer, 1e-5],
+        "daSilvaMoura_2024-unispeechSAT_phrase_2-with-unclassified": ["daSilvaMoura_2024-phrase-with-unclassified", [2], UnispeechSAT, 200, 16, Trainer, 1e-5],
+
+        ## Sztaho_2018
+        "Sztaho_2018-mfccdd_phrase_2-with-unclassified": ["Sztaho_2018-phrase-with-unclassified", [2], MFCCDD, 2000, 16, Trainer, 1e-5],
+        "Sztaho_2018-wav2vec_phrase_2-with-unclassified": ["Sztaho_2018-phrase-with-unclassified", [2], Wav2Vec, 200, 16, Trainer, 1e-5],
+        "Sztaho_2018-unispeechSAT_phrase_2-with-unclassified": ["Sztaho_2018-phrase-with-unclassified", [2], UnispeechSAT, 200, 16, Trainer, 1e-5],
+
+        ## Zaim_2023
+        "Zaim_2023-mfccdd_phrase_1-with-unclassified": ["Zaim_2023-phrase-with-unclassified", [1], MFCCDD, 2000, 16, Trainer, 1e-5],
+        "Zaim_2023-mfccdd_phrase_2-with-unclassified": ["Zaim_2023-phrase-with-unclassified", [2], MFCCDD, 2000, 16, Trainer, 1e-5],
+        "Zaim_2023-wav2vec_phrase_1-with-unclassified": ["Zaim_2023-phrase-with-unclassified", [1], Wav2Vec, 200, 16, Trainer, 1e-5],
+        "Zaim_2023-wav2vec_phrase_2-with-unclassified": ["Zaim_2023-phrase-with-unclassified", [2], Wav2Vec, 200, 16, Trainer, 1e-5],
+        "Zaim_2023-unispeechSAT_phrase_1-with-unclassified": ["Zaim_2023-phrase-with-unclassified", [1], UnispeechSAT, 200, 16, Trainer, 1e-5],
+        "Zaim_2023-unispeechSAT_phrase_2-with-unclassified": ["Zaim_2023-phrase-with-unclassified", [2], UnispeechSAT, 200, 16, Trainer, 1e-5],
         
         # Other diagnostic maps experiments
         ## Compton_2022
@@ -562,6 +589,52 @@ class Runner:
         "daSilvaMoura-Zaim_2023-unispeechSAT_phrase_2": ["Zaim_2023-phrase", [2], UnispeechSAT, 200, 16, Trainer, 1e-5],
         "daSilvaMoura-Zaim_2023-unispeechSAT_u_n_1": ["Zaim_2023-u_n", [1], UnispeechSAT, 200, 16, Trainer, 1e-5],
         "daSilvaMoura-Zaim_2023-unispeechSAT_u_n_2": ["Zaim_2023-u_n", [2], UnispeechSAT, 200, 16, Trainer, 1e-5],
+
+        # On superset
+        ## Compton_2022
+        "superset-Compton_2022-mfccdd_a_n_1": ["a_n", [1], MFCCDD, 2000, 16, Trainer, 1e-5],
+        "superset-Compton_2022-wav2vec_a_n_1": ["a_n", [1], Wav2Vec, 200, 16, Trainer, 1e-5],
+        "superset-Compton_2022-unispeechSAT_a_n_1": ["a_n", [1], UnispeechSAT, 200, 16, Trainer, 1e-5],
+        "superset-Compton_2022-mfccdd_phrase_1": ["phrase", [1], MFCCDD, 2000, 16, Trainer, 1e-5],
+        "superset-Compton_2022-wav2vec_phrase_1": ["phrase", [1], Wav2Vec, 200, 16, Trainer, 1e-5],
+        "superset-Compton_2022-unispeechSAT_phrase_1": ["phrase", [1], UnispeechSAT, 200, 16, Trainer, 1e-5],
+        "superset-Compton_2022-mfccdd_all_1": ["all", [1], MFCCDD, 2000, 16, Trainer, 1e-5],
+        "superset-Compton_2022-wav2vec_all_1": ["all", [1], Wav2Vec, 200, 16, Trainer, 1e-5],
+        "superset-Compton_2022-unispeechSAT_all_1": ["all", [1], UnispeechSAT, 200, 16, Trainer, 1e-5],
+        
+
+        ## daSilvaMoura_2024
+        "superset-daSilvaMoura_2024-mfccdd_a_n_1": ["a_n", [1], MFCCDD, 2000, 16, Trainer, 1e-5],
+        "superset-daSilvaMoura_2024-wav2vec_a_n_1": ["a_n", [1], Wav2Vec, 200, 16, Trainer, 1e-5],
+        "superset-daSilvaMoura_2024-unispeechSAT_a_n_1": ["a_n", [1], UnispeechSAT, 200, 16, Trainer, 1e-5],
+        "superset-daSilvaMoura_2024-mfccdd_phrase_1": ["phrase", [1], MFCCDD, 2000, 16, Trainer, 1e-5],
+        "superset-daSilvaMoura_2024-wav2vec_phrase_1": ["phrase", [1], Wav2Vec, 200, 16, Trainer, 1e-5],
+        "superset-daSilvaMoura_2024-unispeechSAT_phrase_1": ["phrase", [1], UnispeechSAT, 200, 16, Trainer, 1e-5],
+        "superset-daSilvaMoura_2024-mfccdd_all_1": ["all", [1], MFCCDD, 2000, 16, Trainer, 1e-5],
+        "superset-daSilvaMoura_2024-wav2vec_all_1": ["all", [1], Wav2Vec, 200, 16, Trainer, 1e-5],
+        "superset-daSilvaMoura_2024-unispeechSAT_all_1": ["all", [1], UnispeechSAT, 200, 16, Trainer, 1e-5],
+
+        ## Zaim_2023
+        "superset-Zaim_2023-mfccdd_a_n_1": ["a_n", [1], MFCCDD, 2000, 16, Trainer, 1e-5],
+        "superset-Zaim_2023-wav2vec_a_n_1": ["a_n", [1], Wav2Vec, 200, 16, Trainer, 1e-5],
+        "superset-Zaim_2023-unispeechSAT_a_n_1": ["a_n", [1], UnispeechSAT, 200, 16, Trainer, 1e-5],
+        "superset-Zaim_2023-mfccdd_phrase_1": ["phrase", [1], MFCCDD, 2000, 16, Trainer, 1e-5],
+        "superset-Zaim_2023-wav2vec_phrase_1": ["phrase", [1], Wav2Vec, 200, 16, Trainer, 1e-5],
+        "superset-Zaim_2023-unispeechSAT_phrase_1": ["phrase", [1], UnispeechSAT, 200, 16, Trainer, 1e-5],
+        "superset-Zaim_2023-mfccdd_all_1": ["all", [1], MFCCDD, 2000, 16, Trainer, 1e-5],
+        "superset-Zaim_2023-wav2vec_all_1": ["all", [1], Wav2Vec, 200, 16, Trainer, 1e-5],
+        "superset-Zaim_2023-unispeechSAT_all_1": ["all", [1], UnispeechSAT, 200, 16, Trainer, 1e-5],
+
+        ## CaRLab_2025
+        "superset-CaRLab_2025-mfccdd_a_n_1": ["a_n", [1], MFCCDD, 2000, 16, Trainer, 1e-5],
+        "superset-CaRLab_2025-wav2vec_a_n_1": ["a_n", [1], Wav2Vec, 200, 16, Trainer, 1e-5],
+        "superset-CaRLab_2025-unispeechSAT_a_n_1": ["a_n", [1], UnispeechSAT, 200, 16, Trainer, 1e-5],
+        "superset-CaRLab_2025-mfccdd_phrase_1": ["phrase", [1], MFCCDD, 2000, 16, Trainer, 1e-5],
+        "superset-CaRLab_2025-wav2vec_phrase_1": ["phrase", [1], Wav2Vec, 200, 16, Trainer, 1e-5],
+        "superset-CaRLab_2025-unispeechSAT_phrase_1": ["phrase", [1], UnispeechSAT, 200, 16, Trainer, 1e-5],
+        "superset-CaRLab_2025-mfccdd_all_1": ["all", [1], MFCCDD, 2000, 16, Trainer, 1e-5],
+        "superset-CaRLab_2025-wav2vec_all_1": ["all", [1], Wav2Vec, 200, 16, Trainer, 1e-5],
+        "superset-CaRLab_2025-unispeechSAT_all_1": ["all", [1], UnispeechSAT, 200, 16, Trainer, 1e-5],
     }
     # fmt: on
 
@@ -590,12 +663,9 @@ class Runner:
             trainer_cls,
             lr,
         ) = self._exp[exp_key]
-        if exp_key.startswith("USVAC-"):
-            diagnosis_map = self.__tasks_generator.get_diagnosis_map("USVAC")
-        elif exp_key.startswith("daSilvaMoura-"):
-            diagnosis_map = self.__tasks_generator.get_diagnosis_map("daSilvaMoura")
-        else:
-            diagnosis_map = None
+        diagnosis_map = self.__tasks_generator.exp_key_to_diag_map(
+            exp_key=exp_key,
+        )
         task = self.__tasks_generator.load_task(
             task=task_key,
             diag_level=max(diag_levels),
