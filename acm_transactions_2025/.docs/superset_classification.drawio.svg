@@ -1,0 +1,989 @@
+<svg host="65bd71144e" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="1156px" height="1103px" viewBox="-0.5 -0.5 1156 1103" content="&lt;mxfile&gt;&lt;diagram id=&quot;oUahDdN4V73DE9uk-gKn&quot; name=&quot;Page-1&quot;&gt;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&lt;/diagram&gt;&lt;/mxfile&gt;" style="background-color: rgb(255, 255, 255);">
+    <defs/>
+    <g>
+        <path d="M 220.01 225 L 728.56 381.48" fill="none" stroke="#6f1926" stroke-opacity="0.4" stroke-width="4" stroke-miterlimit="10" pointer-events="stroke"/>
+        <path d="M 735.73 383.68 L 724.7 385.52 L 728.56 381.48 L 727.64 375.97 Z" fill-opacity="0.4" fill="#6f1926" stroke="#6f1926" stroke-opacity="0.4" stroke-width="4" stroke-miterlimit="10" pointer-events="all"/>
+        <path d="M 300.01 225 L 808.56 381.48" fill="none" stroke="#de324c" stroke-opacity="0.4" stroke-width="4" stroke-miterlimit="10" pointer-events="stroke"/>
+        <path d="M 815.73 383.68 L 804.7 385.52 L 808.56 381.48 L 807.64 375.97 Z" fill-opacity="0.4" fill="#de324c" stroke="#de324c" stroke-opacity="0.4" stroke-width="4" stroke-miterlimit="10" pointer-events="all"/>
+        <path d="M 380.01 225 L 729.06 380.14" fill="none" stroke="#f4895f" stroke-opacity="0.4" stroke-width="4" stroke-miterlimit="10" pointer-events="stroke"/>
+        <path d="M 735.91 383.18 L 724.74 383.69 L 729.06 380.14 L 728.81 374.55 Z" fill-opacity="0.4" fill="#f4895f" stroke="#f4895f" stroke-opacity="0.4" stroke-width="4" stroke-miterlimit="10" pointer-events="all"/>
+        <path d="M 460.01 225 L 888.75 380.91" fill="none" stroke="#f8e16f" stroke-opacity="0.4" stroke-width="4" stroke-miterlimit="10" pointer-events="stroke"/>
+        <path d="M 895.8 383.47 L 884.69 384.75 L 888.75 380.91 L 888.11 375.36 Z" fill-opacity="0.4" fill="#f8e16f" stroke="#f8e16f" stroke-opacity="0.4" stroke-width="4" stroke-miterlimit="10" pointer-events="all"/>
+        <path d="M 540.01 225 L 1048.56 381.48" fill="none" stroke="#95cf92" stroke-opacity="0.4" stroke-width="4" stroke-miterlimit="10" pointer-events="stroke"/>
+        <path d="M 1055.73 383.68 L 1044.7 385.52 L 1048.56 381.48 L 1047.64 375.97 Z" fill-opacity="0.4" fill="#95cf92" stroke="#95cf92" stroke-opacity="0.4" stroke-width="4" stroke-miterlimit="10" pointer-events="all"/>
+        <path d="M 620.01 225 L 1048.75 380.91" fill="none" stroke="#369acc" stroke-opacity="0.4" stroke-width="4" stroke-miterlimit="10" pointer-events="stroke"/>
+        <path d="M 1055.8 383.47 L 1044.69 384.75 L 1048.75 380.91 L 1048.11 375.36 Z" fill-opacity="0.4" fill="#369acc" stroke="#369acc" stroke-opacity="0.4" stroke-width="4" stroke-miterlimit="10" pointer-events="all"/>
+        <path d="M 700.01 225 L 969.61 379.06" fill="none" stroke="#9656a2" stroke-opacity="0.4" stroke-width="4" stroke-miterlimit="10" pointer-events="stroke"/>
+        <path d="M 976.12 382.78 L 964.95 382.16 L 969.61 379.06 L 969.92 373.48 Z" fill-opacity="0.4" fill="#9656a2" stroke="#9656a2" stroke-opacity="0.4" stroke-width="4" stroke-miterlimit="10" pointer-events="all"/>
+        <path d="M 780.01 225 L 1049.61 379.06" fill="none" stroke="#cbabd1" stroke-opacity="0.4" stroke-width="4" stroke-miterlimit="10" pointer-events="stroke"/>
+        <path d="M 1056.12 382.78 L 1044.95 382.16 L 1049.61 379.06 L 1049.92 373.48 Z" fill-opacity="0.4" fill="#cbabd1" stroke="#cbabd1" stroke-opacity="0.4" stroke-width="4" stroke-miterlimit="10" pointer-events="all"/>
+        <path d="M 740 425 L 744.72 623.03" fill="none" stroke="#808080" stroke-opacity="0.4" stroke-width="4" stroke-miterlimit="10" pointer-events="stroke"/>
+        <path d="M 744.89 630.53 L 739.66 620.65 L 744.72 623.03 L 749.65 620.41 Z" fill-opacity="0.4" fill="#808080" stroke="#808080" stroke-opacity="0.4" stroke-width="4" stroke-miterlimit="10" pointer-events="all"/>
+        <path d="M 820 425 L 824.37 623.03" fill="none" stroke="#808080" stroke-opacity="0.4" stroke-width="4" stroke-miterlimit="10" pointer-events="stroke"/>
+        <path d="M 824.53 630.53 L 819.32 620.65 L 824.37 623.03 L 829.31 620.42 Z" fill-opacity="0.4" fill="#808080" stroke="#808080" stroke-opacity="0.4" stroke-width="4" stroke-miterlimit="10" pointer-events="all"/>
+        <path d="M 900 425 L 904.37 623.03" fill="none" stroke="#808080" stroke-opacity="0.4" stroke-width="4" stroke-miterlimit="10" pointer-events="stroke"/>
+        <path d="M 904.53 630.53 L 899.32 620.65 L 904.37 623.03 L 909.31 620.42 Z" fill-opacity="0.4" fill="#808080" stroke="#808080" stroke-opacity="0.4" stroke-width="4" stroke-miterlimit="10" pointer-events="all"/>
+        <rect x="735" y="919" width="420" height="180" fill="none" stroke="none" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)scale(0.9999999999999999)">
+            <switch>
+                <foreignObject pointer-events="none" width="101%" height="101%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe flex-start; width: 418px; height: 1px; padding-top: 926px; margin-left: 737px;">
+                        <div data-drawio-colors="color: #333333; " style="box-sizing: border-box; font-size: 0px; text-align: left;">
+                            <div style="display: inline-block; font-size: 16px; font-family: Helvetica; color: rgb(51, 51, 51); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
+                                <div style="color: rgb(204, 204, 204); background-color: rgb(31, 31, 31); font-family: Consolas, &quot;Courier New&quot;, monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+                                    <div>
+                                        <span style="color: #569cd6;">
+                                            functional_dysphonia
+                                        </span>
+                                        <span style="color: #cccccc;">
+                                            :
+                                        </span>
+                                        <span style="color: #ce9178;">
+                                            functional_dysphonia (100%)
+                                        </span>
+                                    </div>
+                                    <div>
+                                        <span style="color: #569cd6;">
+                                            hyperfunctional_dysphonia
+                                        </span>
+                                        <span style="color: #cccccc;">
+                                            :
+                                        </span>
+                                        <span style="color: #ce9178;">
+                                            muscle tension (71%)
+                                        </span>
+                                    </div>
+                                    <div>
+                                        <span style="color: #569cd6;">
+                                            laryngitis
+                                        </span>
+                                        <span style="color: #cccccc;">
+                                            :
+                                        </span>
+                                        <span style="color: #ce9178;">
+                                            organic_inflammatory (71%)
+                                        </span>
+                                    </div>
+                                    <div>
+                                        <span style="color: #569cd6;">
+                                            leukoplakia
+                                        </span>
+                                        <span style="color: #cccccc;">
+                                            :
+                                        </span>
+                                        <span style="color: #ce9178;">
+                                            organic_structural (100%)
+                                        </span>
+                                    </div>
+                                    <div>
+                                        <span style="color: #569cd6;">
+                                            psychogenic_dysphonia
+                                        </span>
+                                        <span style="color: #cccccc;">
+                                            :
+                                        </span>
+                                        <span style="color: #ce9178;">
+                                            functional_dysphonia (100%)
+                                        </span>
+                                    </div>
+                                    <div>
+                                        <span style="color: #569cd6;">
+                                            recurrent_paralysis
+                                        </span>
+                                        <span style="color: #cccccc;">
+                                            :
+                                        </span>
+                                        <span style="color: #ce9178;">
+                                            organic_neuro_muscular (86%)
+                                        </span>
+                                    </div>
+                                    <div>
+                                        <span style="color: #569cd6;">
+                                            reinkes_edema
+                                        </span>
+                                        <span style="color: #cccccc;">
+                                            :
+                                        </span>
+                                        <span style="color: #ce9178;">
+                                            organic_structural (86%)
+                                        </span>
+                                    </div>
+                                    <div>
+                                        <span style="color: #569cd6;">
+                                            vocal_fold_polyp
+                                        </span>
+                                        <span style="color: #cccccc;">
+                                            :
+                                        </span>
+                                        <span style="color: #ce9178;">
+                                            organic_structural (100%)
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="737" y="942" fill="#333333" font-family="Helvetica" font-size="16px">
+                    functional_dysphonia: functional_dysphonia (100%)...
+                </text>
+            </switch>
+        </g>
+        <path d="M 980 425 L 909.03 623.73" fill="none" stroke="#808080" stroke-opacity="0.4" stroke-width="4" stroke-miterlimit="10" pointer-events="stroke"/>
+        <path d="M 906.5 630.79 L 905.16 619.69 L 909.03 623.73 L 914.58 623.05 Z" fill-opacity="0.4" fill="#808080" stroke="#808080" stroke-opacity="0.4" stroke-width="4" stroke-miterlimit="10" pointer-events="all"/>
+        <path d="M 1060 425 L 912.11 625.37" fill="none" stroke="#808080" stroke-opacity="0.4" stroke-width="4" stroke-miterlimit="10" pointer-events="stroke"/>
+        <path d="M 907.66 631.4 L 909.57 620.39 L 912.11 625.37 L 917.62 626.33 Z" fill-opacity="0.4" fill="#808080" stroke="#808080" stroke-opacity="0.4" stroke-width="4" stroke-miterlimit="10" pointer-events="all"/>
+        <ellipse cx="220.01" cy="205" rx="19.999999999999996" ry="19.999999999999996" fill="#6f1926" stroke="none" pointer-events="none"/>
+        <g transform="translate(-0.5 -0.5)scale(0.9999999999999999)rotate(90 300.01 178)">
+            <switch>
+                <foreignObject pointer-events="none" width="101%" height="101%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe flex-end; width: 178px; height: 1px; padding-top: 178px; margin-left: 122px;">
+                        <div data-drawio-colors="color: #333333; " style="box-sizing: border-box; font-size: 0px; text-align: right;">
+                            <div style="display: inline-block; font-size: 16px; font-family: Helvetica; color: rgb(51, 51, 51); line-height: 1.2; pointer-events: none; font-weight: bold; white-space: normal; overflow-wrap: normal;">
+                                Hyperfunctional Dysphonia
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="300" y="183" fill="#333333" font-family="Helvetica" font-size="16px" text-anchor="end" font-weight="bold">
+                    Hyperfunctional Dyspho...
+                </text>
+            </switch>
+        </g>
+        <g transform="translate(-0.5 -0.5)scale(0.9999999999999999)rotate(90 220.01 178)">
+            <switch>
+                <foreignObject pointer-events="none" width="101%" height="101%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe flex-end; width: 118px; height: 1px; padding-top: 178px; margin-left: 102px;">
+                        <div data-drawio-colors="color: #333333; " style="box-sizing: border-box; font-size: 0px; text-align: right;">
+                            <div style="display: inline-block; font-size: 16px; font-family: Helvetica; color: rgb(51, 51, 51); line-height: 1.2; pointer-events: none; font-weight: bold; white-space: normal; overflow-wrap: normal;">
+                                Functional Dysphonia
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="220" y="183" fill="#333333" font-family="Helvetica" font-size="16px" text-anchor="end" font-weight="bold">
+                    Functional Dysp...
+                </text>
+            </switch>
+        </g>
+        <g transform="translate(-0.5 -0.5)scale(0.9999999999999999)rotate(90 540.01 178)">
+            <switch>
+                <foreignObject pointer-events="none" width="101%" height="101%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe flex-end; width: 178px; height: 1px; padding-top: 178px; margin-left: 362px;">
+                        <div data-drawio-colors="color: #333333; " style="box-sizing: border-box; font-size: 0px; text-align: right;">
+                            <div style="display: inline-block; font-size: 16px; font-family: Helvetica; color: rgb(51, 51, 51); line-height: 1.2; pointer-events: none; font-weight: bold; white-space: normal; overflow-wrap: normal;">
+                                Leukoplakia
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="540" y="183" fill="#333333" font-family="Helvetica" font-size="16px" text-anchor="end" font-weight="bold">
+                    Leukoplakia
+                </text>
+            </switch>
+        </g>
+        <g transform="translate(-0.5 -0.5)scale(0.9999999999999999)rotate(90 460.01 178)">
+            <switch>
+                <foreignObject pointer-events="none" width="101%" height="101%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe flex-end; width: 178px; height: 1px; padding-top: 178px; margin-left: 282px;">
+                        <div data-drawio-colors="color: #333333; " style="box-sizing: border-box; font-size: 0px; text-align: right;">
+                            <div style="display: inline-block; font-size: 16px; font-family: Helvetica; color: rgb(51, 51, 51); line-height: 1.2; pointer-events: none; font-weight: bold; white-space: normal; overflow-wrap: normal;">
+                                Laryngitis
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="460" y="183" fill="#333333" font-family="Helvetica" font-size="16px" text-anchor="end" font-weight="bold">
+                    Laryngitis
+                </text>
+            </switch>
+        </g>
+        <g transform="translate(-0.5 -0.5)scale(0.9999999999999999)rotate(90 380.01 178)">
+            <switch>
+                <foreignObject pointer-events="none" width="101%" height="101%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe flex-end; width: 178px; height: 1px; padding-top: 178px; margin-left: 202px;">
+                        <div data-drawio-colors="color: #333333; " style="box-sizing: border-box; font-size: 0px; text-align: right;">
+                            <div style="display: inline-block; font-size: 16px; font-family: Helvetica; color: rgb(51, 51, 51); line-height: 1.2; pointer-events: none; font-weight: bold; white-space: normal; overflow-wrap: normal;">
+                                Psychogenic Dysphonia
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="380" y="183" fill="#333333" font-family="Helvetica" font-size="16px" text-anchor="end" font-weight="bold">
+                    Psychogenic Dysphonia
+                </text>
+            </switch>
+        </g>
+        <g transform="translate(-0.5 -0.5)scale(0.9999999999999999)rotate(90 620.0100000000002 178)">
+            <switch>
+                <foreignObject pointer-events="none" width="101%" height="101%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe flex-end; width: 178px; height: 1px; padding-top: 178px; margin-left: 442px;">
+                        <div data-drawio-colors="color: #333333; " style="box-sizing: border-box; font-size: 0px; text-align: right;">
+                            <div style="display: inline-block; font-size: 16px; font-family: Helvetica; color: rgb(51, 51, 51); line-height: 1.2; pointer-events: none; font-weight: bold; white-space: normal; overflow-wrap: normal;">
+                                Vocal Fold Polyp
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="620" y="183" fill="#333333" font-family="Helvetica" font-size="16px" text-anchor="end" font-weight="bold">
+                    Vocal Fold Polyp
+                </text>
+            </switch>
+        </g>
+        <g transform="translate(-0.5 -0.5)scale(0.9999999999999999)rotate(90 700.0100000000002 178)">
+            <switch>
+                <foreignObject pointer-events="none" width="101%" height="101%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe flex-end; width: 178px; height: 1px; padding-top: 178px; margin-left: 522px;">
+                        <div data-drawio-colors="color: #333333; " style="box-sizing: border-box; font-size: 0px; text-align: right;">
+                            <div style="display: inline-block; font-size: 16px; font-family: Helvetica; color: rgb(51, 51, 51); line-height: 1.2; pointer-events: none; font-weight: bold; white-space: normal; overflow-wrap: normal;">
+                                Recurrent Paralysis
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="700" y="183" fill="#333333" font-family="Helvetica" font-size="16px" text-anchor="end" font-weight="bold">
+                    Recurrent Paralysis
+                </text>
+            </switch>
+        </g>
+        <g transform="translate(-0.5 -0.5)scale(0.9999999999999999)rotate(90 780.0100000000002 178)">
+            <switch>
+                <foreignObject pointer-events="none" width="101%" height="101%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe flex-end; width: 178px; height: 1px; padding-top: 178px; margin-left: 602px;">
+                        <div data-drawio-colors="color: #333333; " style="box-sizing: border-box; font-size: 0px; text-align: right;">
+                            <div style="display: inline-block; font-size: 16px; font-family: Helvetica; color: rgb(51, 51, 51); line-height: 1.2; pointer-events: none; font-weight: bold; white-space: normal; overflow-wrap: normal;">
+                                Reinke's Edema
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="780" y="183" fill="#333333" font-family="Helvetica" font-size="16px" text-anchor="end" font-weight="bold">
+                    Reinke's Edema
+                </text>
+            </switch>
+        </g>
+        <ellipse cx="300.01" cy="205" rx="19.999999999999996" ry="19.999999999999996" fill="#de324c" stroke="none" pointer-events="none"/>
+        <ellipse cx="380.01" cy="205" rx="19.999999999999996" ry="19.999999999999996" fill="#f4895f" stroke="none" pointer-events="none"/>
+        <ellipse cx="460.01" cy="205" rx="19.999999999999996" ry="19.999999999999996" fill="#f8e16f" stroke="none" pointer-events="none"/>
+        <ellipse cx="540.01" cy="205" rx="19.999999999999996" ry="19.999999999999996" fill="#95cf92" stroke="none" pointer-events="none"/>
+        <ellipse cx="620.01" cy="205" rx="19.999999999999996" ry="19.999999999999996" fill="#369acc" stroke="none" pointer-events="none"/>
+        <ellipse cx="700.01" cy="205" rx="19.999999999999996" ry="19.999999999999996" fill="#9656a2" stroke="none" pointer-events="none"/>
+        <ellipse cx="780.01" cy="205" rx="19.999999999999996" ry="19.999999999999996" fill="#cbabd1" stroke="none" pointer-events="none"/>
+        <ellipse cx="740" cy="405" rx="19.999999999999996" ry="19.999999999999996" fill="#b3b3b3" stroke="none" pointer-events="none"/>
+        <g transform="translate(-0.5 -0.5)scale(0.9999999999999999)">
+            <switch>
+                <foreignObject pointer-events="none" width="101%" height="101%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 38px; height: 1px; padding-top: 405px; margin-left: 721px;">
+                        <div data-drawio-colors="color: #ffffff; " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+                            <div style="display: inline-block; font-size: 18px; font-family: Helvetica; color: rgb(255, 255, 255); line-height: 1.2; pointer-events: none; white-space: normal; overflow-wrap: normal;">
+                                c.2
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="740" y="410" fill="#ffffff" font-family="Helvetica" font-size="18px" text-anchor="middle">
+                    c.2
+                </text>
+            </switch>
+        </g>
+        <ellipse cx="820" cy="405" rx="19.999999999999996" ry="19.999999999999996" fill="#b3b3b3" stroke="none" pointer-events="none"/>
+        <g transform="translate(-0.5 -0.5)scale(0.9999999999999999)">
+            <switch>
+                <foreignObject pointer-events="none" width="101%" height="101%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 38px; height: 1px; padding-top: 405px; margin-left: 801px;">
+                        <div data-drawio-colors="color: #ffffff; " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+                            <div style="display: inline-block; font-size: 18px; font-family: Helvetica; color: rgb(255, 255, 255); line-height: 1.2; pointer-events: none; white-space: normal; overflow-wrap: normal;">
+                                c.2
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="820" y="410" fill="#ffffff" font-family="Helvetica" font-size="18px" text-anchor="middle">
+                    c.2
+                </text>
+            </switch>
+        </g>
+        <ellipse cx="900" cy="405" rx="19.999999999999996" ry="19.999999999999996" fill="#b3b3b3" stroke="none" pointer-events="none"/>
+        <g transform="translate(-0.5 -0.5)scale(0.9999999999999999)">
+            <switch>
+                <foreignObject pointer-events="none" width="101%" height="101%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 38px; height: 1px; padding-top: 405px; margin-left: 881px;">
+                        <div data-drawio-colors="color: #ffffff; " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+                            <div style="display: inline-block; font-size: 18px; font-family: Helvetica; color: rgb(255, 255, 255); line-height: 1.2; pointer-events: none; white-space: normal; overflow-wrap: normal;">
+                                c.2
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="900" y="410" fill="#ffffff" font-family="Helvetica" font-size="18px" text-anchor="middle">
+                    c.2
+                </text>
+            </switch>
+        </g>
+        <g transform="translate(-0.5 -0.5)scale(0.9999999999999999)rotate(90 740 432.0000000000002)">
+            <switch>
+                <foreignObject pointer-events="none" width="101%" height="101%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe flex-start; width: 58px; height: 1px; padding-top: 432px; margin-left: 740px;">
+                        <div data-drawio-colors="color: #333333; " style="box-sizing: border-box; font-size: 0px; text-align: left;">
+                            <div style="display: inline-block; font-size: 16px; font-family: Helvetica; color: rgb(51, 51, 51); line-height: 1.2; pointer-events: none; font-weight: bold; white-space: normal; overflow-wrap: normal;">
+                                Functional
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="740" y="437" fill="#333333" font-family="Helvetica" font-size="16px" font-weight="bold">
+                    Function...
+                </text>
+            </switch>
+        </g>
+        <g transform="translate(-0.5 -0.5)scale(0.9999999999999999)rotate(90 820.0050000000001 432.00500000000034)">
+            <switch>
+                <foreignObject pointer-events="none" width="101%" height="101%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe flex-start; width: 129px; height: 1px; padding-top: 432px; margin-left: 820px;">
+                        <div data-drawio-colors="color: #333333; " style="box-sizing: border-box; font-size: 0px; text-align: left;">
+                            <div style="display: inline-block; font-size: 16px; font-family: Helvetica; color: rgb(51, 51, 51); line-height: 1.2; pointer-events: none; font-weight: bold; white-space: normal; overflow-wrap: normal;">
+                                Muscle Tension
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="820" y="437" fill="#333333" font-family="Helvetica" font-size="16px" font-weight="bold">
+                    Muscle Tension
+                </text>
+            </switch>
+        </g>
+        <g transform="translate(-0.5 -0.5)scale(0.9999999999999999)rotate(90 900 432.0000000000002)">
+            <switch>
+                <foreignObject pointer-events="none" width="101%" height="101%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe flex-start; width: 58px; height: 1px; padding-top: 432px; margin-left: 900px;">
+                        <div data-drawio-colors="color: #333333; " style="box-sizing: border-box; font-size: 0px; text-align: left;">
+                            <div style="display: inline-block; font-size: 16px; font-family: Helvetica; color: rgb(51, 51, 51); line-height: 1.2; pointer-events: none; font-weight: bold; white-space: normal; overflow-wrap: normal;">
+                                Organic Inflammatory
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="900" y="437" fill="#333333" font-family="Helvetica" font-size="16px" font-weight="bold">
+                    Organic...
+                </text>
+            </switch>
+        </g>
+        <g transform="translate(-0.5 -0.5)scale(0.9999999999999999)rotate(90 980 432.0000000000002)">
+            <switch>
+                <foreignObject pointer-events="none" width="101%" height="101%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe flex-start; width: 143px; height: 1px; padding-top: 432px; margin-left: 980px;">
+                        <div data-drawio-colors="color: #333333; " style="box-sizing: border-box; font-size: 0px; text-align: left;">
+                            <div style="display: inline-block; font-size: 16px; font-family: Helvetica; color: rgb(51, 51, 51); line-height: 1.2; pointer-events: none; font-weight: bold; white-space: normal; overflow-wrap: normal;">
+                                Organic
+                                <br/>
+                                Neuro Muscular
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="980" y="437" fill="#333333" font-family="Helvetica" font-size="16px" font-weight="bold">
+                    Organic...
+                </text>
+            </switch>
+        </g>
+        <ellipse cx="980" cy="405" rx="19.999999999999996" ry="19.999999999999996" fill="#b3b3b3" stroke="none" pointer-events="none"/>
+        <g transform="translate(-0.5 -0.5)scale(0.9999999999999999)">
+            <switch>
+                <foreignObject pointer-events="none" width="101%" height="101%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 38px; height: 1px; padding-top: 405px; margin-left: 961px;">
+                        <div data-drawio-colors="color: #ffffff; " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+                            <div style="display: inline-block; font-size: 18px; font-family: Helvetica; color: rgb(255, 255, 255); line-height: 1.2; pointer-events: none; white-space: normal; overflow-wrap: normal;">
+                                c.2
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="980" y="410" fill="#ffffff" font-family="Helvetica" font-size="18px" text-anchor="middle">
+                    c.2
+                </text>
+            </switch>
+        </g>
+        <ellipse cx="1060" cy="405" rx="19.999999999999996" ry="19.999999999999996" fill="#b3b3b3" stroke="none" pointer-events="none"/>
+        <g transform="translate(-0.5 -0.5)scale(0.9999999999999999)">
+            <switch>
+                <foreignObject pointer-events="none" width="101%" height="101%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 38px; height: 1px; padding-top: 405px; margin-left: 1041px;">
+                        <div data-drawio-colors="color: #ffffff; " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+                            <div style="display: inline-block; font-size: 18px; font-family: Helvetica; color: rgb(255, 255, 255); line-height: 1.2; pointer-events: none; white-space: normal; overflow-wrap: normal;">
+                                c.2
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="1060" y="410" fill="#ffffff" font-family="Helvetica" font-size="18px" text-anchor="middle">
+                    c.2
+                </text>
+            </switch>
+        </g>
+        <g transform="translate(-0.5 -0.5)scale(0.9999999999999999)rotate(90 1060 432.0000000000002)">
+            <switch>
+                <foreignObject pointer-events="none" width="101%" height="101%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe flex-start; width: 143px; height: 1px; padding-top: 432px; margin-left: 1060px;">
+                        <div data-drawio-colors="color: #333333; " style="box-sizing: border-box; font-size: 0px; text-align: left;">
+                            <div style="display: inline-block; font-size: 16px; font-family: Helvetica; color: rgb(51, 51, 51); line-height: 1.2; pointer-events: none; font-weight: bold; white-space: normal; overflow-wrap: normal;">
+                                Organic
+                                <br/>
+                                Structural
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="1060" y="437" fill="#333333" font-family="Helvetica" font-size="16px" font-weight="bold">
+                    Organic...
+                </text>
+            </switch>
+        </g>
+        <ellipse cx="745" cy="655" rx="19.999999999999996" ry="19.999999999999996" fill="#b3b3b3" stroke="none" pointer-events="none"/>
+        <g transform="translate(-0.5 -0.5)scale(0.9999999999999999)">
+            <switch>
+                <foreignObject pointer-events="none" width="101%" height="101%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 38px; height: 1px; padding-top: 655px; margin-left: 726px;">
+                        <div data-drawio-colors="color: #ffffff; " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+                            <div style="display: inline-block; font-size: 18px; font-family: Helvetica; color: rgb(255, 255, 255); line-height: 1.2; pointer-events: none; white-space: normal; overflow-wrap: normal;">
+                                c.1
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="745" y="660" fill="#ffffff" font-family="Helvetica" font-size="18px" text-anchor="middle">
+                    c.1
+                </text>
+            </switch>
+        </g>
+        <ellipse cx="825" cy="655" rx="19.999999999999996" ry="19.999999999999996" fill="#b3b3b3" stroke="none" pointer-events="none"/>
+        <g transform="translate(-0.5 -0.5)scale(0.9999999999999999)">
+            <switch>
+                <foreignObject pointer-events="none" width="101%" height="101%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 38px; height: 1px; padding-top: 655px; margin-left: 806px;">
+                        <div data-drawio-colors="color: #ffffff; " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+                            <div style="display: inline-block; font-size: 18px; font-family: Helvetica; color: rgb(255, 255, 255); line-height: 1.2; pointer-events: none; white-space: normal; overflow-wrap: normal;">
+                                c.1
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="825" y="660" fill="#ffffff" font-family="Helvetica" font-size="18px" text-anchor="middle">
+                    c.1
+                </text>
+            </switch>
+        </g>
+        <ellipse cx="905" cy="655" rx="19.999999999999996" ry="19.999999999999996" fill="#b3b3b3" stroke="none" pointer-events="none"/>
+        <g transform="translate(-0.5 -0.5)scale(0.9999999999999999)">
+            <switch>
+                <foreignObject pointer-events="none" width="101%" height="101%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 38px; height: 1px; padding-top: 655px; margin-left: 886px;">
+                        <div data-drawio-colors="color: #ffffff; " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+                            <div style="display: inline-block; font-size: 18px; font-family: Helvetica; color: rgb(255, 255, 255); line-height: 1.2; pointer-events: none; white-space: normal; overflow-wrap: normal;">
+                                c.1
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="905" y="660" fill="#ffffff" font-family="Helvetica" font-size="18px" text-anchor="middle">
+                    c.1
+                </text>
+            </switch>
+        </g>
+        <g transform="translate(-0.5 -0.5)scale(0.9999999999999999)rotate(90 745 682)">
+            <switch>
+                <foreignObject pointer-events="none" width="101%" height="101%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe flex-start; width: 58px; height: 1px; padding-top: 682px; margin-left: 745px;">
+                        <div data-drawio-colors="color: #333333; " style="box-sizing: border-box; font-size: 0px; text-align: left;">
+                            <div style="display: inline-block; font-size: 16px; font-family: Helvetica; color: rgb(51, 51, 51); line-height: 1.2; pointer-events: none; font-weight: bold; white-space: normal; overflow-wrap: normal;">
+                                Functional
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="745" y="687" fill="#333333" font-family="Helvetica" font-size="16px" font-weight="bold">
+                    Function...
+                </text>
+            </switch>
+        </g>
+        <g transform="translate(-0.5 -0.5)scale(0.9999999999999999)rotate(90 825.0050000000001 682.0050000000001)">
+            <switch>
+                <foreignObject pointer-events="none" width="101%" height="101%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe flex-start; width: 129px; height: 1px; padding-top: 682px; margin-left: 825px;">
+                        <div data-drawio-colors="color: #333333; " style="box-sizing: border-box; font-size: 0px; text-align: left;">
+                            <div style="display: inline-block; font-size: 16px; font-family: Helvetica; color: rgb(51, 51, 51); line-height: 1.2; pointer-events: none; font-weight: bold; white-space: normal; overflow-wrap: normal;">
+                                Muscle Tension
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="825" y="687" fill="#333333" font-family="Helvetica" font-size="16px" font-weight="bold">
+                    Muscle Tension
+                </text>
+            </switch>
+        </g>
+        <g transform="translate(-0.5 -0.5)scale(0.9999999999999999)rotate(90 905 682)">
+            <switch>
+                <foreignObject pointer-events="none" width="101%" height="101%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe flex-start; width: 58px; height: 1px; padding-top: 682px; margin-left: 905px;">
+                        <div data-drawio-colors="color: #333333; " style="box-sizing: border-box; font-size: 0px; text-align: left;">
+                            <div style="display: inline-block; font-size: 16px; font-family: Helvetica; color: rgb(51, 51, 51); line-height: 1.2; pointer-events: none; font-weight: bold; white-space: normal; overflow-wrap: normal;">
+                                Organic
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="905" y="687" fill="#333333" font-family="Helvetica" font-size="16px" font-weight="bold">
+                    Organic
+                </text>
+            </switch>
+        </g>
+        <ellipse cx="42" cy="655" rx="19.999999999999996" ry="19.999999999999996" fill="#b3b3b3" stroke="none" pointer-events="none"/>
+        <g transform="translate(-0.5 -0.5)scale(0.9999999999999999)">
+            <switch>
+                <foreignObject pointer-events="none" width="101%" height="101%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 38px; height: 1px; padding-top: 655px; margin-left: 23px;">
+                        <div data-drawio-colors="color: #ffffff; " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+                            <div style="display: inline-block; font-size: 18px; font-family: Helvetica; color: rgb(255, 255, 255); line-height: 1.2; pointer-events: none; white-space: normal; overflow-wrap: normal;">
+                                a
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="42" y="660" fill="#ffffff" font-family="Helvetica" font-size="18px" text-anchor="middle">
+                    a
+                </text>
+            </switch>
+        </g>
+        <ellipse cx="122" cy="655" rx="19.999999999999996" ry="19.999999999999996" fill="#b3b3b3" stroke="none" pointer-events="none"/>
+        <g transform="translate(-0.5 -0.5)scale(0.9999999999999999)">
+            <switch>
+                <foreignObject pointer-events="none" width="101%" height="101%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 38px; height: 1px; padding-top: 655px; margin-left: 103px;">
+                        <div data-drawio-colors="color: #ffffff; " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+                            <div style="display: inline-block; font-size: 18px; font-family: Helvetica; color: rgb(255, 255, 255); line-height: 1.2; pointer-events: none; white-space: normal; overflow-wrap: normal;">
+                                a
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="122" y="660" fill="#ffffff" font-family="Helvetica" font-size="18px" text-anchor="middle">
+                    a
+                </text>
+            </switch>
+        </g>
+        <ellipse cx="202" cy="655" rx="19.999999999999996" ry="19.999999999999996" fill="#b3b3b3" stroke="none" pointer-events="none"/>
+        <g transform="translate(-0.5 -0.5)scale(0.9999999999999999)">
+            <switch>
+                <foreignObject pointer-events="none" width="101%" height="101%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 38px; height: 1px; padding-top: 655px; margin-left: 183px;">
+                        <div data-drawio-colors="color: #ffffff; " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+                            <div style="display: inline-block; font-size: 18px; font-family: Helvetica; color: rgb(255, 255, 255); line-height: 1.2; pointer-events: none; white-space: normal; overflow-wrap: normal;">
+                                a
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="202" y="660" fill="#ffffff" font-family="Helvetica" font-size="18px" text-anchor="middle">
+                    a
+                </text>
+            </switch>
+        </g>
+        <g transform="translate(-0.5 -0.5)scale(0.9999999999999999)rotate(90 42 682)">
+            <switch>
+                <foreignObject pointer-events="none" width="101%" height="101%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe flex-start; width: 58px; height: 1px; padding-top: 682px; margin-left: 42px;">
+                        <div data-drawio-colors="color: #333333; " style="box-sizing: border-box; font-size: 0px; text-align: left;">
+                            <div style="display: inline-block; font-size: 16px; font-family: Helvetica; color: rgb(51, 51, 51); line-height: 1.2; pointer-events: none; font-weight: bold; white-space: normal; overflow-wrap: normal;">
+                                auto A
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="42" y="687" fill="#333333" font-family="Helvetica" font-size="16px" font-weight="bold">
+                    auto A
+                </text>
+            </switch>
+        </g>
+        <g transform="translate(-0.5 -0.5)scale(0.9999999999999999)rotate(90 122 682)">
+            <switch>
+                <foreignObject pointer-events="none" width="101%" height="101%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe flex-start; width: 68px; height: 1px; padding-top: 682px; margin-left: 122px;">
+                        <div data-drawio-colors="color: #333333; " style="box-sizing: border-box; font-size: 0px; text-align: left;">
+                            <div style="display: inline-block; font-size: 16px; font-family: Helvetica; color: rgb(51, 51, 51); line-height: 1.2; pointer-events: none; font-weight: bold; white-space: normal; overflow-wrap: normal;">
+                                auto B
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="122" y="687" fill="#333333" font-family="Helvetica" font-size="16px" font-weight="bold">
+                    auto B
+                </text>
+            </switch>
+        </g>
+        <g transform="translate(-0.5 -0.5)scale(0.9999999999999999)rotate(90 202 682)">
+            <switch>
+                <foreignObject pointer-events="none" width="101%" height="101%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe flex-start; width: 58px; height: 1px; padding-top: 682px; margin-left: 202px;">
+                        <div data-drawio-colors="color: #333333; " style="box-sizing: border-box; font-size: 0px; text-align: left;">
+                            <div style="display: inline-block; font-size: 16px; font-family: Helvetica; color: rgb(51, 51, 51); line-height: 1.2; pointer-events: none; font-weight: bold; white-space: normal; overflow-wrap: normal;">
+                                auto C
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="202" y="687" fill="#333333" font-family="Helvetica" font-size="16px" font-weight="bold">
+                    auto C
+                </text>
+            </switch>
+        </g>
+        <ellipse cx="394" cy="655" rx="19.999999999999996" ry="19.999999999999996" fill="#b3b3b3" stroke="none" pointer-events="none"/>
+        <g transform="translate(-0.5 -0.5)scale(0.9999999999999999)">
+            <switch>
+                <foreignObject pointer-events="none" width="101%" height="101%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 38px; height: 1px; padding-top: 655px; margin-left: 375px;">
+                        <div data-drawio-colors="color: #ffffff; " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+                            <div style="display: inline-block; font-size: 18px; font-family: Helvetica; color: rgb(255, 255, 255); line-height: 1.2; pointer-events: none; white-space: normal; overflow-wrap: normal;">
+                                b
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="394" y="660" fill="#ffffff" font-family="Helvetica" font-size="18px" text-anchor="middle">
+                    b
+                </text>
+            </switch>
+        </g>
+        <ellipse cx="474" cy="655" rx="19.999999999999996" ry="19.999999999999996" fill="#b3b3b3" stroke="none" pointer-events="none"/>
+        <g transform="translate(-0.5 -0.5)scale(0.9999999999999999)">
+            <switch>
+                <foreignObject pointer-events="none" width="101%" height="101%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 38px; height: 1px; padding-top: 655px; margin-left: 455px;">
+                        <div data-drawio-colors="color: #ffffff; " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+                            <div style="display: inline-block; font-size: 18px; font-family: Helvetica; color: rgb(255, 255, 255); line-height: 1.2; pointer-events: none; white-space: normal; overflow-wrap: normal;">
+                                b
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="474" y="660" fill="#ffffff" font-family="Helvetica" font-size="18px" text-anchor="middle">
+                    b
+                </text>
+            </switch>
+        </g>
+        <ellipse cx="554" cy="655" rx="19.999999999999996" ry="19.999999999999996" fill="#b3b3b3" stroke="none" pointer-events="none"/>
+        <g transform="translate(-0.5 -0.5)scale(0.9999999999999999)">
+            <switch>
+                <foreignObject pointer-events="none" width="101%" height="101%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 38px; height: 1px; padding-top: 655px; margin-left: 535px;">
+                        <div data-drawio-colors="color: #ffffff; " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+                            <div style="display: inline-block; font-size: 18px; font-family: Helvetica; color: rgb(255, 255, 255); line-height: 1.2; pointer-events: none; white-space: normal; overflow-wrap: normal;">
+                                b
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="554" y="660" fill="#ffffff" font-family="Helvetica" font-size="18px" text-anchor="middle">
+                    b
+                </text>
+            </switch>
+        </g>
+        <g transform="translate(-0.5 -0.5)scale(0.9999999999999999)rotate(90 394 682)">
+            <switch>
+                <foreignObject pointer-events="none" width="101%" height="101%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe flex-start; width: 58px; height: 1px; padding-top: 682px; margin-left: 394px;">
+                        <div data-drawio-colors="color: #333333; " style="box-sizing: border-box; font-size: 0px; text-align: left;">
+                            <div style="display: inline-block; font-size: 16px; font-family: Helvetica; color: rgb(51, 51, 51); line-height: 1.2; pointer-events: none; font-weight: bold; white-space: normal; overflow-wrap: normal;">
+                                Functional
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="394" y="687" fill="#333333" font-family="Helvetica" font-size="16px" font-weight="bold">
+                    Function...
+                </text>
+            </switch>
+        </g>
+        <g transform="translate(-0.5 -0.5)scale(0.9999999999999999)rotate(90 474 682)">
+            <switch>
+                <foreignObject pointer-events="none" width="101%" height="101%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe flex-start; width: 68px; height: 1px; padding-top: 682px; margin-left: 474px;">
+                        <div data-drawio-colors="color: #333333; " style="box-sizing: border-box; font-size: 0px; text-align: left;">
+                            <div style="display: inline-block; font-size: 16px; font-family: Helvetica; color: rgb(51, 51, 51); line-height: 1.2; pointer-events: none; font-weight: bold; white-space: normal; overflow-wrap: normal;">
+                                Organic
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="474" y="687" fill="#333333" font-family="Helvetica" font-size="16px" font-weight="bold">
+                    Organic
+                </text>
+            </switch>
+        </g>
+        <g transform="translate(-0.5 -0.5)scale(0.9999999999999999)rotate(90 554 682)">
+            <switch>
+                <foreignObject pointer-events="none" width="101%" height="101%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe flex-start; width: 148px; height: 1px; padding-top: 682px; margin-left: 554px;">
+                        <div data-drawio-colors="color: #333333; " style="box-sizing: border-box; font-size: 0px; text-align: left;">
+                            <div style="display: inline-block; font-size: 16px; font-family: Helvetica; color: rgb(51, 51, 51); line-height: 1.2; pointer-events: none; font-weight: bold; white-space: normal; overflow-wrap: normal;">
+                                Organofunctional
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="554" y="687" fill="#333333" font-family="Helvetica" font-size="16px" font-weight="bold">
+                    Organofunctional
+                </text>
+            </switch>
+        </g>
+        <g transform="translate(-0.5 -0.5)scale(0.9999999999999999)">
+            <switch>
+                <foreignObject pointer-events="none" width="101%" height="101%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe flex-start; width: 318px; height: 1px; padding-top: 929px; margin-left: 354px;">
+                        <div data-drawio-colors="color: #333333; " style="box-sizing: border-box; font-size: 0px; text-align: left;">
+                            <div style="display: inline-block; font-size: 16px; font-family: Helvetica; color: rgb(51, 51, 51); line-height: 1.2; pointer-events: none; white-space: normal; overflow-wrap: normal;">
+                                <div style="color: rgb(204, 204, 204); background-color: rgb(31, 31, 31); font-family: Consolas, &quot;Courier New&quot;, monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+                                    <div>
+                                        <span style="color: #569cd6;">
+                                            functional_dysphonia
+                                        </span>
+                                        <span style="color: #cccccc;">
+                                            :
+                                        </span>
+                                        <span style="color: #ce9178;">
+                                            functional
+                                        </span>
+                                    </div>
+                                    <div>
+                                        <span style="color: #569cd6;">
+                                            hyperfunctional_dysphonia
+                                        </span>
+                                        <span style="color: #cccccc;">
+                                            :
+                                        </span>
+                                        <span style="color: #ce9178;">
+                                            functional
+                                        </span>
+                                    </div>
+                                    <div>
+                                        <span style="color: #569cd6;">
+                                            laryngitis
+                                        </span>
+                                        <span style="color: #cccccc;">
+                                            :
+                                        </span>
+                                        <span style="color: #ce9178;">
+                                            organic
+                                        </span>
+                                    </div>
+                                    <div>
+                                        <span style="color: #569cd6;">
+                                            leukoplakia
+                                        </span>
+                                        <span style="color: #cccccc;">
+                                            :
+                                        </span>
+                                        <span style="color: #ce9178;">
+                                            organofunctional
+                                        </span>
+                                    </div>
+                                    <div>
+                                        <span style="color: #569cd6;">
+                                            psychogenic_dysphonia
+                                        </span>
+                                        <span style="color: #cccccc;">
+                                            :
+                                        </span>
+                                        <span style="color: #ce9178;">
+                                            functional
+                                        </span>
+                                    </div>
+                                    <div>
+                                        <span style="color: #569cd6;">
+                                            recurrent_paralysis
+                                        </span>
+                                        <span style="color: #cccccc;">
+                                            :
+                                        </span>
+                                        <span style="color: #ce9178;">
+                                            organic
+                                        </span>
+                                    </div>
+                                    <div>
+                                        <span style="color: #569cd6;">
+                                            reinkes_edema
+                                        </span>
+                                        <span style="color: #cccccc;">
+                                            :
+                                        </span>
+                                        <span style="color: #ce9178;">
+                                            organofunctional
+                                        </span>
+                                    </div>
+                                    <div>
+                                        <span style="color: #569cd6;">
+                                            vocal_fold_polyp
+                                        </span>
+                                        <span style="color: #cccccc;">
+                                            :
+                                        </span>
+                                        <span style="color: #ce9178;">
+                                            organofunctional
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="354" y="945" fill="#333333" font-family="Helvetica" font-size="16px">
+                    functional_dysphonia: functional...
+                </text>
+            </switch>
+        </g>
+        <path d="M 220.01 225 L 389.32 623.98" fill="none" stroke="#6f1926" stroke-opacity="0.4" stroke-width="4" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 392.25 630.88 L 383.74 623.63 L 389.32 623.98 L 392.95 619.72 Z" fill-opacity="0.4" fill="#6f1926" stroke="#6f1926" stroke-opacity="0.4" stroke-width="4" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 300.01 225 L 391.32 623.33" fill="none" stroke="#de324c" stroke-opacity="0.4" stroke-width="4" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 393 630.64 L 385.89 622.01 L 391.32 623.33 L 395.64 619.78 Z" fill-opacity="0.4" fill="#de324c" stroke="#de324c" stroke-opacity="0.4" stroke-width="4" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 380.01 225 L 393.59 623.03" fill="none" stroke="#f4895f" stroke-opacity="0.4" stroke-width="4" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 393.85 630.53 L 388.51 620.71 L 393.59 623.03 L 398.5 620.37 Z" fill-opacity="0.4" fill="#f4895f" stroke="#f4895f" stroke-opacity="0.4" stroke-width="4" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 460.01 225 L 473.59 623.03" fill="none" stroke="#f8e16f" stroke-opacity="0.4" stroke-width="4" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 473.85 630.53 L 468.51 620.71 L 473.59 623.03 L 478.5 620.37 Z" fill-opacity="0.4" fill="#f8e16f" stroke="#f8e16f" stroke-opacity="0.4" stroke-width="4" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 540.01 225 L 553.59 623.03" fill="none" stroke="#95cf92" stroke-opacity="0.4" stroke-width="4" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 553.85 630.53 L 548.51 620.71 L 553.59 623.03 L 558.5 620.37 Z" fill-opacity="0.4" fill="#95cf92" stroke="#95cf92" stroke-opacity="0.4" stroke-width="4" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 700.01 225 L 479.78 624.52" fill="none" stroke="#9656a2" stroke-opacity="0.4" stroke-width="4" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 476.16 631.08 L 476.61 619.91 L 479.78 624.52 L 485.37 624.74 Z" fill-opacity="0.4" fill="#9656a2" stroke="#9656a2" stroke-opacity="0.4" stroke-width="4" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 620.01 225 L 555.9 623.18" fill="none" stroke="#369acc" stroke-opacity="0.4" stroke-width="4" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 554.71 630.58 L 551.36 619.92 L 555.9 623.18 L 561.24 621.51 Z" fill-opacity="0.4" fill="#369acc" stroke="#369acc" stroke-opacity="0.4" stroke-width="4" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 780.01 225 L 559.78 624.52" fill="none" stroke="#cbabd1" stroke-opacity="0.4" stroke-width="4" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 556.16 631.08 L 556.61 619.91 L 559.78 624.52 L 565.37 624.74 Z" fill-opacity="0.4" fill="#cbabd1" stroke="#cbabd1" stroke-opacity="0.4" stroke-width="4" stroke-miterlimit="10" pointer-events="none"/>
+        <g transform="translate(-0.5 -0.5)scale(0.9999999999999999)">
+            <switch>
+                <foreignObject pointer-events="none" width="101%" height="101%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe flex-start; width: 248px; height: 1px; padding-top: 923px; margin-left: 2px;">
+                        <div data-drawio-colors="color: #333333; " style="box-sizing: border-box; font-size: 0px; text-align: left;">
+                            <div style="display: inline-block; font-size: 16px; font-family: Helvetica; color: rgb(51, 51, 51); line-height: 1.2; pointer-events: none; white-space: normal; overflow-wrap: normal;">
+                                <div style="color: rgb(204, 204, 204); background-color: rgb(31, 31, 31); font-family: Consolas, &quot;Courier New&quot;, monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+                                    <div>
+                                        <span style="color: #569cd6;">
+                                            functional_dysphonia
+                                        </span>
+                                        <span style="color: #cccccc;">
+                                            :
+                                        </span>
+                                        <span style="color: #ce9178;">
+                                            A
+                                        </span>
+                                    </div>
+                                    <div>
+                                        <span style="color: #569cd6;">
+                                            hyperfunctional_dysphonia
+                                        </span>
+                                        <span style="color: #cccccc;">
+                                            :
+                                        </span>
+                                        <span style="color: #ce9178;">
+                                            A
+                                        </span>
+                                    </div>
+                                    <div>
+                                        <span style="color: #569cd6;">
+                                            laryngitis
+                                        </span>
+                                        <span style="color: #cccccc;">
+                                            :
+                                        </span>
+                                        <span style="color: #ce9178;">
+                                            B
+                                        </span>
+                                    </div>
+                                    <div>
+                                        <span style="color: #569cd6;">
+                                            leukoplakia
+                                        </span>
+                                        <span style="color: #cccccc;">
+                                            :
+                                        </span>
+                                        <span style="color: #ce9178;">
+                                            B
+                                        </span>
+                                    </div>
+                                    <div>
+                                        <span style="color: #569cd6;">
+                                            psychogenic_dysphonia
+                                        </span>
+                                        <span style="color: #cccccc;">
+                                            :
+                                        </span>
+                                        <span style="color: #ce9178;">
+                                            A
+                                        </span>
+                                    </div>
+                                    <div>
+                                        <span style="color: #569cd6;">
+                                            recurrent_paralysis
+                                        </span>
+                                        <span style="color: #cccccc;">
+                                            :
+                                        </span>
+                                        <span style="color: #ce9178;">
+                                            C
+                                        </span>
+                                    </div>
+                                    <div>
+                                        <span style="color: #569cd6;">
+                                            reinkes_edema
+                                        </span>
+                                        <span style="color: #cccccc;">
+                                            :
+                                        </span>
+                                        <span style="color: #ce9178;">
+                                            C
+                                        </span>
+                                    </div>
+                                    <div>
+                                        <span style="color: #569cd6;">
+                                            vocal_fold_polyp
+                                        </span>
+                                        <span style="color: #cccccc;">
+                                            :
+                                        </span>
+                                        <span style="color: #ce9178;">
+                                            B
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="2" y="939" fill="#333333" font-family="Helvetica" font-size="16px">
+                    functional_dysphonia: A...
+                </text>
+            </switch>
+        </g>
+        <path d="M 220.01 225 L 46.77 624.02" fill="none" stroke="#6f1926" stroke-opacity="0.4" stroke-width="4" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 43.78 630.9 L 43.18 619.73 L 46.77 624.02 L 52.35 623.72 Z" fill-opacity="0.4" fill="#6f1926" stroke="#6f1926" stroke-opacity="0.4" stroke-width="4" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 300.01 225 L 48.38 624.87" fill="none" stroke="#de324c" stroke-opacity="0.4" stroke-width="4" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 44.38 631.22 L 45.48 620.09 L 48.38 624.87 L 53.94 625.41 Z" fill-opacity="0.4" fill="#de324c" stroke="#de324c" stroke-opacity="0.4" stroke-width="4" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 380.01 225 L 49.62 625.76" fill="none" stroke="#f4895f" stroke-opacity="0.4" stroke-width="4" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 44.84 631.55 L 47.35 620.65 L 49.62 625.76 L 55.06 627.01 Z" fill-opacity="0.4" fill="#f4895f" stroke="#f4895f" stroke-opacity="0.4" stroke-width="4" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 460.01 225 L 129.62 625.76" fill="none" stroke="#f8e16f" stroke-opacity="0.4" stroke-width="4" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 124.84 631.55 L 127.35 620.65 L 129.62 625.76 L 135.06 627.01 Z" fill-opacity="0.4" fill="#f8e16f" stroke="#f8e16f" stroke-opacity="0.4" stroke-width="4" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 540.01 225 L 130.55 626.62" fill="none" stroke="#95cf92" stroke-opacity="0.4" stroke-width="4" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 125.19 631.87 L 128.83 621.3 L 130.55 626.62 L 135.83 628.44 Z" fill-opacity="0.4" fill="#95cf92" stroke="#95cf92" stroke-opacity="0.4" stroke-width="4" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 620.01 225 L 131.24 627.39" fill="none" stroke="#369acc" stroke-opacity="0.4" stroke-width="4" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 125.45 632.16 L 129.99 621.94 L 131.24 627.39 L 136.35 629.66 Z" fill-opacity="0.4" fill="#369acc" stroke="#369acc" stroke-opacity="0.4" stroke-width="4" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 700.01 225 L 211.24 627.39" fill="none" stroke="#9656a2" stroke-opacity="0.4" stroke-width="4" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 205.45 632.16 L 209.99 621.94 L 211.24 627.39 L 216.35 629.66 Z" fill-opacity="0.4" fill="#9656a2" stroke="#9656a2" stroke-opacity="0.4" stroke-width="4" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 780.01 225 L 211.76 628.07" fill="none" stroke="#cbabd1" stroke-opacity="0.4" stroke-width="4" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 205.65 632.41 L 210.91 622.55 L 211.76 628.07 L 216.7 630.71 Z" fill-opacity="0.4" fill="#cbabd1" stroke="#cbabd1" stroke-opacity="0.4" stroke-width="4" stroke-miterlimit="10" pointer-events="none"/>
+    </g>
+    <switch>
+        <g requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"/>
+        <a transform="translate(0,-5)" xlink:href="https://www.diagrams.net/doc/faq/svg-export-text-problems" target="_blank">
+            <text text-anchor="middle" font-size="10px" x="50%" y="100%">
+                Text is not SVG - cannot display
+            </text>
+        </a>
+    </switch>
+</svg>
