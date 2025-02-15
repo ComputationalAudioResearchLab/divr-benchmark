@@ -416,17 +416,17 @@ class Reporter:
                 palette='GnBu',
                 legend=idx == total_groups-1,
             )
-            ax[idx].set_ylabel(task_key, fontsize=16)
+            ax[idx].set_ylabel(task_key, fontsize=18)
             ax[idx].set_yticklabels(ax[idx].get_yticklabels(), fontsize=14)
             ax[idx].set_xlabel(None)
             ax[idx].set_ylim(35, 75)
             for c in ax[idx].containers:
-                ax[idx].bar_label(c, fontsize=10)
-        ax[-1].set_xticklabels(ax[idx].get_xticklabels(), fontsize=14)
+                ax[idx].bar_label(c, fontsize=14)
+        ax[-1].set_xticklabels(ax[idx].get_xticklabels(), fontsize=18)
         sns.move_legend(
             ax[-1], "lower center",
-            bbox_to_anchor=(.5, -0.50),
-            ncol=4, title=None, frameon=False, fontsize=14,
+            bbox_to_anchor=(.5, -0.6),
+            ncol=4, title=None, frameon=False, fontsize=18,
         )
         fig.suptitle("Balanced accuracy (%) for classification systems", fontsize=20)
         fig_path = f"{self.__results_path}/superset_balanced_acc_over_tasks.png"
@@ -441,12 +441,14 @@ class Reporter:
         non_agg_cols = ['task_key', 'feature', 'exp_key', 'category']
         agg_cols = [c for c in df.columns if c not in non_agg_cols]
         def prep(group: pd.Series) -> str:
-            mean = group.mean()*100
-            std = group.std()*100
-            return f"{mean:.2f}±{std:.2f}"
+            mean = round((group.mean()*100))
+            std = round((group.std()*100))
+            if mean < 0:
+                return f"\\textcolor{{red}}{{${mean}\pm{std}$}}"
+            else:
+                return f"${mean}\pm{std}$"
         data = df.groupby(by='category')[agg_cols].agg(prep)
         data = data.T[[
-            'CaRLab_2025',
             'daSilvaMoura_2024',
             'USVAC_2025_1',
             'USVAC_2025_2',
