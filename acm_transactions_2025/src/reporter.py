@@ -202,7 +202,15 @@ class Reporter:
         G = nx.DiGraph()
         for row_idx, row in all_edges.sort_values(by=['from', 'weight']).iterrows():
             G.add_edge(row['from'], row['to'], weight=row['weight'], label=row['label'])
-        fig, ax = plt.subplots(2, 1, figsize=(10, 18), constrained_layout=True, sharex=False)
+        fig, ax = plt.subplots(
+            2, 1,
+            figsize=(10, 18),
+            constrained_layout=True,
+            sharex=False,
+            gridspec_kw={
+                "height_ratios": [1, 1.5],
+            },
+        )
         pos = nx.circular_layout(G=G)
         sns.heatmap(
             data=confusion,
@@ -218,12 +226,14 @@ class Reporter:
         ax[0].set_xlabel("Predicted", fontsize=18)
         ax[0].set_title("(a) Confusion Matrix of best model", fontsize=20)
         cbar = plt.colormaps.get_cmap('Blues')
+        ax[1].set_position([0.1, 0.1, 0.8, 0.35])
         edges = G.edges()
         colors = [cbar(G[u][v]['weight']**2) for u,v in edges]
         # weights = [(G[u][v]['weight']**8) for u,v in edges]
         # weights = [1 if (G[u][v]['weight'] == 1) else 0 for u,v in edges]
-        weights = [(2 if (G[u][v]['weight']) > 0.9 else G[u][v]['weight']**2) for u,v in edges]
+        weights = [(3 if (G[u][v]['weight']) > 0.9 else G[u][v]['weight']**2) for u,v in edges]
         # weights = [1 for u,v in edges]
+        ax[1].margins(0.14)
         nx.draw(
             G=G,
             pos=pos,
@@ -232,9 +242,12 @@ class Reporter:
             edge_color=colors,
             width=weights,
             with_labels=True,
+            font_size=14,
+            node_size=1600,
+            node_color="#CBF1F5", 
         )
         ax[1].set_title("(b) Label confusion frequency network", fontsize=20)
-        
+        fig.add_artist(plt.Line2D([0, 1], [0.475, 0.475], color="#393E46", linewidth=1))
         fig_path = f"{self.__results_path}/autogen_hierarchy.png"
         fig.savefig(fig_path, bbox_inches='tight')
         print(f"Saved at {fig_path}")
