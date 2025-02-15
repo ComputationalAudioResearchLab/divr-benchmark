@@ -241,6 +241,7 @@ class Analyser:
                 "max_dist",
             ]
         ]
+        df.to_csv(f"{self.__results_path}/autogen_hierarchy_dists.csv", index=False)
         log.write(df.to_string())
         log.close()
 

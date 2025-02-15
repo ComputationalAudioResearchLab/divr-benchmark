@@ -1,5 +1,6 @@
 import numpy as np
 import pandas as pd
+import networkx as nx
 import seaborn as sns
 from tqdm import tqdm
 from pathlib import Path
@@ -160,6 +161,83 @@ class Reporter:
                     log.write(repr(dict(zip(labels, np.round(per_class_accuracy, 2)))))
                     log.write(f"\n\t{balanced_accuracy}\n\n")
                 log.write("\n")
+
+    def report_autogen_hierarchy(self):
+        df = pd.read_csv(f"{self.__results_path}/self/unispeechSAT_phrase_4/71.csv")
+        labels, _, _, confusion = self.confusion(
+            actual=df['actual'],
+            predicted=df['predicted'],
+        )
+        print(labels)
+        print(confusion)
+
+        df = pd.read_csv(f"{self.__results_path}/autogen_hierarchy_dists.csv")
+        all_nodes = sorted(set(df['from'].tolist() + df['to'].tolist()))
+        print(all_nodes)
+        edge_weights = (np.arange(1, 8)/7)
+        all_edges = []
+        for node in all_nodes:
+            mask  = (df['from'] == node) | (df['to'] == node)
+            edges = df[mask].sort_values(by=['mean_dist'], ascending=False)
+            edges['weight'] = edge_weights
+            for row_idx, row in edges.iterrows():
+                node_from = row['from']
+                node_to = row['to']
+                if node_to == node:
+                    node_from = row['to']
+                    node_to = row['from']
+                dist_mean = row['mean_dist']
+                dist_std = row['std_dist']
+                weight = row['weight']
+                label = f"{dist_mean:.2f}±{dist_std:.2f}"
+                all_edges += [
+                    (
+                        node_from,
+                        node_to,
+                        weight,
+                        label,
+                    )
+                ]
+        all_edges = pd.DataFrame.from_records(all_edges, columns=['from', 'to', 'weight', 'label'])
+        G = nx.DiGraph()
+        for row_idx, row in all_edges.sort_values(by=['from', 'weight']).iterrows():
+            G.add_edge(row['from'], row['to'], weight=row['weight'], label=row['label'])
+        fig, ax = plt.subplots(2, 1, figsize=(10, 18), constrained_layout=True, sharex=False)
+        pos = nx.circular_layout(G=G)
+        sns.heatmap(
+            data=confusion,
+            cmap="YlGnBu",
+            ax=ax[0],
+            fmt='g',
+            annot=True,
+            annot_kws={"fontsize":16}
+        )
+        ax[0].set_xticklabels(labels, rotation=90, fontsize=15)
+        ax[0].set_yticklabels(labels, rotation=0, fontsize=15)
+        ax[0].set_ylabel("Actual", fontsize=18)
+        ax[0].set_xlabel("Predicted", fontsize=18)
+        ax[0].set_title("(a) Confusion Matrix of best model", fontsize=20)
+        cbar = plt.colormaps.get_cmap('Blues')
+        edges = G.edges()
+        colors = [cbar(G[u][v]['weight']**2) for u,v in edges]
+        # weights = [(G[u][v]['weight']**8) for u,v in edges]
+        # weights = [1 if (G[u][v]['weight'] == 1) else 0 for u,v in edges]
+        weights = [(2 if (G[u][v]['weight']) > 0.9 else G[u][v]['weight']**2) for u,v in edges]
+        # weights = [1 for u,v in edges]
+        nx.draw(
+            G=G,
+            pos=pos,
+            ax=ax[1],
+            # edges=edges,
+            edge_color=colors,
+            width=weights,
+            with_labels=True,
+        )
+        ax[1].set_title("(b) Label confusion frequency network", fontsize=20)
+        
+        fig_path = f"{self.__results_path}/autogen_hierarchy.png"
+        fig.savefig(fig_path, bbox_inches='tight')
+        print(f"Saved at {fig_path}")
 
                 
     def report_superset(self) -> None:
