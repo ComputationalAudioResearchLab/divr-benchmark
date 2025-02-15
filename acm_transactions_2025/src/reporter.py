@@ -1,8 +1,10 @@
 import numpy as np
 import pandas as pd
+import seaborn as sns
 from tqdm import tqdm
 from pathlib import Path
 from typing import Literal
+import matplotlib.pyplot as plt
 from sklearn.metrics import confusion_matrix
 from .tasks_generator import TaskGenerator
 
@@ -252,13 +254,116 @@ class Reporter:
         results = results.reindex(all_results.index)
         results['task_key'] = all_results['task_key']
         results['feature'] = all_results['feature']
+        results['category'] = all_results['category']
         print(results.round(decimals=2).to_string())
         results.to_csv(f"{self.__results_path}/report_superset_analysis.csv")
         def recall_delta(group: pd.DataFrame):
             carlab_result = group[group.index.str.startswith('superset-CaRLab_2025')].iloc[0]
             return group - carlab_result
-        delta_results = results.groupby(by=['task_key', 'feature']).apply(recall_delta).reset_index().set_index(keys=['exp_key'])
+        delta_results = results.drop(columns=['category']).groupby(by=['task_key', 'feature']).apply(recall_delta).reset_index().set_index(keys=['exp_key'])
+        delta_results['category'] = all_results['category']
         delta_results.to_csv(f"{self.__results_path}/report_superset_delta_analysis.csv")
+
+    def report_superset_fig_confusions(self):
+        chosen_paths = {
+            "(a)": f"{self.__results_path}/self/superset-CaRLab_2025-unispeechSAT_phrase_1/34.csv",
+            "(b)": f"{self.__results_path}/self/superset-daSilvaMoura_2024-unispeechSAT_phrase_1/20.csv",
+            "(c.1)": f"{self.__results_path}/self/unispeechSAT_phrase_1/5.csv",
+            "(c.2)": f"{self.__results_path}/self/unispeechSAT_phrase_2/9.csv",
+        }
+        fig, ax = plt.subplots(1, 4, figsize=(24, 7), constrained_layout=True)
+        for idx, (key, val) in enumerate(chosen_paths.items()):
+            df = pd.read_csv(val)
+            labels, _, _, confusion = self.confusion(
+                actual=df['actual'],
+                predicted=df['predicted'],
+            )
+            sns.heatmap(
+                data=confusion,
+                annot=True,
+                ax=ax[idx],
+                cbar=False,
+                fmt='g',
+                cmap="YlGnBu",
+                annot_kws={"fontsize":16}
+            )
+            ax[idx].set_xticklabels(labels, rotation=90, fontsize=15)
+            ax[idx].set_yticklabels(labels, rotation=0, fontsize=15)
+            ax[idx].set_title(key, fontsize=18)
+            ax[idx].set_xlabel('Predicted', fontsize=18)
+        ax[0].set_ylabel('Actual', fontsize=18)
+        fig_path = f"{self.__results_path}/superset_fig_confusions.png"
+        fig.suptitle('Confusion matrix for different classification systems', fontsize=24)
+        fig.align_xlabels()
+        fig.savefig(fig_path, bbox_inches='tight')
+        print(f"Figure saved at: {fig_path}")
+    
+    def report_superset_balanced_acc_over_tasks(self):
+        df = pd.read_csv(
+            f"{self.__results_path}/report_superset.csv",
+        )[['category', 'task_key', 'feature', 'accuracy']]
+        rename_categories = {
+            'CaRLab_2025': '(a)',
+            'daSilvaMoura_2024': '(b)',
+            'USVAC_2025_1': '(c.1)',
+            'USVAC_2025_2': '(c.2)',
+        }
+        df['category'] = df['category'].apply(rename_categories.get)
+        df['accuracy'] = (df['accuracy'] * 100).round(decimals=2)
+        print(df)
+        fig, ax = plt.subplots(3, 1, figsize=(10, 6), constrained_layout=True, sharex='col')
+        groups = df.groupby(by=['task_key'])
+        total_groups = len(groups)
+        for idx, ((task_key,), group) in enumerate(groups):
+            sns.barplot(
+                data=group,
+                x='feature',
+                y='accuracy',
+                hue='category',
+                hue_order=rename_categories.values(),
+                ax=ax[idx],
+                palette='GnBu',
+                legend=idx == total_groups-1,
+            )
+            ax[idx].set_ylabel(task_key, fontsize=16)
+            ax[idx].set_yticklabels(ax[idx].get_yticklabels(), fontsize=14)
+            ax[idx].set_xlabel(None)
+            ax[idx].set_ylim(35, 75)
+            for c in ax[idx].containers:
+                ax[idx].bar_label(c, fontsize=10)
+        ax[-1].set_xticklabels(ax[idx].get_xticklabels(), fontsize=14)
+        sns.move_legend(
+            ax[-1], "lower center",
+            bbox_to_anchor=(.5, -0.50),
+            ncol=4, title=None, frameon=False, fontsize=14,
+        )
+        fig.suptitle("Balanced accuracy (%) for classification systems", fontsize=20)
+        fig_path = f"{self.__results_path}/superset_balanced_acc_over_tasks.png"
+        fig.savefig(fig_path, bbox_inches='tight')
+        print(f"Figure saved at: {fig_path}")
+
+    def report_superset_average_recall_diff(self): 
+        df = pd.read_csv(
+            f"{self.__results_path}/report_superset_delta_analysis.csv",
+            index_col='exp_key',
+        )
+        non_agg_cols = ['task_key', 'feature', 'exp_key', 'category']
+        agg_cols = [c for c in df.columns if c not in non_agg_cols]
+        def prep(group: pd.Series) -> str:
+            mean = group.mean()*100
+            std = group.std()*100
+            return f"{mean:.2f}±{std:.2f}"
+        data = df.groupby(by='category')[agg_cols].agg(prep)
+        data = data.T[[
+            'CaRLab_2025',
+            'daSilvaMoura_2024',
+            'USVAC_2025_1',
+            'USVAC_2025_2',
+        ]].reset_index(names=['category'])
+        print(data)
+        out_path = f"{self.__results_path}/superset_average_recall_diff.csv"
+        data.to_csv(out_path, index=False)
+        print(f"Saved at: {out_path}")
 
     def report_input_tasks(self) -> None:
         # single task models here
@@ -289,6 +394,8 @@ class Reporter:
     def confusion(self, actual, predicted):
         class_weights = actual.value_counts()
         labels = class_weights.index.to_list()
+        labels.remove('normal')
+        labels = ['normal'] + sorted(labels)
         confusion = confusion_matrix(
             y_true=actual,
             y_pred=predicted,
