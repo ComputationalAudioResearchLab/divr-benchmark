@@ -1,3 +1,4 @@
+import yaml
 import numpy as np
 import pandas as pd
 import networkx as nx
@@ -380,6 +381,7 @@ class Reporter:
         results["task_key"] = all_results["task_key"]
         results["feature"] = all_results["feature"]
         results["category"] = all_results["category"]
+        results["epoch"] = all_results["epoch"]
         print(results.round(decimals=2).to_string())
         results.to_csv(f"{self.__results_path}/report_superset_analysis.csv")
 
@@ -966,7 +968,77 @@ class Reporter:
 
     def report_data_availability(self) -> None:
         # difference in performance by availability of data
-        pass
+        df = pd.read_csv(f"{self.__results_path}/report_superset_analysis.csv")
+        df = df[(df["task_key"] == "phrase") & (df["feature"] == "UnispeechSAT")]
+        df = df.drop(columns=["epoch", "feature", "task_key"]).melt(
+            id_vars=["exp_key", "category"],
+            var_name="val_type",
+            value_name="val",
+        )
+        df["val"] = (df["val"] * 100).round(decimals=2)
+        print(df)
+        all_demographics = []
+        file_base = "/home/workspace/acm_transactions_2025/src/tasks/a_n"
+        for file_type in ["train", "val", "test"]:
+            with open(
+                f"{file_base}/{file_type}.demographics.yml", "r"
+            ) as demographics_file:
+                demographics = yaml.full_load(demographics_file)
+                for diag, d_data in demographics.items():
+                    for gender, g_data in d_data.items():
+                        all_demographics += [[diag, gender, file_type, g_data["total"]]]
+        all_demographics = pd.DataFrame.from_records(
+            data=all_demographics, columns=["diag", "gender", "dataset", "total"]
+        )
+        all_demographics = (
+            all_demographics.groupby(by=["diag", "dataset"])["total"]
+            .sum()
+            .reset_index()
+        )
+        print(all_demographics)
+
+        fig_path = f"{self.__results_path}/data_availability.png"
+
+        fig, ax = plt.subplots(
+            2, 1, figsize=(15, 10), constrained_layout=True, sharex="col"
+        )
+        sns.barplot(
+            data=df,
+            x="val_type",
+            y="val",
+            hue="category",
+            palette="YlGnBu",
+            ax=ax[0],
+        )
+        ax[0].tick_params(axis="both", labelsize=18)
+        ax[0].set_ylabel("Recall (%)", fontsize=20)
+        sns.move_legend(
+            ax[0],
+            "upper center",
+            bbox_to_anchor=(0.5, 1.17),
+            ncol=5,
+            title=None,
+            frameon=False,
+            fontsize=14,
+        )
+        sns.lineplot(
+            data=all_demographics,
+            x="diag",
+            y="total",
+            hue="dataset",
+            ax=ax[1],
+        )
+        sns.move_legend(ax[1], "upper right", fontsize=14, title_fontsize=16)
+        ax[1].set_ylabel("Total speakers", fontsize=20)
+        ax[1].tick_params(axis="x", rotation=90)
+        ax[1].tick_params(axis="both", labelsize=18)
+        ax[1].set_xlabel("Diagnosis Label", fontsize=20)
+        fig.suptitle(
+            "Recall accuracy and data availability of different diagnosis", fontsize=26
+        )
+        fig.align_labels()
+        fig.savefig(fig_path)
+        print(f"Saved at : {fig_path}")
 
     def report_consensus(self) -> None:
         # difference in performance by consensus of classification
