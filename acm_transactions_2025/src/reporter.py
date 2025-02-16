@@ -769,7 +769,7 @@ class Reporter:
     def report_multi_task(self) -> None:
         # impact of multi task and multi crit
         # speed up in accuracy jump
-        # We use MFCCDD here as Wav2Vec and UnispeechSAT come pretrained
+        # We use UnispeechSAT here as it is the best model
         df = pd.read_csv(f"{self.__results_path}/collated_results_self.csv", header=0)
         df = df[~df["exp_key"].str.startswith("superset-")]
         df = df[df["feature"] == "UnispeechSAT"]
@@ -850,6 +850,53 @@ class Reporter:
         )
         fig.savefig(fig_path, bbox_inches="tight")
         print(f"Saved at: {fig_path}")
+
+    def report_multi_task_2(self) -> None:
+        # impact of multi task and multi crit
+        df = pd.read_csv(f"{self.__results_path}/collated_results_self.csv", header=0)
+        df = df[~df["exp_key"].str.startswith("superset-")]
+        df = df[df["feature"] == "UnispeechSAT"]
+        df = df[df["task_key"].isin(["phrase"])]
+        df = df[df["num_diag_levels"].isin([1, 5])]
+        df = df[df["max_diag_level"] == 4]
+        df = (
+            df.sort_values(by=["4_acc_balanced"], ascending=False)
+            .groupby(by="exp_key")
+            .head(1)
+        )
+        diagnosis_map = self.__task_generator.get_diagnosis_map(
+            "USVAC_2025", allow_unmapped=False
+        )
+
+        test_levels = [0, 1, 2, 3, 4]
+
+        def diag_to_level(diag, level):
+            return diagnosis_map.get(diag).at_level(level).name
+
+        for _, row in df[["exp_key", "epoch", "num_diag_levels"]].iterrows():
+            exp_key = row["exp_key"]
+            epoch = row["epoch"]
+            num_diag_levels = row["num_diag_levels"]
+            exp_df = pd.read_csv(f"{self.__results_path}/self/{exp_key}/{epoch}.csv")
+            print(exp_key, epoch, num_diag_levels)
+            if num_diag_levels == 1:
+                for level in test_levels:
+                    actual = exp_df["actual"].apply(lambda x: diag_to_level(x, level))
+                    predicted = exp_df["predicted"].apply(
+                        lambda x: diag_to_level(x, level)
+                    )
+                    _, _, acc, _ = self.confusion(
+                        actual=actual,
+                        predicted=predicted,
+                    )
+                    print(f"\t {level}: {acc*100:.2f}")
+            else:
+                for level in test_levels:
+                    _, _, acc, _ = self.confusion(
+                        actual=exp_df[f"actual_{level}"],
+                        predicted=exp_df[f"predicted_{level}"],
+                    )
+                    print(f"\t {level}: {acc*100:.2f}")
 
     def confusion(self, actual, predicted):
         class_weights = actual.value_counts()
