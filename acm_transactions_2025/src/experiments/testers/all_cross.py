@@ -31,12 +31,12 @@ class TestAllCross:
     __random_seed = 42
     __batch_size = 1
     __cross_test_tasks = [
-        "cross_test_avfad",
-        "cross_test_meei",
+        # "cross_test_avfad",
+        # "cross_test_meei",
         # "cross_test_torgo",
-        "cross_test_uaspeech",
+        # "cross_test_uaspeech",
         # "cross_test_uncommon_voice",
-        "cross_test_voiced",
+        # "cross_test_voiced",
     ]
 
     def __init__(
@@ -75,7 +75,7 @@ class TestAllCross:
             ) = items
             feature_classes.add(feature_cls)
         feature_classes = sorted(feature_classes, key=lambda x: x.__name__)
-        diagnosis_map = self.__task_generator.get_diagnosis_map(task="all")
+        diagnosis_map = self.__task_generator.get_diagnosis_map(task_key="USVAC_2025")
         pbar = tqdm(
             desc="Caching tasks",
             total=len(feature_classes) * len(self.__cross_test_tasks),
@@ -118,6 +118,13 @@ class TestAllCross:
                 trainer_cls,
                 lr,
             ) = items
+            if key.startswith("USVAC-"):
+                task_key = f"USVAC-{task_key}"
+            elif key.startswith("daSilvaMoura-"):
+                task_key = f"daSilvaMoura-{task_key}"
+            elif key.startswith("superset-"):
+                diag_map_key = key.split("-")[1]
+                task_key = f"superset-{diag_map_key}-{task_key}"
             model_cls = self.__model_map[trainer_cls]
             diag_levels = ",".join(map(str, diag_levels))
             if feature_cls not in tests:
@@ -148,14 +155,28 @@ class TestAllCross:
             for task_key, task_tests in feature_tests.items():
                 for diag_levels_str, task_diag_tests in task_tests.items():
                     diag_levels = [int(x) for x in diag_levels_str.split(",")]
+                    if task_key.startswith("USVAC-") or task_key.startswith(
+                        "daSilvaMoura-"
+                    ):
+                        dmap_key, d_task_key = task_key.split("-", maxsplit=1)
+                        diagnosis_map = self.__task_generator.get_diagnosis_map(
+                            task_key=dmap_key, allow_unmapped=False
+                        )
+                    elif task_key.startswith("superset-"):
+                        prefix, dmap_key, d_task_key = task_key.split("-")
+                        diagnosis_map = self.__task_generator.get_diagnosis_map(
+                            task_key=dmap_key, allow_unmapped=True
+                        )
+                    else:
+                        diagnosis_map = self.__task_generator.get_diagnosis_map(
+                            task_key="USVAC_2025", allow_unmapped=False
+                        )
+                        d_task_key = task_key
                     data_loader = self.__get_model_data_loader(
-                        task_key=task_key,
+                        task_key=d_task_key,
                         diag_levels=diag_levels,
                         feature_function=feature_function,
-                    )
-                    diagnosis_map = self.__task_generator.get_diagnosis_map(
-                        task=task_key,
-                        allow_unmapped=True,
+                        diagnosis_map=diagnosis_map,
                     )
                     cross_data_loaders = {
                         ctk: self.__get_cross_data_loader(
@@ -442,10 +463,12 @@ class TestAllCross:
         task_key: str,
         diag_levels: list[int],
         feature_function: Feature,
+        diagnosis_map,
     ) -> BaseDataLoader:
         task = self.__task_generator.load_task(
             task=task_key,
             diag_level=max(diag_levels),
+            diagnosis_map=diagnosis_map,
         )
         return DataLoader(
             random_seed=self.__random_seed,

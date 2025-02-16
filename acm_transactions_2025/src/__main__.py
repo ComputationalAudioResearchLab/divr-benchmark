@@ -18,8 +18,10 @@ class Main(ClassArgParser):
 
     async def generate_tasks(self):
         print("Generating tasks")
-        await TaskGenerator(research_data_path=env.RESEARCH_DATA_PATH,
-            tasks_path=env.TASKS_PATH,).generate()
+        await TaskGenerator(
+            research_data_path=env.RESEARCH_DATA_PATH,
+            tasks_path=env.TASKS_PATH,
+        ).generate()
         print("Tasks generated")
 
     def train(
@@ -72,6 +74,17 @@ class Main(ClassArgParser):
             tasks_path=env.TASKS_PATH,
         )
         df = pd.read_csv(f"{env.RESULTS_PATH}/best_single_task_results.csv")
+        selected_exps = df.set_index(keys=["exp_key"])["epoch"].to_dict()
+        tester.run(selected_exps=selected_exps)
+
+    async def test_cross_selected(self, selection_file: Path):
+        tester = TestAllCross(
+            research_data_path=env.RESEARCH_DATA_PATH,
+            cache_path=env.CACHE_PATH,
+            results_path=env.RESULTS_PATH,
+            tasks_path=env.TASKS_PATH,
+        )
+        df = pd.read_csv(selection_file)
         selected_exps = df.set_index(keys=["exp_key"])["epoch"].to_dict()
         tester.run(selected_exps=selected_exps)
 

@@ -276,6 +276,8 @@ class Reporter:
                 return "USVAC_2025_1"
             if exp_key.endswith("_2"):
                 return "USVAC_2025_2"
+            if exp_key.endswith("_4"):
+                return "narrow"
             raise ValueError(f"Unexpted exp_key: {exp_key}")
 
         df["accuracy"] = (
@@ -293,7 +295,7 @@ class Reporter:
         mask_features = df["feature"].isin(["Wav2Vec", "UnispeechSAT", "MFCCDD"])
         mask_tasks = df["task_key"].isin(["a_n", "phrase", "all"])
         num_diag_levels_mask = df["num_diag_levels"] == 1
-        max_diag_level_mask = df["max_diag_level"].isin([1, 2])
+        max_diag_level_mask = df["max_diag_level"].isin([1, 2, 4])
         df = df[
             mask_features
             & mask_tasks
@@ -511,6 +513,37 @@ class Reporter:
         ].reset_index(names=["category"])
         print(data)
         out_path = f"{self.__results_path}/superset_average_recall_diff.csv"
+        data.to_csv(out_path, index=False)
+        print(f"Saved at: {out_path}")
+
+    def report_superset_average_recall_exact(self):
+        df = pd.read_csv(
+            f"{self.__results_path}/report_superset_analysis.csv",
+            index_col="exp_key",
+        )
+        non_agg_cols = ["task_key", "feature", "exp_key", "category"]
+        agg_cols = [c for c in df.columns if c not in non_agg_cols]
+
+        def prep(group: pd.Series) -> str:
+            mean = round((group.mean() * 100))
+            std = round((group.std() * 100))
+            if mean < 0:
+                return f"\\textcolor{{red}}{{${mean}\pm{std}$}}"
+            else:
+                return f"${mean}\pm{std}$"
+
+        data = df.groupby(by="category")[agg_cols].agg(prep)
+        data = data.T[
+            [
+                "narrow",
+                "CaRLab_2025",
+                "daSilvaMoura_2024",
+                "USVAC_2025_1",
+                "USVAC_2025_2",
+            ]
+        ].reset_index(names=["category"])
+        print(data)
+        out_path = f"{self.__results_path}/superset_average_recall_exact.csv"
         data.to_csv(out_path, index=False)
         print(f"Saved at: {out_path}")
 
@@ -807,11 +840,11 @@ class Reporter:
         }
 
         exp_map = {
-            "superset-CaRLab_2025-unispeechSAT_phrase_1": "CaRLab_2025",
-            "unispeechSAT_phrase_1": "USVAC_2025",
-            "superset-daSilvaMoura_2024-unispeechSAT_phrase_1": "daSilvaMoura_2024",
-            "superset-Compton_2022-unispeechSAT_phrase_1": "Compton_2022",
-            "superset-Zaim_2023-unispeechSAT_phrase_1": "Zaim_2023",
+            "superset-CaRLab_2025-unispeechSAT_phrase_1": "CaRLab 2025",
+            "unispeechSAT_phrase_1": "USVAC 2025",
+            "superset-daSilvaMoura_2024-unispeechSAT_phrase_1": "da Silva Moura 2024",
+            "superset-Compton_2022-unispeechSAT_phrase_1": "Compton 2022",
+            "superset-Zaim_2023-unispeechSAT_phrase_1": "Za'im 2023",
         }
 
         fig = plt.figure(figsize=(35, 15), constrained_layout=True)
@@ -826,7 +859,7 @@ class Reporter:
             exp_key = row["exp_key"]
             epoch = row["epoch"]
             exp_df = pd.read_csv(f"{self.__results_path}/self/{exp_key}/{epoch}.csv")
-            labels, _, _, confusion = self.confusion(
+            labels, _, acc, confusion = self.confusion(
                 actual=exp_df["actual"],
                 predicted=exp_df["predicted"],
             )
@@ -845,12 +878,13 @@ class Reporter:
             ax.set_title(f"Level {idx}", fontsize=24)
             ax.set_xlabel("Predicted", fontsize=22)
             ax.set_ylabel("Actual", fontsize=22)
+            print(exp_key, round(acc * 100, 2))
         for idx, row in cross_system.iterrows():
             ax = axs[1][idx]
             exp_key = row["exp_key"]
             epoch = row["epoch"]
             exp_df = pd.read_csv(f"{self.__results_path}/self/{exp_key}/{epoch}.csv")
-            labels, _, _, confusion = self.confusion(
+            labels, _, acc, confusion = self.confusion(
                 actual=exp_df["actual"],
                 predicted=exp_df["predicted"],
             )
@@ -869,6 +903,7 @@ class Reporter:
             ax.set_title(f"{exp_map[exp_key]}", fontsize=24)
             ax.set_xlabel("Predicted", fontsize=22)
             ax.set_ylabel("Actual", fontsize=22)
+            print(exp_key, round(acc * 100, 2))
         # axs[0][0].set_ylabel("Actual", fontsize=22)
         # axs[1][0].set_ylabel("Actual", fontsize=22)
         subfigs[0].suptitle(
@@ -886,9 +921,48 @@ class Reporter:
         # first line USVAC all levels
         # second line all systems level 1
 
-    def report_diag_levels(self) -> None:
-        # difference in performance by level of hierarchy
-        pass
+    def report_best_others(self) -> None:
+        df = pd.read_csv(f"{self.__results_path}/collated_results_self.csv", header=0)
+        df = df[
+            ~(
+                df["exp_key"].str.startswith("USVAC-")
+                | df["exp_key"].str.startswith("daSilvaMoura-")
+            )
+        ]
+        df = df[df["feature"] == "UnispeechSAT"]
+        df = df[
+            df["task_key"].isin(
+                ["Compton_2022-phrase", "Sztaho_2018-phrase", "Zaim_2023-phrase"]
+            )
+        ]
+        single_task_results = df[
+            (df["num_diag_levels"] == 1) & (df["max_diag_level"] == 2)
+        ]
+        single_task_results["accuracy"] = (
+            single_task_results["0_acc_balanced"]
+            .combine_first(single_task_results["1_acc_balanced"])
+            .combine_first(single_task_results["2_acc_balanced"])
+            .combine_first(single_task_results["3_acc_balanced"])
+            .combine_first(single_task_results["4_acc_balanced"])
+        )
+        df = (
+            single_task_results.sort_values(by=["accuracy"], ascending=False)
+            .groupby(by="exp_key")
+            .head(1)
+            .dropna(axis="columns", how="all")
+            .drop(
+                columns=[
+                    "task_key",
+                    "feature",
+                    "num_diag_levels",
+                    "max_diag_level",
+                    "2_acc_balanced",
+                ]
+            )
+            .to_dict(orient="records")
+        )
+        df = [{k: v for k, v in row.items() if not pd.isna(v)} for row in df]
+        print(df)
 
     def report_data_availability(self) -> None:
         # difference in performance by availability of data
