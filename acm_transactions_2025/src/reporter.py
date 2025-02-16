@@ -614,7 +614,7 @@ class Reporter:
         ax.set_yticklabels(ax.get_yticklabels(), fontsize=18)
         ax.set_xticklabels(ax.get_xticklabels(), fontsize=18, rotation=90)
         ax.set_ylabel("Accuracy (%)", fontsize=20)
-        ax.set_xlabel("Feature (%)", fontsize=20)
+        ax.set_xlabel("Feature", fontsize=20)
         ax.legend(
             loc="upper right",
             fontsize=16,
@@ -691,65 +691,60 @@ class Reporter:
         best_model_epoch = best_model_epoch[
             best_model_epoch["input_type"] == "superset"
         ]
+        best_model_epoch = best_model_epoch[best_model_epoch["task_type"] != "all"]
+        best_model_epoch = best_model_epoch[
+            best_model_epoch["feature"].isin(["Wav2Vec", "UnispeechSAT", "MFCCDD"])
+        ]
         data = (
-            best_model_epoch.groupby(by=["feature", "max_diag_level"], sort=False)[
-                ["input_type", "task_type", "exp_key", "accuracy"]
+            best_model_epoch.groupby(by=["task_type", "max_diag_level"], sort=False)[
+                ["accuracy"]
             ]
-            .apply(lambda x: x)
+            .agg(
+                mean_acc=("accuracy", "mean"),
+                std_acc=("accuracy", "std"),
+            )
             .reset_index()
-            .drop(columns="level_2")
         )
-        print(data)
         out_path = f"{self.__results_path}/input_tasks.csv"
         fig_path = f"{self.__results_path}/input_tasks.png"
-        data.pivot(
-            index=["max_diag_level", "feature"],
-            columns=["task_type"],
-            values="accuracy",
-        ).drop(columns=["all"]).to_csv(out_path)
+        data.to_csv(out_path)
         print(f"Saved at: {out_path}")
-        # num_features = len(data['feature'].unique())
-        # num_levels = len(data['max_diag_level'].unique())
-        data = data[data["task_type"] != "all"]
-        data["accuracy"] = (data["accuracy"] * 100).round(decimals=2)
-        groups = data.groupby(by=["max_diag_level"])
-        total_groups = len(groups)
+        data["mean_acc"] = (data["mean_acc"] * 100).round(decimals=2)
+        data["std_acc"] = (data["std_acc"] * 100).round(decimals=2)
         fig, ax = plt.subplots(
-            total_groups,
             1,
-            figsize=(22, 15),
+            1,
+            figsize=(15, 10),
             constrained_layout=True,
-            # sharey="row",
-            sharex="col",
         )
-        for idx, ((diag_level,), group) in enumerate(groups):
-            min_acc = group["accuracy"].min()
-            max_acc = group["accuracy"].max()
-            sns.barplot(
-                data=group,
-                x="feature",
-                y="accuracy",
-                hue="task_type",
-                ax=ax[idx],
-                palette="GnBu",
-                legend=idx == total_groups - 1,
-            )
-            ax[idx].set_ylabel(diag_level, fontsize=18, rotation=90)
-            # ax[idx].set_yticklabels(ax[idx].get_yticklabels(), fontsize=14)
-            ax[idx].set_xlabel(None)
-            margin = 5
-            ax[idx].set_ylim(min_acc - margin, max_acc + margin)
-            for c in ax[idx].containers:
-                ax[idx].bar_label(c, fontsize=14)
-        ax[-1].set_xticklabels(ax[idx].get_xticklabels(), fontsize=18, rotation=90)
-        sns.move_legend(
-            ax[-1],
-            "lower center",
-            bbox_to_anchor=(0.5, -1.8),
-            ncol=4,
-            title=None,
-            frameon=False,
-            fontsize=18,
+        best_model_epoch["accuracy"] = best_model_epoch["accuracy"] * 100
+        order = {"phrase": 0, "a_n": 1, "i_n": 2, "u_n": 3}
+        best_model_epoch["order"] = best_model_epoch["task_type"].apply(order.get)
+        best_model_epoch = best_model_epoch.sort_values(by=["order"])
+        sns.lineplot(
+            data=best_model_epoch,
+            x="task_type",
+            y="accuracy",
+            # errorbar="sd",
+            hue="max_diag_level",
+            ax=ax,
+            palette="rainbow",
+            sort=False,
+        )
+        ax.set_ylim(15, 95)
+        ax.set_yticklabels(ax.get_yticklabels(), fontsize=18)
+        ax.set_xticklabels(ax.get_xticklabels(), fontsize=18, rotation=90)
+        ax.set_ylabel("Accuracy (%)", fontsize=20)
+        ax.set_xlabel("Vocal Task", fontsize=20)
+        ax.legend(
+            loc="upper right",
+            fontsize=16,
+            title="Diag Level",
+            title_fontsize=16,
+        )
+        fig.suptitle(
+            "Classification accuracy for vocal tasks on different classification levels",
+            fontsize=24,
         )
         fig.savefig(fig_path, bbox_inches="tight")
         print(f"Saved at: {fig_path}")
