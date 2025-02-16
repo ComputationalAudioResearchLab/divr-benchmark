@@ -830,23 +830,23 @@ class Reporter:
                 ax=ax[idx - 1],
                 color="#D2665A",
             )
-            ax[idx - 1].tick_params(axis="both", labelsize=18)
-            ax[idx - 1].set_ylabel(f"Level {idx}", fontsize=20)
+            ax[idx - 1].tick_params(axis="both", labelsize=20)
+            ax[idx - 1].set_ylabel(f"Level {idx}", fontsize=24)
             ax[idx - 1].grid(visible=True)
-        ax[-1].set_xlabel("Epoch", fontsize=20)
+        ax[-1].set_xlabel("Epoch", fontsize=24)
 
         single_task = mpatches.Patch(color="#D2665A", label="Single-Task")
         multi_task = mpatches.Patch(color="#A9B5DF", label="Multi-Task")
         ax[-1].legend(
             handles=[single_task, multi_task],
             loc="lower center",
-            fontsize=18,
+            fontsize=20,
             ncols=2,
         )
         fig.align_labels()
         fig.suptitle(
             "Classification Accuracy over training epochs for single-task vs multi-task experiments",
-            fontsize=24,
+            fontsize=26,
         )
         fig.savefig(fig_path, bbox_inches="tight")
         print(f"Saved at: {fig_path}")
