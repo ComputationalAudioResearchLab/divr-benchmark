@@ -76,6 +76,7 @@ class Analyser:
                 "epoch": result_file.stem,
                 "task_key": task_key,
                 "num_diag_levels": len(diag_levels),
+                "min_diag_level": min(diag_levels),
                 "max_diag_level": max(diag_levels),
                 "feature": feature_cls.__name__,
             }
@@ -88,7 +89,7 @@ class Analyser:
                 predicted = df["predicted"]
                 to_process += [(level, actual, predicted)]
             else:
-                for level in range(4):
+                for level in range(5):
                     if f"actual_{level}" in col_names:
                         actual = df[f"actual_{level}"]
                         predicted = df[f"predicted_{level}"]

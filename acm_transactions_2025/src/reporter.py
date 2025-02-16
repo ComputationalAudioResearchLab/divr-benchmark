@@ -6,6 +6,7 @@ from tqdm import tqdm
 from pathlib import Path
 from typing import Literal
 import matplotlib.pyplot as plt
+import matplotlib.patches as mpatches
 from sklearn.metrics import confusion_matrix
 from .tasks_generator import TaskGenerator
 
@@ -768,7 +769,87 @@ class Reporter:
     def report_multi_task(self) -> None:
         # impact of multi task and multi crit
         # speed up in accuracy jump
-        pass
+        # We use MFCCDD here as Wav2Vec and UnispeechSAT come pretrained
+        df = pd.read_csv(f"{self.__results_path}/collated_results_self.csv", header=0)
+        df = df[~df["exp_key"].str.startswith("superset-")]
+        df = df[df["feature"] == "UnispeechSAT"]
+        df = df[df["task_key"].isin(["phrase"])]
+        df = df[df["max_diag_level"] != 0]
+        # df = df[df["num_diag_levels"] > 1]
+        # print(df)
+        # print(df["exp_key"].value_counts())
+        # print(df.groupby(by=["max_diag_level"]).apply(lambda x: x))
+
+        single_task_results = df[df["num_diag_levels"] == 1]
+        single_task_results["accuracy"] = (
+            single_task_results["0_acc_balanced"]
+            .combine_first(single_task_results["1_acc_balanced"])
+            .combine_first(single_task_results["2_acc_balanced"])
+            .combine_first(single_task_results["3_acc_balanced"])
+            .combine_first(single_task_results["4_acc_balanced"])
+        )
+        best_single_task_result = (
+            single_task_results.sort_values(by="accuracy", ascending=False)
+            .groupby(by=["exp_key"])
+            .head(1)
+        )
+
+        # Only experiments that have 0 + max diag level
+        # otherwise there's too much data to visualize
+        multi_task_results = df[df["num_diag_levels"] > 1]
+        # multi_task_results = multi_task_results[
+        #     multi_task_results["exp_key"].str.contains("_0+")
+        # ]
+
+        out_path = f"{self.__results_path}/multi_task.csv"
+        fig_path = f"{self.__results_path}/multi_task.png"
+
+        fig, ax = plt.subplots(
+            4, 1, figsize=(18, 12), constrained_layout=True, sharex="col"
+        )
+        # for _, row in best_single_task_result.iterrows():
+        #     idx = row["max_diag_level"]
+        #     acc = row["accuracy"]
+        #     ax[idx].axhline(y=acc, linestyle="--", color="#D2665A")
+
+        for _, exp in multi_task_results.groupby(by=["exp_key"]):
+            idx = exp["max_diag_level"].iloc[0]
+            sns.lineplot(
+                data=exp,
+                x="epoch",
+                y=f"{idx}_acc_balanced",
+                ax=ax[idx - 1],
+                color="#A9B5DF99",
+            )
+        for _, exp in single_task_results.groupby(by=["exp_key"]):
+            idx = exp["max_diag_level"].iloc[0]
+            sns.lineplot(
+                data=exp,
+                x="epoch",
+                y=f"{idx}_acc_balanced",
+                ax=ax[idx - 1],
+                color="#D2665A",
+            )
+            ax[idx - 1].tick_params(axis="both", labelsize=18)
+            ax[idx - 1].set_ylabel(f"Level {idx}", fontsize=20)
+            ax[idx - 1].grid(visible=True)
+        ax[-1].set_xlabel("Epoch", fontsize=20)
+
+        single_task = mpatches.Patch(color="#D2665A", label="Single-Task")
+        multi_task = mpatches.Patch(color="#A9B5DF", label="Multi-Task")
+        ax[-1].legend(
+            handles=[single_task, multi_task],
+            loc="lower center",
+            fontsize=18,
+            ncols=2,
+        )
+        fig.align_labels()
+        fig.suptitle(
+            "Classification Accuracy over training epochs for single-task vs multi-task experiments",
+            fontsize=24,
+        )
+        fig.savefig(fig_path, bbox_inches="tight")
+        print(f"Saved at: {fig_path}")
 
     def confusion(self, actual, predicted):
         class_weights = actual.value_counts()
