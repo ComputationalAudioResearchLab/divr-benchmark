@@ -14,6 +14,37 @@ from .tasks_generator import TaskGenerator
 
 class Reporter:
 
+    label_map = {
+        "auto_a": "Aa",
+        "auto_b": "Ab",
+        "auto_c": "Ac",
+        "functional": "F",
+        "functional_dysphonia": "FD",
+        "hyperfunctional_dysphonia": "HD",
+        "inflammatory": "I",
+        "laryngitis": "La",
+        "leukoplakia": "Le",
+        "muscle_tension": "MT",
+        "mass_lesions": "ML",
+        "normal": "N",
+        "non_structural_dysphonia": "NS",
+        "organic": "O",
+        "organic_inflammatory": "OI",
+        "organic_inflammatory_infective": "OII",
+        "organic_neuro_muscular": "ON",
+        "organic_neuro_muscular_peripheral_nervous_disorder": "ONP",
+        "organofunctional": "OF",
+        "organic_structural": "OS",
+        "organic_structural_epithelial_propria": "OSE",
+        "structural_dysphonia": "S",
+        "pathological": "P",
+        "psychogenic_dysphonia": "PD",
+        "reinkes_edema": "RE",
+        "recurrent_paralysis": "RP",
+        "unclassified": "U",
+        "vocal_fold_polyp": "VFP",
+    }
+
     def __init__(self, results_path: Path, task_generator: TaskGenerator) -> None:
         self.__results_path = results_path
         self.__task_generator = task_generator
@@ -810,36 +841,6 @@ class Reporter:
         cross_system = best_single_task_result[
             best_single_task_result["max_diag_level"] == 1
         ].reset_index(drop=True)
-        label_map = {
-            "auto_a": "Aa",
-            "auto_b": "Ab",
-            "auto_c": "Ac",
-            "functional": "F",
-            "functional_dysphonia": "FD",
-            "hyperfunctional_dysphonia": "HD",
-            "inflammatory": "I",
-            "laryngitis": "La",
-            "leukoplakia": "Le",
-            "muscle_tension": "MT",
-            "mass_lesions": "ML",
-            "normal": "N",
-            "non_structural_dysphonia": "NS",
-            "organic": "O",
-            "organic_inflammatory": "OI",
-            "organic_inflammatory_infective": "OII",
-            "organic_neuro_muscular": "ON",
-            "organic_neuro_muscular_peripheral_nervous_disorder": "ONP",
-            "organofunctional": "OF",
-            "organic_structural": "OS",
-            "organic_structural_epithelial_propria": "OSE",
-            "structural_dysphonia": "S",
-            "pathological": "P",
-            "psychogenic_dysphonia": "PD",
-            "reinkes_edema": "RE",
-            "recurrent_paralysis": "RP",
-            "unclassified": "U",
-            "vocal_fold_polyp": "VFP",
-        }
 
         exp_map = {
             "superset-CaRLab_2025-unispeechSAT_phrase_1": "CaRLab 2025",
@@ -865,7 +866,7 @@ class Reporter:
                 actual=exp_df["actual"],
                 predicted=exp_df["predicted"],
             )
-            labels = [label_map[label] for label in labels]
+            labels = [self.label_map[label] for label in labels]
             sns.heatmap(
                 confusion,
                 ax=ax,
@@ -890,7 +891,7 @@ class Reporter:
                 actual=exp_df["actual"],
                 predicted=exp_df["predicted"],
             )
-            labels = [label_map[label] for label in labels]
+            labels = [self.label_map[label] for label in labels]
             sns.heatmap(
                 confusion,
                 ax=ax,
@@ -1042,7 +1043,197 @@ class Reporter:
 
     def report_consensus(self) -> None:
         # difference in performance by consensus of classification
-        pass
+
+        diag_confidences = {
+            "recurrent_paralysis": {
+                3: {
+                    "organic_neuro_muscular_peripheral_nervous_disorder": 0.57,
+                    # "organic_neuro_muscular_central_nervous_disorder": 0.29,
+                    # "unclassified": 0.14,
+                },
+                2: {
+                    "organic_neuro_muscular": 0.86,
+                    # "unclassified": 0.14,
+                },
+                1: {
+                    "organic": 0.86,
+                    # "unclassified": 0.14,
+                },
+            },
+            "reinkes_edema": {
+                3: {
+                    "organic_structural_epithelial_propria": 0.86,
+                    # "organic_inflammatory_non_infective": 0.14,
+                },
+                2: {
+                    "organic_structural": 0.86,
+                    # "organic_inflammatory": 0.14,
+                },
+                1: {"organic": 1.00},
+            },
+            "vocal_fold_polyp": {
+                3: {"organic_structural_epithelial_propria": 1.0},
+                2: {"organic_structural": 1.0},
+                1: {"organic": 1.0},
+            },
+            "hyperfunctional_dysphonia": {
+                3: {
+                    "muscle_tension": 0.71,
+                    # "unclassified": 0.29,
+                },
+                2: {
+                    "muscle_tension": 0.71,
+                    # "unclassified": 0.29,
+                },
+                1: {
+                    "muscle_tension": 0.71,
+                    # "unclassified": 0.29,
+                },
+            },
+            "leukoplakia": {
+                3: {
+                    "organic_structural_epithelial_propria": 0.86,
+                    # "organic_structural_structural_abnormality": 0.14,
+                },
+                2: {"organic_structural": 1.00},
+                1: {"organic_structural": 1.00},
+            },
+            "laryngitis": {
+                3: {
+                    "organic_inflammatory_infective": 0.71,
+                    # "organic_structural_epithelial_propria": 0.14,
+                    # "unclassified": 0.14,
+                },
+                2: {
+                    "organic_inflammatory": 0.71,
+                    # "organic_structural": 0.14,
+                    # "unclassified": 0.14,
+                },
+                1: {
+                    "organic": 0.86,
+                    # "unclassified": 0.14,
+                },
+            },
+            "psychogenic_dysphonia": {
+                3: {"functional_dysphonia": 1.0},
+                2: {"functional_dysphonia": 1.0},
+                1: {"functional": 1.0},
+            },
+            "functional_dysphonia": {
+                3: {"functional_dysphonia": 1.0},
+                2: {"functional_dysphonia": 1.0},
+                1: {"functional": 1.0},
+            },
+            "normal": {
+                3: {"normal": 1.0},
+                2: {"normal": 1.0},
+                1: {"normal": 1.0},
+            },
+        }
+        confidence_at_level = {1: {}, 2: {}, 3: {}}
+        for k, levels in diag_confidences.items():
+            for level, diags in levels.items():
+                for diag, confidence in diags.items():
+                    if diag not in confidence_at_level[level]:
+                        confidence_at_level[level][diag] = [confidence]
+                    else:
+                        confidence_at_level[level][diag] += [confidence]
+        for level in [1, 2, 3]:
+            for diag, vals in confidence_at_level[level].items():
+                confidence_at_level[level][diag] = np.mean(vals)
+        print(confidence_at_level)
+        df = pd.read_csv(f"{self.__results_path}/collated_results_self.csv", header=0)
+        df = df[~df["exp_key"].str.startswith("superset-")]
+        df = df[df["feature"] == "UnispeechSAT"]
+        df = df[df["task_key"].isin(["phrase"])]
+        df = df[df["max_diag_level"].isin([1, 2, 3])]
+        single_task_results = df[df["num_diag_levels"] == 1]
+        single_task_results["accuracy"] = (
+            single_task_results["0_acc_balanced"]
+            .combine_first(single_task_results["1_acc_balanced"])
+            .combine_first(single_task_results["2_acc_balanced"])
+            .combine_first(single_task_results["3_acc_balanced"])
+            .combine_first(single_task_results["4_acc_balanced"])
+        )
+        best_single_task_result = (
+            (
+                single_task_results.sort_values(by="accuracy", ascending=False)
+                .groupby(by=["exp_key"])
+                .head(1)
+            )
+            .dropna(axis="columns", how="all")
+            .drop(
+                columns=[
+                    "epoch",
+                    "task_key",
+                    "feature",
+                    "num_diag_levels",
+                    "min_diag_level",
+                    "3_acc_balanced",
+                    "2_acc_balanced",
+                    "1_acc_balanced",
+                ]
+            )
+            .to_dict(orient="records")
+        )
+        df = [
+            {k: v for k, v in row.items() if not pd.isna(v)}
+            for row in best_single_task_result
+        ]
+        fig, axs = plt.subplots(3, 1, figsize=(15, 7), constrained_layout=True)
+
+        for row in df:
+            diag_level = row["max_diag_level"]
+            keys = [
+                str(k).removeprefix(f"{diag_level}_acc_")
+                for k in row.keys()
+                if str(k).startswith(f"{diag_level}_acc_")
+            ]
+            row_df = pd.DataFrame(
+                data=[
+                    (
+                        self.label_map[k],
+                        row[f"{diag_level}_acc_{k}"],
+                        confidence_at_level[diag_level][k],
+                    )
+                    for k in keys
+                ],
+                columns=["label", "recall", "confidence"],
+            ).melt(
+                id_vars=["label"],
+                var_name="val_type",
+                value_name="val",
+            )
+            ax = axs[diag_level - 1]
+            sns.lineplot(
+                data=row_df,
+                x="label",
+                y="val",
+                hue="val_type",
+                ax=ax,
+                legend=diag_level == 1,
+            )
+            ax.set_ylabel(f"Level {diag_level}", fontsize=22)
+            ax.set_xlabel(None)
+            ax.tick_params(axis="both", labelsize=20)
+        axs[-1].set_xlabel("Classification Label", fontsize=20)
+
+        sns.move_legend(
+            axs[0],
+            "upper center",
+            bbox_to_anchor=(0.5, 1.4),
+            ncol=2,
+            title=None,
+            frameon=False,
+            fontsize=18,
+        )
+        fig_path = f"{self.__results_path}/report_consensus.png"
+        fig.suptitle(
+            "Comparison of Recall(%) and Confidence of classification(%) per label per level",
+            fontsize=25,
+        )
+        fig.savefig(fig_path, bbox_inches="tight")
+        print(f"Saved at: {fig_path}")
 
     def report_multi_task(self) -> None:
         # impact of multi task and multi crit
