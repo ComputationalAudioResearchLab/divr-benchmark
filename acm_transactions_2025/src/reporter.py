@@ -752,7 +752,139 @@ class Reporter:
 
     def report_hierarchies(self) -> None:
         # difference by hierarchy
-        pass
+        df = pd.read_csv(f"{self.__results_path}/collated_results_self.csv", header=0)
+        df = df[df["feature"] == "UnispeechSAT"]
+        df = df[df["task_key"].isin(["phrase"])]
+
+        single_task_results = df[df["num_diag_levels"] == 1]
+        single_task_results["accuracy"] = (
+            single_task_results["0_acc_balanced"]
+            .combine_first(single_task_results["1_acc_balanced"])
+            .combine_first(single_task_results["2_acc_balanced"])
+            .combine_first(single_task_results["3_acc_balanced"])
+            .combine_first(single_task_results["4_acc_balanced"])
+        )
+        best_single_task_result = (
+            single_task_results.sort_values(by="accuracy", ascending=False)
+            .groupby(by=["exp_key"])
+            .head(1)
+        )
+        usvac = best_single_task_result[
+            ~best_single_task_result["exp_key"].str.startswith("superset-")
+        ].reset_index(drop=True)
+        cross_system = best_single_task_result[
+            best_single_task_result["max_diag_level"] == 1
+        ].reset_index(drop=True)
+        label_map = {
+            "auto_a": "Aa",
+            "auto_b": "Ab",
+            "auto_c": "Ac",
+            "functional": "F",
+            "functional_dysphonia": "FD",
+            "hyperfunctional_dysphonia": "HD",
+            "inflammatory": "I",
+            "laryngitis": "La",
+            "leukoplakia": "Le",
+            "muscle_tension": "MT",
+            "mass_lesions": "ML",
+            "normal": "N",
+            "non_structural_dysphonia": "NS",
+            "organic": "O",
+            "organic_inflammatory": "OI",
+            "organic_inflammatory_infective": "OII",
+            "organic_neuro_muscular": "ON",
+            "organic_neuro_muscular_peripheral_nervous_disorder": "ONP",
+            "organofunctional": "OF",
+            "organic_structural": "OS",
+            "organic_structural_epithelial_propria": "OSE",
+            "structural_dysphonia": "S",
+            "pathological": "P",
+            "psychogenic_dysphonia": "PD",
+            "reinkes_edema": "RE",
+            "recurrent_paralysis": "RP",
+            "unclassified": "U",
+            "vocal_fold_polyp": "VFP",
+        }
+
+        exp_map = {
+            "superset-CaRLab_2025-unispeechSAT_phrase_1": "CaRLab_2025",
+            "unispeechSAT_phrase_1": "USVAC_2025",
+            "superset-daSilvaMoura_2024-unispeechSAT_phrase_1": "daSilvaMoura_2024",
+            "superset-Compton_2022-unispeechSAT_phrase_1": "Compton_2022",
+            "superset-Zaim_2023-unispeechSAT_phrase_1": "Zaim_2023",
+        }
+
+        fig = plt.figure(figsize=(35, 15), constrained_layout=True)
+        subfigs = fig.subfigures(nrows=2, ncols=1, hspace=0.1)
+        axs = [
+            f.subplots(nrows=1, ncols=5, gridspec_kw={"wspace": 0.1, "hspace": 0})
+            for f in subfigs
+        ]
+        # fig, axs = plt.subplots(2, 5, figsize=(20, 10), constrained_layout=True)
+        for idx, row in usvac.iterrows():
+            ax = axs[0][idx]
+            exp_key = row["exp_key"]
+            epoch = row["epoch"]
+            exp_df = pd.read_csv(f"{self.__results_path}/self/{exp_key}/{epoch}.csv")
+            labels, _, _, confusion = self.confusion(
+                actual=exp_df["actual"],
+                predicted=exp_df["predicted"],
+            )
+            labels = [label_map[label] for label in labels]
+            sns.heatmap(
+                confusion,
+                ax=ax,
+                annot=True,
+                fmt="g",
+                cmap="YlGnBu",
+                xticklabels=labels,
+                yticklabels=labels,
+                annot_kws={"fontsize": 20},
+            )
+            ax.tick_params(axis="both", labelsize=22)
+            ax.set_title(f"Level {idx}", fontsize=24)
+            ax.set_xlabel("Predicted", fontsize=22)
+            ax.set_ylabel("Actual", fontsize=22)
+        for idx, row in cross_system.iterrows():
+            ax = axs[1][idx]
+            exp_key = row["exp_key"]
+            epoch = row["epoch"]
+            exp_df = pd.read_csv(f"{self.__results_path}/self/{exp_key}/{epoch}.csv")
+            labels, _, _, confusion = self.confusion(
+                actual=exp_df["actual"],
+                predicted=exp_df["predicted"],
+            )
+            labels = [label_map[label] for label in labels]
+            sns.heatmap(
+                confusion,
+                ax=ax,
+                annot=True,
+                fmt="g",
+                cmap="YlGnBu",
+                xticklabels=labels,
+                yticklabels=labels,
+                annot_kws={"fontsize": 20},
+            )
+            ax.tick_params(axis="both", labelsize=22)
+            ax.set_title(f"{exp_map[exp_key]}", fontsize=24)
+            ax.set_xlabel("Predicted", fontsize=22)
+            ax.set_ylabel("Actual", fontsize=22)
+        # axs[0][0].set_ylabel("Actual", fontsize=22)
+        # axs[1][0].set_ylabel("Actual", fontsize=22)
+        subfigs[0].suptitle(
+            "(a) Classification confusion for different levels of USVAC 2025",
+            fontsize=30,
+        )
+        fig.add_artist(plt.Line2D([0, 1], [0.505, 0.505], color="#393E46", linewidth=2))
+        subfigs[1].suptitle(
+            "(b) Classification confusion for different classification systems",
+            fontsize=30,
+        )
+        fig_path = f"{self.__results_path}/hierarchies.png"
+        fig.savefig(fig_path, bbox_inches="tight")
+        print(f"Saved at: {fig_path}")
+        # first line USVAC all levels
+        # second line all systems level 1
 
     def report_diag_levels(self) -> None:
         # difference in performance by level of hierarchy
