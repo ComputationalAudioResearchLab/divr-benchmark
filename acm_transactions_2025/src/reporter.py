@@ -1180,7 +1180,7 @@ class Reporter:
             {k: v for k, v in row.items() if not pd.isna(v)}
             for row in best_single_task_result
         ]
-        fig, axs = plt.subplots(3, 1, figsize=(15, 7), constrained_layout=True)
+        fig, axs = plt.subplots(3, 1, figsize=(15, 9), constrained_layout=True)
 
         for row in df:
             diag_level = row["max_diag_level"]
@@ -1189,21 +1189,26 @@ class Reporter:
                 for k in row.keys()
                 if str(k).startswith(f"{diag_level}_acc_")
             ]
-            row_df = pd.DataFrame(
-                data=[
-                    (
-                        self.label_map[k],
-                        row[f"{diag_level}_acc_{k}"],
-                        confidence_at_level[diag_level][k],
-                    )
-                    for k in keys
-                ],
-                columns=["label", "recall", "confidence"],
-            ).melt(
-                id_vars=["label"],
-                var_name="val_type",
-                value_name="val",
+            row_df = (
+                pd.DataFrame(
+                    data=[
+                        (
+                            self.label_map[k],
+                            row[f"{diag_level}_acc_{k}"],
+                            confidence_at_level[diag_level][k],
+                        )
+                        for k in keys
+                    ],
+                    columns=["label", "recall", "confidence"],
+                )
+                .sort_values(by=["confidence"], ascending=False)
+                .melt(
+                    id_vars=["label"],
+                    var_name="val_type",
+                    value_name="val",
+                )
             )
+            print(row_df)
             ax = axs[diag_level - 1]
             sns.lineplot(
                 data=row_df,
