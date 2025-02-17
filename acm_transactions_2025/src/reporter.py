@@ -1590,6 +1590,66 @@ class Reporter:
                 # print(confusion)
                 # all_results += [(category, feature, ct, acc)]
         log_file.close()
+
+        categorization = {
+            "CaRLab_2025": {
+                "HD": "Aa",
+                "Le": "Ab",
+                "N": "N",
+                "RE": "Ac",
+                "RP": "Ac",
+                "VFP": "Ab",
+            },
+            "daSilvaMoura_2024": {
+                "HD": "F",
+                "Le": "OF",
+                "N": "N",
+                "RE": "OF",
+                "RP": "O",
+                "VFP": "OF",
+            },
+            "USVAC_2025_1": {
+                "HD": "MT",
+                "Le": "O",
+                "N": "N",
+                "RE": "O",
+                "RP": "O",
+                "VFP": "O",
+            },
+            "USVAC_2025_2": {
+                "HD": "MT",
+                "Le": "OS",
+                "N": "N",
+                "RE": "OS",
+                "RP": "ON",
+                "VFP": "OS",
+            },
+            "narrow": {
+                "HD": "HD",
+                "Le": "Le",
+                "N": "N",
+                "RE": "RE",
+                "RP": "RP",
+                "VFP": "VFP",
+            },
+        }
+        recalls = {k: {} for k in categorization}
+        for key, confusion in confusions.items():
+            categories = categorization[key]
+            for k, v in categories.items():
+                actual_total = confusion[k].sum()
+                correct_total = confusion[k][v]
+                recall = correct_total / actual_total
+                recalls[key][k] = round(recall * 100, 2)
+        print("Recalls: ", recalls)
+        print(
+            "Average Recalls: ",
+            {
+                k: round(sum([t for t in v.values()]) / len(v), 2)
+                for k, v in recalls.items()
+            },
+        )
+
         print(f"Saved at: {log_file_path}")
         key_idx = {
             "CaRLab_2025": 0,
