@@ -1378,7 +1378,7 @@ class Reporter:
         df = df[df["exp_key"].str.contains("_phrase_")]
 
         cross_tests = [
-            # "cross_test_avfad",
+            "cross_test_avfad",
             "cross_test_meei",
             # "cross_test_torgo",
             # "cross_test_uaspeech",
@@ -1440,11 +1440,18 @@ class Reporter:
             "cross_test_meei": 0,
             "cross_test_uncommon_voice": 1,
             "cross_test_voiced": 2,
+            "cross_test_avfad": 3,
+        }
+        ct_labels = {
+            "cross_test_meei": "MEEI",
+            "cross_test_uncommon_voice": "Uncommon Voice",
+            "cross_test_voiced": "VOICED",
+            "cross_test_avfad": "AVFAD",
         }
         fig, axs = plt.subplots(
             len(ct_idx),
             1,
-            figsize=(20, 10),
+            figsize=(20, 13),
             constrained_layout=True,
             sharex="col",
         )
@@ -1461,14 +1468,15 @@ class Reporter:
                 legend=idx == 0,
             )
             for c in ax.containers:
-                ax.bar_label(c, fontsize=18)
+                ax.bar_label(c, fontsize=22)
             margin = 5
             y_max = group["acc"].max() + margin
             y_min = group["acc"].min() - margin
             ax.set_ylim(y_min, y_max)
             ax.set_xlabel(None)
-            ax.set_ylabel(ct.removeprefix("cross_test_"), fontsize=24)
-            ax.tick_params(axis="both", labelsize=20)
+            ax.set_ylabel(ct_labels[ct], fontsize=26)
+            ax.tick_params(axis="y", labelsize=22)
+            ax.tick_params(axis="x", labelsize=26)
 
         sns.move_legend(
             axs[0],
@@ -1477,11 +1485,11 @@ class Reporter:
             ncol=3,
             title=None,
             frameon=False,
-            fontsize=20,
+            fontsize=24,
         )
         fig_path = f"{self.__results_path}/cross_database.png"
         fig.suptitle(
-            "Binary detection accuracy on out of domain databases", fontsize=30
+            "Binary detection accuracy on out of domain databases", fontsize=34
         )
         fig.savefig(fig_path, bbox_inches="tight")
         print(f"Saved at: {fig_path}")
