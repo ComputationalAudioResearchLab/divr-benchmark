@@ -7,17 +7,20 @@ from divr_diagnosis import Diagnosis, diagnosis_maps
 
 
 def load_labels(input_path: Path):
+    labels = {}
     with open(input_path, "r") as map_file:
         data = yaml.load(map_file, yaml.FullLoader)
         for key, item in data.items():
+            if "votes" not in item:
+                continue
             item_votes = list(item["votes"].values())
             label_data = np.unique(item_votes, return_counts=True)
             label_values = list(label_data[0])
             label_counts = list(label_data[1])
             label_data = zip(label_values, label_counts)
             sorted_label_data = sorted(label_data, key=lambda x: x[1], reverse=True)
-            data[key]["labels"] = dict([[str(v), int(c)] for v, c in sorted_label_data])
-    return data
+            labels[key] = dict([(str(v), int(c)) for v, c in sorted_label_data])
+    return labels
 
 
 def confusion(data, output_confusion_path: Path):
@@ -39,16 +42,16 @@ def confusion(data, output_confusion_path: Path):
                 label,
                 [
                     {
-                        "NA": 0,
+                        "na": 0,
                         "normal": 0,
-                        "not a diagnosis": 0,
-                        "pathological > functional": 0,
-                        "pathological > muscle tension": 0,
-                        "pathological > organic": 0,
-                        "pathological > organic > inflammatory": 0,
-                        "pathological > organic > neuro-muscular": 0,
-                        "pathological > organic > structural": 0,
-                        "pathological > organic > trauma": 0,
+                        "unclassified": 0,
+                        "functional": 0,
+                        "muscle_tension": 0,
+                        "organic": 0,
+                        "organic > inflammatory": 0,
+                        "organic > neuro_muscular": 0,
+                        "organic > structural": 0,
+                        "organic > trauma": 0,
                     }
                     for _ in range(7)
                 ],
@@ -57,11 +60,10 @@ def confusion(data, output_confusion_path: Path):
         ]
     )
     for label in labels:
-        for row in data.values():
-            row_labels = row["labels"]
+        for row_key, row_labels in data.items():
             if label in row_labels:
                 idx = row_labels[label] - 1
-                for key, val in row["labels"].items():
+                for key, val in row_labels.items():
                     label_votes[label][idx][key] += val
 
     total_labels = len(labels)
@@ -72,28 +74,28 @@ def confusion(data, output_confusion_path: Path):
         vote_matrix = np.zeros((total_labels, 7))
         for idx, vote in enumerate(votes):
             for key, val in vote.items():
-                if key == "NA":
+                if key == "na":
                     vote_matrix[0, idx] += val
                 if key == "normal":
                     vote_matrix[1, idx] += val
                 if key == "not a diagnosis":
                     vote_matrix[2, idx] += val
-                elif key == "pathological > functional":
+                elif key == "functional":
                     vote_matrix[3, idx] += val
-                elif key == "pathological > muscle tension":
+                elif key == "muscle_tension":
                     vote_matrix[4, idx] += val
-                elif key == "pathological > organic":
+                elif key == "organic":
                     vote_matrix[5, idx] += val
-                elif key == "pathological > organic > inflammatory":
+                elif key == "organic > inflammatory":
                     vote_matrix[5, idx] += val
                     vote_matrix[6, idx] += val
-                elif key == "pathological > organic > neuro-muscular":
+                elif key == "organic > neuro_muscular":
                     vote_matrix[5, idx] += val
                     vote_matrix[7, idx] += val
-                elif key == "pathological > organic > structural":
+                elif key == "organic > structural":
                     vote_matrix[5, idx] += val
                     vote_matrix[8, idx] += val
-                elif key == "pathological > organic > trauma":
+                elif key == "organic > trauma":
                     vote_matrix[5, idx] += val
                     vote_matrix[9, idx] += val
         normalized_vote_matrix = vote_matrix / np.maximum(
@@ -114,8 +116,6 @@ def confusion(data, output_confusion_path: Path):
 def analysis(source_path: Path, output_confusion_path: Path):
     output_confusion_path.parent.mkdir(parents=True, exist_ok=True)
     data = load_labels(source_path)
-    with open("labels.yml", "w") as output_labels:
-        yaml.dump(data, output_labels, width=1000)
     confusion(data, output_confusion_path)
 
 

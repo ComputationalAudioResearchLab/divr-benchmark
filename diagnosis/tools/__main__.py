@@ -1,3 +1,4 @@
+import numpy as np
 from pathlib import Path
 from typing import Literal
 from class_argparse import ClassArgParser
@@ -51,6 +52,38 @@ class Main(ClassArgParser):
 
     def reporter(self):
         Reporter().run()
+
+    def dissensus(self):
+        dmap = diagnosis_maps.USVAC_2025()
+        all_diags = dmap.unique_diags()
+        print(len(all_diags))
+        votes_per_chosen_class = {}
+        for diag in all_diags:
+            if len(diag.votes) == 0:
+                continue
+            parent_link = diag.best_parent_link
+            if parent_link is None:
+                continue
+            parent_name = parent_link.parent.name
+            parent_weight = parent_link.weight
+            if parent_name not in votes_per_chosen_class:
+                votes_per_chosen_class[parent_name] = [parent_weight]
+            else:
+                votes_per_chosen_class[parent_name] += [parent_weight]
+        avg_vote_per_chosen = {}
+        total_classes = 0
+        for key, votes in votes_per_chosen_class.items():
+            mean = np.mean(votes) * 100
+            std = np.std(votes) * 100
+            total_classes += len(votes)
+            avg_vote_per_chosen[key] = (len(votes), f"{mean:.2f}\\pm{std:.2f}")
+        avg_vote_per_chosen = dict(
+            sorted(avg_vote_per_chosen.items(), key=lambda x: x[1][0], reverse=True)
+        )
+        print(total_classes)
+        print(avg_vote_per_chosen)
+        for key, val in avg_vote_per_chosen.items():
+            print(f"{key} & ${val[0]}$ & ${val[1]}$ \\\\")
 
 
 if __name__ == "__main__":
