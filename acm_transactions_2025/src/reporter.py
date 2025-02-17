@@ -43,6 +43,30 @@ class Reporter:
         "recurrent_paralysis": "RP",
         "unclassified": "U",
         "vocal_fold_polyp": "VFP",
+        # MEEI stuff
+        "abductor_spasmodic_dysphonia": "AbD",
+        "adductor_spasmodic_dysphonia": "AdD",
+        "conversion_dysphonia": "CD",
+        "cyst": "C",
+        "episodic_functional_dysphonia": "EFD",
+        "exudative_hyperkeratotic_lesions_of_epithelium": "HL",
+        "hemmoragic_reinkes_edema": "RE",
+        "hyperfunction": "HD",  # Matching with Hyperfunctional Dysphonia above
+        "laryngeal_tuberculosis": "LT",
+        "leukoplakia": "Le",
+        "normal": "N",
+        "paralysis": "RP",  # This is RP to match up with Recurrent Paralysis above
+        "paresis": "Pa",
+        "polypoid_degeneration_reinkes": "PR",
+        "post_intubation_submucosal_edema_mild": "SEM",
+        "presbyphonia": "Pr",
+        "scarring": "Sc",
+        "subglottal_mass": "SM",
+        "subglottis_stenosis": "SS",
+        "varix": "Va",
+        "vocal_fold_edema": "VE",
+        "vocal_fold_nodules": "VN",
+        "vocal_tremor": "VT",
     }
 
     def __init__(self, results_path: Path, task_generator: TaskGenerator) -> None:
@@ -1491,6 +1515,129 @@ class Reporter:
         fig.suptitle(
             "Binary detection accuracy on out of domain databases", fontsize=34
         )
+        fig.savefig(fig_path, bbox_inches="tight")
+        print(f"Saved at: {fig_path}")
+
+    def report_cross_meei(self) -> None:
+        df = pd.read_csv(f"{self.__results_path}/report_superset_analysis.csv")
+        # df = df[df["feature"] == "UnispeechSAT"]
+        df = df[df["exp_key"].str.contains("_phrase_")]
+        # df = df[df["category"] == "narrow"]
+
+        cross_tests = ["cross_test_meei"]
+        dmap = self.__task_generator.get_diagnosis_map(
+            task_key="USVAC_2025", allow_unmapped=False
+        )
+        dls = {
+            ct: self.__task_generator.load_task(
+                task=ct,
+                diag_level=None,
+                diagnosis_map=dmap,
+                load_audios=False,
+            )
+            for ct in cross_tests
+        }
+
+        all_results = []
+        log_file_path = f"{self.__results_path}/cross_meei.log"
+        log_file = open(log_file_path, "w")
+        prev_category = None
+        confusions = {}
+        max_total = 0
+        for _, row in df.sort_values(by=["category", "feature"]).iterrows():
+            exp_key = row["exp_key"]
+            epoch = row["epoch"]
+            category = row["category"]
+            feature = row["feature"]
+            if category != prev_category:
+                log_file.write(f"\n\n{category}:\n")
+                prev_category = category
+            for ct in cross_tests:
+                exp_df = pd.read_csv(
+                    f"{self.__results_path}/cross/{exp_key}/{ct}/{epoch}.csv"
+                )
+                exp_df["actual"] = exp_df["id"].apply(
+                    lambda lid: self.label_map[dls[ct].test_label(lid).name]
+                )
+                exp_df["predicted"] = exp_df["predicted"].apply(self.label_map.get)
+                # labels, _, acc, confusion = self.confusion(
+                #     actual=exp_df["actual"],
+                #     predicted=exp_df["predicted"],
+                # )
+                log_file.write(f"\t{exp_key}:\n")
+                # print(exp_key, ct, acc)
+                confusion = (
+                    exp_df.groupby(by="actual")["predicted"]
+                    .value_counts()
+                    .reset_index()
+                    .pivot(
+                        index="predicted",
+                        columns="actual",
+                        values="count",
+                    )
+                    .fillna(0)
+                )
+                if feature == "MFCCDD":
+                    confusions[category] = confusion
+                    current_max_count: int = confusion.max(axis=None)
+                    if current_max_count > max_total:
+                        max_total = current_max_count
+                cstr = confusion.to_string()
+                log_file.write("\n".join([f"\t{l}" for l in cstr.split("\n")]))
+                log_file.write("\n")
+                # print(confusion)
+                # print(labels)
+                # print(confusion)
+                # all_results += [(category, feature, ct, acc)]
+        log_file.close()
+        print(f"Saved at: {log_file_path}")
+        key_idx = {
+            "CaRLab_2025": 0,
+            "daSilvaMoura_2024": 1,
+            "USVAC_2025_1": 2,
+            "USVAC_2025_2": 3,
+            "narrow": 4,
+        }
+        fig, axs = plt.subplots(
+            1,
+            len(key_idx),
+            figsize=(22, 10),
+            constrained_layout=True,
+            sharey="row",
+            gridspec_kw={
+                "width_ratios": [1, 1, 1, 1.5, 2],
+                "wspace": 0.1,
+                "hspace": 0.1,
+            },
+        )
+        for key, conf in confusions.items():
+            idx = key_idx[key]
+            ax = axs[idx]
+            sns.heatmap(
+                data=conf.T,
+                cmap="Blues",
+                ax=ax,
+                annot=True,
+                annot_kws={"fontsize": 16},
+                vmin=0,
+                vmax=max_total,
+                cbar=False,
+            )
+            ax.set_ylabel(None)
+            ax.set_title(key, fontsize=22)
+            ax.set_xlabel("Predicted", fontsize=22)
+            ax.tick_params(axis="y", rotation=0)
+            ax.tick_params(axis="x", rotation=90)
+            ax.tick_params(axis="both", labelsize=22)
+
+        axs[0].set_ylabel("Actual", fontsize=22)
+        # cbar = fig.colorbar(ax[0].get_children()[0], ax=axes, orientation='vertical', fraction=0.02, pad=0.02)
+        fig_path = f"{self.__results_path}/cross_meei.png"
+        fig.suptitle(
+            "Multi-class classification confusion on MEEI using different classification systems",
+            fontsize=34,
+        )
+        fig.align_labels()
         fig.savefig(fig_path, bbox_inches="tight")
         print(f"Saved at: {fig_path}")
 
