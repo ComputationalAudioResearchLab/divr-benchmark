@@ -1372,6 +1372,120 @@ class Reporter:
                     )
                     print(f"\t {level}: {acc*100:.2f}")
 
+    def report_cross_database(self) -> None:
+        df = pd.read_csv(f"{self.__results_path}/report_superset_analysis.csv")
+        # df = df[df["feature"] == "UnispeechSAT"]
+        df = df[df["exp_key"].str.contains("_phrase_")]
+
+        cross_tests = [
+            # "cross_test_avfad",
+            "cross_test_meei",
+            # "cross_test_torgo",
+            # "cross_test_uaspeech",
+            "cross_test_uncommon_voice",
+            "cross_test_voiced",
+        ]
+        dmap = self.__task_generator.get_diagnosis_map(
+            task_key="USVAC_2025", allow_unmapped=False
+        )
+        dls = {
+            ct: self.__task_generator.load_task(
+                task=ct,
+                diag_level=None,
+                diagnosis_map=dmap,
+                load_audios=False,
+            )
+            for ct in cross_tests
+        }
+
+        def id_to_label(ct, label_id):
+            label = dls[ct].test_label(label_id).root.name
+            if label == "without_dysarthria":
+                return "normal"
+            return label
+
+        def predicted_root(label):
+            if label == "normal":
+                return "normal"
+            return "pathological"
+
+        all_results = []
+
+        for _, row in df.iterrows():
+            exp_key = row["exp_key"]
+            epoch = row["epoch"]
+            category = row["category"]
+            feature = row["feature"]
+            for ct in cross_tests:
+                exp_df = pd.read_csv(
+                    f"{self.__results_path}/cross/{exp_key}/{ct}/{epoch}.csv"
+                )
+                exp_df["actual"] = exp_df["id"].apply(lambda lid: id_to_label(ct, lid))
+                exp_df["predicted"] = exp_df["predicted"].apply(predicted_root)
+                labels, _, acc, confusion = self.confusion(
+                    actual=exp_df["actual"],
+                    predicted=exp_df["predicted"],
+                )
+                # print(exp_key, ct, acc)
+                # print(exp_df.groupby(by="actual")["predicted"].value_counts())
+                # print(labels)
+                # print(confusion)
+                all_results += [(category, feature, ct, acc)]
+        all_results = pd.DataFrame(
+            data=all_results, columns=["category", "feature", "ct", "acc"]
+        )
+        all_results["acc"] = (all_results["acc"] * 100).round(2)
+        print(all_results)
+        ct_idx = {
+            "cross_test_meei": 0,
+            "cross_test_uncommon_voice": 1,
+            "cross_test_voiced": 2,
+        }
+        fig, axs = plt.subplots(
+            len(ct_idx),
+            1,
+            figsize=(20, 10),
+            constrained_layout=True,
+            sharex="col",
+        )
+        for (ct,), group in all_results.groupby(by=["ct"]):
+            idx = ct_idx[ct]
+            ax = axs[idx]
+            sns.barplot(
+                data=group,
+                x="category",
+                y="acc",
+                hue="feature",
+                palette="YlGnBu",
+                ax=ax,
+                legend=idx == 0,
+            )
+            for c in ax.containers:
+                ax.bar_label(c, fontsize=18)
+            margin = 5
+            y_max = group["acc"].max() + margin
+            y_min = group["acc"].min() - margin
+            ax.set_ylim(y_min, y_max)
+            ax.set_xlabel(None)
+            ax.set_ylabel(ct.removeprefix("cross_test_"), fontsize=24)
+            ax.tick_params(axis="both", labelsize=20)
+
+        sns.move_legend(
+            axs[0],
+            "upper center",
+            bbox_to_anchor=(0.5, 1.25),
+            ncol=3,
+            title=None,
+            frameon=False,
+            fontsize=20,
+        )
+        fig_path = f"{self.__results_path}/cross_database.png"
+        fig.suptitle(
+            "Binary detection accuracy on out of domain databases", fontsize=30
+        )
+        fig.savefig(fig_path, bbox_inches="tight")
+        print(f"Saved at: {fig_path}")
+
     def confusion(self, actual, predicted):
         class_weights = actual.value_counts()
         labels = class_weights.index.to_list()
