@@ -348,7 +348,9 @@ class Reporter:
             | df["exp_key"].str.startswith("superset-Zaim_2023")
             | df["exp_key"].str.startswith("superset-Compton_2022")
         )
-        mask_features = df["feature"].isin(["Wav2Vec", "UnispeechSAT", "MFCCDD"])
+        mask_features = df["feature"].isin(
+            ["Wav2Vec", "UnispeechSAT", "MFCCDD", "MelSpec"]
+        )
         mask_tasks = df["task_key"].isin(["a_n", "phrase", "all"])
         num_diag_levels_mask = df["num_diag_levels"] == 1
         max_diag_level_mask = df["max_diag_level"].isin([1, 2, 4])
@@ -1398,7 +1400,7 @@ class Reporter:
 
     def report_cross_database(self) -> None:
         df = pd.read_csv(f"{self.__results_path}/report_superset_analysis.csv")
-        # df = df[df["feature"] == "UnispeechSAT"]
+        df = df[df["feature"].isin(["MFCCDD", "UnispeechSAT", "Wav2Vec"])]
         df = df[df["exp_key"].str.contains("_phrase_")]
 
         cross_tests = [
@@ -1520,7 +1522,7 @@ class Reporter:
 
     def report_cross_meei(self) -> None:
         df = pd.read_csv(f"{self.__results_path}/report_superset_analysis.csv")
-        # df = df[df["feature"] == "UnispeechSAT"]
+        df = df[df["feature"].isin(["MFCCDD", "UnispeechSAT", "Wav2Vec"])]
         df = df[df["exp_key"].str.contains("_phrase_")]
         # df = df[df["category"] == "narrow"]
 

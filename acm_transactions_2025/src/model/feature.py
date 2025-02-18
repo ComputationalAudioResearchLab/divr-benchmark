@@ -280,3 +280,61 @@ class MFCCDD(Feature):
         return (
             audio_lens + self.hop_length - audio_lens % self.hop_length
         ) // self.hop_length
+
+
+class MelSpec(Feature):
+    model_name = "mfcc_dd_13"
+    n_mels = 80
+    feature_size = n_mels
+    n_fft = 1024
+    win_length = n_fft
+    hop_length = win_length // 4
+
+    def __init__(self, device: torch.device, sampling_rate: int) -> None:
+        super().__init__()
+        self.__device = device
+        self.__sample_rate = sampling_rate
+        self.__mel = torchaudio.transforms.MelSpectrogram(
+            sample_rate=self.__sample_rate,
+            n_fft=self.n_fft,
+            n_mels=self.n_mels,
+            win_length=self.win_length,
+            hop_length=self.hop_length,
+        ).to(device)
+
+    @torch.no_grad()
+    def individual_np(self, audio: np.ndarray) -> np.ndarray:
+        audio_tensor = torch.tensor([audio], dtype=torch.float, device=self.__device)
+        mel = self.__mel(audio_tensor)
+        return mel[0].T.cpu().numpy()
+
+    @torch.no_grad()
+    def forward(self, batch: InputTensors) -> InputTensors:
+        batch_inputs, batch_lens = batch
+        audios = batch_inputs
+        audio_lens = batch_lens
+        if not isinstance(audios, torch.Tensor):
+            audios = torch.tensor(
+                audios,
+                device=self.__device,
+                dtype=torch.float32,
+            )
+        elif audios.device != self.__device:
+            audios = audios.to(self.__device)
+        if not isinstance(audio_lens, torch.Tensor):
+            audio_lens = torch.tensor(
+                audio_lens,
+                device=self.__device,
+                dtype=torch.long,
+            )
+        elif audio_lens.device != self.__device:
+            audio_lens = audio_lens.to(self.__device)
+        mel = self.__mel(audios)
+        mel = mel.transpose(2, 3)
+        mel_lens = self.calc_lengths(audio_lens)
+        return mel, mel_lens
+
+    def calc_lengths(self, audio_lens: torch.Tensor):
+        return (
+            audio_lens + self.hop_length - audio_lens % self.hop_length
+        ) // self.hop_length

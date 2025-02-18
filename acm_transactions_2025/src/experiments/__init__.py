@@ -5,6 +5,7 @@ from typing import Literal
 
 from ..model import (
     UnispeechSAT,
+    MelSpec,
     MFCCDD,
     Wav2Vec,
     Compare2016Functional,
@@ -16,6 +17,7 @@ from ..model import (
 from ..tasks_generator import TaskGenerator
 from ..data_loader import CachedDataLoader, DataLoader
 from .trainer import Trainer
+from .trainer_transformer import TrainerTransformer
 from .trainer_multitask import TrainerMultiTask
 from .trainer_multicrit import TrainerMultiCrit
 from .testers.tester import Tester
@@ -635,6 +637,19 @@ class Runner:
         "superset-CaRLab_2025-mfccdd_all_1": ["all", [1], MFCCDD, 2000, 16, Trainer, 1e-5],
         "superset-CaRLab_2025-wav2vec_all_1": ["all", [1], Wav2Vec, 200, 16, Trainer, 1e-5],
         "superset-CaRLab_2025-unispeechSAT_all_1": ["all", [1], UnispeechSAT, 200, 16, Trainer, 1e-5],
+
+        # MelSpec experiments
+        "MelSpec_phrase_0": ["phrase", [0], MelSpec, 2000, 16, Trainer, 1e-5],
+        "MelSpec_phrase_1": ["phrase", [1], MelSpec, 2000, 16, Trainer, 1e-5],
+        "MelSpec_phrase_2": ["phrase", [2], MelSpec, 2000, 16, Trainer, 1e-5],
+        "MelSpec_phrase_3": ["phrase", [3], MelSpec, 2000, 16, Trainer, 1e-5],
+        "MelSpec_phrase_4": ["phrase", [4], MelSpec, 2000, 16, Trainer, 1e-5],
+        "superset-CaRLab_2025-MelSpec_phrase_1": ["phrase", [1], MelSpec, 2000, 16, Trainer, 1e-5],
+        "superset-daSilvaMoura_2024-MelSpec_phrase_1": ["phrase", [1], MelSpec, 2000, 16, Trainer, 1e-5],
+
+        "superset-CaRLab_2025-MelSpec_phrase_1_transformer": ["phrase", [1], MelSpec, 2000, 16, TrainerTransformer, 1e-5],
+        "MelSpec_phrase_0_transformer": ["phrase", [0], MelSpec, 2000, 16, TrainerTransformer, 1e-5],
+        "MelSpec_phrase_4_transformer": ["phrase", [4], MelSpec, 2000, 16, TrainerTransformer, 1e-5],
     }
     # fmt: on
 
@@ -728,6 +743,16 @@ class Runner:
             )
         elif trainer_cls == TrainerMultiCrit:
             trainer = TrainerMultiCrit(
+                cache_path=self.__cache_path,
+                device=device,
+                data_loader=data_loader,
+                exp_key=exp_key,
+                num_epochs=num_epochs,
+                tboard_enabled=tboard_enabled,
+                lr=lr,
+            )
+        elif trainer_cls == TrainerTransformer:
+            trainer = TrainerTransformer(
                 cache_path=self.__cache_path,
                 device=device,
                 data_loader=data_loader,

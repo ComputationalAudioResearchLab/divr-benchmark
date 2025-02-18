@@ -143,3 +143,180 @@ class NormalizedMultiCrit(Base):
             new_labels += [labels[:, combinations].sum(dim=1)]
         new_labels = torch.stack(new_labels, dim=1)
         return new_labels
+
+
+class MultiHeadSelfAttention(nn.Module):
+    def __init__(self, d_model, nhead, dropout):
+        super().__init__()
+        self.d_model = d_model
+        self.nhead = nhead
+        self.d_k = d_model // nhead
+        self.query = nn.Linear(d_model, d_model)
+        self.key = nn.Linear(d_model, d_model)
+        self.value = nn.Linear(d_model, d_model)
+        self.out = nn.Linear(d_model, d_model)
+        self.attention_dropout = nn.Dropout(dropout)
+        self.eps = nn.Parameter(
+            torch.sqrt(torch.tensor(self.d_k, dtype=torch.float32)),
+            requires_grad=False,
+        )
+
+    def forward(self, src, attn_mask, key_padding_mask):
+        batch_size = src.size(0)
+
+        # Linear projections
+        query = (
+            self.query(src).view(batch_size, -1, self.nhead, self.d_k).transpose(1, 2)
+        )
+        key = self.key(src).view(batch_size, -1, self.nhead, self.d_k).transpose(1, 2)
+        value = (
+            self.value(src).view(batch_size, -1, self.nhead, self.d_k).transpose(1, 2)
+        )
+
+        # Scaled dot-product attention
+        scores = torch.matmul(query, key.transpose(-2, -1)) / self.eps
+        scores = scores.masked_fill(attn_mask, float("-inf"))
+        scores = scores.masked_fill(key_padding_mask[:, None, None, :], float("-inf"))
+        zero_length_mask = key_padding_mask.all(dim=1, keepdim=True)[:, None, None, :]
+        scores = scores.masked_fill(zero_length_mask, 0.0)
+        attn = F.softmax(scores, dim=-1)
+        attn = self.attention_dropout(attn)
+
+        # Combine heads
+        context = (
+            torch.matmul(attn, value)
+            .transpose(1, 2)
+            .contiguous()
+            .view(batch_size, -1, self.d_model)
+        )
+        output = self.out(context)
+
+        return output, attn
+
+
+class TransformerEncoderLayer(nn.Module):
+    def __init__(self, d_model, nhead, dropout=0.1):
+        super().__init__()
+        self.self_attn = MultiHeadSelfAttention(d_model, nhead, dropout)
+        self.mapper = nn.Sequential(
+            nn.Linear(d_model, d_model),
+            nn.ReLU(),
+            nn.Linear(d_model, d_model),
+            nn.Dropout(dropout),
+        )
+        self.norm1 = nn.LayerNorm(d_model)
+        self.norm2 = nn.LayerNorm(d_model)
+        self.dropout = nn.Dropout(dropout)
+
+    def forward(self, src, src_mask=None, src_key_padding_mask=None):
+        src2, attn = self.self_attn(
+            src,
+            attn_mask=src_mask,
+            key_padding_mask=src_key_padding_mask,
+        )
+        src = self.norm1(src + self.dropout(src2))
+        src = src + self.mapper(src)
+        src = self.norm2(src)
+        return src, attn
+
+
+class SimpleTransformer(Base):
+    def __init__(
+        self,
+        input_size: int,
+        num_classes: int,
+        checkpoint_path: Path,
+    ):
+        super().__init__(checkpoint_path)
+        hidden_size = 512
+        self.input_projection = nn.Linear(input_size, hidden_size)
+        self.out_projection = nn.Linear(hidden_size, num_classes)
+        num_layers = 6
+        self.encoder = nn.ModuleList(
+            [
+                TransformerEncoderLayer(
+                    d_model=hidden_size,
+                    nhead=4,
+                    dropout=0.1,
+                )
+                for _ in range(num_layers)
+            ]
+        )
+        self.num_classes = num_classes
+        self.hidden_size = hidden_size
+
+    def forward(self, inputs: InputTensors):
+        input_audios, input_lens = inputs
+        batch_size, num_audios, seq_length, feature_size = input_audios.shape
+        total_batch_suze = batch_size * num_audios
+
+        per_frame_labels = self.model(
+            input_audios=input_audios.view(total_batch_suze, seq_length, feature_size),
+            input_lens=input_lens.view(total_batch_suze),
+        ).view(
+            batch_size,
+            num_audios,
+            seq_length,
+            self.num_classes,
+        )
+
+        return self.process_per_frame_labels(
+            input_lens=input_lens,
+            per_frame_labels=per_frame_labels,
+        )
+
+    def model(
+        self, input_audios: torch.Tensor, input_lens: torch.Tensor
+    ) -> torch.Tensor:
+        """
+        input_audios: [Batch Size, Seq Len, Feature Size]
+        input_lens: [Batch Size]
+        """
+        batch_size, seq_len, feature_size = input_audios.shape
+        src_key_padding_mask = self.src_padding_mask(
+            batch_size=batch_size,
+            seq_len=seq_len,
+            input_lens=input_lens,
+        )
+
+        causal_mask = self.causal_mask(seq_len=seq_len)
+        pos_enc = self.positional_encoding(seq_len=seq_len)
+
+        X = self.input_projection(input_audios)
+        X = X + pos_enc
+        for encoder in self.encoder:
+            X, attn = encoder(
+                X,
+                src_mask=causal_mask,
+                src_key_padding_mask=src_key_padding_mask,
+            )
+
+        Y = self.out_projection(X)
+        Y = F.softmax(Y, dim=2)
+
+        return Y
+
+    def src_padding_mask(
+        self, batch_size: int, seq_len: int, input_lens: torch.Tensor
+    ) -> torch.Tensor:
+        mask = torch.arange(seq_len, device=self.device).expand(batch_size, seq_len)
+        return mask >= input_lens.unsqueeze(1)
+
+    def causal_mask(self, seq_len: int) -> torch.Tensor:
+        return (
+            torch.triu(torch.ones(seq_len, seq_len, device=self.device), diagonal=1)
+            == 1
+        )
+
+    def positional_encoding(self, seq_len: int):
+        position = torch.arange(
+            seq_len, dtype=torch.float, device=self.device
+        ).unsqueeze(1)
+        div_term = torch.exp(
+            torch.arange(0, self.hidden_size, 2, device=self.device).float()
+            * (-torch.log(torch.tensor(10000.0)) / self.hidden_size)
+        )
+        pe = torch.zeros(seq_len, self.hidden_size, device=self.device)
+        pe[:, 0::2] = torch.sin(position * div_term)
+        pe[:, 1::2] = torch.cos(position * div_term)
+        return pe.unsqueeze(0)  # Add batch dimension

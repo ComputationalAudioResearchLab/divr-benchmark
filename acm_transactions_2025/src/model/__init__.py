@@ -4,6 +4,7 @@ from .output import (
     NormalizedMultitask,
     NormalizedMultiCrit,
     Base as BaseModel,
+    SimpleTransformer,
 )
 from .feature import (
     Feature,
@@ -11,6 +12,7 @@ from .feature import (
     Wav2Vec,
     UnispeechSAT,
     ModifiedCPC,
+    MelSpec,
     MFCCDD,
     Compare2016Functional,
     Compare2016LLD,
@@ -30,10 +32,12 @@ __all__ = [
     "Wav2Vec",
     "UnispeechSAT",
     "ModifiedCPC",
+    "MelSpec",
     "MFCCDD",
     "Compare2016Functional",
     "Compare2016LLD",
     "Compare2016LLDDE",
     "EGEMapsv2Functional",
     "EGEMapsv2LLD",
+    "SimpleTransformer",
 ]
