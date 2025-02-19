@@ -49,10 +49,11 @@ class Normalized(Base):
         self,
         input_size: int,
         num_classes: int,
+        dropout: float,
+        hidden_size: int,
         checkpoint_path: Path,
     ):
         super().__init__(checkpoint_path)
-        hidden_size = 1024
         self.model = nn.Sequential(
             nn.Linear(input_size, hidden_size),
             nn.ReLU(True),
@@ -60,6 +61,7 @@ class Normalized(Base):
             nn.Linear(hidden_size, hidden_size),
             nn.ReLU(True),
             nn.LayerNorm(hidden_size),
+            nn.Dropout(dropout),
             nn.Linear(hidden_size, num_classes),
             nn.Softmax(dim=3),
         )

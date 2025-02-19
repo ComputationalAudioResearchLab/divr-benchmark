@@ -12,6 +12,8 @@ class TaskGenerator:
         "daSilvaMoura_2024": diagnosis_maps.daSilvaMoura_2024,
         "Sztaho_2018": diagnosis_maps.Sztaho_2018,
         "Zaim_2023": diagnosis_maps.Zaim_2023,
+        "USVAC_2025": diagnosis_maps.USVAC_2025,
+        "CaRLab_2025": diagnosis_maps.CaRLab_2025,
     }
 
     def __init__(self, research_data_path: Path, tasks_path: Path) -> None:
@@ -38,11 +40,4 @@ class TaskGenerator:
         )
 
     def get_diagnosis_map(self, task, allow_unmapped: bool = False):
-        if "-" in task:
-            # specified diagnosis map
-            diagnosis_map_key = task.split("-", maxsplit=1)[0]
-            return self.__diagnosis_maps[diagnosis_map_key](
-                allow_unmapped=allow_unmapped
-            )
-        else:
-            return diagnosis_maps.USVAC_2025(allow_unmapped=allow_unmapped)
+        return self.__diagnosis_maps[task](allow_unmapped=allow_unmapped)

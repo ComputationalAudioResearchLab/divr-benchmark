@@ -48,6 +48,7 @@ class Normalized(Base):
     def __init__(
         self,
         input_size: int,
+        num_ids: int,
         num_classes: int,
         checkpoint_path: Path,
     ):
@@ -60,15 +61,23 @@ class Normalized(Base):
             nn.Linear(hidden_size, hidden_size),
             nn.ReLU(True),
             nn.LayerNorm(hidden_size),
+        )
+        self.readout_diag = nn.Sequential(
             nn.Linear(hidden_size, num_classes),
+            nn.Softmax(dim=3),
+        )
+        self.readout_id = nn.Sequential(
+            nn.Linear(hidden_size, num_ids),
             nn.Softmax(dim=3),
         )
         self.init_orthogonal_weights()
 
     def forward(self, inputs: InputTensors):
         input_audios, input_lens = inputs
-        per_frame_labels = self.model(input_audios)
-        return self.process_per_frame_labels(input_lens, per_frame_labels)
+        latent = self.model(input_audios)
+        diag_data = self.process_per_frame_labels(input_lens, self.readout_diag(latent))
+        id_data = self.process_per_frame_labels(input_lens, self.readout_id(latent))
+        return id_data[0], diag_data
 
 
 class NormalizedMultitask(Base):

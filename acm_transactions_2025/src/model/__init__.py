@@ -17,6 +17,10 @@ from .feature import (
     Compare2016LLDDE,
     EGEMapsv2Functional,
     EGEMapsv2LLD,
+    ECAPA_VoxCeleb,
+    ECAPA_VoxCeleb_MelSpec,
+    ResNet_VoxCeleb,
+    XVect_VoxCeleb,
 )
 
 __all__ = [
@@ -36,4 +40,8 @@ __all__ = [
     "Compare2016LLDDE",
     "EGEMapsv2Functional",
     "EGEMapsv2LLD",
+    "ECAPA_VoxCeleb",
+    "ECAPA_VoxCeleb_MelSpec",
+    "ResNet_VoxCeleb",
+    "XVect_VoxCeleb",
 ]

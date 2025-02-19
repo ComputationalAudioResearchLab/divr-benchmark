@@ -30,9 +30,9 @@ class ExtraDB:
                 f"No data loaded. Extra db config {{name={self.name}, file_filter={self.audio_file_filter}}}"
             )
 
-    def get_audios(self, num_audios: int) -> list[list[np.ndarray]]:
+    def get_audios(self, num_audios: int) -> tuple[list[list[np.ndarray]], list[int]]:
         keys = self.rng.randint(low=0, high=self.total_data, size=num_audios)
-        return [[self.audios[k]] for k in keys]
+        return ([[self.audios[k]] for k in keys], keys)
 
     def load_audios(self, extra_audios_bucket_size: int):
         wav_paths = sorted(list(self.data_path.rglob(self.audio_file_filter)))

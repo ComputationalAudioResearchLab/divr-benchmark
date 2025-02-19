@@ -26,6 +26,7 @@ class Trainer:
         num_epochs: int,
         tboard_enabled: bool,
         lr: float,
+        alpha: float,
     ) -> None:
         max_diag_level = max(data_loader.num_unique_diagnosis.keys())
         num_classes = data_loader.num_unique_diagnosis[max_diag_level]
@@ -37,11 +38,13 @@ class Trainer:
         )
         model = Normalized(
             input_size=data_loader.feature_size,
+            num_ids=data_loader.total_ids,
             num_classes=num_classes,
             checkpoint_path=Path(f"{cache_path}/checkpoints/{exp_key}"),
         )
         model.to(device=device)
-        criterion = nn.CrossEntropyLoss(weight=class_weights)
+        id_criterion = nn.CrossEntropyLoss()
+        diag_criterion = nn.CrossEntropyLoss(weight=class_weights)
         optimizer = torch.optim.Adam(params=model.parameters(), lr=lr)
         save_epochs = list(range(0, num_epochs + 1, num_epochs // 10))
         confusion_epochs = list(range(0, num_epochs + 1, 10))
@@ -52,26 +55,33 @@ class Trainer:
         else:
             self.tboard = MockBoard()
         self.model = model
-        self.criterion = criterion
+        self.id_criterion = id_criterion
+        self.diag_criterion = diag_criterion
         self.num_epochs = num_epochs
         self.save_epochs = save_epochs
         self.confusion_epochs = confusion_epochs
         self.save_enabled = True
         self.optimizer = optimizer
+        self.alpha = alpha
 
     def run(self) -> None:
         for epoch in tqdm(range(self.num_epochs), desc="Epoch", position=0):
             train_loss = self.__train_loop()
-            eval_loss, eval_accuracy = self.__eval_loop(epoch=epoch)
+            eval_loss, eval_accuracy_diag, eval_accuracy_id = self.__eval_loop(
+                epoch=epoch
+            )
             self.tboard.add_scalars(
                 "loss",
                 {"train": train_loss, "eval": eval_loss},
                 global_step=epoch,
             )
             self.tboard.add_scalar(
-                "eval accuracy (top 1)", eval_accuracy, global_step=epoch
+                "eval accuracy diag (top 1)", eval_accuracy_diag, global_step=epoch
             )
-            self.__save(epoch=epoch, eval_accuracy=eval_accuracy)
+            self.tboard.add_scalar(
+                "eval accuracy id (top 1)", eval_accuracy_id, global_step=epoch
+            )
+            self.__save(epoch=epoch, eval_accuracy=eval_accuracy_diag)
 
     def __train_loop(self):
         self.model.train()
@@ -81,14 +91,16 @@ class Trainer:
             self.__data_loader.train(),
             desc="Training",
         ):
-            if len(batch) == 2:
-                inputs, labels = batch
+            if len(batch) == 3:
+                inputs, labels, id_tensor = batch
             else:
-                inputs, labels, _ = batch
+                inputs, labels, id_tensor, ids = batch
             labels = labels.squeeze(1)
             self.optimizer.zero_grad(set_to_none=True)
-            predicted_labels, _, _ = self.model(inputs)
-            loss = self.criterion(predicted_labels, labels)
+            predicted_ids, (predicted_labels, _, _) = self.model(inputs)
+            loss_diag = self.diag_criterion(predicted_labels, labels)
+            loss_id = self.id_criterion(predicted_ids, id_tensor)
+            loss = loss_diag + self.alpha * loss_id
             loss.backward()
             self.optimizer.step()
             total_loss += loss.item()
@@ -101,32 +113,43 @@ class Trainer:
         total_loss = 0
         total_batch_size = 0
         num_unique_diagnosis = len(self.unique_diagnosis)
-        confusion = np.zeros((num_unique_diagnosis, num_unique_diagnosis))
+        num_ids = self.__data_loader.total_ids
+        confusion_diag = np.zeros((num_unique_diagnosis, num_unique_diagnosis))
+        confusion_id = np.zeros((num_ids, num_ids))
 
         for batch in tqdm(
             self.__data_loader.test(),
             desc="Validating",
         ):
-            if len(batch) == 2:
-                inputs, labels = batch
+            if len(batch) == 3:
+                inputs, labels, id_tensor = batch
             else:
-                inputs, labels, _ = batch
+                inputs, labels, id_tensor, ids = batch
             labels = labels.squeeze(1)
-            predicted_labels, _, _ = self.model(inputs)
-            loss = self.criterion(predicted_labels, labels)
+            predicted_ids, (predicted_labels, _, _) = self.model(inputs)
+            loss_diag = self.diag_criterion(predicted_labels, labels)
+            loss_id = self.id_criterion(predicted_ids, id_tensor)
+            loss = loss_diag + self.alpha * loss_id
             predicted_labels = predicted_labels.argmax(dim=1)
+            predicted_ids = predicted_ids.argmax(dim=1)
             total_loss += loss.item()
             total_batch_size += 1
 
             self.__process_result(
-                confusion_ref=confusion,
+                confusion_ref=confusion_diag,
                 actual=labels,
                 predicted=predicted_labels,
             )
+            self.__process_result(
+                confusion_ref=confusion_id,
+                actual=id_tensor,
+                predicted=predicted_ids,
+            )
 
-        self.__add_confusion(epoch=epoch, confusion=confusion)
-        eval_accuracy = self.__weighted_accuracy(confusion=confusion)
-        return total_loss / total_batch_size, eval_accuracy
+        self.__add_confusion(epoch=epoch, confusion=confusion_diag)
+        eval_accuracy_diag = self.__weighted_accuracy(confusion=confusion_diag)
+        eval_accuracy_id = self.__weighted_accuracy(confusion=confusion_id)
+        return total_loss / total_batch_size, eval_accuracy_diag, eval_accuracy_id
 
     def __weighted_accuracy(self, confusion: np.ndarray) -> float:
         total_per_class = np.maximum(1, confusion.sum(axis=1))

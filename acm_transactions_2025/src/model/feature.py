@@ -4,6 +4,8 @@ import torchaudio
 import numpy as np
 from torch import nn
 from s3prl.nn import S3PRLUpstream
+from speechbrain.inference.encoders import MelSpectrogramEncoder
+from speechbrain.inference.speaker import EncoderClassifier
 
 from ..data_loader import InputTensors
 
@@ -280,3 +282,104 @@ class MFCCDD(Feature):
         return (
             audio_lens + self.hop_length - audio_lens % self.hop_length
         ) // self.hop_length
+
+
+class SpeechBrainFrozen(Feature):
+
+    def __init__(self, device: torch.device, sampling_rate: int) -> None:
+        super().__init__()
+        self.__device = device
+        self.model = EncoderClassifier.from_hparams(
+            source=self.model_name, run_opts={"device": device}
+        ).eval()
+        self._device = device
+
+    @torch.no_grad()
+    def individual_np(self, audio: np.ndarray) -> np.ndarray:
+        audio_tensor = torch.tensor([audio], dtype=torch.float, device=self.__device)
+        return self.model.encode_batch(audio_tensor)[0].cpu().numpy()
+
+    @torch.no_grad()
+    def forward(self, batch: InputTensors) -> InputTensors:
+        raise NotImplementedError()
+        # batch_inputs, batch_lens = batch
+        # batch_size, max_audios_in_session, max_audio_len = batch_inputs.shape
+        # audios = batch_inputs.reshape(
+        #     batch_size * max_audios_in_session,
+        #     max_audio_len,
+        # )
+        # audio_lens = batch_lens.reshape(batch_size * max_audios_in_session)
+        # if not isinstance(audios, torch.Tensor):
+        #     audios = torch.tensor(
+        #         audios,
+        #         device=self.__device,
+        #         dtype=torch.float32,
+        #     )
+        # elif audios.device != self.__device:
+        #     audios = audios.to(self.__device)
+        # if not isinstance(audio_lens, torch.Tensor):
+        #     audio_lens = torch.tensor(
+        #         audio_lens,
+        #         device=self.__device,
+        #         dtype=torch.long,
+        #     )
+        # elif audio_lens.device != self.__device:
+        #     audio_lens = audio_lens.to(self.__device)
+        # all_hs, all_hs_len = self.model(audios, audio_lens)
+        # feature = torch.cat(all_hs, dim=2)
+        # _, max_feature_len, feature_hidden_len = feature.shape
+        # feature = feature.reshape(
+        #     (
+        #         batch_size,
+        #         max_audios_in_session,
+        #         max_feature_len,
+        #         feature_hidden_len,
+        #     )
+        # )
+        # feature_lens = all_hs_len[0].reshape(
+        #     (
+        #         batch_size,
+        #         max_audios_in_session,
+        #     )
+        # )
+        # return feature, feature_lens
+
+
+class ECAPA_VoxCeleb(SpeechBrainFrozen):
+    model_name = "speechbrain/spkrec-ecapa-voxceleb"
+    feature_size = 192
+
+
+class ECAPA_VoxCeleb_MelSpec(Feature):
+    model_name = "speechbrain/spkrec-ecapa-voxceleb-mel-spec"
+    feature_size = 192
+
+    def __init__(self, device: torch.device, sampling_rate: int) -> None:
+        super().__init__()
+        self.__device = device
+        self.model = MelSpectrogramEncoder.from_hparams(
+            source=self.model_name, run_opts={"device": device}
+        ).eval()
+        self._device = device
+
+    @torch.no_grad()
+    def individual_np(self, audio: np.ndarray) -> np.ndarray:
+        audio_tensor = torch.tensor([audio], dtype=torch.float, device=self._device)
+        feature = self.model.encode_waveform(audio_tensor)
+        return feature[0].cpu().numpy()
+
+
+class ResNet_VoxCeleb(SpeechBrainFrozen):
+    model_name = "speechbrain/spkrec-resnet-voxceleb"
+    feature_size = 256
+
+    @torch.no_grad()
+    def individual_np(self, audio: np.ndarray) -> np.ndarray:
+        audio_tensor = torch.tensor([audio], dtype=torch.float, device=self._device)
+        feature = self.model.encode_batch(audio_tensor)
+        return feature.cpu().numpy()
+
+
+class XVect_VoxCeleb(SpeechBrainFrozen):
+    model_name = "speechbrain/spkrec-xvect-voxceleb"
+    feature_size = 512

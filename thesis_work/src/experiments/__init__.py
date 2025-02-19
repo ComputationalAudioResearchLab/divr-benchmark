@@ -142,6 +142,12 @@ class Runner:
         "unispeechSAT_a_1_50_librispeech": ["a_n", [1], UnispeechSAT, 200, Trainer, 50, LibrispeechDevClean],
         "unispeechSAT_a_4_25_librispeech": ["a_n", [4], UnispeechSAT, 200, Trainer, 25, LibrispeechDevClean],
         "unispeechSAT_a_4_50_librispeech": ["a_n", [4], UnispeechSAT, 200, Trainer, 50, LibrispeechDevClean],
+
+        ## Carlab
+        "unispeechSAT_phrase_1_50_emodb-carlab": ["phrase", [1], UnispeechSAT, 200, Trainer, 50, EmoDB],
+        "unispeechSAT_phrase_1_50_commonvoice-carlab": ["phrase", [1], UnispeechSAT, 200, Trainer, 50, CommonVoiceDeltaSegment20],
+        "unispeechSAT_phrase_1_50_librispeech-carlab": ["phrase", [1], UnispeechSAT, 200, Trainer, 50, LibrispeechDevClean],
+
     }
     # fmt: on
 
@@ -178,13 +184,20 @@ class Runner:
         ) = self._exp[exp_key]
         batch_size = 16
         lr = 1e-5
+        alpha = 1
         if limit_vram is not None:
             torch.cuda.set_per_process_memory_fraction(limit_vram, device=None)
             torch.cuda.empty_cache()
 
+        if exp_key.endswith("-carlab"):
+            dmap = self.__tasks_generator.get_diagnosis_map(task="CaRLab_2025")
+        else:
+            dmap = self.__tasks_generator.get_diagnosis_map(task="USVAC_2025")
+
         task = self.__tasks_generator.load_task(
             task=task_key,
             diag_level=max(diag_levels),
+            diagnosis_map=dmap,
         )
         extra_db = extra_db_cls(
             research_data_path=self.__research_data_path,
@@ -241,6 +254,7 @@ class Runner:
                 num_epochs=num_epochs,
                 tboard_enabled=tboard_enabled,
                 lr=lr,
+                alpha=alpha,
             )
         elif trainer_cls == TrainerMultiCrit:
             trainer = TrainerMultiCrit(

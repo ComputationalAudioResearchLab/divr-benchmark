@@ -74,14 +74,15 @@ class DataLoader(BaseDataLoader):
             [self.__task.diag_to_index(b.label, level) for level in self.__diag_levels]
             for b in batch
         ]
-        num_extra_audios, extra_audios, extra_labels = self.get_injection_data(
+        extra_ids, extra_audios, extra_labels = self.get_injection_data(
             current_batch_size=len(batch)
         )
+        num_extra_audios = len(extra_ids)
         ids = [b.id for b in batch]
         if num_extra_audios > 0:
             audios = audios + extra_audios
             labels = labels + extra_labels
-            ids = ids + [None] * num_extra_audios
+            ids = ids + extra_ids
             # Need to shuffle audios and labels so that extra data is not always at the end
             indices = np.arange(batch_size + num_extra_audios)
             np.random.shuffle(indices)
@@ -89,6 +90,11 @@ class DataLoader(BaseDataLoader):
             labels = [labels[idx] for idx in indices]
             ids = [ids[idx] for idx in indices]
 
+        id_tensor = torch.tensor(
+            [self._all_ids[k] for k in ids],
+            device=self.__device,
+            dtype=torch.long,
+        )
         inputs: InputTensors = self.collate_function(audios)
         labels = torch.tensor(
             labels,
@@ -97,9 +103,9 @@ class DataLoader(BaseDataLoader):
         )
 
         if self.__return_ids:
-            return (inputs, labels, ids)
+            return (inputs, labels, id_tensor, ids)
         else:
-            return (inputs, labels)
+            return (inputs, labels, id_tensor)
 
     def __get_batch(self, idx: int):
         start = idx * self.__batch_size

@@ -26,6 +26,8 @@ class Trainer:
         num_epochs: int,
         tboard_enabled: bool,
         lr: float,
+        dropout: float,
+        hidden_size: int,
     ) -> None:
         max_diag_level = max(data_loader.num_unique_diagnosis.keys())
         num_classes = data_loader.num_unique_diagnosis[max_diag_level]
@@ -39,6 +41,8 @@ class Trainer:
             input_size=data_loader.feature_size,
             num_classes=num_classes,
             checkpoint_path=Path(f"{cache_path}/checkpoints/{exp_key}"),
+            dropout=dropout,
+            hidden_size=hidden_size,
         )
         model.to(device=device)
         criterion = nn.CrossEntropyLoss(weight=class_weights)
