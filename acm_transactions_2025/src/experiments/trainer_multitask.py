@@ -84,10 +84,7 @@ class TrainerMultiTask:
             self.__data_loader.train(),
             desc="Training",
         ):
-            if len(batch) == 2:
-                inputs, labels = batch
-            else:
-                inputs, labels, _ = batch
+            inputs, labels, id_tensor, ids = batch
             labels = labels.squeeze(1)
             self.optimizer.zero_grad(set_to_none=True)
             results = self.model(inputs)
@@ -121,10 +118,7 @@ class TrainerMultiTask:
             self.__data_loader.test(),
             desc="Validating",
         ):
-            if len(batch) == 2:
-                inputs, labels = batch
-            else:
-                inputs, labels, _ = batch
+            inputs, labels, id_tensor, ids = batch
             labels = labels.squeeze(1)
             results = self.model(inputs)
             loss = torch.scalar_tensor(0, device=labels.device)

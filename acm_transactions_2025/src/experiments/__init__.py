@@ -707,6 +707,7 @@ class Runner:
                 cache_path=cache_path,
                 test_only=False,
                 allow_inter_level_comparison=False,
+                return_id_tensor=trainer_cls == TrainerTransformer,
             )
         else:
             data_loader = DataLoader(
@@ -720,6 +721,7 @@ class Runner:
                 return_ids=False,
                 test_only=False,
                 allow_inter_level_comparison=False,
+                return_id_tensor=trainer_cls == TrainerTransformer,
             )
         if trainer_cls == Trainer:
             trainer = Trainer(
@@ -760,6 +762,7 @@ class Runner:
                 num_epochs=num_epochs,
                 tboard_enabled=tboard_enabled,
                 lr=lr,
+                alpha=0.1,
             )
         else:
             raise ValueError(f"Unsupported trainer type: {trainer_cls}")

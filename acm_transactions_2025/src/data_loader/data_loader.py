@@ -1,10 +1,10 @@
 from __future__ import annotations
 import torch
 import numpy as np
-from typing import Tuple, List, Union
+from typing import List
 
-from .dtypes import AudioBatch, InputTensors, LabelTensor
-from .base_data_loader import BaseDataLoader
+from .dtypes import AudioBatch, InputTensors
+from .base_data_loader import BaseDataLoader, DataPoint
 from ..model.feature import Feature
 
 
@@ -22,6 +22,7 @@ class DataLoader(BaseDataLoader):
         return_ids: bool,
         test_only: bool,
         allow_inter_level_comparison: bool,
+        return_id_tensor: bool,
     ) -> None:
         super().__init__(
             random_seed=random_seed,
@@ -30,6 +31,7 @@ class DataLoader(BaseDataLoader):
             batch_size=batch_size,
             test_only=test_only,
             allow_inter_level_comparison=allow_inter_level_comparison,
+            device=device,
         )
         self.__train_points = np.array(task.train)
         self.__val_points = np.array(task.val)
@@ -48,15 +50,13 @@ class DataLoader(BaseDataLoader):
             self.feature_size = feature_function.feature_size
         self.__shuffle_train = shuffle_train
         self.__return_ids = return_ids
+        self.__return_id_tensor = return_id_tensor
 
     def __len__(self) -> int:
         return self._data_len
 
     @torch.no_grad()
-    def __getitem__(self, idx: int) -> Union[
-        Tuple[InputTensors, LabelTensor, List[str]],
-        Tuple[InputTensors, LabelTensor],
-    ]:
+    def __getitem__(self, idx: int) -> DataPoint:
         if idx >= self._data_len:
             raise StopIteration()
         batch = self.__get_batch(idx)
@@ -72,11 +72,17 @@ class DataLoader(BaseDataLoader):
             device=self.__device,
             dtype=torch.long,
         )
+        id_tensor, ids = self.batch_to_ids(batch)
         if self.__return_ids:
-            ids = [b.id for b in batch]
-            return (inputs, labels, ids)
+            if self.__return_id_tensor:
+                return (inputs, labels, id_tensor, ids)
+            else:
+                return (inputs, labels, None, ids)
         else:
-            return (inputs, labels)
+            if self.__return_id_tensor:
+                return (inputs, labels, id_tensor, None)
+            else:
+                return (inputs, labels, None, None)
 
     def __get_batch(self, idx: int):
         start = idx * self.__batch_size

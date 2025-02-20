@@ -225,49 +225,71 @@ class SimpleTransformer(Base):
         self,
         input_size: int,
         num_classes: int,
+        num_speakers: int,
         checkpoint_path: Path,
     ):
         super().__init__(checkpoint_path)
         hidden_size = 512
         self.input_projection = nn.Linear(input_size, hidden_size)
-        self.out_projection = nn.Linear(hidden_size, num_classes)
-        num_layers = 6
+        self.out_diag_projection = nn.Linear(hidden_size, num_classes)
+        self.out_spk_projection = nn.Linear(hidden_size, num_speakers)
+        num_layers = 4
         self.encoder = nn.ModuleList(
             [
                 TransformerEncoderLayer(
                     d_model=hidden_size,
-                    nhead=4,
-                    dropout=0.1,
+                    nhead=2,
+                    dropout=0.33,
                 )
                 for _ in range(num_layers)
             ]
         )
         self.num_classes = num_classes
+        self.num_speakers = num_speakers
         self.hidden_size = hidden_size
+        self.tap_location = 2
 
     def forward(self, inputs: InputTensors):
         input_audios, input_lens = inputs
         batch_size, num_audios, seq_length, feature_size = input_audios.shape
         total_batch_suze = batch_size * num_audios
 
-        per_frame_labels = self.model(
+        per_frame_diag_labels, per_frame_spk_labels = self.model(
             input_audios=input_audios.view(total_batch_suze, seq_length, feature_size),
             input_lens=input_lens.view(total_batch_suze),
-        ).view(
+        )
+        per_frame_diag_labels = per_frame_diag_labels.view(
             batch_size,
             num_audios,
             seq_length,
             self.num_classes,
         )
+        per_frame_spk_labels = per_frame_spk_labels.view(
+            batch_size,
+            num_audios,
+            seq_length,
+            self.num_speakers,
+        )
 
-        return self.process_per_frame_labels(
+        per_session_diag_labels, per_audio_diag_labels, per_frame_diag_labels = (
+            self.process_per_frame_labels(
+                input_lens=input_lens,
+                per_frame_labels=per_frame_diag_labels,
+            )
+        )
+        spk_labels, _, _ = self.process_per_frame_labels(
             input_lens=input_lens,
-            per_frame_labels=per_frame_labels,
+            per_frame_labels=per_frame_spk_labels,
+        )
+        return spk_labels, (
+            per_session_diag_labels,
+            per_audio_diag_labels,
+            per_frame_diag_labels,
         )
 
     def model(
         self, input_audios: torch.Tensor, input_lens: torch.Tensor
-    ) -> torch.Tensor:
+    ) -> tuple[torch.Tensor, torch.Tensor]:
         """
         input_audios: [Batch Size, Seq Len, Feature Size]
         input_lens: [Batch Size]
@@ -284,17 +306,22 @@ class SimpleTransformer(Base):
 
         X = self.input_projection(input_audios)
         X = X + pos_enc
-        for encoder in self.encoder:
+
+        for idx, encoder in enumerate(self.encoder):
             X, attn = encoder(
                 X,
                 src_mask=causal_mask,
                 src_key_padding_mask=src_key_padding_mask,
             )
+            if idx == self.tap_location:
+                Y_diag = self.out_diag_projection(X)
 
-        Y = self.out_projection(X)
-        Y = F.softmax(Y, dim=2)
+        Y_spk = self.out_spk_projection(X)
 
-        return Y
+        Y_spk = F.softmax(Y_spk, dim=2)
+        Y_diag = F.softmax(Y_diag, dim=2)
+
+        return Y_diag, Y_spk
 
     def src_padding_mask(
         self, batch_size: int, seq_len: int, input_lens: torch.Tensor

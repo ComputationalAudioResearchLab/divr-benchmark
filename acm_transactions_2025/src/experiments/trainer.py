@@ -81,10 +81,7 @@ class Trainer:
             self.__data_loader.train(),
             desc="Training",
         ):
-            if len(batch) == 2:
-                inputs, labels = batch
-            else:
-                inputs, labels, _ = batch
+            inputs, labels, id_tensor, ids = batch
             labels = labels.squeeze(1)
             self.optimizer.zero_grad(set_to_none=True)
             predicted_labels, _, _ = self.model(inputs)
@@ -107,10 +104,7 @@ class Trainer:
             self.__data_loader.eval(),
             desc="Validating",
         ):
-            if len(batch) == 2:
-                inputs, labels = batch
-            else:
-                inputs, labels, _ = batch
+            inputs, labels, id_tensor, ids = batch
             labels = labels.squeeze(1)
             predicted_labels, _, _ = self.model(inputs)
             loss = self.criterion(predicted_labels, labels)

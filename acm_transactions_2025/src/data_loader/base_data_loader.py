@@ -7,8 +7,10 @@ from typing import Dict, Tuple, List, Union, Iterable
 from .dtypes import AudioBatch, InputTensors, LabelTensor
 
 DataPoint = Union[
-    Tuple[InputTensors, LabelTensor, List[str]],
-    Tuple[InputTensors, LabelTensor],
+    Tuple[InputTensors, LabelTensor, None, None],
+    Tuple[InputTensors, LabelTensor, None, List[str]],
+    Tuple[InputTensors, LabelTensor, LabelTensor, None],
+    Tuple[InputTensors, LabelTensor, LabelTensor, List[str]],
 ]
 
 
@@ -27,6 +29,7 @@ class BaseDataLoader:
         task,
         test_only: bool,
         allow_inter_level_comparison: bool,
+        device: torch.device,
     ) -> None:
         self.unique_diagnosis = {}
         self.num_unique_diagnosis = {}
@@ -65,6 +68,22 @@ class BaseDataLoader:
         self.__batch_size = batch_size
         self.__task = task
         self.__diag_levels = diag_levels
+        all_ids = [point.id for point in (task.train + task.val + task.test)]
+        self.__all_ids = {k: v for v, k in enumerate(all_ids)}
+        self.__device = device
+
+    def batch_to_ids(self, batch):
+        ids = [b["id"] for b in batch]
+        id_tensor = torch.tensor(
+            [self.__all_ids[k] for k in ids],
+            dtype=torch.long,
+            device=self.__device,
+        )
+        return id_tensor, ids
+
+    @property
+    def total_speakers(self):
+        return len(self.__all_ids)
 
     @property
     def diag_levels(self):
@@ -87,7 +106,7 @@ class BaseDataLoader:
     def __getitem__(self, idx: int) -> DataPoint:
         raise NotImplementedError()
 
-    def train(self) -> Iterable[DataPoint]:
+    def train(self, random_cuts: bool) -> Iterable[DataPoint]:
         raise NotImplementedError()
 
     def eval(self) -> Iterable[DataPoint]:

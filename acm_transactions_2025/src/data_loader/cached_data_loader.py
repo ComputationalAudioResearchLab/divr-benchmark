@@ -4,11 +4,11 @@ import shelve
 import numpy as np
 from tqdm import tqdm
 from pathlib import Path
+from typing import List, TypedDict
 from divr_diagnosis import Diagnosis
-from typing import Tuple, List, Union, TypedDict
 
-from .dtypes import AudioBatch, InputTensors, LabelTensor
-from .base_data_loader import BaseDataLoader
+from .dtypes import AudioBatch, InputTensors
+from .base_data_loader import BaseDataLoader, DataPoint
 from ..model.feature import Feature
 
 
@@ -37,6 +37,7 @@ class CachedDataLoader(BaseDataLoader):
         cache_path: Path,
         test_only: bool,
         allow_inter_level_comparison: bool,
+        return_id_tensor: bool,
     ) -> None:
         super().__init__(
             random_seed=random_seed,
@@ -45,6 +46,7 @@ class CachedDataLoader(BaseDataLoader):
             batch_size=batch_size,
             test_only=test_only,
             allow_inter_level_comparison=allow_inter_level_comparison,
+            device=device,
         )
         cache_path.mkdir(parents=True, exist_ok=True)
         self.__cache = shelve.open(str(cache_path))
@@ -67,6 +69,7 @@ class CachedDataLoader(BaseDataLoader):
         self.__train_points = self.__prepare_points_for_indexing(task.train)
         self.__val_points = self.__prepare_points_for_indexing(task.val)
         self.__test_points = self.__prepare_points_for_indexing(task.test)
+        self.__return_id_tensor = return_id_tensor
 
     # def empty_cache(self):
     #     """
@@ -85,10 +88,7 @@ class CachedDataLoader(BaseDataLoader):
         return self._data_len
 
     @torch.no_grad()
-    def __getitem__(self, idx: int) -> Union[
-        Tuple[InputTensors, LabelTensor, List[str]],
-        Tuple[InputTensors, LabelTensor],
-    ]:
+    def __getitem__(self, idx: int) -> DataPoint:
         if idx >= self._data_len:
             raise StopIteration()
         batch = self.__get_batch(idx)
@@ -104,11 +104,18 @@ class CachedDataLoader(BaseDataLoader):
             device=self.__device,
             dtype=torch.long,
         )
+
+        id_tensor, ids = self.batch_to_ids(batch)
         if self.__return_ids:
-            ids = [b["id"] for b in batch]
-            return (inputs, labels, ids)
+            if self.__return_id_tensor:
+                return (inputs, labels, id_tensor, ids)
+            else:
+                return (inputs, labels, None, ids)
         else:
-            return (inputs, labels)
+            if self.__return_id_tensor:
+                return (inputs, labels, id_tensor, None)
+            else:
+                return (inputs, labels, None, None)
 
     def __get_batch(self, idx: int) -> List[CachePoint]:
         start = idx * self.__batch_size
@@ -122,21 +129,24 @@ class CachedDataLoader(BaseDataLoader):
             for point in self.__points[start:end]
         ]
 
-    def train(self) -> CachedDataLoader:
+    def train(self, random_cuts: bool) -> CachedDataLoader:
         if self.__shuffle_train:
             np.random.shuffle(self.__train_points)
         self.__points = self.__train_points
         self.__cache_key = self.__cache_key_train
         self._data_len = self._num_batches(len(self.__points))
+        self.__random_cuts = random_cuts
         return self
 
     def eval(self) -> CachedDataLoader:
+        self.__random_cuts = False
         self.__points = self.__val_points
         self.__cache_key = self.__cache_key_val
         self._data_len = self._num_batches(len(self.__points))
         return self
 
     def test(self) -> CachedDataLoader:
+        self.__random_cuts = False
         self.__points = self.__test_points
         self.__cache_key = self.__cache_key_test
         self._data_len = self._num_batches(len(self.__points))
@@ -161,9 +171,21 @@ class CachedDataLoader(BaseDataLoader):
             (batch_len, max_num_features, max_feature_len, max_feature_size)
         )
         feature_lens = np.zeros((batch_len, max_num_features), dtype=int)
+        max_feature_len = 0
         for batch_idx, features in enumerate(batch):
             for feature_idx, feature in enumerate(features):
+                if self.__random_cuts:
+                    feature_len = feature.shape[0]
+                    # percentage margin to cut from front and back, currently 20%
+                    margin = int(feature_len * 0.2)
+                    start = np.random.randint(0, margin)
+                    end = feature_len - np.random.randint(0, margin)
+                    feature = feature[start:end, :]
+                    # print(feature_len, feature.shape)
                 feature_len, feature_size = feature.shape
+                if feature_len > max_feature_len:
+                    max_feature_len = feature_len
+                # print(feature_len, feature_size, feature.shape)
                 feature_tensor[
                     batch_idx,
                     feature_idx,
@@ -172,7 +194,7 @@ class CachedDataLoader(BaseDataLoader):
                 ] = feature
                 feature_lens[batch_idx, feature_idx] = feature_len
         feature_tensor = torch.tensor(
-            feature_tensor,
+            feature_tensor[:, :, :max_feature_len, :],
             dtype=torch.float,
             device=self.__device,
         )

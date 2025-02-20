@@ -92,10 +92,7 @@ class TrainerMultiCrit:
             self.__data_loader.train(),
             desc="Training",
         ):
-            if len(batch) == 2:
-                inputs, labels = batch
-            else:
-                inputs, labels, _ = batch
+            inputs, labels, id_tensor, ids = batch
             labels = labels.squeeze(1)
             self.optimizer.zero_grad(set_to_none=True)
             predicted_labels, _, _ = self.model(inputs)
@@ -131,10 +128,7 @@ class TrainerMultiCrit:
             self.__data_loader.eval(),
             desc="Validating",
         ):
-            if len(batch) == 2:
-                inputs, labels = batch
-            else:
-                inputs, labels, _ = batch
+            inputs, labels, id_tensor, ids = batch
             labels = labels.squeeze(1)
             predicted_labels, _, _ = self.model(inputs)
             loss = torch.scalar_tensor(0, device=labels.device)
