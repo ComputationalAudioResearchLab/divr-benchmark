@@ -7,15 +7,18 @@ from divr_diagnosis import DiagnosisMap
 from .model_cache import ModelCache
 from .. import Runner
 from ..trainer import Trainer
+from ..trainer_sep import TrainerSep
 from ...data_loader import BaseDataLoader, DataLoader, CachedDataLoader
 from ...tasks_generator import TaskGenerator
 from ..trainer_multicrit import TrainerMultiCrit
 from ..trainer_multitask import TrainerMultiTask
+from ..trainer_transformer import TrainerTransformer
 from ...model import (
     Normalized,
     NormalizedMultiCrit,
     NormalizedMultitask,
     Feature,
+    SimpleTransformer,
 )
 
 
@@ -23,8 +26,10 @@ class TestAllCross:
 
     __model_map = {
         Trainer: Normalized,
+        TrainerSep: Normalized,
         TrainerMultiCrit: NormalizedMultiCrit,
         TrainerMultiTask: NormalizedMultitask,
+        TrainerTransformer: SimpleTransformer,
     }
     __device = torch.device("cuda")
     __sampling_rate = 16000
@@ -32,11 +37,11 @@ class TestAllCross:
     __batch_size = 1
     __cross_test_tasks = [
         # "cross_test_avfad",
-        # "cross_test_meei",
+        "cross_test_meei",
         # "cross_test_torgo",
         # "cross_test_uaspeech",
         # "cross_test_uncommon_voice",
-        # "cross_test_voiced",
+        "cross_test_voiced",
     ]
 
     def __init__(
@@ -260,10 +265,7 @@ class TestAllCross:
         results = []
         all_ids = []
         for batch in tqdm(cross_dl.test(), desc="Testing", leave=False):
-            if len(batch) == 2:
-                inputs, labels = batch
-            else:
-                inputs, labels, ids = batch
+            inputs, labels, id_tensor, ids = batch
             labels = labels.squeeze(1)
             probabilities, _, _ = model(inputs)
             predicted_labels = probabilities.argmax(dim=1)
@@ -302,10 +304,7 @@ class TestAllCross:
         all_results = []
         all_ids = []
         for batch in tqdm(cross_dl.test(), desc="Testing", leave=False):
-            if len(batch) == 2:
-                inputs, labels = batch
-            else:
-                inputs, labels, ids = batch
+            inputs, labels, id_tensor, ids = batch
             labels = labels.squeeze(1)
             probabilities, _, _ = model(inputs)
             data_at_level = []
@@ -358,10 +357,7 @@ class TestAllCross:
         all_results = []
         all_ids = []
         for batch in tqdm(cross_dl.test(), desc="Testing", leave=False):
-            if len(batch) == 2:
-                inputs, labels = batch
-            else:
-                inputs, labels, ids = batch
+            inputs, labels, id_tensor, ids = batch
             labels = labels.squeeze(1)
             results = model(inputs)
             data_at_level = []
@@ -425,6 +421,7 @@ class TestAllCross:
             return_ids=True,
             test_only=True,
             allow_inter_level_comparison=True,
+            return_id_tensor=True,
         )
 
     def __get_cached_cross_data_loader(
@@ -456,6 +453,7 @@ class TestAllCross:
             cache_path=cache_path,
             test_only=True,
             allow_inter_level_comparison=True,
+            return_id_tensor=True,
         )
 
     def __get_model_data_loader(
@@ -481,6 +479,7 @@ class TestAllCross:
             return_ids=True,
             test_only=True,
             allow_inter_level_comparison=False,
+            return_id_tensor=True,
         )
 
     def __find_checkpoints(
