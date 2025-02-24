@@ -133,6 +133,20 @@ class TaskGenerator:
                 diagnosis_map=diagnosis_map,
             )
         ]
+        coros += [
+            self.__benchmark.generate_task(
+                filter_func=self.__filter_func(
+                    allowed_suffixes=[
+                        "-phrase.wav",
+                        "-a_n.wav",
+                    ],
+                    diag_level=diag_level,
+                ),
+                task_path=self.__ensure_path(f"{self.__tasks_path}/a_phrase"),
+                diagnosis_map=diagnosis_map,
+                allow_incomplete_classification=False,
+            )
+        ]
         cross_test_datasets = [
             "avfad",
             "meei",
@@ -168,6 +182,7 @@ class TaskGenerator:
             "i_n": ["-i_n.wav"],
             "u_n": ["-u_n.wav"],
             "all": ["-phrase.wav", "-a_n.wav", "-i_n.wav", "-u_n.wav"],
+            "a_phrase": ["-phrase.wav", "-a_n.wav"],
         }
         for diagnosis_map in maps:
             for suffix_key, suffix_set in suffixes.items():
@@ -329,7 +344,7 @@ class TaskGenerator:
                 labels[task_label] += 1
         return labels
 
-    def __ensure_path(self, path: str|Path) -> Path:
+    def __ensure_path(self, path: str | Path) -> Path:
         _path = Path(path)
         _path.mkdir(exist_ok=True, parents=True)
         return _path

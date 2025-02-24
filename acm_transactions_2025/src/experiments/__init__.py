@@ -17,6 +17,7 @@ from ..model import (
 from ..tasks_generator import TaskGenerator
 from ..data_loader import CachedDataLoader, DataLoader
 from .trainer import Trainer
+from .trainer_sep import TrainerSep
 from .trainer_transformer import TrainerTransformer
 from .trainer_multitask import TrainerMultiTask
 from .trainer_multicrit import TrainerMultiCrit
@@ -165,6 +166,11 @@ class Runner:
         "mfccdd_all_2": ["all", [2], MFCCDD, 2000, 16, Trainer, 1e-5],
         "mfccdd_all_3": ["all", [3], MFCCDD, 2000, 16, Trainer, 1e-5],
         "mfccdd_all_4": ["all", [4], MFCCDD, 2000, 16, Trainer, 1e-5],
+        "mfccdd_a_phrase_0": ["a_phrase", [0], MFCCDD, 2000, 16, Trainer, 1e-5],
+        "mfccdd_a_phrase_1": ["a_phrase", [1], MFCCDD, 2000, 16, Trainer, 1e-5],
+        "mfccdd_a_phrase_2": ["a_phrase", [2], MFCCDD, 2000, 16, Trainer, 1e-5],
+        "mfccdd_a_phrase_3": ["a_phrase", [3], MFCCDD, 2000, 16, Trainer, 1e-5],
+        "mfccdd_a_phrase_4": ["a_phrase", [4], MFCCDD, 2000, 16, Trainer, 1e-5],
         "mc_mfccdd_phrase_0+2": ["phrase", [0, 2], MFCCDD, 2000, 16, TrainerMultiCrit, 1e-5],
         "mc_mfccdd_a_0+2": ["a_n", [0, 2], MFCCDD, 2000, 16, TrainerMultiCrit, 1e-5],
         "mc_mfccdd_i_0+2": ["i_n", [0, 2], MFCCDD, 2000, 16, TrainerMultiCrit, 1e-5],
@@ -204,6 +210,11 @@ class Runner:
         "wav2vec_all_2": ["all", [2], Wav2Vec, 200, 16, Trainer, 1e-5],
         "wav2vec_all_3": ["all", [3], Wav2Vec, 200, 16, Trainer, 1e-5],
         "wav2vec_all_4": ["all", [4], Wav2Vec, 200, 16, Trainer, 1e-5],
+        "wav2vec_a_phrase_0": ["a_phrase", [0], Wav2Vec, 200, 16, Trainer, 1e-5],
+        "wav2vec_a_phrase_1": ["a_phrase", [1], Wav2Vec, 200, 16, Trainer, 1e-5],
+        "wav2vec_a_phrase_2": ["a_phrase", [2], Wav2Vec, 200, 16, Trainer, 1e-5],
+        "wav2vec_a_phrase_3": ["a_phrase", [3], Wav2Vec, 200, 16, Trainer, 1e-5],
+        "wav2vec_a_phrase_4": ["a_phrase", [4], Wav2Vec, 200, 16, Trainer, 1e-5],
 
         "mc_wav2vec_phrase_0+2": ["phrase", [0, 2], Wav2Vec, 200, 16, TrainerMultiCrit, 1e-5],
         "mc_wav2vec_a_0+2": ["a_n", [0, 2], Wav2Vec, 200, 16, TrainerMultiCrit, 1e-5],
@@ -245,6 +256,11 @@ class Runner:
         "unispeechSAT_all_2": ["all", [2], UnispeechSAT, 200, 16, Trainer, 1e-5],
         "unispeechSAT_all_3": ["all", [3], UnispeechSAT, 200, 16, Trainer, 1e-5],
         "unispeechSAT_all_4": ["all", [4], UnispeechSAT, 200, 16, Trainer, 1e-5],
+        "unispeechSAT_a_phrase_0": ["a_phrase", [0], UnispeechSAT, 200, 16, Trainer, 1e-5],
+        "unispeechSAT_a_phrase_1": ["a_phrase", [1], UnispeechSAT, 200, 16, Trainer, 1e-5],
+        "unispeechSAT_a_phrase_2": ["a_phrase", [2], UnispeechSAT, 200, 16, Trainer, 1e-5],
+        "unispeechSAT_a_phrase_3": ["a_phrase", [3], UnispeechSAT, 200, 16, Trainer, 1e-5],
+        "unispeechSAT_a_phrase_4": ["a_phrase", [4], UnispeechSAT, 200, 16, Trainer, 1e-5],
         # Multitask experiments
         "unispeechSAT_phrase_0+1": ["phrase", [0, 1], UnispeechSAT, 200, 16, TrainerMultiTask, 1e-5],
         "unispeechSAT_phrase_0+2": ["phrase", [0, 2], UnispeechSAT, 200, 16, TrainerMultiTask, 1e-5],
@@ -603,6 +619,9 @@ class Runner:
         "superset-Compton_2022-mfccdd_all_1": ["all", [1], MFCCDD, 2000, 16, Trainer, 1e-5],
         "superset-Compton_2022-wav2vec_all_1": ["all", [1], Wav2Vec, 200, 16, Trainer, 1e-5],
         "superset-Compton_2022-unispeechSAT_all_1": ["all", [1], UnispeechSAT, 200, 16, Trainer, 1e-5],
+        "superset-Compton_2022-mfccdd_a_phrase_1": ["a_phrase", [1], MFCCDD, 2000, 16, Trainer, 1e-5],
+        "superset-Compton_2022-wav2vec_a_phrase_1": ["a_phrase", [1], Wav2Vec, 200, 16, Trainer, 1e-5],
+        "superset-Compton_2022-unispeechSAT_a_phrase_1": ["a_phrase", [1], UnispeechSAT, 200, 16, Trainer, 1e-5],
         
 
         ## daSilvaMoura_2024
@@ -615,6 +634,9 @@ class Runner:
         "superset-daSilvaMoura_2024-mfccdd_all_1": ["all", [1], MFCCDD, 2000, 16, Trainer, 1e-5],
         "superset-daSilvaMoura_2024-wav2vec_all_1": ["all", [1], Wav2Vec, 200, 16, Trainer, 1e-5],
         "superset-daSilvaMoura_2024-unispeechSAT_all_1": ["all", [1], UnispeechSAT, 200, 16, Trainer, 1e-5],
+        "superset-daSilvaMoura_2024-mfccdd_a_phrase_1": ["a_phrase", [1], MFCCDD, 2000, 16, Trainer, 1e-5],
+        "superset-daSilvaMoura_2024-wav2vec_a_phrase_1": ["a_phrase", [1], Wav2Vec, 200, 16, Trainer, 1e-5],
+        "superset-daSilvaMoura_2024-unispeechSAT_a_phrase_1": ["a_phrase", [1], UnispeechSAT, 200, 16, Trainer, 1e-5],
 
         ## Zaim_2023
         "superset-Zaim_2023-mfccdd_a_n_1": ["a_n", [1], MFCCDD, 2000, 16, Trainer, 1e-5],
@@ -626,6 +648,9 @@ class Runner:
         "superset-Zaim_2023-mfccdd_all_1": ["all", [1], MFCCDD, 2000, 16, Trainer, 1e-5],
         "superset-Zaim_2023-wav2vec_all_1": ["all", [1], Wav2Vec, 200, 16, Trainer, 1e-5],
         "superset-Zaim_2023-unispeechSAT_all_1": ["all", [1], UnispeechSAT, 200, 16, Trainer, 1e-5],
+        "superset-Zaim_2023-mfccdd_a_phrase_1": ["a_phrase", [1], MFCCDD, 2000, 16, Trainer, 1e-5],
+        "superset-Zaim_2023-wav2vec_a_phrase_1": ["a_phrase", [1], Wav2Vec, 200, 16, Trainer, 1e-5],
+        "superset-Zaim_2023-unispeechSAT_a_phrase_1": ["a_phrase", [1], UnispeechSAT, 200, 16, Trainer, 1e-5],
 
         ## CaRLab_2025
         "superset-CaRLab_2025-mfccdd_a_n_1": ["a_n", [1], MFCCDD, 2000, 16, Trainer, 1e-5],
@@ -637,6 +662,10 @@ class Runner:
         "superset-CaRLab_2025-mfccdd_all_1": ["all", [1], MFCCDD, 2000, 16, Trainer, 1e-5],
         "superset-CaRLab_2025-wav2vec_all_1": ["all", [1], Wav2Vec, 200, 16, Trainer, 1e-5],
         "superset-CaRLab_2025-unispeechSAT_all_1": ["all", [1], UnispeechSAT, 200, 16, Trainer, 1e-5],
+        "superset-CaRLab_2025-mfccdd_a_phrase_1": ["a_phrase", [1], MFCCDD, 2000, 16, Trainer, 1e-5],
+        "superset-CaRLab_2025-wav2vec_a_phrase_1": ["a_phrase", [1], Wav2Vec, 200, 16, Trainer, 1e-5],
+        "superset-CaRLab_2025-unispeechSAT_a_phrase_1": ["a_phrase", [1], UnispeechSAT, 200, 16, Trainer, 1e-5],
+
 
         # MelSpec experiments
         "MelSpec_phrase_0": ["phrase", [0], MelSpec, 2000, 16, Trainer, 1e-5],
@@ -650,6 +679,57 @@ class Runner:
         "superset-CaRLab_2025-MelSpec_phrase_1_transformer": ["phrase", [1], MelSpec, 2000, 16, TrainerTransformer, 1e-5],
         "MelSpec_phrase_0_transformer": ["phrase", [0], MelSpec, 2000, 16, TrainerTransformer, 1e-5],
         "MelSpec_phrase_4_transformer": ["phrase", [4], MelSpec, 2000, 16, TrainerTransformer, 1e-5],
+
+        # APhrase
+        "superset-CaRLab_2025-mfccdd_a_phrase_1_sep": ["a_phrase", [1], MFCCDD, 2000, 16, TrainerSep, 1e-5],
+        "superset-CaRLab_2025-wav2vec_a_phrase_1_sep": ["a_phrase", [1], Wav2Vec, 200, 16, TrainerSep, 1e-5],
+        "superset-CaRLab_2025-unispeechSAT_a_phrase_1_sep": ["a_phrase", [1], UnispeechSAT, 200, 16, TrainerSep, 1e-5],
+        "superset-daSilvaMoura_2024-mfccdd_a_phrase_1_sep": ["a_phrase", [1], MFCCDD, 2000, 16, TrainerSep, 1e-5],
+        "superset-daSilvaMoura_2024-wav2vec_a_phrase_1_sep": ["a_phrase", [1], Wav2Vec, 200, 16, TrainerSep, 1e-5],
+        "superset-daSilvaMoura_2024-unispeechSAT_a_phrase_1_sep": ["a_phrase", [1], UnispeechSAT, 200, 16, TrainerSep, 1e-5],
+        "mfccdd_a_phrase_1_sep": ["a_phrase", [1], MFCCDD, 2000, 16, TrainerSep, 1e-5],
+        "mfccdd_a_phrase_2_sep": ["a_phrase", [2], MFCCDD, 2000, 16, TrainerSep, 1e-5],
+        "mfccdd_a_phrase_4_sep": ["a_phrase", [4], MFCCDD, 2000, 16, TrainerSep, 1e-5],
+        "unispeechSAT_a_phrase_1_sep": ["a_phrase", [1], UnispeechSAT, 200, 16, TrainerSep, 1e-5],
+        "unispeechSAT_a_phrase_2_sep": ["a_phrase", [2], UnispeechSAT, 200, 16, TrainerSep, 1e-5],
+        "unispeechSAT_a_phrase_4_sep": ["a_phrase", [4], UnispeechSAT, 200, 16, TrainerSep, 1e-5],
+        "wav2vec_a_phrase_1_sep": ["a_phrase", [1], Wav2Vec, 200, 16, TrainerSep, 1e-5],
+        "wav2vec_a_phrase_2_sep": ["a_phrase", [2], Wav2Vec, 200, 16, TrainerSep, 1e-5],
+        "wav2vec_a_phrase_4_sep": ["a_phrase", [4], Wav2Vec, 200, 16, TrainerSep, 1e-5],
+
+        # Augmented Phrase
+        "superset-CaRLab_2025-mfccdd_augmented_phrase_1_1": ["augmented_phrase_1", [1], MFCCDD, 2000, 16, Trainer, 1e-5],
+        "superset-CaRLab_2025-wav2vec_augmented_phrase_1_1": ["augmented_phrase_1", [1], Wav2Vec, 200, 16, Trainer, 1e-5],
+        "superset-CaRLab_2025-unispeechSAT_augmented_phrase_1_1": ["augmented_phrase_1", [1], UnispeechSAT, 200, 16, Trainer, 1e-5],
+        "superset-daSilvaMoura_2024-mfccdd_augmented_phrase_1_1": ["augmented_phrase_1", [1], MFCCDD, 2000, 16, Trainer, 1e-5],
+        "superset-daSilvaMoura_2024-wav2vec_augmented_phrase_1_1": ["augmented_phrase_1", [1], Wav2Vec, 200, 16, Trainer, 1e-5],
+        "superset-daSilvaMoura_2024-unispeechSAT_augmented_phrase_1_1": ["augmented_phrase_1", [1], UnispeechSAT, 200, 16, Trainer, 1e-5],
+        "mfccdd_augmented_phrase_1_1": ["augmented_phrase_1", [1], MFCCDD, 2000, 16, Trainer, 1e-5],
+        "mfccdd_augmented_phrase_1_2": ["augmented_phrase_1", [2], MFCCDD, 2000, 16, Trainer, 1e-5],
+        "mfccdd_augmented_phrase_1_4": ["augmented_phrase_1", [4], MFCCDD, 2000, 16, Trainer, 1e-5],
+        "unispeechSAT_augmented_phrase_1_1": ["augmented_phrase_1", [1], UnispeechSAT, 200, 16, Trainer, 1e-5],
+        "unispeechSAT_augmented_phrase_1_2": ["augmented_phrase_1", [2], UnispeechSAT, 200, 16, Trainer, 1e-5],
+        "unispeechSAT_augmented_phrase_1_4": ["augmented_phrase_1", [4], UnispeechSAT, 200, 16, Trainer, 1e-5],
+        "wav2vec_augmented_phrase_1_1": ["augmented_phrase_1", [1], Wav2Vec, 200, 16, Trainer, 1e-5],
+        "wav2vec_augmented_phrase_1_2": ["augmented_phrase_1", [2], Wav2Vec, 200, 16, Trainer, 1e-5],
+        "wav2vec_augmented_phrase_1_4": ["augmented_phrase_1", [4], Wav2Vec, 200, 16, Trainer, 1e-5],
+
+        # Augmented Phrase N
+        "superset-CaRLab_2025-mfccdd_augmented_phrase_1n_1": ["augmented_phrase_1n", [1], MFCCDD, 2000, 16, Trainer, 1e-5],
+        "superset-CaRLab_2025-wav2vec_augmented_phrase_1n_1": ["augmented_phrase_1n", [1], Wav2Vec, 200, 16, Trainer, 1e-5],
+        "superset-CaRLab_2025-unispeechSAT_augmented_phrase_1n_1": ["augmented_phrase_1n", [1], UnispeechSAT, 200, 16, Trainer, 1e-5],
+        "superset-daSilvaMoura_2024-mfccdd_augmented_phrase_1n_1": ["augmented_phrase_1n", [1], MFCCDD, 2000, 16, Trainer, 1e-5],
+        "superset-daSilvaMoura_2024-wav2vec_augmented_phrase_1n_1": ["augmented_phrase_1n", [1], Wav2Vec, 200, 16, Trainer, 1e-5],
+        "superset-daSilvaMoura_2024-unispeechSAT_augmented_phrase_1n_1": ["augmented_phrase_1n", [1], UnispeechSAT, 200, 16, Trainer, 1e-5],
+        "mfccdd_augmented_phrase_1n_1": ["augmented_phrase_1n", [1], MFCCDD, 2000, 16, Trainer, 1e-5],
+        "mfccdd_augmented_phrase_1n_2": ["augmented_phrase_1n", [2], MFCCDD, 2000, 16, Trainer, 1e-5],
+        "mfccdd_augmented_phrase_1n_4": ["augmented_phrase_1n", [4], MFCCDD, 2000, 16, Trainer, 1e-5],
+        "unispeechSAT_augmented_phrase_1n_1": ["augmented_phrase_1n", [1], UnispeechSAT, 200, 16, Trainer, 1e-5],
+        "unispeechSAT_augmented_phrase_1n_2": ["augmented_phrase_1n", [2], UnispeechSAT, 200, 16, Trainer, 1e-5],
+        "unispeechSAT_augmented_phrase_1n_4": ["augmented_phrase_1n", [4], UnispeechSAT, 200, 16, Trainer, 1e-5],
+        "wav2vec_augmented_phrase_1n_1": ["augmented_phrase_1n", [1], Wav2Vec, 200, 16, Trainer, 1e-5],
+        "wav2vec_augmented_phrase_1n_2": ["augmented_phrase_1n", [2], Wav2Vec, 200, 16, Trainer, 1e-5],
+        "wav2vec_augmented_phrase_1n_4": ["augmented_phrase_1n", [4], Wav2Vec, 200, 16, Trainer, 1e-5],
     }
     # fmt: on
 
@@ -725,6 +805,16 @@ class Runner:
             )
         if trainer_cls == Trainer:
             trainer = Trainer(
+                cache_path=self.__cache_path,
+                device=device,
+                data_loader=data_loader,
+                exp_key=exp_key,
+                num_epochs=num_epochs,
+                tboard_enabled=tboard_enabled,
+                lr=lr,
+            )
+        elif trainer_cls == TrainerSep:
+            trainer = TrainerSep(
                 cache_path=self.__cache_path,
                 device=device,
                 data_loader=data_loader,

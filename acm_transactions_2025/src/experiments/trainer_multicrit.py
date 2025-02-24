@@ -89,7 +89,7 @@ class TrainerMultiCrit:
         total_loss = 0
         total_batch_size = 0
         for batch in tqdm(
-            self.__data_loader.train(),
+            self.__data_loader.train(random_cuts=False),
             desc="Training",
         ):
             inputs, labels, id_tensor, ids = batch

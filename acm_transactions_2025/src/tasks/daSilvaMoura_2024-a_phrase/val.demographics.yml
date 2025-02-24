@@ -1,0 +1,130 @@
+recurrent_paralysis:
+  female:
+    total: 15
+    age_stats:
+      mean: 55.666666666666664
+      std: 9.93310961716756
+      min: 40
+      max: 68
+  male:
+    total: 1
+    age_stats:
+      mean: 64
+      std: null
+      min: 64
+      max: 64
+contact_pachydermia:
+  male:
+    total: 4
+    age_stats:
+      mean: 65.25
+      std: 3.593976442141304
+      min: 62
+      max: 70
+reinkes_edema:
+  female:
+    total: 4
+    age_stats:
+      mean: 53.5
+      std: 12.7148207485071
+      min: 42
+      max: 65
+laryngitis:
+  male:
+    total: 9
+    age_stats:
+      mean: 54.44444444444444
+      std: 9.342257638161012
+      min: 33
+      max: 63
+  female:
+    total: 1
+    age_stats:
+      mean: 39
+      std: null
+      min: 39
+      max: 39
+dysphonia:
+  female:
+    total: 7
+    age_stats:
+      mean: 43.57142857142857
+      std: 11.984116472191332
+      min: 26
+      max: 59
+  male:
+    total: 4
+    age_stats:
+      mean: 59.25
+      std: 14.84082207965583
+      min: 41
+      max: 77
+cordectomy:
+  male:
+    total: 3
+    age_stats:
+      mean: 63.666666666666664
+      std: 4.041451884327381
+      min: 59
+      max: 66
+hyperfunctional_dysphonia:
+  female:
+    total: 18
+    age_stats:
+      mean: 40.333333333333336
+      std: 12.73254283553853
+      min: 21
+      max: 59
+  male:
+    total: 1
+    age_stats:
+      mean: 59
+      std: null
+      min: 59
+      max: 59
+functional_dysphonia:
+  female:
+    total: 7
+    age_stats:
+      mean: 48
+      std: 10.279429296739517
+      min: 36
+      max: 59
+  male:
+    total: 1
+    age_stats:
+      mean: 63
+      std: null
+      min: 63
+      max: 63
+psychogenic_dysphonia:
+  female:
+    total: 4
+    age_stats:
+      mean: 57
+      std: 6.0553007081949835
+      min: 51
+      max: 65
+vocal_fold_polyp:
+  male:
+    total: 3
+    age_stats:
+      mean: 51.333333333333336
+      std: 9.814954576223638
+      min: 40
+      max: 57
+normal:
+  female:
+    total: 51
+    age_stats:
+      mean: 21.96078431372549
+      std: 2.28000687993458
+      min: 20
+      max: 29
+  male:
+    total: 12
+    age_stats:
+      mean: 23.25
+      std: 3.0785179433085537
+      min: 20
+      max: 29

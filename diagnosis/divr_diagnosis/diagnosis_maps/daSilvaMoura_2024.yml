@@ -391,3 +391,14 @@ vocal_fold_polyp:
   level: 2
   parents:
     organofunctional: 1.00
+
+  
+### Level 3 -- just to support data from MEEI and voiced
+hyperfunction:
+  level: 3
+  parents:
+    hyperfunctional_dysphonia: 1.00
+hyperkinetic_dysphonia_polyps:
+  level: 3
+  parents:
+    vocal_fold_polyp: 1.00

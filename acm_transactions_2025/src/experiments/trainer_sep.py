@@ -14,7 +14,34 @@ from ..data_loader import BaseDataLoader
 ConfusionData = Dict[int, Dict[int, int]]
 
 
-class Trainer:
+class MaskedCrossEntropyLoss(nn.Module):
+
+    def __init__(self, weight):
+        super().__init__()
+        self.crit = nn.CrossEntropyLoss(weight=weight)
+
+    def forward(
+        self,
+        actual_labels: torch.Tensor,
+        pred_labels_per_audio: torch.Tensor,
+        input_lens: torch.Tensor,
+    ) -> torch.Tensor:
+        batch_size, num_audios, num_classes = pred_labels_per_audio.shape
+        actual_labels = actual_labels[:, None].expand([batch_size, num_audios])
+        input_lens = input_lens.reshape([batch_size * num_audios])
+        actual_labels = actual_labels.reshape([batch_size * num_audios])
+        pred_labels_per_audio = pred_labels_per_audio.reshape(
+            [batch_size * num_audios, num_classes]
+        )
+        len_mask = input_lens > 0
+        loss = self.crit(
+            pred_labels_per_audio[len_mask],
+            actual_labels[len_mask],
+        )
+        return loss
+
+
+class TrainerSep:
     best_eval_accuracy = 0
 
     def __init__(
@@ -41,7 +68,7 @@ class Trainer:
             checkpoint_path=Path(f"{cache_path}/checkpoints/{exp_key}"),
         )
         model.to(device=device)
-        criterion = nn.CrossEntropyLoss(weight=class_weights)
+        criterion = MaskedCrossEntropyLoss(weight=class_weights)
         optimizer = torch.optim.Adam(params=model.parameters(), lr=lr)
         save_epochs = list(range(0, num_epochs + 1, num_epochs // 10))
         confusion_epochs = list(range(0, num_epochs + 1, 10))
@@ -84,8 +111,12 @@ class Trainer:
             inputs, labels, id_tensor, ids = batch
             labels = labels.squeeze(1)
             self.optimizer.zero_grad(set_to_none=True)
-            predicted_labels, _, _ = self.model(inputs)
-            loss = self.criterion(predicted_labels, labels)
+            _, label_per_audio, _ = self.model(inputs)
+            loss = self.criterion(
+                actual_labels=labels,
+                pred_labels_per_audio=label_per_audio,
+                input_lens=inputs[1],
+            )
             loss.backward()
             self.optimizer.step()
             total_loss += loss.item()
@@ -106,8 +137,12 @@ class Trainer:
         ):
             inputs, labels, id_tensor, ids = batch
             labels = labels.squeeze(1)
-            predicted_labels, _, _ = self.model(inputs)
-            loss = self.criterion(predicted_labels, labels)
+            predicted_labels, label_per_audio, _ = self.model(inputs)
+            loss = self.criterion(
+                actual_labels=labels,
+                pred_labels_per_audio=label_per_audio,
+                input_lens=inputs[1],
+            )
             predicted_labels = predicted_labels.argmax(dim=1)
             total_loss += loss.item()
             total_batch_size += 1

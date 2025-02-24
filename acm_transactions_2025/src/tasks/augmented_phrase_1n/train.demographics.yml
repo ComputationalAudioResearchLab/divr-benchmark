@@ -1,0 +1,135 @@
+recurrent_paralysis:
+  female:
+    total: 68
+    age_stats:
+      mean: 54.11764705882353
+      std: 14.152189231800067
+      min: 21
+      max: 79
+  male:
+    total: 44
+    age_stats:
+      mean: 57.13636363636363
+      std: 16.36586195811682
+      min: 14
+      max: 81
+reinkes_edema:
+  female:
+    total: 25
+    age_stats:
+      mean: 53.8
+      std: 12.642520845675254
+      min: 31
+      max: 77
+  male:
+    total: 7
+    age_stats:
+      mean: 60.142857142857146
+      std: 5.080307452263476
+      min: 52
+      max: 66
+vocal_fold_polyp:
+  female:
+    total: 12
+    age_stats:
+      mean: 54.583333333333336
+      std: 16.54447632805877
+      min: 28
+      max: 79
+  male:
+    total: 16
+    age_stats:
+      mean: 51.5625
+      std: 14.683181989382728
+      min: 29
+      max: 78
+leukoplakia:
+  male:
+    total: 12
+    age_stats:
+      mean: 50.083333333333336
+      std: 10.833100230592377
+      min: 32
+      max: 64
+  female:
+    total: 7
+    age_stats:
+      mean: 50.857142857142854
+      std: 14.346063007303565
+      min: 26
+      max: 67
+hyperfunctional_dysphonia:
+  male:
+    total: 41
+    age_stats:
+      mean: 46.26829268292683
+      std: 14.007184567649386
+      min: 22
+      max: 73
+  female:
+    total: 79
+    age_stats:
+      mean: 41.64556962025316
+      std: 16.657975663237533
+      min: 13
+      max: 94
+psychogenic_dysphonia:
+  female:
+    total: 39
+    age_stats:
+      mean: 50.43589743589744
+      std: 9.461264163321472
+      min: 27
+      max: 66
+  male:
+    total: 11
+    age_stats:
+      mean: 51.90909090909091
+      std: 10.300044130532116
+      min: 28
+      max: 63
+laryngitis:
+  male:
+    total: 41
+    age_stats:
+      mean: 49.609756097560975
+      std: 16.267879469648907
+      min: 16
+      max: 77
+  female:
+    total: 29
+    age_stats:
+      mean: 45.37931034482759
+      std: 15.288683473881328
+      min: 12
+      max: 73
+functional_dysphonia:
+  female:
+    total: 39
+    age_stats:
+      mean: 45.64102564102564
+      std: 15.28068471097311
+      min: 16
+      max: 74
+  male:
+    total: 28
+    age_stats:
+      mean: 45.92857142857143
+      std: 15.441475105674115
+      min: 20
+      max: 71
+normal:
+  female:
+    total: 235
+    age_stats:
+      mean: 27.29787234042553
+      std: 13.289213693139411
+      min: 9
+      max: 84
+  male:
+    total: 195
+    age_stats:
+      mean: 33.40512820512821
+      std: 12.583943883737154
+      min: 16
+      max: 69

@@ -1,0 +1,1323 @@
+voiced_voice011_0:
+  speaker_id: voice011
+  age: 55
+  gender: male
+  label: reflux_laryngitis
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice011.wav
+voiced_voice071_0:
+  speaker_id: voice071
+  age: 35
+  gender: female
+  label: reflux_laryngitis
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice071.wav
+voiced_voice008_0:
+  speaker_id: voice008
+  age: 51
+  gender: female
+  label: reflux_laryngitis
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice008.wav
+voiced_voice046_0:
+  speaker_id: voice046
+  age: 43
+  gender: female
+  label: reflux_laryngitis
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice046.wav
+voiced_voice035_0:
+  speaker_id: voice035
+  age: 48
+  gender: male
+  label: reflux_laryngitis
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice035.wav
+voiced_voice041_0:
+  speaker_id: voice041
+  age: 34
+  gender: male
+  label: reflux_laryngitis
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice041.wav
+voiced_voice069_0:
+  speaker_id: voice069
+  age: 63
+  gender: male
+  label: reflux_laryngitis
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice069.wav
+voiced_voice065_0:
+  speaker_id: voice065
+  age: 60
+  gender: female
+  label: reflux_laryngitis
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice065.wav
+voiced_voice031_0:
+  speaker_id: voice031
+  age: 58
+  gender: male
+  label: reflux_laryngitis
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice031.wav
+voiced_voice048_0:
+  speaker_id: voice048
+  age: 49
+  gender: male
+  label: reflux_laryngitis
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice048.wav
+voiced_voice154_0:
+  speaker_id: voice154
+  age: 46
+  gender: female
+  label: reflux_laryngitis
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice154.wav
+voiced_voice062_0:
+  speaker_id: voice062
+  age: 36
+  gender: male
+  label: reflux_laryngitis
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice062.wav
+voiced_voice047_0:
+  speaker_id: voice047
+  age: 46
+  gender: male
+  label: reflux_laryngitis
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice047.wav
+voiced_voice066_0:
+  speaker_id: voice066
+  age: 51
+  gender: female
+  label: reflux_laryngitis
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice066.wav
+voiced_voice014_0:
+  speaker_id: voice014
+  age: 31
+  gender: female
+  label: reflux_laryngitis
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice014.wav
+voiced_voice050_0:
+  speaker_id: voice050
+  age: 41
+  gender: female
+  label: reflux_laryngitis
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice050.wav
+voiced_voice133_0:
+  speaker_id: voice133
+  age: 70
+  gender: female
+  label: reflux_laryngitis
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice133.wav
+voiced_voice029_0:
+  speaker_id: voice029
+  age: 36
+  gender: male
+  label: reflux_laryngitis
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice029.wav
+voiced_voice028_0:
+  speaker_id: voice028
+  age: 51
+  gender: female
+  label: reflux_laryngitis
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice028.wav
+voiced_voice037_0:
+  speaker_id: voice037
+  age: 56
+  gender: male
+  label: reflux_laryngitis
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice037.wav
+voiced_voice127_0:
+  speaker_id: voice127
+  age: 70
+  gender: male
+  label: reflux_laryngitis
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice127.wav
+voiced_voice053_0:
+  speaker_id: voice053
+  age: 60
+  gender: female
+  label: reflux_laryngitis
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice053.wav
+voiced_voice027_0:
+  speaker_id: voice027
+  age: 44
+  gender: male
+  label: reflux_laryngitis
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice027.wav
+voiced_voice151_0:
+  speaker_id: voice151
+  age: 42
+  gender: female
+  label: reflux_laryngitis
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice151.wav
+voiced_voice042_0:
+  speaker_id: voice042
+  age: 39
+  gender: female
+  label: reflux_laryngitis
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice042.wav
+voiced_voice082_0:
+  speaker_id: voice082
+  age: 64
+  gender: male
+  label: reflux_laryngitis
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice082.wav
+voiced_voice168_0:
+  speaker_id: voice168
+  age: 58
+  gender: female
+  label: hypokinetic_dysphonia
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice168.wav
+voiced_voice004_0:
+  speaker_id: voice004
+  age: 28
+  gender: female
+  label: hypokinetic_dysphonia
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice004.wav
+voiced_voice075_0:
+  speaker_id: voice075
+  age: 30
+  gender: female
+  label: hypokinetic_dysphonia
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice075.wav
+voiced_voice077_0:
+  speaker_id: voice077
+  age: 42
+  gender: female
+  label: hypokinetic_dysphonia
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice077.wav
+voiced_voice056_0:
+  speaker_id: voice056
+  age: 54
+  gender: female
+  label: hypokinetic_dysphonia
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice056.wav
+voiced_voice058_0:
+  speaker_id: voice058
+  age: 26
+  gender: female
+  label: hypokinetic_dysphonia
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice058.wav
+voiced_voice140_0:
+  speaker_id: voice140
+  age: 50
+  gender: male
+  label: hypokinetic_dysphonia
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice140.wav
+voiced_voice141_0:
+  speaker_id: voice141
+  age: 18
+  gender: female
+  label: hypokinetic_dysphonia
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice141.wav
+voiced_voice043_0:
+  speaker_id: voice043
+  age: 38
+  gender: female
+  label: hypokinetic_dysphonia
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice043.wav
+voiced_voice026_0:
+  speaker_id: voice026
+  age: 34
+  gender: male
+  label: hypokinetic_dysphonia
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice026.wav
+voiced_voice124_0:
+  speaker_id: voice124
+  age: 64
+  gender: female
+  label: hypokinetic_dysphonia
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice124.wav
+voiced_voice162_0:
+  speaker_id: voice162
+  age: 55
+  gender: female
+  label: hypokinetic_dysphonia
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice162.wav
+voiced_voice106_0:
+  speaker_id: voice106
+  age: 21
+  gender: male
+  label: hypokinetic_dysphonia
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice106.wav
+voiced_voice135_0:
+  speaker_id: voice135
+  age: 25
+  gender: female
+  label: hypokinetic_dysphonia
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice135.wav
+voiced_voice010_0:
+  speaker_id: voice010
+  age: 47
+  gender: female
+  label: hypokinetic_dysphonia
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice010.wav
+voiced_voice087_0:
+  speaker_id: voice087
+  age: 61
+  gender: female
+  label: hypokinetic_dysphonia_vocal_fold_paralysis
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice087.wav
+voiced_voice136_0:
+  speaker_id: voice136
+  age: 43
+  gender: female
+  label: hypokinetic_dysphonia_vocal_fold_paralysis
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice136.wav
+voiced_voice165_0:
+  speaker_id: voice165
+  age: 55
+  gender: male
+  label: hypokinetic_dysphonia_glottic_insufficiency
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice165.wav
+voiced_voice094_0:
+  speaker_id: voice094
+  age: 67
+  gender: female
+  label: hypokinetic_dysphonia_glottic_insufficiency
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice094.wav
+voiced_voice201_0:
+  speaker_id: voice201
+  age: 44
+  gender: female
+  label: hypokinetic_dysphonia_glottic_insufficiency
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice201.wav
+voiced_voice171_0:
+  speaker_id: voice171
+  age: 55
+  gender: female
+  label: hypokinetic_dysphonia_glottic_insufficiency
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice171.wav
+voiced_voice138_0:
+  speaker_id: voice138
+  age: 23
+  gender: female
+  label: hyperkinetic_dysphonia_reinkes_edema
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice138.wav
+voiced_voice020_0:
+  speaker_id: voice020
+  age: 53
+  gender: male
+  label: hyperkinetic_dysphonia_reinkes_edema
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice020.wav
+voiced_voice190_0:
+  speaker_id: voice190
+  age: 38
+  gender: female
+  label: hyperkinetic_dysphonia
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice190.wav
+voiced_voice130_0:
+  speaker_id: voice130
+  age: 58
+  gender: female
+  label: hyperkinetic_dysphonia
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice130.wav
+voiced_voice193_0:
+  speaker_id: voice193
+  age: 46
+  gender: female
+  label: hyperkinetic_dysphonia
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice193.wav
+voiced_voice068_0:
+  speaker_id: voice068
+  age: 59
+  gender: female
+  label: hyperkinetic_dysphonia
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice068.wav
+voiced_voice052_0:
+  speaker_id: voice052
+  age: 34
+  gender: female
+  label: hyperkinetic_dysphonia
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice052.wav
+voiced_voice001_0:
+  speaker_id: voice001
+  age: 32
+  gender: male
+  label: hyperkinetic_dysphonia
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice001.wav
+voiced_voice156_0:
+  speaker_id: voice156
+  age: 47
+  gender: male
+  label: hyperkinetic_dysphonia
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice156.wav
+voiced_voice164_0:
+  speaker_id: voice164
+  age: 65
+  gender: female
+  label: hyperkinetic_dysphonia
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice164.wav
+voiced_voice163_0:
+  speaker_id: voice163
+  age: 44
+  gender: female
+  label: hyperkinetic_dysphonia
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice163.wav
+voiced_voice167_0:
+  speaker_id: voice167
+  age: 69
+  gender: male
+  label: hyperkinetic_dysphonia
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice167.wav
+voiced_voice208_0:
+  speaker_id: voice208
+  age: 39
+  gender: female
+  label: hyperkinetic_dysphonia
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice208.wav
+voiced_voice200_0:
+  speaker_id: voice200
+  age: 57
+  gender: male
+  label: hyperkinetic_dysphonia
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice200.wav
+voiced_voice194_0:
+  speaker_id: voice194
+  age: 26
+  gender: female
+  label: hyperkinetic_dysphonia
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice194.wav
+voiced_voice131_0:
+  speaker_id: voice131
+  age: 47
+  gender: male
+  label: hyperkinetic_dysphonia
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice131.wav
+voiced_voice192_0:
+  speaker_id: voice192
+  age: 22
+  gender: male
+  label: hyperkinetic_dysphonia
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice192.wav
+voiced_voice186_0:
+  speaker_id: voice186
+  age: 63
+  gender: male
+  label: hyperkinetic_dysphonia
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice186.wav
+voiced_voice072_0:
+  speaker_id: voice072
+  age: 32
+  gender: male
+  label: hyperkinetic_dysphonia
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice072.wav
+voiced_voice059_0:
+  speaker_id: voice059
+  age: 39
+  gender: female
+  label: hyperkinetic_dysphonia
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice059.wav
+voiced_voice033_0:
+  speaker_id: voice033
+  age: 52
+  gender: female
+  label: hyperkinetic_dysphonia
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice033.wav
+voiced_voice017_0:
+  speaker_id: voice017
+  age: 56
+  gender: male
+  label: hyperkinetic_dysphonia
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice017.wav
+voiced_voice191_0:
+  speaker_id: voice191
+  age: 24
+  gender: female
+  label: hyperkinetic_dysphonia
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice191.wav
+voiced_voice076_0:
+  speaker_id: voice076
+  age: 27
+  gender: male
+  label: hyperkinetic_dysphonia
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice076.wav
+voiced_voice054_0:
+  speaker_id: voice054
+  age: 46
+  gender: male
+  label: hyperkinetic_dysphonia
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice054.wav
+voiced_voice089_0:
+  speaker_id: voice089
+  age: 63
+  gender: male
+  label: hyperkinetic_dysphonia
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice089.wav
+voiced_voice023_0:
+  speaker_id: voice023
+  age: 60
+  gender: female
+  label: hyperkinetic_dysphonia
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice023.wav
+voiced_voice160_0:
+  speaker_id: voice160
+  age: 32
+  gender: female
+  label: hyperkinetic_dysphonia
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice160.wav
+voiced_voice016_0:
+  speaker_id: voice016
+  age: 50
+  gender: female
+  label: hyperkinetic_dysphonia
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice016.wav
+voiced_voice172_0:
+  speaker_id: voice172
+  age: 70
+  gender: female
+  label: hyperkinetic_dysphonia
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice172.wav
+voiced_voice187_0:
+  speaker_id: voice187
+  age: 49
+  gender: female
+  label: hyperkinetic_dysphonia
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice187.wav
+voiced_voice038_0:
+  speaker_id: voice038
+  age: 33
+  gender: male
+  label: hyperkinetic_dysphonia
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice038.wav
+voiced_voice119_0:
+  speaker_id: voice119
+  age: 47
+  gender: female
+  label: hyperkinetic_dysphonia_polyps
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice119.wav
+voiced_voice146_0:
+  speaker_id: voice146
+  age: 70
+  gender: male
+  label: hyperkinetic_dysphonia_polyps
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice146.wav
+voiced_voice137_0:
+  speaker_id: voice137
+  age: 42
+  gender: male
+  label: hyperkinetic_dysphonia_polyps
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice137.wav
+voiced_voice086_0:
+  speaker_id: voice086
+  age: 27
+  gender: female
+  label: hyperkinetic_dysphonia_polyps
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice086.wav
+voiced_voice009_0:
+  speaker_id: voice009
+  age: 53
+  gender: female
+  label: hyperkinetic_dysphonia_nodule
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice009.wav
+voiced_voice003_0:
+  speaker_id: voice003
+  age: 34
+  gender: male
+  label: hyperkinetic_dysphonia_nodule
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice003.wav
+voiced_voice205_0:
+  speaker_id: voice205
+  age: 30
+  gender: female
+  label: hyperkinetic_dysphonia_nodule
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice205.wav
+voiced_voice180_0:
+  speaker_id: voice180
+  age: 26
+  gender: female
+  label: normal
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice180.wav
+voiced_voice177_0:
+  speaker_id: voice177
+  age: 22
+  gender: female
+  label: normal
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice177.wav
+voiced_voice203_0:
+  speaker_id: voice203
+  age: 22
+  gender: female
+  label: normal
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice203.wav
+voiced_voice115_0:
+  speaker_id: voice115
+  age: 35
+  gender: male
+  label: normal
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice115.wav
+voiced_voice096_0:
+  speaker_id: voice096
+  age: 30
+  gender: female
+  label: normal
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice096.wav
+voiced_voice176_0:
+  speaker_id: voice176
+  age: 23
+  gender: female
+  label: normal
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice176.wav
+voiced_voice134_0:
+  speaker_id: voice134
+  age: 45
+  gender: female
+  label: normal
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice134.wav
+voiced_voice067_0:
+  speaker_id: voice067
+  age: 51
+  gender: female
+  label: normal
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice067.wav
+voiced_voice207_0:
+  speaker_id: voice207
+  age: 30
+  gender: female
+  label: normal
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice207.wav
+voiced_voice024_0:
+  speaker_id: voice024
+  age: 38
+  gender: male
+  label: normal
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice024.wav
+voiced_voice182_0:
+  speaker_id: voice182
+  age: 23
+  gender: female
+  label: normal
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice182.wav
+voiced_voice100_0:
+  speaker_id: voice100
+  age: 24
+  gender: male
+  label: normal
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice100.wav
+voiced_voice049_0:
+  speaker_id: voice049
+  age: 44
+  gender: female
+  label: normal
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice049.wav
+voiced_voice114_0:
+  speaker_id: voice114
+  age: 49
+  gender: male
+  label: normal
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice114.wav
+voiced_voice092_0:
+  speaker_id: voice092
+  age: 66
+  gender: male
+  label: normal
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice092.wav
+voiced_voice091_0:
+  speaker_id: voice091
+  age: 55
+  gender: male
+  label: normal
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice091.wav
+voiced_voice070_0:
+  speaker_id: voice070
+  age: 39
+  gender: female
+  label: normal
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice070.wav
+voiced_voice032_0:
+  speaker_id: voice032
+  age: 35
+  gender: male
+  label: normal
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice032.wav
+voiced_voice195_0:
+  speaker_id: voice195
+  age: 23
+  gender: female
+  label: normal
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice195.wav
+voiced_voice196_0:
+  speaker_id: voice196
+  age: 57
+  gender: female
+  label: normal
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice196.wav
+voiced_voice158_0:
+  speaker_id: voice158
+  age: 45
+  gender: male
+  label: normal
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice158.wav
+voiced_voice045_0:
+  speaker_id: voice045
+  age: 42
+  gender: female
+  label: normal
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice045.wav
+voiced_voice061_0:
+  speaker_id: voice061
+  age: 33
+  gender: female
+  label: normal
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice061.wav
+voiced_voice002_0:
+  speaker_id: voice002
+  age: 55
+  gender: male
+  label: normal
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice002.wav
+voiced_voice120_0:
+  speaker_id: voice120
+  age: 64
+  gender: male
+  label: normal
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice120.wav
+voiced_voice099_0:
+  speaker_id: voice099
+  age: 29
+  gender: male
+  label: normal
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice099.wav
+voiced_voice111_0:
+  speaker_id: voice111
+  age: 36
+  gender: male
+  label: normal
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice111.wav
+voiced_voice097_0:
+  speaker_id: voice097
+  age: 26
+  gender: female
+  label: normal
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice097.wav
+voiced_voice034_0:
+  speaker_id: voice034
+  age: 56
+  gender: female
+  label: normal
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice034.wav
+voiced_voice025_0:
+  speaker_id: voice025
+  age: 45
+  gender: male
+  label: normal
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice025.wav
+voiced_voice102_0:
+  speaker_id: voice102
+  age: 43
+  gender: female
+  label: normal
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice102.wav
+voiced_voice103_0:
+  speaker_id: voice103
+  age: 30
+  gender: female
+  label: normal
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice103.wav
+voiced_voice110_0:
+  speaker_id: voice110
+  age: 50
+  gender: male
+  label: normal
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice110.wav
+voiced_voice098_0:
+  speaker_id: voice098
+  age: 23
+  gender: female
+  label: normal
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice098.wav
+voiced_voice051_0:
+  speaker_id: voice051
+  age: 62
+  gender: female
+  label: normal
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice051.wav
+voiced_voice107_0:
+  speaker_id: voice107
+  age: 32
+  gender: male
+  label: normal
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice107.wav
+voiced_voice101_0:
+  speaker_id: voice101
+  age: 60
+  gender: male
+  label: normal
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice101.wav
+voiced_voice095_0:
+  speaker_id: voice095
+  age: 24
+  gender: male
+  label: normal
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice095.wav
+voiced_voice139_0:
+  speaker_id: voice139
+  age: 53
+  gender: female
+  label: normal
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice139.wav
+voiced_voice079_0:
+  speaker_id: voice079
+  age: 52
+  gender: male
+  label: reflux_laryngitis
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice079.wav
+voiced_voice030_0:
+  speaker_id: voice030
+  age: 39
+  gender: female
+  label: reflux_laryngitis
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice030.wav
+voiced_voice073_0:
+  speaker_id: voice073
+  age: 56
+  gender: female
+  label: reflux_laryngitis
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice073.wav
+voiced_voice005_0:
+  speaker_id: voice005
+  age: 54
+  gender: female
+  label: hypokinetic_dysphonia
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice005.wav
+voiced_voice202_0:
+  speaker_id: voice202
+  age: 27
+  gender: female
+  label: hypokinetic_dysphonia
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice202.wav
+voiced_voice150_0:
+  speaker_id: voice150
+  age: 38
+  gender: female
+  label: hyperkinetic_dysphonia
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice150.wav
+voiced_voice173_0:
+  speaker_id: voice173
+  age: 57
+  gender: female
+  label: hyperkinetic_dysphonia
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice173.wav
+voiced_voice159_0:
+  speaker_id: voice159
+  age: 47
+  gender: female
+  label: hyperkinetic_dysphonia
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice159.wav
+voiced_voice018_0:
+  speaker_id: voice018
+  age: 57
+  gender: female
+  label: hyperkinetic_dysphonia
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice018.wav
+voiced_voice206_0:
+  speaker_id: voice206
+  age: 22
+  gender: female
+  label: normal
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice206.wav
+voiced_voice184_0:
+  speaker_id: voice184
+  age: 23
+  gender: female
+  label: normal
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice184.wav
+voiced_voice179_0:
+  speaker_id: voice179
+  age: 21
+  gender: female
+  label: normal
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice179.wav
+voiced_voice040_0:
+  speaker_id: voice040
+  age: 30
+  gender: male
+  label: normal
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice040.wav
+voiced_voice123_0:
+  speaker_id: voice123
+  age: 35
+  gender: female
+  label: normal
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice123.wav
+voiced_voice015_0:
+  speaker_id: voice015
+  age: 55
+  gender: male
+  label: reflux_laryngitis
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice015.wav
+voiced_voice044_0:
+  speaker_id: voice044
+  age: 38
+  gender: female
+  label: reflux_laryngitis
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice044.wav
+voiced_voice063_0:
+  speaker_id: voice063
+  age: 52
+  gender: female
+  label: reflux_laryngitis
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice063.wav
+voiced_voice013_0:
+  speaker_id: voice013
+  age: 42
+  gender: female
+  label: reflux_laryngitis
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice013.wav
+voiced_voice083_0:
+  speaker_id: voice083
+  age: 48
+  gender: male
+  label: reflux_laryngitis
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice083.wav
+voiced_voice081_0:
+  speaker_id: voice081
+  age: 31
+  gender: male
+  label: reflux_laryngitis
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice081.wav
+voiced_voice057_0:
+  speaker_id: voice057
+  age: 68
+  gender: male
+  label: reflux_laryngitis
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice057.wav
+voiced_voice074_0:
+  speaker_id: voice074
+  age: 63
+  gender: female
+  label: reflux_laryngitis
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice074.wav
+voiced_voice012_0:
+  speaker_id: voice012
+  age: 56
+  gender: male
+  label: reflux_laryngitis
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice012.wav
+voiced_voice022_0:
+  speaker_id: voice022
+  age: 53
+  gender: female
+  label: hypokinetic_dysphonia
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice022.wav
+voiced_voice144_0:
+  speaker_id: voice144
+  age: 22
+  gender: female
+  label: hypokinetic_dysphonia
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice144.wav
+voiced_voice036_0:
+  speaker_id: voice036
+  age: 38
+  gender: female
+  label: hypokinetic_dysphonia
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice036.wav
+voiced_voice084_0:
+  speaker_id: voice084
+  age: 48
+  gender: female
+  label: hypokinetic_dysphonia
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice084.wav
+voiced_voice006_0:
+  speaker_id: voice006
+  age: 54
+  gender: female
+  label: hypokinetic_dysphonia
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice006.wav
+voiced_voice088_0:
+  speaker_id: voice088
+  age: 70
+  gender: female
+  label: hypokinetic_dysphonia_spasmodic_dysphonia
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice088.wav
+voiced_voice175_0:
+  speaker_id: voice175
+  age: 55
+  gender: female
+  label: hypokinetic_dysphonia_adduction_deficit
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice175.wav
+voiced_voice112_0:
+  speaker_id: voice112
+  age: 62
+  gender: female
+  label: hypokinetic_dysphonia_vocal_fold_paralysis
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice112.wav
+voiced_voice093_0:
+  speaker_id: voice093
+  age: 49
+  gender: female
+  label: hypokinetic_dysphonia_vocal_fold_paralysis
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice093.wav
+voiced_voice170_0:
+  speaker_id: voice170
+  age: 58
+  gender: female
+  label: hyperkinetic_dysphonia_vocal_fold_paralysis
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice170.wav
+voiced_voice174_0:
+  speaker_id: voice174
+  age: 59
+  gender: male
+  label: hypokinetic_dysphonia_glottic_insufficiency
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice174.wav
+voiced_voice189_0:
+  speaker_id: voice189
+  age: 61
+  gender: female
+  label: hypokinetic_dysphonia_glottic_insufficiency
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice189.wav
+voiced_voice161_0:
+  speaker_id: voice161
+  age: 65
+  gender: male
+  label: hypokinetic_dysphonia_glottic_insufficiency
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice161.wav
+voiced_voice126_0:
+  speaker_id: voice126
+  age: 67
+  gender: female
+  label: hyperkinetic_dysphonia_reinkes_edema
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice126.wav
+voiced_voice148_0:
+  speaker_id: voice148
+  age: 70
+  gender: male
+  label: hypokinetic_dysphonia_presbiphonia
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice148.wav
+voiced_voice188_0:
+  speaker_id: voice188
+  age: 31
+  gender: female
+  label: hyperkinetic_dysphonia
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice188.wav
+voiced_voice166_0:
+  speaker_id: voice166
+  age: 50
+  gender: female
+  label: hyperkinetic_dysphonia
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice166.wav
+voiced_voice021_0:
+  speaker_id: voice021
+  age: 49
+  gender: female
+  label: hyperkinetic_dysphonia
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice021.wav
+voiced_voice078_0:
+  speaker_id: voice078
+  age: 53
+  gender: female
+  label: hyperkinetic_dysphonia
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice078.wav
+voiced_voice155_0:
+  speaker_id: voice155
+  age: 33
+  gender: female
+  label: hyperkinetic_dysphonia
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice155.wav
+voiced_voice149_0:
+  speaker_id: voice149
+  age: 35
+  gender: male
+  label: hyperkinetic_dysphonia
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice149.wav
+voiced_voice055_0:
+  speaker_id: voice055
+  age: 46
+  gender: male
+  label: hyperkinetic_dysphonia
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice055.wav
+voiced_voice169_0:
+  speaker_id: voice169
+  age: 62
+  gender: female
+  label: hyperkinetic_dysphonia
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice169.wav
+voiced_voice039_0:
+  speaker_id: voice039
+  age: 44
+  gender: female
+  label: hyperkinetic_dysphonia
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice039.wav
+voiced_voice007_0:
+  speaker_id: voice007
+  age: 41
+  gender: male
+  label: hyperkinetic_dysphonia_nodule
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice007.wav
+voiced_voice199_0:
+  speaker_id: voice199
+  age: 26
+  gender: female
+  label: hyperkinetic_dysphonia_nodule
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice199.wav
+voiced_voice152_0:
+  speaker_id: voice152
+  age: 51
+  gender: female
+  label: hyperkinetic_dysphonia_vocal_fold_nodules
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice152.wav
+voiced_voice132_0:
+  speaker_id: voice132
+  age: 50
+  gender: male
+  label: hyperkinetic_dysphonia_rigid_vocal_fold
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice132.wav
+voiced_voice147_0:
+  speaker_id: voice147
+  age: 43
+  gender: male
+  label: hyperkinetic_dysphonia_adduction_deficit
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice147.wav
+voiced_voice116_0:
+  speaker_id: voice116
+  age: 34
+  gender: female
+  label: hypokinetic_dysphonia_conversion_dysphonia
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice116.wav
+voiced_voice197_0:
+  speaker_id: voice197
+  age: 22
+  gender: female
+  label: normal
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice197.wav
+voiced_voice181_0:
+  speaker_id: voice181
+  age: 29
+  gender: female
+  label: normal
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice181.wav
+voiced_voice085_0:
+  speaker_id: voice085
+  age: 31
+  gender: female
+  label: normal
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice085.wav
+voiced_voice183_0:
+  speaker_id: voice183
+  age: 22
+  gender: female
+  label: normal
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice183.wav
+voiced_voice109_0:
+  speaker_id: voice109
+  age: 49
+  gender: female
+  label: normal
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice109.wav
+voiced_voice204_0:
+  speaker_id: voice204
+  age: 59
+  gender: female
+  label: normal
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice204.wav
+voiced_voice125_0:
+  speaker_id: voice125
+  age: 36
+  gender: female
+  label: normal
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice125.wav
+voiced_voice104_0:
+  speaker_id: voice104
+  age: 32
+  gender: male
+  label: normal
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice104.wav
+voiced_voice090_0:
+  speaker_id: voice090
+  age: 21
+  gender: female
+  label: normal
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice090.wav
+voiced_voice108_0:
+  speaker_id: voice108
+  age: 23
+  gender: male
+  label: normal
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice108.wav
+voiced_voice019_0:
+  speaker_id: voice019
+  age: 46
+  gender: female
+  label: normal
+  audio_keys:
+    - voiced/voice-icar-federico-ii-database-1.0.0/voice019.wav

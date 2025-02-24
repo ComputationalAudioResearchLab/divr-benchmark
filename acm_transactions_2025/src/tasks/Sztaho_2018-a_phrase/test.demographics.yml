@@ -1,0 +1,45 @@
+functional_dysphonia:
+  female:
+    total: 16
+    age_stats:
+      mean: 48.375
+      std: 12.446552400832395
+      min: 24
+      max: 67
+  male:
+    total: 5
+    age_stats:
+      mean: 53.8
+      std: 14.567086187704115
+      min: 28
+      max: 62
+laryngitis:
+  female:
+    total: 11
+    age_stats:
+      mean: 47.63636363636363
+      std: 9.615328671165924
+      min: 30
+      max: 62
+  male:
+    total: 19
+    age_stats:
+      mean: 55.94736842105263
+      std: 11.48658001616827
+      min: 33
+      max: 72
+normal:
+  female:
+    total: 86
+    age_stats:
+      mean: 20.941860465116278
+      std: 2.328112849310464
+      min: 17
+      max: 29
+  male:
+    total: 41
+    age_stats:
+      mean: 25.146341463414632
+      std: 4.803961779665593
+      min: 20
+      max: 37

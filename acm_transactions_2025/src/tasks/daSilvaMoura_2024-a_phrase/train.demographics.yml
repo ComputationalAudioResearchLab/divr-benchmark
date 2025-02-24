@@ -1,0 +1,165 @@
+recurrent_paralysis:
+  female:
+    total: 66
+    age_stats:
+      mean: 54.57575757575758
+      std: 14.472319048722587
+      min: 21
+      max: 79
+  male:
+    total: 43
+    age_stats:
+      mean: 56.86046511627907
+      std: 16.18579829496163
+      min: 14
+      max: 81
+contact_pachydermia:
+  male:
+    total: 28
+    age_stats:
+      mean: 56
+      std: 13.294387565463131
+      min: 29
+      max: 76
+  female:
+    total: 1
+    age_stats:
+      mean: 61
+      std: null
+      min: 61
+      max: 61
+reinkes_edema:
+  female:
+    total: 19
+    age_stats:
+      mean: 51.421052631578945
+      std: 9.287481356186964
+      min: 34
+      max: 73
+  male:
+    total: 5
+    age_stats:
+      mean: 59.4
+      std: 5.319774431308154
+      min: 52
+      max: 65
+dysphonia:
+  male:
+    total: 26
+    age_stats:
+      mean: 47.23076923076923
+      std: 17.518693312705015
+      min: 11
+      max: 75
+  female:
+    total: 30
+    age_stats:
+      mean: 45.9
+      std: 15.935971021992763
+      min: 18
+      max: 73
+laryngitis:
+  male:
+    total: 48
+    age_stats:
+      mean: 50.229166666666664
+      std: 15.870807649927363
+      min: 16
+      max: 77
+  female:
+    total: 37
+    age_stats:
+      mean: 47.08108108108108
+      std: 16.445834289128218
+      min: 12
+      max: 77
+hyperfunctional_dysphonia:
+  female:
+    total: 98
+    age_stats:
+      mean: 43.88775510204081
+      std: 16.2124316899172
+      min: 13
+      max: 94
+  male:
+    total: 40
+    age_stats:
+      mean: 46
+      std: 13.80263817220536
+      min: 22
+      max: 73
+cordectomy:
+  male:
+    total: 21
+    age_stats:
+      mean: 60.904761904761905
+      std: 8.636577805501215
+      min: 45
+      max: 78
+  female:
+    total: 2
+    age_stats:
+      mean: 58
+      std: 8.48528137423857
+      min: 52
+      max: 64
+functional_dysphonia:
+  female:
+    total: 41
+    age_stats:
+      mean: 45.68292682926829
+      std: 14.843245979889716
+      min: 16
+      max: 74
+  male:
+    total: 25
+    age_stats:
+      mean: 46.68
+      std: 16.059057672644848
+      min: 20
+      max: 71
+psychogenic_dysphonia:
+  female:
+    total: 22
+    age_stats:
+      mean: 49.13636363636363
+      std: 10.50304017005804
+      min: 27
+      max: 64
+  male:
+    total: 10
+    age_stats:
+      mean: 52.2
+      std: 10.432854089099706
+      min: 28
+      max: 63
+vocal_fold_polyp:
+  male:
+    total: 12
+    age_stats:
+      mean: 52
+      std: 15.015143870590967
+      min: 29
+      max: 78
+  female:
+    total: 6
+    age_stats:
+      mean: 57.666666666666664
+      std: 13.170674495509585
+      min: 42
+      max: 79
+normal:
+  female:
+    total: 233
+    age_stats:
+      mean: 27.180257510729614
+      std: 13.27696170071933
+      min: 9
+      max: 84
+  male:
+    total: 195
+    age_stats:
+      mean: 33.46153846153846
+      std: 12.617379099991192
+      min: 16
+      max: 69

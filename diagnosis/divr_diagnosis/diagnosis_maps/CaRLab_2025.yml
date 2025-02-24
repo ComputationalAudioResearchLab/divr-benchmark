@@ -159,3 +159,13 @@ reinkes_edema:
   level: 2
   parents:
     auto_c: 1.00
+
+### Level 3 -- just to support data from MEEI and voiced
+hyperfunction:
+  level: 3
+  parents:
+    hyperfunctional_dysphonia: 1.00
+hyperkinetic_dysphonia_polyps:
+  level: 3
+  parents:
+    vocal_fold_polyp: 1.00

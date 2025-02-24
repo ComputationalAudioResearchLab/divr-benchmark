@@ -1402,6 +1402,8 @@ class Reporter:
         df = pd.read_csv(f"{self.__results_path}/report_superset_analysis.csv")
         df = df[df["feature"].isin(["MFCCDD", "UnispeechSAT", "Wav2Vec"])]
         df = df[df["exp_key"].str.contains("_phrase_")]
+        # df = df[df["exp_key"].str.contains("_all_")]
+        # df = df[df["exp_key"].str.contains("_a_")]
 
         cross_tests = [
             "cross_test_avfad",
@@ -1523,7 +1525,8 @@ class Reporter:
     def report_cross_meei(self) -> None:
         df = pd.read_csv(f"{self.__results_path}/report_superset_analysis.csv")
         df = df[df["feature"].isin(["MFCCDD", "UnispeechSAT", "Wav2Vec"])]
-        df = df[df["exp_key"].str.contains("_phrase_")]
+        df = df[df["exp_key"].str.contains("_all_")]
+        # df = df[df["exp_key"].str.contains("_phrase_")]
         # df = df[df["category"] == "narrow"]
 
         cross_tests = ["cross_test_meei"]
@@ -1694,7 +1697,7 @@ class Reporter:
 
         axs[0].set_ylabel("Actual", fontsize=22)
         # cbar = fig.colorbar(ax[0].get_children()[0], ax=axes, orientation='vertical', fraction=0.02, pad=0.02)
-        fig_path = f"{self.__results_path}/cross_meei.png"
+        fig_path = f"{self.__results_path}/cross_meei_all.png"
         fig.suptitle(
             "Multi-class classification confusion on MEEI using different classification systems",
             fontsize=34,

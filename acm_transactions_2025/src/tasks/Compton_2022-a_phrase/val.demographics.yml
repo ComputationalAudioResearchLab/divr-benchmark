@@ -1,18 +1,3 @@
-unclassified:
-  female:
-    total: 64
-    age_stats:
-      mean: 49.90625
-      std: 11.938624458799849
-      min: 21
-      max: 69
-  male:
-    total: 30
-    age_stats:
-      mean: 60.8
-      std: 6.424092583177906
-      min: 48
-      max: 75
 chronic_laryngitis:
   female:
     total: 5
