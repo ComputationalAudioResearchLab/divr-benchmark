@@ -37,11 +37,11 @@ class TestAllCross:
     __batch_size = 1
     __cross_test_tasks = [
         # "cross_test_avfad",
-        "cross_test_meei",
+        # "cross_test_meei",
         # "cross_test_torgo",
         # "cross_test_uaspeech",
         # "cross_test_uncommon_voice",
-        "cross_test_voiced",
+        # "cross_test_voiced",
     ]
 
     def __init__(
@@ -62,6 +62,7 @@ class TestAllCross:
         )
         self.__test_func_map = {
             Normalized: self.__test_single,
+            SimpleTransformer: self.__test_single,
             NormalizedMultiCrit: self.__test_multi_crit,
             NormalizedMultitask: self.__test_multi_task,
         }
@@ -164,6 +165,10 @@ class TestAllCross:
                         "daSilvaMoura-"
                     ):
                         dmap_key, d_task_key = task_key.split("-", maxsplit=1)
+                        if dmap_key == "USVAC":
+                            dmap_key = "USVAC_2025"
+                        elif dmap_key == "daSilvaMoura":
+                            dmap_key = "daSilvaMoura_2024"
                         diagnosis_map = self.__task_generator.get_diagnosis_map(
                             task_key=dmap_key, allow_unmapped=False
                         )
@@ -172,6 +177,11 @@ class TestAllCross:
                         diagnosis_map = self.__task_generator.get_diagnosis_map(
                             task_key=dmap_key, allow_unmapped=True
                         )
+                    elif task_key.startswith("daSilvaMoura_2024-"):
+                        diagnosis_map = self.__task_generator.get_diagnosis_map(
+                            task_key="daSilvaMoura_2024", allow_unmapped=True
+                        )
+                        d_task_key = task_key
                     else:
                         diagnosis_map = self.__task_generator.get_diagnosis_map(
                             task_key="USVAC_2025", allow_unmapped=False

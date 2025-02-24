@@ -54,6 +54,7 @@ class TestAllSelf:
         )
         self.__test_func_map = {
             Normalized: self.__test_single,
+            SimpleTransformer: self.__test_single_transformer,
             NormalizedMultiCrit: self.__test_multi_crit,
             NormalizedMultitask: self.__test_multi_task,
         }
@@ -186,6 +187,43 @@ class TestAllSelf:
             inputs, labels, id_tensor, ids = batch
             labels = labels.squeeze(1)
             probabilities, _, _ = model(inputs)
+            predicted_labels = probabilities.argmax(dim=1)
+            data = torch.cat(
+                [labels[:, None], predicted_labels[:, None], probabilities],
+                dim=1,
+            )
+            all_ids += ids
+            results += [data]
+        results = torch.cat(results, dim=0).round(decimals=2)
+        columns = ["actual", "predicted"] + data_loader.unique_diagnosis[diag_level]
+        results = pd.DataFrame(
+            data=results.cpu().numpy(),
+            columns=columns,
+        )
+        results["id"] = all_ids
+
+        def diag_map(idx):
+            return data_loader.idx_to_diag_name(int(idx), diag_level)
+
+        results["actual"] = results["actual"].apply(diag_map)
+        results["predicted"] = results["predicted"].apply(diag_map)
+        return results
+
+    @torch.no_grad()
+    def __test_single_transformer(
+        self,
+        data_loader: BaseDataLoader,
+        model: Normalized,
+        diag_levels: list[int],
+    ) -> pd.DataFrame:
+        assert len(diag_levels) == 1
+        diag_level = diag_levels[0]
+        results = []
+        all_ids = []
+        for batch in tqdm(data_loader.test(), desc="Testing", leave=False):
+            inputs, labels, id_tensor, ids = batch
+            labels = labels.squeeze(1)
+            _, (probabilities, _, _) = model(inputs)
             predicted_labels = probabilities.argmax(dim=1)
             data = torch.cat(
                 [labels[:, None], predicted_labels[:, None], probabilities],

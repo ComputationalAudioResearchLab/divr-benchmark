@@ -7,6 +7,7 @@ from pathlib import Path
 class SavableModule(nn.Module):
     def __init__(self, checkpoint_path: Path):
         super().__init__()
+        self.__current_checkpoint_path = None
         self.checkpoint_path = checkpoint_path
         self.checkpoint_path.mkdir(exist_ok=True, parents=True)
 

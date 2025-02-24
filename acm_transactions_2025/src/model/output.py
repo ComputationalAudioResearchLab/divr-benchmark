@@ -229,11 +229,11 @@ class SimpleTransformer(Base):
         checkpoint_path: Path,
     ):
         super().__init__(checkpoint_path)
+        num_layers = 4
         hidden_size = 512
         self.input_projection = nn.Linear(input_size, hidden_size)
         self.out_diag_projection = nn.Linear(hidden_size, num_classes)
         self.out_spk_projection = nn.Linear(hidden_size, num_speakers)
-        num_layers = 4
         self.encoder = nn.ModuleList(
             [
                 TransformerEncoderLayer(
@@ -247,7 +247,7 @@ class SimpleTransformer(Base):
         self.num_classes = num_classes
         self.num_speakers = num_speakers
         self.hidden_size = hidden_size
-        self.tap_location = 2
+        self.tap_location = num_layers // 2
 
     def forward(self, inputs: InputTensors):
         input_audios, input_lens = inputs
