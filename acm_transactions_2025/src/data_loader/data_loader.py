@@ -60,11 +60,11 @@ class DataLoader(BaseDataLoader):
         if idx >= self._data_len:
             raise StopIteration()
         batch = self.__get_batch(idx)
-        inputs: InputTensors = self.collate_function([b.audio for b in batch])
+        inputs: InputTensors = self.collate_function([b["audio"] for b in batch])
         labels = torch.tensor(
             [
                 [
-                    self.__task.diag_to_index(b.label, level)
+                    self.__task.diag_to_index(b["label"], level)
                     for level in self.diag_levels
                 ]
                 for b in batch
@@ -87,24 +87,33 @@ class DataLoader(BaseDataLoader):
     def __get_batch(self, idx: int):
         start = idx * self.__batch_size
         end = start + self.__batch_size
-        batch = self._points[self.__indices[start:end]]
-        return batch
+        return [
+            {
+                "audio": point.audio,
+                "id": point.id,
+                "label": point.label,
+            }
+            for point in self._points[self.__indices[start:end]]
+        ]
 
-    def train(self) -> DataLoader:
+    def train(self, random_cuts: bool) -> DataLoader:
         if self.__shuffle_train:
             np.random.shuffle(self.__train_indices)
         self.__indices = self.__train_indices
         self._points = self.__train_points
         self._data_len = self._num_batches(len(self.__indices))
+        self.__random_cuts = random_cuts
         return self
 
     def eval(self) -> DataLoader:
+        self.__random_cuts = False
         self.__indices = self.__val_indices
         self._points = self.__val_points
         self._data_len = self._num_batches(len(self.__indices))
         return self
 
     def test(self) -> DataLoader:
+        self.__random_cuts = False
         self.__indices = self.__test_indices
         self._points = self.__test_points
         self._data_len = self._num_batches(len(self.__indices))
@@ -129,6 +138,13 @@ class DataLoader(BaseDataLoader):
                 print(batch)
                 raise ValueError(f"batch point {batch_idx} without audios")
             for audio_idx, audio in enumerate(audios):
+                if self.__random_cuts:
+                    audio_len = audio.shape[0]
+                    # percentage margin to cut from front and back, currently 20%
+                    margin = int(audio_len * 0.2)
+                    start = np.random.randint(0, margin)
+                    end = audio_len - np.random.randint(0, margin)
+                    audio = audio[start:end, :]
                 audio_len = audio.shape[0]
                 if audio_len < 1:
                     print(batch)

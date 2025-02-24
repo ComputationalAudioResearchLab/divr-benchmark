@@ -6,6 +6,7 @@ from ...model import (
     Normalized,
     NormalizedMultiCrit,
     NormalizedMultitask,
+    SimpleTransformer,
 )
 
 
@@ -13,14 +14,15 @@ class ModelCache:
 
     def __init__(self, device: torch.device) -> None:
         self.__cache: dict[
-            str, Normalized | NormalizedMultiCrit | NormalizedMultitask
+            str,
+            Normalized | NormalizedMultiCrit | NormalizedMultitask | SimpleTransformer,
         ] = {}
         self.__tmp_path = Path("/tmp")
         self.__device = device
 
     def get_model(
         self, data_loader: BaseDataLoader, model_cls
-    ) -> Normalized | NormalizedMultiCrit | NormalizedMultitask:
+    ) -> Normalized | NormalizedMultiCrit | NormalizedMultitask | SimpleTransformer:
         input_size = data_loader.feature_size
         num_classes = data_loader.num_classes
         if model_cls == NormalizedMultitask:
@@ -51,6 +53,15 @@ class ModelCache:
                     input_size=input_size,
                     num_classes=data_loader.num_unique_diagnosis,
                     checkpoint_path=self.__tmp_path,
+                )
+            elif model_cls == SimpleTransformer:
+                max_diag_level = max(data_loader.num_unique_diagnosis.keys())
+                num_classes = data_loader.num_unique_diagnosis[max_diag_level]
+                model = model_cls(
+                    input_size=input_size,
+                    num_classes=num_classes,
+                    checkpoint_path=self.__tmp_path,
+                    num_speakers=data_loader.total_speakers,
                 )
             self.__cache[model_cache_key] = model.cpu()
 

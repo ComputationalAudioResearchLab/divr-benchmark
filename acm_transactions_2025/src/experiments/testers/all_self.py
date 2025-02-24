@@ -7,15 +7,18 @@ from divr_diagnosis import DiagnosisMap
 from .model_cache import ModelCache
 from .. import Runner
 from ..trainer import Trainer
+from ..trainer_sep import TrainerSep
 from ...data_loader import BaseDataLoader, DataLoader, CachedDataLoader
 from ...tasks_generator import TaskGenerator
 from ..trainer_multicrit import TrainerMultiCrit
 from ..trainer_multitask import TrainerMultiTask
+from ..trainer_transformer import TrainerTransformer
 from ...model import (
     Normalized,
     NormalizedMultiCrit,
     NormalizedMultitask,
     Feature,
+    SimpleTransformer,
 )
 
 
@@ -23,8 +26,10 @@ class TestAllSelf:
 
     __model_map = {
         Trainer: Normalized,
+        TrainerSep: Normalized,
         TrainerMultiCrit: NormalizedMultiCrit,
         TrainerMultiTask: NormalizedMultitask,
+        TrainerTransformer: SimpleTransformer,
     }
     __device = torch.device("cuda")
     __sampling_rate = 16000
@@ -128,6 +133,7 @@ class TestAllSelf:
                         cache_path=Path(
                             f"{self.__cache_path}/.data_loader/{d_task_key}/{feature_cls.__name__}"
                         ),
+                        return_id_tensor=True,
                     )
                     for model_cls, model_tests in task_diag_tests.items():
                         model = model_cache.get_model(
@@ -177,10 +183,7 @@ class TestAllSelf:
         results = []
         all_ids = []
         for batch in tqdm(data_loader.test(), desc="Testing", leave=False):
-            if len(batch) == 2:
-                inputs, labels = batch
-            else:
-                inputs, labels, ids = batch
+            inputs, labels, id_tensor, ids = batch
             labels = labels.squeeze(1)
             probabilities, _, _ = model(inputs)
             predicted_labels = probabilities.argmax(dim=1)
@@ -215,10 +218,7 @@ class TestAllSelf:
         all_results = []
         all_ids = []
         for batch in tqdm(data_loader.test(), desc="Testing", leave=False):
-            if len(batch) == 2:
-                inputs, labels = batch
-            else:
-                inputs, labels, ids = batch
+            inputs, labels, id_tensor, ids = batch
             labels = labels.squeeze(1)
             probabilities, _, _ = model(inputs)
             data_at_level = []
@@ -264,10 +264,7 @@ class TestAllSelf:
         all_results = []
         all_ids = []
         for batch in tqdm(data_loader.test(), desc="Testing", leave=False):
-            if len(batch) == 2:
-                inputs, labels = batch
-            else:
-                inputs, labels, ids = batch
+            inputs, labels, id_tensor, ids = batch
             labels = labels.squeeze(1)
             results = model(inputs)
             data_at_level = []
@@ -309,6 +306,7 @@ class TestAllSelf:
         diagnosis_map: DiagnosisMap,
         feature_function: Feature,
         cache_path: Path,
+        return_id_tensor: bool,
     ) -> BaseDataLoader:
         task = self.__task_generator.load_task(
             task=task_key,
@@ -327,6 +325,7 @@ class TestAllSelf:
             cache_path=cache_path,
             test_only=True,
             allow_inter_level_comparison=False,
+            return_id_tensor=return_id_tensor,
         )
 
     def __get_data_loader(
@@ -336,6 +335,7 @@ class TestAllSelf:
         diagnosis_map: DiagnosisMap,
         feature_function: Feature,
         cache_path: Path,
+        return_id_tensor: bool,
     ) -> BaseDataLoader:
         task = self.__task_generator.load_task(
             task=task_key,
@@ -353,6 +353,7 @@ class TestAllSelf:
             return_ids=True,
             test_only=True,
             allow_inter_level_comparison=False,
+            return_id_tensor=return_id_tensor,
         )
 
     def __find_checkpoints(self, exp_key: str) -> list[Path]:
