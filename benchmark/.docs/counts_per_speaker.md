@@ -129,8 +129,8 @@ Count of sessions for different databases for different classification systems a
 	 * **unclassified:** 326
 	 * **normal:** 55
 	 * **adductor_spasmodic_dysphonia:** 19
-	 * **nodules:** 24
-	 * **polyp:** 19
+	 * **nodules:** 23
+	 * **polyp:** 20
 	 * **cysts:** 5
 	 * **parkinsons:** 3
 	 * **benign_essential_tremor:** 1
@@ -142,8 +142,8 @@ Count of sessions for different databases for different classification systems a
 	 * **unclassified:** 326
 	 * **normal:** 55
 	 * **adductor_spasmodic_dysphonia:** 19
-	 * **nodules:** 24
-	 * **polyp:** 19
+	 * **nodules:** 23
+	 * **polyp:** 20
 	 * **cysts:** 5
 	 * **parkinsons:** 3
 	 * **benign_essential_tremor:** 1
@@ -153,36 +153,38 @@ Count of sessions for different databases for different classification systems a
 	 * **reinkes_edema:** 1
 ### svd
 * **Level 0:**
-	 * **unclassified:** 927
-	 * **pathological:** 111
+	 * **unclassified:** 818
+	 * **pathological:** 224
 	 * **normal:** 681
 * **Level 1:**
-	 * **unclassified:** 927
-	 * **inflammatory:** 53
-	 * **mass_lesions:** 60
-	 * **normal:** 681
+	 * **unclassified:** 818
+	 * **mass_lesions:** 58
+	 * **inflammatory:** 169
 	 * **neuro_muscular:** 1
+	 * **normal:** 681
 * **Level 2:**
-	 * **unclassified:** 927
-	 * **reinkes_edema:** 53
-	 * **polyp:** 38
-	 * **cancer:** 15
+	 * **unclassified:** 818
+	 * **polyp:** 36
+	 * **chronic_laryngitis:** 126
+	 * **reinkes_edema:** 44
 	 * **cysts:** 4
+	 * **parkinsons:** 1
+	 * **cancer:** 15
 	 * **normal:** 681
 	 * **granuloma:** 2
-	 * **parkinsons:** 1
 	 * **papilloma:** 1
 * **Level 3:**
-	 * **unclassified:** 927
-	 * **reinkes_edema:** 53
-	 * **polyp:** 38
-	 * **vocal_fold_carcinoma:** 13
-	 * **carcinoma_in_situ:** 1
+	 * **unclassified:** 818
+	 * **polyp:** 36
+	 * **chronic_laryngitis:** 126
+	 * **reinkes_edema:** 44
 	 * **cysts:** 4
-	 * **normal:** 681
-	 * **granuloma:** 2
-	 * **epiglottic_carcinoma:** 1
 	 * **parkinsons:** 1
+	 * **vocal_fold_carcinoma:** 13
+	 * **normal:** 681
+	 * **epiglottic_carcinoma:** 1
+	 * **carcinoma_in_situ:** 1
+	 * **granuloma:** 2
 	 * **papilloma:** 1
 ### torgo
 * **Level 0:**
@@ -485,16 +487,16 @@ Count of sessions for different databases for different classification systems a
 * **Level 2:**
 	 * **unclassified:** 307
 	 * **normal:** 55
-	 * **nodules:** 24
 	 * **vocal_fold_paralysis:** 67
+	 * **nodules:** 24
 	 * **pathological:** 247
 	 * **cysts:** 5
 	 * **edema:** 1
 * **Level 3:**
 	 * **unclassified:** 307
 	 * **normal:** 55
-	 * **nodules:** 24
 	 * **vocal_fold_paralysis:** 67
+	 * **nodules:** 24
 	 * **pathological:** 247
 	 * **cysts:** 5
 	 * **edema:** 1
@@ -602,8 +604,8 @@ Count of sessions for different databases for different classification systems a
 * **Level 2:**
 	 * **unclassified:** 356
 	 * **normal:** 55
-	 * **nodules:** 24
-	 * **polyps:** 19
+	 * **nodules:** 23
+	 * **polyps:** 20
 	 * **cysts:** 5
 	 * **pathological:** 247
 ### svd
@@ -697,8 +699,8 @@ Count of sessions for different databases for different classification systems a
 * **Level 2:**
 	 * **unclassified:** 352
 	 * **normal:** 55
-	 * **nodules:** 24
-	 * **polyps:** 19
+	 * **nodules:** 23
+	 * **polyps:** 20
 	 * **cysts:** 5
 	 * **parkinsons_trauma:** 3
 	 * **inflammation:** 1
@@ -706,8 +708,8 @@ Count of sessions for different databases for different classification systems a
 * **Level 3:**
 	 * **unclassified:** 352
 	 * **normal:** 55
-	 * **nodules:** 24
-	 * **polyps:** 19
+	 * **nodules:** 23
+	 * **polyps:** 20
 	 * **cysts:** 5
 	 * **parkinsons_trauma:** 3
 	 * **inflammation:** 1
@@ -826,15 +828,15 @@ Count of sessions for different databases for different classification systems a
 * **Level 2:**
 	 * **unclassified:** 360
 	 * **normal:** 55
-	 * **nodules:** 24
-	 * **polyps:** 19
+	 * **nodules:** 23
+	 * **polyps:** 20
 	 * **pathological:** 247
 	 * **reinkes_edema:** 1
 * **Level 3:**
 	 * **unclassified:** 360
 	 * **normal:** 55
-	 * **nodules:** 24
-	 * **polyps:** 19
+	 * **nodules:** 23
+	 * **polyps:** 20
 	 * **pathological:** 247
 	 * **reinkes_edema:** 1
 ### svd
@@ -1066,7 +1068,7 @@ Count of sessions for different databases for different classification systems a
 * **Level 1:**
 	 * **normal:** 363
 	 * **unclassified:** 291
-	 * **phonotrauma:** 55
+	 * **benign_structural_lesions:** 55
 * **Level 2:**
 	 * **normal:** 363
 	 * **unclassified:** 291
@@ -1080,13 +1082,13 @@ Count of sessions for different databases for different classification systems a
 * **Level 1:**
 	 * **unclassified:** 356
 	 * **normal:** 55
-	 * **phonotrauma:** 48
+	 * **benign_structural_lesions:** 48
 	 * **pathological:** 247
 * **Level 2:**
 	 * **unclassified:** 356
 	 * **normal:** 55
-	 * **nodules:** 24
-	 * **polyps:** 19
+	 * **nodules:** 23
+	 * **polyps:** 20
 	 * **cysts:** 5
 	 * **pathological:** 247
 ### svd
@@ -1096,7 +1098,7 @@ Count of sessions for different databases for different classification systems a
 	 * **normal:** 681
 * **Level 1:**
 	 * **unclassified:** 983
-	 * **phonotrauma:** 44
+	 * **benign_structural_lesions:** 44
 	 * **normal:** 681
 * **Level 2:**
 	 * **unclassified:** 983
@@ -1214,60 +1216,61 @@ Count of sessions for different databases for different classification systems a
 	 * **unclassified:** 71
 	 * **normal:** 50
 * **Level 1:**
-	 * **muscle_tension:** 173
-	 * **organic:** 150
+	 * **muscle_tension:** 150
+	 * **organic:** 173
 	 * **functional:** 15
 	 * **pathological:** 247
 	 * **unclassified:** 71
 	 * **normal:** 50
 * **Level 2:**
-	 * **muscle_tension:** 173
-	 * **organic_structural:** 94
-	 * **organic_neuro_muscular:** 54
+	 * **muscle_tension:** 150
+	 * **organic_structural:** 110
+	 * **organic_neuro_muscular:** 60
 	 * **functional_dysphonia:** 14
 	 * **functional_puberphonia:** 1
 	 * **pathological:** 247
+	 * **organic_inflammatory:** 3
 	 * **unclassified:** 71
 	 * **normal:** 50
-	 * **organic_inflammatory:** 2
 * **Level 3:**
-	 * **muscle_tension:** 173
-	 * **organic_structural_vascular:** 5
-	 * **organic_structural_epithelial_propria:** 68
-	 * **organic_neuro_muscular_movement_disorder:** 29
+	 * **muscle_tension:** 150
+	 * **organic_structural_vascular:** 7
+	 * **organic_structural_epithelial_propria:** 81
+	 * **organic_neuro_muscular_movement_disorder:** 27
 	 * **functional_dysphonia:** 14
-	 * **organic_structural_congenital:** 11
+	 * **organic_neuro_muscular_peripheral_nervous_disorder:** 32
+	 * **organic_structural_congenital:** 13
+	 * **organic_structural_structural_abnormality:** 8
 	 * **functional_puberphonia:** 1
-	 * **organic_structural_structural_abnormality:** 9
 	 * **pathological:** 247
-	 * **organic_neuro_muscular_peripheral_nervous_disorder:** 24
+	 * **organic_inflammatory_non_infective:** 2
 	 * **unclassified:** 71
 	 * **normal:** 50
 	 * **organic_inflammatory_infective:** 1
 	 * **organic_neuro_muscular_central_nervous_disorder:** 1
-	 * **organic_inflammatory_non_infective:** 1
 	 * **organic_structural_malignancy:** 1
 * **Level 4:**
-	 * **hyperfunction:** 172
+	 * **hyperfunction:** 149
 	 * **chronic_hemmorage:** 1
-	 * **leukoplakia:** 12
-	 * **scarring:** 5
+	 * **leukoplakia:** 21
+	 * **scarring:** 10
 	 * **hemorrhage:** 2
-	 * **vocal_fold_polyp:** 18
-	 * **adductor_spasmodic_dysphonia:** 15
-	 * **vocal_tremor:** 10
+	 * **vocal_fold_polyp:** 19
+	 * **adductor_spasmodic_dysphonia:** 10
+	 * **vocal_tremor:** 13
 	 * **conversion_dysphonia:** 13
+	 * **paresis:** 13
 	 * **mixed_adductor_abductor_spasmodic_dysphonia:** 1
-	 * **vocal_fold_nodules:** 19
-	 * **presbyphonia:** 11
+	 * **vocal_fold_nodules:** 18
+	 * **presbyphonia:** 13
+	 * **laryngeal_web:** 3
 	 * **puberphonia:** 1
 	 * **essential_tremor:** 1
-	 * **laryngeal_web:** 5
 	 * **pathological:** 247
 	 * **paralysis:** 19
-	 * **paresis:** 5
 	 * **polypoid_degeneration_reinkes:** 7
-	 * **vocal_fold_edema:** 2
+	 * **vocal_fold_edema:** 1
+	 * **inflammatory_disease:** 1
 	 * **parkinson_disease:** 1
 	 * **unclassified:** 59
 	 * **vocal_fold_thickening:** 1
@@ -1280,8 +1283,10 @@ Count of sessions for different databases for different classification systems a
 	 * **normal:** 50
 	 * **hematoma:** 1
 	 * **exudative_hyperkeratotic_lesions_of_epithelium:** 1
+	 * **varix:** 3
 	 * **subglottal_anterior_web:** 1
 	 * **laryngeal_tuberculosis:** 1
+	 * **subglottal_mass:** 1
 	 * **episodic_functional_dysphonia:** 1
 	 * **ventricular_phonation:** 1
 	 * **multiple_sclerosis:** 1
@@ -1290,7 +1295,6 @@ Count of sessions for different databases for different classification systems a
 	 * **post_intubation_submucosal_edema_mild:** 1
 	 * **hemmoragic_reinkes_edema:** 1
 	 * **malignant_tumor:** 1
-	 * **varix:** 1
 	 * **cyst:** 1
 	 * **a_p_squeezing:** 1
 	 * **thick_mucous_and_mucous_stranding:** 1
@@ -1541,10 +1545,10 @@ Count of sessions for different databases for different classification systems a
 	 * **unclassified:** 314
 	 * **vocal_fold_edema:** 38
 	 * **normal:** 55
-	 * **vocal_fold_nodule:** 22
-	 * **vocal_fold_polyp:** 19
-	 * **sulcus_vocalis:** 2
-	 * **vocal_fold_cyst:** 5
+	 * **vocal_fold_nodule:** 21
+	 * **vocal_fold_polyp:** 20
+	 * **sulcus_vocalis:** 3
+	 * **vocal_fold_cyst:** 4
 	 * **voice_tremor:** 1
 	 * **puberphonia:** 1
 	 * **tuberculosis_laryngitis:** 1
