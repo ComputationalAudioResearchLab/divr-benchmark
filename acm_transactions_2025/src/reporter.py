@@ -1451,6 +1451,7 @@ class Reporter:
             "_phrase_": df[
                 df["exp_key"].str.contains("_phrase_")
                 & ~df["exp_key"].str.contains("_a_phrase_")
+                & ~df["exp_key"].str.contains("_augmented_phrase_")
                 & ~df["exp_key"].str.endswith("_sep")
             ],
             "_all_": df[df["exp_key"].str.contains("_all_")],
@@ -1605,6 +1606,7 @@ class Reporter:
             "_phrase_": df[
                 df["exp_key"].str.contains("_phrase_")
                 & ~df["exp_key"].str.contains("_a_phrase_")
+                & ~df["exp_key"].str.contains("_augmented_phrase_")
                 & ~df["exp_key"].str.endswith("_sep")
             ],
             "_all_": df[df["exp_key"].str.contains("_all_")],
@@ -1829,6 +1831,7 @@ class Reporter:
             "_phrase_": df[
                 df["exp_key"].str.contains("_phrase_")
                 & ~df["exp_key"].str.contains("_a_phrase_")
+                & ~df["exp_key"].str.contains("_augmented_phrase_")
                 & ~df["exp_key"].str.endswith("_sep")
             ],
             "_all_": df[df["exp_key"].str.contains("_all_")],
@@ -2060,6 +2063,7 @@ class Reporter:
             "_phrase_": df[
                 df["exp_key"].str.contains("_phrase_")
                 & ~df["exp_key"].str.contains("_a_phrase_")
+                & ~df["exp_key"].str.contains("_augmented_phrase_")
                 & ~df["exp_key"].str.endswith("_sep")
             ],
             "_all_": df[df["exp_key"].str.contains("_all_")],
@@ -2441,3 +2445,623 @@ class Reporter:
         out_path = f"{self.__results_path}/collect_cross_avfad.csv"
         df.to_csv(out_path, index=False)
         print(f"Saved at: {out_path}")
+
+    def report_hierarchies_a(self) -> None:
+        # difference by hierarchy
+        df = pd.read_csv(f"{self.__results_path}/collated_results_self.csv", header=0)
+        df = df[df["feature"] == "UnispeechSAT"]
+        df = df[df["task_key"].isin(["phrase"])]
+
+        single_task_results = df[df["num_diag_levels"] == 1]
+        single_task_results["accuracy"] = (
+            single_task_results["0_acc_balanced"]
+            .combine_first(single_task_results["1_acc_balanced"])
+            .combine_first(single_task_results["2_acc_balanced"])
+            .combine_first(single_task_results["3_acc_balanced"])
+            .combine_first(single_task_results["4_acc_balanced"])
+        )
+        best_single_task_result = (
+            single_task_results.sort_values(by="accuracy", ascending=False)
+            .groupby(by=["exp_key"])
+            .head(1)
+        )
+        usvac = best_single_task_result[
+            ~best_single_task_result["exp_key"].str.startswith("superset-")
+        ].reset_index(drop=True)
+
+        fig = plt.figure(figsize=(12, 30), constrained_layout=True)
+        axs = [fig.subplots(nrows=5, ncols=1, gridspec_kw={"wspace": 0.1, "hspace": 0})]
+        # fig, axs = plt.subplots(2, 5, figsize=(20, 10), constrained_layout=True)
+        for idx, row in usvac.iterrows():
+            ax = axs[0][idx]
+            exp_key = row["exp_key"]
+            epoch = row["epoch"]
+            exp_df = pd.read_csv(f"{self.__results_path}/self/{exp_key}/{epoch}.csv")
+            labels, _, acc, confusion = self.confusion(
+                actual=exp_df["actual"],
+                predicted=exp_df["predicted"],
+            )
+            labels = [self.label_map[label] for label in labels]
+            sns.heatmap(
+                confusion,
+                ax=ax,
+                annot=True,
+                fmt="g",
+                cmap="YlGnBu",
+                xticklabels=labels,
+                yticklabels=labels,
+                annot_kws={"fontsize": 20},
+            )
+            ax.tick_params(axis="both", labelsize=22)
+            ax.tick_params(axis="y", rotation=0)
+            ax.set_title(f"Level {idx}", fontsize=24)
+            ax.set_xlabel("Predicted", fontsize=22)
+            ax.set_ylabel("Actual", fontsize=22)
+            print(exp_key, round(acc * 100, 2))
+        # axs[0][0].set_ylabel("Actual", fontsize=22)
+        # axs[1][0].set_ylabel("Actual", fontsize=22)
+        fig.suptitle(
+            "Classification confusion for different levels of USVAC 2025",
+            fontsize=30,
+        )
+        fig_path = f"{self.__results_path}/hierarchies_a.png"
+        fig.savefig(fig_path, bbox_inches="tight")
+        print(f"Saved at: {fig_path}")
+        # first line USVAC all levels
+        # second line all systems level 1
+
+    def report_hierarchies_b(self) -> None:
+        # difference by hierarchy
+        df = pd.read_csv(f"{self.__results_path}/collated_results_self.csv", header=0)
+        df = df[df["feature"] == "UnispeechSAT"]
+        df = df[df["task_key"].isin(["phrase"])]
+
+        single_task_results = df[df["num_diag_levels"] == 1]
+        single_task_results["accuracy"] = (
+            single_task_results["0_acc_balanced"]
+            .combine_first(single_task_results["1_acc_balanced"])
+            .combine_first(single_task_results["2_acc_balanced"])
+            .combine_first(single_task_results["3_acc_balanced"])
+            .combine_first(single_task_results["4_acc_balanced"])
+        )
+        best_single_task_result = (
+            single_task_results.sort_values(by="accuracy", ascending=False)
+            .groupby(by=["exp_key"])
+            .head(1)
+        )
+        cross_system = best_single_task_result[
+            best_single_task_result["max_diag_level"] == 1
+        ].reset_index(drop=True)
+
+        exp_map = {
+            "superset-CaRLab_2025-unispeechSAT_phrase_1": "CaRLab 2025",
+            "unispeechSAT_phrase_1": "USVAC 2025",
+            "superset-daSilvaMoura_2024-unispeechSAT_phrase_1": "da Silva Moura 2024",
+            "superset-Compton_2022-unispeechSAT_phrase_1": "Compton 2022",
+            "superset-Zaim_2023-unispeechSAT_phrase_1": "Za'im 2023",
+        }
+
+        fig = plt.figure(figsize=(12, 30), constrained_layout=True)
+        axs = [fig.subplots(nrows=5, ncols=1, gridspec_kw={"wspace": 0.1, "hspace": 0})]
+        for idx, row in cross_system.iterrows():
+            ax = axs[0][idx]
+            exp_key = row["exp_key"]
+            epoch = row["epoch"]
+            exp_df = pd.read_csv(f"{self.__results_path}/self/{exp_key}/{epoch}.csv")
+            labels, _, acc, confusion = self.confusion(
+                actual=exp_df["actual"],
+                predicted=exp_df["predicted"],
+            )
+            labels = [self.label_map[label] for label in labels]
+            sns.heatmap(
+                confusion,
+                ax=ax,
+                annot=True,
+                fmt="g",
+                cmap="YlGnBu",
+                xticklabels=labels,
+                yticklabels=labels,
+                annot_kws={"fontsize": 20},
+            )
+            ax.tick_params(axis="both", labelsize=22)
+            ax.set_title(f"{exp_map[exp_key]}", fontsize=24)
+            ax.set_xlabel("Predicted", fontsize=22)
+            ax.set_ylabel("Actual", fontsize=22)
+            print(exp_key, round(acc * 100, 2))
+        # axs[0][0].set_ylabel("Actual", fontsize=22)
+        # axs[1][0].set_ylabel("Actual", fontsize=22)
+        fig.suptitle(
+            "Classification confusion for different classification systems",
+            fontsize=30,
+        )
+        fig_path = f"{self.__results_path}/hierarchies_b.png"
+        fig.savefig(fig_path, bbox_inches="tight")
+        print(f"Saved at: {fig_path}")
+        # first line USVAC all levels
+        # second line all systems level 1
+
+    def report_cross_database_1(self) -> None:
+        df = pd.read_csv(f"{self.__results_path}/report_superset_analysis.csv")
+        df = df[df["feature"].isin(["MFCCDD", "UnispeechSAT", "Wav2Vec"])]
+        selections = {
+            "_phrase_": df[
+                df["exp_key"].str.contains("_phrase_")
+                & ~df["exp_key"].str.contains("_a_phrase_")
+                & ~df["exp_key"].str.contains("_augmented_phrase_")
+                & ~df["exp_key"].str.endswith("_sep")
+            ],
+            "_all_": df[df["exp_key"].str.contains("_all_")],
+            "_a_": df[
+                df["exp_key"].str.contains("_a_")
+                & ~df["exp_key"].str.contains("_a_phrase_")
+                & ~df["exp_key"].str.endswith("_sep")
+            ],
+        }
+        subfig_idxs = {
+            "_a_": 0,
+            "_phrase_": 1,
+            "_all_": 2,
+        }
+        subfig_titles = {
+            "_a_": "/a/",
+            "_phrase_": "phrase",
+            "_all_": "all",
+        }
+
+        cross_tests = [
+            "cross_test_avfad",
+            "cross_test_meei",
+            # "cross_test_torgo",
+            # "cross_test_uaspeech",
+            "cross_test_uncommon_voice",
+            "cross_test_voiced",
+        ]
+        dmap = self.__task_generator.get_diagnosis_map(
+            task_key="USVAC_2025", allow_unmapped=False
+        )
+
+        fig = plt.figure(figsize=(24, 35), constrained_layout=True)
+        subfigs = fig.subfigures(nrows=4, ncols=1, hspace=0)
+        subfig_axs = [f.subplots(nrows=3, ncols=1, sharex="col") for f in subfigs]
+
+        def run_report(selector):
+            dls = {
+                ct: self.__task_generator.load_task(
+                    task=ct,
+                    diag_level=None,
+                    diagnosis_map=dmap,
+                    load_audios=False,
+                )
+                for ct in cross_tests
+            }
+
+            def id_to_label(ct, label_id):
+                label = dls[ct].test_label(label_id).root.name
+                if label == "without_dysarthria":
+                    return "normal"
+                return label
+
+            def predicted_root(label):
+                # mode collapse everything but normal to pathological
+                if label == "normal":
+                    return "normal"
+                return "pathological"
+
+            all_results = []
+
+            for _, row in selections[selector].iterrows():
+                exp_key = row["exp_key"]
+                epoch = row["epoch"]
+                category = row["category"]
+                feature = row["feature"]
+                for ct in cross_tests:
+                    exp_df = pd.read_csv(
+                        f"{self.__results_path}/cross/{exp_key}/{ct}/{epoch}.csv"
+                    )
+                    exp_df["actual"] = exp_df["id"].apply(
+                        lambda lid: id_to_label(ct, lid)
+                    )
+                    exp_df["predicted"] = exp_df["predicted"].apply(predicted_root)
+                    labels, _, acc, confusion = self.confusion(
+                        actual=exp_df["actual"],
+                        predicted=exp_df["predicted"],
+                    )
+                    # print(exp_key, ct, acc)
+                    # print(exp_df.groupby(by="actual")["predicted"].value_counts())
+                    # print(labels)
+                    # print(confusion)
+                    all_results += [(category, feature, ct, acc)]
+            all_results = pd.DataFrame(
+                data=all_results, columns=["category", "feature", "ct", "acc"]
+            )
+            all_results["acc"] = (all_results["acc"] * 100).round(2)
+            # print(all_results)
+            ct_idx = {
+                "cross_test_meei": 0,
+                "cross_test_uncommon_voice": 1,
+                "cross_test_voiced": 2,
+                "cross_test_avfad": 3,
+            }
+            ct_labels = {
+                "cross_test_meei": "MEEI",
+                "cross_test_uncommon_voice": "Uncommon Voice",
+                "cross_test_voiced": "VOICED",
+                "cross_test_avfad": "AVFAD",
+            }
+            sf_idx = subfig_idxs[selector]
+            for (ct,), group in all_results.groupby(by=["ct"]):
+                idx = ct_idx[ct]
+                sf_title = subfig_titles[selector]
+                # subfigs[idx].suptitle(f"Detection accuracy with {sf_title}", fontsize=30)
+                subfigs[idx].suptitle(ct_labels[ct], fontsize=30)
+                axs = subfig_axs[idx]
+                ax = axs[sf_idx]
+                sns.barplot(
+                    data=group,
+                    x="category",
+                    y="acc",
+                    hue="feature",
+                    palette="YlGnBu",
+                    ax=ax,
+                    legend=(sf_idx == 0) and (idx == 0),
+                )
+                for c in ax.containers:
+                    ax.bar_label(c, fontsize=22)
+                margin = 5
+                y_max = group["acc"].max() + margin
+                y_min = group["acc"].min() - margin
+                if idx == 0:
+                    ax.set_ylim(48, 95)
+                elif idx == 1:
+                    ax.set_ylim(40, 70)
+                elif idx == 2:
+                    ax.set_ylim(43, 70)
+                else:
+                    ax.set_ylim(47, 60)
+                ax.set_xlabel(None)
+                # ax.set_ylabel(ct_labels[ct], fontsize=26, rotation=90)
+                ax.set_ylabel(subfig_titles[selector], fontsize=26, rotation=90)
+                ax.tick_params(axis="y", labelsize=22)
+                ax.tick_params(axis="x", labelsize=26)
+
+                if (sf_idx == 0) and (idx == 0):
+                    sns.move_legend(
+                        axs[0],
+                        "upper center",
+                        bbox_to_anchor=(0.5, 1.4),
+                        ncol=3,
+                        title=None,
+                        frameon=False,
+                        fontsize=24,
+                    )
+
+        for selector in selections:
+            run_report(selector=selector)
+
+        fig_path = f"{self.__results_path}/cross_database_1.png"
+        fig.suptitle(
+            "Cross-databasse binary detection accuracy using different vocal tasks",
+            fontsize=34,
+        )
+        fig.savefig(fig_path, bbox_inches="tight")
+        print(f"Saved at: {fig_path}")
+
+    def report_cross_database_2(self) -> None:
+        df = pd.read_csv(f"{self.__results_path}/report_superset_analysis.csv")
+        df = df[df["feature"].isin(["MFCCDD", "UnispeechSAT", "Wav2Vec"])]
+        selections = {
+            "_all_": df[df["exp_key"].str.contains("_all_")],
+            "_a_phrase": df[
+                df["exp_key"].str.contains("_a_phrase_")
+                & ~df["exp_key"].str.endswith("_sep")
+            ],
+            "_sep": df[df["exp_key"].str.contains("_sep")],
+        }
+        subfig_idxs = {
+            "_all_": 0,
+            "_a_phrase": 1,
+            "_sep": 2,
+        }
+        subfig_titles = {
+            "_sep": "ensemble",
+            "_a_phrase": "avg",
+            "_all_": "all",
+        }
+
+        cross_tests = [
+            "cross_test_avfad",
+            "cross_test_meei",
+            # "cross_test_torgo",
+            # "cross_test_uaspeech",
+            "cross_test_uncommon_voice",
+            "cross_test_voiced",
+        ]
+        dmap = self.__task_generator.get_diagnosis_map(
+            task_key="USVAC_2025", allow_unmapped=False
+        )
+
+        fig = plt.figure(figsize=(24, 35), constrained_layout=True)
+        subfigs = fig.subfigures(nrows=4, ncols=1, hspace=0)
+        subfig_axs = [f.subplots(nrows=3, ncols=1, sharex="col") for f in subfigs]
+
+        def run_report(selector):
+            dls = {
+                ct: self.__task_generator.load_task(
+                    task=ct,
+                    diag_level=None,
+                    diagnosis_map=dmap,
+                    load_audios=False,
+                )
+                for ct in cross_tests
+            }
+
+            def id_to_label(ct, label_id):
+                label = dls[ct].test_label(label_id).root.name
+                if label == "without_dysarthria":
+                    return "normal"
+                return label
+
+            def predicted_root(label):
+                # mode collapse everything but normal to pathological
+                if label == "normal":
+                    return "normal"
+                return "pathological"
+
+            all_results = []
+
+            for _, row in selections[selector].iterrows():
+                exp_key = row["exp_key"]
+                epoch = row["epoch"]
+                category = row["category"]
+                feature = row["feature"]
+                for ct in cross_tests:
+                    exp_df = pd.read_csv(
+                        f"{self.__results_path}/cross/{exp_key}/{ct}/{epoch}.csv"
+                    )
+                    exp_df["actual"] = exp_df["id"].apply(
+                        lambda lid: id_to_label(ct, lid)
+                    )
+                    exp_df["predicted"] = exp_df["predicted"].apply(predicted_root)
+                    labels, _, acc, confusion = self.confusion(
+                        actual=exp_df["actual"],
+                        predicted=exp_df["predicted"],
+                    )
+                    # print(exp_key, ct, acc)
+                    # print(exp_df.groupby(by="actual")["predicted"].value_counts())
+                    # print(labels)
+                    # print(confusion)
+                    all_results += [(category, feature, ct, acc)]
+            all_results = pd.DataFrame(
+                data=all_results, columns=["category", "feature", "ct", "acc"]
+            )
+            all_results["acc"] = (all_results["acc"] * 100).round(2)
+            # print(all_results)
+            ct_idx = {
+                "cross_test_meei": 0,
+                "cross_test_uncommon_voice": 1,
+                "cross_test_voiced": 2,
+                "cross_test_avfad": 3,
+            }
+            ct_labels = {
+                "cross_test_meei": "MEEI",
+                "cross_test_uncommon_voice": "Uncommon Voice",
+                "cross_test_voiced": "VOICED",
+                "cross_test_avfad": "AVFAD",
+            }
+            sf_idx = subfig_idxs[selector]
+            for (ct,), group in all_results.groupby(by=["ct"]):
+                idx = ct_idx[ct]
+                sf_title = subfig_titles[selector]
+                # subfigs[idx].suptitle(f"Detection accuracy with {sf_title}", fontsize=30)
+                subfigs[idx].suptitle(ct_labels[ct], fontsize=30)
+                axs = subfig_axs[idx]
+                ax = axs[sf_idx]
+                sns.barplot(
+                    data=group,
+                    x="category",
+                    y="acc",
+                    hue="feature",
+                    palette="YlGnBu",
+                    ax=ax,
+                    legend=(sf_idx == 0) and (idx == 0),
+                )
+                for c in ax.containers:
+                    ax.bar_label(c, fontsize=22)
+                margin = 5
+                y_max = group["acc"].max() + margin
+                y_min = group["acc"].min() - margin
+                if idx == 0:
+                    ax.set_ylim(48, 95)
+                elif idx == 1:
+                    ax.set_ylim(40, 70)
+                elif idx == 2:
+                    ax.set_ylim(43, 70)
+                else:
+                    ax.set_ylim(47, 60)
+                ax.set_xlabel(None)
+                # ax.set_ylabel(ct_labels[ct], fontsize=26, rotation=90)
+                ax.set_ylabel(subfig_titles[selector], fontsize=26, rotation=90)
+                ax.tick_params(axis="y", labelsize=22)
+                ax.tick_params(axis="x", labelsize=26)
+
+                if (sf_idx == 0) and (idx == 0):
+                    sns.move_legend(
+                        axs[0],
+                        "upper center",
+                        bbox_to_anchor=(0.5, 1.4),
+                        ncol=3,
+                        title=None,
+                        frameon=False,
+                        fontsize=24,
+                    )
+
+        for selector in selections:
+            run_report(selector=selector)
+
+        fig_path = f"{self.__results_path}/cross_database_2.png"
+        fig.suptitle(
+            "Cross-database binary detection accuracy with /a/ and phrase", fontsize=34
+        )
+        fig.savefig(fig_path, bbox_inches="tight")
+        print(f"Saved at: {fig_path}")
+
+    def report_cross_database_3(self) -> None:
+        df = pd.read_csv(f"{self.__results_path}/report_superset_analysis.csv")
+        df = df[df["feature"].isin(["MFCCDD", "UnispeechSAT", "Wav2Vec"])]
+        selections = {
+            "_all_": df[df["exp_key"].str.contains("_all_")],
+            "augmented_phrase_1": df[
+                df["exp_key"].str.contains("augmented_phrase_1")
+                & ~df["exp_key"].str.contains("augmented_phrase_1n")
+            ],
+            "augmented_phrase_1n": df[
+                df["exp_key"].str.contains("augmented_phrase_1n")
+            ],
+        }
+        subfig_idxs = {
+            "_all_": 0,
+            "augmented_phrase_1n": 1,
+            "augmented_phrase_1": 2,
+        }
+        subfig_titles = {
+            "_all_": "all",
+            "augmented_phrase_1n": "inj. N",
+            "augmented_phrase_1": "inj. P/N",
+        }
+
+        cross_tests = [
+            "cross_test_avfad",
+            "cross_test_meei",
+            # "cross_test_torgo",
+            # "cross_test_uaspeech",
+            "cross_test_uncommon_voice",
+            "cross_test_voiced",
+        ]
+        dmap = self.__task_generator.get_diagnosis_map(
+            task_key="USVAC_2025", allow_unmapped=False
+        )
+
+        fig = plt.figure(figsize=(24, 35), constrained_layout=True)
+        subfigs = fig.subfigures(nrows=4, ncols=1, hspace=0)
+        subfig_axs = [f.subplots(nrows=3, ncols=1, sharex="col") for f in subfigs]
+
+        def run_report(selector):
+            dls = {
+                ct: self.__task_generator.load_task(
+                    task=ct,
+                    diag_level=None,
+                    diagnosis_map=dmap,
+                    load_audios=False,
+                )
+                for ct in cross_tests
+            }
+
+            def id_to_label(ct, label_id):
+                label = dls[ct].test_label(label_id).root.name
+                if label == "without_dysarthria":
+                    return "normal"
+                return label
+
+            def predicted_root(label):
+                # mode collapse everything but normal to pathological
+                if label == "normal":
+                    return "normal"
+                return "pathological"
+
+            all_results = []
+
+            for _, row in selections[selector].iterrows():
+                exp_key = row["exp_key"]
+                epoch = row["epoch"]
+                category = row["category"]
+                feature = row["feature"]
+                for ct in cross_tests:
+                    exp_df = pd.read_csv(
+                        f"{self.__results_path}/cross/{exp_key}/{ct}/{epoch}.csv"
+                    )
+                    exp_df["actual"] = exp_df["id"].apply(
+                        lambda lid: id_to_label(ct, lid)
+                    )
+                    exp_df["predicted"] = exp_df["predicted"].apply(predicted_root)
+                    labels, _, acc, confusion = self.confusion(
+                        actual=exp_df["actual"],
+                        predicted=exp_df["predicted"],
+                    )
+                    # print(exp_key, ct, acc)
+                    # print(exp_df.groupby(by="actual")["predicted"].value_counts())
+                    # print(labels)
+                    # print(confusion)
+                    all_results += [(category, feature, ct, acc)]
+            all_results = pd.DataFrame(
+                data=all_results, columns=["category", "feature", "ct", "acc"]
+            )
+            all_results["acc"] = (all_results["acc"] * 100).round(2)
+            # print(all_results)
+            ct_idx = {
+                "cross_test_meei": 0,
+                "cross_test_uncommon_voice": 1,
+                "cross_test_voiced": 2,
+                "cross_test_avfad": 3,
+            }
+            ct_labels = {
+                "cross_test_meei": "MEEI",
+                "cross_test_uncommon_voice": "Uncommon Voice",
+                "cross_test_voiced": "VOICED",
+                "cross_test_avfad": "AVFAD",
+            }
+            sf_idx = subfig_idxs[selector]
+            for (ct,), group in all_results.groupby(by=["ct"]):
+                idx = ct_idx[ct]
+                sf_title = subfig_titles[selector]
+                # subfigs[idx].suptitle(f"Detection accuracy with {sf_title}", fontsize=30)
+                subfigs[idx].suptitle(ct_labels[ct], fontsize=30)
+                axs = subfig_axs[idx]
+                ax = axs[sf_idx]
+                sns.barplot(
+                    data=group,
+                    x="category",
+                    y="acc",
+                    hue="feature",
+                    palette="YlGnBu",
+                    ax=ax,
+                    legend=(sf_idx == 0) and (idx == 0),
+                )
+                for c in ax.containers:
+                    ax.bar_label(c, fontsize=22)
+                margin = 5
+                y_max = group["acc"].max() + margin
+                y_min = group["acc"].min() - margin
+                if idx == 0:
+                    ax.set_ylim(54, 105)
+                elif idx == 1:
+                    ax.set_ylim(47, 100)
+                elif idx == 2:
+                    ax.set_ylim(43, 70)
+                else:
+                    ax.set_ylim(47, 65)
+                ax.set_xlabel(None)
+                # ax.set_ylabel(ct_labels[ct], fontsize=26, rotation=90)
+                ax.set_ylabel(subfig_titles[selector], fontsize=26, rotation=90)
+                ax.tick_params(axis="y", labelsize=22)
+                ax.tick_params(axis="x", labelsize=26)
+
+                if (sf_idx == 0) and (idx == 0):
+                    sns.move_legend(
+                        axs[0],
+                        "upper center",
+                        bbox_to_anchor=(0.5, 1.4),
+                        ncol=3,
+                        title=None,
+                        frameon=False,
+                        fontsize=24,
+                    )
+
+        for selector in selections:
+            run_report(selector=selector)
+
+        fig_path = f"{self.__results_path}/cross_database_3.png"
+        fig.suptitle(
+            "Cross-Database binary detection accuracy with injected data", fontsize=34
+        )
+        fig.savefig(fig_path, bbox_inches="tight")
+        print(f"Saved at: {fig_path}")
