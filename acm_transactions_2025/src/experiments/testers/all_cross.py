@@ -36,7 +36,7 @@ class TestAllCross:
     __random_seed = 42
     __batch_size = 1
     __cross_test_tasks = [
-        # "cross_test_avfad",
+        "cross_test_avfad",
         # "cross_test_meei",
         # "cross_test_torgo",
         # "cross_test_uaspeech",

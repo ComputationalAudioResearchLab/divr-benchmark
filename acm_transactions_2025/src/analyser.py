@@ -84,7 +84,8 @@ class Analyser:
             col_names = df.columns
             to_process = []
             if "actual" in col_names:
-                level = row["exp_key"].rsplit("_", maxsplit=1)[1]
+                exp_key = row["exp_key"].removesuffix("_sep")
+                level = exp_key.rsplit("_", maxsplit=1)[1]
                 actual = df["actual"]
                 predicted = df["predicted"]
                 to_process += [(level, actual, predicted)]

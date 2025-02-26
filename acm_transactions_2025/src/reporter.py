@@ -38,7 +38,7 @@ class Reporter:
         "organic_structural_epithelial_propria": "OSE",
         "structural_dysphonia": "S",
         "pathological": "P",
-        "psychogenic_dysphonia": "PD",
+        "psychogenic_dysphonia": "PDy",
         "reinkes_edema": "RE",
         "recurrent_paralysis": "RP",
         "unclassified": "U",
@@ -67,6 +67,41 @@ class Reporter:
         "vocal_fold_edema": "VE",
         "vocal_fold_nodules": "VN",
         "vocal_tremor": "VT",
+        # VOICED stuff
+        "reflux_laryngitis": "La",  # To match it to laryngitis
+        "hypokinetic_dysphonia": "HoD",
+        "hypokinetic_dysphonia_vocal_fold_paralysis": "RP",  # This is RP to match up with Recurrent Paralysis above
+        "hypokinetic_dysphonia_glottic_insufficiency": "GI",
+        "hyperkinetic_dysphonia_reinkes_edema": "RE",  # Matching it to reinke's edema
+        "hyperkinetic_dysphonia": "HeD",
+        "hyperkinetic_dysphonia_polyps": "VFP",  # Matching it to vocal fold polyps
+        "hyperkinetic_dysphonia_nodule": "VN",  # Matching it to vocal fold nodules
+        "hypokinetic_dysphonia_spasmodic_dysphonia": "SD",
+        "hypokinetic_dysphonia_adduction_deficit": "HoA",
+        "hyperkinetic_dysphonia_vocal_fold_paralysis": "RP",  # This is RP to match up with Recurrent Paralysis above
+        "hypokinetic_dysphonia_presbiphonia": "Pr",  # Matching it to presbyphonia
+        "hyperkinetic_dysphonia_vocal_fold_nodules": "VN",  # Matching it to vocal fold nodules
+        "hyperkinetic_dysphonia_rigid_vocal_fold": "RVF",
+        "hyperkinetic_dysphonia_adduction_deficit": "HeA",
+        "hypokinetic_dysphonia_conversion_dysphonia": "CD",  # Matching it to conversion dysphonia
+        # AVFAD stuff
+        "vocal_fold_cyst_sub_epithelial": "C",  # Match with cyst,
+        "vocal_fold_scar": "Sc",  # Match with scarring,
+        "vocal_fold_sulcus": "Su",
+        "varix_and_ectasia_of_the_vocal_fold": "Va",  # Match with Varix
+        "vocal_fold_hemorrhage": "He",
+        "unilateral_recurrent_laryngeal_nerve_rln_paralysis": "RP",  # This is RP to match up with Recurrent Paralysis above
+        "bilateral_recurrent_laryngeal_nerve_rln_paralysis_peripheral": "RP",  # This is RP to match up with Recurrent Paralysis above
+        "unilateral_or_bilateral_recurrent_laryngeal_nerve_rln_paresis": "Pa",  # This is Pa to match up with Paresis above
+        "amyotrophic_lateral_sclerosis": "ALS",
+        "parkinson_disease": "PD",
+        "laryngeal_mucosa_trauma_chemical_and_thermal": "Tra",
+        "non_intubation_related_vocal_fold_granuloma": "Gr",
+        "acute_laryngitis": "La",  # To match it to laryngitis
+        "ventricular_dysphonia": "VeD",
+        "muscle_tension_adaptive": "MT",  # To match muscle_tension
+        "reactive_vocal_fold_lesion": "VLe",
+        "puberphonia": "Pu",
     }
 
     def __init__(self, results_path: Path, task_generator: TaskGenerator) -> None:
@@ -324,6 +359,7 @@ class Reporter:
         df = pd.read_csv(f"{self.__results_path}/collated_results_self.csv")
 
         def categorize(exp_key: str):
+            exp_key = exp_key.removesuffix("_sep")
             if exp_key.startswith("superset-CaRLab_2025"):
                 return "CaRLab_2025"
             if exp_key.startswith("superset-daSilvaMoura_2024"):
@@ -345,13 +381,23 @@ class Reporter:
         )
         mask_cross_sys = ~(
             df["exp_key"].str.endswith("-with-unclassified")
+            | df["exp_key"].str.endswith("_transformer")
             | df["exp_key"].str.startswith("superset-Zaim_2023")
             | df["exp_key"].str.startswith("superset-Compton_2022")
         )
         mask_features = df["feature"].isin(
             ["Wav2Vec", "UnispeechSAT", "MFCCDD", "MelSpec"]
         )
-        mask_tasks = df["task_key"].isin(["a_n", "phrase", "all"])
+        mask_tasks = df["task_key"].isin(
+            [
+                "a_n",
+                "phrase",
+                "all",
+                "a_phrase",
+                "augmented_phrase_1",
+                "augmented_phrase_1n",
+            ]
+        )
         num_diag_levels_mask = df["num_diag_levels"] == 1
         max_diag_level_mask = df["max_diag_level"].isin([1, 2, 4])
         df = df[
@@ -1401,9 +1447,31 @@ class Reporter:
     def report_cross_database(self) -> None:
         df = pd.read_csv(f"{self.__results_path}/report_superset_analysis.csv")
         df = df[df["feature"].isin(["MFCCDD", "UnispeechSAT", "Wav2Vec"])]
-        df = df[df["exp_key"].str.contains("_phrase_")]
-        # df = df[df["exp_key"].str.contains("_all_")]
-        # df = df[df["exp_key"].str.contains("_a_")]
+        selections = {
+            "_phrase_": df[
+                df["exp_key"].str.contains("_phrase_")
+                & ~df["exp_key"].str.contains("_a_phrase_")
+                & ~df["exp_key"].str.endswith("_sep")
+            ],
+            "_all_": df[df["exp_key"].str.contains("_all_")],
+            "_a_": df[
+                df["exp_key"].str.contains("_a_")
+                & ~df["exp_key"].str.contains("_a_phrase_")
+                & ~df["exp_key"].str.endswith("_sep")
+            ],
+            "_a_phrase": df[
+                df["exp_key"].str.contains("_a_phrase_")
+                & ~df["exp_key"].str.endswith("_sep")
+            ],
+            "_sep": df[df["exp_key"].str.contains("_sep")],
+            "augmented_phrase_1": df[
+                df["exp_key"].str.contains("augmented_phrase_1")
+                & ~df["exp_key"].str.contains("augmented_phrase_1n")
+            ],
+            "augmented_phrase_1n": df[
+                df["exp_key"].str.contains("augmented_phrase_1n")
+            ],
+        }
 
         cross_tests = [
             "cross_test_avfad",
@@ -1416,116 +1484,148 @@ class Reporter:
         dmap = self.__task_generator.get_diagnosis_map(
             task_key="USVAC_2025", allow_unmapped=False
         )
-        dls = {
-            ct: self.__task_generator.load_task(
-                task=ct,
-                diag_level=None,
-                diagnosis_map=dmap,
-                load_audios=False,
-            )
-            for ct in cross_tests
-        }
 
-        def id_to_label(ct, label_id):
-            label = dls[ct].test_label(label_id).root.name
-            if label == "without_dysarthria":
-                return "normal"
-            return label
-
-        def predicted_root(label):
-            if label == "normal":
-                return "normal"
-            return "pathological"
-
-        all_results = []
-
-        for _, row in df.iterrows():
-            exp_key = row["exp_key"]
-            epoch = row["epoch"]
-            category = row["category"]
-            feature = row["feature"]
-            for ct in cross_tests:
-                exp_df = pd.read_csv(
-                    f"{self.__results_path}/cross/{exp_key}/{ct}/{epoch}.csv"
+        def run_report(selector):
+            dls = {
+                ct: self.__task_generator.load_task(
+                    task=ct,
+                    diag_level=None,
+                    diagnosis_map=dmap,
+                    load_audios=False,
                 )
-                exp_df["actual"] = exp_df["id"].apply(lambda lid: id_to_label(ct, lid))
-                exp_df["predicted"] = exp_df["predicted"].apply(predicted_root)
-                labels, _, acc, confusion = self.confusion(
-                    actual=exp_df["actual"],
-                    predicted=exp_df["predicted"],
-                )
-                # print(exp_key, ct, acc)
-                # print(exp_df.groupby(by="actual")["predicted"].value_counts())
-                # print(labels)
-                # print(confusion)
-                all_results += [(category, feature, ct, acc)]
-        all_results = pd.DataFrame(
-            data=all_results, columns=["category", "feature", "ct", "acc"]
-        )
-        all_results["acc"] = (all_results["acc"] * 100).round(2)
-        print(all_results)
-        ct_idx = {
-            "cross_test_meei": 0,
-            "cross_test_uncommon_voice": 1,
-            "cross_test_voiced": 2,
-            "cross_test_avfad": 3,
-        }
-        ct_labels = {
-            "cross_test_meei": "MEEI",
-            "cross_test_uncommon_voice": "Uncommon Voice",
-            "cross_test_voiced": "VOICED",
-            "cross_test_avfad": "AVFAD",
-        }
-        fig, axs = plt.subplots(
-            len(ct_idx),
-            1,
-            figsize=(20, 13),
-            constrained_layout=True,
-            sharex="col",
-        )
-        for (ct,), group in all_results.groupby(by=["ct"]):
-            idx = ct_idx[ct]
-            ax = axs[idx]
-            sns.barplot(
-                data=group,
-                x="category",
-                y="acc",
-                hue="feature",
-                palette="YlGnBu",
-                ax=ax,
-                legend=idx == 0,
-            )
-            for c in ax.containers:
-                ax.bar_label(c, fontsize=22)
-            margin = 5
-            y_max = group["acc"].max() + margin
-            y_min = group["acc"].min() - margin
-            ax.set_ylim(y_min, y_max)
-            ax.set_xlabel(None)
-            ax.set_ylabel(ct_labels[ct], fontsize=26)
-            ax.tick_params(axis="y", labelsize=22)
-            ax.tick_params(axis="x", labelsize=26)
+                for ct in cross_tests
+            }
 
-        sns.move_legend(
-            axs[0],
-            "upper center",
-            bbox_to_anchor=(0.5, 1.25),
-            ncol=3,
-            title=None,
-            frameon=False,
-            fontsize=24,
-        )
-        fig_path = f"{self.__results_path}/cross_database.png"
-        fig.suptitle(
-            "Binary detection accuracy on out of domain databases", fontsize=34
-        )
-        fig.savefig(fig_path, bbox_inches="tight")
-        print(f"Saved at: {fig_path}")
+            def id_to_label(ct, label_id):
+                label = dls[ct].test_label(label_id).root.name
+                if label == "without_dysarthria":
+                    return "normal"
+                return label
+
+            def predicted_root(label):
+                # mode collapse everything but normal to pathological
+                if label == "normal":
+                    return "normal"
+                return "pathological"
+
+            all_results = []
+
+            for _, row in selections[selector].iterrows():
+                exp_key = row["exp_key"]
+                epoch = row["epoch"]
+                category = row["category"]
+                feature = row["feature"]
+                for ct in cross_tests:
+                    exp_df = pd.read_csv(
+                        f"{self.__results_path}/cross/{exp_key}/{ct}/{epoch}.csv"
+                    )
+                    exp_df["actual"] = exp_df["id"].apply(
+                        lambda lid: id_to_label(ct, lid)
+                    )
+                    exp_df["predicted"] = exp_df["predicted"].apply(predicted_root)
+                    labels, _, acc, confusion = self.confusion(
+                        actual=exp_df["actual"],
+                        predicted=exp_df["predicted"],
+                    )
+                    # print(exp_key, ct, acc)
+                    # print(exp_df.groupby(by="actual")["predicted"].value_counts())
+                    # print(labels)
+                    # print(confusion)
+                    all_results += [(category, feature, ct, acc)]
+            all_results = pd.DataFrame(
+                data=all_results, columns=["category", "feature", "ct", "acc"]
+            )
+            all_results["acc"] = (all_results["acc"] * 100).round(2)
+            # print(all_results)
+            ct_idx = {
+                "cross_test_meei": 0,
+                "cross_test_uncommon_voice": 1,
+                "cross_test_voiced": 2,
+                "cross_test_avfad": 3,
+            }
+            ct_labels = {
+                "cross_test_meei": "MEEI",
+                "cross_test_uncommon_voice": "Uncommon Voice",
+                "cross_test_voiced": "VOICED",
+                "cross_test_avfad": "AVFAD",
+            }
+            fig, axs = plt.subplots(
+                len(ct_idx),
+                1,
+                figsize=(20, 13),
+                constrained_layout=True,
+                sharex="col",
+            )
+            for (ct,), group in all_results.groupby(by=["ct"]):
+                idx = ct_idx[ct]
+                ax = axs[idx]
+                sns.barplot(
+                    data=group,
+                    x="category",
+                    y="acc",
+                    hue="feature",
+                    palette="YlGnBu",
+                    ax=ax,
+                    legend=idx == 0,
+                )
+                for c in ax.containers:
+                    ax.bar_label(c, fontsize=22)
+                margin = 5
+                y_max = group["acc"].max() + margin
+                y_min = group["acc"].min() - margin
+                ax.set_ylim(y_min, y_max)
+                ax.set_xlabel(None)
+                ax.set_ylabel(ct_labels[ct], fontsize=26)
+                ax.tick_params(axis="y", labelsize=22)
+                ax.tick_params(axis="x", labelsize=26)
+
+            sns.move_legend(
+                axs[0],
+                "upper center",
+                bbox_to_anchor=(0.5, 1.25),
+                ncol=3,
+                title=None,
+                frameon=False,
+                fontsize=24,
+            )
+            fig_path = f"{self.__results_path}/cross_database_{selector}.png"
+            fig.suptitle(
+                "Binary detection accuracy on out of domain databases", fontsize=34
+            )
+            fig.savefig(fig_path, bbox_inches="tight")
+            print(f"Saved at: {fig_path}")
+
+        for selector in selections:
+            run_report(selector=selector)
 
     def report_cross_meei(self) -> None:
         df = pd.read_csv(f"{self.__results_path}/report_superset_analysis.csv")
         df = df[df["feature"].isin(["MFCCDD", "UnispeechSAT", "Wav2Vec"])]
-        df = df[df["exp_key"].str.contains("_all_")]
+        selections = {
+            "_phrase_": df[
+                df["exp_key"].str.contains("_phrase_")
+                & ~df["exp_key"].str.contains("_a_phrase_")
+                & ~df["exp_key"].str.endswith("_sep")
+            ],
+            "_all_": df[df["exp_key"].str.contains("_all_")],
+            "_a_": df[
+                df["exp_key"].str.contains("_a_")
+                & ~df["exp_key"].str.contains("_a_phrase_")
+                & ~df["exp_key"].str.endswith("_sep")
+            ],
+            "_a_phrase": df[
+                df["exp_key"].str.contains("_a_phrase_")
+                & ~df["exp_key"].str.endswith("_sep")
+            ],
+            "_sep": df[df["exp_key"].str.contains("_sep")],
+            "augmented_phrase_1": df[
+                df["exp_key"].str.contains("augmented_phrase_1")
+                & ~df["exp_key"].str.contains("augmented_phrase_1n")
+            ],
+            "augmented_phrase_1n": df[
+                df["exp_key"].str.contains("augmented_phrase_1n")
+            ],
+        }
         # df = df[df["exp_key"].str.contains("_phrase_")]
         # df = df[df["category"] == "narrow"]
 
@@ -1543,168 +1643,654 @@ class Reporter:
             for ct in cross_tests
         }
 
-        all_results = []
-        log_file_path = f"{self.__results_path}/cross_meei.log"
-        log_file = open(log_file_path, "w")
-        prev_category = None
-        confusions = {}
-        max_total = 0
-        for _, row in df.sort_values(by=["category", "feature"]).iterrows():
-            exp_key = row["exp_key"]
-            epoch = row["epoch"]
-            category = row["category"]
-            feature = row["feature"]
-            if category != prev_category:
-                log_file.write(f"\n\n{category}:\n")
-                prev_category = category
-            for ct in cross_tests:
-                exp_df = pd.read_csv(
-                    f"{self.__results_path}/cross/{exp_key}/{ct}/{epoch}.csv"
-                )
-                exp_df["actual"] = exp_df["id"].apply(
-                    lambda lid: self.label_map[dls[ct].test_label(lid).name]
-                )
-                exp_df["predicted"] = exp_df["predicted"].apply(self.label_map.get)
-                # labels, _, acc, confusion = self.confusion(
-                #     actual=exp_df["actual"],
-                #     predicted=exp_df["predicted"],
-                # )
-                log_file.write(f"\t{exp_key}:\n")
-                # print(exp_key, ct, acc)
-                confusion = (
-                    exp_df.groupby(by="actual")["predicted"]
-                    .value_counts()
-                    .reset_index()
-                    .pivot(
-                        index="predicted",
-                        columns="actual",
-                        values="count",
+        def id_to_label(ct, label_id):
+            label = dls[ct].test_label(label_id)
+            if label.incompletely_classified:
+                raise ValueError(f"Found incomplete label[{label_id}]: {label}")
+            return self.label_map[label.name]
+
+        def predicted_label(label):
+            return self.label_map[label]
+
+        def report(selector, feature_key):
+            log_file_path = (
+                f"{self.__results_path}/cross_meei_{selector}_{feature_key}.log"
+            )
+            log_file = open(log_file_path, "w")
+            prev_category = None
+            confusions = {}
+            max_total = 0
+            selected_df = selections[selector]
+            selected_df = selected_df[selected_df["feature"] == feature_key]
+            for _, row in selected_df.sort_values(
+                by=["category", "feature"]
+            ).iterrows():
+                exp_key = row["exp_key"]
+                epoch = row["epoch"]
+                category = row["category"]
+                if category != prev_category:
+                    log_file.write(f"\n\n{category}:\n")
+                    prev_category = category
+                for ct in cross_tests:
+                    exp_df = pd.read_csv(
+                        f"{self.__results_path}/cross/{exp_key}/{ct}/{epoch}.csv"
                     )
-                    .fillna(0)
-                )
-                if feature == "MFCCDD":
+                    exp_df["actual"] = exp_df["id"].apply(
+                        lambda lid: id_to_label(ct, lid)
+                    )
+                    exp_df["predicted"] = exp_df["predicted"].apply(predicted_label)
+                    # labels, _, acc, confusion = self.confusion(
+                    #     actual=exp_df["actual"],
+                    #     predicted=exp_df["predicted"],
+                    # )
+                    log_file.write(f"\t{exp_key}:\n")
+                    # print(exp_key, ct, acc)
+                    confusion = (
+                        exp_df.groupby(by="actual")["predicted"]
+                        .value_counts()
+                        .reset_index()
+                        .pivot(
+                            index="predicted",
+                            columns="actual",
+                            values="count",
+                        )
+                        .fillna(0)
+                    )
                     confusions[category] = confusion
                     current_max_count: int = confusion.max(axis=None)
                     if current_max_count > max_total:
                         max_total = current_max_count
-                cstr = confusion.to_string()
-                log_file.write("\n".join([f"\t{l}" for l in cstr.split("\n")]))
-                log_file.write("\n")
-                # print(confusion)
-                # print(labels)
-                # print(confusion)
-                # all_results += [(category, feature, ct, acc)]
-        log_file.close()
+                    cstr = confusion.to_string()
+                    log_file.write("\n".join([f"\t{l}" for l in cstr.split("\n")]))
+                    log_file.write("\n")
+                    # print(confusion)
+                    # print(labels)
+                    # print(confusion)
+                    # all_results += [(category, feature, ct, acc)]
 
-        categorization = {
-            "CaRLab_2025": {
-                "HD": "Aa",
-                "Le": "Ab",
-                "N": "N",
-                "RE": "Ac",
-                "RP": "Ac",
-                "VFP": "Ab",
-            },
-            "daSilvaMoura_2024": {
-                "HD": "F",
-                "Le": "OF",
-                "N": "N",
-                "RE": "OF",
-                "RP": "O",
-                "VFP": "OF",
-            },
-            "USVAC_2025_1": {
-                "HD": "MT",
-                "Le": "O",
-                "N": "N",
-                "RE": "O",
-                "RP": "O",
-                "VFP": "O",
-            },
-            "USVAC_2025_2": {
-                "HD": "MT",
-                "Le": "OS",
-                "N": "N",
-                "RE": "OS",
-                "RP": "ON",
-                "VFP": "OS",
-            },
-            "narrow": {
-                "HD": "HD",
-                "Le": "Le",
-                "N": "N",
-                "RE": "RE",
-                "RP": "RP",
-                "VFP": "VFP",
-            },
-        }
-        recalls = {k: {} for k in categorization}
-        for key, confusion in confusions.items():
-            categories = categorization[key]
-            for k, v in categories.items():
-                actual_total = confusion[k].sum()
-                correct_total = confusion[k][v]
-                recall = correct_total / actual_total
-                recalls[key][k] = round(recall * 100, 2)
-        print("Recalls: ", recalls)
-        print(
-            "Average Recalls: ",
-            {
+            categorization = {
+                "CaRLab_2025": {
+                    "HD": "Aa",
+                    "Le": "Ab",
+                    "N": "N",
+                    "RE": "Ac",
+                    "RP": "Ac",
+                    "VFP": "Ab",
+                },
+                "daSilvaMoura_2024": {
+                    "HD": "F",
+                    "Le": "OF",
+                    "N": "N",
+                    "RE": "OF",
+                    "RP": "O",
+                    "VFP": "OF",
+                },
+                "USVAC_2025_1": {
+                    "HD": "MT",
+                    "Le": "O",
+                    "N": "N",
+                    "RE": "O",
+                    "RP": "O",
+                    "VFP": "O",
+                },
+                "USVAC_2025_2": {
+                    "HD": "MT",
+                    "Le": "OS",
+                    "N": "N",
+                    "RE": "OS",
+                    "RP": "ON",
+                    "VFP": "OS",
+                },
+                "narrow": {
+                    "HD": "HD",
+                    "Le": "Le",
+                    "N": "N",
+                    "RE": "RE",
+                    "RP": "RP",
+                    "VFP": "VFP",
+                },
+            }
+            recalls = {k: {} for k in categorization}
+            for key, confusion in confusions.items():
+                categories = categorization[key]
+                for k, v in categories.items():
+                    actual_total = confusion[k].sum()
+                    correct_total = confusion[k][v] if v in confusion[k] else 0
+                    recall = correct_total / actual_total
+                    recalls[key][k] = round(recall * 100, 2)
+            log_file.write(f"Recalls: {recalls}\n\n")
+            avg_recalls = {
                 k: round(sum([t for t in v.values()]) / len(v), 2)
                 for k, v in recalls.items()
-            },
-        )
+            }
+            log_file.write(f"Average Recalls: {avg_recalls}\n\n")
+            log_file.close()
 
-        print(f"Saved at: {log_file_path}")
-        key_idx = {
-            "CaRLab_2025": 0,
-            "daSilvaMoura_2024": 1,
-            "USVAC_2025_1": 2,
-            "USVAC_2025_2": 3,
-            "narrow": 4,
-        }
-        fig, axs = plt.subplots(
-            1,
-            len(key_idx),
-            figsize=(22, 10),
-            constrained_layout=True,
-            sharey="row",
-            gridspec_kw={
-                "width_ratios": [1, 1, 1, 1.5, 2],
-                "wspace": 0.1,
-                "hspace": 0.1,
-            },
-        )
-        for key, conf in confusions.items():
-            idx = key_idx[key]
-            ax = axs[idx]
-            sns.heatmap(
-                data=conf.T,
-                cmap="Blues",
-                ax=ax,
-                annot=True,
-                annot_kws={"fontsize": 16},
-                vmin=0,
-                vmax=max_total,
-                cbar=False,
+            print(f"Saved at: {log_file_path}")
+            key_idx = {
+                "CaRLab_2025": 0,
+                "daSilvaMoura_2024": 1,
+                "USVAC_2025_1": 2,
+                "USVAC_2025_2": 3,
+                "narrow": 4,
+            }
+            fig, axs = plt.subplots(
+                1,
+                len(key_idx),
+                figsize=(22, 10),
+                constrained_layout=True,
+                sharey="row",
+                gridspec_kw={
+                    "width_ratios": [1, 1, 1, 1.5, 2],
+                    "wspace": 0.1,
+                    "hspace": 0.1,
+                },
             )
-            ax.set_ylabel(None)
-            ax.set_title(key, fontsize=22)
-            ax.set_xlabel("Predicted", fontsize=22)
-            ax.tick_params(axis="y", rotation=0)
-            ax.tick_params(axis="x", rotation=90)
-            ax.tick_params(axis="both", labelsize=22)
+            for key, conf in confusions.items():
+                idx = key_idx[key]
+                ax = axs[idx]
+                sns.heatmap(
+                    data=conf.T,
+                    cmap="Blues",
+                    ax=ax,
+                    annot=True,
+                    annot_kws={"fontsize": 16},
+                    vmin=0,
+                    vmax=max_total,
+                    cbar=False,
+                )
+                ax.set_ylabel(None)
+                ax.set_title(key, fontsize=22)
+                ax.set_xlabel("Predicted", fontsize=22)
+                ax.tick_params(axis="y", rotation=0)
+                ax.tick_params(axis="x", rotation=90)
+                ax.tick_params(axis="both", labelsize=22)
 
-        axs[0].set_ylabel("Actual", fontsize=22)
-        # cbar = fig.colorbar(ax[0].get_children()[0], ax=axes, orientation='vertical', fraction=0.02, pad=0.02)
-        fig_path = f"{self.__results_path}/cross_meei_all.png"
-        fig.suptitle(
-            "Multi-class classification confusion on MEEI using different classification systems",
-            fontsize=34,
+            axs[0].set_ylabel("Actual", fontsize=22)
+            # cbar = fig.colorbar(ax[0].get_children()[0], ax=axes, orientation='vertical', fraction=0.02, pad=0.02)
+            fig_path = f"{self.__results_path}/cross_meei_{selector}_{feature_key}.png"
+            fig.suptitle(
+                "Multi-class classification confusion on MEEI using different classification systems",
+                fontsize=34,
+            )
+            fig.align_labels()
+            fig.savefig(fig_path, bbox_inches="tight")
+            print(f"Saved at: {fig_path}")
+            plt.close(fig=fig)
+
+        for selector in selections:
+            for feature_key in ["MFCCDD", "UnispeechSAT", "Wav2Vec"]:
+                report(selector=selector, feature_key=feature_key)
+
+    def report_cross_voiced(self) -> None:
+        df = pd.read_csv(f"{self.__results_path}/report_superset_analysis.csv")
+        df = df[df["feature"].isin(["MFCCDD", "UnispeechSAT", "Wav2Vec"])]
+        selections = {
+            "_phrase_": df[
+                df["exp_key"].str.contains("_phrase_")
+                & ~df["exp_key"].str.contains("_a_phrase_")
+                & ~df["exp_key"].str.endswith("_sep")
+            ],
+            "_all_": df[df["exp_key"].str.contains("_all_")],
+            "_a_": df[
+                df["exp_key"].str.contains("_a_")
+                & ~df["exp_key"].str.contains("_a_phrase_")
+                & ~df["exp_key"].str.endswith("_sep")
+            ],
+            "_a_phrase": df[
+                df["exp_key"].str.contains("_a_phrase_")
+                & ~df["exp_key"].str.endswith("_sep")
+            ],
+            "_sep": df[df["exp_key"].str.contains("_sep")],
+            "augmented_phrase_1": df[
+                df["exp_key"].str.contains("augmented_phrase_1")
+                & ~df["exp_key"].str.contains("augmented_phrase_1n")
+            ],
+            "augmented_phrase_1n": df[
+                df["exp_key"].str.contains("augmented_phrase_1n")
+            ],
+        }
+        # df = df[df["exp_key"].str.contains("_phrase_")]
+        # df = df[df["category"] == "narrow"]
+
+        cross_tests = ["cross_test_voiced"]
+        dmap = self.__task_generator.get_diagnosis_map(
+            task_key="USVAC_2025", allow_unmapped=False
         )
-        fig.align_labels()
-        fig.savefig(fig_path, bbox_inches="tight")
-        print(f"Saved at: {fig_path}")
+        dls = {
+            ct: self.__task_generator.load_task(
+                task=ct,
+                diag_level=None,
+                diagnosis_map=dmap,
+                load_audios=False,
+            )
+            for ct in cross_tests
+        }
+
+        def id_to_label(ct, label_id):
+            label = dls[ct].test_label(label_id)
+            if label.incompletely_classified:
+                raise ValueError(f"Found incomplete label[{label_id}]: {label}")
+            return self.label_map[label.name]
+
+        def predicted_label(label):
+            return self.label_map[label]
+
+        def report(selector, feature_key):
+            log_file_path = (
+                f"{self.__results_path}/cross_voiced_{selector}_{feature_key}.log"
+            )
+            log_file = open(log_file_path, "w")
+            prev_category = None
+            confusions = {}
+            max_total = 0
+            selected_df = selections[selector]
+            selected_df = selected_df[selected_df["feature"] == feature_key]
+            for _, row in selected_df.sort_values(
+                by=["category", "feature"]
+            ).iterrows():
+                exp_key = row["exp_key"]
+                epoch = row["epoch"]
+                category = row["category"]
+                if category != prev_category:
+                    log_file.write(f"\n\n{category}:\n")
+                    prev_category = category
+                for ct in cross_tests:
+                    exp_df = pd.read_csv(
+                        f"{self.__results_path}/cross/{exp_key}/{ct}/{epoch}.csv"
+                    )
+                    exp_df["actual"] = exp_df["id"].apply(
+                        lambda lid: id_to_label(ct, lid)
+                    )
+                    exp_df["predicted"] = exp_df["predicted"].apply(predicted_label)
+                    # labels, _, acc, confusion = self.confusion(
+                    #     actual=exp_df["actual"],
+                    #     predicted=exp_df["predicted"],
+                    # )
+                    log_file.write(f"\t{exp_key}:\n")
+                    # print(exp_key, ct, acc)
+                    confusion = (
+                        exp_df.groupby(by="actual")["predicted"]
+                        .value_counts()
+                        .reset_index()
+                        .pivot(
+                            index="predicted",
+                            columns="actual",
+                            values="count",
+                        )
+                        .fillna(0)
+                    )
+                    confusions[category] = confusion
+                    current_max_count: int = confusion.max(axis=None)
+                    if current_max_count > max_total:
+                        max_total = current_max_count
+                    cstr = confusion.to_string()
+                    log_file.write("\n".join([f"\t{l}" for l in cstr.split("\n")]))
+                    log_file.write("\n")
+                    # print(confusion)
+                    # print(labels)
+                    # print(confusion)
+                    # all_results += [(category, feature, ct, acc)]
+
+            categorization = {
+                "CaRLab_2025": {
+                    "La": "Ab",
+                    "N": "N",
+                    "RE": "Ac",
+                    "RP": "Ac",
+                    "VFP": "Ab",
+                    "VN": "U",  # not present in this
+                    "SD": "U",  # not present in this
+                },
+                "daSilvaMoura_2024": {
+                    "La": "O",
+                    "N": "N",
+                    "RE": "OF",
+                    "RP": "O",
+                    "VFP": "OF",
+                    "VN": "OF",  # From phonation_nodule
+                    "SD": "O",
+                },
+                "USVAC_2025_1": {
+                    "La": "O",
+                    "N": "N",
+                    "RE": "O",
+                    "RP": "O",
+                    "VFP": "O",
+                    "VN": "O",
+                    "SD": "O",
+                },
+                "USVAC_2025_2": {
+                    "La": "OI",
+                    "N": "N",
+                    "RE": "OS",
+                    "RP": "ON",
+                    "VFP": "OS",
+                    "VN": "OS",
+                    "SD": "ON",
+                },
+                "narrow": {
+                    "La": "La",
+                    "N": "N",
+                    "RE": "RE",
+                    "RP": "RP",
+                    "VFP": "VFP",
+                    "VN": "VN",
+                    "SD": "SD",
+                },
+            }
+            recalls = {k: {} for k in categorization}
+            for key, confusion in confusions.items():
+                categories = categorization[key]
+                for k, v in categories.items():
+                    actual_total = confusion[k].sum()
+                    correct_total = confusion[k][v] if v in confusion[k] else 0
+                    recall = correct_total / actual_total
+                    recalls[key][k] = round(recall * 100, 2)
+            log_file.write(f"Recalls: {recalls}\n\n")
+            avg_recalls = {
+                k: round(sum([t for t in v.values()]) / len(v), 2)
+                for k, v in recalls.items()
+            }
+            log_file.write(f"Average Recalls: {avg_recalls}\n\n")
+            log_file.close()
+
+            print(f"Saved at: {log_file_path}")
+            key_idx = {
+                "CaRLab_2025": 0,
+                "daSilvaMoura_2024": 1,
+                "USVAC_2025_1": 2,
+                "USVAC_2025_2": 3,
+                "narrow": 4,
+            }
+            fig, axs = plt.subplots(
+                1,
+                len(key_idx),
+                figsize=(22, 10),
+                constrained_layout=True,
+                sharey="row",
+                gridspec_kw={
+                    "width_ratios": [1, 1, 1, 1.5, 2],
+                    "wspace": 0.1,
+                    "hspace": 0.1,
+                },
+            )
+            for key, conf in confusions.items():
+                idx = key_idx[key]
+                ax = axs[idx]
+                sns.heatmap(
+                    data=conf.T,
+                    cmap="Blues",
+                    ax=ax,
+                    annot=True,
+                    annot_kws={"fontsize": 16},
+                    vmin=0,
+                    vmax=max_total,
+                    cbar=False,
+                )
+                ax.set_ylabel(None)
+                ax.set_title(key, fontsize=22)
+                ax.set_xlabel("Predicted", fontsize=22)
+                ax.tick_params(axis="y", rotation=0)
+                ax.tick_params(axis="x", rotation=90)
+                ax.tick_params(axis="both", labelsize=22)
+
+            axs[0].set_ylabel("Actual", fontsize=22)
+            # cbar = fig.colorbar(ax[0].get_children()[0], ax=axes, orientation='vertical', fraction=0.02, pad=0.02)
+            fig_path = (
+                f"{self.__results_path}/cross_voiced_{selector}_{feature_key}.png"
+            )
+            fig.suptitle(
+                "Multi-class classification confusion on VOICED using different classification systems",
+                fontsize=34,
+            )
+            fig.align_labels()
+            fig.savefig(fig_path, bbox_inches="tight")
+            print(f"Saved at: {fig_path}")
+            plt.close(fig=fig)
+
+        for selector in selections:
+            for feature_key in ["MFCCDD", "UnispeechSAT", "Wav2Vec"]:
+                report(selector=selector, feature_key=feature_key)
+
+    def report_cross_avfad(self) -> None:
+        df = pd.read_csv(f"{self.__results_path}/report_superset_analysis.csv")
+        df = df[df["feature"].isin(["MFCCDD", "UnispeechSAT", "Wav2Vec"])]
+        selections = {
+            "_phrase_": df[
+                df["exp_key"].str.contains("_phrase_")
+                & ~df["exp_key"].str.contains("_a_phrase_")
+                & ~df["exp_key"].str.endswith("_sep")
+            ],
+            "_all_": df[df["exp_key"].str.contains("_all_")],
+            "_a_": df[
+                df["exp_key"].str.contains("_a_")
+                & ~df["exp_key"].str.contains("_a_phrase_")
+                & ~df["exp_key"].str.endswith("_sep")
+            ],
+            "_a_phrase": df[
+                df["exp_key"].str.contains("_a_phrase_")
+                & ~df["exp_key"].str.endswith("_sep")
+            ],
+            "_sep": df[df["exp_key"].str.contains("_sep")],
+            "augmented_phrase_1": df[
+                df["exp_key"].str.contains("augmented_phrase_1")
+                & ~df["exp_key"].str.contains("augmented_phrase_1n")
+            ],
+            "augmented_phrase_1n": df[
+                df["exp_key"].str.contains("augmented_phrase_1n")
+            ],
+        }
+        # df = df[df["exp_key"].str.contains("_phrase_")]
+        # df = df[df["category"] == "narrow"]
+
+        cross_tests = ["cross_test_avfad"]
+        dmap = self.__task_generator.get_diagnosis_map(
+            task_key="USVAC_2025", allow_unmapped=False
+        )
+        dls = {
+            ct: self.__task_generator.load_task(
+                task=ct,
+                diag_level=None,
+                diagnosis_map=dmap,
+                load_audios=False,
+            )
+            for ct in cross_tests
+        }
+
+        def id_to_label(ct, label_id):
+            label = dls[ct].test_label(label_id)
+            if label.incompletely_classified:
+                raise ValueError(f"Found incomplete label[{label_id}]: {label}")
+            return self.label_map[label.name]
+
+        def predicted_label(label):
+            return self.label_map[label]
+
+        def report(selector, feature_key):
+            log_file_path = (
+                f"{self.__results_path}/cross_avfad_{selector}_{feature_key}.log"
+            )
+            log_file = open(log_file_path, "w")
+            prev_category = None
+            confusions = {}
+            max_total = 0
+            selected_df = selections[selector]
+            selected_df = selected_df[selected_df["feature"] == feature_key]
+            for _, row in selected_df.sort_values(
+                by=["category", "feature"]
+            ).iterrows():
+                exp_key = row["exp_key"]
+                epoch = row["epoch"]
+                category = row["category"]
+                if category != prev_category:
+                    log_file.write(f"\n\n{category}:\n")
+                    prev_category = category
+                for ct in cross_tests:
+                    exp_df = pd.read_csv(
+                        f"{self.__results_path}/cross/{exp_key}/{ct}/{epoch}.csv"
+                    )
+                    exp_df["actual"] = exp_df["id"].apply(
+                        lambda lid: id_to_label(ct, lid)
+                    )
+                    exp_df["predicted"] = exp_df["predicted"].apply(predicted_label)
+                    # labels, _, acc, confusion = self.confusion(
+                    #     actual=exp_df["actual"],
+                    #     predicted=exp_df["predicted"],
+                    # )
+                    log_file.write(f"\t{exp_key}:\n")
+                    # print(exp_key, ct, acc)
+                    confusion = (
+                        exp_df.groupby(by="actual")["predicted"]
+                        .value_counts()
+                        .reset_index()
+                        .pivot(
+                            index="predicted",
+                            columns="actual",
+                            values="count",
+                        )
+                        .fillna(0)
+                    )
+                    confusions[category] = confusion
+                    current_max_count: int = confusion.max(axis=None)
+                    if current_max_count > max_total:
+                        max_total = current_max_count
+                    cstr = confusion.to_string()
+                    log_file.write("\n".join([f"\t{l}" for l in cstr.split("\n")]))
+                    log_file.write("\n")
+                    # print(confusion)
+                    # print(labels)
+                    # print(confusion)
+                    # all_results += [(category, feature, ct, acc)]
+
+            categorization = {
+                "CaRLab_2025": {
+                    "La": "Ab",
+                    "N": "N",
+                    "RE": "Ac",
+                    "RP": "Ac",
+                    "VFP": "Ab",
+                    "VN": "U",  # not present in this
+                    "C": "U",  # not present in this
+                    "ALS": "U",  # not present in this
+                    "PD": "U",  # not present in this
+                },
+                "daSilvaMoura_2024": {
+                    "La": "O",
+                    "N": "N",
+                    "RE": "OF",
+                    "RP": "O",
+                    "VFP": "OF",
+                    "VN": "OF",  # From phonation_nodule
+                    "C": "OF",
+                    "ALS": "O",
+                    "PD": "O",
+                },
+                "USVAC_2025_1": {
+                    "La": "O",
+                    "N": "N",
+                    "RE": "O",
+                    "RP": "O",
+                    "VFP": "O",
+                    "VN": "O",
+                    "C": "O",
+                    "ALS": "O",
+                    "PD": "O",
+                },
+                "USVAC_2025_2": {
+                    "La": "OI",
+                    "N": "N",
+                    "RE": "OS",
+                    "RP": "ON",
+                    "VFP": "OS",
+                    "VN": "OS",
+                    "C": "OS",
+                    "ALS": "ON",
+                    "PD": "ON",
+                },
+                "narrow": {
+                    "La": "La",
+                    "N": "N",
+                    "RE": "RE",
+                    "RP": "RP",
+                    "VFP": "VFP",
+                    "VN": "VN",
+                    "C": "C",
+                    "ALS": "ALS",
+                    "PD": "PD",
+                },
+            }
+            recalls = {k: {} for k in categorization}
+            for key, confusion in confusions.items():
+                categories = categorization[key]
+                for k, v in categories.items():
+                    actual_total = confusion[k].sum()
+                    correct_total = confusion[k][v] if v in confusion[k] else 0
+                    recall = correct_total / actual_total
+                    recalls[key][k] = round(recall * 100, 2)
+            log_file.write(f"Recalls: {recalls}\n\n")
+            avg_recalls = {
+                k: round(sum([t for t in v.values()]) / len(v), 2)
+                for k, v in recalls.items()
+            }
+            log_file.write(f"Average Recalls: {avg_recalls}\n\n")
+            log_file.close()
+
+            print(f"Saved at: {log_file_path}")
+            key_idx = {
+                "CaRLab_2025": 0,
+                "daSilvaMoura_2024": 1,
+                "USVAC_2025_1": 2,
+                "USVAC_2025_2": 3,
+                "narrow": 4,
+            }
+            fig, axs = plt.subplots(
+                1,
+                len(key_idx),
+                figsize=(22, 10),
+                constrained_layout=True,
+                sharey="row",
+                gridspec_kw={
+                    "width_ratios": [1, 1, 1, 1.5, 2],
+                    "wspace": 0.1,
+                    "hspace": 0.1,
+                },
+            )
+            for key, conf in confusions.items():
+                idx = key_idx[key]
+                ax = axs[idx]
+                sns.heatmap(
+                    data=conf.T,
+                    cmap="Blues",
+                    ax=ax,
+                    annot=True,
+                    annot_kws={"fontsize": 16},
+                    vmin=0,
+                    vmax=max_total,
+                    cbar=False,
+                )
+                ax.set_ylabel(None)
+                ax.set_title(key, fontsize=22)
+                ax.set_xlabel("Predicted", fontsize=22)
+                ax.tick_params(axis="y", rotation=0)
+                ax.tick_params(axis="x", rotation=90)
+                ax.tick_params(axis="both", labelsize=22)
+
+            axs[0].set_ylabel("Actual", fontsize=22)
+            # cbar = fig.colorbar(ax[0].get_children()[0], ax=axes, orientation='vertical', fraction=0.02, pad=0.02)
+            fig_path = f"{self.__results_path}/cross_avfad_{selector}_{feature_key}.png"
+            fig.suptitle(
+                "Multi-class classification confusion on AVFAD using different classification systems",
+                fontsize=34,
+            )
+            fig.align_labels()
+            fig.savefig(fig_path, bbox_inches="tight")
+            print(f"Saved at: {fig_path}")
+            plt.close(fig=fig)
+
+        for selector in selections:
+            for feature_key in ["MFCCDD", "UnispeechSAT", "Wav2Vec"]:
+                report(selector=selector, feature_key=feature_key)
 
     def confusion(self, actual, predicted):
         class_weights = actual.value_counts()
@@ -1721,3 +2307,137 @@ class Reporter:
         per_class_accuracy = corrects / total_per_class
         balanced_accuracy = per_class_accuracy.mean()
         return labels, per_class_accuracy, balanced_accuracy, confusion
+
+    def report_collect_cross_meei(self) -> None:
+        logs = list(Path(self.__results_path).glob("cross_meei_*.log"))
+        all_recalls = {}
+        for logfile in logs:
+            dtype, feature = logfile.stem.removeprefix("cross_meei_").rsplit(
+                "_", maxsplit=1
+            )
+            with open(logfile, "r") as log:
+                recall_line = eval(
+                    log.readlines()[-4].removeprefix("Recalls: ").strip()
+                )
+                for cat, rec in recall_line.items():
+                    all_recalls[(dtype, feature, cat)] = rec
+        df = pd.DataFrame.from_dict(all_recalls, orient="index")
+        diag_labels = sorted(df.columns.tolist())
+        path_labels = [dl for dl in diag_labels if dl != "N"]
+        df["avg_recall"] = (df[diag_labels].sum(axis=1) / len(diag_labels)).round(2)
+        df["avg_path_recall"] = (df[path_labels].sum(axis=1) / len(path_labels)).round(
+            2
+        )
+        df = (
+            df.reset_index(names=["dtype", "feature", "cls_sys"])
+            .groupby(by=["cls_sys", "feature", "dtype"])[
+                ["avg_recall", "avg_path_recall"] + diag_labels
+            ]
+            .apply(lambda x: x)
+            .reset_index()
+            .drop(columns="level_3")
+            .sort_values(
+                by=["cls_sys", "feature", "avg_path_recall", "avg_recall"],
+                ascending=[True, True, False, False],
+            )
+        )
+
+        out_path = f"{self.__results_path}/collect_cross_meei.csv"
+        df.to_csv(out_path, index=False)
+        print(f"Saved at: {out_path}")
+
+    def report_collect_cross_voiced(self) -> None:
+        logs = list(Path(self.__results_path).glob("cross_voiced_*.log"))
+        all_recalls = {}
+        for logfile in logs:
+            dtype, feature = logfile.stem.removeprefix("cross_voiced_").rsplit(
+                "_", maxsplit=1
+            )
+            with open(logfile, "r") as log:
+                recall_line = eval(
+                    log.readlines()[-4].removeprefix("Recalls: ").strip()
+                )
+                for cat, rec in recall_line.items():
+                    all_recalls[(dtype, feature, cat)] = rec
+        df = pd.DataFrame.from_dict(all_recalls, orient="index")
+        diag_labels = sorted(df.columns.tolist())
+        path_labels = [dl for dl in diag_labels if dl != "N"]
+        df["avg_recall"] = (df[diag_labels].sum(axis=1) / len(diag_labels)).round(2)
+        seen_paths = ["La", "RE", "RP", "VFP"]
+        df["const_path_recall"] = (df[seen_paths].sum(axis=1) / len(seen_paths)).round(
+            2
+        )
+        df["avg_path_recall"] = (df[path_labels].sum(axis=1) / len(path_labels)).round(
+            2
+        )
+        df = (
+            df.reset_index(names=["dtype", "feature", "cls_sys"])
+            .groupby(by=["cls_sys", "feature", "dtype"])[
+                ["avg_recall", "avg_path_recall", "const_path_recall"] + diag_labels
+            ]
+            .apply(lambda x: x)
+            .reset_index()
+            .drop(columns="level_3")
+            .sort_values(
+                by=[
+                    "cls_sys",
+                    "feature",
+                    "const_path_recall",
+                    "avg_path_recall",
+                    "avg_recall",
+                ],
+                ascending=[True, True, False, False, False],
+            )
+        )
+
+        out_path = f"{self.__results_path}/collect_cross_voiced.csv"
+        df.to_csv(out_path, index=False)
+        print(f"Saved at: {out_path}")
+
+    def report_collect_cross_avfad(self) -> None:
+        logs = list(Path(self.__results_path).glob("cross_avfad_*.log"))
+        all_recalls = {}
+        for logfile in logs:
+            dtype, feature = logfile.stem.removeprefix("cross_avfad_").rsplit(
+                "_", maxsplit=1
+            )
+            with open(logfile, "r") as log:
+                recall_line = eval(
+                    log.readlines()[-4].removeprefix("Recalls: ").strip()
+                )
+                for cat, rec in recall_line.items():
+                    all_recalls[(dtype, feature, cat)] = rec
+        df = pd.DataFrame.from_dict(all_recalls, orient="index")
+        diag_labels = sorted(df.columns.tolist())
+        path_labels = [dl for dl in diag_labels if dl != "N"]
+        df["avg_recall"] = (df[diag_labels].sum(axis=1) / len(diag_labels)).round(2)
+        df["avg_path_recall"] = (df[path_labels].sum(axis=1) / len(path_labels)).round(
+            2
+        )
+        seen_paths = ["La", "RE", "RP", "VFP"]
+        df["const_path_recall"] = (df[seen_paths].sum(axis=1) / len(seen_paths)).round(
+            2
+        )
+        df = (
+            df.reset_index(names=["dtype", "feature", "cls_sys"])
+            .groupby(by=["cls_sys", "feature", "dtype"])[
+                ["avg_recall", "avg_path_recall", "const_path_recall"] + diag_labels
+            ]
+            .apply(lambda x: x)
+            .reset_index()
+            .drop(columns="level_3")
+            .sort_values(
+                by=[
+                    "cls_sys",
+                    "feature",
+                    "const_path_recall",
+                    "avg_path_recall",
+                    "avg_recall",
+                ],
+                ascending=[True, True, False, False, False],
+            )
+        )
+
+        out_path = f"{self.__results_path}/collect_cross_avfad.csv"
+        df.to_csv(out_path, index=False)
+        print(f"Saved at: {out_path}")
