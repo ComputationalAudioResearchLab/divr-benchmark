@@ -1,9 +1,9 @@
 # [1] S. Tsui, Y. Tsao, C. Lin, S. Fang, F. Lin, and C. Wang, “Demographic and Symptomatic Features of Voice Disorders and Their Potential Application in Classification Using Machine Learning Algorithms,” FOLIA PHONIATRICA ET LOGOPAEDICA, vol. 70, no. 3–4, pp. 174–182, 2018, doi: 10.1159/000492327.
-#   Neoplasm - 100
+#   benign structural lesions - 508
+#     vocal nodules, polyps, and cysts
+#   neoplasm - 100
 #     squamous cell carcinoma
-#   Phonotrauma - 508
-#     Vocal nodules, polyps, and cysts
-#   Palsy - 153
+#   neurogenic dysfunction - 153
 #     unilateral vocal palsy
 # benign structural lesions (e.g., vocal nodules, polyps, and cysts), neoplasm (e.g., squamous cell carcinoma), and neurogenic dysfunction (e.g., unilateral vocal palsy), all of which can substantially reduce an individual’s quality of life
 
@@ -33,7 +33,11 @@ unclassified:
   level: 0
 
 ### level 1
-phonotrauma:
+benign_structural_lesions:
+  level: 1
+  parents:
+    pathological: 1.00
+neurogenic_dysfunction:
   level: 1
   parents:
     pathological: 1.00
@@ -46,7 +50,7 @@ cysts:
     - vocal fold cyst
   level: 2
   parents:
-    phonotrauma: 1.00
+    benign_structural_lesions: 1.00
 neoplasm:
   level: 2
   parents:
@@ -62,7 +66,7 @@ nodules:
     - nodule
   level: 2
   parents:
-    phonotrauma: 1.00
+    benign_structural_lesions: 1.00
 polyps:
   alias:
     - stimmlippenpolyp
@@ -73,10 +77,10 @@ polyps:
     - polyp
   level: 2
   parents:
-    phonotrauma: 1.00
+    benign_structural_lesions: 1.00
 unilateral_vocal_palsy:
   alias:
     - unilateral vocal palsy
   level: 2
   parents:
-    pathological: 1.00
+    neurogenic_dysfunction: 1.00

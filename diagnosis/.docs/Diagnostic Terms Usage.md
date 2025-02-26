@@ -70,7 +70,7 @@ And the following number of terms were left unmatched across the different datab
 ```
 	pathological(2):
 		inflammatory(0):
-			chronic_laryngitis(1)
+			chronic_laryngitis(2)
 			reinkes_edema(1)
 		mass_lesions(0):
 			cancer(0):
@@ -95,7 +95,7 @@ And the following number of terms were left unmatched across the different datab
 	unclassified(1)
 ```
 
-In total 25 terms from DBs were automatically classified, while 248 were left unclassified.
+In total 26 terms from DBs were automatically classified, while 247 were left unclassified.
 
 The diagnostic terms were allocated as following:
 - **avfad(7):**
@@ -124,7 +124,7 @@ The diagnostic terms were allocated as following:
 	- **papillom:** papilloma
 	- **pathological voice- diagnosis n/a:** pathological
 	- **stimmlippenpolyp:** polyp
-- **svd(11):**
+- **svd(12):**
 	- **carcinoma in situ:** carcinoma_in_situ
 	- **cyst:** cysts
 	- **epiglottiskarzinom:** epiglottic_carcinoma
@@ -132,6 +132,7 @@ The diagnostic terms were allocated as following:
 	- **granulom:** granuloma
 	- **healthy:** normal
 	- **hemmoragic reinke's edema:** reinkes_edema
+	- **laryngitis:** chronic_laryngitis
 	- **morbus parkinson:** parkinsons
 	- **papillom:** papilloma
 	- **stimmlippenkarzinom:** vocal_fold_carcinoma
@@ -153,7 +154,7 @@ The following aliases were missing:
 And the following number of terms were left unmatched across the different databases:
 - **avfad(20):** ['acute laryngitis', 'amyotrophe lateralsklerose', 'keratosis (sometimes described as leukoplakia or erythroplasia)', 'laryngeal mucosa trauma (chemical and thermal)', 'laryngopharyngeal reflux', 'major depressive disorder (recurrent)', 'muscle tension dysphonia (primary)', 'muscle tension/adaptive dysphonia (secondary)', 'non-intubation related vocal fold granuloma', 'presbyphonia', 'puberphonia', 'reactive vocal fold lesion', 'sulcus vocalis', 'unilateral or bilateral recurrent laryngeal nerve (rln) paresis', 'varix and ectasia of the vocal fold', 'ventricular dysphonia', 'vocal fold cyst-sub-epithelial', 'vocal fold hemorrhage', 'vocal fold scar proper', 'voice disorders: undiagnosed or not otherwise specified (nos)']
 - **meei(151):** ['a-p compression (moderate)', 'a-p squeezing', 'abductor spasmodic dysphonia', 'abnormal vocal process', 'afrin rhinitis', 'anterior mass', 'anterior saccular cyst', 'arytenoid', 'arytenoid dislocation', 'aspiration', 'asymmetry of arytenoid movement', 'atrophic laryngitis', 'atypical paradoxical vocal fold movement of unknown etiology', 'blunt trauma', 'bowing', 'caustic trauma', 'chordektomie', 'choreaic movements', 'chronic hemmorage', 'contact granuloma', 'conversion aphonia', 'cricoarytenoid arthritis', 'cystic appearing area', 'diffuse mild irregularities of musculomembranous vocal folds', 'discoordinated arytenoid movement', 'dysarthria', 'dyskinesia', 'dysphagia', 'episodic functional dysphonia', 'erythema', 'exudative hyperkeratotic lesions of epithelium', 'fusiform mass', 'gastric reflux', 'generalized edema of larynx', 'glottal ap compression (mild)', 'granulation tissue', 'head trauma', 'hematoma', 'hemorrhage', 'hemorrhagic polyp', 'hyperfunction', 'hypervascularization', 'idiopathic dysphonia', 'idiopathic laryngeal discoordination', 'idiopathic neuro. disorder', 'immediate post surgery', 'inflamed arytenoid', 'inflammatory disease', 'interarytenoid hyperplasia', 'intubation', 'intubation trauma', 'irregularity', 'irritation', 'keratosis / leukoplakia', 'keratotic reaction to polyp', 'laryngeal trauma', 'laryngeal trauma - blunt', 'laryngeal tuberculosis', 'laryngeal web', 'laryngocele', 'left hemilaryngectomy', 'lesion', 'lesions posterior left vocal fold', 'lymphode hyperplasia', 'malignant tumor', 'mass', 'micro-cyst', 'microinvasive lesion', 'mixed adductor / abductor spasmodic dysphonia', 'multi loculated polyp', 'multiple sclerosis', 'muscular dystrophy', 'pachydermia', 'paradoxical vocal fold movement', 'paralysis', 'paresis', 'partial laryngectomy', 'polypoid changes', "polypoid degeneration (reinke's)", 'possible subglottal mucous collection', 'post arytenoid adduction', 'post biopsy', 'post botox injection', 'post cancer surgery', 'post cancer surgery of the hypopharynx', 'post cva laryngeal discoordination', 'post fix for functional problem', 'post intubation for seven days', 'post irradiation', 'post laryngoplasty', 'post laser removal of subglottic web', 'post microflap resection', 'post microflap surgery', 'post radiation difuse edema of entire larynx', 'post radiation fibrosis', 'post removal of nodular granuloma', 'post surgery', 'post surgery - removal of keratosis with atypia', 'post surgery for contact granuloma', 'post surgery for removal of teflon granuloma', 'post surgical removal of granulation tissue', 'post thyroplasty', 'post thyroplasty and cricopharyngeal myotomy', 'post vocal cord stripping', 'post-intubation submucosal edema (mild)', 'post-surgery -cricoid removal', 'posterior arytenoid lateralization surgery', 'pre-cricothyroid approximation', 'pre-nodular swellings', 'presbyphonia', 'prominent lingual tonsils', 'puberphonia', 'question of sln', 'question of subglottic masses', 'question of unknown neurological disorder', 'question of unknown psychiatric disorder', 'redundant arytenoid mucosal with prolapsing arytenoid', 'restriction of arytenoid movement', 'scarring', 'smoke inhalation', 'subcordal valley', 'subglottal anterior web', 'subglottal mass', 'subglottis stenosis', 'sulcus vocalis', 'supraglottic', 'teflon granuloma', 'thick mucous and mucous stranding', 'transsexual', 'unknown neurological disorder', 'unusual adduction/compression', 'varix', 'vascular injection', 'ventricular compression', 'ventricular compression (full)', 'ventricular compression (mild)', 'ventricular compression (moderate)', 'ventricular compression (severe)', 'ventricular compression (slight)', 'ventricular fold', 'ventricular mass on right', 'ventricular phonation', 'veracosity', 'vocal fatigue', 'vocal fold', 'vocal fold atrophic', 'vocal fold edema', 'vocal fold lesion', 'vocal fold thickening', 'vocal tremor', 'white debris/patches']
-- **svd(60):** ['amyotrophe lateralsklerose', 'aryluxation', 'balbuties', 'bulbärparalyse', 'chondrom', 'chordektomie', 'diplophonie', 'dish-syndrom', 'dysarthrophonie', 'dysodie', 'dysphonie', 'dysplastische dysphonie', 'dysplastischer kehlkopf', 'fibrom', 'frontolaterale teilresektion', 'funktionelle dysphonie', 'gastric reflux', 'hyperasthenie', 'hyperfunktionelle dysphonie', 'hypofunktionelle dysphonie', 'hypopharynxtumor', 'hypotone dysphonie', 'internusschwäche', 'intubation trauma', 'intubationsgranulom', 'juvenile dysphonie', 'kehlkopftumor', 'kontaktpachydermie', 'laryngitis', 'laryngocele', 'leukoplakie', 'mediale halscyste', 'mesopharynxtumor', 'monochorditis', 'morbus down', 'mutatio', 'mutationsfistelstimme', 'n. laryngeus superior läsion', 'n. laryngeus superior neuralgie', 'non-fluency-syndrom', 'orofaciale dyspraxie', 'phonasthenie', 'phonationsknötchen', 'poltersyndrom', 'psychogene aphonie', 'psychogene dysphonie', 'psychogene mikrophonie', 'rekurrensparese', 'rhinophonie aperta', 'rhinophonie clausa', 'rhinophonie mixta', 'sigmatismus', 'spasmodische dysphonie', 'synechie', 'taschenfaltenhyperplasie', 'taschenfaltenstimme', 'valleculacyste', 'velopharyngoplastik', 'vox senilis', 'zentral-laryngale bewegungsstörung']
+- **svd(59):** ['amyotrophe lateralsklerose', 'aryluxation', 'balbuties', 'bulbärparalyse', 'chondrom', 'chordektomie', 'diplophonie', 'dish-syndrom', 'dysarthrophonie', 'dysodie', 'dysphonie', 'dysplastische dysphonie', 'dysplastischer kehlkopf', 'fibrom', 'frontolaterale teilresektion', 'funktionelle dysphonie', 'gastric reflux', 'hyperasthenie', 'hyperfunktionelle dysphonie', 'hypofunktionelle dysphonie', 'hypopharynxtumor', 'hypotone dysphonie', 'internusschwäche', 'intubation trauma', 'intubationsgranulom', 'juvenile dysphonie', 'kehlkopftumor', 'kontaktpachydermie', 'laryngocele', 'leukoplakie', 'mediale halscyste', 'mesopharynxtumor', 'monochorditis', 'morbus down', 'mutatio', 'mutationsfistelstimme', 'n. laryngeus superior läsion', 'n. laryngeus superior neuralgie', 'non-fluency-syndrom', 'orofaciale dyspraxie', 'phonasthenie', 'phonationsknötchen', 'poltersyndrom', 'psychogene aphonie', 'psychogene dysphonie', 'psychogene mikrophonie', 'rekurrensparese', 'rhinophonie aperta', 'rhinophonie clausa', 'rhinophonie mixta', 'sigmatismus', 'spasmodische dysphonie', 'synechie', 'taschenfaltenhyperplasie', 'taschenfaltenstimme', 'valleculacyste', 'velopharyngoplastik', 'vox senilis', 'zentral-laryngale bewegungsstörung']
 - **torgo(1):** ['dysarthria']
 - **uaspeech(2):** ['athetoid', 'spastic']
 - **uncommon_voice(0):** []
@@ -723,12 +724,13 @@ And the following number of terms were left unmatched across the different datab
 ### Tsui_2018
 ```
 	pathological(2):
-		phonotrauma(0):
+		benign_structural_lesions(0):
 			cysts(1)
 			nodules(1)
 			polyps(1)
+		neurogenic_dysfunction(0):
+			unilateral_vocal_palsy(0)
 		neoplasm(0)
-		unilateral_vocal_palsy(0)
 	normal(7)
 	unclassified(1)
 ```
