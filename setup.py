@@ -14,7 +14,7 @@ setup(
     license="MIT",
     description="Toolkit to work with disordered voice databases",
     author="Computational Audio Research Lab",
-    url="https://github.com/ComputationalAudioResearchLab/divr-benchmark/benchmark",
+    url="https://github.com/ComputationalAudioResearchLab/divr-benchmark",
     keywords=[
         "ML Audio Features",
         "ML",

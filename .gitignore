@@ -1,4 +1,10 @@
-.env
-.cache
 __pycache__
-data
+dist
+*.egg-info
+pyproject.toml
+.pytest_cache
+data/extracted
+data/prepared
+experiments/output
+output*
+.env

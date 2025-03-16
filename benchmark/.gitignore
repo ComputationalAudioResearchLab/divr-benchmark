@@ -1,9 +1,0 @@
-__pycache__
-dist
-*.egg-info
-pyproject.toml
-.pytest_cache
-data/extracted
-data/prepared
-experiments/output
-output*
