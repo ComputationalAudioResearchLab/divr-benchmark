@@ -8,7 +8,7 @@ setup(
     name="divr-benchmark",
     packages=find_packages(),
     package_data={
-        "divr_benchmark": ["../tasks/*/*.yml", "../tasks/README.md"],
+        "divr_benchmark": ["tasks/*/*.yml", "tasks/README.md"],
     },
     version=os.environ["RELEASE_VERSION"],
     license="MIT",

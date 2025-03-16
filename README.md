@@ -10,7 +10,7 @@ pip install divr-benchmark
 
 ## How to use
 
-While you can generate your own tasks, we provide a battery of tasks that we have used across a wide range of experiments. You can read more about them in [Tasks](./tasks/README.md).
+While you can generate your own tasks, we provide a battery of tasks that we have used across a wide range of experiments. You can read more about them in [Tasks](./divr_benchmark/tasks/README.md).
 
 ### Generating tasks
 
