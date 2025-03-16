@@ -104,12 +104,6 @@ class SVD(Base):
             session.best_diagnosis.incompletely_classified
             and not allow_incomplete_classification
         ):
-            if session.id == "svd_2537_2403":
-                print(session.best_diagnosis.name)
-                # print([d.name for d in sorted_diagnosis])
-                # print([d.name for d in complete_diagnosis])
-                # print(complete_diagnosis[0].incompletely_classified)
-                exit()
             return None
         return session
 
