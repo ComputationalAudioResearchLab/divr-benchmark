@@ -2,12 +2,14 @@ import yaml
 import statistics
 from pathlib import Path
 from dataclasses import dataclass
-from typing import List, Callable, Awaitable
+from typing import List
 
 from .task import Task
 from .databases import Base as Database
+from typing import Protocol
 
-DatabaseFunc = Callable[[str], Awaitable[Database]]
+class DatabaseFunc(Protocol):
+    async def __call__(self, name: str, min_tasks: int | None = None) -> Database: ...
 
 
 @dataclass

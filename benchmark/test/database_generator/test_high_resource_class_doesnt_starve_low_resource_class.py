@@ -1,5 +1,5 @@
 from uuid import uuid4
-from divr_benchmark.diagnosis import diagnosis_maps
+from divr_diagnosis import diagnosis_maps
 from divr_benchmark.prepare_dataset.database_generator import DatabaseGenerator
 from divr_benchmark.prepare_dataset.processed import ProcessedSession
 from test.database_generator.count_sessions import count_sessions
@@ -21,7 +21,7 @@ database_generator = DatabaseGenerator(
 def test_5():
     db_name = str(uuid4())
     diagnosis_keys = [
-        "organic_structural",
+        "organic",
         "organic",
         "muscle_tension",
         "muscle_tension",
@@ -68,12 +68,12 @@ def test_5():
 def test_10():
     db_name = str(uuid4())
     diagnosis_keys = [
-        "organic_inflammatory",
-        "organic_neuro_muscular",
-        "organic_structural",
-        "organic_trauma",
-        "organic_neuro_muscular",
-        "organic_structural",
+        "organic",
+        "organic",
+        "organic",
+        "organic",
+        "organic",
+        "organic",
         "organic",
         "muscle_tension",
         "muscle_tension",
@@ -101,9 +101,9 @@ def test_10():
 
     ## Actual expected
     expected_organic = [
-        (dataset.train_sessions, "organic", 5),
-        (dataset.test_sessions, "organic", 1),
-        (dataset.val_sessions, "organic", 1),
+        (dataset.train_sessions, "organic", 4),
+        (dataset.test_sessions, "organic", 3),
+        (dataset.val_sessions, "organic", 0),
         (dataset.train_sessions, "muscle_tension", 2),
         (dataset.test_sessions, "muscle_tension", 1),
         (dataset.val_sessions, "muscle_tension", 0),
@@ -163,12 +163,12 @@ def test_20():
 
     ## Actual expected
     expected_organic = [
-        (dataset.train_sessions, "organic", 10),
-        (dataset.test_sessions, "organic", 3),
+        (dataset.train_sessions, "organic", 9),
+        (dataset.test_sessions, "organic", 4),
         (dataset.val_sessions, "organic", 1),
         (dataset.train_sessions, "muscle_tension", 4),
-        (dataset.test_sessions, "muscle_tension", 1),
-        (dataset.val_sessions, "muscle_tension", 1),
+        (dataset.test_sessions, "muscle_tension", 2),
+        (dataset.val_sessions, "muscle_tension", 0),
     ]
     for bucket, diagnosis_key, expected_count in expected_organic:
         assert expected_count == count_sessions(

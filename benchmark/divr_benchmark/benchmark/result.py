@@ -6,7 +6,6 @@ from divr_diagnosis import Diagnosis
 
 
 class Result:
-
     def __init__(self, data: List[Tuple[Diagnosis, Diagnosis]]) -> None:
         confusion = self.__create_confusion_matrix(data)
         for actual, predicted in data:

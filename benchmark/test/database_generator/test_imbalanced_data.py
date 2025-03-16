@@ -1,5 +1,5 @@
 from uuid import uuid4
-from divr_benchmark.diagnosis import diagnosis_maps
+from divr_diagnosis import diagnosis_maps
 from divr_benchmark.prepare_dataset.database_generator import DatabaseGenerator
 from divr_benchmark.prepare_dataset.processed import ProcessedSession
 from test.database_generator.count_sessions import count_sessions

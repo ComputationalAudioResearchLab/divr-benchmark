@@ -19,9 +19,10 @@ task_generator_maps = {"v1": generator_map["v1"]}
 class Benchmark:
     def __init__(
         self,
-        storage_path: str,
+        storage_path: str|Path,
         version: VERSIONS,
         quiet: bool = False,
+        sample_rate: int = 16000,
     ) -> None:
         self.__quiet = quiet
         if not Path(storage_path).is_dir():
@@ -35,7 +36,7 @@ class Benchmark:
         module_path = Path(__file__).parent.parent.resolve()
         self.__logger = Logger(log_path=f"{storage_path}/logs", key=f"{version}")
         self.__data_path = Path(f"{storage_path}/data")
-        self.__audio_loader = AudioLoader(version, self.__data_path)
+        self.__audio_loader = AudioLoader(version, self.__data_path, sample_rate)
         self.__downloader = Download(
             database_path=self.__data_path, logger=self.__logger
         )
@@ -75,41 +76,6 @@ class Benchmark:
             test=Path(f"{task_path}/test.yml"),
             quiet=self.__quiet,
             diag_level=diag_level,
-            load_audios=load_audios,
-        )
-
-    def task(
-        self,
-        stream: int,
-        task: int,
-        diagnosis_map: DiagnosisMap,
-        load_audios: bool = True,
-    ) -> Task:
-        stream_path = Path(f"{self.__tasks_path}/streams/{stream}/")
-        if not stream_path.is_dir():
-            raise ValueError("Invalid stream selected")
-        task_path = Path(f"{stream_path}/{task}")
-        if not task_path.is_dir():
-            raise ValueError("Invalid task selected")
-
-        train_path = Path(f"{task_path}/train.yml")
-        if not train_path.is_file():
-            train_path = Path(f"{stream_path}/train.yml")
-
-        val_path = Path(f"{task_path}/val.yml")
-        if not val_path.is_file():
-            val_path = Path(f"{stream_path}/val.yml")
-
-        test_path = Path(f"{task_path}/test.yml")
-
-        return Task(
-            diagnosis_map=diagnosis_map,
-            audio_loader=self.__audio_loader,
-            train=train_path,
-            val=val_path,
-            test=test_path,
-            quiet=self.__quiet,
-            diag_level=None,
             load_audios=load_audios,
         )
 

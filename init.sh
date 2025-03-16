@@ -2,10 +2,6 @@
 
 set -e
 
-cd /home/workspace/diagnosis;
-cp -n .env.default .env;
-pipenv install --dev;
-
 cd /home/workspace/benchmark;
 cp -n .env.default .env;
 pipenv install --dev;

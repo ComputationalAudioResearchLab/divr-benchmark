@@ -5,11 +5,11 @@ from pathlib import Path
 
 
 class AudioLoader:
-    sample_rate = 16000
 
-    def __init__(self, version: str, data_path: Path) -> None:
+    def __init__(self, version: str, data_path: Path, sample_rate: int) -> None:
         self.__data_path = data_path
         self.__version = version
+        self.sample_rate = sample_rate
 
     def __call__(self, keys: List[str]) -> List[np.ndarray]:
         if self.__version == "v1":

@@ -13,7 +13,6 @@ generator_map = {"v1": GeneratorV1()}
 
 
 class YamlDumper(yaml.Dumper):
-
     def increase_indent(self, flow=False, indentless=False):
         return super(YamlDumper, self).increase_indent(flow, False)
 

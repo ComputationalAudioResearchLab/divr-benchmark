@@ -1,6 +1,5 @@
 {
   "files.exclude": {
-    "diagnosis": true,
     "benchmark": true,
     "acm_transactions_2025": true
   }

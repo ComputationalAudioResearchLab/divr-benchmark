@@ -1,10 +1,10 @@
 from __future__ import annotations
 import asyncio
-from typing import Dict, List, Literal
+from typing import Dict, List
 from pathlib import Path
-from divr_benchmark import Benchmark
+from divr_benchmark import Benchmark, Task
 from divr_benchmark.task_generator import DatabaseFunc, Dataset
-from divr_benchmark.task_generator.task import Task
+from divr_benchmark.task_generator.task import Task as GeneratedTask
 from divr_benchmark.task_generator.databases import SVD
 from divr_diagnosis import diagnosis_maps, DiagnosisMap
 
@@ -25,7 +25,6 @@ class TaskGenerator:
             storage_path=research_data_path,
             version="v1",
         )
-        cur_path = Path(__file__).parent.resolve()
         self.__tasks_path = self.__ensure_path(tasks_path)
 
     def load_task(
@@ -80,6 +79,7 @@ class TaskGenerator:
                 ),
                 task_path=self.__ensure_path(f"{self.__tasks_path}/phrase"),
                 diagnosis_map=diagnosis_map,
+                allow_incomplete_classification=False,
             )
         ]
         coros += [
@@ -92,6 +92,7 @@ class TaskGenerator:
                 ),
                 task_path=self.__ensure_path(f"{self.__tasks_path}/a_n"),
                 diagnosis_map=diagnosis_map,
+                allow_incomplete_classification=False,
             )
         ]
         coros += [
@@ -104,6 +105,7 @@ class TaskGenerator:
                 ),
                 task_path=self.__ensure_path(f"{self.__tasks_path}/i_n"),
                 diagnosis_map=diagnosis_map,
+                allow_incomplete_classification=False,
             )
         ]
         coros += [
@@ -116,6 +118,7 @@ class TaskGenerator:
                 ),
                 task_path=self.__ensure_path(f"{self.__tasks_path}/u_n"),
                 diagnosis_map=diagnosis_map,
+                allow_incomplete_classification=False,
             )
         ]
         coros += [
@@ -131,6 +134,7 @@ class TaskGenerator:
                 ),
                 task_path=self.__ensure_path(f"{self.__tasks_path}/all"),
                 diagnosis_map=diagnosis_map,
+                allow_incomplete_classification=False,
             )
         ]
         cross_test_datasets = [
@@ -152,6 +156,7 @@ class TaskGenerator:
                         f"{self.__tasks_path}/cross_test_{db}"
                     ),
                     diagnosis_map=diagnosis_map,
+                allow_incomplete_classification=False,
                 )
             ]
 
@@ -215,7 +220,7 @@ class TaskGenerator:
         await asyncio.gather(*coros)
 
     def __cross_test_filter_func(self, database_name: str, diag_level: int):
-        async def filter_func(database_func: DatabaseFunc) -> DatabaseFunc:
+        async def filter_func(database_func: DatabaseFunc) -> Dataset:
             db = await database_func(name=database_name)
             return Dataset(
                 train=[],
@@ -252,12 +257,12 @@ class TaskGenerator:
 
         return filter_func
 
-    def __filter_unclassified(self, tasks: List[Task]) -> List[Task]:
+    def __filter_unclassified(self, tasks: List[GeneratedTask]) -> List[GeneratedTask]:
         return [task for task in tasks if not task.label.incompletely_classified]
 
     def __filter_audio_files(
-        self, tasks: List[Task], allowed_suffixes: List[str]
-    ) -> List[Task]:
+        self, tasks: List[GeneratedTask], allowed_suffixes: List[str]
+    ) -> List[GeneratedTask]:
         def file_filter(file_path: str):
             for suffix in allowed_suffixes:
                 if file_path.endswith(suffix):
@@ -301,7 +306,7 @@ class TaskGenerator:
             test=test_data,
         )
 
-    def __collate_by_speaker_id(self, tasks: List[Task]) -> List[Task]:
+    def __collate_by_speaker_id(self, tasks: List[GeneratedTask]) -> List[GeneratedTask]:
         speakers = {}
         for task in tasks:
             speaker_id = task.speaker_id
@@ -312,11 +317,11 @@ class TaskGenerator:
         return list(speakers.values())
 
     def __filter_by_labels(
-        self, tasks: List[Task], allowed_labels: List[str]
-    ) -> List[Task]:
+        self, tasks: List[GeneratedTask], allowed_labels: List[str]
+    ) -> List[GeneratedTask]:
         return [x for x in tasks if x.label.name in allowed_labels]
 
-    def __count_total_per_label(self, tasks: List[Task]) -> Dict[str, int]:
+    def __count_total_per_label(self, tasks: List[GeneratedTask]) -> Dict[str, int]:
         """
         Counts unique speakers per label in the given list of tasks
         """

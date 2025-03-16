@@ -1,12 +1,15 @@
 import os
-from setuptools import setup
+from setuptools import setup, find_packages
 
 with open("README.md", "r") as readme:
     long_description = readme.read()
 
 setup(
     name="divr-benchmark",
-    packages=["divr_benchmark"],
+    packages=find_packages(),
+    package_data={
+        "divr_benchmark": ["../tasks/*/*.yml", "../tasks/README.md"],
+    },
     version=os.environ["RELEASE_VERSION"],
     license="MIT",
     description="Toolkit to work with disordered voice databases",
@@ -24,7 +27,7 @@ setup(
         "aiofiles>=23.1.0",
         "aiohttp>=3.8.4",
         "class-argparse>=0.1.3",
-        "divr-diagnosis>=0.0.0",
+        "divr-diagnosis>=0.1.1",
         "librosa>=0.10.0.post2",
         "matplotlib>=3.7.1",
         "nspfile>=0.1.4",
@@ -37,9 +40,9 @@ setup(
     ],
     classifiers=[
         "Development Status :: 4 - Beta",
-        "Intended Audience :: Researchers",
+        "Intended Audience :: Science/Research",
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
-        "Topic :: Utilities",
+        "Topic :: Scientific/Engineering",
     ],
 )

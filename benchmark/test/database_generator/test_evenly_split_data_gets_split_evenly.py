@@ -3,7 +3,7 @@ import numpy as np
 from typing import List, Tuple
 import pytest
 from uuid import uuid4
-from divr_benchmark.diagnosis import diagnosis_maps
+from divr_diagnosis import diagnosis_maps
 from divr_benchmark.prepare_dataset.database_generator import DatabaseGenerator
 from divr_benchmark.prepare_dataset.processed import ProcessedSession
 from test.database_generator.count_sessions import count_sessions
@@ -37,7 +37,6 @@ database_generator = DatabaseGenerator(
         ["unclassified"],
         ["normal", "pathological"],
         ["normal", "pathological", "unclassified"],
-        ["muscle_tension", "functional", "unclassified_pathology", "organic"],
     ],
 )
 @pytest.mark.parametrize(
