@@ -8,8 +8,10 @@ from .task import Task
 from .databases import Base as Database
 from typing import Protocol
 
+
 class DatabaseFunc(Protocol):
-    async def __call__(self, name: str, min_tasks: int | None = None) -> Database: ...
+    async def __call__(self, name: str, min_tasks: int | None = None) -> Database:
+        ...
 
 
 @dataclass

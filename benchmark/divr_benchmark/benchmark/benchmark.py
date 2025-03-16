@@ -19,7 +19,7 @@ task_generator_maps = {"v1": generator_map["v1"]}
 class Benchmark:
     def __init__(
         self,
-        storage_path: str|Path,
+        storage_path: str | Path,
         version: VERSIONS,
         quiet: bool = False,
         sample_rate: int = 16000,

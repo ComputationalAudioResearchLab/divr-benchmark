@@ -27,7 +27,7 @@ setup(
         "aiofiles>=23.1.0",
         "aiohttp>=3.8.4",
         "class-argparse>=0.1.3",
-        "divr-diagnosis>=0.1.1",
+        "divr-diagnosis>=0.1.2",
         "librosa>=0.10.0.post2",
         "matplotlib>=3.7.1",
         "nspfile>=0.1.4",
