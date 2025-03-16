@@ -5,7 +5,6 @@ This repository contains the work that establishes a benchmark to test voice dis
 ## Links
 
 - [Benchmark](./benchmark/README.md)
-- [Baselines](./baselines/README.md)
 
 ## Working on this repository directly
 
