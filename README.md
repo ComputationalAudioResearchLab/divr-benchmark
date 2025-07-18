@@ -48,7 +48,7 @@ async def filter_func(database_func: DatabaseFunc):
 benchmark.generate_task(
     filter_func=filter_func,
     task_path="/home/user/divr_benchmark/tasks/all",
-    diagnosis_map=diag_level,
+    diagnosis_map=diag_map,
     allow_incomplete_classification=False,
 )
 ```
