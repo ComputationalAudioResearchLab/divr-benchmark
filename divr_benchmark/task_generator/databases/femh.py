@@ -16,7 +16,7 @@ class FEMH(Base):
     DB_NAME = "femh"
 
     async def _collect_diagnosis_terms(self, source_path: Path) -> Set[str]:
-        _, df = self.__read_data(source_path=source_path)
+        df = self.__read_data(source_path=source_path)
         return set(df["Disease category"].tolist())
 
     async def prepare_dataset(
