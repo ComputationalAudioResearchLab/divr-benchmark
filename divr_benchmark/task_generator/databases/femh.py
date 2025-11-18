@@ -9,7 +9,7 @@ from ...prepare_dataset.processed import (
     ProcessedSession,
     ProcessedFile,
 )
-
+import re
 
 class FEMH(Base):
 
@@ -27,10 +27,10 @@ class FEMH(Base):
         diagnosis_map: DiagnosisMap,
     ) -> List[ProcessedSession]:
         sessions = []
-        data_path, all_data = self.__read_data(source_path)
+        df = self.__read_data(source_path)
 
         # Iterate through each row of data in the Excel sheet (excluding header, 2000 patient records)
-        for _, row in all_data.iterrows():
+        for _, row in df.iterrows():
             speaker_id = row["ID"]  # Patient ID, used as speaker identifier
             diagnosis = row[
                 "Disease category"
@@ -61,7 +61,7 @@ class FEMH(Base):
                             diagnosis=[diagnosis],  # Diagnosis list (single diagnosis)
                             files=[
                                 ProcessedFile(
-                                    path=Path(f"{data_path}/selectwav/{speaker_id}.wav")
+                                    path=Path(f"{source_path}/selectwav/{speaker_id}.wav")
                                 )
                             ],  # Audio file list
                             num_files=num_files,  # File count: 1
@@ -91,36 +91,30 @@ class FEMH(Base):
             FileNotFoundError: When Excel file is not found
             ValueError: When Excel file column structure doesn't match expectations
         """
-        data_path = str(source_path)
+       
 
-        # Main data file path: selectwav/medicalhistory.xlsx
-        main_excel_path = Path(source_path) / "selectwav" / "medicalhistory.xlsx"
+        
 
         # Read Excel file (contains 2001 rows: 1 header row + 2000 data rows)
-        all_data = pd.read_excel(main_excel_path)
-
-        # Validate if Excel file column structure matches expectations
-        expected_columns = ["ID", "Sex", "Age", "Disease category"]
+        df = pd.read_excel(f"{source_path}/selectwav/medicalhistory.xlsx")
 
         # Keep only the four required columns
-        all_data = all_data[expected_columns]
+        df = df[["ID", "Sex", "Age", "Disease category"]]
 
         # Convert gender column to string type, convert 1 and 2 to 'male' and 'female'
-        all_data["Sex"] = (
-            all_data["Sex"].astype(str).replace({"1": "male", "2": "female"})
-        )
-
-        # Data cleaning and standardization
-        # Disease category standardization: convert to lowercase and strip whitespace
-        # Remove numbers and decimal points from disease categories
-        # replace Chinese punctuation with English punctuation
-        all_data["Disease category"] = all_data["Disease category"].str.replace("’", "'", regex=False)
-        all_data["Disease category"] = (
-            all_data["Disease category"]
-            .astype(str)
-            .str.lower()
-            .str.strip()
-            .str.replace(r"[0-9.]+", "", regex=True)
-        )
-        
-        return data_path, all_data
+        df["Sex"] = df["Sex"].astype(str).apply(self.__clean_sex)
+        # Clean diagnosis terms
+        df["Disease category"] = df[
+            "Disease category"
+        ].apply(self.__clean_diagnosis)
+       
+        return df
+    def __clean_diagnosis(self, diagnosis: str) -> str:
+        diagnosis = diagnosis.lower().strip()
+        diagnosis = re.sub(r"[0-9\.]+", "", diagnosis)
+        diagnosis = diagnosis.replace("’", "'")
+        return diagnosis
+    
+    def __clean_sex(self, sex: str) -> str:
+        sex = sex.replace("1", "male").replace("2", "female")
+        return sex
