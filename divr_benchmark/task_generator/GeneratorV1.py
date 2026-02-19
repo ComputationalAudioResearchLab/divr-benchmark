@@ -32,7 +32,7 @@ class GeneratorV1(Generator):
     }
 
     async def collect_diagnosis_terms(self, source_path: Path) -> Dict[str, List[str]]:
-        dbs = [AVFAD, MEEI, SVD, Torgo, UASpeech, UncommonVoice, Voiced, FEMH]
+        dbs = [AVFAD, FEMH, MEEI, SVD, Torgo, UASpeech, UncommonVoice, Voiced]
         terms = {}
         for db in dbs:
             for term in await db(source_path=source_path).collect_diagnosis_terms():
