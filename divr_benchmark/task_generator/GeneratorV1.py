@@ -5,6 +5,7 @@ from typing import Awaitable, Callable, Dict, List
 
 from .generator import Generator, DatabaseFunc, Dataset
 from .databases import (
+    FEMH,
     SVD,
     Torgo,
     Voiced,
@@ -26,11 +27,12 @@ class GeneratorV1(Generator):
         Torgo.DB_NAME: Torgo,
         UASpeech.DB_NAME: UASpeech,
         UncommonVoice.DB_NAME: UncommonVoice,
+        FEMH.DB_NAME: FEMH,
         Voiced.DB_NAME: Voiced,
     }
 
     async def collect_diagnosis_terms(self, source_path: Path) -> Dict[str, List[str]]:
-        dbs = [AVFAD, MEEI, SVD, Torgo, UASpeech, UncommonVoice, Voiced]
+        dbs = [AVFAD, FEMH, MEEI, SVD, Torgo, UASpeech, UncommonVoice, Voiced]
         terms = {}
         for db in dbs:
             for term in await db(source_path=source_path).collect_diagnosis_terms():
@@ -82,6 +84,7 @@ class GeneratorV1(Generator):
         print("Generating benchmark v1 tasks")
         Path(f"{tasks_path}/streams").mkdir(exist_ok=True)
         svd = SVD(source_path=source_path)
+        femh = FEMH(source_path=source_path)
         torgo = Torgo(source_path=source_path)
         voiced = Voiced(source_path=source_path)
         await asyncio.gather(
@@ -89,6 +92,11 @@ class GeneratorV1(Generator):
                 diagnosis_map=diagnosis_map,
                 allow_incomplete_classification=False,
                 min_tasks=SVD.max_tasks,
+            ),
+            femh.init(
+                diagnosis_map=diagnosis_map,
+                allow_incomplete_classification=False,
+                min_tasks=None,
             ),
             torgo.init(
                 diagnosis_map=diagnosis_map,

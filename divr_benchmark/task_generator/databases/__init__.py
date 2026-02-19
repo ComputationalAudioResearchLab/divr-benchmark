@@ -6,10 +6,12 @@ from .avfad import AVFAD
 from .meei import MEEI
 from .uaspeech import UASpeech
 from .uncommon_voice import UncommonVoice
+from .femh import FEMH
 
 __all__ = [
     "Base",
     "SVD",
+    "FEMH",
     "Torgo",
     "Voiced",
     "AVFAD",
